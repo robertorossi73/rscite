@@ -1,0 +1,10 @@
+__construct
+accept
+current
+getChildren
+getInnerIterator
+hasChildren
+key
+next
+rewind
+valid

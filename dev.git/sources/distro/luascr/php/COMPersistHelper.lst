@@ -1,0 +1,8 @@
+GetCurFileName
+GetMaxStreamSize
+InitNew
+LoadFromFile
+LoadFromStream
+SaveToFile
+SaveToStream
+__construct

@@ -1,0 +1,14 @@
+__construct
+char_height
+char_measure
+char_width
+copy
+extents
+get_display
+height
+id
+measure
+string_height
+string_measure
+string_width
+width

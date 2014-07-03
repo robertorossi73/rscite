@@ -1,0 +1,25 @@
+------------------------- Robert's Lua Library Bridge -------------------------
+
+Questa dll ha lo scopo di fornire una interfaccia comune per accedere alle funzioni presenti nelle dll.
+
+questo eliminerà la necessità di costruire estensioni specifiche per SciTE e/o Lua, consentendo di scivere e riutilizzare dll generiche all'interno di Lua e SCiTE.
+
+Il progetto procederà a step prefissati, che via via renderanno sempre piu flessibile il sistema di collegamento.
+
+L'estensione Lua prevederà una sola funzione con parametri multipli e a numero variabile, in questo modo :
+
+fx([libreria da caricare], [nome funzione], [tipo valore di ritorno], [tipo parametro1], [parametro1], [tipo parametro2], [parametro2],...)
+
+Per semplicità il numero di parametri utilizzabili sarà 10.
+
+I tipi di dato supportati per i valori saranno limitati a :
+
+- numero intero (INT)
+- numero reale (REAL)
+- stringa (STRING)
+
+In aggiunta, all'interno del modulo bridge saranno implementate alcune funzioni di utilità, ad esempio :
+
+- la funzione per determinare se il sistema operativo è a 32 o 64 bit
+- la funzione per determinare quale sistema operativo è in uso, Windows o Linux
+- 

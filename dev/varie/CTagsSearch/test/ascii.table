@@ -1,0 +1,90 @@
+====================================================================
+                         ASCII Table
+====================================================================
+
+Dec  Hex  Char    Dec  Hex  Char    Dec  Hex  Char    Dec  Hex  Char
+---  ---  ----    ---  ---  ----    ---  ---  ----    ---  ---  ----
+000  00h  NUL ^@  018  12h  DC2 ^R  036  24h   $      054  36h   6      
+001  01h  SOH ^A  019  13h  DC3 ^S  037  25h   %      055  37h   7      
+002  02h  STX ^B  020  14h  DC4 ^T  038  26h   &      056  38h   8      
+003  03h  ETX ^C  021  15h  NAK ^U  039  27h   '      057  39h   9      
+004  04h  EOT ^D  022  16h  SYN ^V  040  28h   (      058  3Ah   :      
+005  05h  ENQ ^E  023  17h  ETB ^W  041  29h   )      059  3Bh   ;      
+006  06h  ACK ^F  024  18h  CAN ^X  042  2Ah   *      060  3Ch   <
+007  07h  BEL ^G  025  19h  EM  ^Y  043  2Bh   +      061  3Dh   =      
+008  08h  BS  ^H  026  1Ah  SUB ^Z  044  2Ch   ,      062  3Eh   >      
+009  09h  HT  ^I  027  1Bh  ESC ^[  045  2Dh   -      063  3Fh   ?      
+010  0Ah  LF  ^J  028  1Ch  FS  ^\  046  2Eh   .      064  40h   @      
+011  0Bh  VT  ^K  029  1Dh  GS  ^]  047  2Fh   /      065  41h   A      
+012  0Ch  FF  ^L  030  1Eh  RS  ^^  048  30h   0      066  42h   B      
+013  0Dh  CR  ^M  031  1Fh  US  ^_  049  31h   1      067  43h   C      
+014  0Eh  SO  ^N  032  20h  SP      050  32h   2      068  44h   D      
+015  0Fh  SI  ^O  033  21h  !       051  33h   3      069  45h   E      
+016  10h  DLE ^P  034  22h  "       052  34h   4      070  46h   F      
+017  11h  DC1 ^Q  035  23h  #       053  35h   5      071  47h   G      
+
+
+Dec  Hex  Char    Dec  Hex  Char    Dec  Hex  Char    Dec  Hex  Char
+---  ---  ----    ---  ---  ----    ---  ---  ----    ---  ---  ----
+072  48h   H      090  5Ah   Z      108  6Ch   l      126  7Eh   ~       
+073  49h   I      091  5Bh   [      109  6Dh   m      127  7Fh          
+074  4Ah   J      092  5Ch   \      110  6Eh   n      128  80h   Ä       
+075  4Bh   K      093  5Dh   ]      111  6Fh   o      129  81h   Å       
+076  4Ch   L      094  5Eh   ^      112  70h   p      130  82h   Ç       
+077  4Dh   M      095  5Fh   _      113  71h   q      131  83h   É       
+078  4Eh   N      096  60h   `      114  72h   r      132  84h   Ñ       
+079  4Fh   O      097  61h   a      115  73h   s      133  85h   Ö       
+080  50h   P      098  62h   b      116  74h   t      134  86h   Ü       
+081  51h   Q      099  63h   c      117  75h   u      135  87h   á       
+082  52h   R      100  64h   d      118  76h   v      136  88h   à       
+083  53h   S      101  65h   e      119  77h   w      137  89h   â       
+084  54h   T      102  66h   f      120  78h   x      138  8Ah   ä       
+085  55h   U      103  67h   g      121  79h   y      139  8Bh   ã       
+086  56h   V      104  68h   h      122  7Ah   z      140  8Ch   å       
+087  57h   W      105  69h   i      123  7Bh   {      141  8Dh   ç       
+088  58h   X      106  6Ah   j      124  7Ch   |      142  8Eh   é       
+089  59h   Y      107  6Bh   k      125  7Dh   }      143  8Fh   è       
+
+
+Dec  Hex  Char    Dec  Hex  Char    Dec  Hex  Char    Dec  Hex  Char
+---  ---  ----    ---  ---  ----    ---  ---  ----    ---  ---  ----
+144  90h   ê      162  A2h   ¢      180  B4h   ¥      198  C6h   ∆       
+145  91h   ë      163  A3h   £      181  B5h   µ      199  C7h   «       
+146  92h   í      164  A4h   §      182  B6h   ∂      200  C8h   »       
+147  93h   ì      165  A5h   •      183  B7h   ∑      201  C9h   …       
+148  94h   î      166  A6h   ¶      184  B8h   ∏      202  CAh           
+149  95h   ï      167  A7h   ß      185  B9h   π      203  CBh   À       
+150  96h   ñ      168  A8h   ®      186  BAh   ∫      204  CCh   Ã        
+151  97h   ó      169  A9h   ©      187  BBh   ª      205  CDh   Õ       
+152  98h   ò      170  AAh   ™      188  BCh   º      206  CEh   Œ       
+153  99h   ô      171  ABh   ´      189  BDh   Ω      207  CFh   œ       
+154  9Ah   ö      172  ACh   ¨      190  BEh   æ      208  D0h   –       
+155  9Bh   õ      173  ADh   ≠      191  BFh   ø      209  D1h   —       
+156  9Ch   ú      174  AEh   Æ      192  C0h   ¿      210  D2h   “       
+157  9Dh   ù      175  AFh   Ø      193  C1h   ¡      211  D3h   ”       
+158  9Eh   û      176  B0h   ∞      194  C2h   ¬      212  D4h   ‘       
+159  9Fh   ü      177  B1h   ±      195  C3h   √      213  D5h   ’       
+160  A0h   †      178  B2h   ≤      196  C4h   ƒ      214  D6h   ÷       
+161  A1h   °      179  B3h   ≥      197  C5h   ≈      215  D7h   ◊       
+
+
+Dec  Hex  Char    Dec  Hex  Char    Dec  Hex  Char    Dec  Hex  Char
+---  ---  ----    ---  ---  ----    ---  ---  ----    ---  ---  ----
+216  D8h   ÿ      234  EAh   Í      252  FCh   ¸       
+217  D9h   Ÿ      235  EBh   Î      253  FDh   ˝       
+218  DAh   ⁄      236  ECh   Ï      254  FEh   ˛       
+219  DBh   €      237  EDh   Ì      255  FFh           
+220  DCh   ‹      238  EEh   Ó                         
+221  DDh   ›      239  EFh   Ô                         
+222  DEh   ﬁ      240  F0h                            
+223  DFh   ﬂ      241  F1h   Ò                         
+224  E0h   ‡      242  F2h   Ú                         
+225  E1h   ·      243  F3h   Û                         
+226  E2h   ‚      244  F4h   Ù                         
+227  E3h   „      245  F5h   ı                         
+228  E4h   ‰      246  F6h   ˆ                         
+229  E5h   Â      247  F7h   ˜                         
+230  E6h   Ê      248  F8h   ¯                         
+231  E7h   Á      249  F9h   ˘                         
+232  E8h   Ë      250  FAh   ˙                         
+233  E9h   È      251  FBh   ˚                         

@@ -1,0 +1,17 @@
+column
+count
+current
+fetch
+fetchAll
+fetchObject
+fetchSingle
+fieldName
+hasPrev
+key
+next
+numFields
+numRows
+prev
+rewind
+seek
+valid

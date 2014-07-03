@@ -1,0 +1,186 @@
+# Microsoft Developer Studio Generated NMAKE File, Based on HTMLDlg.dsp
+!IF "$(CFG)" == ""
+CFG=HTMLDlg - Win32 Debug
+!MESSAGE No configuration specified. Defaulting to HTMLDlg - Win32 Debug.
+!ENDIF 
+
+!IF "$(CFG)" != "HTMLDlg - Win32 Release" && "$(CFG)" != "HTMLDlg - Win32 Debug"
+!MESSAGE Invalid configuration "$(CFG)" specified.
+!MESSAGE You can specify a configuration when running NMAKE
+!MESSAGE by defining the macro CFG on the command line. For example:
+!MESSAGE 
+!MESSAGE NMAKE /f "HTMLDlg.mak" CFG="HTMLDlg - Win32 Debug"
+!MESSAGE 
+!MESSAGE Possible choices for configuration are:
+!MESSAGE 
+!MESSAGE "HTMLDlg - Win32 Release" (based on "Win32 (x86) Application")
+!MESSAGE "HTMLDlg - Win32 Debug" (based on "Win32 (x86) Application")
+!MESSAGE 
+!ERROR An invalid configuration is specified.
+!ENDIF 
+
+!IF "$(OS)" == "Windows_NT"
+NULL=
+!ELSE 
+NULL=nul
+!ENDIF 
+
+CPP=cl.exe
+MTL=midl.exe
+RSC=rc.exe
+
+!IF  "$(CFG)" == "HTMLDlg - Win32 Release"
+
+OUTDIR=.\Release
+INTDIR=.\Release
+# Begin Custom Macros
+OutDir=.\Release
+# End Custom Macros
+
+ALL : "$(OUTDIR)\HTMLDlg.exe"
+
+
+CLEAN :
+	-@erase "$(INTDIR)\HTMLDlg.obj"
+	-@erase "$(INTDIR)\HTMLDlg.res"
+	-@erase "$(INTDIR)\vc60.idb"
+	-@erase "$(OUTDIR)\HTMLDlg.exe"
+
+"$(OUTDIR)" :
+    if not exist "$(OUTDIR)/$(NULL)" mkdir "$(OUTDIR)"
+
+CPP_PROJ=/nologo /ML /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /Fp"$(INTDIR)\HTMLDlg.pch" /YX /Fo"$(INTDIR)\\" /Fd"$(INTDIR)\\" /FD /c 
+MTL_PROJ=/nologo /D "NDEBUG" /mktyplib203 /o "NUL" /win32 
+RSC_PROJ=/l 0x409 /fo"$(INTDIR)\HTMLDlg.res" /d "NDEBUG" 
+BSC32=bscmake.exe
+BSC32_FLAGS=/nologo /o"$(OUTDIR)\HTMLDlg.bsc" 
+BSC32_SBRS= \
+	
+LINK32=link.exe
+LINK32_FLAGS=kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib urlmon.lib /nologo /subsystem:windows /incremental:no /pdb:"$(OUTDIR)\HTMLDlg.pdb" /machine:I386 /out:"$(OUTDIR)\HTMLDlg.exe" 
+LINK32_OBJS= \
+	"$(INTDIR)\HTMLDlg.obj" \
+	"$(INTDIR)\HTMLDlg.res"
+
+"$(OUTDIR)\HTMLDlg.exe" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+    $(LINK32) @<<
+  $(LINK32_FLAGS) $(LINK32_OBJS)
+<<
+
+!ELSEIF  "$(CFG)" == "HTMLDlg - Win32 Debug"
+
+OUTDIR=.\Debug
+INTDIR=.\Debug
+# Begin Custom Macros
+OutDir=.\Debug
+# End Custom Macros
+
+ALL : "$(OUTDIR)\HTMLDlg.exe" "$(OUTDIR)\HTMLDlg.bsc"
+
+
+CLEAN :
+	-@erase "$(INTDIR)\HTMLDlg.obj"
+	-@erase "$(INTDIR)\HTMLDlg.res"
+	-@erase "$(INTDIR)\HTMLDlg.sbr"
+	-@erase "$(INTDIR)\vc60.idb"
+	-@erase "$(INTDIR)\vc60.pdb"
+	-@erase "$(OUTDIR)\HTMLDlg.bsc"
+	-@erase "$(OUTDIR)\HTMLDlg.exe"
+	-@erase "$(OUTDIR)\HTMLDlg.ilk"
+	-@erase "$(OUTDIR)\HTMLDlg.pdb"
+
+"$(OUTDIR)" :
+    if not exist "$(OUTDIR)/$(NULL)" mkdir "$(OUTDIR)"
+
+CPP_PROJ=/nologo /MLd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /FR"$(INTDIR)\\" /Fp"$(INTDIR)\HTMLDlg.pch" /YX /Fo"$(INTDIR)\\" /Fd"$(INTDIR)\\" /FD /c 
+MTL_PROJ=/nologo /D "_DEBUG" /mktyplib203 /o "NUL" /win32 
+RSC_PROJ=/l 0x409 /fo"$(INTDIR)\HTMLDlg.res" /d "_DEBUG" 
+BSC32=bscmake.exe
+BSC32_FLAGS=/nologo /o"$(OUTDIR)\HTMLDlg.bsc" 
+BSC32_SBRS= \
+	"$(INTDIR)\HTMLDlg.sbr"
+
+"$(OUTDIR)\HTMLDlg.bsc" : "$(OUTDIR)" $(BSC32_SBRS)
+    $(BSC32) @<<
+  $(BSC32_FLAGS) $(BSC32_SBRS)
+<<
+
+LINK32=link.exe
+LINK32_FLAGS=kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib urlmon.lib /nologo /subsystem:windows /incremental:yes /pdb:"$(OUTDIR)\HTMLDlg.pdb" /debug /machine:I386 /out:"$(OUTDIR)\HTMLDlg.exe" /pdbtype:sept 
+LINK32_OBJS= \
+	"$(INTDIR)\HTMLDlg.obj" \
+	"$(INTDIR)\HTMLDlg.res"
+
+"$(OUTDIR)\HTMLDlg.exe" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+    $(LINK32) @<<
+  $(LINK32_FLAGS) $(LINK32_OBJS)
+<<
+
+!ENDIF 
+
+.c{$(INTDIR)}.obj::
+   $(CPP) @<<
+   $(CPP_PROJ) $< 
+<<
+
+.cpp{$(INTDIR)}.obj::
+   $(CPP) @<<
+   $(CPP_PROJ) $< 
+<<
+
+.cxx{$(INTDIR)}.obj::
+   $(CPP) @<<
+   $(CPP_PROJ) $< 
+<<
+
+.c{$(INTDIR)}.sbr::
+   $(CPP) @<<
+   $(CPP_PROJ) $< 
+<<
+
+.cpp{$(INTDIR)}.sbr::
+   $(CPP) @<<
+   $(CPP_PROJ) $< 
+<<
+
+.cxx{$(INTDIR)}.sbr::
+   $(CPP) @<<
+   $(CPP_PROJ) $< 
+<<
+
+
+!IF "$(NO_EXTERNAL_DEPS)" != "1"
+!IF EXISTS("HTMLDlg.dep")
+!INCLUDE "HTMLDlg.dep"
+!ELSE 
+!MESSAGE Warning: cannot find "HTMLDlg.dep"
+!ENDIF 
+!ENDIF 
+
+
+!IF "$(CFG)" == "HTMLDlg - Win32 Release" || "$(CFG)" == "HTMLDlg - Win32 Debug"
+SOURCE=.\HTMLDlg.cpp
+
+!IF  "$(CFG)" == "HTMLDlg - Win32 Release"
+
+
+"$(INTDIR)\HTMLDlg.obj" : $(SOURCE) "$(INTDIR)"
+
+
+!ELSEIF  "$(CFG)" == "HTMLDlg - Win32 Debug"
+
+
+"$(INTDIR)\HTMLDlg.obj"	"$(INTDIR)\HTMLDlg.sbr" : $(SOURCE) "$(INTDIR)"
+
+
+!ENDIF 
+
+SOURCE=.\HTMLDlg.rc
+
+"$(INTDIR)\HTMLDlg.res" : $(SOURCE) "$(INTDIR)"
+	$(RSC) $(RSC_PROJ) $(SOURCE)
+
+
+
+!ENDIF 
+

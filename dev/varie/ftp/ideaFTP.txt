@@ -1,0 +1,67 @@
+Idea per funzione su FTP/SciTE
+
+Personalmente sono solito lavorare su una copia locale del mio sito web. Ogni modifica viene quindi effettuata sul mio pc e, quando terminata, viene riportata sul mio sito web ufficiale.
+
+Normalmente quindi, i file vengono aggiornati e testati localmente e, una volta che questi risultino affidabili, copiati via FTP sul sito web.
+
+In questo momento SciTE non è in grado di editare o spedire file su un server FTP!
+
+Da queste considerazione nasce l'idea delle funzioni di gestione FTP.
+
+In cosa consiste l'idea?
+
+In 2 funzioni :
+
+- La prima consente a un file locale di essere copiato all'interno di una determinata cartella su un server FTP;
+- La secondo permette di scaricare, da un server FTP, un determinato file per poi editarlo.
+
+Per l'implementazione di queste funzionalità, normalmente si integra un client ftp all'interno dell'editor di testo. Io però non ho alcuna intenzione di effettuare un'operazione del genere, in quanto particolarmente complessa e dispendiosa.
+
+Quindi, come poter implementare queste funzioni senza lo sviluppo di un client ftp integrato?
+
+Prima ancora di parlare di client ftp, voglio soffermarmi sui dati necessari per effettuare le operazioni descritte.
+
+Iniziamo con la prima funzione, cioè il caricamento di un file locale su un server ftp.
+
+Per effettuare la copia occorrono:
+
+- i dati per l'accesso all'ftp;
+- la cartella nella quale il file sarà inserito sul server ftp;
+- il percorso del file locale da copiare.
+
+Per quanto riguarda l'ultimo dato il problema non esiste, in quanto è il file che stiamo editando. Il problema è dato dai primi due dati. Da dove ricavarli?
+
+Ecco l'idea.
+
+Immaginiamo di avere il file "test.html" ed immaginiamo sia in questo percorso :
+
+  c:\sviluppo\sito_web\dir_a\dir_b\test.html
+  
+Solitamente la struttura delle cartelle locali rispecchia quella presente sul server FTP, quindi potremo avere, su tale server :
+
+  /html_public/dir_a/dir_b/test.html
+  
+Come si può notare il contenuto della cartella "c:\sito_web\" è lo specchio di "/html_public/".
+
+Bene.
+
+A questo punto a RSciTE servirà, in locale, un posto nel quale leggere i dati per l'accesso all'ftp, in particolar modo alla cartella principale "/html_public/".
+
+Immaginiamo di creare un file di configurazione/progetto per i dati necessari, e supponiamo che venga posizionato nella cartella principale del nostro sito "c:\sito_web\", infine chiamiamo il file ci configurazione/progetto "RSciTEFTP.prj" (che risiederà quindi in "c:\sito_web\RSciTEFTP.prj").
+
+Quando si ordinerà a RSciTE di caricare sul server FTP il file "test.html", il programma risalità la gerarchia di cartelle fino a trovare il file RSciTEFTP.prj, trovato il quale lo utilizzerà per ricavare i dati di accesso.
+
+Nel nostro caso, RSciTE risalità la gerarchia data dal percorso "c:\sviluppo\sito_web\dir_a\dir_b\" fino ad incontrare un file di progetto ftp.
+
+Allo stesso modo, quando si chiederà ad RSciTE di scaricare la copia online di un file presente in locale, i dati verranno sempre raccolti con il medesimo sistema. In questo caso, ovviamente, si potrà aggiornare un file esistente ma non scaricarne uno nuovo, non presente localmente.
+
+Da valutare l'ipotesi di includere un client FTP indipendente (come WINSCP) in RSciTE.
+
+Per caricare e scaricare i file è da valutare l'ipotesi di utilizzare il comando standard FTP presente in windows.
+
+In alternativa è possibile usare winscp in modalità script. 
+
+La password per l'accesso ftp potrà essere salvata nel file di configurazione, oppure richiesta all'utente durante la prima connessione, quindi conservata fino alla chiusura di scite. Per questo sarà necessario eliminare l'utilizzo dei file temporanei dalla funzione InputBox!
+
+Nella prima versione sarebbe accettabile la memorizzazione in chiaro.
+

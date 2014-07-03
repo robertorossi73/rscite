@@ -1,0 +1,8 @@
+__construct
+copy
+get_approximate_char_width
+get_approximate_digit_width
+get_ascent
+get_descent
+ref
+unref

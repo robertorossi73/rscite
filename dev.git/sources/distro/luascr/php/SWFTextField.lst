@@ -1,0 +1,15 @@
+__construct
+addChars
+addString
+align
+setBounds
+setColor
+setFont
+setHeight
+setIndentation
+setLeftMargin
+setLineSpacing
+setMargins
+setName
+setPadding
+setRightMargin

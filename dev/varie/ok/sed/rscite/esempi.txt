@@ -1,0 +1,34 @@
+-------------------------- Esempi di utilizzo di SED --------------------------
+
+* Sostituisce la parola "prima" con la parola "dopo", all'interno del file
+  "test.txt". Ritorna l'output sulla console.
+
+  sed "s/prima/dopo/" test.txt
+
+* Sostituisce la parola "prima" (senza tener conto di maiuscole e minuscole),
+  con la parola "dopo", all'interno del file "test.txt". 
+  Ritorna l'output sulla console.
+
+  sed "s/PrIma/dopo/i" test.txt
+  
+* Sostituisce la frase "prima 1" con la frase "dopo 2", all'interno del file
+  "test.txt". Ritorna l'output sulla console.
+
+  sed "s/prima 1/dopo 2/" test.txt
+
+* Inserisce la parola "dopo", alla fine di tutte le lineea,presenti nel file
+  "test.txt". Ritorna l'output sulla console.
+
+  sed "s/$/dopo/" test.txt
+  
+* Sostituisce la parola "prima" con la parola "dopo", all'interno del file
+  "test.txt", direttamente all'interno del file specificato
+
+  sed -i "s/prima/dopo/" test.txt
+
+* Sostituisce la parola "prima" con la parola "dopo", all'interno del file
+  "test.txt", direttamente all'interno del file specificato, creando però
+  il file "test.txt.bak" con la versione originale del testo.
+
+  sed -i.bak "s/prima/dopo/" test.txt
+

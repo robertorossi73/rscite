@@ -1,0 +1,11 @@
+REGEDIT4
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Opera Software]
+"Plugin Path"="C:\\Programmi\\Opera\\Program\\Plugins"
+"Create Desktop icon"="1"
+"Create Quicklaunch icon"="1"
+"C:\\Programmi\\Opera\\"="is_admin"
+"Create Startmenu icons"="1"
+"Last Directory3"="C:\\Programmi\\Opera\\"
+"Last CommandLine"=""
+

@@ -1,0 +1,14 @@
+__construct
+__toString
+export
+getDeclaringClass
+getDocComment
+getModifiers
+getName
+getValue
+isDefault
+isPrivate
+isProtected
+isPublic
+isStatic
+setValue

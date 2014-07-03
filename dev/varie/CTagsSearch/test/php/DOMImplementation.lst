@@ -1,0 +1,4 @@
+createDocument
+createDocumentType
+getFeature
+hasFeature

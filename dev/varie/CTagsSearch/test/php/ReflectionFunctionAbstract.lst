@@ -1,0 +1,16 @@
+__toString
+getDocComment
+getEndLine
+getExtension
+getExtensionName
+getFileName
+getName
+getNumberOfParameters
+getNumberOfRequiredParameters
+getParameters
+getStartLine
+getStaticVariables
+isDeprecated
+isInternal
+isUserDefined
+returnsReference

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+  <assemblyIdentity type="win32" name="bin" version="1.0.0.0" processorArchitecture="x86"></assemblyIdentity>
+
+  <file name="QtCore4.dll"/>
+  <file name="QtGui4.dll"/>
+  <file name="libgcc_s_dw2-1.dll"/>
+  <file name="mingwm10.dll"/>
+</assembly>

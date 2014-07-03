@@ -1,0 +1,8 @@
+__construct
+__toString
+getCode
+getFile
+getLine
+getMessage
+getTrace
+getTraceAsString

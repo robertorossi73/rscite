@@ -1,0 +1,14 @@
+__construct
+accept
+current
+getFlags
+getInnerIterator
+getMode
+getPregFlags
+key
+next
+rewind
+setFlags
+setMode
+setPregFlags
+valid

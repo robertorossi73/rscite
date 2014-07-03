@@ -1,0 +1,6 @@
+__construct
+copy
+get_display
+new_for_display
+new_from_pixbuf
+new_from_pixmap

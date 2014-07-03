@@ -1,0 +1,186 @@
+License for RSciTE Distribuition
+
+Roberto Rossi
+http://www.redchar.net
+
+ROBERTO ROSSI DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE, INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO EVENT SHALL ROBERTO ROSSI BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+ROBERTO ROSSI FORNISCE IL SOFTWARE ALL'UTILIZZATORE FINALE "COSI COME E", SENZA GARANZIE DI ALCUN TIPO. L'AUTORE NON GARANTISCE LE PRESTAZIONI E I RISULTATI CHE L'UTILIZZATORE FINALE POTREBBE OTTENERE UTILIZZANDO IL SOFTWARE. L'AUTORE DEL SOFTWARE NON DA GARANZIE ESPRESSE O IMPLICITE RIGUARDANTI LA NON VIOLAZIONE DEI DIRITTI SPETTANTI A TERZI, NÉ GARANZIE Dl COMMERCIABILITÀ O Dl QUALITÀ O IDONEITÀ PER PARTICOLARI SCOPI. IN NESSUN CASO L'AUTORE SARA CONSIDERATO RESPONSABILE NEI SUOI CONFRONTI PER QUALSIASI DANNO DIRETTO O INDIRETTO, INCLUSA QUALSIASI PERDITA Dl PROFITTI O Dl RISPARMI  O PER QUALSIASI RECLAMO AVANZATO DA TERZI. 
+
+**************************************************************
+License for Scintilla and SciTE
+
+Copyright 1998-2003 by Neil Hodgson <neilh@scintilla.org>
+
+All Rights Reserved 
+
+Permission to use, copy, modify, and distribute this software and its documentation for any purpose and without fee is hereby granted, provided that the above copyright notice appear in all copies and that both that copyright notice and this permission notice appear in supporting documentation. 
+
+NEIL HODGSON DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE, INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO EVENT SHALL NEIL HODGSON BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+**************************************************************
+License for MathParseKit library
+http://www.bernaschina.com/it/progetti/mathparsekit/
+----------------------------------------
+
+This program is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+**************************************************************
+License for WinMerge
+-------------------------------
+
+This program is free. It's licensed under GNU General Public License (http://www.gnu.org/copyleft/gpl.html). The newest version and source code is available on official homepage (http://winmerge.sourceforge.net).
+
+**************************************************************
+License for KDiff
+-------------------------------
+KDiff3 :               Copyright (C) 2002-2009 Joachim Eibl
+                       License: GNU-General Public License
+                       License: tools\kdiff\COPYING.txt
+
+Diff-Ext-For-KDiff3 :  Copyright (c) 2003-2006, Sergey Zorin
+                       Extensions for KDiff3 by Joachim Eibl           
+                       License: tools\kdiff\COPYING.txt
+
+**************************************************************
+License for Frhed
+-------------------------------
+
+This program is free. It's licensed under GNU General Public License (http://www.gnu.org/copyleft/gpl.html). The newest version and source code is available on my homepage (http://frhed.sourceforge.net/).
+
+
+**************************************************************
+HTML Tidy
+
+HTML parser and pretty printer
+
+Copyright (c) 1998-2003 World Wide Web Consortium (Massachusetts Institute of Technology, European Research Consortium for Informatics and Mathematics, Keio University). All Rights Reserved.
+
+This software and documentation is provided "as is," and the copyright holders and contributing author(s) make no representations or warranties, express or implied, including but not limited to, warranties of merchantability or fitness for any particular purpose or that the use of the software or documentation will not infringe any third party patents, copyrights, trademarks or other rights. 
+
+The copyright holders and contributing author(s) will not be held liable for any direct, indirect, special or consequential damages
+arising out of any use of the software or documentation, even if advised of the possibility of such damage.
+
+Permission is hereby granted to use, copy, modify, and distribute this source code, or portions hereof, documentation and executables, for any purpose, without fee, subject to the following restrictions:
+
+1. The origin of this source code must not be misrepresented.
+2. Altered versions must be plainly marked as such and must not be misrepresented as being the original source.
+3. This Copyright notice may not be removed or altered from any source or altered source distribution.
+ 
+The copyright holders and contributing author(s) specifically permit, without fee, and encourage the use of this source code as a component for supporting the Hypertext Markup Language in commercial products. If you use this source code in a product, acknowledgment is not required but would be appreciated.
+
+
+**************************************************************
+Copyright (c) 2000-2008 Andre Burgaud (http://www.burgaud.com)
+
+Permission is hereby granted, free of  charge, to any person obtaining a  copy of  this software and associated documentation files (the "Software"), to deal in  the Software  without restriction, including without limitation the rights to use, copy,  modify,  merge, publish, distribute,  sublicense,  and/or  sell copies of  the  Software, and  to permit  persons  to  whom  the  Software  is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE  SOFTWARE  IS  PROVIDED "AS IS", WITHOUT WARRANTY OF  ANY KIND, EXPRESS OR IMPLIED,  INCLUDING  BUT NOT  LIMITED  TO  THE WARRANTIES  OF MERCHANTABILITY, FITNESS FOR  A PARTICULAR PURPOSE  AND NONINFRINGEMENT. IN NO EVENT SHALL  THE AUTHORS  OR COPYRIGHT  HOLDERS  BE  LIABLE FOR  ANY CLAIM,  DAMAGES  OR  OTHER LIABILITY, WHETHER IN AN ACTION OF  CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE  SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+**************************************************************
+YUI Compressor - The Yahoo! JavaScript and CSS Compressor
+http://developer.yahoo.com/yui/compressor/
+
+AUTHOR
+  The YUI Compressor was written and is maintained by:
+      Julien Lecomte <jlecomte@yahoo-inc.com>
+  The CSS portion is a port of Isaac Schlueter's cssmin utility.
+
+COPYRIGHT
+  Copyright (c) 2007-2009, Yahoo! Inc. All rights reserved.
+
+LICENSE
+  All code specific to YUI Compressor is issued under a BSD license. YUI Compressor extends and implements code from Mozilla's Rhino project. Rhino is issued under the Mozilla Public License (MPL), and MPL applies to the Rhino source and binaries that are distributed with YUI Compressor.
+
+**************************************************************
+Spell Checking Oriented Word Lists (English.dct)
+Revision 6
+August 10, 2004
+by Kevin Atkinson
+
+Copyright 2000-2004 by Kevin Atkinson
+
+Permission to use, copy, modify, distribute and sell these word lists, the associated scripts, the output created from the scripts, and its documentation for any purpose is hereby granted without fee, provided that the above copyright notice appears in all copies and that both that copyright notice and this permission notice appear in supporting documentation. Kevin Atkinson makes no representations about the suitability of this array for any purpose. It is provided "as is" without express or implied warranty.
+  
+The additional information ad the latest version can be found at http://wordlist.sourceforge.net/
+
+**************************************************************
+DIZIONARIO ITALIANO (Italiano.dct)
+
+A cura di Luigi M. Bianchi
+Toronto, Canada
+Prima Edizione (Riveduta)
+Maggio 1994
+
+COPYLEFT
+
+La lingua italiana non e' di mia esclusiva proprieta'.
+
+Intendo quindi che questo dizionario venga considerato di pubblico dominio e che non sia gravato da copyright.
+
+Chiedo pure a chiunque lo ridistribuisca, di farlo gratuitamente, senza esigere alcuno pagamento.
+
+Qualsiasi uso commerciale e' esplicitamente e strettamente vietato.
+
+Per maggiori informazioni consultare il file "italiano.txt" presente nella sottocartella "luascr\dct\".
+**************************************************************
+dnGREP
+https://code.google.com/p/dngrep/
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+**************************************************************
+ICONV
+
+The iconv program converts text from one encoding to another encoding. More precisely, it converts from the encoding given for the -f option to the encoding given for the -t option. Either of these encodings defaults to the encoding of the current locale. All the inputfiles are read and converted in turn; if no inputfile is given, the standard input is used. The converted text is printed to standard output.
+
+LICENSE:
+ICONV is released under the GNU General Public License
+**************************************************************
+qrencode - QR Code encoder
+
+Copyright (C) 2006, 2007, 2008, 2009 Kentaro Fukuchi <fukuchi@megaui.net>
+
+This library is free software; you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation; either version 2.1 of the License, or any later version.
+
+This library is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License along with this library; if not, write to the Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
+**************************************************************
+decHexBin.lua
+
+Copyright (c) 2007 Tim Kelly/Dialectronics
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"),  to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+**************************************************************
+md5sum.exe Disclaimer
+
+THIS SOFTWARE IS PROVIDED AS IS AND ANY EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+**************************************************************
+Cloc.exe
+
+cloc is licensed under the GNU General Public License (http://www.gnu.org/licenses/gpl-2.0.html), v2 , excluding portions which are copied from other sources. Code copied from the Regexp::Common, Win32::Autoglob, and Algorithm::Diff Perl modules is subject to the Artistic License(http://www.opensource.org/licenses/artistic-license-2.0.php). 
+**************************************************************

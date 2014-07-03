@@ -1,0 +1,16 @@
+__construct
+addFill
+drawArc
+drawCircle
+drawCubic
+drawCubicTo
+drawCurve
+drawCurveTo
+drawGlyph
+drawLine
+drawLineTo
+movePen
+movePenTo
+setLeftFill
+setLine
+setRightFill

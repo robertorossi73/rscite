@@ -1,0 +1,10 @@
+__construct
+addAction
+addShape
+addSound
+setAction
+setDown
+setHit
+setMenu
+setOver
+setUp

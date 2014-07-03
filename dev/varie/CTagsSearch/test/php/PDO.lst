@@ -1,0 +1,16 @@
+__construct
+__sleep
+__wakeup
+beginTransaction
+commit
+errorCode
+errorInfo
+exec
+getAttribute
+getAvailableDrivers
+lastInsertId
+prepare
+query
+quote
+rollBack
+setAttribute

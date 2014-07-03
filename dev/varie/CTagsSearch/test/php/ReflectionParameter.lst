@@ -1,0 +1,14 @@
+__construct
+__toString
+allowsNull
+export
+getClass
+getDeclaringClass
+getDeclaringFunction
+getDefaultValue
+getName
+getPosition
+isArray
+isDefaultValueAvailable
+isOptional
+isPassedByReference

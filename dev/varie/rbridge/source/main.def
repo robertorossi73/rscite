@@ -1,0 +1,4 @@
+LIBRARY	rluabridge
+EXPORTS
+DllMain
+c_test

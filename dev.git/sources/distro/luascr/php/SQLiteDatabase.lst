@@ -1,0 +1,13 @@
+__construct
+arrayQuery
+busyTimeout
+changes
+createAggregate
+createFunction
+fetchColumnTypes
+lastError
+lastInsertRowid
+query
+queryExec
+singleQuery
+unbufferedQuery

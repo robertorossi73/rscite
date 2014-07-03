@@ -1,0 +1,11 @@
+attach
+contains
+count
+current
+detach
+key
+next
+rewind
+serialize
+unserialize
+valid

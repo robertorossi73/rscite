@@ -1,0 +1,1364 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" dir="ltr" lang="en"><head>
+
+	
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="keywords" content="Getting started,Widget Configuration 2.0,WidSets">
+<link rel="shortcut icon" href="http://dev.widsets.com/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="http://dev.widsets.com/mediawiki/opensearch_desc.php" title="WidSets Developer Site (English)"><title>Getting started - WidSets Developer Site</title>
+		
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/mediawiki/skins/monobook/main.css?42b"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print" href="Getting_started_files/commonPrint.css">
+		<link rel="stylesheet" type="text/css" media="handheld" href="Getting_started_files/handheld.css"><!--[if lt IE 5.5000]><style type="text/css">@import "/mediawiki/skins/monobook/IE50Fixes.css?42b";</style><![endif]--><!--[if IE 5.5000]><style type="text/css">@import "/mediawiki/skins/monobook/IE55Fixes.css?42b";</style><![endif]--><!--[if IE 6]><style type="text/css">@import "/mediawiki/skins/monobook/IE60Fixes.css?42b";</style><![endif]--><!--[if IE 7]><style type="text/css">@import "/mediawiki/skins/monobook/IE70Fixes.css?42b";</style><![endif]--><!--[if lt IE 7]><script type="text/javascript" src="/mediawiki/skins/common/IEFixes.js?42b"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		
+		
+		
+		
+		
+		<script type="text/javascript">/*<![CDATA[*/
+var skin = "monobook";
+var stylepath = "/mediawiki/skins";
+var wgArticlePath = "/wiki/$1";
+var wgScriptPath = "/mediawiki";
+var wgServer = "http://dev.widsets.com";
+var wgCanonicalNamespace = "";
+var wgCanonicalSpecialPageName = false;
+var wgNamespaceNumber = 0;
+var wgPageName = "Getting_started";
+var wgTitle = "Getting started";
+var wgArticleId = "56";
+var wgIsArticle = true;
+var wgUserName = null;
+var wgUserLanguage = "en";
+var wgContentLanguage = "en";
+var wgBreakFrames = false;
+var wgCurRevisionId = "338";
+/*]]>*/</script>
+                
+		<script type="text/javascript" src="Getting_started_files/wikibits.js"><!-- wikibits js --></script>
+		<script type="text/javascript" src="Getting_started_files/index.php"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/mediawiki/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+@import "/mediawiki/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+@import "/mediawiki/index.php?title=-&action=raw&gen=css&maxage=18000";
+/*]]>*/</style><!-- Head Scripts --></head><body class="mediawiki ns-0 ltr page-Getting_started">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+				<h1 class="firstHeading">Getting started</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From WidSets Developer Site</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>			<!-- start content -->
+			<p>Getting Started with WidSets Widget Development
+</p>
+<table id="toc" class="toc" summary="Contents"><tbody><tr><td><div id="toctitle"><h2>Contents</h2> <span class="toctoggle">[<a href="javascript:toggleToc()" class="internal" id="togglelink">hide</a>]</span></div>
+<ul>
+<li class="toclevel-1"><a href="#OVERVIEW"><span class="tocnumber">1</span> <span class="toctext">OVERVIEW</span></a></li>
+<li class="toclevel-1"><a href="#INTRODUCTION_TO_WIDGET_FOR_WIDSETS"><span class="tocnumber">2</span> <span class="toctext">INTRODUCTION TO WIDGET FOR WIDSETS</span></a></li>
+<li class="toclevel-1"><a href="#WIDGET_PROGRAMMING_TECHNOLOGY"><span class="tocnumber">3</span> <span class="toctext">WIDGET PROGRAMMING TECHNOLOGY</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Prerequisite_knowledges"><span class="tocnumber">3.1</span> <span class="toctext">Prerequisite knowledges</span></a></li>
+<li class="toclevel-2"><a href="#Widget_component_files"><span class="tocnumber">3.2</span> <span class="toctext">Widget component files</span></a></li>
+<li class="toclevel-2"><a href="#Introduction_to_Helium_scripting_language"><span class="tocnumber">3.3</span> <span class="toctext">Introduction to Helium scripting language</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#WIDGET_DEVELOPMENT_ENVIRONMENT_AND_TOOLS"><span class="tocnumber">4</span> <span class="toctext">WIDGET DEVELOPMENT ENVIRONMENT AND TOOLS</span></a>
+<ul>
+<li class="toclevel-2"><a href="#WidSets_Developer_Kit"><span class="tocnumber">4.1</span> <span class="toctext">WidSets Developer Kit</span></a></li>
+<li class="toclevel-2"><a href="#Syntax_highlighting"><span class="tocnumber">4.2</span> <span class="toctext">Syntax highlighting</span></a>
+<ul>
+<li class="toclevel-3"><a href="#EditPlus_Configuration"><span class="tocnumber">4.2.1</span> <span class="toctext">EditPlus Configuration</span></a></li>
+<li class="toclevel-3"><a href="#UltraEdit_Configuration"><span class="tocnumber">4.2.2</span> <span class="toctext">UltraEdit Configuration</span></a></li>
+<li class="toclevel-3"><a href="#Emacs_Configuration"><span class="tocnumber">4.2.3</span> <span class="toctext">Emacs Configuration</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#STEP_BY_STEP_TO_DEVELOP_YOUR_FIRST_WIDGET"><span class="tocnumber">5</span> <span class="toctext">STEP BY STEP TO DEVELOP YOUR FIRST WIDGET</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Create_a_widget_project"><span class="tocnumber">5.1</span> <span class="toctext">Create a widget project</span></a></li>
+<li class="toclevel-2"><a href="#Create_the_widget.xml"><span class="tocnumber">5.2</span> <span class="toctext">Create the widget.xml</span></a>
+<ul>
+<li class="toclevel-3"><a href="#The_widget_element"><span class="tocnumber">5.2.1</span> <span class="toctext">The widget element</span></a></li>
+<li class="toclevel-3"><a href="#The_info_element"><span class="tocnumber">5.2.2</span> <span class="toctext">The info element</span></a></li>
+<li class="toclevel-3"><a href="#The_parameters_element"><span class="tocnumber">5.2.3</span> <span class="toctext">The parameters element</span></a></li>
+<li class="toclevel-3"><a href="#The_resources_element"><span class="tocnumber">5.2.4</span> <span class="toctext">The resources element</span></a></li>
+<li class="toclevel-3"><a href="#The_layout_element"><span class="tocnumber">5.2.5</span> <span class="toctext">The layout element</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#Create_and_implement_a_Helium_language_script_file"><span class="tocnumber">5.3</span> <span class="toctext">Create and implement a Helium language script file</span></a></li>
+<li class="toclevel-2"><a href="#Create_the_widget_graphic_resources"><span class="tocnumber">5.4</span> <span class="toctext">Create the widget graphic resources</span></a></li>
+<li class="toclevel-2"><a href="#Packing_the_widget_files_for_uploading_to_WidSets_server"><span class="tocnumber">5.5</span> <span class="toctext">Packing the widget files for uploading to WidSets server</span></a></li>
+<li class="toclevel-2"><a href="#Loading_the_widget_to_a_target_device"><span class="tocnumber">5.6</span> <span class="toctext">Loading the widget to a target device</span></a></li>
+<li class="toclevel-2"><a href="#Publishing_the_widget"><span class="tocnumber">5.7</span> <span class="toctext">Publishing the widget</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#ADDING_SOME_ADVANCED_FUNCTIONS_TO_THE_WIDGET"><span class="tocnumber">6</span> <span class="toctext">ADDING SOME ADVANCED FUNCTIONS TO THE WIDGET</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Handling_menu_options"><span class="tocnumber">6.1</span> <span class="toctext">Handling menu options</span></a></li>
+<li class="toclevel-2"><a href="#Using_a_timer"><span class="tocnumber">6.2</span> <span class="toctext">Using a timer</span></a></li>
+<li class="toclevel-2"><a href="#Creating_new_view_dynamically"><span class="tocnumber">6.3</span> <span class="toctext">Creating new view dynamically</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#More_information"><span class="tocnumber">7</span> <span class="toctext">More information</span></a></li>
+</ul>
+</td></tr></tbody></table><script type="text/javascript"> if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } </script>
+<a name="OVERVIEW"></a><h2><span class="editsection">[<a href="http://dev.widsets.com/mediawiki/index.php?title=Getting_started&amp;action=edit&amp;section=1" title="Edit section: OVERVIEW">edit</a>]</span> <span class="mw-headline"> OVERVIEW </span></h2>
+<p>This getting started document provides developers with essential
+information about how to start developing widgets for WidSets. The
+document also discusses instructions of how to setup the development
+environment for using the WidSets development kit. The Step by step
+section will take you through all steps in creating a simple but
+interesting widget for WidSets. The complete code of the example widget
+is provided in a separate .zip file.
+</p><p>It is our intention to keep things as simple as possible and
+that is why detailed explanations in certain areas are beyond the scope
+of the document. We recommend you to read also reference materials
+where they are referred to through out the document.
+</p>
+<a name="INTRODUCTION_TO_WIDGET_FOR_WIDSETS"></a><h2><span class="editsection">[<a href="http://dev.widsets.com/mediawiki/index.php?title=Getting_started&amp;action=edit&amp;section=2" title="Edit section: INTRODUCTION TO WIDGET FOR WIDSETS">edit</a>]</span> <span class="mw-headline"> INTRODUCTION TO WIDGET FOR WIDSETS </span></h2>
+<p>Widgets for WidSets are mobile applications, which run on the
+so-called “WidSets Virtual Machine” resided on a mobile device. The
+WidSets virtual machine is an installable client application for any
+mobile device, which supports Java MIDP 2.0. Widgets can be standalone
+applications (e.g. a calculator, a game etc.) or server-based client
+applications (e.g. RSS feeds, Flickr image viewers, etc.) depending on
+how they are implemented.
+</p><p><b>Terminology explanation within this document context:</b>
+</p>
+<ul><li> <b>WidSets</b>: a service system that consists of a client
+side application (WidSets client) and a server (WidSets server)
+providing services to widgets.
+</li><li> <b>Widget</b>: an application that runs on WidSets.
+</li><li> <b>WidSets client</b>: the WidSets application that hosts widgets when they are installed and run in a mobile device.
+</li><li> <b>WidSets server</b>: a server, where widgets are to be
+uploaded and compiled before they are downloaded into a mobile device.
+Also widget server side services are done on WidSets server. Server
+side services must be defined in your widget.xml file before using.
+Current services are httpservice for fetching http content from the
+internet to widget, picviewer service for scaling images and
+syndication/webfeed service for accessing RSS and Atom feeds.
+</li><li> <b>WidSets manager</b>: a web application, that provides
+WidSets users with utilities functions such as synchronizing widgets,
+managing user’s account information, monitoring traffics etc.
+</li><li> <b>WidSets library</b>: a server-side library where published widgets reside.
+</li><li> <b>Helium</b>: a scripting language used in widgets’ functions composing.
+</li></ul>
+<a name="WIDGET_PROGRAMMING_TECHNOLOGY"></a><h2><span class="editsection">[<a href="http://dev.widsets.com/mediawiki/index.php?title=Getting_started&amp;action=edit&amp;section=3" title="Edit section: WIDGET PROGRAMMING TECHNOLOGY">edit</a>]</span> <span class="mw-headline"> WIDGET PROGRAMMING TECHNOLOGY </span></h2>
+<a name="Prerequisite_knowledges"></a><h3><span class="editsection">[<a href="http://dev.widsets.com/mediawiki/index.php?title=Getting_started&amp;action=edit&amp;section=4" title="Edit section: Prerequisite knowledges">edit</a>]</span> <span class="mw-headline"> Prerequisite knowledges </span></h3>
+<p>WidSets employs the powerful XML mark-up language and utilizes the
+CSS-like (Cascading Style Sheets) syntax with basic data types in its
+widget application architecture. Understanding XML and CSS standards
+will be an asset for the widget development curve. It would be a smooth
+start if you were familiar with Java MIDP, thanks to the similarity
+between Java MIDP and the Helium API (to be discussed in more detailed
+later). If you would intent to learn about syndication widgets, you
+will need to have also generic knowledge about RSS or Atom technology.
+</p><p>The mentioned technologies above are essential but their
+explanations are unfortunately out of the scope of this document. If
+you are not familiar with them, it is recommended you to acquire the
+prerequired knowledges before reading this article further.
+</p>
+<a name="Widget_component_files"></a><h3><span class="editsection">[<a href="http://dev.widsets.com/mediawiki/index.php?title=Getting_started&amp;action=edit&amp;section=5" title="Edit section: Widget component files">edit</a>]</span> <span class="mw-headline"> Widget component files </span></h3>
+<p>A typical widget project comprises of several component files as listed below:
+</p>
+<ol><li> A <b>widget.xml</b> file: this xml file contains widget’s
+specific details, such as the meta data of the widget, services used by
+the widget, the stylesheet of the widget, resources and layout of the
+widgets’ views.
+</li><li> A <b>[script].he</b> file: this file contains the Helium scripts for extending widget’s functionalities.
+</li><li> Three resource files for WidSets Website:
+<ul><li> <b>web_icon.png</b> – This image is the icon used in the
+widget library or in the widget shelf of the WidSets manager. The pixel
+size of this image has to be exactly 60*40px. This image is also
+visible in a mobile device under the system widget’s library (see
+Figures 1 and 2 for illustration). <div class="center"><div class="thumb tnone"><div class="thumbinner" style="width: 334px;"><a href="http://dev.widsets.com/wiki/Image:Memory_game_mobile.png" class="internal" title="Figure 1: MemoryGame widget’s web minimized image, web_icon.png inside the blue circle."><img src="Getting_started_files/Memory_game_mobile.png" alt="Figure 1: MemoryGame widget’s web minimized image, web_icon.png inside the blue circle." longdesc="/wiki/Image:Memory_game_mobile.png" class="thumbimage" height="319" width="332"></a>  <div class="thumbcaption">Figure 1: MemoryGame widget’s web minimized image, web_icon.png inside the blue circle.</div></div></div></div>
+</li><li> <b>web_minimized.png</b> – This image is used for displaying
+the widget in the WidSets manager. It presents the minimized view of
+the widget on the Website. The width of the image must be exactly 110
+pixels and the height is flexible but should not exceed the maximum
+height of the widget (see Figure 2 for illustration).<br><div class="center"><div class="thumb tnone"><div class="thumbinner" style="width: 558px;"><a href="http://dev.widsets.com/wiki/Image:Memory_game_web.png" class="internal" title="Figure 2: Memory game widget in Manager view (inside red oval) and web icon (in side blue circle) displayed in the WidSets manager"><img src="Getting_started_files/Memory_game_web.png" alt="Figure 2: Memory game widget in Manager view (inside red oval) and web icon (in side blue circle) displayed in the WidSets manager" longdesc="/wiki/Image:Memory_game_web.png" class="thumbimage" height="400" width="556"></a>  <div class="thumbcaption">Figure
+2: Memory game widget in Manager view (inside red oval) and web icon
+(in side blue circle) displayed in the WidSets manager</div></div></div></div>
+</li><li> <b>web_maximized.png</b> – This image is the preview image
+for the widget in the widget library on the WidSets Web Site. It is
+used as an image to illustrate how the widget will look like in the
+open view. The pixel size of this image has to be exactly 176*208px
+(see Figure 3 for illustration).<br> <div class="center"><div class="thumb tnone"><div class="thumbinner" style="width: 261px;"><a href="http://dev.widsets.com/wiki/Image:Memory_game_mobile_maximized.png" class="internal" title="Figure 3: MemoryGame widget’s web maximized image displayed in the WidSets library"><img src="Getting_started_files/Memory_game_mobile_maximized.png" alt="Figure 3: MemoryGame widget’s web maximized image displayed in the WidSets library" longdesc="/wiki/Image:Memory_game_mobile_maximized.png" class="thumbimage" height="287" width="259"></a>  <div class="thumbcaption">Figure 3: MemoryGame widget’s web maximized image displayed in the WidSets library</div></div></div></div>
+</li></ul>
+</li></ol>
+<a name="Introduction_to_Helium_scripting_language"></a><h3><span class="editsection">[<a href="http://dev.widsets.com/mediawiki/index.php?title=Getting_started&amp;action=edit&amp;section=6" title="Edit section: Introduction to Helium scripting language">edit</a>]</span> <span class="mw-headline"> Introduction to Helium scripting language </span></h3>
+<p>This section only gives an introduction to the basic syntax of the
+Helium scripting language as well as an introduction to some widget’s
+key interfaces. For detailed decriptions of widget interfaces, please
+refer to the WidSets APIs reference document.
+</p><p>Helium is a language to be used in writing widgets for WidSets. The basic syntax of Helium language is listed below:
+</p>
+<ul><li> Comments
+</li></ul>
+<pre>/* block/line comments */
+// line comments 
+</pre>
+<ul><li> Literals
+</li></ul>
+<pre>;             // line ends
+”lorem ipsum” /* string */
+’\n’          /* character, produces int */
+123456        /* integer */
+0777777       /* octal */
+0xcafebabe    /* hexa */
+0b101010101   /* binary */
+</pre> 
+<ul><li> Statements
+</li></ul>
+<pre>if  else  while  do  for  switch  case  default
+return  break  continue  foreach
+</pre>
+<ul><li> Operators
+</li></ul>
+<pre>+   -   *   /   %   &amp;   |   ^   &lt;   &gt;  &nbsp;!   ~
+&lt;&lt;  &gt;&gt;  +=  -=  *=  /=  %=  &amp;=  |=  ^=  &lt;&lt;=  &gt;&gt;=
+&lt;=  &gt;=  == &nbsp;!=  &amp;&amp;  ||  ++  --
+instanceof  new&nbsp;?:
+</pre>
+<ul><li> Primitives
+</li></ul>
+<pre>boolean /* true/false */
+int     /* signed 32 bit */
+long    /* signed 64 bit */
+</pre>
+<ul><li> Keywords
+</li></ul>
+<pre>class const false null return struct true void
+</pre>
+<p>If you were familiar with software development, the above syntax
+should be trivial and understandable for you. If not, I recommend you
+to search from the Web site for the explanations of Java programming
+language syntax, which is very close to the syntax of Helium. </p><p><b>Widget’s key functions can be devided into several categories based on their functionality.</b>
+</p>
+<dl><dt> a) Interfaces concerned the widget’s lifecycle.
+</dt></dl>
+<pre>void startWidget();
+void stopWidget();
+</pre>
+<p>When a user starts to run WidSets, WidSets client will call the
+startWidget() function of all installed widgets on a mobile device. In
+most cases, you should implement this function to create the widget’s
+minimized view to be displayed on the WidSets dashboard. The
+stopWidget() function is called when a widget is reloaded or removed
+from the dashboard or when WidSets client is terminated. You should
+implement this function to release system resources (if any) before it
+is terminated.
+</p>
+<pre>Shell openWidget();
+void closeWidget();
+</pre>
+<p>When user selects a widget from dashboard, it is opened to maximized
+mode and openWidget() function is called. You need to implement this
+function if your widget has a maximized mode (most widgets do). Here
+you typically create Shell using views defined in widget.xml.
+closeWidget() in the other hand is called when a widget exits from
+maximized mode by popping (popShell() or slideOut()) the last
+widget-created shell or when widget is stopped for any reason. Here you
+might usually want to cancel yours timers or atleast set them to tick
+less often.
+</p>
+<dl><dt> b) Interfaces associated with the widget’s menu control
+</dt></dl>
+<pre>MenuItem getSoftKey(Shell shell, Component focused, int key);
+Menu getMenu(Shell shell, Component focused);
+</pre>
+<p>When a user clicks on a softkey of a mobile device (normally a
+softkey is associated to the widget’s menu), WidSets will call the
+getSoftkey()to inform the widget which one of the two softkeys was just
+clicked. You must implement this function to detect the softkey and
+tell WidSets what to do with the event. The getMenu() function is
+called when a softkey is designed to associate with an open menu (more
+explanation will be discussed in section 5.3).
+</p>
+<dl><dd><dl><dd><dl><dd> <b>Note:</b> Through out this document, when
+using the term “mobile device”, we implicitly refer to Nokia mobile
+devices, which support two softkeys (left and right) associated to an
+application’s menu.
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<dl><dt> c) Interfaces responded to widget’s user actions
+</dt></dl>
+<pre>void actionPerformed(Shell shell, Component source, int action);
+boolean keyAction(Component source, int op, int code);
+</pre>
+<p>The actionPerformed() function is called as a result of the
+key-pressed action on a softkey and the keyAction() function is called
+when the user clicks on an alpha-numeric key (including the navigation
+key). You can implement these functions to detect user’s actions and
+process them accordingly. Remember that actionPerformed()and
+keyAction()are system callback functions and you must never call any
+callback functions directly.
+</p>
+<dl><dt> d) Interface of widget’s view elements construction
+</dt></dl>
+<pre>Flow createView(String name, Object context)
+Component createElement(String viewId, String elementId, 
+                        Style style, Object context);
+</pre>
+<p>The createView() function is used for creating a view for the
+widget. A view can be a minimized view or a maximized view depending on
+the widget’s running status. Widget’s UI components can be constructed
+within the createElement() function. This is a callback function and it
+gets called as a result of every time the createView() function is
+called. </p>
+<dl><dt> e) Callback function on timer events
+</dt></dl>
+<pre>  void timerEvent(Timer timer);
+</pre>
+<p>You can set up timers that notify your widget after specified time
+passed by, or continuously. Timers are created using schedule(…)
+functions. These timers will then call timerEvent(Timer timer) function
+of your script, or separate TimerCallback function if you defined one.
+To release timer resource, you need to call the cancel() function of
+the Timer objects you have created. This should be performed as soon as
+you don’t need the timer anymore or when a widget is terminated via the
+stopWidget() function.
+</p>
+<dl><dt> f) Callback functions on server communication events
+</dt></dl>
+<pre> void onSuccess(Object state, Value returnValue);
+ void onFailure(Object state, String errorMessage);
+</pre>
+<p><br>Server-side services can be invoked by using the call(Object
+state, String service, Value argument) function. Responses from a
+server (as the result of the call() function) are dispatched via
+onSuccess() or onFailure() callback function indicating the server call
+was successful or failed respectively. In case of multiple server-side
+service calls, the state parameter in these callback functions can be
+used to identify which call the response belongs to.
+</p><p>As mentioned earlier, if you were familiar with Java
+programming language or even with any other programming languages,
+working with Helium language would not be a difficult task at all.
+Consider how to implement a simple function, which calculates and
+return the sum of two numbers in Helium language:
+</p>
+<pre>int calculateSum(int number1, int number2) {
+  return (number1 + number2);
+}
+</pre>
+<p><b>Helium language does have its own rules and below are several fundamental rules:</b>
+</p>
+<dl><dt> 1. All script functions and variables MUST be implemented within the ONLY class of a widget</dt><dd>
+</dd></dl>
+<pre>class 
+{
+  int globalVar = 100;
+
+  void firstFunction()
+  {
+    int localVar = 0;
+  }
+}
+</pre>
+<p>However, there can be inner functions which can make many things easy to do while managing to keep code elegant:
+</p>
+<pre>Flow createAddressView(String name, String addr, String city)
+{
+  Flow flow = new Flow(getStyle(“address.view”));
+  
+  add(“Name”, name);
+  add(“Address”, addr);
+  add(“City”, city);
+
+  void add(String name, String value)
+  {
+    String text = format(“%s: %s”, name, value);
+    Label label = new Label(“address.field”), text);
+    label.setPreferredWidth(-100);
+    label.setFlags(VISIBLE|LINEFEED);
+    flow.add(label);
+  }
+
+  return flow;
+}
+</pre>
+<p>Inner functions can access variables defined in enclosing function
+and also invoke other inner functions. This makes them partically
+useful. Unlike in Java you don’t have to mark variables as final in
+order to access them from inner functions.
+</p>
+<dl><dt> 2. All variables must be initialized and they exist within the scope where they are declared</dt><dd>
+</dd></dl>
+<pre>void firstFunction()
+{
+  int j; /* error, missing assigment */
+  {
+    int c = 0;
+  }
+  {
+    int d = c; /* error, ’c’ is not visible here */
+  }
+}
+</pre>
+<dl><dt> 3. Explicit type-casting</dt><dd>
+</dd></dl>
+<pre>boolean flag = false;
+Text displayText;
+
+void someFunction()
+{
+  int zeroOrOne = int(flag); /* casting boolean to int type */
+  ...
+  String str = String(zeroOrOne); /* casting int to string type */
+  displayText.setText(str);
+}
+</pre>
+<a name="WIDGET_DEVELOPMENT_ENVIRONMENT_AND_TOOLS"></a><h2><span class="editsection">[<a href="http://dev.widsets.com/mediawiki/index.php?title=Getting_started&amp;action=edit&amp;section=7" title="Edit section: WIDGET DEVELOPMENT ENVIRONMENT AND TOOLS">edit</a>]</span> <span class="mw-headline"> WIDGET DEVELOPMENT ENVIRONMENT AND TOOLS </span></h2>
+<p>Widgets can be developed by using any XML editor or even just with a
+text-editing program. However, using an XML editing program will be
+much convenient as it may offer numbers of utility functionalities such
+as row number, syntax highlight etc.
+</p><p>Currently there is no dedicated text-editing program supporting
+Helium language syntax in the market. Though, numbers of text-editing
+softwares do support the add-on feature to enable users defining new
+syntax for new language. For your convinience, we provide the syntax
+files for the UltraEdit and the EditPlus text-editing programs. Those
+syntax files are included in the WidSets SDK package mentioned later in
+this section.
+</p>
+<a name="WidSets_Developer_Kit"></a><h3><span class="editsection">[<a href="http://dev.widsets.com/mediawiki/index.php?title=Getting_started&amp;action=edit&amp;section=8" title="Edit section: WidSets Developer Kit">edit</a>]</span> <span class="mw-headline"> WidSets Developer Kit </span></h3>
+<p>The WidSets developer kit (DevKit) is available for download from
+the dev.widsets.com Web site. The DevKit is a light automated set of
+tools to help you produce feature-rich widgets. In the current version
+(0.99.1), the DevKit comprises of several basic tools such as the
+built-in Helium script compiler, an emulator, and WidSets API
+references in HTML format as well as numbers of sample widgets (please
+refer to the release note file (SDK Directory/docs/CHANGES) in the
+DevKit to find out exact supported features of a current DevKit). In
+addition to the WidSets Website tool, the DevKit also provides
+alternertive way to upload your widgets to the WidSets server for
+testing or for the preparation of deployment your widget (in this
+context, deployment is referred to as publishing a widget in the widget
+library and that feature is not supported by the DevKit. See section
+5.8 “publishing widget” for instructions of how to publish a widget).
+</p>
+<dl><dd><dl><dd> <b>Note:</b> WidSets.com website doesn’t allow 3rd
+party developers to upload or publish their own widgets. Developer MUST
+use dev.widsets.com website to test their widgets. Developer site is a
+mirror copy version of the actual WidSets.com Website, and is meant to
+act as developer play ground where new widgets can be developed and
+tested. When a widget has been proven to work and be safe to use by the
+community, it can be uploaded to WidSets.com for end users to use.
+</dd></dl>
+</dd></dl>
+<p>DevKit is configured to connect to dev.widsets.com as default.
+</p><p>The DevKit package is compressed in a .zip file. Unzip the
+package into your local drive and run the DevKit by simply open a
+command prompt (Windows) or opening new shell (Unix), type in devkit
+and press enter, this will produce a list of all available options and
+commands with short description onscreen.
+</p><p><b>DevKit uses following syntax:</b>
+</p>
+<pre>devkit &lt;options&gt; command &lt;arguments&gt;
+</pre>
+<p>If you are behind proxy, or VPN tunnel, you need to set options
+described in following step before the command (and it’s arguments) you
+are about to execute.
+</p><p><b>Let’s go through a few steps to setup the DevKit in your environment and login to the WidSets server with your WidSets account.</b>
+</p>
+<dl><dd><dl><dt> 1. Your current network connection goes through a proxy (HTTP)? 
+</dt><dl><dd>If “Yes”, set the proxy parameter:
+</dd><dd><pre>devkit --proxy yourproxyaddress:port &lt;COMMAND&gt;</pre>
+</dd><dd>If you have defined a proxy before and want to remove it (it’s off by default):
+</dd><dd><pre>devkit –-noproxy &lt;COMMAND&gt;</pre>
+</dd></dl>
+</dl>
+</dd></dl>
+<dl><dd><dl><dt> 2. Your current network connection goes though a VPN tunnel?
+</dt><dl><dd><pre>devkit –-tunnel &lt;COMMAND&gt;</pre>
+</dd></dl>
+</dl>
+</dd></dl>
+<dl><dd><dl><dt> 3. You are now ready to login
+</dt><dl><dd><pre>devkit login yourusername yourpassword</pre>
+</dd></dl>
+</dl>
+</dd></dl>
+<dl><dd><dl><dd>In order to login to dev.widsets.com you need to create an account on <a href="http://dev.widsets.com/" class="external free" title="http://dev.widsets.com/" rel="nofollow">http://dev.widsets.com/</a>
+website. Note that normal WidSets.com accounts won’t work here -
+developer site is completely separate system because of security
+reasons.
+</dd></dl>
+</dd></dl>
+<dl><dd><dl><dd><dl><dd> <b>Note 1:</b> It’s adviced that you make a
+login.bat file with the @echo option set “off” to avoid retyping this
+everytime you login and to hide your password from the one who stands
+behide you&nbsp;:).
+</dd><dd> <b>Note 2:</b> Usually when devkit prints out “Connection to
+[URL] could not be established in timely manner.” it means that you are
+behind a firewall and need to configure a http proxy.
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<dl><dd><dl><dt> 4. Ready to see the emulator?
+</dt><dl><dd><pre>devkit run</pre>
+</dd></dl>
+</dl>
+</dd></dl>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width: 258px;"><a href="http://dev.widsets.com/wiki/Image:Emulator_basic_skin.png" class="internal" title="Figure 4: WidSets emulator in Basic skin"><img src="Getting_started_files/Emulator_basic_skin.png" alt="Figure 4: WidSets emulator in Basic skin" longdesc="/wiki/Image:Emulator_basic_skin.png" class="thumbimage" height="474" width="256"></a>  <div class="thumbcaption">Figure 4: WidSets emulator in Basic skin</div></div></div></div>
+<a name="Syntax_highlighting"></a><h3><span class="editsection">[<a href="http://dev.widsets.com/mediawiki/index.php?title=Getting_started&amp;action=edit&amp;section=9" title="Edit section: Syntax highlighting">edit</a>]</span> <span class="mw-headline"> Syntax highlighting </span></h3>
+<a name="EditPlus_Configuration"></a><h4><span class="editsection">[<a href="http://dev.widsets.com/mediawiki/index.php?title=Getting_started&amp;action=edit&amp;section=10" title="Edit section: EditPlus Configuration">edit</a>]</span> <span class="mw-headline"> EditPlus Configuration </span></h4>
+<p>Follow the steps below to configure the EditPlus software to support Helium language syntax:
+</p>
+<ol><li> Copy the helium_highlight_editplus.stx and
+helium_highlight_editplus.acp files from the WidSets SDK docs folder to
+the main folder of EditPlus program (e.g \Program Files\EditPlus 2\)
+</li><li> Run EditPlus and from the program’s Tools menu, choose “Preferences”
+<dl><dt><div class="center"><div class="thumb tnone"><div class="thumbinner" style="width: 244px;"><a href="http://dev.widsets.com/wiki/Image:Editplus_preferences.png" class="internal" title="Figure 5: Open the preferences dialog"><img src="Getting_started_files/Editplus_preferences.png" alt="Figure 5: Open the preferences dialog" longdesc="/wiki/Image:Editplus_preferences.png" class="thumbimage" height="137" width="242"></a>  <div class="thumbcaption">Figure 5: Open the preferences dialog</div></div></div></div>
+</dt></dl>
+</li><li> Select Files -&gt; Settings &amp; syntax from the “Categories” list in the Preferences dialog
+</li><li> Click on the Add button and fill in the form as illustrated in the picture below:
+<dl><dt><div class="center"><div class="thumb tnone"><div class="thumbinner" style="width: 374px;"><a href="http://dev.widsets.com/wiki/Image:Editplus_preferences_2.png" class="internal" title="Figure 6: Configure EditPlus to support Helium syntax highlight"><img src="Getting_started_files/Editplus_preferences_2.png" alt="Figure 6: Configure EditPlus to support Helium syntax highlight" longdesc="/wiki/Image:Editplus_preferences_2.png" class="thumbimage" height="296" width="372"></a>  <div class="thumbcaption">Figure 6: Configure EditPlus to support Helium syntax highlight</div></div></div></div>
+</dt></dl>
+</li><li> You can also change the syntax colors and set other setting parameters as you wish
+</li><li> Click the Apply button and return to the editing space.
+Congratulation! EditPlus is ready now for you to work nicely with
+Helium script source files.
+</li></ol>
+<a name="UltraEdit_Configuration"></a><h4><span class="editsection">[<a href="http://dev.widsets.com/mediawiki/index.php?title=Getting_started&amp;action=edit&amp;section=11" title="Edit section: UltraEdit Configuration">edit</a>]</span> <span class="mw-headline"> UltraEdit Configuration </span></h4>
+<p>Follow the steps below to configure the UltraEdit  to support Helium language syntax:
+</p>
+<ol><li> Open Advanced -&gt; Configuration -&gt; Syntax Hightlighting dialog
+</li><li> Click Open-button to start editing syntax highlight configuration file
+<dl><dt><div class="center"><div class="thumb tnone"><div class="thumbinner" style="width: 271px;"><a href="http://dev.widsets.com/wiki/Image:Ultraedit_syntax_file.png" class="internal" title="Figure 7: Open the Syntax file"><img src="Getting_started_files/Ultraedit_syntax_file.png" alt="Figure 7: Open the Syntax file" longdesc="/wiki/Image:Ultraedit_syntax_file.png" class="thumbimage" height="286" width="269"></a>  <div class="thumbcaption">Figure 7: Open the Syntax file</div></div></div></div>
+</dt></dl>
+</li><li> Click OK on Configuration dialog to close it.
+</li><li> Open helium_highlight_ultraedit.txt from the WidSets SDK directory under /docs directory.
+</li><li> If you are not entirely sure what you are doing, you might
+want to make a copy of your existing wordfile.txt. Normally it is
+located in C:\Program Files\IDM Computer Solutions\UltraEdit-32.
+</li><li> Scroll to the end of the file and search backwards for “/L”,
+that is the starting mark of syntax highlight definition. Last one in
+my UltraEdit 11.00a+ was “/L10"VBScript…”
+</li><li> If the sequence number in your UltraEdit differs from number
+10, you need to change the helium_highlight_ultraedit.txt file so that
+it will be the next number. If there are definitions with same numbers
+or there are “empty numbers” between, syntax highlighting wont work.
+</li><li> When sequence numbers are OK, just copy all (Control-A) from
+helium_highlight_ultraedit.txt and paste (Control-V) it at the end of
+your wordfile.txt. Save the file (Control-S) and you are done. Now when
+you edit Helium (.he prefixed) files, you should see them syntax
+highlighted.
+</li></ol>
+<dl><dd><dl><dd><dl><dd> <b>Note:</b> In future version of WidSets and
+the DevKit, we might add more API classes/functions or Helium syntax
+and you might need to do this again so that your highlighting will work
+100%.
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<a name="Emacs_Configuration"></a><h4><span class="editsection">[<a href="http://dev.widsets.com/mediawiki/index.php?title=Getting_started&amp;action=edit&amp;section=12" title="Edit section: Emacs Configuration">edit</a>]</span> <span class="mw-headline"> Emacs Configuration </span></h4>
+<p>The java-mode of emacs provides rudimentary syntax highlighting for Helium language.
+</p><p>Add the following line to your emacs configuration file (usually .emacs) to use java-mode for Helium script files:
+</p>
+<dl><dd>(setq auto-mode-alist (cons '("\\.he$" . java-mode) auto-mode-alist))
+</dd></dl>
+<a name="STEP_BY_STEP_TO_DEVELOP_YOUR_FIRST_WIDGET"></a><h2><span class="editsection">[<a href="http://dev.widsets.com/mediawiki/index.php?title=Getting_started&amp;action=edit&amp;section=13" title="Edit section: STEP BY STEP TO DEVELOP YOUR FIRST WIDGET">edit</a>]</span> <span class="mw-headline"> STEP BY STEP TO DEVELOP YOUR FIRST WIDGET </span></h2>
+<p>This section explains in details all steps to develop a WidSets’
+widget. To make it more interesting but simple enough, we will not
+create a Hello World widget, but a Flag Selector widget.
+</p>
+<a name="Create_a_widget_project"></a><h3><span class="editsection">[<a href="http://dev.widsets.com/mediawiki/index.php?title=Getting_started&amp;action=edit&amp;section=14" title="Edit section: Create a widget project">edit</a>]</span> <span class="mw-headline"> Create a widget project </span></h3>
+<p>There is no project file required for a widget development. Each
+widget should simply have its component files stored in a folder.
+PNG images for your widget can be found under SDK
+examples/flagselector.
+</p><p><b>Here is our Flag Selector widget folder structure and component files:</b>
+</p>
+<pre>\flagselector\
+  widget.xml
+  flagselector.he
+  web_icon.png
+  web_minimized.png
+  web_miximized.png
+  background.png
+  finland.png
+  eu.png
+  un.png
+</pre>
+<dl><dd><b>Tips:</b> The name of the folder does not necessarily be the same as the name of the widget or its Helium script source files’ name.
+</dd></dl>
+<a name="Create_the_widget.xml"></a><h3><span class="editsection">[<a href="http://dev.widsets.com/mediawiki/index.php?title=Getting_started&amp;action=edit&amp;section=15" title="Edit section: Create the widget.xml">edit</a>]</span> <span class="mw-headline"> Create the widget.xml </span></h3>
+<p>The widget.xml file contains different types of information of a
+widget, in order to keep it simple we will split the file contents into
+numbers of subareas and only essential areas are discussed in this
+document. (For more details about the widget.xml contents please refer
+to dev.widsets.com/wiki).
+</p><p>First, lets get familiar with the format of a widget.xml file
+then we will go through each element block (saying element block, it is
+referred to the block of information within the mentioned element‘s
+start-tag and the end-tag according to the “well-formed” rule of XML)
+in the following subsections.
+</p>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width: 545px;"><a href="http://dev.widsets.com/wiki/Image:Widget_xml_file_format.png" class="internal" title="Figure 8: Widget.xml file format"><img src="Getting_started_files/Widget_xml_file_format.png" alt="Figure 8: Widget.xml file format" longdesc="/wiki/Image:Widget_xml_file_format.png" class="thumbimage" height="229" width="543"></a>  <div class="thumbcaption">Figure 8: Widget.xml file format</div></div></div></div>
+<a name="The_widget_element"></a><h4><span class="editsection">[<a href="http://dev.widsets.com/mediawiki/index.php?title=Getting_started&amp;action=edit&amp;section=16" title="Edit section: The widget element">edit</a>]</span> <span class="mw-headline"> The widget element </span></h4>
+<p>The widget element is the root element of the widget.xml content.
+Every widget’s information must be placed within this root element. The
+widget element has one attribute and it must be specified to declare
+the WidSets’s specification version. Currently WidSets supports the
+specification version 2.0. Widget configuration a backwards compatible
+system and changes that break compatibility will be announced in the
+WidSets developer forum. </p><p>More profound information about the widget specification can be found here <a href="http://dev.widsets.com/wiki/Widget_Configuration_2.0" title="Widget Configuration 2.0">Widget Configuration 2.0</a>.
+</p><p>Also the widget.xml file MUST be encoded with UTF-8 encoding.
+Thus, our Flag Selector widget would have the following XML code lines
+in its widget.xml file:
+</p>
+<pre>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;widget spec_version="2.0"&gt;
+  ...
+&lt;/widget&gt;
+</pre>
+<a name="The_info_element"></a><h4><span class="editsection">[<a href="http://dev.widsets.com/mediawiki/index.php?title=Getting_started&amp;action=edit&amp;section=17" title="Edit section: The info element">edit</a>]</span> <span class="mw-headline"> The info element </span></h4>
+<p>It could be a good practice to start with the widget’s Meta data
+such as the name of the widget, its version, the author’s name and a
+short description about the widget. The info element block is where
+these properties are defined for your widget. The info element has
+numbers of mandatory and optional subelements. In this document, we
+will only discuss those mandatory fields.
+</p><p>Subelement name Min length Max length Description
+Name 1 32 Name of the widget. This name is not used for showing in the
+name tag of the widget in the WidSets server
+version major_ver.minor_ver Version of the widget. This version number
+is shown in “published widgets” list of the WidSets manager.
+author 3 32 Name of the author. This doesn’t need to be the uploader
+and publisher of the widget.
+shortdesc 3 160 Short description of the widget
+</p><p><b>Here is the info block for our Flag Selector widget:</b>
+</p>
+<pre>&lt;info&gt;
+  &lt;name&gt;Flag Selector&lt;/name&gt;
+  &lt;version&gt;1.0&lt;/version&gt;
+  &lt;author&gt;Developer&lt;/author&gt;
+  &lt;shortdescription&gt;Displaying some flags&lt;/shortdescription&gt;
+&lt;/info&gt;
+</pre>
+<a name="The_parameters_element"></a><h4><span class="editsection">[<a href="http://dev.widsets.com/mediawiki/index.php?title=Getting_started&amp;action=edit&amp;section=18" title="Edit section: The parameters element">edit</a>]</span> <span class="mw-headline"> The parameters element </span></h4>
+<p>Parameters can be used in numerous different use cases. Basically
+parameters are helpful dynamic containers of settings related data.
+Paramter values are always kept on the WidSets server, and for example
+reloading a widget always defaults to these parameters.
+</p><p>In comparison, values that are kept in the client side storage
+are always scrapped when the widget is reloaded. Usable parameters need
+to be defined in the widget.xml and thereafter can be used and changed
+in the code of the widget.
+</p><p>Widget parameters are also tightly integrated into the WidSets
+client UI and parameter values can be changed under each widgets
+settings page (Widget / Settings). Additionally the widget developers
+have control over the editability, visibility and of course name and
+type of parameters while creating their own widgets. Parameters do not
+necessarily have to be sent to the mobile either.
+</p>
+<pre>&lt;parameters&gt;
+  &lt;parameter type="string"
+               name="widgetname"
+               description="Name of widget"
+               help="This is the name of the widget"
+               editable="false"
+               sendtomobile="true"
+               visible="true"&gt;
+    &lt;value&gt;
+      Flag Selector
+    &lt;/value&gt;
+  &lt;/parameter&gt;
+&lt;/parameters&gt;
+</pre>
+<a name="The_resources_element"></a><h4><span class="editsection">[<a href="http://dev.widsets.com/mediawiki/index.php?title=Getting_started&amp;action=edit&amp;section=19" title="Edit section: The resources element">edit</a>]</span> <span class="mw-headline"> The resources element </span></h4>
+<p>A widget may have some graphics and styles to be displayed in its
+user interface components, it may also contain Helium scripts to
+perform some interactivities. The resources element block is where you
+can define all these resources for your widget.
+</p><p><b>To define the graphic resources, use the img element and define its attributes as follows:</b>
+</p>
+<pre>&lt;img scale=”true” src="someimage.png"/&gt;
+</pre>
+<p>The scale attribute is set to “true” or “false” to tell the WidSets
+server whether or not to rescale the image size to be suitable for a
+mobile device’s screen resolution while the widget is downloaded to
+that mobile device.
+</p><p>It is good to know that the CSS structure used in WidSets is
+W3C’s CSS specifications compliant. However, WidSets uses its own
+version of CSS properties and values for defining widget’s UI styles.
+All style definitions are defined within the stylesheet element. The
+style definition syntax is made up of three parts: a style name, a
+property and a value or values (note that some property can have
+multiple values).
+</p><p><b>The following example styles are defined and used through out our Flag Selector widget:</b>
+</p>
+<pre>&lt;stylesheet&gt;
+  bkg {
+    background: vgradient white silver;
+  }
+  
+  frame {
+    background: solid silver;
+  }
+  
+  flag {
+    align: hcenter vcenter;
+    border: 2 2 2 2;
+    border-type: rectangle red;
+  }
+  
+  nametext {
+    align: hcenter vcenter;
+    color-1: green;
+    font-1: medium bold;
+    background: vgradient silver white;
+  }
+  
+  greetingtext {
+    align: hcenter vcenter;
+    color-1: blue;
+    font-1: medium bold;
+    background: vgradient white green;
+  }
+  
+  about {
+      align: hcenter vcenter;
+      color-1: blue;
+      font-1: large bold;
+      background: solid orange;
+  }
+&lt;/stylesheet&gt;
+</pre>
+<p>CSS properties and values are quite self-explanatory terms. For
+instance in the snippet codes above, we have defined the style named
+bkg for the background of the widget. The bkg style has the background
+property assigned with a value of vertical gradient [vgradient] with
+the colour starting from white and gradually changing to silver. For
+more information about styles and their usage, please refer to the
+Online WidSets Wiki documentation.
+If a widget has extension functions, they should be implemented in a
+Helium-language script file with a filename extension .he (e.g.
+flagselector.he), and the source file must be declared in the code
+element as shown below:
+</p>
+<pre>&lt;code src=”flagselector.he”/&gt;
+</pre>
+<ul><li> <b>Note:</b> Each widget can have only one scripting source file!
+</li></ul>
+<a name="The_layout_element"></a><h4><span class="editsection">[<a href="http://dev.widsets.com/mediawiki/index.php?title=Getting_started&amp;action=edit&amp;section=20" title="Edit section: The layout element">edit</a>]</span> <span class="mw-headline"> The layout element </span></h4>
+<p>Each widget is constructed out of views and the layout element
+embraces all views of a widget. It has two possible direct child
+element types as view and/or webview element. The layout element also
+has one mandatory attribute named “minimizedheight”, which is used for
+defining the height of the widget when displayed in the WidSets client
+view (a.k.a the WidSets’s dashboard).
+Each view or webview element has attributes and possible children
+elements as shown below:
+Attributes: class id top right bottom left width height.
+Children: label text decorate img script.
+Let’s have a look at our Flag Selector layout definition:
+</p>
+<pre>&lt;layout minimizedheight="60px"&gt;
+  &lt;view id="miniView"&gt;
+    &lt;img src="minimized.png"/&gt;
+  &lt;/view&gt;
+  &lt;view class="bkg" id="mainView"&gt;
+    &lt;script id="flag" top="10%" right="80%" bottom="60%" left="20%"/&gt;
+    &lt;script id="name" top="65%" right="100%" bottom="80%" left="0%"/&gt;
+    &lt;script id="greeting" top="80%" right="100%" bottom="100%" left="0%"/&gt;
+  &lt;/view&gt;
+&lt;/layout&gt;
+</pre>
+<p>From the codes above, we have defined the minimum height of 60
+pixels for our widget to be displayed on the dashboard. The minimized
+view of the widget is represented by the minimized image, where the
+resource is minimized.png.
+</p><p>Another view of our widget is called the main view, which is
+identified by the id attribute (i.e. id=”mainView”). It is designed to
+have the main view’s background style as defined in the bkg stylesheet
+(i.e. class=”bkg”). The mainView element has three children and in this
+case, all are script elements. You can see that each script element
+also has an id attribute for identification, and other attributes for
+defining its position on the screen. We don’t give these UI components
+a style yet, since we will set its style when constructing them in the
+Helium script file as explained in the next section.
+</p>
+<a name="Create_and_implement_a_Helium_language_script_file"></a><h3><span class="editsection">[<a href="http://dev.widsets.com/mediawiki/index.php?title=Getting_started&amp;action=edit&amp;section=21" title="Edit section: Create and implement a Helium language script file">edit</a>]</span> <span class="mw-headline"> Create and implement a Helium language script file </span></h3>
+<p>It is time to write a few functions for our Flag Selector widget, we
+are now going to create a Helium script file and implement some basic
+WidSets functions.
+</p><p><b>Create a new text file and define the only class of our widget as follows:</b>
+</p>
+<pre>class
+{
+}
+</pre>
+<p>Save this file as flagselector.he. It is ready to define and implement any functions within the class above.
+</p><p><b>Let’s start with the startWidget() function (remember that Widget’s key functions descriptions were explained in section 3.3),</b>
+</p>
+<pre>void startWidget()
+{
+  setMinimizedView(createView("miniView", null));
+}
+</pre>
+<p>Within this function, we call the createView() function and pass two
+parameters as required, the identifier of the view and the context (in
+this example, the context is set null). The createView() function
+returns an object of Flow type, which is an input for the
+setMinimizedView() function. As a result, you will see the minimized
+image of the widget on the dashboard.
+</p><p><b>We now continue with the openWidget() function,</b>
+</p>
+<pre>Shell openWidget()
+{
+  flags = new List()
+    .add(getImage("finland.png"))
+    .add(getImage("eu.png"))
+    .add(getImage("un.png"));
+   
+  mainShell = new Shell(createView("mainView", null));
+  updateScreen();
+  return mainShell;
+}
+</pre>
+<p>First, we have a global variable called ‘flags’ and it is an
+instance of the List object. Creating the list and adding images to
+that list will be much convenient for us to display the image later
+when needed. One important note here is that, this is only a demo
+purpose to display some images as the widget’s graphic resources. It is
+not the technique to implement widget that displaying pictures as
+content downloaded from a server such as Flickr.
+</p><p>We also have a global variable named ‘mainShell’ which is an
+instance of the Shell object, This time we call the createView() and
+passing the “mainView” as a parameter to create the main view of our
+widget. updateScreen() is our own function that we will implement later
+to update the data and display them on the screen. openWidget()
+function then returns the “mainShell” to the system.
+</p><p><b>Calling createView() will trigger the system to call the
+createElement() callback function. Here is the implementation of the
+createElement() function in our widget:</b>
+</p>
+<pre>Component createElement(String viewId,
+                        String elementId, 
+                        Style style,
+                        Object context)
+{
+  if (elementId.equals("flag")) {
+    flag_flow = new Flow(getStyle("frame"));
+    flag_flow.setPreferredSize(-100, -100);
+    return flag_flow;
+
+  } else if (elementId.equals("name")) {
+    name_flow = new Flow(getStyle("nametext"));
+    name_flow.setPreferredSize(-100, -100);
+    nameStr = new Text(getStyle("name"), "");
+    name_flow.add(nameStr);
+    return name_flow;
+  
+  } else if (elementId.equals("greeting")) {
+    greeting_flow = new Flow(getStyle("greetingtext"));
+    greeting_flow.setPreferredSize(-100, -100);
+    greetingStr = new Text(getStyle("greetingtext"), "");
+    greeting_flow.add(greetingStr);
+    return greeting_flow;
+
+  } else {
+    return null;
+  } 
+}
+</pre>
+<p>Since we defined only one view in the layout element block in the
+widget.xml file, (i.e the “mainView”, “miniView” can be ignored because
+it does not have other UI component than the minimized image) we don’t
+need to detect the viewId. Using ”if” and “else if” statements to check
+the element’s id, in this case, the script element’s id, which was
+defined in the widget.xml within the “mainView” element.
+</p><p><b>Take the case that we detect the element’s id, which is equal to “greeting”,</b>
+</p>
+<pre>else if (elementId.equals("greeting"))
+</pre>
+<p>We then construct the greeting UI component as follows:
+</p><p>We have two global variables called “greeting_flow” and
+“greetingStr” as an instance of the Flow object and of the Text object
+respectively. The “greeting_flow” is a container, which will hold the
+“greetingStr” when we call the add() function and passing “greetingStr”
+through the function’s parameter.
+</p>
+<pre>greeting_flow.add(greetingStr);
+</pre>
+<p>The getStyle() function returns a Style object named “greetingtext”,
+the style was defined in the stylesheet in the widget.xml file. When
+creating the container, we give it the style that returned from the
+getStyle() function (that is why we did not need to specify the class
+attribute while defining the “greeting” script element). The style
+“greetingtext” is also set for the “greetingStr” instance.
+</p>
+<pre>greeting_flow = new Flow(getStyle("greetingtext"));
+greetingStr = new Text(getStyle("greetingtext"), "");
+</pre>
+<p>The createElement() function then returns the greeting_flow to the
+system. The createElement() function is called as many times as the
+number of child elements of the view element being created.
+</p><p>Next steps are to create a menu for the widget. We start just
+with a simple menu with a “Back” option associated with the right
+softkey of a mobile device. To do this, we define in the global scope
+the widget’s menu properties as follows:
+</p>
+<pre>const int CMD_BACK = 1;
+MenuItem BACK = new MenuItem(CMD_BACK, "Back");
+</pre>
+<p>Then we implement two functions to handle menu events as follows:
+</p>
+<pre>MenuItem getSoftKey(Shell shell, Component focused, int key)
+{
+  if (key == SOFTKEY_BACK) {
+    return BACK;
+  }
+  return null;
+}
+
+void actionPerformed(Shell shell, Component source, int action)
+{
+  switch(action)
+  {
+    case CMD_BACK:
+      popShell(shell);
+      break;
+  }
+}
+</pre>
+<p>From the codes above, you can see that we have a menu command id
+CMD_BACK and a menu item BACK, which is assigned with the CMD_BACK
+command id and the text string “Back” as its name (this name will
+appear on the right side of the softkey pane of the widget). The
+getSoftKey() function is called every time when a user clicks on one of
+the two softkeys of a mobile device. Since our widget is a simple one
+with only one view, we may ignore the “shell” and “focused” parameters
+passed along in this function. Now we need to detect which one of the
+two softkeys was just clicked. WidSets provides two identifiers as
+SOFTKEY_BACK and SOFTKEY_OK for the right softkey and for the left
+softkey respectively. In our widget, we assign the right softkey with
+the BACK menu item. That is why we return the BACK menu item to the
+system when the “key” equals to SOFTKEY_BACK. At this point, if the
+user clicks on the left softkey, we will return “null” and nothing will
+happen.
+</p><p>After the getSoftkey() function is called, the system will call
+the callback actionPerformed() function so that we can detect which
+command action the user has just selected in order to perform
+appropriate actions. Supposed that the user clicks on the right
+softkey, CMD_BACK is the command action, and what happens next is that
+our widget should return to the minimized mode. To do so, we call
+popShell() function to pop the current view (contained in the “shell”
+parameter) out of the view stack. Since currently the widget has only
+one view on the stack, it returns to the minimized mode. It is good to
+mention here also that when a shell is created in the openWidget()
+function, it is returned to the system and automatically pushed into
+the widget’s view stack. We will discuss more about menu and view stack
+manipulation later when we add more advanced features to the widget.
+</p><p>It is time to have a look at our own functions, which handle the image and texts to display on the screen.
+</p>
+<pre>void updateScreen()
+{
+  if (index == 3) {
+    index = 0;
+  }
+
+  switch (index) {
+    case 0:
+      nameStr.setText(FINNISH_TEXT);
+      greetingStr.setText("Terve Suomi!");
+      break;
+    case 1:
+      nameStr.setText(EU_TEXT);
+      greetingStr.setText("Hello European Union!");
+      break;
+    case 2:
+      nameStr.setText(UN_TEXT);
+      greetingStr.setText("Hello United Nations!");
+      break;
+  }
+  changeFlag(index);
+  index++;
+  flushScreen(true); 
+}
+
+void changeFlag(int index)
+{
+  flag_flow.remove(0);
+  Picture flagImage = new Picture(getStyle("flag"),
+                                  Image(flags[index]));
+  flagImage.setFlags(VISIBLE);
+  flagImage.setPreferredSize(-100, -100);
+  flag_flow.add(flagImage);
+}
+</pre>
+<p>In the updateScreen() function, we just detect the index value and
+set the texts to be displayed accordingly. The index value is increased
+by 1 every time we call this function and it is reset to 0 when it
+rises equally to 3. We also call the changeFlag() function and passing
+the index value via the function parameter.
+</p><p>In the changeFlag() function, we remove the first item in the
+“flag_flow” container (this is actually not necessary for the first
+time this function is called since the container is empty when it is
+constructed in the createElement() function). We declare and create a
+“flagImage” variable as an instance of the Picture object. The
+reference image source is fetched from the “flags” list at the position
+defined by the index value. The image of a flag is loaded by casting
+the image source to an Image object.
+</p>
+<pre>Image(flags[index]);
+</pre>
+<p>We also need to set “flagImage” to be visible and its preferred
+size. Finally, we add the “flagImage” to the “flag_flow” container and
+return to the updateScreen() function, where we call flushScreen()
+function to force the system repainting the widget’s view immediately.
+</p>
+<a name="Create_the_widget_graphic_resources"></a><h3><span class="editsection">[<a href="http://dev.widsets.com/mediawiki/index.php?title=Getting_started&amp;action=edit&amp;section=22" title="Edit section: Create the widget graphic resources">edit</a>]</span> <span class="mw-headline"> Create the widget graphic resources </span></h3>
+<p>The size of each graphic resource was already mentioned in section
+3.2. Besides the resource files for WidSets Website and the minimized
+image, our widget has three other graphic resources, which is the flag
+of Finland, the flag of the European Union and the flag of the United
+Nations.
+</p>
+<a name="Packing_the_widget_files_for_uploading_to_WidSets_server"></a><h3><span class="editsection">[<a href="http://dev.widsets.com/mediawiki/index.php?title=Getting_started&amp;action=edit&amp;section=23" title="Edit section: Packing the widget files for uploading to WidSets server">edit</a>]</span> <span class="mw-headline"> Packing the widget files for uploading to WidSets server </span></h3>
+<p>If you want to deploy a widget to the WidSets server by using the
+upload form in the WidSets Website, the widget project’s files must be
+compressed in a .zip file before it can be uploaded. The .zip file must
+not contain the project’s folder itself. To achieve this, select all
+the project’s files then zip them rather than click on the project
+folder and zip it.
+</p><p>Another (easier) way to upload a widget to the WidSets server
+is to use the devkit tool from the WidSets DevKit. All you need to do
+is to login to the server, then at the prompt, issue the “run” command
+as follows:
+</p>
+<dl><dd><pre>devkit run flagselector</pre>
+</dd></dl>
+<p>Where flagselector is the Flag Selector widget project’s folder.
+</p><p>Devkit will first zip files in your directory, upload them to
+server and then start the emulator. When emulator is started in run
+widgetdirectory mode it will automatically re-upload the widget
+whenever you change the widget.xml file, and remove possible old widget
+with the same widgetName from your dashboard. Also if you change your
+Helium script file while emulator is running, the widget will be
+reloaded with new script.
+</p>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width: 619px;"><a href="http://dev.widsets.com/wiki/Image:Widsets_manager.png" class="internal" title="Figure 9: WidSets manager"><img src="Getting_started_files/Widsets_manager.png" alt="Figure 9: WidSets manager" longdesc="/wiki/Image:Widsets_manager.png" class="thumbimage" height="448" width="617"></a>  <div class="thumbcaption">Figure 9: WidSets manager</div></div></div></div>
+<a name="Loading_the_widget_to_a_target_device"></a><h3><span class="editsection">[<a href="http://dev.widsets.com/mediawiki/index.php?title=Getting_started&amp;action=edit&amp;section=24" title="Edit section: Loading the widget to a target device">edit</a>]</span> <span class="mw-headline"> Loading the widget to a target device </span></h3>
+<p>If you have installed the WidSets client into your mobile device,
+start WidSets client and login to the WidSets server the widget will be
+automatically loaded into the WidSets dashboard. If the WidSets client
+is already started and you uploaded it using web form you need to click
+on the “synchronize” button on the WidSets manager to load it to your
+device.
+</p>
+<dl><dd><dl><dd> <b>Note:</b> If you are using same dev.widsets.com
+user account on both devkit and your mobile device, you need to close
+the emulator or turn it into offline mode before using mobile device,
+and vice versa. Only one device can be connected to the server at same
+time using same user account.
+</dd></dl>
+</dd></dl>
+<a name="Publishing_the_widget"></a><h3><span class="editsection">[<a href="http://dev.widsets.com/mediawiki/index.php?title=Getting_started&amp;action=edit&amp;section=25" title="Edit section: Publishing the widget">edit</a>]</span> <span class="mw-headline"> Publishing the widget </span></h3>
+<p>Uploading your widget to the WidSets server is just to make your
+widget available in your own account. If you wish to publish your
+widget in the WidSets developer library, use the WidSets manager with
+following steps:
+</p>
+<ol><li> Select the widget from the manager board. The Option button below the board will be enabled automatically.
+</li><li> Click on the Option button. This will bring you to the next
+page where you can choose to publish your widget as a new widget or to
+update if it was published before.
+</li><li> Let’s select the “new widget” radio button and click the Ok
+button. This will again bring you to the next page, where you should
+fill on several fields such as description etc. and accept the
+disclaimer before WidSets can actual allow you to publish your widget.
+</li></ol>
+<dl><dd><dl><dd><dl><dd> <b>Note:</b> To get your widget published to
+www.widsets.com library, it must be tested on dev.widsets.com by
+multiple users, then you can ask on developer forums if admins can
+publish it to the end user library.
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<a name="ADDING_SOME_ADVANCED_FUNCTIONS_TO_THE_WIDGET"></a><h2><span class="editsection">[<a href="http://dev.widsets.com/mediawiki/index.php?title=Getting_started&amp;action=edit&amp;section=26" title="Edit section: ADDING SOME ADVANCED FUNCTIONS TO THE WIDGET">edit</a>]</span> <span class="mw-headline"> ADDING SOME ADVANCED FUNCTIONS TO THE WIDGET </span></h2>
+<p>Now we can go on a little bit further to give our widget some advanced functionalities.
+</p>
+<a name="Handling_menu_options"></a><h3><span class="editsection">[<a href="http://dev.widsets.com/mediawiki/index.php?title=Getting_started&amp;action=edit&amp;section=27" title="Edit section: Handling menu options">edit</a>]</span> <span class="mw-headline"> Handling menu options </span></h3>
+<p>First, we add a menu option with several menu items associated with the left softkey.
+</p><p><b>To do so, we define in the global scope some more menu properties as follows:</b>
+</p>
+<pre>const int CMD_MANUAL = 10;
+const int CMD_TIMER = 11;
+const int CMD_ABOUT = 12;
+
+MenuItem OPTIONS = new MenuItem(OPEN_MENU, "Options");
+
+Menu MENU = new Menu()
+  .add(CMD_MANUAL, "Manual")
+  .add(CMD_TIMER, "Timer")
+  .add(CMD_ABOUT, "About");
+</pre>
+<p>Now our widget has three more menu command ids defined and a menu
+item OPTIONS. This OPTIONS is associated with a system defined constant
+OPEN_MENU, which tells the system that this is an open menu. The
+OPTIONS menu item also has a name as “Options”, which is shown on the
+left side of the softkey pane.
+</p><p>We also need to create a menu called MENU and add the three
+command ids as shown in the codes above. Each item in the menu will
+have a command id and a name.
+</p><p><b>Then we modify the two functions implemented in section 5.3 and implement one more system function as follows:</b>
+</p>
+<pre>MenuItem getSoftKey(Shell shell, Component focused, int key)
+{
+  if (key == SOFTKEY_OK) {
+    return OPTIONS;
+  }
+  else if (key == SOFTKEY_BACK) {
+    return BACK;
+  }
+  return null;
+}
+
+void actionPerformed(Shell shell, Component source, int action)
+{
+  switch(action) {
+
+    case CMD_BACK:
+      if (scheduler&nbsp;!= null) {
+        scheduler.cancel();
+      }
+      popShell(shell);
+      break;
+
+    case CMD_TIMER:
+      scheduler = schedule(2000, 2000);
+      break;
+
+    case CMD_MANUAL:
+      if (scheduler&nbsp;!= null) {
+        scheduler.cancel();
+      }
+      updateScreen();
+      break;
+
+    case CMD_ABOUT:
+      MENU.enable(CMD_TIMER, false)    
+          .enable(CMD_MANUAL, false)   
+          .enable(CMD_ABOUT, false);
+          ...
+      break;
+  }
+}
+
+Menu getMenu(Shell shell, Component source)
+{
+   return MENU;
+}
+</pre>
+<p>In the first function, when we detect that the left softkey was
+click (i.e. key equals to SOFTKEY_OK), we return the OPTIONS menu item
+to the system. Since this is an open menu (as explained previously),
+the system will call the getMenu() function to get a menu that the
+widget wants to open. In this case, we return the MENU, which was
+created previously. As a consequence of the action above, the widget
+will have its Options menu opened with three selections named “Manual”,
+“Timer” and “About” as we defined them for the widget’s menu.
+</p><p>Detecting user’s actions within the switch case loop in the
+actionPerformed() function is the same way as we discussed in section
+5.3. Handling user’s actions and enabling/disabling the menu commands
+will be discussed in the next subsections.
+</p>
+<a name="Using_a_timer"></a><h3><span class="editsection">[<a href="http://dev.widsets.com/mediawiki/index.php?title=Getting_started&amp;action=edit&amp;section=28" title="Edit section: Using a timer">edit</a>]</span> <span class="mw-headline"> Using a timer </span></h3>
+<p>Supposed that the user has just clicked the “Options” menu and
+select the “Timer” command. We detect the user’s action and create a
+timer using the schedule() function. Our widget will use this timer to
+change the displayed flag and texts every 2 seconds.
+</p><p><b>To do so, we set the timer and implement the callback function as follows:</b>
+</p>
+<pre>Timer scheduler;
+...
+case CMD_TIMER:
+  scheduler = schedule(2000, 2000);
+  ...
+
+void timerEvent(Timer timer) {
+  updateScreen();
+}
+</pre>
+<p>The schedule() function being used in this example takes 2
+parameters (there are several overloaded schedule() functions), the
+first parameter is the delay time, after which the first time the timer
+will expire. The second parameter is the time interval, after which the
+timer repeatedly strikes. When the timer strikes, the system will call
+the callback timerEvent() function, where we will call updateScreen()
+to change the displayed flag and texts.
+Timer is system “expensive” resource. Therfore, you should carefully
+design your widget to limit the usage of such “expensive” resource
+and/or free the resource as soon as you don’t need it anymore. You will
+see through out the example, the scheduler is cancelled when switching
+to other view or when the widget is in its minimized mode.
+</p>
+<a name="Creating_new_view_dynamically"></a><h3><span class="editsection">[<a href="http://dev.widsets.com/mediawiki/index.php?title=Getting_started&amp;action=edit&amp;section=29" title="Edit section: Creating new view dynamically">edit</a>]</span> <span class="mw-headline"> Creating new view dynamically </span></h3>
+<p>Widget’s view can be created dynamically without the need of
+defining a view element in the widget.xml. We are now going to create
+dynamically the “About” view for the Flag Selector widget.
+</p><p><b>Let’s continue where the user has just clicked the “Options” menu and seleted the “About” command.</b>
+</p>
+<pre>case CMD_ABOUT:
+{
+  MENU.enable(CMD_TIMER, false)
+      .enable(CMD_MANUAL, false)
+      .enable(CMD_ABOUT, false);
+
+  if (scheduler&nbsp;!= null)
+      scheduler.cancel();
+
+  Text about_text = null;
+  Flow about_flow = null;
+  Shell infoShell = null;
+
+  about_flow = new Flow(getStyle("About"));
+  about_flow.setPreferredSize(-100, -100);
+
+  about_text = new Text(getStyle("About"), "Congratulation!");
+  about_text.setFlags(VISIBLE|WRAP);
+  about_text.setPreferredSize(-100, -100);
+  about_flow.add(about_text);   
+
+  infoShell = new Shell(about_flow);
+  pushShell(infoShell);
+  break;
+}
+</pre>
+<p>Since we are about to leave the main view, and in the “About” view
+we don’t need the “Options” menu, so we are going to hide all the menu
+commands of the “Options” menu by calling the enable() function of the
+Menu object and passing the menu command id and the flag set to
+“false”. We do so for the three menu commands as shown in the code
+above.
+</p><p>We won’t need the timer anymore when entering the “About” view.
+That is why we check if the timer is active, we then cancel it to
+release the resource.
+</p><p>Next steps is to create the “About” view and display it. We
+define three local variables as an instance of Text, Flow and Shell
+objects. We also need to initialize them with “null” value (Helium
+strict rule). The construction of the “about_flow” container and the
+“about_text” object is exactly the same way as implemented and
+explained previously in the createElement() function implementation.
+What is new here is the “infoShell” which contains the “about_flow” and
+pushed into the view stack via pushShell() function.
+</p><p>When a new view is pushed into the view stack, the system will automatically update the widget’s view with the new view.
+</p><p><b>When a user clicks the “Back” menu, we will return to the main view simply by calling the popShell() function:</b>
+</p>
+<pre>case CMD_BACK:
+  if (scheduler&nbsp;!= null) {
+     scheduler.cancel();
+  }
+  popShell(shell);
+  break;
+</pre>
+<p>If the “Back” menu is clicked while we are in the main view, there
+is no more view in the view stack, the widget will return to the
+background. That is its minimized mode on the dashboard and waiting for
+user’s action to open it again.
+</p>
+<a name="More_information"></a><h2><span class="editsection">[<a href="http://dev.widsets.com/mediawiki/index.php?title=Getting_started&amp;action=edit&amp;section=30" title="Edit section: More information">edit</a>]</span> <span class="mw-headline"> More information </span></h2>
+<p>For more information about creating widsets, please also check other articles in the <a href="http://dev.widsets.com/wiki/Category:WidSets" title="Category:WidSets">WidSets Wiki</a>.
+</p><p>Check also the <a href="http://dev.widsets.com/forum/" class="external text" title="http://dev.widsets.com/forum/" rel="nofollow">WidSets Developer Forum</a>, where you can discuss with other members of the WidSets developer community.
+</p>
+<!-- Saved in parser cache with key wikidb:pcache:idhash:56-0!1!0!!en!2 and timestamp 20080326083023 -->
+<div class="printfooter">
+Retrieved from "<a href="http://dev.widsets.com/wiki/Getting_started">http://dev.widsets.com/wiki/Getting_started</a>"</div>
+						<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul>
+						 <li id="ca-nstab-main" class="selected"><a title="View the content page [alt-shift-c]" accesskey="c" href="http://dev.widsets.com/wiki/Getting_started">Article</a></li>
+						 <li id="ca-talk" class="new"><a title="Discussion about the content page [alt-shift-t]" accesskey="t" href="http://dev.widsets.com/mediawiki/index.php?title=Talk:Getting_started&amp;action=edit">Discussion</a></li>
+						 <li id="ca-edit"><a title="You can edit this page. Please use the preview button before saving. [alt-shift-e]" accesskey="e" href="http://dev.widsets.com/mediawiki/index.php?title=Getting_started&amp;action=edit">Edit</a></li>
+						 <li id="ca-history"><a title="Past versions of this page. [alt-shift-h]" accesskey="h" href="http://dev.widsets.com/mediawiki/index.php?title=Getting_started&amp;action=history">History</a></li>
+				</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a title="You are encouraged to log in, it is not mandatory however. [alt-shift-o]" accesskey="o" href="http://dev.widsets.com/mediawiki/index.php?title=Special:Userlogin&amp;returnto=Getting_started">Log in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div title="Main Page" class="portlet" id="p-logo">
+		<a style="background-image: url(/mediawiki/widsets/widsets_logo.gif);" href="http://dev.widsets.com/wiki/Main_Page" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class="portlet" id="p-navigation">
+		<h5>Navigation</h5>
+		<div class="pBody">
+			<ul>
+				<li id="n-WidSets"><a href="http://dev.widsets.com/wiki/Category:WidSets">WidSets</a></li>
+				<li id="n-mainpage"><a title="Visit the Main Page [alt-shift-z]" accesskey="z" href="http://dev.widsets.com/wiki/Main_Page">Main Page</a></li>
+				<li id="n-Developer-Forum"><a href="http://dev.widsets.com/forum/">Developer Forum</a></li>
+				<li title="About the project, what you can do, where to find things" id="n-portal"><a href="http://dev.widsets.com/wiki/WidSets_Developer_Site:Community_Portal">Community portal</a></li>
+				<li id="n-Developer-Site"><a href="http://dev.widsets.com/">Developer Site</a></li>
+				<li id="n-Widsets.com"><a href="http://www.widsets.com/">Widsets.com</a></li>
+			</ul>
+		</div>
+	</div>
+		<div class="portlet" id="p-resources">
+		<h5>resources</h5>
+		<div class="pBody">
+			<ul>
+				<li id="n-Download-the-SDK"><a href="http://dev.widsets.com/downloads/devkit.zip">Download the SDK</a></li>
+				<li id="n-Scripting-API-docs"><a href="http://dev.widsets.com/apidocs/">Scripting API docs</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" accesskey="f" value="" type="text">
+				<input name="go" class="searchButton" id="searchGoButton" value="Go" type="submit">&nbsp;
+				<input name="fulltext" class="searchButton" id="mw-searchButton" value="Search" type="submit">
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a title="List of all wiki pages that link here [alt-shift-j]" accesskey="j" href="http://dev.widsets.com/wiki/Special:Whatlinkshere/Getting_started">What links here</a></li>
+				<li id="t-recentchangeslinked"><a title="Recent changes in pages linked from this page [alt-shift-k]" accesskey="k" href="http://dev.widsets.com/wiki/Special:Recentchangeslinked/Getting_started">Related changes</a></li>
+<li id="t-upload"><a title="Upload images or media files [alt-shift-u]" accesskey="u" href="http://dev.widsets.com/wiki/Special:Upload">Upload file</a></li>
+<li id="t-specialpages"><a title="List of all special pages [alt-shift-q]" accesskey="q" href="http://dev.widsets.com/wiki/Special:Specialpages">Special pages</a></li>
+				<li id="t-print"><a href="http://dev.widsets.com/mediawiki/index.php?title=Getting_started&amp;printable=yes">Printable version</a></li>				<li id="t-permalink"><a href="http://dev.widsets.com/mediawiki/index.php?title=Getting_started&amp;oldid=338">Permanent link</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="Getting_started_files/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki"></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 11:09, 28 May 2007.</li>
+				<li id="viewcount">This page has been accessed 6,412 times.</li>
+				<li id="privacy"><a href="http://dev.widsets.com/wiki/WidSets_Developer_Site:Privacy_policy" title="WidSets Developer Site:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a href="http://dev.widsets.com/wiki/WidSets_Developer_Site:About" title="WidSets Developer Site:About">About WidSets Developer Site</a></li>
+				<li id="disclaimer"><a href="http://dev.widsets.com/wiki/WidSets_Developer_Site:General_disclaimer" title="WidSets Developer Site:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by developer in 0.128 secs. --></body></html>

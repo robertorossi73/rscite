@@ -1,0 +1,7 @@
+__construct
+getAscent
+getDescent
+getLeading
+getShape
+getUTF8Width
+getWidth

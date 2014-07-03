@@ -1,0 +1,22 @@
+GNUPG(7)                       GNU Privacy Guard                      GNUPG(7)
+
+
+
+NAME
+       GnuPG - The GNU Privacy Guard suite of programs
+
+DESCRIPTION
+       GnuPG is a set of programs for public key encryption and digital signa-
+       tures.  The program most users will want to use is the OpenPGP  command
+       line  tool,  named gpg.  gpgv is a stripped down version of gpg with no
+       encryption functionality, used only  to  verify  signatures  against  a
+       trusted keyring.  There is also a tool called gpgsplit to split OpenPGP
+       messages or keyrings into their component packets.  This is mainly use-
+       ful for seeing how OpenPGP messages are put together.
+
+SEE ALSO
+       gpg(1), gpgv(1),
+
+
+
+GNU                               2002-09-02                          GNUPG(7)

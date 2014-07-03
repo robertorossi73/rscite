@@ -1,0 +1,64 @@
+------------------------ RSciTE, come aprire un file? -------------------------
+
+[TODO : immagine] Quanti modi ci sono per aprire un file in <b>RSciTE</b>?
+
+L'operazione di apertura, di per se banale, nasconde una moltitudine di procedure che, spesso, sono sconosciute e poco utilizzate nonostante la loro comodità. 
+
+In questo articolo esamineremo i metodi che <b>RSciTE</b> mette a disposizione dell'utente, per <b>aprire un file</b>.
+[more]
+Un utente medio utilizza prevalentemente un numero limitato di metodi di apertura. Nella realtà, molto spesso esistono sistemi alternativo, alle volta molto comodi, che però vengono ignorati in quanto nascosti all'interno di menu o celati di combinazioni particolari di tasti.
+
+Anche RSciTE non fa eccezzione, disponendo di una moltitudine di funzioni, spesso poco usate in quanto poco conosciute.
+
+[h4]Aprire un file da Gestione Risorse (Risorse del Computer)[/h4]
+
+All'interno del gestore file di Windows, spesso ci si trova nella situazione di voler aprire un file con RSciTE. Supponiamo di avere un file da aprire :
+
+[TODO : immagine gestione risorse con documento]
+
+Per aprire questo file possiamo utilizzare due metodi distinti, entrambe accessibili cliccando sul file con il tasto destro del mouse. Nel menu contestuale sarà possibile richiamare RSciTE :
+
+[TODO : immagine con primo metodo]
+[TODO : immagine con secondo metodo]
+
+[h4]Aprire file all'interno di RSciTE[/h4]
+
+Bene, immaginiamo di essere di fronte a RSciTE e di avere la necessità di aprire un file. Naturalmente, come già visto in precedenza potremmo utilizzare il gestore file di Windows ma, in questo caso eseguiremo l'apertura senza il suo ausilio, sfruttando solamente le funzioni interne di RSciTE.
+
+[TODO : immagine di RSciTE aperto]
+
+Partendo da questa situazione abbiamo varie strade per aprire un file.
+
+Prima di tutto possiamo utilizzare la classica funzione "Apri" presente nel menu "File", oppure la relativa icona posta in alto a sinistra :
+
+[TODO : Immagini accostate che evidenziano voce apri del menu file e icona)
+
+Come si può vedere, è anche possibile sfruttare la comoda combinazione di tasti Ctrl+O.
+
+Alle volte, si crea la necessità di aprire un documento il cui percorso è scritto nel file corrente. In tal caso, RSciTE ci semplifica la vita tramite il menu contestuale. Sarà infatti sufficiente selezionare l'indirizzo o il percorso da aprire, premere il tasto destro e selezionare la voce "Apri il File/Url Selezionato", oppure usare la voce "Apri il file selezionato" presente nel menu "File" :
+
+[TODO : immagine combinata con menu file e menu contestuale]
+
+Importante ricordare che, per non essere costretti ad utilizzare il mouse, la funzione del menu contestuale è raggiungibile utilizzando il tasto "Windows".
+
+[h4]Come riaprire un file utilizzato in precedenza?[/h4]
+
+La prima cosa da sapere riguarda il fatto che RSciTE ha memoria dell'ultima sessione di lavoro. Ogni qual volta il programma viene chiuso, vengono memorizzati i file in uso e riaperti al successivo avviamento di RSciTE. In questo modo è possibile terminare il software senza dover pensare a cosa è aperto.
+
+Esaminando invece le possibilità di riapertura di singoli file, è necessario segnalare la presenza degli "ultimi file usati", accessibile alla fine del menu file :
+
+[TODO : immagine menu file con lista file usati]
+
+La funzione di riapertura più estesa è per presente nel menu "Strumenti" alla voce "Apri Ultimi File". In questo caso verrà presentata una dialog contenente gli ultimi N file aperti (con un massimo di 100 elementi visualizzati) :
+
+[TODO : immagine maschera di apertura]
+
+Questa funzione è anche raggiungibile attraverso l'uso della combinazione di tasti Ctrl+Alt+O, inoltre possiede una comoda funzionalità di filtraggio che permette di ridurre il numero di elementi visibili. Ad esempio, osserviamo la funzione di filtro in azione : 
+
+[TODO : immagine maschera con filtro attivo]
+
+[h4]Le sessioni e i file aperti[/h4]
+
+[TODO : immagine con evidenziate voci di sessione nel menu file , allineato a sinistra]Infine, una menzione va fatta al salvataggio e ripristino delle sessioni.
+
+Una sessione consente di salvare lo stato dei file correnti, per poi riaprirli in seguito. Supponiamo, ad esempio, da avere una decina di file aperti, usando la voce "Salva Sessione" presente nel menu "File" salviamo i dati della sessione corrente, in un secondo momento quando sarà necessario riaprire gli stessi file, sarà sufficiente ricaricare quanto salvato utilizzando la voce "Carica Sessione", sempre nel menu "File".

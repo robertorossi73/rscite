@@ -1,0 +1,592 @@
+Abs(AnyNumber) As AnyNumber
+AppActivate(ByVal { Title As String | ProcessID As Integer })
+Asc(ByVal String As Char) As Integer
+AscW(ByVal String As String) As Integer
+Atan(ByVal d As Double) As Double
+Beep()
+CallByName(o As System.Object,p As String,c As CallType, >Arg() As Object) As Object
+CBool(expression) As Boolean
+CByte(expression) As Byte
+CChar(expression) As Char
+CDate(expression) As Date
+CDbl(expression) As Double
+CDec(expression) As Decimal
+ChDir(ByVal Path As String)
+ChDrive(ByVal Drive As { Char | String })
+Choose(ByVal idx As Double,ByVal ParamArray ch() As Object) As Object
+Chr(ByVal CharCode As Integer) As Char
+ChrW(ByVal CharCode As Integer) As Char
+CInt(expression) As Integer
+CLng(expression) As Long
+CObj(expression) As Object
+Command() As String
+Cos(ByVal d As Double) As Double
+CreateObject(ProgId As String,[ServerName As String]) As Object
+CShort(expression) As Short
+CSng(expression) As Single
+CStr(expression) As String
+CType(expression, typename) As AnyType
+CurDir([ ByVal Drive As Char ]) As String
+DateAdd(I As DateInterval,Num As Double,DateV As DateTime) As DateTime
+DateAdd(I As String,Num As Double,DateV As Object) As DateTime
+DateDiff(I As DateInterval,D1 As DateTime,D2 As DateTime, >[D As FirstDayOfWeek],[W As FirstWeekOfYear]) As Long
+DateDiff(I As String,D1 As Object,D2 As Object, >[D As FirstDayOfWeek],[W As FirstWeekOfYear]) As Long
+DatePart(I As DateInterval,DV As DateTime,[D As FirstDayOfWeek], >[W As FirstWeekOfYear]) As Integer
+datepart(I As DateInterval,DV As DateTime,[D As FirstDayOfWeek], >[W As FirstWeekOfYear]) As Integer
+DatePart(I As String,DV As Object,[D As FirstDayOfWeek], >[W As FirstWeekOfYear]) As Integer
+datepart(I As String,DV As Object,[D As FirstDayOfWeek], >[W As FirstWeekOfYear]) As Integer
+DateSerial(Year As Integer,Month As Integer,Day As Integer) As DateTime
+DateValue(StringDate As String) As DateTime
+Day(DateV As DateTime) As Integer
+DDB(C As Double,S As Double,L As Double,P As Double, >[F As Double]) As Double
+DeleteSetting(AName As String,[Sec As String],[Key As String])
+Dir() As String
+Dir([Path As String], [Attr As FileAttribute]) As String
+Environ(Expression As Integer) As String
+Environ(Expression As String) As String
+EOF(FileN As Integer) As Boolean
+ErrorToString(errornumber)
+Exp(d As Double) As Double
+FileAttr(FileN As Integer) As OpenMode
+FileClose(ParamArray FileNs() As Integer)
+FileCopy(Source As String,Destination As String)
+FileDateTime(PathName As String) As DateTime
+FileGet(FileN As Integer,Value As Object,[RecN As Integer])
+FileGet(FileN As Integer,Value As Short,[RecN As Integer])
+FileGet(FileN As Integer,Value As Integer,[RecN As Integer])
+FileGet(FileN As Integer,Value As Single,[RecN As Integer])
+FileGet(FileN As Integer,Value As Double,[RecN As Integer])
+FileGet(FileN As Integer,Value As Decimal,[RecN As Integer])
+FileGet(FileN As Integer,Value As Byte,[RecN As Integer])
+FileGet(FileN As Integer,Value As Boolean,[RecN As Integer])
+FileGet(FileN As Integer,Value As Date,[RecN As Integer])
+FileGet(FileN As Integer,Val As System.Array,[RecN As Integer], >[ArrDyn as Boolean])
+FileGet(FileN As Integer,Val As String,[RecN As Integer], >[SIsFix as Boolean])
+FileGetObject(FileN As Integer,Value As Object,[RecN As Integer])
+FileGetObject(FileN As Integer,Value As Short,[RecN As Integer])
+FileGetObject(FileN As Integer,Value As Integer,[RecN As Integer])
+FileGetObject(FileN As Integer,Value As Single,[RecN As Integer])
+FileGetObject(FileN As Integer,Value As Double,[RecN As Integer])
+FileGetObject(FileN As Integer,Value As Decimal,[RecN As Integer])
+FileGetObject(FileN As Integer,Value As Byte,[RecN As Integer])
+FileGetObject(FileN As Integer,Value As Boolean,[RecN As Integer])
+FileGetObject(FileN As Integer,Value As Date,[RecN As Integer])
+FileGetObject(FN As Integer,V As System.Array,[RecN As Integer], >[ArrDyn as Boolean])
+FileGetObject(FN As Integer,V As String,[RecN As Integer], >[SFix as Boolean])
+FileLen(PathName As String) As Long
+FileOpen(File As Integer,Name As String,M As OpenMode, >[A As OpenAccess],[S As OpenShare],[Length As Integer])
+FilePut(File As Integer,Value As Short,[RecN As Integer])
+FilePut(File As Integer,Value As Integer,[RecN As Integer])
+FilePut(File As Integer,Value As Single,[RecN As Integer])
+FilePut(File As Integer,Value As Double,[RecN As Integer])
+FilePut(File As Integer,Value As Decimal,[RecN As Integer])
+FilePut(File As Integer,Value As Byte,[RecN As Integer])
+FilePut(File As Integer,Value As Boolean,[RecN As Integer])
+FilePut(File As Integer,Value As Date,[RecN As Integer])
+FilePut(File As Integer,Value As System.Array,[RecN As Integer], >[ArrayIsDynamic As Boolean])
+FilePut(File As Integer,Value As String,[RecN As Integer], >[StringIsFixed As Boolean])
+FilePutObject(FileN As Integer,Value As Object,RecN As Integer)
+FilePutObject(FileN As Integer,Value As Short,[RecN As Integer])
+FilePutObject(FileN As Integer,Value As Integer,[RecN As Integer])
+FilePutObject(FileN As Integer,Value As Single,[RecN As Integer])
+FilePutObject(FileN As Integer,Value As Double,RecN As Integer)
+FilePutObject(FileN As Integer,Value As Decimal,[RecN As Integer])
+FilePutObject(FileN As Integer,Value As Byte,[RecN As Integer])
+FilePutObject(FileN As Integer,Value As Boolean,[RecN As Integer])
+FilePutObject(FileN As Integer,Value As Date,[RecN As Integer])
+FilePutObject(FileN As Integer,Value As System.Array, >[RecN As Integer],[ArrayIsDynamic As Boolean])
+FilePutObject(FileN As Integer,Value As String, >[RecN As Integer],[StringIsFixedLength as Boolean])
+FileWidth(FileN As Integer,RecordWidth As Integer)
+Filter(Source() As {Object|String},Match As String, >[Include As Boolean],[Compare As CompareMethod]) As String()
+Fix(number)
+Format(Exp As Object,[Style As String]) As String
+FormatCurrency(Exp As Object,[NDigitsDec As Integer],[LeadDigit As TriState], >[ParensForNegative As TriState],[Digits As TriState]) As String
+FormatDateTime(Exp As DateTime,[NamedFormat As DateFormat]) As String
+FormatNumber(Exp As Object,[NDigitsDec As Integer],[LeadDigit As TriState], >[ParensForNegative As TriState],[Digits As TriState]) As String
+FormatPercent(Exp As Object,[NDigitsDec As Integer],[LeadDigit As TriState], >[ParensForNegative TriState],[Digits As TriState]) As String
+FreeFile() As Integer
+FV(Rate As Double,NPer As Double,Pmt As Double,[PV As Double], >[Due As DueDate]) As Double
+GetAllSettings(AppName As String,Section As String) As String(,)
+GetAttr(PathName As String) As FileAttribute
+GetChar(Str As String,Index As Integer) As Char
+GetException() As Exception
+GetObject([PathName As String],[Class As String]) As Object
+GetSetting(AppName As String,Section As String,Key As String, >[Default As String]) As String
+Hex(Number As {Byte|Short|Integer|Long|Object}) As String
+Hour(TimeValue As DateTime) As Integer
+IIf(Exp As Boolean,TruePart As Object,FalsePart As Object) As Object
+Input(FileN As Integer,Value As Object)
+InputBox(Prompt As String,[Title As String],[DefaultResponse As String], >[XPos As Integer],[YPos As Integer]) As String
+InputString(FileN As Integer,CharCount As Integer) As String
+InStr(Start As Integer,String1 As String,String2 As String, >[Compare As CompareMethod]) As Integer
+InStrRev(StringCheck As String,StringMatch As String, >[Start As Integer],[Compare As CompareMethod]) As Integer
+Int(number)
+IPmt(Rate As Double,Per As Double,NPer As Double,PV As Double, >[FV As Double],[Due As DueDate]) As Double
+IRR(ValueArray() As Double,[Guess As Double]) As Double
+IsArray(VarName As Object) As Boolean
+IsDate(Exp As Object) As Boolean
+IsDBNull(Exp As Object) As Boolean
+IsError(Exp As Object) As Boolean
+IsNothing(Exp As Object) As Boolean
+IsNumeric(Exp As Object) As Boolean
+IsReference(Exp As Object) As Boolean
+Join(SourceArray() As {Object|String},[Delimiter As String]) As String
+Kill(PathName As String)
+LBound(Array As System.Array,[Rank As Integer]) As Integer
+LCase(Value As Char) As Char
+LCase(Value As String) As String
+Left(Str As String,Length As Integer) As String
+Len(Exp As {Boolean|Byte|Char|Double|Integer|Long|Object|Short|Single >|String|DateTime|Decimal}) As Integer
+LineInput(FileN As Integer) As String
+Loc(FileN As Integer) As Long
+Lock(FileN As Integer)
+Lock(FileN As Integer,FromRecord As Long)
+Lock(FileN As Integer,FromRecord As Long,ToRecord As Long)
+LOF(FileN As Integer) As Long
+Log(a As Double) As Double
+Log(a As Double, newBase As Double) As Double
+LSet(Source As String,Length As Integer) As String
+LTrim(Str As String) As String
+Mid(Str As String,Start As Integer,[Length As Integer]) As String
+Minute(TimeValue As DateTime) As Integer
+MIRR(ValueArray() As Double,FinanceRate As Double, >ReinvestRate As Double) As Double
+MkDir(Path As String)
+Month(DateV As DateTime) As Integer
+MonthName(Month As Integer,[Abbreviate As Boolean]) As String
+MsgBox(Prompt As Object,[Buttons As MsgBoxStyle], >[Title As Object]) As MsgBoxResult
+NPer(Rate As Double,Pmt As Double,PV As Double, >[FV As Double],[Due As DueDate]) As Double
+NPV(Rate As Double,ValueArray() As Double) As Double
+Oct(Number As {Byte|Short|Integer|Long|Object}) As String
+Partition(Number As Long,Start As Long,Stop As Long, >Ival As Long) As String
+Pmt(Rate As Double,NPer As Double,PV As Double, >[FV As Double],[Due As DueDate]) As Double
+PPmt(Rate As Double,Per As Double,NPer As Double,PV As Double, >[FV As Double],[Due As DueDate]) As Double
+Print(FileN As Integer,ParamArray Output() As Object)
+PrintLine(FileN As Integer,ParamArray Output() As Object)
+PV(Rate As Double,NPer As Double,Pmt As Double, >[FV As Double],[Due As DueDate]) As Double
+QBColor(Color)
+Rate(NPer As Double,Pmt As Double,PV As Double, >[FV As Double],[Due As DueDate],[Guess As Double]) As Double
+Rename(OldPath As String,NewPath As String)
+Replace(Exp As String,Find As String,Replacement As String, >[Start As Integer],[Count As Integer],[Compare As CompareMethod]) As String
+Reset()
+RGB(Red As Integer,Green As Integer,Blue As Integer)
+Right(Str As String,Length As Integer) As String
+RmDir(ByVal Path As String)
+Rnd[(number)]
+Round(d As Decimal) As Decimal
+Round(a As Double) As Double
+Round(d As Decimal,decimals As Integer) As Decimal
+Round(value As Double,digits As Integer) As Double
+RSet(Source As String,Length As Integer) As String
+RTrim(Str As String) As String
+SaveSetting(AppName As String,Section As String,Key As String, >Setting As String)
+Second(TimeValue As DateTime) As Integer
+Seek(FileN As Integer) As Long
+Seek(FileN As Integer,Position As Long)
+SetAttr(PathName As String,Attributes As FileAttribute)
+Sign(value As Decimal) As Integer
+Sign(value As Double) As Integer
+Sign(value As Short) As Integer
+Sign(value As Integer) As Integer
+Sign(value As Long) As Integer
+Sign(value As SByte) As Integer
+Sign(value As Single) As Integer
+Shell(Pathname As String,[Style As AppWinStyle],[Wait As Boolean], >[Timeout As Integer]) As Integer
+Sin(a As Double) As Double
+SLN(Cost As Double,Salvage As Double,Life As Double) As Double
+Space(Number As Integer) As String
+SPC(Count As Short) As SPCInfo
+Split(Exp As String,[Delimiter As String],[Limit As Integer], >[Compare As CompareMethod]) As String()
+Sqrt(d As Double) As Double
+Str(Number As Object) As String
+StrComp(String1 As String,String2 As String, >[Compare As CompareMethod]) As Integer
+StrConv(Str As String,Conversion As VbStrConv, >[LocaleID As Integer]) As String
+StrDup(Number As Integer,Character As {Char|String}) As String
+StrDup(Number As Integer,Character As Object) As Object
+StrReverse(Exp As String) As String
+Switch(ParamArray VarExpr() As Object) As Object
+SYD(Cost As Double,Salvage As Double,Life As Double, >Period As Double) As Double
+SystemTypeName(VbName As String) As String
+TAB() As TABInfo
+TAB(Column As Short) As TABInfo
+Tan(a As Double) As Double
+TimeSerial(Hour As Integer,Minute As Integer, >Second As Integer) As DateTime
+TimeValue(StringTime As String) As DateTime
+Trim(Str As String) As String
+TypeName(VarName As Object) As String
+UBound(Array As System.Array,[Rank As Integer]) As Integer
+UCase(Value As Char) As Char
+UCase(Value As String) As String
+Unlock(FileN As Integer)
+Unlock(FileN As Integer,FromRecord As Long)
+Unlock(FileN As Integer,FromRecord As Long,ToRecord As Long)
+Val(Exp As String) As Double
+Val(Exp As Object) As Double
+Val(Exp As Char) As Integer
+VarType(VarName As Object) As VariantType
+VbTypeName(UrtName As String) As String
+Weekday(DateV As DateTime,[Day As FirstDayOfWeek]) As Integer
+WeekdayName(WeekDay As Integer,[Abbreviate As Boolean], >[Day As FirstDayOfWeek]) As String
+Write(FileN As Integer,ParamArray Output As Object)
+WriteLine(FileN As Integer,ParamArray Output() As Object)
+Year(DateV As DateTime) As Integer
+
+AddHandler
+Addressof
+Alias
+And
+AndAlso
+Ansi
+Assembly
+Auto
+Boolean
+ByRef
+Byte
+ByVal
+Call
+Case
+Catch
+Char
+Class
+Const
+Date
+Decimal
+Declare
+Default
+Delegate
+Dim
+DirectCast
+Do
+Double
+Each
+Else
+ElseIf
+End
+Enum
+Erase
+Error
+Event
+Exit
+False
+Finally
+For
+Friend
+Function
+Get
+GetType
+Gosub
+Goto
+Handles
+If
+Implements
+Imports
+In
+Inherits
+Integer
+Interface
+Is
+Let
+Lib
+Like
+Long
+Loop
+Me
+Mod
+Module
+MustInherit
+MustOverride
+MyBase
+MyClass
+Namespace
+New
+Next
+Not
+Nothing
+NotInheritable
+NotOverridable
+Object
+On
+Option
+Optional
+Or
+OrElse
+Overloads
+Overridable
+Overrides
+ParamArray
+Preserve
+Private
+Property
+Protected
+Public
+RaiseEvent
+ReadOnly
+Redim
+Rem
+RemoveHandler
+Resume
+Return
+Select
+Set
+Shadows
+Shared
+Short
+Single
+Static
+Step
+Stop
+String
+Structure
+Sub
+SyncLock
+Then
+Throw
+To
+True
+Try
+TypeOf
+Unicode
+Until
+Variant
+When
+While
+With
+WithEvents
+WriteOnly
+Xor
+AppWinStyle.Hide
+VbHide
+AppWinStyle.NormalFocus
+VbNormalFocus
+AppWinStyle.MinimizedFocus
+VbMinimizedFocus
+AppWinStyle.MaximizedFocus
+VbMaximizedFocus
+AppWinStyle.NormalNoFocus
+VbNormalNoFocus
+AppWinStyle.MinimizedNoFocus
+VbMinimizedNoFocus
+CallType.Method
+VbMethod
+CallType.Get
+VbGet
+CallType.Set
+VbSet
+CompareMethod.Binary
+VbBinaryCompare
+CompareMethod.Text
+VbTextCompare
+DateValue.GeneralDate
+VbGeneralDate
+DateValue.LongDate
+VbLongDate
+DateValue.ShortDate
+VbShortDate
+DateValue.LongTime
+VbLongTime
+DateValue.ShortTime
+VbShortTime
+DateInterval.Day
+DateInterval.DayOfYear
+DateInterval.Hour
+DateInterval.Ninute
+DateInterval.Nonth
+DateInterval.Quarter
+DateInterval.Second
+DateInterval.WeekDay
+DateInterval.WeekOfYear
+DateInterval.Year
+DueDate.EndOfPeriod
+DueDate.BegOfPeriod
+FileAttribute.Normal
+VbNormal
+FileAttribute.ReadOnly
+VbReadOnly
+FileAttribute.Hidden
+VbHidden
+FileAttribute.System
+VbSystem
+FileAttribute.Volume
+VbVolume
+FileAttribute.Directory
+VbDirectory
+FileAttribute.Archive
+VbArchive
+FirstDayOfWeek.System
+vbusesystemdayofweek
+FirstDayOfWeek.Sunday
+VbSunday
+FirstDayOfWeek.Monday
+VbMonday
+FirstDayOfWeek.Tuesday
+VbTuesday
+FirstDayOfWeek.Wednesday
+VbWednesday
+FirstDayOfWeek.Thursday
+VbThursday
+FirstDayOfWeek.Friday
+VbFriday
+FirstDayOfWeek.Saturday
+VbSaturday
+FirstWeekOfYear.System 
+VbUseSystem
+FirstWeekOfYear.Jan1 
+VbFirstJan1
+FirstWeekOfYear.FirstFourDays
+VbFirstFourDays
+FirstWeekOfYear.FirstFullWeek
+VbFirstFullWeek
+MsgBoxResult.Ok
+VbOk
+MsgBoxResult.Cancel
+VbCancel
+MsgBoxResult.Abort
+VbAbort
+MsgBoxResult.Retry
+VbRetry
+MsgBoxResult.Ignore
+VbIgnore
+MsgBoxResult.Yes
+VbYes
+MsgBoxResult.No
+VbNo
+MsgBoxStyle.OkOnly
+VbOkOnly
+MsgBoxStyle.OkCancel
+VbOkCancel
+MsgBoxStyle.AbortRetryIgnore
+VbAbortRetryIgnore
+MsgBoxStyle.YesNoCancel
+VbYesNoCancel
+MsgBoxStyle.YesNo
+VbYesNo
+MsgBoxStyle.RetryCancel
+VbRetryCancel
+MsgBoxStyle.Critical
+VbCritical
+MsgBoxStyle.Question
+VbQuestion
+MsgBoxStyle.Exclamation
+VbExclamation
+MsgBoxStyle.Information
+VbInformation
+MsgBoxStyle.DefaultButton1
+VbDefaultButton1
+MsgBoxStyle.DefaultButton1
+VbDefaultButton2
+MsgBoxStyle.DefaultButton3
+VbDefaultButton3
+MsgBoxStyle.ApplicationModal
+VbApplicationModal
+MsgBoxStyle.SystemModal
+VbSystemModal
+MsgBoxStyle.MsgBoxSetForeground
+VbMsgBoxSetForeground
+MsgBoxStyle.MsgBoxRight
+VbMsgBoxRight
+MsgBoxStyle.MsgBoxRtlReading
+VbMsgBoxRtlReading
+MsgBoxStyle.MsgBoxHelp
+VbMsgBoxHelp
+OpenAccess.Default
+OpenAccess.Read
+OpenAccess.ReadWrite
+OpenAccess.Write
+OpenMode.Append
+OpenMode.Binary
+OpenMode.Input
+OpenMode.Output
+OpenMode.Random
+OpenShare.Default
+OpenShare.LockRead
+OpenShare.LockReadWrite
+OpenShare.LockWrite
+OpenShare.Shared
+ControlChars.CrLf
+VbCrLf
+ControlChars.Cr
+VbCr
+ControlChars.Lf
+VbLf
+ControlChars.NewLine
+VbNewLine
+ControlChars.NullChar
+VbNullChar
+ControlChars.Tab
+VbTab
+ControlChars.Back
+VbBack
+ControlChars.FormFeed
+VbFormFeed
+ControlChars.VerticalTab
+VbVerticalTab
+ControlChars.Quote
+VbNullString
+VbObjectError
+TriState.True
+TriState.False
+TriState.UseDefault
+VariantType.Array
+VbArray
+VariantType.Boolean
+VbBoolean
+VariantType.Byte
+VbByte
+VariantType.Char
+VariantType.Currency
+VbCurrency
+VariantType.Dataobject
+VariantType.Date
+VbDate
+VariantType.Decimal
+VbDecimal
+VariantType.Double
+VbBouble
+VariantType.Empty
+VbEmpty
+VariantType.Error
+VariantType.Integer
+VbInteger
+VariantType.Long
+VbLong
+VariantType.Null
+VbNull
+VariantType.Object
+VbObject
+VariantType.Short
+VariantType.Single
+VbSingle
+VariantType.String
+VbString
+VariantType.UserDefinedType
+VbUserDefinedYype
+VariantType.Variant
+VbVariant
+VbStrConv.UpperCase
+VbUpperCase
+VbStrConv.LowerCase
+VbLowerCase
+VbStrConv.ProperCase
+VbProperCase
+VbStrConv.Wide
+VbWide
+VbStrConv.Narrow
+VbNarrow
+VbStrConv.Katakana
+VbKatakana
+VbStrConv.Hiragana
+VbHiragana
+VbStrConv.SimplifiedChinese
+VbSimplifiedChinese
+VbStrConv.TraditionalChinese
+VbTraditionalChinese
+VbStrConv.LinguisticCasing
+VbLinguisticCasing
+Err.Description
+Err.Erl
+Err.HelpContext
+Err.HelpFile
+Err.LastDllError
+Err.Number
+Err.Source
+Err.Clear
+Err.Raise

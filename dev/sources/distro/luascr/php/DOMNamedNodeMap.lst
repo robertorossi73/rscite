@@ -1,0 +1,7 @@
+getNamedItem
+getNamedItemNS
+item
+removeNamedItem
+removeNamedItemNS
+setNamedItem
+setNamedItemNS

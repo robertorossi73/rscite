@@ -1,0 +1,10 @@
+__construct
+append
+current
+getArrayIterator
+getInnerIterator
+getIteratorIndex
+key
+next
+rewind
+valid

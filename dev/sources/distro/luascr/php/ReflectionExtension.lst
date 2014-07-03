@@ -1,0 +1,11 @@
+__construct
+__toString
+export
+getClassNames
+getClasses
+getConstants
+getDependencies
+getFunctions
+getINIEntries
+getName
+getVersion
