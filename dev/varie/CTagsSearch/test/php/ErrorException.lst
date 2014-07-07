@@ -1,9 +1,0 @@
-__construct
-__toString
-getCode
-getFile
-getLine
-getMessage
-getSeverity
-getTrace
-getTraceAsString

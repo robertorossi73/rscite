@@ -1,9 +1,0 @@
-__construct
-current
-getInnerIterator
-getPosition
-key
-next
-rewind
-seek
-valid

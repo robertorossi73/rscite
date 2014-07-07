@@ -1,1 +1,0 @@
-AppVerName=RSciTE 3.4.1-41

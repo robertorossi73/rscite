@@ -1,6 +1,0 @@
-__construct
-getName
-getOffset
-getTransitions
-listAbbreviations
-listIdentifiers

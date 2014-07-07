@@ -1,9 +1,0 @@
-__construct
-hasChildren
-hasSiblings
-isAsp
-isComment
-isHtml
-isJste
-isPhp
-isText

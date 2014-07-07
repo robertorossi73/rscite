@@ -1,9 +1,0 @@
-getParameter
-hasExsltSupport
-importStylesheet
-registerPHPFunctions
-removeParameter
-setParameter
-transformToDoc
-transformToUri
-transformToXml

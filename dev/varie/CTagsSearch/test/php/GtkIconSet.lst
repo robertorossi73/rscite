@@ -1,6 +1,0 @@
-__construct
-add_source
-copy
-get_sizes
-new_from_pixbuf
-render_icon

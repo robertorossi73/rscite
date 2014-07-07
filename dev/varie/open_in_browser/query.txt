@@ -1,26 +1,0 @@
-REG QUERY NomeChiave [/v [NomeValore] | /ve] [/s]          [/f Dati [/k] [/d] [/c] [/e]] [/t Tipo] [/z] [/se Separatore]  NomeChiave [\Computer\]ChiaveCompleta             Computer - Nome del computer remoto. Se omesso, l'impostazione                        predefinita Š il computer corrente. Sui computer                        remoti sono disponibili solo HKLM e HKU             ChiaveCompleta - nella forma CHIAVEPRINCIPALE\Sottochiave                CHIAVEPRINCIPALE - [ HKLM | HKCU | HKCR | HKU | HKCC ]                Sottochiave - Nome completo di una chiave del Registro di                              sistema nella CHIAVEPRINCIPALE selezionata
-  /v         Ricerca valori specifici di una determinata chiave del Registro             di sistema. Se omesso, vengono cercati tutti i valori della             chiave.             L'argomento di questa opzione pu• essere facoltativo solo se             l'opzione viene specificata insieme all'opzione /f, che indica             che la ricerca viene effettuata solo nei nomi dei valori.  /ve        Ricerca il nome del valore predefinito o del valore vuoto             (impostazione predefinita).  /s         Ricerca tutte le sottochiavi e i valori in modo ricorsivo             (ad esempio, dir /s).  /se        Specifica il separatore (1 solo carattere) nella stringa di             dati per REG_MULTI_SZ. Il separatore predefinito Š "\0".    /f         Specifica i dati o il motivo da cercare.
-             Utilizzare le doppie virgolette se una stringa contiene             degli spazi. Il valore predefinito Š "*".  /k         Specifica che la ricerca viene effettuata solo nei nomi             delle chiavi.  /d         Specifica che la ricerca viene effettuata solo nei dati.  /c         Specifica che la ricerca rileva la distinzione tra maiuscole             e minuscole. La ricerca predefinita rileva la distinzione tra             maiuscole e minuscole.  /e         Specifica la restituzione dei soli valori esatti.             Per impostazione predefinita vengono restituiti tutti             i valori.  /t         Specifica il tipo di dati del valore del Registro di sistema.             I tipi validi sono:               REG_SZ, REG_MULTI_SZ, REG_EXPAND_SZ,               REG_DWORD, REG_BINARY, REG_NONE             Per impostazione predefinita vengono specificati tutti i tipi.  /z         Verbose: visualizza l'equivalente numerico per il tipo di nome             del valore.
-Esempi:
-  REG QUERY HKLM\Software\Microsoft\ResKit /v Versione
-   Visualizza il valore del valore Version del Registro di sistema
-  REG QUERY \ABC\HKLM\Software\Microsoft\ResKit\Nt\Setup /s
-   Visualizza tutte le sottochiavi e i valori nella chiave Setup del
-    Registro di sistema sul computer remoto ABC
-
-  REG QUERY HKLM\Software\Microsoft\ResKit\Nt\Setup /se #
-    Visualizza tutte le sottochiavi e i valori con il separatore "#" per tutti
-    i nomi dei valori il cui tipo Š REG_MULTI_SZ.
-
-  REG QUERY HKLM /f SYSTEM /t REG_SZ /c /e
-    Visualizza la chiave, il valore e i dati che contengono occorrenze esatte
-    con distinzione maiuscole/minuscole di "SYSTEM" nella directory radice
-    HKLM per il tipo di dati REG_SZ
-
-  REG QUERY HKCU /f 0F /d /t REG_BINARY
-    Visualizza la chiave, il valore e i dati per le occorrenze di "0F" nei
-    dati contenuti nella directory radice HKCU per il tipo di dati REG_BINARY
-
-  REG QUERY HKLM\SOFTWARE /ve
-    Visualizza il valore e i dati per il valore vuoto (impostazione
-    predefinita) in HKLM\SOFTWARE

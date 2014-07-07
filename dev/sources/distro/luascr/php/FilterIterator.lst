@@ -1,8 +1,0 @@
-__construct
-accept
-current
-getInnerIterator
-key
-next
-rewind
-valid

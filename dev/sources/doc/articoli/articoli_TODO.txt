@@ -1,6 +1,0 @@
-Questo file raccoglie le idee per la realizzazione di articoli pubblicabili,
-riguardanti schite/RSciTE
-
-- Un articolo per ogni funzione di F12
-- L'apertura dei file. Descrivere i vari modi di apertura dei file. Compreso il Ricarica, la modalità di caricamento automatica dovuta ad una modifica esterna del file.
-- 

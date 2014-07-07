@@ -1,7 +1,0 @@
-__construct
-copy
-free
-get_positions_in_pixels
-get_size
-resize
-set_tab

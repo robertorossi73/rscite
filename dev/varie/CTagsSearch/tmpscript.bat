@@ -1,1 +1,0 @@
-"ctags.exe" --recurse=yes --fields=+n --languages=PHP -f "ctags.txt" --langmap=PHP:.php.inc "sources\"

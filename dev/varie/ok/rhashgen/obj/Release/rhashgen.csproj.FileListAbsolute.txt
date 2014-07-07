@@ -1,5 +1,0 @@
-D:\sv\scite\dev\source_2\utilities\rhashgen\bin\Release\rhashgen.exe
-D:\sv\scite\dev\source_2\utilities\rhashgen\bin\Release\rhashgen.pdb
-D:\sv\scite\dev\source_2\utilities\rhashgen\obj\Release\ResolveAssemblyReference.cache
-D:\sv\scite\dev\source_2\utilities\rhashgen\obj\Release\rhashgen.exe
-D:\sv\scite\dev\source_2\utilities\rhashgen\obj\Release\rhashgen.pdb
