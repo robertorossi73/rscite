@@ -71,7 +71,7 @@ Name: {app}\wscitecm_it.dll; Type: files
 Name: {userappdata}\RSciTE; Type: filesandordirs; Tasks: ; Languages: 
 
 [CustomMessages]
-english.PrevInstall=Is presente a previous version of RSciTE! Do you want proceed with upgrade?
+english.PrevInstall=Is presente another version of RSciTE! Do you want proceed with upgrade?
 italian.PrevInstall=E' presente una precedente Installazione di RSciTE. Si desidera procedere all'aggiornamento?
 
 [Code]
