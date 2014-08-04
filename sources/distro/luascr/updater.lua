@@ -1,11 +1,11 @@
 --[[
-Version : 1.1.8
+Version : 1.2.0
 Web     : http://www.redchar.net
 
 Questa procedura verifica che quella corrente sia l'ultima release disponibile,
 in caso contrario permette lo scaricamento e l'installaizone di quest'ultima
 
-Copyright (C) 2013 Roberto Rossi 
+Copyright (C) 2013-2014 Roberto Rossi 
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -59,30 +59,36 @@ do
     verWebFileBuildPart = tonumber(webData[5]) --versione SciTE
     verWebDistro = tonumber(webData[7]) --versione distribuzione
     
-    remoteVerStr =  tostring(verWebFileMajorPart).."."..
-                    tostring(verWebFileMinorPart).."."..
-                    tostring(verWebFileBuildPart).."-"..
-                    tostring(verWebDistro)
+    if (verWebFileMajorPart) then
+        remoteVerStr =  tostring(verWebFileMajorPart).."."..
+                        tostring(verWebFileMinorPart).."."..
+                        tostring(verWebFileBuildPart).."-"..
+                        tostring(verWebDistro)
+    else 
+        remoteVerStr = nil
+    end
     localVerStr =   versionTbl.FileMajorPart.."."..
                     versionTbl.FileMinorPart.."."..
                     versionTbl.FileBuildPart.."-"..
                     versionTbl.Distro
     
-    if (verWebDistro > versionTbl.Distro) then
-      result = true
-    elseif (verWebDistro == versionTbl.Distro) then
-      if (verWebFileMajorPart > versionTbl.FileMajorPart) then
-        result = true
-      elseif (verWebFileMajorPart == versionTbl.FileMajorPart) then
-        if (verWebFileMinorPart > versionTbl.FileMinorPart) then
+    if (verWebDistro) then
+        if (verWebDistro > versionTbl.Distro) then
           result = true
-        elseif (verWebFileMinorPart == versionTbl.FileMinorPart) then
-          if (verWebFileBuildPart > versionTbl.FileBuildPart) then
+        elseif (verWebDistro == versionTbl.Distro) then
+          if (verWebFileMajorPart > versionTbl.FileMajorPart) then
             result = true
+          elseif (verWebFileMajorPart == versionTbl.FileMajorPart) then
+            if (verWebFileMinorPart > versionTbl.FileMinorPart) then
+              result = true
+            elseif (verWebFileMinorPart == versionTbl.FileMinorPart) then
+              if (verWebFileBuildPart > versionTbl.FileBuildPart) then
+                result = true
+              end
+            end
           end
-        end
-      end
-    end    
+        end    
+    end
     
     return {result, remoteVerStr, localVerStr}
   end
@@ -129,22 +135,34 @@ do
     
     if (remoteVer[1]) then --software da aggiornare
       --wcl_strip:addLabel("L3", "Versione online di RSciTE : "..remoteVer[2])
-      wcl_strip:addLabel("L3", _t(291)..remoteVer[2])
+        if (remoteVer[2]) then
+            wcl_strip:addLabel("L3", _t(291)..remoteVer[2])
+        else
+            wcl_strip:addLabel("L3", _t(291).._t(327)) --impossibile verificare la versione
+        end
       wcl_strip:addNewLine()
       
       --wcl_strip:addLabel(false, "Esiste una nuova versione, desideri scaricarla ?")
-      wcl_strip:addLabel("L1", _t(281))
+        if (remoteVer[2]) then
+            wcl_strip:addLabel("L1", _t(281))
+        end
       wcl_strip:addNewLine()
       --wcl_strip:addButton("OK","&Si, scarica ora",buttonGoToWeb_click, true)
       wcl_strip:addButton("OK",_t(282),buttonGoToWeb_click, true)
       --wcl_strip:addButton("CLOSE","&No",buttonClose_click, false)
       wcl_strip:addButton("CLOSE",_t(283),buttonClose_click, false)
     else --software gia aggiornato
-      wcl_strip:addLabel("L3", _t(291)..remoteVer[2])
+        if (remoteVer[2]) then
+            wcl_strip:addLabel("L3", _t(291)..remoteVer[2])
+        else
+            wcl_strip:addLabel("L3", _t(291).._t(327)) --impossibile verificare la versione
+        end
       wcl_strip:addNewLine()
      
       --wcl_strip:addLabel(false, "La versione attuale non richiede aggiornamenti.")
-      wcl_strip:addLabel(false, _t(284))
+        if (remoteVer[2]) then
+            wcl_strip:addLabel(false, _t(284))
+        end
       wcl_strip:addNewLine()
       --wcl_strip:addButton("CLOSE","&Chiudi",buttonClose_click, true)
       wcl_strip:addButton("CLOSE",_t(285),buttonClose_click, true)
