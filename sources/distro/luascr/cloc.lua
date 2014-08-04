@@ -1,6 +1,6 @@
 --[[
 Author  : Roberto Rossi
-Version : 1.1.0
+Version : 1.2.0
 Web     : http://www.redchar.net
 
 Questa procedura consente la generazione delle statistiche relative a uno o più
@@ -8,7 +8,7 @@ file sorgenti.
 
 Viene sfruttata l'utilità Cloc (Web : http://cloc.sourceforge.net/)
 
-Copyright (C) 2012-2013 Roberto Rossi 
+Copyright (C) 2012-2014 Roberto Rossi 
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -35,7 +35,7 @@ do
     local batfile
     local idf
     local comando
-    local exe = props["SciteDefaultHome"].."/tools/cloc/cloc-1.56.exe"
+    local exe = props["SciteDefaultHome"].."/tools/cloc/cloc.exe"
     
     batfile = os.getenv("TMP")
     batfile = batfile.."\\sciteCloc.bat"
