@@ -1,5 +1,5 @@
 --[[
-Version : 1.2.0
+Version : 1.2.2
 Web     : http://www.redchar.net
 
 Questa procedura verifica che quella corrente sia l'ultima release disponibile,
@@ -145,6 +145,8 @@ do
       --wcl_strip:addLabel(false, "Esiste una nuova versione, desideri scaricarla ?")
         if (remoteVer[2]) then
             wcl_strip:addLabel("L1", _t(281))
+            wcl_strip:addNewLine()
+            wcl_strip:addLabel("L1A", _t(328))
         end
       wcl_strip:addNewLine()
       --wcl_strip:addButton("OK","&Si, scarica ora",buttonGoToWeb_click, true)
