@@ -85,9 +85,9 @@ do
         end        
         
         if (opt == 1) then --che contengono
-          x = string.find(linea, strDaCercare)
+          x = string.find(linea, strDaCercare, 1, true)
         elseif (opt == 2) then --che non contengono
-          x = string.find(linea, strDaCercare)
+          x = string.find(linea, strDaCercare, 1, true)
           if (x) then
             x = nil
           end
