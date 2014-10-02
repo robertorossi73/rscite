@@ -1,5 +1,5 @@
 --[[
-Version : 1.2.2
+Version : 1.2.4
 Web     : http://www.redchar.net
 
 Questa procedura verifica che quella corrente sia l'ultima release disponibile,
@@ -173,8 +173,22 @@ do
     wcl_strip:show()    
   end
   
+  --apri la pagina per scaricare la nuova release
+  function buttonGoToWeb_click(control, change)
+    local versionTbl
+    
+    versionTbl = rfx_GetVersionTable()
+    
+    rwfx_ShellExecute(versionTbl.Url,"")
+    wcl_strip:close()
+  end
+
   --main function
   local function main(autoStart)
+    local versionTbl
+    
+    versionTbl = rfx_GetVersionTable()
+    
     wcl_strip:init()
     wcl_strip:addButtonClose()
     
@@ -186,11 +200,16 @@ do
     --wcl_strip:addButton("OK","&Verifica Aggiornamenti Adesso",buttonOk_click, true)
     wcl_strip:addButton("OK",_t(287),buttonOk_click, true)
     if (autoStart) then
+      wcl_strip:addNewLine()
       --wcl_strip:addButton("CLOSE","&Non verificare Ora",buttonClose_click, false)
       wcl_strip:addButton("CLOSE",_t(288),buttonClose_click, false)
+      wcl_strip:addNewLine()
       --wcl_strip:addButton("CLOSE2","Non &Controllare piu\' ",buttonClose2_click, false)
       wcl_strip:addButton("CLOSE2",_t(289),buttonClose2_click, false)
     end    
+    wcl_strip:addNewLine()
+    wcl_strip:addNewLine()
+    wcl_strip:addButton("WEB", versionTbl.Url, buttonGoToWeb_click, false)
     
     wcl_strip:show()
   end
