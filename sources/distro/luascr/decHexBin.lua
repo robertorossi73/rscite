@@ -400,7 +400,7 @@ local s = Hex2Bin(v)
 end
 
 --[[
-Version : 1.0.2
+Version : 2.0.0
 Web     : http://www.redchar.net
 
 Questo modulo consente la conversione di un numero, selezionato e/o inserito
@@ -412,7 +412,7 @@ Esadecimale - Binario
 Binario - Esadecimale
 Binario - Decimale
 
-Copyright (C) 2012-2013 Roberto Rossi 
+Copyright (C) 2012-2014 Roberto Rossi 
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -449,62 +449,122 @@ do
     return result
   end
   
-  local function main()
-    local scelta
-    local lst
-    local num
-    local result
+  --ritorna true se il numero (come stringa) passato è esadecimale
+  local function is_hex_number(num)
+    local ch
+    local i = string.len(num)
+    local result = true
     
-    num = editor:GetSelText()
-    if (num=="") then
-      num = "0"
-    else
-      num = tostring(tonumber(num))
-    end
-    
-    -- num = rwfx_InputBox(num, "Numero da Convertire",
-    --   "Specifica il numero da convertire : \r\n\r\n"..
-    --   "Attenzione : la procedurà è in grado di gestie numeri fino a 32bit!"
-    --   , rfx_FN())
-    num = rwfx_InputBox(num, _t(215), _t(216), rfx_FN())
-    if num then
-      num = rfx_GF()
---~       lst = "da Decimale a Binario -> "..Dec2Bin(num).."|"..
---~             "da Decimale a Esadecimale -> "..Dec2Hex(num).."|"..
---~             "da Esadecimale a Decimale -> "..Hex2Dec(num).."|"..
---~             "da Esadecimale a Binario -> "..Hex2Bin(num)
-      lst = _t(217).." -> "..Dec2Bin(num).."|"..
-            _t(218).." -> "..Dec2Hex(num).."|"..
-            _t(219).." -> "..Hex2Dec(num).."|"..
-            _t(220).." -> "..Hex2Bin(num)
-      if (is_binary_number(num)) then
-        lst = lst.."|".._t(221).." -> "..Bin2Dec(num).."|"..
-              _t(222).." -> "..Bin2Hex(num)
-      end
-      
-      scelta = rwfx_ShowList(lst,_t(223).." "..num)
-      if (scelta) then
+    num = string.upper(num)
+    while ((i > 0) and result) do
+      ch = string.sub(num,i,i)
+      if ((ch~="0") and 
+            (ch~="1") and (ch~="6") and
+            (ch~="2") and (ch~="7") and
+            (ch~="3") and (ch~="8") and
+            (ch~="4") and (ch~="9") and
+            (ch~="5") and (ch~="A") and
+            (ch~="B") and (ch~="C") and
+            (ch~="D") and (ch~="E") and
+            (ch~="F")
+          ) then
         result = false
-        if (scelta==0) then
-          result = Dec2Bin(num)
-        elseif (scelta==1) then
-          result = Dec2Hex(num)
-        elseif (scelta==2) then
-          result = Hex2Dec(num)
-        elseif (scelta==3) then
-          result = Hex2Bin(num)
-        elseif (scelta==4) then
-          result = Bin2Dec(num)
-        elseif (scelta==5) then
-          result = Bin2Hex(num)
-        end
-        if (result) then
-          editor:ReplaceSel(result)
-        end
       end
+      i = i - 1
     end
+    
+    return result
   end
   
+  --ritorna true se il numero (come stringa) passato è decimale
+  local function is_dec_number(num)
+    local ch
+    local i = string.len(num)
+    local result = true
+    
+    num = string.upper(num)
+    while ((i > 0) and result) do
+      ch = string.sub(num,i,i)
+      if ((ch~="0") and 
+            (ch~="1") and (ch~="6") and
+            (ch~="2") and (ch~="7") and
+            (ch~="3") and (ch~="8") and
+            (ch~="4") and (ch~="9") and
+            (ch~="5")
+          ) then
+        result = false
+      end
+      i = i - 1
+    end
+    
+    return result
+  end
+
+    function buttonOk_click(control, change)
+        local tipo = ""
+        local num = ""
+        local result = false
+        
+        tipo = wcl_strip:getValue("TVAL")
+        num = wcl_strip:getValue("QVAL")
+        
+        if (tipo==_t(217)) then
+            if (is_dec_number(num)) then
+                result = Dec2Bin(num)
+            end
+        elseif (tipo==_t(218)) then
+            if (is_dec_number(num)) then
+                result = Dec2Hex(num)
+            end
+        elseif (tipo==_t(219)) then
+            if (is_hex_number(num)) then
+                result = Hex2Dec(num)
+            end
+        elseif (tipo==_t(220)) then
+            if (is_hex_number(num)) then
+                result = Hex2Bin(num)
+            end
+        elseif (tipo==_t(221)) then
+            if (is_binary_number(num)) then
+                result = Bin2Dec(num)
+            end
+        elseif (tipo==_t(222)) then
+            if (is_binary_number(num)) then
+                result = Bin2Hex(num)
+            end
+        end
+
+        if (result == false) then
+          --editor:ReplaceSel(result)
+            result = _t(329) --valore non valido
+        end
+        
+        print(num .. " = " .. result)
+    end
+  
+    local function main()
+    
+        local lst = {_t(217), --Dec2Bin(num)
+            _t(218), --Dec2Hex(num).."|"..
+            _t(219), --Hex2Dec(num).."|"..
+            _t(220), --Hex2Bin(num)
+            _t(221), --Bin2Dec(num)
+            _t(222), --Bin2Hex(num)
+            }
+        wcl_strip:init()
+        wcl_strip:addButtonClose()
+        
+        wcl_strip:addLabel(nil, _t(215))--valore da convertire
+        wcl_strip:addText("QVAL",editor:GetSelText(), nil)
+        
+        wcl_strip:addLabel(nil, "")
+        wcl_strip:addCombo("TVAL")
+        
+        wcl_strip:addButton("OK",_t(270),buttonOk_click, true)
+        
+        wcl_strip:show()
+        wcl_strip:setValue("TVAL", lst[1])
+    end
   main()    
 
 end
