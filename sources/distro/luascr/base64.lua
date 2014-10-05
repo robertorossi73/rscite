@@ -1,10 +1,10 @@
 --[[ # -*- coding: utf-8 -*-
-Version : 0.0.3
+Version : 0.1.0
 Web     : http://www.redchar.net
 
 Questo script consente la codifica e la decodifica del testo in formato base64
 
-Copyright (C) 2011-2013 Roberto Rossi 
+Copyright (C) 2011-2014 Roberto Rossi 
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -72,53 +72,161 @@ do
   --codifica o decodifica un testo usando l'algoritmo base64.
   --operation può essere "e" oppure "d", nel primo caso codifica, nel secondo
   --  decodifica
-  local function exec_base64(operation, text)
+  -- se textIsFile=true allora il valore di text è interpretato come file e il 
+  --    se poi è specificato outputFile, il risultato viene salvato nel file indicato
+  local function exec_base64(operation, text, textIsFile, outputFile)
     local func = 'enc'
-    local arg = {operation, text};
     local result = "!-error-!";
+    local data = ""
+    local idf = false
+    local loadFromFile = false
+    local savedToFile = false
+    
+    if ((textIsFile) and (textIsFile ~= "")) then
+        idf = io.open(text, "r")
+        if (idf) then
+            data = idf:read("*a")            
+            io.close(idf)
+            loadFromFile = true
+        end
+    else
+        data = text
+    end
     
     if (operation == "e") then
-      result = enc(text)
+      result = enc(data)
     elseif (operation == "d") then
-      result = dec(text)
+      result = dec(data)
     end
+    
+    if ((outputFile) and (outputFile ~= "")) then
+        idf = io.open(outputFile, "w")
+        if (idf) then            
+            idf:write(result)
+            io.close(idf)
+            savedToFile = true
+        end
+    end
+    
+    if (loadFromFile and savedToFile) then
+        result = "Input : "..text.."\nOutput : "..outputFile
+    end
+    
     return result
   end --end function
 ------------------ End base64 encoding/decoding (by Alex Kloss) ---------------
-  
 
-  
-  --codifica/decodifica il testo selezionato o inserito da maschera di dialogo
-  local function main()
-    local testo
-    local result
-    local listaopt
-    local selezione
+  function buttonOk_click(control, change)
+    local inFile = ""
+    local outFile = ""
+    local text = ""
+    local operation = false
+    local operationId = false
+    local operations = rfx_Split(_t(191), "|")
+    local readFile = false
     
-    testo = editor:GetSelText()
-    if (testo == "") then
-      rwfx_MsgBox(_t(190), _t(189),MB_OK)
-    else
-      listaopt = _t(191)      
-      selezione = rwfx_ShowList(listaopt,_t(189))
-      
-      if (selezione) then
-        if (selezione == 0) then --codifica
-          testo = exec_base64("e",testo)
-          editor:ReplaceSel(testo)
-        elseif (selezione == 1) then --codifica
-          testo = exec_base64("e",testo)
-          editor:CopyText(testo);
-        elseif (selezione == 2) then --decodifica
-          testo = exec_base64("d",testo)
-          editor:ReplaceSel(testo)
-        elseif (selezione == 3) then --decodifica
-          testo = exec_base64("d",testo)
-          editor:CopyText(testo);
-        end
-      end
+    inFile = wcl_strip:getValue("INVAL")
+    outFile = wcl_strip:getValue("OUTVAL")
+    text = wcl_strip:getValue("QVAL")
+    
+    operationId = wcl_strip:getValue("TVAL")
+    
+    if (operationId == operations[1]) then
+        operationId = 1 --encode base64
+    elseif (operationId == operations[2]) then
+        operationId = 2 --decode base64
     end
-  end -- end function
+
+    if (text ~= "") then
+        operation = true
+    end
+    
+    if (inFile ~= "") and (outFile ~= "") then
+        readFile = true
+        text = inFile
+        operation = true
+    end
+    
+    if (operation) then
+        if (operationId == 1) then --codifica
+            text = exec_base64("e",text, readFile, outFile)
+            print("---- start base64 ----")
+            print(text)
+            print("---- end base64 ----")
+        elseif (operationId == 2) then --decodifica
+            text = exec_base64("d",text, readFile, outFile)
+            print("---- decoded from base64 : start ----")
+            print(text)
+            print("---- decoded from base64 : end ----")
+        end
+    end
+  end
   
+  --selezione file di input
+  function buttonSelectIn_click(control, change)
+    local destfile
+    local fileName = false
+    
+    destfile = rwfx_GetFileName( _t(206)
+                               ,"", 0,rfx_FN(),
+                               "All Files (*.*)%c*.*")
+    if (destfile) then
+        fileName = rfx_GF()
+        wcl_strip:setValue("INVAL", fileName)
+    end
+
+  end
+  
+  --selezione file di output
+  function buttonSelectOut_click(control, change)
+    local destfile
+    local fileName = false
+    local result
+    
+    destfile = rwfx_GetFileName( _t(206)
+                               ,"", 0,rfx_FN(),
+                               "All Files (*.*)%c*.*")
+    if (destfile) then
+        fileName = rfx_GF()
+        if (rfx_fileExist(fileName)) then
+            if (rwfx_MsgBox(_t(190),_t(9),MB_YESNO ) == IDYES ) then
+                wcl_strip:setValue("OUTVAL", fileName)
+            end
+        else
+            wcl_strip:setValue("OUTVAL", fileName)
+        end
+        
+    end
+    
+  end
+
+    --codifica/decodifica il testo selezionato o inserito da maschera di dialogo
+    local function main()
+        local operations = rfx_Split(_t(191), "|")
+    
+        wcl_strip:init()
+        wcl_strip:addButtonClose()
+        
+        wcl_strip:addLabel(nil, _t(189))
+        wcl_strip:addText("QVAL",editor:GetSelText(), nil)
+        wcl_strip:addNewLine()
+        wcl_strip:addLabel(nil, _t(330))
+        wcl_strip:addText("INVAL","", nil)
+        wcl_strip:addButton("FILEIN",_t(332),buttonSelectIn_click, false)
+        wcl_strip:addNewLine()
+        wcl_strip:addLabel(nil, _t(331))
+        wcl_strip:addText("OUTVAL","", nil)
+        wcl_strip:addButton("FILEOUT",_t(332),buttonSelectOut_click, false)
+        wcl_strip:addNewLine()
+        wcl_strip:addLabel(nil, _t(333))
+        wcl_strip:addCombo("TVAL")
+        
+        wcl_strip:addButton("OK",_t(66),buttonOk_click, true)
+        
+        wcl_strip:show()
+        wcl_strip:setList("TVAL",operations)
+        wcl_strip:setValue("TVAL", operations[1])
+    end
+    
   main()
 end
