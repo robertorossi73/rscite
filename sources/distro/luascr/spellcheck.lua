@@ -1,6 +1,6 @@
 --[[
 Author  : Roberto Rossi
-Version : 2.1.0
+Version : 2.2.0
 Web     : http://www.redchar.net
 
 Questa procedura implementa un rudimentale correttore ortografico. 
@@ -14,7 +14,7 @@ TODO :
     composta da due file, quello di base del programma e quello utente/personale.
   - completare codici html interpretati
 
-Copyright (C) 2011-2013 Roberto Rossi 
+Copyright (C) 2011-2014 Roberto Rossi 
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -30,6 +30,8 @@ You should have received a copy of the GNU Lesser General Public
 License along with this library; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
 *******************************************************************************
+V.2.2.0
+- corretta evidenziazione parole
 
 V.2.0.0
 - Aggiunta funzione per controllo di tutto il file con la sola evidenziazione
@@ -77,9 +79,14 @@ do
 
   --consente di evidenziare, con una sottolineatura una parte di testo
   local function decorate_range(pos,len,ind)
-    editor:StartStyling(pos,INDICS_MASK)
-    editor:SetStyling(len,INDIC0_MASK + ind)
-    editor:SetStyling(2,31)
+    
+    editor.IndicatorCurrent = 2
+    
+    if (ind == -1) then
+        editor:IndicatorClearRange(pos, len)
+    else
+        editor:IndicatorFillRange(pos, len)
+    end
   end
 
   --consente di evidenziare, con una sottolineatura il testo selezionato
@@ -97,14 +104,11 @@ do
     else
       decorate_range(pos,len,ind)
     end
---~     editor:StartStyling(pos,INDICS_MASK)
---~     editor:SetStyling(len,INDIC0_MASK + ind)
---~     editor:SetStyling(2,31)
   end
 
   --elimina l'evidenziazione del testo
   local function reset_highlight(filename)
-    decorate_range(0,editor.Length,-1)
+    decorate_range(0,editor.TextLength,-1)
   end
   
   --questa funzione carica il file di testo contenente il dizionario.
