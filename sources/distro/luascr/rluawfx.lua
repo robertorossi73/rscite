@@ -1,10 +1,10 @@
 --[[
-Version : 2.21.5
+Version : 3.0.0
 Web     : http://www.redchar.net
 
 Funzioni di utilità per macro SciTE/Lua
 
-Copyright (C) 2004-2013 Roberto Rossi 
+Copyright (C) 2004-2014 Roberto Rossi 
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -108,6 +108,7 @@ if not(rwfx_info) then
     end
     
     --definizione funzioni    
+    rwfx_ShowHTMLDialog = package.loadlib(rwfx_NomeDLL,"c_ShowHTMLDialog")
     rwfx_SetTransparency = package.loadlib(rwfx_NomeDLL,"c_SetTransparency")
     rwfx_c_ListBox = package.loadlib(rwfx_NomeDLL,"c_ListDlg")
     rwfx_GetFileName = package.loadlib(rwfx_NomeDLL,"c_GetFileName")
