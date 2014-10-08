@@ -119,7 +119,7 @@ LUALIB_API int c_MP_SetVariable(lua_State *L)
 		{
 			mbstowcs(buffer, varName, strlen(varName));	
 			buffer[strlen(varName)] = '\0';
-			if (wcsicmp(list.GetItem(i)->GetName(), buffer) == 0)
+			if (wcsicmp(list.GetItem(i)->GetName().c_str(), buffer) == 0)
 			{
 				MP_values.at(i) = varValue;
 			}
@@ -179,7 +179,7 @@ LUALIB_API int c_MP_ParseFunction(lua_State *L)
 			if (i > 0)
 				wcscat(buffer, L",");
 
-			wcscat(buffer, list.GetItem(i)->GetName());
+			wcscat(buffer, list.GetItem(i)->GetName().c_str());
 			UnicodeToAnsi(buffer,buffer_char,sizeof(buffer_char)-1);
 		}
 

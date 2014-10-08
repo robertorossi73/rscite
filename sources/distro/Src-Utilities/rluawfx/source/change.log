@@ -1,7 +1,12 @@
-TODO : V.2.X.X.X
 * TODO : da testare e correggere
   nuova funzione c_callFXex in grado di richiamare funzioni presenti in 
   librerie esterne
+
+V.3.0.0.0
+* funzione per gestione dialog html (c_ShowHTMLDialog)
+
+V.2.3.0.0
+* aggiornata MathParseKit a versione del 11/05/2014
 
 V.2.2.0.0
 * convertiti file da .c a .cpp

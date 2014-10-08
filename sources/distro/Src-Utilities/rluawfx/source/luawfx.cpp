@@ -39,6 +39,7 @@ extern "C"
 #include "genguid.h"
 
 #include "rMsgBx.h"
+#include "rHDialog.h"
 
 HINSTANCE public_DllInstance; //istanza corrente DLL
 
@@ -1111,7 +1112,65 @@ LUALIB_API int c_callFXex(lua_State *L)
   }
 }
 
+LUALIB_API int c_ShowHTMLDialog(lua_State *L)
+{
+	const int n = lua_gettop(L);
+	const char *fileName;
+	const char *htmlFile;
+	const char *options;
+	long flags;
+	const char *inputData;
+	char datao[32000];
+	memset(datao, '\0', sizeof(datao));
+	int result;
+
+	if ((n == 5) &&
+		(lua_type(L, 1) == LUA_TSTRING) && 
+		(lua_type(L, 2) == LUA_TSTRING) &&
+		(lua_type(L, 3) == LUA_TSTRING) &&
+		(lua_type(L, 4) == LUA_TNUMBER) &&
+		(lua_type(L, 5) == LUA_TSTRING)
+		)
+	{
+		fileName = lua_tostring(L, 1); //nome file scambio temporaneo
+		htmlFile = lua_tostring(L, 2); //nome file html
+		options = lua_tostring(L, 3); //opzioni per dialog
+		flags = lua_tointeger(L, 4); //flags per dialog
+		inputData = lua_tostring(L, 5); //dati di input
+
+		if (flags == 0)
+		{
+			flags = HTMLDLG_MODAL | HTMLDLG_VERIFY;
+		}
+
+		result = start_ShowHTMLDialog(GetActiveWindow(),
+										htmlFile,
+										flags,
+										options,
+										inputData,
+										datao,
+										sizeof(datao));
+
+		if (result > -1)
+		{
+			if (result == 1)
+				writeStrinToTmp(datao, fileName);
+
+			lua_pushnumber(L, result);
+		} else
+			lua_pushnil(L);
+	}
+	else {
+		showErrorMsg("Arguments error! - c_Test(...)");
+		lua_error(L);
+		lua_pushnil(L);
+	}
+
+	return 1;
+
+}
+
 LUALIB_API int c_Test(lua_State *L)
 {
- return 0;
+	return 0;
 }
