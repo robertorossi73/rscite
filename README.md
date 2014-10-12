@@ -1,29 +1,5 @@
-# README #
+# RSciTE #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+RSciTE è una distribuzione italiana di SciTE, potente editor studiato per il programmatore, ma che può essere utilizzato da chiunque, indipendentemente dalla sua professione. Creare e modificare un testo con SciTE è semplice e produttivo… Semplice come il ‘Blocco Note’, completo e potente come gli editor professionali.
 
-### What is this repository for? ###
-
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
-
-### How do I get set up? ###
-
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
-
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+![rscite.jpg](https://bitbucket.org/repo/7M7Gga/images/1552891838-rscite.jpg)
