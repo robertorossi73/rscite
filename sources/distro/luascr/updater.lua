@@ -123,11 +123,11 @@ do
   function buttonOk_click(control, change)
     local remoteVer = ""
     
+    remoteVer = updater_existUpg()
+    
     --verifica versione e mostra maschera adeguata
     wcl_strip:init()
     wcl_strip:addButtonClose()
-    
-    remoteVer = updater_existUpg()
     
     --wcl_strip:addLabel("L2", "Versione corrente di RSciTE : "..remoteVer[3])
     wcl_strip:addLabel("L2", _t(290)..remoteVer[3])
@@ -146,7 +146,7 @@ do
         if (remoteVer[2]) then
             wcl_strip:addLabel("L1", _t(281))
             wcl_strip:addNewLine()
-            wcl_strip:addLabel("L1A", _t(328))
+            wcl_strip:addLabel("LA", _t(328))
         end
       wcl_strip:addNewLine()
       --wcl_strip:addButton("OK","&Si, scarica ora",buttonGoToWeb_click, true)
