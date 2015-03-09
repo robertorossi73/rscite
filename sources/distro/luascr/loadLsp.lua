@@ -1,5 +1,5 @@
 --[[
-Version : 1.1.3
+Version : 1.2.2
 Web     : http://www.redchar.net
 
 Questa procedura permette il caricamente del file lisp corrente in un CAD supprotato
@@ -25,6 +25,27 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
 do
     require("luascr/rluawfx")
 
+    function inverterSlash(testo)
+        local result = ""
+        local i=1
+        local len
+        local lettera
+
+        len = string.len(testo)
+
+        while (i <= len) do
+          lettera = string.sub(testo,i,i)
+          if (lettera == "\\") then
+            lettera = "/"
+          end      
+          result = result..lettera
+          
+          i = i + 1
+        end
+        return result
+    end 
+
+    
     function buttonOk_click(control, change)
         local exe = "wscript"
         local cad = ""
@@ -55,7 +76,7 @@ do
         
         par = "\""..props["SciteDefaultHome"].."/luascr/loadCADLsp.vbs\" " ..
                 cad..
-                " \""..props["FilePath"].."\""
+                " \""..inverterSlash(props["FilePath"]).."\""
                 
         rwfx_ShellExecute(exe,par)
     end
