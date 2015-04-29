@@ -20,8 +20,10 @@ IDB_SCITE          BITMAP         "scite.bmp"
 //
 STRINGTABLE
 {
-    IDS_ITEMSCITE                 "Edit with &SciTE in New Tab"
-    IDS_ITEMSCITEW                "Edit with SciTE in New &Window"
+    IDS_ITEMSCITE_ENG                 "Edit with &SciTE in New Tab"
+	IDS_ITEMSCITEW_ENG                "Edit with SciTE in New &Window"
+	IDS_ITEMSCITE_ITA                 "Edita con &SciTE (nuova Tab)"
+	IDS_ITEMSCITEW_ITA                "Edita con SciTE (nuova &Finestra)"
 }
 
 
@@ -30,8 +32,8 @@ STRINGTABLE
 // Version Information resources
 //
 VS_VERSION_INFO VERSIONINFO
-    FILEVERSION     1,4,2,0
-    PRODUCTVERSION  1,4,2,0
+    FILEVERSION     1,4,3,0
+    PRODUCTVERSION  1,4,3,0
     FILEOS          VOS__WINDOWS32
     FILETYPE        VFT_DLL
     FILESUBTYPE     VFT2_UNKNOWN
@@ -45,14 +47,14 @@ VS_VERSION_INFO VERSIONINFO
             VALUE "Comments", "\0"
             VALUE "CompanyName", "Burgaud.com\0"
             VALUE "FileDescription", "Context Menu Handler for SciTE\0"
-            VALUE "FileVersion", "1.4.2\0"
+            VALUE "FileVersion", "1.4.3\0"
             VALUE "InternalName", "wscitecm\0"
             VALUE "LegalCopyright", "Copyright (c) 2000-2008 Andre Burgaud\0"
             VALUE "LegalTrademarks", "\0"
             VALUE "OriginalFilename", "wscitecm.dll\0"
             VALUE "PrivateBuild", "\0"
             VALUE "ProductName", "wscitecm\0"
-            VALUE "ProductVersion", "1.4.2\0"
+            VALUE "ProductVersion", "1.4.3\0"
             VALUE "SpecialBuild", "\0"
         }
     }

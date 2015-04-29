@@ -29,6 +29,8 @@
 #define INITGUID
 #include <initguid.h>
 #include <shlguid.h>
+#include <string>
+#include <algorithm>
 #include "resource.h"
 #include "wscitecm.h"
 #pragma data_seg()
@@ -237,6 +239,30 @@ void MsgBox(LPTSTR lpszMsg) {
              MB_OK);
 }
 
+//get te language number
+// 0 = english
+// 1 = italian
+static int getLanguageId(void) {
+	TCHAR szModuleFullName[MAX_PATH];
+	int nLenPath = 0;
+	TCHAR* pDest;
+	int result = 0;
+	std::string fileName;
+
+	GetModuleFileName(_hModule, szModuleFullName, MAX_PATH);
+	pDest = strrchr(szModuleFullName, '\\');
+	pDest++;
+
+	fileName = pDest;
+	std::transform(fileName.begin(), fileName.end(), fileName.begin(), ::toupper);
+	if (fileName.find("_IT") == std::string::npos)
+		result = 0; //english
+	else
+		result = 1; //italian
+	return result;
+}
+
+
 //---------------------------------------------------------------------------
 // MsgBoxError
 //---------------------------------------------------------------------------
@@ -359,9 +385,16 @@ STDMETHODIMP CShellExt::QueryContextMenu(HMENU hMenu, UINT indexMenu, UINT idCmd
   char szItemSciTE[MAX_ITEM_SIZE];//="Edit with &SciTE in New Tab";
   char szItemSciTEw[MAX_ITEM_SIZE];//="Edit with SciTE in New &Window";
 
-
-  ::LoadString(_hModule, IDS_ITEMSCITE, reinterpret_cast<LPSTR>(&szItemSciTE), MAX_ITEM_SIZE);
-  ::LoadString(_hModule, IDS_ITEMSCITEW, reinterpret_cast<LPSTR>(&szItemSciTEw), MAX_ITEM_SIZE);
+  if (getLanguageId() == 0)
+  {
+	  ::LoadString(_hModule, IDS_ITEMSCITE_ENG, reinterpret_cast<LPSTR>(&szItemSciTE), MAX_ITEM_SIZE);
+	  ::LoadString(_hModule, IDS_ITEMSCITEW_ENG, reinterpret_cast<LPSTR>(&szItemSciTEw), MAX_ITEM_SIZE);
+  }
+  else
+  {
+	  ::LoadString(_hModule, IDS_ITEMSCITE_ITA, reinterpret_cast<LPSTR>(&szItemSciTE), MAX_ITEM_SIZE);
+	  ::LoadString(_hModule, IDS_ITEMSCITEW_ITA, reinterpret_cast<LPSTR>(&szItemSciTEw), MAX_ITEM_SIZE);
+  }
 
   FORMATETC fmte = {
     CF_HDROP,
