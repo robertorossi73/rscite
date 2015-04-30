@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 ;Autore :   Roberto Rossi
-;Versione : 2.1.0
+;Versione : 3.0.0
 ;Web      : http://www.redchar.net
 
 [Setup]
@@ -42,10 +42,10 @@ Name: desktopicon; Description: {cm:CreateDesktopIcon}; GroupDescription: {cm:Ad
 [Files]
 Source: ..\sources\distro\*; DestDir: {app}; Flags: ignoreversion recursesubdirs createallsubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
-Source: ..\sources\distro_dll\wscitecm_it.dll; DestDir: {app}; Flags: 32bit regserver restartreplace uninsrestartdelete; Tasks: ; Languages: italian
-Source: ..\sources\distro_dll\wscitecm64_it.dll; DestDir: {app}; Flags: 64bit regserver restartreplace uninsrestartdelete; Languages: italian
-Source: ..\sources\distro_dll\wscitecm_en.dll; DestDir: {app}; Flags: 32bit regserver restartreplace uninsrestartdelete; Tasks: ; Languages: english
-Source: ..\sources\distro_dll\wscitecm64_en.dll; DestDir: {app}; Flags: 64bit regserver restartreplace uninsrestartdelete; Tasks: ; Languages: english
+Source: ..\sources\distro_dll\wscitecm_it.dll; DestDir: {app}; Flags: restartreplace uninsrestartdelete; Check: not IsWin64; Tasks: ; Languages: italian
+Source: ..\sources\distro_dll\wscitecm_en.dll; DestDir: {app}; Flags: restartreplace uninsrestartdelete; Check: not IsWin64; Tasks: ; Languages: english
+Source: ..\sources\distro_dll\wscitecm64_it.dll; DestDir: {app}; Flags: restartreplace uninsrestartdelete; Check: IsWin64; Languages: italian
+Source: ..\sources\distro_dll\wscitecm64_en.dll; DestDir: {app}; Flags: restartreplace uninsrestartdelete; Check: IsWin64; Tasks: ; Languages: english
 ;Elimina superflui per trasformare versione italiana in inglese
 Source: ..\sources\distro\loctools.properties; DestDir: {app}; Flags: deleteafterinstall; Tasks: ; Languages: english
 Source: ..\sources\distro\locale.properties; DestDir: {app}; Flags: deleteafterinstall; Tasks: ; Languages: english
@@ -80,54 +80,47 @@ italian.PortableVersion=Non installare il programma, ma estrai solo i file della
 english.PortableVersionGroup=RSciTE Portable Version
 italian.PortableVersionGroup=Versione Portabile di RSciTE
 
+
 [Code]
 var
   FirstInstallation: Boolean;
 
-procedure CurStepChanged(CurStep: TSetupStep);
+#IFDEF UNICODE
+    #DEFINE AW "W"
+#ELSE
+    #DEFINE AW "A"
+#ENDIF
+type
+    INSTALLSTATE = Longint;
+const
+    INSTALLSTATE_INVALIDARG = -2;  // An invalid parameter was passed to the function.
+    INSTALLSTATE_UNKNOWN = -1;     // The product is neither advertised or installed.
+    INSTALLSTATE_ADVERTISED = 1;   // The product is advertised but not installed.
+    INSTALLSTATE_ABSENT = 2;       // The product is installed for a different user.
+    INSTALLSTATE_DEFAULT = 5;      // The product is installed for the current user.
+
+    //DOWNLOADS FOR VISUAL C++ 2013
+    VC_REDIST2013_URL = 'http://download.microsoft.com/download/2/E/6/2E61CFA4-993B-4DD4-91DA-3737CD5CD6E3/vcredist_x86.exe';
+    VC_REDIST2013_URL_x64 = 'http://download.microsoft.com/download/2/E/6/2E61CFA4-993B-4DD4-91DA-3737CD5CD6E3/vcredist_x64.exe';
+
+    //OPTIONS
+    VC_2013_REDIST = '{13A4EE12-23EA-3371-91EE-EFB36DDFFF3E}'; //Microsoft.VS.VC_RuntimeMinimumVSU_x86,v12
+    VC_2013_REDIST_x64 = '{A749D8E6-B613-3BE3-8F5F-045C84EBA29B}'; //Microsoft.VS.VC_RuntimeMinimumVSU_amd64,v12
+
+    function MsiQueryProductState(szProduct: String): INSTALLSTATE;
+    external 'MsiQueryProductState{#AW}@msi.dll stdcall';
+
+function VCVersionInstalled(const ProductID: String): Boolean;
 begin
+    Result := MsiQueryProductState(ProductID) = INSTALLSTATE_DEFAULT;
+end;
 
-  //if (CurStep=ssPostInstall) then
-  //begin //post installazione
-
-    //if (not IsTaskSelected('portablemode')) then
-    //begin //solo nel caso NON sia la versione portabile
-
-      //if IsWin64 then
-      //begin
-        //if FirstInstallation then
-        //begin
-          //registrazione menu contestuale a 64 bit
-        //  if FileExists(ExpandConstant('{app}\wscitecm64_en.dll')) then
-//          begin
-            //RegisterServer(true, ExpandConstant('{app}\wscitecm64_en.dll'), True);
-          //end;
-          //if FileExists(ExpandConstant('{app}\wscitecm64_it.dll')) then
-          //begin
-//            RegisterServer(true, ExpandConstant('{app}\wscitecm64_it.dll'), True);
-    //      end;
-        //end;
-  //    end;
-
-      //registrazione menu contestuale a 32bit
-      //if FirstInstallation then
-      //begin
-      //  if FileExists(ExpandConstant('{app}\wscitecm_en.dll')) then
-//        begin
-          //RegisterServer(false, ExpandConstant('{app}\wscitecm_en.dll'), True);
-        //end;
-        //if FileExists(ExpandConstant('{app}\wscitecm_it.dll')) then
-        //begin
-//          RegisterServer(false, ExpandConstant('{app}\wscitecm_it.dll'), True);
-  //      end;
-      //end;
-
-//    end;//not IsTaskSelected('portablemode')   
-
-  //end; //endpostinstall
-  
+procedure CurStepChanged(CurStep: TSetupStep);
+var 
+    ResultCode: Integer;
+begin
   if (CurStep=ssInstall) then //controllo installazione precedente
-  begin //pre installazione
+  begin 
     FirstInstallation := True; //prima installazione
     
     if FileExists(ExpandConstant('{app}\scite.exe')) then
@@ -147,8 +140,63 @@ begin
         FirstInstallation := False; //upgrade in corso
       end;
     end;
-
   end; //endpreinstallazione
+
+  if (CurStep=ssPostInstall) then //installazione conclusive
+  begin
+
+    if (not IsTaskSelected('portablemode')) then
+    begin
+        //gestione runtimes
+        if (IsWin64)then
+        begin
+            //win 64
+            if NOT VCVersionInstalled(VC_2013_REDIST) then
+            begin
+                //installazione runtime 32bit
+                Exec(ExpandConstant('{app}\tools\runtimes\vcredist_x86-2013.exe'), '/install /passive /norestart', '', SW_SHOW, ewWaitUntilTerminated, ResultCode)
+            end;
+            if NOT VCVersionInstalled(VC_2013_REDIST_x64) then
+            begin
+                //installazione runtime 64bit
+                Exec(ExpandConstant('{app}\tools\runtimes\vcredist_x64-2013.exe'), '/install /passive /norestart', '', SW_SHOW, ewWaitUntilTerminated, ResultCode)
+            end;
+        end else
+        begin
+            //win 32
+            if NOT VCVersionInstalled(VC_2013_REDIST) then
+            begin
+                //installazione runtime 32bit
+                Exec(ExpandConstant('{app}\tools\runtimes\vcredist_x86-2013.exe'), '/install /passive /norestart', '', SW_SHOW, ewWaitUntilTerminated, ResultCode)
+            end;
+        end;
+
+        //registrazione menu contestuale a 32 bit
+        if FileExists(ExpandConstant('{app}\wscitecm_en.dll')) then
+        begin
+          RegisterServer(false, ExpandConstant('{app}\wscitecm_en.dll'), True);
+        end;
+        if FileExists(ExpandConstant('{app}\wscitecm_it.dll')) then
+        begin
+          RegisterServer(false, ExpandConstant('{app}\wscitecm_it.dll'), True);
+        end;
+
+        if (IsWin64)then
+        begin
+          //registrazione menu contestuale a 64 bit
+          if FileExists(ExpandConstant('{app}\wscitecm64_en.dll')) then
+          begin
+            RegisterServer(true, ExpandConstant('{app}\wscitecm64_en.dll'), True);
+          end;
+          if FileExists(ExpandConstant('{app}\wscitecm64_it.dll')) then
+          begin
+            RegisterServer(true, ExpandConstant('{app}\wscitecm64_it.dll'), True);
+          end;
+        end;
+    end; //not portablemode
+
+  end; //end conclusione
+
 
 end; //endCurStepChanged
 
