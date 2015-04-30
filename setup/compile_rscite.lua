@@ -1,16 +1,10 @@
 --[[
 Author  : Roberto Rossi
-Version : 1.0.4
+Version : 2.0.0
 Web     : http://www.redchar.net
 
-Questa procedura provvede alla compilazione di 3 file :
-
-1) utilizzando innosetup consente la compilazione del file di installazione
-    di RSciTE
-2) utilizzando 7-zip produce il file .zip contenente la versione portabile
-    di RSciTE in lingua italiana
-3) utilizzando 7-zip produce il file .zip contenente la versione portabile
-    di RSciTE in lingua inglese
+Questa procedura provvede alla compilazione del file di setup della distribuzione
+RSciTE, utilizzando Inno Setup come compilatore.
 
 ATTENZIONE : 
   Questa procedura dere essere eseguita dall'interno di RSciTE, utilizzando
@@ -22,9 +16,6 @@ do
   require("luascr/rluawfx") --libreria standard di RSciTE  
 
   --Configurazioni generali script
-  local ZipPrinc =  "C:\\Program Files\\7-Zip\\7z.exe" --Zip
-  local ZipAlt =  "C:\\Program Files (x86)\\7-Zip\\7z.exe" --Zip
-  local ZipAlt2 =  "C:\\Programmi\\7-Zip\\7z.exe" --Zip
   local InnoSetup = "C:\\Program Files\\Inno Setup 5\\iscc.exe" --Eseguibile Inno Setup
   local InnoSetupAlt = "C:\\Program Files (x86)\\Inno Setup 5\\iscc.exe" --Eseguibile Inno Setup
   local InnoSetupAlt2 = "C:\\Programmi\\Inno Setup 5\\iscc.exe" --Eseguibile Inno Setup
@@ -33,11 +24,7 @@ do
   -----------------------------------------------------------------------------
   local flagOk = true
   local flagErrorNsis = false
-  local flagErrorZip = false
   local nomeFCompresso = "rscite"
-  local nomeFCompressoIt = nomeFCompresso.."-it"
-  local nomeFCompressoEn = nomeFCompresso.."-en"
-  --local nomeFCompressoGuida = "guida"
 
 --salva il file contenente la definizione della costante AppVerName= per InnoSetup
 local function saveInnoSetup_AppVerName(ver)
@@ -92,7 +79,6 @@ local function startProc(version)
   local exe = ""
   local resultExeName = "setup-"..nomeFCompresso..version
   local flagErrorNsis
-  local flagErrorZip
   local flagOk = true
   local setupVersion = ""
   
@@ -100,31 +86,7 @@ local function startProc(version)
   setupVersion = string.gsub(setupVersion, "_",".")
   
   nomeFCompresso = nomeFCompresso..version
-  local nomeFCompressoIt = "portabile_"..nomeFCompresso.."-it"
-  local nomeFCompressoEn = "portable_"..nomeFCompresso.."-en"
   
-    if (rfx_fileExist(ZipPrinc)) then
-      Zip = ZipPrinc
-    elseif (rfx_fileExist(ZipAlt)) then
-      Zip = ZipAlt
-    elseif (rfx_fileExist(ZipAlt2)) then
-      Zip = ZipAlt2
-    end
-
-    if (rfx_fileExist(Zip)) then
-      s("del \".\\output\\"..nomeFCompressoIt..".zip\"")
-      s("\""..Zip.."\" u -tzip ./output/"..nomeFCompressoIt..".zip ../sources/distro/* -r  -x!vcredist*.exe")
-
-      s("del \".\\output\\"..nomeFCompressoEn..".zip\"")
-      s("\""..Zip.."\" u -tzip ./output/"..nomeFCompressoEn..".zip ../sources/distro/* -r -x!*-it.properties -x!locale.properties -x!vcredist*.exe")
-
-      --s("del \".\\output\\"..nomeFCompressoGuida..".zip\"")
-      --s("\"$Zip\" u -tzip ./output/"..nomeFCompressoGuida..".zip ../sources/distro/hlpscite/rscite/* -r -x!.svn")
-     else 
-      flagErrorZip = true
-      flagOk = false
-    end
-
     --eliminazione vecchio file di setup
     if (rfx_fileExist(".\\output\\"..resultExeName..".exe")) then
       s("del \".\\output\\"..resultExeName..".exe\"")
@@ -158,9 +120,6 @@ local function startProc(version)
       print("\n\n Attenzione, sono stati riscontrati i seguenti errori :")
       if (flagErrorNsis) then
         print("\n - Manca il file '"..InnoSetup.."' o '"..InnoSetupAlt.."'\n   Impossibile completare la creazione dell'installazione!")
-      end
-      if(flagErrorZip) then
-        print("\n - Manca il file '"..Zip.."'\n   Impossibile completare la creazione degli archivi compressi!")
       end
       print("\n\n")
     end --endif
