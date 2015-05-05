@@ -4,7 +4,7 @@ Web     : http://www.redchar.net
 
 Questa procedura elimina i ritorni a capo nell'intero file corrente
 
-Copyright (C) 2004-2013 Roberto Rossi
+Copyright (C) 2004-2015 Roberto Rossi
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public

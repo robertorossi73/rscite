@@ -6,7 +6,7 @@ Web     : http://www.redchar.net
 Questa funzione consente l'inserimento di un BOM all'interno del file
 corrente.
 
-Copyright (C) 2012-2013 Roberto Rossi 
+Copyright (C) 2012-2015 Roberto Rossi 
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public

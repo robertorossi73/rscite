@@ -4,7 +4,7 @@ Web     : http://www.redchar.net
 
 Funzioni di utilità per macro SciTE/Lua
 
-Copyright (C) 2004-2014 Roberto Rossi 
+Copyright (C) 2004-2015 Roberto Rossi 
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public

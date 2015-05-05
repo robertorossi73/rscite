@@ -7,7 +7,7 @@ a sinistra/destra/centro
 E' inoltre possibile utilizzare un riempimento che inserisce caratteri
 speciali prima e/o dopo il testo allineato
 
-Copyright (C) 2004-2010 Roberto Rossi 
+Copyright (C) 2004-2015 Roberto Rossi 
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public

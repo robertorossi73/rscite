@@ -4,7 +4,7 @@ Web     : http://www.redchar.net
 
 Questa procedura Consente l'apertura di uno degli ultimi file modificati.
 
-Copyright (C) 2004-2010 Roberto Rossi 
+Copyright (C) 2004-2015 Roberto Rossi 
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public

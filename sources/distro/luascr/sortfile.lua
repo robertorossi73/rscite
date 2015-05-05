@@ -4,7 +4,7 @@ Web     : http://www.redchar.net
 
 Questa procedura ordina il file corrente
 
-Copyright (C) 2012-2013 Roberto Rossi e Luigi Altomare: 
+Copyright (C) 2012-2015 Roberto Rossi e Luigi Altomare: 
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public

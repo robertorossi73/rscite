@@ -8,7 +8,7 @@ file sorgenti.
 
 Viene sfruttata l'utilità Cloc (Web : http://cloc.sourceforge.net/)
 
-Copyright (C) 2012-2014 Roberto Rossi 
+Copyright (C) 2012-2015 Roberto Rossi 
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public

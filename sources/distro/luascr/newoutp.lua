@@ -5,7 +5,7 @@ Web     : http://www.redchar.net
 Copia il contenuto del pannello di output all'interno di un nuovo file senza
 nome
 
-Copyright (C) 2004-2010 Roberto Rossi 
+Copyright (C) 2004-2015 Roberto Rossi 
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public

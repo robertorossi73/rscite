@@ -8,7 +8,7 @@ Questo modulo genera una frase "Mica siamo qui..."
 Archivio frasi liberamente tratto da 
 http://www.diegorizzi.com/index.php/humor/non-siamo-mica-qui-a
 
-Copyright (C) 2012-2013 Roberto Rossi 
+Copyright (C) 2012-2015 Roberto Rossi 
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public

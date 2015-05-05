@@ -5,7 +5,7 @@ Web     : http://www.redchar.net
 Questa procedura inserisce il testo specificato alla colonna indicata,
 compreso inizio e fine linea
 
-Copyright (C) 2004-2013 Roberto Rossi 
+Copyright (C) 2004-2015 Roberto Rossi 
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public

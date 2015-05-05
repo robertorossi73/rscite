@@ -8,7 +8,7 @@ di default
 Inoltre consente l'inserimento della selezione corrente all'interno dell'url
 di connessione
 
-Copyright (C) 2004-2010 Roberto Rossi 
+Copyright (C) 2004-2015 Roberto Rossi 
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public

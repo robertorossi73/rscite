@@ -9,7 +9,7 @@ Inserimento guidato abbreviazioni
 V.2.2.0
 - Introdotta memorizzazione ultima funzione eseguita
 
-Copyright (C) 2004-2010 Roberto Rossi 
+Copyright (C) 2004-2015 Roberto Rossi 
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public

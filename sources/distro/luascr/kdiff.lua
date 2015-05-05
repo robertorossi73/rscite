@@ -12,7 +12,7 @@ V.1.0.0
 V.1.0.0
 - Release iniziale
 
-Copyright (C) 2010-2013 Roberto Rossi 
+Copyright (C) 2010-2015 Roberto Rossi 
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public

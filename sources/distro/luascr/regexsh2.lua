@@ -4,7 +4,7 @@ Web     : http://www.redchar.net
 
 Questa procedura consente l'apertura della documentazione generica relativa alle espressioni regolari.
 
-Copyright (C) 2012-2013 Roberto Rossi 
+Copyright (C) 2012-2015 Roberto Rossi 
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
