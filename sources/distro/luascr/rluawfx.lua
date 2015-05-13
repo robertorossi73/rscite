@@ -1,5 +1,5 @@
 --[[
-Version : 3.0.0
+Version : 3.0.1
 Web     : http://www.redchar.net
 
 Funzioni di utilità per macro SciTE/Lua
@@ -107,8 +107,12 @@ if not(rwfx_info) then
       rwfx_NomeDLL = "rluawfx.dll" --lingua diversa da inglese
     end
     
-    --definizione funzioni    
+    --definizione funzioni generali
+    
+    --da usare previo settaggio della compatibilità
+    --https://msdn.microsoft.com/en-us/library/ee330730%28v=vs.85%29.aspx#browser_emulation
     rwfx_ShowHTMLDialog = package.loadlib(rwfx_NomeDLL,"c_ShowHTMLDialog")
+    
     rwfx_SetTransparency = package.loadlib(rwfx_NomeDLL,"c_SetTransparency")
     rwfx_c_ListBox = package.loadlib(rwfx_NomeDLL,"c_ListDlg")
     rwfx_GetFileName = package.loadlib(rwfx_NomeDLL,"c_GetFileName")
