@@ -1,6 +1,6 @@
 --[[
 Author  : Roberto Rossi
-Version : 1.2.1
+Version : 1.2.2
 Web     : http://www.redchar.net
 
 Questo modulo genera una frase "Mica siamo qui..."
@@ -278,7 +278,8 @@ do
                 "Siam mica qui a spremere i cachi per risparmiar sul guttalax...",
                 "Siam mica quì a produrre frigoriferi a legna!!!",
                 "Siam mica quì a schiacciare i punti neri ai dalmata...",
-                "Non siamo mica quì a schiaccaire i punti neri ai dalmata!"
+                "Non siamo mica quì a schiaccaire i punti neri ai dalmata!",
+                "Non siamo mica quì a vendere il ghiaccio agli Eschimesi..."
               }
 
   function genFrase_micaqui(init)
