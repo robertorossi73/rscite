@@ -1,5 +1,5 @@
 --[[
-Version : 1.0.1
+Version : 1.0.2
 Web     : http://www.redchar.net
 
 Questa procedura consente l'esecuzione di Regexerator.
@@ -29,7 +29,7 @@ do
     local exeApp = props["SciteDefaultHome"].."/tools/regex/regexerator.jar"
     local javaVer = true
     if ( javaVer ) then
-      rwfx_ShellExecute("javaw.exe", "-jar \""..exeApp.."\"")
+      rwfx_ShellExecute(exeApp,"")
     else
       --print("\nAttenzione : Per eseguire questa procedura è necessario la presenza della Java Virtual Machine!\n\nE' possibile scaricarne una copia da http://www.java.com.")
       print(_t(192))
