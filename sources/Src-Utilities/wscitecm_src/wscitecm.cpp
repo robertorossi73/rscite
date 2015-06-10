@@ -436,15 +436,15 @@ STDMETHODIMP CShellExt::InvokeCommand(LPCMINVOKECOMMANDINFO lpcmi) {
     UINT idCmd = LOWORD(lpcmi->lpVerb);
     switch(idCmd) {
       case 0:
-        hr = InvokeSciTE(lpcmi->hwnd, lpcmi->lpDirectory, lpcmi->lpVerb, " -check.if.already.open=1 ", lpcmi->nShow);
-        break;
+		  hr = InvokeSciTE(lpcmi->hwnd, lpcmi->lpDirectory, lpcmi->lpVerb, "", lpcmi->nShow); //lpcmi->lpParameters, lpcmi->nShow);
+		break;
 
 	  case 1:
         //hr = InvokeSciTE(lpcmi->hwnd, lpcmi->lpDirectory, lpcmi->lpVerb, lpcmi->lpParameters, lpcmi->nShow);
 		//char params[] = "-check.if.already.open=0";
 		//lpcmi->lpParameters = " -check.if.already.open=1 ";
 
-        hr = InvokeSciTE(lpcmi->hwnd, lpcmi->lpDirectory, lpcmi->lpVerb, "", lpcmi->nShow); //lpcmi->lpParameters, lpcmi->nShow);
+		  hr = InvokeSciTE(lpcmi->hwnd, lpcmi->lpDirectory, lpcmi->lpVerb, " -check.if.already.open=0 ", lpcmi->nShow);
         break;
     }
   }
