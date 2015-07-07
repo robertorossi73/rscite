@@ -300,7 +300,7 @@ do
     end
 
     --scelta =  rwfx_ShowList_presel(listaFxStr,_t(8),"addtools",exeLast)
-    scelta =  rwfx_ShowList_Repos(listaFxStr,_t(8),"addtools", exeLast)
+    scelta =  rwfx_ShowList_Repos(listaFxStr,_t(8).." (".. tostring(table.getn(listaFx))  ..")","addtools", exeLast)
     if (scelta) then
       dimLista = table.getn(listaFx)
       if (scelta < dimLista) then
