@@ -73,9 +73,9 @@ Name: {app}\wscitecm_it.dll; Type: files
 Name: {userappdata}\RSciTE; Type: filesandordirs; Tasks: ; Languages: 
 
 [CustomMessages]
-english.PrevInstall=Is presente another version of RSciTE! Do you want proceed with upgrade?
+english.PrevInstall=Is present another version of RSciTE! Do you want proceed with upgrade?
 italian.PrevInstall=E' presente una precedente Installazione di RSciTE. Si desidera procedere all'aggiornamento?
-english.PortableVersion=Don't installa RSciTE, but extract the files for the portable version.
+english.PortableVersion=Don't install RSciTE, but extract the files for the portable version.
 italian.PortableVersion=Non installare il programma, ma estrai solo i file della versione Portabile.
 english.PortableVersionGroup=RSciTE Portable Version
 italian.PortableVersionGroup=Versione Portabile di RSciTE
