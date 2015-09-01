@@ -1,5 +1,5 @@
 --[[
-Version : 3.0.1
+Version : 3.0.2
 Web     : http://www.redchar.net
 
 Funzioni di utilità per macro SciTE/Lua
@@ -710,6 +710,8 @@ if not(rwfx_info) then
       
       if (estensione == '*.') then
         patterns = "default"
+      elseif (string.find(props['file.patterns.markdown'],estensione,1,true)) then
+        patterns = 'file.patterns.markdown'
       elseif (string.find(props['file.patterns.alisp'],estensione,1,true)) then
         patterns = 'file.patterns.alisp'
       elseif (string.find(props['file.patterns.php'],estensione,1,true)) then
