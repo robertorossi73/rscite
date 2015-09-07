@@ -1,5 +1,5 @@
 --[[
-Version : 1.0.2
+Version : 1.0.3
 Web     : http://www.redchar.net
 
 Questa procedura consente l'esecuzione di dnGREP.
@@ -30,7 +30,7 @@ do
     local par = ""
     local netVer = rfx_dotNetExist()
     if ( netVer["v4"] ) then
-      rwfx_ShellExecute(exeApp,props["FileDir"])
+      rwfx_ShellExecute(exeApp,"\""..props["FileDir"].."\"")
     else
       print(_t(272))
       --print("\nAttenzione : Per eseguire questa procedura è necessario la presenza di .NET V.4!\n\nE' possibile scaricarne una copia da \n https://www.microsoft.com/it-it/download/details.aspx?id=17718")
