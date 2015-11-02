@@ -563,6 +563,7 @@ do
         wcl_strip:addButton("OK",_t(270),buttonOk_click, true)
         
         wcl_strip:show()
+        wcl_strip:setList("TVAL", lst)
         wcl_strip:setValue("TVAL", lst[1])
     end
   main()    
