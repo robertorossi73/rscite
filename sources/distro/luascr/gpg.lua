@@ -1,6 +1,6 @@
 --[[
 Autore  : Roberto Rossi
-Version : 1.0.0
+Version : 1.0.8
 Web     : http://www.redchar.net
 
 Modulo per criptazione/deccriptazione file
@@ -79,16 +79,17 @@ do
         
         if (ext == ".ASC") then
             outFile = props["FileDir"].."\\"..props["FileName"]
-            --TODO : da tradurre
-            if (rwfx_MsgBox("Salvare il file decriptato in \n"..outFile,"Salva file in...",MB_YESNO ) == IDNO ) then
+            --if (rwfx_MsgBox("Salvare il file decriptato in \n"..outFile,"Salva file in...",MB_YESNO ) == IDNO ) then
+            if (rwfx_MsgBox(_t(344)..outFile,_t(345),MB_YESNO ) == IDNO ) then
                 outFile = ""
             end
         end
         
         if (outFile == "") then
-            --TODO : da tradurre
-            ok = rwfx_GetFileName("Selezionare File Decriptato",props["FileDir"], 
-                                    OFN_OVERWRITEPROMPT,rfx_FN(),"All Files (*.*)%c*.*")
+            --ok = rwfx_GetFileName("Selezionare File Decriptato",props["FileDir"], 
+            --                        OFN_OVERWRITEPROMPT,rfx_FN(),"All Files (*.*)%c*.*")
+            ok = rwfx_GetFileName(_t(346),props["FileDir"], 
+                                    OFN_OVERWRITEPROMPT,rfx_FN(),_t(347))
             if ok then
               outFile = rfx_GF()
             end
@@ -98,22 +99,25 @@ do
             if (rfx_fileExist(outFile)) then
                 ok = os.remove(outFile)
                 if (not(ok)) then
-                    --TODO : traduzione
-                    print("\nImpossibile sovrascrivere il file "..outFile)
+                    --print("\nImpossibile sovrascrivere il file "..outFile)
+                    print(_t(348).." "..outFile)
                 end
+            else
+                ok = true
             end
             
             if (ok) then
                 decrypt(password, outFile)                
                 if (rfx_fileExist(outFile)) then
-                --TODO : da tradurre
-                    if (rwfx_MsgBox("Si desidera aprire il file decriptato \n"..outFile,
-                                    "Apertura file",MB_YESNO ) == IDYES ) then
+                    --if (rwfx_MsgBox("Si desidera aprire il file decriptato \n"..outFile,
+                    --                "Apertura file",MB_YESNO ) == IDYES ) then
+                    if (rwfx_MsgBox(_t(349)..outFile,
+                                    _t(350),MB_YESNO ) == IDYES ) then
                         scite.Open(outFile)
                     end
                 else
-                    --TODO : da tradurre
-                    print("\nImpossibile creare il file "..outFile)
+                    --print("\nImpossibile creare il file "..outFile)
+                    print(_t(351).." "..outFile)
                 end--exist
             end --ok
         end
@@ -128,8 +132,8 @@ do
         --file modificato
         if (editor.Modify) then
             output:ClearAll()
-            --TODO : da tradurre
-            print("\nImpossibile continuare. Il file corrente non è salvato. Procedere al salvataggio e riprovare.")
+            --print("\nImpossibile continuare. Il file corrente non è salvato. Procedere al salvataggio e riprovare.")
+            print(_t(352))
             result = false
         end        
         return result
@@ -139,14 +143,14 @@ do
         local result = true
         
         if (psw1 ~= psw2) then
-            --TODO : da tradurre
-            print("Impossibile continuare, le password immesse sono differenti!")
+            --print("Impossibile continuare, le password immesse sono differenti!")
+            print(_t(353))
             result = false
         end
         
         if (psw1 == "")then
-            --TODO : traduzione
-            print("Impossibile continuare. E' necessario specificare una password!")
+            --print("Impossibile continuare. E' necessario specificare una password!")
+            print(_t(354))
             result = false
         end 
         
@@ -159,14 +163,14 @@ do
     local function checkDestination(fileName)
         local result = false        
         if (rfx_fileExist(fileName)) then
-            --TODO : traduzione
-            if (rwfx_MsgBox("Sovrascrivere file \n"..fileName,"Sovrascrivere",MB_YESNO ) == IDYES ) then
+            --if (rwfx_MsgBox("Sovrascrivere file \n"..fileName,"Sovrascrivere",MB_YESNO ) == IDYES ) then
+            if (rwfx_MsgBox(_t(355)..fileName,_t(356),MB_YESNO ) == IDYES ) then
                 result = os.remove(fileName)
                 if (result) then
                     result = true
                 else
-                    --TODO : traduzione
-                    print("\nImpossibile eliminare il file!")
+                    --print("\nImpossibile eliminare il file!")
+                    print(_t(357))
                     result = false
                 end
             end
@@ -179,10 +183,12 @@ do
     
     --button ok
     function buttonOk_click(control, change)
-        --TODO : lettura elementi da file di traduzione
-        local gpg_fxs = "Decripta file corrente con password per sola lettura"..
-                        ";Decripta file corrente con password"..
-                        ";Cripta file corrente con password"
+        --local gpg_fxs = "Decripta file corrente con password per sola lettura"..
+        --                ";Decripta file corrente con password"..
+        --                ";Cripta file corrente con password"
+        local gpg_fxs = _t(358)..
+                        _t(359)..
+                        _t(360)
         local val = wcl_strip:getValue("VAL")
         local password = wcl_strip:getValue("PASSW")
         local password1 = wcl_strip:getValue("PASSW1")
@@ -217,17 +223,21 @@ do
                     if (checkSavedFile()) then
                         cryptASCFile(password)
                         props["rscite.gpg.tmppass"] = password
-                        --TODO : da tradurre
-                        if (rwfx_MsgBox("Si desidere eliminare il file corrente?"..
-                                        "\nFile criptato creato in : \n"..localFileASC..
-                                        "\n con password : "..password,
-                                        "Eliminazione File",MB_YESNO + MB_DEFBUTTON2) == IDYES ) then
+                        --if (rwfx_MsgBox("Si desidere eliminare il file corrente?"..
+                        --                "\nFile criptato creato in : \n"..localFileASC..
+                        --                "\n con password : "..password,
+                        --                "Eliminazione File",MB_YESNO + MB_DEFBUTTON2) == IDYES ) then
+                        if (rwfx_MsgBox(_t(361)..
+                                        _t(362)..localFileASC..
+                                        _t(363).." "..password,
+                                        _t(364),MB_YESNO + MB_DEFBUTTON2) == IDYES ) then
                             os.remove(localFile)
                             scite.MenuCommand(IDM_CLOSE)
                         end
-                        --TODO : da tradurre
-                        if (rwfx_MsgBox("Si desidere aprire il file criptato \n"..localFileASC,
-                                        "Apertura file",MB_YESNO ) == IDYES ) then
+                        --if (rwfx_MsgBox("Si desidere aprire il file criptato \n"..localFileASC,
+                        --                "Apertura file",MB_YESNO ) == IDYES ) then
+                        if (rwfx_MsgBox(_t(365)..localFileASC,
+                                        _t(366),MB_YESNO ) == IDYES ) then
                             scite.Open(localFileASC)
                         end
                     end --end checkSavedFile
@@ -244,10 +254,13 @@ do
         local dest    
         local old_pass
 
-        --TODO : lettura elementi da file di traduzione
-        local gpg_fxs = "Decripta file corrente con password per sola lettura"..
-                        ";Decripta file corrente con password"..
-                        ";Cripta file corrente con password"
+        --lettura elementi da file di traduzione
+        --local gpg_fxs = "Decripta file corrente con password per sola lettura"..
+        --                ";Decripta file corrente con password"..
+        --                ";Cripta file corrente con password"
+        local gpg_fxs = _t(358)..
+                        _t(359)..
+                        _t(360)
                         
         if (not(props["rscite.gpg.tmppass"] == "")) then
             old_pass = "********"
@@ -265,21 +278,21 @@ do
             wcl_strip:init()      
             wcl_strip:addButtonClose()
             
-            --TODO : traduzione
-            wcl_strip:addLabel(nil, "Password: ")
+            --wcl_strip:addLabel(nil, "Password: ")
+            wcl_strip:addLabel(nil, _t(367).." ")
             wcl_strip:addText("PASSW",old_pass, nil)
-            --TODO : traduzione
-            wcl_strip:addLabel(nil, "Funzione ")
+            --wcl_strip:addLabel(nil, "Funzione ")
+            wcl_strip:addLabel(nil, _t(368).." ")
             wcl_strip:addCombo("VAL")
             wcl_strip:addSpace()
             wcl_strip:addNewLine()
             
-            --TODO : traduzione
-            wcl_strip:addLabel(nil, "Conferma Password: ")
+            --wcl_strip:addLabel(nil, "Conferma Password: ")
+            wcl_strip:addLabel(nil, _t(369).." ")
             wcl_strip:addText("PASSW1",old_pass, nil)
             wcl_strip:addSpace()
-            --TODO : traduzione
-            wcl_strip:addButton("OK","Esegui operazione",buttonOk_click, true)
+            --wcl_strip:addButton("OK","Esegui operazione",buttonOk_click, true)
+            wcl_strip:addButton("OK",_t(370),buttonOk_click, true)
             
             wcl_strip:show()
 
