@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 ;Autore :   Roberto Rossi
-;Versione : 3.0.0
+;Versione : 3.1.0
 ;Web      : http://www.redchar.net
 
 [Setup]
@@ -52,16 +52,21 @@ Source: ..\sources\distro\locale.properties; DestDir: {app}; Flags: deleteafteri
 Source: ..\sources\distro\luascr\locale.properties; DestDir: {app}\luascr\; Flags: deleteafterinstall; Tasks: ; Languages: english
 
 [Icons]
-Name: {group}\SciTE; Filename: {app}\SciTE.exe; IconFilename: {app}\scite.ico; Tasks: not portablemode;
-Name: {group}\Doc\RSciTE Doc; Filename: {app}\hlpscite\rscite\guida_a_rscite.pdf; Tasks: not portablemode; Languages: italian
-Name: {group}\Doc\SciTE Doc; Filename: {app}\hlpscite\scite.html; Tasks: not portablemode; Languages: 
-Name: {group}\Doc\Lua Doc; Filename: {app}\hlplua\lua.chm; Tasks: not portablemode; Languages: 
-Name: {group}\Doc\Tidy Doc; Filename: {app}\tools\tidy\htmldoc\Overview.html; Tasks: not portablemode; Languages: 
-Name: {group}\Doc\KDiff Doc; Filename: {app}\tools\kdiff\doc\index.html; Tasks: not portablemode; Languages: 
-Name: {group}\Doc\WinMerge Doc; Filename: {app}\tools\winmerge\Docs\WinMerge.chm; Tasks: not portablemode; Languages: 
-Name: {group}\Roberto Rossi Home Page; Filename: http://www.redchar.net/; Tasks: not portablemode; Languages: 
+;SciTE
+Name: {group}\{cm:IconRscite}; Filename: "{app}\SciTE.exe"; IconFilename: {app}\scite.ico; Tasks: not portablemode;
+;dnGrep
+Name: {group}\{cm:IcondnGREP}; Filename: "{app}\tools\dngrep\dnGREP.exe"; Tasks: not portablemode;
+;Frhed
+Name: {group}\{cm:IconFrhed}; Filename: "{app}\tools\frhed\Frhed.exe"; Tasks: not portablemode;
+;KDiff
+Name: {group}\{cm:IconKDiff}; Filename: "{app}\tools\kdiff\kdiff3.exe"; Tasks: not portablemode;
+;WinMerge
+Name: {group}\{cm:IconWinMerge}; Filename: "{app}\tools\winmerge\WinMergeU.exe"; Tasks: not portablemode;
+;Home Page
+Name: {group}\Roberto Rossi Home Page; Filename: "{win}\explorer.exe"; Parameters: "http://www.redchar.net/"; IconFilename: "{win}\explorer.exe"; IconIndex: 14; Tasks: not portablemode;
+
 Name: {commondesktop}\RSciTE; Filename: {app}\SciTE.exe; Tasks: desktopicon
-Name: {sendto}\SciTE; Filename: {app}\SciTE.exe; IconFilename: {app}\scite.ico; Tasks: not portablemode; Languages: 
+Name: {sendto}\SciTE; Filename: {app}\SciTE.exe; IconFilename: {app}\scite.ico; Tasks: not portablemode;
 
 [Run]
 
@@ -74,11 +79,25 @@ Name: {userappdata}\RSciTE; Type: filesandordirs; Tasks: ; Languages:
 
 [CustomMessages]
 english.PrevInstall=Is present another version of RSciTE! Do you want proceed with upgrade?
-italian.PrevInstall=E' presente una precedente Installazione di RSciTE. Si desidera procedere all'aggiornamento?
+italian.PrevInstall=E' presente una precedente versione di RSciTE.%nPer evitare qualsiasi tipo di conflitto suggerisco di procedere, prima di proseguire, ad una disinstallazione dell'attuale RSciTE tramite il pannello di controllo.%nE' comunque possibile continuare ed aggiornare la versione corrente.%n%nSi desidera procedere comunque all'aggiornamento?
 english.PortableVersion=Don't install RSciTE, but extract the files for the portable version.
 italian.PortableVersion=Non installare il programma, ma estrai solo i file della versione Portabile.
 english.PortableVersionGroup=RSciTE Portable Version
 italian.PortableVersionGroup=Versione Portabile di RSciTE
+english.IconRscite=SciTE - Text Editor
+italian.IconRscite=SciTE - Editor di testo
+english.IcondnGREP=dnGREP - Find and Replace
+italian.IcondnGREP=dnGREP - Trova e Sostituisci
+english.IconFrhed=Frhed - Hex Editor
+italian.IconFrhed=Frhed - Editor Esadecimale
+english.IconKDiff=KDiff - Compare Files
+italian.IconKDiff=KDiff - Confronto File
+english.IconWinMerge=WinMerge - Compare Files
+italian.IconWinMerge=WinMerge - Confronto File
+english.IconRegexerator=Regexerator - RegEx Tester
+italian.IconRegexerator=Regexerator - Tester Espressioni Regolari
+english.IconRSciTEDOC=RSciTE - Guida alle Caratteristiche
+italian.IconRSciTEDOC=RSciTE - Functions Guide
 
 
 [Code]
