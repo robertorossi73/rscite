@@ -1,5 +1,5 @@
 --[[
-Version : 1.0.2
+Version : 1.1.0
 Web     : http://www.redchar.net
 
 Questa procedura implementa la copia dei dati in slot fissi. Nella pratica
@@ -219,6 +219,7 @@ do
           pos = string.find(text, SLOT_DATA_SEP)
           nslot = string.sub(text,1,pos-1)
           setSlot(nslot,editor:GetSelText())
+          editor:CopyText(editor:GetSelText()); --copia nella clipboard
           cutcopyOk = true
         end
       end
@@ -231,6 +232,7 @@ do
         nslot = string.sub(text,1,pos-1)
         text = getSlot(tonumber(nslot))      
         if (text ~= "") then
+          editor:CopyText(text); --copia nella clipboard
           editor:ReplaceSel(text)
         end
       end
