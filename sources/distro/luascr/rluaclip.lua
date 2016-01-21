@@ -1,5 +1,5 @@
 --[[
-Version : 1.1.0
+Version : 1.2.0
 Web     : http://www.redchar.net
 
 Questa procedura implementa la copia dei dati in slot fissi. Nella pratica
@@ -97,7 +97,10 @@ do
     nomef = SLOT_PATH_FOLDER..SLOT_FILE_NAME..tostring(slotn)..SLOT_FILE_EXT
     idf = io.open(nomef, "r")
     if (idf) then
-      result = idf:read() --lettura prima linea    
+      result = idf:read() --lettura prima linea
+      if (string.len(result) > 250) then
+        result = string.sub(result, 1, 250).."..."
+      end
       io.close(idf)
       exist = true
     end
