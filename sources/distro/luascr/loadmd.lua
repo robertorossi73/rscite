@@ -1,11 +1,11 @@
 --[[
-Version : 1.0.4
+Version : 1.1.2
 Web     : http://www.redchar.net
 
 Questa procedura permette l'anteprima di un file markdown, convertendolo in html
 per poi mostrarlo all'interno del browser web del sistema
 
-Copyright (C) 2015 Roberto Rossi 
+Copyright (C) 2015-2016 Roberto Rossi 
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -101,7 +101,8 @@ do
     
     --ritorna il nome del file html di preview
     local function markdown_getHtmlName()
-        return os.getenv("TMP").."\\preview-"..props["FileName"]..".html"
+        --return os.getenv("TMP").."\\preview-"..props["FileName"]..".html"
+        return props["FileDir"].."\\preview-"..props["FileNameExt"]..".html"
     end
     
     --aggiunge intestazione e piedi al file html specificato
