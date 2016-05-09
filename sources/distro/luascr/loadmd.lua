@@ -1,5 +1,5 @@
 --[[
-Version : 1.1.2
+Version : 1.1.3
 Web     : http://www.redchar.net
 
 Questa procedura permette l'anteprima di un file markdown, convertendolo in html
@@ -155,7 +155,7 @@ do
 
     local function Main ()
         local htmlFile = markdown_getHtmlName()
-        local htmlFileDest = props["FileDir"].."\\"..props["FileName"]..".html"
+        local htmlFileDest = markdown_getHtmlName() --props["FileDir"].."\\"..props["FileName"]..".html"
         local copyFile = true
         
         rfx_exeCapture(markdown_genBat())
@@ -164,23 +164,7 @@ do
             --preview in browser
             rwfx_ShellExecute("file://"..markdown_getHtmlName(),"")
         elseif (PUBLIC_optionScript == "CREATE") then
-            --verifica presenza file e chiedi se sovrascriver
-            if (rfx_fileExist(htmlFileDest)) then
-                --if (rwfx_MsgBox("Il file\n'"..htmlFileDest.."'\nesiste. Si desidera sovrascriverlo?","Il file Esiste",MB_YESNO ) == IDNO ) then
-                if (rwfx_MsgBox(_t(338)..htmlFileDest.._t(339),_t(340),MB_YESNO ) == IDNO ) then
-                    copyFile = false
-                end
-            end
-            
-            if (copyFile) then
-                --salvataggio file
-                if not(rfx_fileCopy(htmlFile,htmlFileDest)) then
-                    --se non è riuscito a scrivere avvisare utente
-                    rwfx_MsgBox(_t(341)..htmlFileDest,_t(342),MB_OK + MB_ICONEXCLAMATION)
-                else 
-                    rwfx_MsgBox(_t(338)..htmlFileDest.._t(343),_t(331),MB_OK)
-                end
-            end
+            print(_t(338)..htmlFileDest.._t(343))
         end
         PUBLIC_optionScript = ""
     end
