@@ -1,6 +1,6 @@
 --[[
 Author  : Roberto Rossi
-Version : 1.0.3
+Version : 1.1.8
 Web     : http://www.redchar.net
 
 Questa funzione consente l'inserimento di un BOM all'interno del file
@@ -27,8 +27,9 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
 do
   require("luascr/rluawfx")
 
-  local function execute(scelta)
-    local elementi = rfx_Split(_t(224), "|")    
+  local function execute(scelta, saveAndReload)
+    local elementi = rfx_Split(_t(224), "|")   
+    local currentFile = props["FilePath"]
 
     if (scelta == elementi[1]) then --UTF-16 Little Endian 
       editor:InsertText(0,string.char(254))
@@ -44,15 +45,27 @@ do
       editor:InsertText(0,string.char(239))
       print(_t(198))
     end
+    
+    if (saveAndReload) then
+        wcl_strip:close()
+        scite.MenuCommand(IDM_SAVE)
+        if (rwfx_MsgBox(_t(202),_t(241), MB_YESNO) == IDYES) then
+            scite.MenuCommand(IDM_REVERT)
+        end
+    end
   end
   
-  --button ok
+  --button inserisci
   function buttonOk_click(control, change)
-    execute(wcl_strip:getValue("VAL"))
+    execute(wcl_strip:getValue("VAL"), false)
+  end
+  
+  -- inserisci, salva, ricarica
+  function buttonOkSave_click(control, change)
+    execute(wcl_strip:getValue("VAL"), true)
   end
   
   --main function
-  --TODO : da fare
   local function main()
     local elementi = rfx_Split(_t(224), "|")    
     
@@ -61,7 +74,8 @@ do
       
       wcl_strip:addLabel(nil, _t(225))
       wcl_strip:addCombo("VAL")
-      wcl_strip:addButton("OK",_t(251),buttonOk_click, true)
+      wcl_strip:addButton("OKSAVE",_t(371),buttonOkSave_click, true) --inserisci e salva
+      wcl_strip:addButton("OK",_t(251),buttonOk_click, false) --inserisci
       
       wcl_strip:show()
       
