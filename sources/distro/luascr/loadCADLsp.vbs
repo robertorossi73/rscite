@@ -1,12 +1,12 @@
 Option Explicit
 ' Autore : Roberto Rossi
 ' Web    : http://www.redchar.net
-' Versione : 1.4
+' Versione : 1.5
 '
 ' Questo script consente il caricamento di un file lsp
 ' in un cad
 '
-'~ Copyright (C) 2015 Roberto Rossi 
+'~ Copyright (C) 2015-2016 Roberto Rossi 
 '~ *******************************************************************************
 '~ This library is free software; you can redistribute it and/or
 '~ modify it under the terms of the GNU Lesser General Public
@@ -185,13 +185,37 @@ function SentToAcad(cmdStr)
     shl.AppActivate obj.caption
 end function
 
-'ritorna l'oggetto riferito a AutoCAD
-function GetAcad()
+function GetAcadApp ( app )
     dim obj
 
     on error resume next
-    set obj = GetObject(,"AutoCAD.Application")
+    set obj = GetObject(,app)
     On Error GoTo 0
+    if (IsEmpty(obj)) then
+        set obj = Nothing
+    end if
+
+    set GetAcadApp = obj
+end function
+
+'ritorna l'oggetto riferito a AutoCAD
+function GetAcad()
+    dim obj
+    
+    set obj = GetAcadApp("AutoCAD.Application")
+    if (IsEmpty(obj)) then
+        set obj = GetAcadApp("AutoCAD.Application.20")
+    end if
+    if (IsEmpty(obj)) then
+        set obj = GetAcadApp("AutoCAD.Application.20.1")
+    end if
+    if (IsEmpty(obj)) then
+        set obj = GetAcadApp("AutoCAD.Application.21")
+    end if
+    if (IsEmpty(obj)) then
+        set obj = GetAcadApp("AutoCAD.Application.22")
+    end if
+    
     if (IsEmpty(obj)) then
         set obj = Nothing
     end if
