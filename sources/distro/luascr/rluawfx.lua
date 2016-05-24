@@ -1,10 +1,10 @@
 --[[
-Version : 3.0.2
+Version : 3.1.0
 Web     : http://www.redchar.net
 
 Funzioni di utilità per macro SciTE/Lua
 
-Copyright (C) 2004-2015 Roberto Rossi 
+Copyright (C) 2004-2016 Roberto Rossi 
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -180,11 +180,15 @@ if not(rwfx_info) then
     --  .NameDistro --nome distribuzione
     --  .UrlUpg --url ultima versione
     function rfx_GetVersionTable()
+        return rfx_GetVerTblFromFile(props["SciteDefaultHome"].."\\version.dat")
+    end
+    --funzione complementare a rfx_GetVersionTable
+    function rfx_GetVerTblFromFile(nomef)
       local resultTbl = {}
       local idf 
       local linea
       local lineaTbl
-      idf = io.open(props["SciteDefaultHome"].."\\version.dat","r")
+      idf = io.open(nomef,"r")
       --formato version.dat (-> = tabulazione)
       --autore->nomeDistro->V.XXXX->V.YYYY->V.ZZZZ->V.AAAA->V.BBBB->URL->url aggiornamento
       
