@@ -1,11 +1,11 @@
 --[[
-Version : 1.0.1
+Version : 1.1.0
 Web     : http://www.redchar.net
 
 Questa procedura Utilizza il software YuiCompressor per 
 comprimere ed effuscare file CSS e Javascript
 
-Copyright (C) 2009 Roberto Rossi 
+Copyright (C) 2009-2016 Roberto Rossi 
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -35,6 +35,14 @@ do
     local idf
     local estensione
     local tipo
+    
+    if (not(rfx_javaExist())) then
+        --[[print("\nAttenzione : impossibile procedure! "..
+                "\nE' necessario installare il Java Runtime per poter eseguire questa procedura.\n"..
+                "E' possibile scaricare il Java Runtime da :\n http://www.java.com"
+            )]]
+        print(_t(373))
+    end
     
     batfile = os.getenv("TMP")
     batfile = batfile.."\\sciteStr.bat"        
