@@ -5,6 +5,11 @@ Web     : http://www.redchar.net
 
 Genera l'MD5 del file corrente o della selezione
 
+TODO : aggiungere possibilità di generare MD5 di un file che si seleziona con
+        la normale finestra di selezione file. In questo modo sarà possibile 
+        ottenere l'md5 di file molto grandi
+       sarebbe interessante anche generare l'md5 del file selezionato nel testo
+        o dei file selezionati nel testo (uno per riga)
 ]]
 
 do
