@@ -1,5 +1,5 @@
 --[[
-Version : 3.1.0
+Version : 3.1.1
 Web     : http://www.redchar.net
 
 Funzioni di utilità per macro SciTE/Lua
@@ -167,7 +167,7 @@ if not(rwfx_info) then
       return result
     end
     
-    --ritorna una tabella con i dati sulla versione ricavati da version.dat
+    --ritorna una tabella con i dati sulla versione ricavati da version.txt
     -- i campi previsti :
     --  .FileMajorPart --parte 1 versione scite
     --  .FileMinorPart --parte 2 versione scite
@@ -180,7 +180,7 @@ if not(rwfx_info) then
     --  .NameDistro --nome distribuzione
     --  .UrlUpg --url ultima versione
     function rfx_GetVersionTable()
-        return rfx_GetVerTblFromFile(props["SciteDefaultHome"].."\\version.dat")
+        return rfx_GetVerTblFromFile(props["SciteDefaultHome"].."\\version.txt")
     end
     --funzione complementare a rfx_GetVersionTable
     function rfx_GetVerTblFromFile(nomef)
@@ -189,7 +189,7 @@ if not(rwfx_info) then
       local linea
       local lineaTbl
       idf = io.open(nomef,"r")
-      --formato version.dat (-> = tabulazione)
+      --formato version.txt (-> = tabulazione)
       --autore->nomeDistro->V.XXXX->V.YYYY->V.ZZZZ->V.AAAA->V.BBBB->URL->url aggiornamento
       
       if idf then
