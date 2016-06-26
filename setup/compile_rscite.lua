@@ -1,6 +1,6 @@
 --[[
 Author  : Roberto Rossi
-Version : 2.0.1
+Version : 2.0.2
 Web     : http://www.redchar.net
 
 Questa procedura provvede alla compilazione del file di setup della distribuzione
@@ -36,7 +36,7 @@ end
 --ritorna la versione di RSciTE corrente, correttamente
 --formattata per la produzione dei file di installazione
 local function getRSciTEVersion()
-  local versionTbl = rfx_GetVerTblFromFile(props["FileDir"].."\\..\\sources\\distro\\version.dat")
+  local versionTbl = rfx_GetVerTblFromFile(props["FileDir"].."\\..\\sources\\distro\\version.txt")
   local vScite
   local vDistribuzione
   local result
