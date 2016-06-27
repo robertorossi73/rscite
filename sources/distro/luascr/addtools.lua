@@ -1,5 +1,5 @@
 --[[
-Version : 4.2.1
+Version : 4.2.2
 Web     : http://www.redchar.net
 
 Copyright (C) 2004-2015 Roberto Rossi 
@@ -364,7 +364,7 @@ do
         io.close(idf)
         noEmpty = true
       end
-
+    
       if (month ~= lastMonthCheck) then
         idf = io.open(monthFile, "w")
         if (idf) then
@@ -372,7 +372,6 @@ do
           io.close(idf)
         end
         if (noEmpty) then
-          PUBLIC_optionScript = "AUTOEXECUTE"
           dofile(props["SciteDefaultHome"].."\\luascr\\updater.lua")
           result = true
         else
