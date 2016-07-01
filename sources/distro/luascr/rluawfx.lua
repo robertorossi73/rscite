@@ -1,5 +1,5 @@
 --[[
-Version : 3.1.1
+Version : 3.2.1
 Web     : http://www.redchar.net
 
 Funzioni di utilità per macro SciTE/Lua
@@ -128,6 +128,7 @@ if not(rwfx_info) then
     rwfx_createDirectory = package.loadlib(rwfx_NomeDLL,"c_createDirectory")
     rwfx_RegSetInteger = package.loadlib(rwfx_NomeDLL,"c_RegSetInteger")
     rwfx_RegGetInteger = package.loadlib(rwfx_NomeDLL,"c_RegGetInteger")
+    rwfx_RegGetString = package.loadlib(rwfx_NomeDLL,"c_RegGetString")
     rwfx_Sleep = package.loadlib(rwfx_NomeDLL,"c_Sleep")
     rwfx_addToRecentDocs = package.loadlib(rwfx_NomeDLL,"c_addToRecentDocs")
     rfx_GetGUID = package.loadlib(rwfx_NomeDLL,"c_GetGUID")
