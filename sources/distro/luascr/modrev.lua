@@ -1,5 +1,5 @@
 --[[
-Version : 0.6.0
+Version : 1.0.0
 Web     : http://www.redchar.net
 
 Questa procedura verifica che quella corrente sia l'ultima release disponibile,
@@ -36,9 +36,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
 *******************************************************************************
 ]]
 
-
---TODO : da tradurre
-
 do
     require("luascr/rluawfx")
   
@@ -68,7 +65,8 @@ do
         end
 
         if (not(silent) and not(result)) then
-            gotoWeb = rwfx_MsgBox("GIT Extensions non è installato nel sistema, impossibile procedere. Installare GIT Extensions e riprovare. Si desidera scaricare ora il programma mancante?","Attenzione!",MB_DEFBUTTON2 + MB_YESNO)
+            --gotoWeb = rwfx_MsgBox("GIT Extensions non è installato nel sistema, impossibile procedere. Installare GIT Extensions e riprovare. Si desidera scaricare ora il programma mancante?","Attenzione!",MB_DEFBUTTON2 + MB_YESNO)
+            gotoWeb = rwfx_MsgBox(_t(375),_t(9),MB_DEFBUTTON2 + MB_YESNO)
             if (gotoWeb == IDYES) then
                 rwfx_ShellExecute("https://gitextensions.github.io/","")
             end
@@ -88,7 +86,8 @@ do
         end
         
         if (not(silent) and not(result)) then
-            gotoWeb = rwfx_MsgBox("TortoiseGIT non è installato nel sistema, impossibile procedere. Installare TortoiseGIT e riprovare. Si desidera scaricare ora il programma mancante?","Attenzione!",MB_DEFBUTTON2 + MB_YESNO)
+            --gotoWeb = rwfx_MsgBox("TortoiseGIT non è installato nel sistema, impossibile procedere. Installare TortoiseGIT e riprovare. Si desidera scaricare ora il programma mancante?","Attenzione!",MB_DEFBUTTON2 + MB_YESNO)
+            gotoWeb = rwfx_MsgBox(_t(376),_t(9),MB_DEFBUTTON2 + MB_YESNO)
             if (gotoWeb == IDYES) then
                 rwfx_ShellExecute("https://tortoisegit.org/","")
             end
@@ -107,7 +106,8 @@ do
         end
         
         if (not(silent) and not(result)) then
-            gotoWeb = rwfx_MsgBox("TortoiseSVN non è installato nel sistema, impossibile procedere. Installare TortoiseSVN e riprovare. Si desidera scaricare ora il programma mancante?","Attenzione!",MB_DEFBUTTON2 + MB_YESNO)
+            --gotoWeb = rwfx_MsgBox("TortoiseSVN non è installato nel sistema, impossibile procedere. Installare TortoiseSVN e riprovare. Si desidera scaricare ora il programma mancante?","Attenzione!",MB_DEFBUTTON2 + MB_YESNO)
+            gotoWeb = rwfx_MsgBox(_t(377),_t(9),MB_DEFBUTTON2 + MB_YESNO)
             if (gotoWeb == IDYES) then
                 rwfx_ShellExecute("https://tortoisesvn.net/","")
             end
@@ -346,14 +346,16 @@ do
                     path = string.sub(path, 0, string.len(path) - 1)
                 end
                 tblCmd = modrev_composeCommand(cm, path, typeSoftware)
-                print(tblCmd[0])
-                print(tblCmd[1])
+                --print(tblCmd[0])
+                --print(tblCmd[1])
                 rwfx_ShellExecute(tblCmd[0],tblCmd[1])
             else
                 if (cm) then
-                    print("\nImpossibile proseguire, il file corrente non fa parte di un repository!")
+                    --print("\nImpossibile proseguire, il file corrente non fa parte di un repository!")
+                    print(_t(378))
                 else
-                    print("\nImpossibile proseguire, comando non supportato!")
+                    --print("\nImpossibile proseguire, comando non supportato!")
+                    print(_t(379))
                 end
             end
         end
@@ -380,7 +382,7 @@ do
         local valSoftware = ""
         local allOk = false
         
-        print(PUBLIC_optionScript)
+        --print(PUBLIC_optionScript)
         valOperation = string.sub(PUBLIC_optionScript,0,1)
         valSubject = string.sub(PUBLIC_optionScript,2,2)
         valSoftware = string.sub(PUBLIC_optionScript,3,4)
