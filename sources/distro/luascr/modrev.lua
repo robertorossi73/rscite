@@ -37,6 +37,8 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
 ]]
 
 
+--TODO : da tradurre
+
 do
     require("luascr/rluawfx")
   
@@ -179,7 +181,7 @@ do
         local exeFolder
         
         if (tipo == "TGIT") then
-            exeFolder = modrev_getTortoiseGitFolder().."\\TortoiseGitProc.exe"
+            exeFolder = modrev_getTortoiseGitFolder().."bin\\TortoiseGitProc.exe"
         elseif (tipo == "GITE") then
             exeFolder = modrev_getGitExtensionsFolder().."\\GitExtensions.exe"
         elseif (tipo == "TSVN") then
@@ -213,7 +215,15 @@ do
                 if (typeRepo == "GIT") then
                     if (rfx_fileExist(v..".git\\index")) then
                         okFolder = v
-                    end
+                    else
+                        if (rfx_fileExist(v..".git\\HEAD")) then
+                            okFolder = v
+                        else
+                            if (rfx_fileExist(v..".git\\config")) then
+                                okFolder = v
+                            end                    
+                        end                    
+                    end                    
                 elseif (typeRepo == "SVN") then
                     if (rfx_fileExist(v..".svn\\wc.db")) then
                         okFolder = v
