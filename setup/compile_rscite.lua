@@ -1,6 +1,6 @@
 --[[
 Author  : Roberto Rossi
-Version : 2.0.2
+Version : 2.0.4
 Web     : http://www.redchar.net
 
 Questa procedura provvede alla compilazione del file di setup della distribuzione
@@ -45,7 +45,8 @@ local function getRSciTEVersion()
                    versionTbl.FileMinorPart.."_"..versionTbl.FileBuildPart
   vDistribuzione = versionTbl.Distro
   
-  result = vScite.."-"..vDistribuzione..versionTbl.AddPart
+  --result = vScite.."-"..vDistribuzione..versionTbl.AddPart
+  result = vDistribuzione..versionTbl.AddPart
   return rfx_Trim(result)
 end
       
@@ -77,7 +78,7 @@ end --endfunction
 local function startProc(version)
   local cmd = ""
   local exe = ""
-  local resultExeName = "setup-"..nomeFCompresso..version
+  local resultExeName = "setup-"..nomeFCompresso.."-"..version
   local flagErrorNsis
   local flagOk = true
   local setupVersion = ""
