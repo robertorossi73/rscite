@@ -29,6 +29,7 @@ SetupIconFile=rsetup.ico
 UninstallRestartComputer=true
 DisableProgramGroupPage=yes
 Uninstallable=not IsTaskSelected('portablemode')
+DisableWelcomePage=false
 
 [Languages]
 Name: english; MessagesFile: compiler:Default.isl
