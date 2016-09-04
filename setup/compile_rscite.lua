@@ -1,6 +1,6 @@
 --[[
 Author  : Roberto Rossi
-Version : 2.0.4
+Version : 2.0.5
 Web     : http://www.redchar.net
 
 Questa procedura provvede alla compilazione del file di setup della distribuzione
