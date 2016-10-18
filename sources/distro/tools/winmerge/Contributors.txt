@@ -1,28 +1,26 @@
-
 People who have contributed to WinMerge
 ---------------------------------------
 
-Original developer, project admin:
-* Dean Grimm <grimmdp@yahoo.com>
+Representatives of original WinMerge project on SourceForge:
+* Dean Grimm (Original Developer) <grimmdp@yahoo.com>
+* Christian List (Project Lead) <list1974@hotmail.com>
 
-Project lead:
-* Christian List <list1974@hotmail.com>
-
-Developers:
-* Tim Gerundt <tim@gerundt.de>
-* Marcel Gosselin <marcelgosselin@users.sourceforge.net>
-* Gal Hammer <galh@users.sourceforge.net>
-* Takashi Sawanaka <sdottaka@users.sourceforge.net>
-* Alexander Skinner (Graphic Design) <neonapple@users.sourceforge.net>
-* Jochen Tucht <jtuc@users.sourceforge.net>
-* Kimmo Varis <kimmov@winmerge.org>
-
-Inactive/past developers:
-* Laurent Ganier
-* Dennis Limm
+Current and past members of WinMerge development staff:
 * Chris Mumford
+* Denis Bradford (Doc Writer) <denisbradford@users.sourceforge.net>
+* Dennis Limm
+* Gal Hammer <galh@users.sourceforge.net>
+* Tim Gerundt (Web Designer) <tim@gerundt.de>
+* Takashi Sawanaka <sdottaka@users.sourceforge.net>
+* Christian Blackburn (Installer)
+* Jochen Neubeck <jtuc@users.sourceforge.net>
+* Kimmo Varis <kimmov@winmerge.org>
+* Marcel Gosselin <marcelgosselin@users.sourceforge.net>
+* Alexander Skinner (Graphic Design) <neonapple@users.sourceforge.net>
+* Jan Hryz (Translator) <janhryz@users.sourceforge.net>
+* sf-mensch (Build Engineer)
+* Laurent Ganier
 * Perry Rapp
-* Christian "Seier" Blackburn (Installer)
 
 Localization:
 * Bulgarian:
@@ -39,7 +37,7 @@ Localization:
   Koko <kokokoko@giga.net.tw>
 
 * Croatian:
-  Hasan Osmanagæ <hasan.osmanagic@public.carnet.hr>
+  Hasan Osmanagiæ <hasan.osmanagic@public.carnet.hr>
 
 * Czech:
   Jiri Tax <jt@taxoft.cz>
@@ -74,6 +72,7 @@ Localization:
 
 * Hungarian:
   Márton Balázs <documan@users.sourceforge.net>
+  Mihalicza József <jmihalicza@gmail.com>
 
 * Italian:
   Andrea Decorte <deco1985@hotmail.com>
@@ -88,6 +87,9 @@ Localization:
 * Norwegian:
   Hans Fredrik Nordhaug <hansfn@users.sourceforge.net>
 
+* Persian:
+  Abolfazl Rostamzadeh <a.rostamzadeh at gmail.com>
+
 * Polish:
   M.T <mtrz@users.sourceforge.net>
   Skiff <skiffatsf@users.sourceforge.net>
@@ -99,6 +101,7 @@ Localization:
 
 * Portuguese (Portugal):
   Nelson Simão
+  David Cunha
 
 * Romanian:
   Cristian Arghiroiu <cristi.arghiroiu@gmail.com>
@@ -106,12 +109,16 @@ Localization:
 * Russian:
   Dmitriy S. Aleshkowskiy <wwarlock@mail.ru>
 
+* Serbian:
+  Ozzii <ivanstar61@gmail.com>
+
 * Slovak:
   Majvan <vancojur@decef.elf.stuba.sk>
   Ivan Masár <helix84@centrum.sk>
 
 * Slovenian:
   Iztok Osredkar <iztok.osredkar@institut-oko.si>
+  Filip Komar <filip.komar@gmail.com>
 
 * Spanish:
   Mario Angel <marioangel70@gmail.com>
@@ -123,6 +130,7 @@ Localization:
   Göran Håkansson <goran.x.hakansson@telia.com>
 
 * Turkish:
+  Afyonlu <afyonlu@users.sourceforge.net>
   Ozkan UNVER <turquaz37915@users.sourceforge.net>
 
 * Ukranian
@@ -131,9 +139,10 @@ Localization:
 
 
 Other Contributors (code, ideas, testing..):
+* James Abbatiello <abbeyj@users.sourceforge.net>
 * Andre Arpin
 * Steve Beaudoin
-* Denis Bradford
+* bulklodd <bulklodd@users.sourceforge.net>
 * Adam Carrivick
 * Hern Chen
 * Jeremy Dewey
@@ -150,6 +159,7 @@ Other Contributors (code, ideas, testing..):
 * Ferenc Kubatovics
 * René Leonhardt
 * Vladimir Lukianov
+* LynX <devlynx@users.sourceforge.net>
 * David Maisonave
 * Dmitry Maslov
 * Denis Matiukha
@@ -167,13 +177,15 @@ Other Contributors (code, ideas, testing..):
 * Scott Rasmussen
 * Michael Richter
 * Markus Rollmann
+* saitaman <saitaman@users.sourceforge.net>
 * Philippe Verdy
 * Vikrant
 * Gilbert Wellisch
 * Paul Welter
+* Lars Wittenburg
 
 
-WinMerge includes code from:
+Current or past versions of WinMerge include code from:
 * Jared Breland <jbreland@legroom.net> (Installer's modpath script)
 * Brent Corkum (BCMenu)
 * Paul DiLascia (CStaticLink) 
@@ -183,11 +195,8 @@ WinMerge includes code from:
 * Cristi Posea (CSizingControlBar)
 * Ferdinand Prantl (CrystalEditor syntax rules)
 * Keith Rule (CMemDC - memory DC)
+* Paul Senzee (String formatting)
 * Henry Spencer (CRegExp)
 * Andrei Stcherbatchenko (CrystalEditor)
-
-*** NOTE ***
-If your name is missing please send email us to:
-winmerge-support@lists.sourceforge.net
-
-Thanks!
+* Serge Baltic (SettingStore)
+* David Nash (Win32++, portions of which have made it into H2O)
