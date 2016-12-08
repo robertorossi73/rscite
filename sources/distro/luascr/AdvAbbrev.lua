@@ -1,10 +1,13 @@
 --[[
-Version : 2.2.0
+Version : 3.0.0
 Web     : http://www.redchar.net
 
 Inserimento guidato abbreviazioni
 
 ------------ Versioni ------------
+
+V.3.0.0
+TODO : - Supporto multilingua per elenco titoli mostrati
 
 V.2.2.0
 - Introdotta memorizzazione ultima funzione eseguita
@@ -306,7 +309,12 @@ do
 
     pos = string.find(linea,"=")
     if (pos) then
-      titolo=string.sub(linea,1,(pos-1))
+      titolo = string.sub(linea,1,(pos-1))
+      titolo = rfx_Trim(titolo)
+      if (string.sub(titolo, 1, 2) == "_t") then
+        titolo = string.sub(titolo, 3)
+        print("TODO : da tradurre "..titolo)
+      end
     end
     return titolo
   end
