@@ -1,5 +1,5 @@
 --[[
-Version : 1.0.0
+Version : 1.2.0
 Web     : http://www.redchar.net
 
 Questa procedura verifica che quella corrente sia l'ultima release disponibile,
@@ -15,6 +15,7 @@ in caso contrario permette lo scaricamento e l'installaizone di quest'ultima
   . log repository
   . aggiungi file/cartella corrente
   . push (solo git) tutto
+  . blame file corrente
   
   le funzioni sono disponibili per TortoiseSVN, TortoiseGIT e GIT Extensions
 
@@ -270,7 +271,7 @@ do
     
     --funzione principale
     -- cmd= dipende dal programma al quale va ed è il comando
-    --      può valere "commit", "push", "log"
+    --      può valere "commit", "push", "log", "blame", "diff"
     -- type= programma da lanciare TSVN, TGIT oppure GITE
     -- filter= può valere FILE nel caso del file corrente, FOLDER nel caso della cartella
     --oppure ALL nel caso di tutto il repository
@@ -337,6 +338,26 @@ do
                     cm = "log"
                 elseif (typeSoftware == "GITE") then
                     cm = "filehistory"
+                end
+            end
+            
+            if (cmd == "blame") then
+                if (typeSoftware == "TSVN") then
+                    cm = "blame"
+                elseif (typeSoftware == "TGIT") then
+                    cm = "blame"
+                elseif (typeSoftware == "GITE") then
+                    cm = "blame"
+                end
+            end
+            
+            if (cmd == "diff") then
+                if (typeSoftware == "TSVN") then
+                    cm = "diff"
+                elseif (typeSoftware == "TGIT") then
+                    cm = "diff"
+                elseif (typeSoftware == "GITE") then
+                    cm = "difftool"
                 end
             end
             
@@ -413,6 +434,12 @@ do
             if (valOperation == "P") then
                 modrev_main("push", valSubject, "GITE")
             end
+            if (valOperation == "B") then
+                modrev_main("blame", valSubject, "GITE")
+            end
+            if (valOperation == "D") then
+                modrev_main("diff", valSubject, "GITE")
+            end
         end
         if (valSoftware == "TG") then --Tortoise GIT
             if (valOperation == "C") then
@@ -427,7 +454,12 @@ do
             if (valOperation == "P") then
                 modrev_main("push", valSubject, "TGIT")
             end
-            
+            if (valOperation == "B") then
+                modrev_main("blame", valSubject, "TGIT")
+            end            
+            if (valOperation == "D") then
+                modrev_main("diff", valSubject, "TGIT")
+            end            
         end
         if (valSoftware == "TS") then --Tortoise SVN
             if (valOperation == "C") then
@@ -438,6 +470,12 @@ do
             end
             if (valOperation == "L") then
                 modrev_main("log", valSubject, "TSVN")
+            end            
+            if (valOperation == "B") then
+                modrev_main("blame", valSubject, "TSVN")
+            end            
+            if (valOperation == "D") then
+                modrev_main("diff", valSubject, "TSVN")
             end            
         end        
     end
