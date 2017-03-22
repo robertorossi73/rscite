@@ -1,5 +1,5 @@
 --[[
-Version : 1.2.0
+Version : 1.4.1
 Web     : http://www.redchar.net
 
 Questa procedura verifica che quella corrente sia l'ultima release disponibile,
@@ -19,7 +19,7 @@ in caso contrario permette lo scaricamento e l'installaizone di quest'ultima
   
   le funzioni sono disponibili per TortoiseSVN, TortoiseGIT e GIT Extensions
 
-Copyright (C) 2016 Roberto Rossi 
+Copyright (C) 2016-2017 Roberto Rossi 
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -268,6 +268,155 @@ do
         return cmds
     end
     
+    -- ritorna il tipo di gestore revisioni utilizzato dal file/cartella
+    -- specificata
+    -- Tipi supportati : 
+    --              GIT
+    --              SVN
+    local function modrev_getRepoType()
+        local isGit = false
+        local isSvn = false
+        local resutl = false
+        
+        isGit = modrev_getRepoFolders(props["FilePath"], "GIT")
+        if (not(isGit)) then
+            isSvn = modrev_getRepoFolders(props["FilePath"], "SVN")
+            if (isSvn) then
+                result = "SVN"
+            end
+        else
+            result = "GIT"
+        end
+        return result
+    end
+    
+    function modrev_buttonGITE_click(control, change)
+        local op = wcl_strip:getValue("OPERATION")
+        local subject = wcl_strip:getValue("SUBJECT")
+        
+        wcl_strip:close()
+        modrev_execGui(op, subject, "GITE")
+    end
+    function modrev_buttonTGIT_click(control, change)
+        local op = wcl_strip:getValue("OPERATION")
+        local subject = wcl_strip:getValue("SUBJECT")
+        
+        wcl_strip:close()
+        modrev_execGui(op, subject, "TGIT")
+    end
+    function modrev_buttonTSVN_click(control, change)
+        local op = wcl_strip:getValue("OPERATION")
+        local subject = wcl_strip:getValue("SUBJECT")
+        
+        wcl_strip:close()
+        modrev_execGui(op, subject, "TSVN")
+    end
+
+    --esegue la funzione scelta
+    function modrev_execGui(op, subject, software)
+        local operation = ""
+        local where = ""
+        
+        --where option
+        --if (subject == "File corrente") then
+        if (subject == _t(391)) then
+            where = "FILE"
+        --elseif (subject == "Cartella corrente") then
+        elseif (subject == _t(392)) then
+            where = "FOLDER"
+        --elseif (subject == "Il Repository") then
+        elseif (subject == _t(393)) then
+            where = "ALL"
+        end
+        --operation option
+        --if (op == "Commit") then
+        if (op == _t(394)) then
+            operation = "commit"
+        --elseif (op == "Add") then
+        elseif (op == _t(395)) then
+            operation = "add"
+        --elseif (op == "Push") then
+        elseif (op == _t(396)) then
+            operation = "push"
+        --elseif (op == "Log") then
+        elseif (op == _t(397)) then
+            operation = "log"
+        --elseif (op == "Blame") then
+        elseif (op == _t(398)) then
+            operation = "blame"
+        --elseif (op == "Diff") then
+        elseif (op == _t(399)) then
+            operation = "diff"
+        end
+        
+        if ((where ~= "") and (operation ~= ""))then
+            --modrev_main(cmd, filter, typeSoftware)
+            modrev_main(operation, where, software)
+        else
+            if (where == "") then
+                --403=Impossibile continuare, non è possibile applicare l'operazione all'elemento scelto.
+                print(_t(403))
+            elseif (operation == "") then
+                --402=Impossibile continuare,l'Operazione specificata non è corretta.
+                print(_t(402))
+            end
+        end
+    end
+    
+    function main_gui()
+        local repotp = modrev_getRepoType()
+        local operations = {}
+        --local subjects = {"File corrente", "Cartella corrente", "Repository"}
+        local subjects = {_t(391), _t(392), _t(393)}
+        local activeButton = false
+        
+        wcl_strip:init()
+        wcl_strip:addButtonClose()
+
+        --wcl_strip:addLabel(nil, "Operazione:")
+        wcl_strip:addLabel(nil, _t(400))
+        wcl_strip:addCombo("OPERATION")
+        
+        --wcl_strip:addLabel(nil, "Applica a:")
+        wcl_strip:addLabel(nil, _t(401))
+        wcl_strip:addCombo("SUBJECT")
+        
+        --TODO : attivare il primo tasto che ha l'applicatione installata
+        
+        if (repotp == "GIT") then   
+            activeButton = false
+            if (modrev_checkTortoiseGit(true)) then
+                activeButton = true
+            end
+            wcl_strip:addButton("TGIT","&Tortoise GIT", modrev_buttonTGIT_click, activeButton)
+            if (not(activeButton) and modrev_checkGitExt(true)) then
+                activeButton = true
+            end
+            wcl_strip:addButton("GITE","Git&Extensions", modrev_buttonGITE_click, activeButton)
+            --operations = {"Commit", "Add", "Push", "Log", "Blame", "Diff"}
+            operations = {_t(394), _t(395), _t(396), _t(397), _t(398), _t(399)}
+        end
+        if (repotp == "SVN") then
+            activeButton = false
+            if (modrev_checkTortoiseSvn(true)) then
+                activeButton = true
+            end
+            wcl_strip:addButton("TSVN","Tortoise SVN", modrev_buttonTSVN_click, activeButton)
+            --operations = {"Commit", "Add", "Log", "Blame", "Diff"}
+            operations = {_t(394), _t(395), _t(397), _t(398), _t(399)}
+        end
+        
+        if (table.maxn(operations) > 0) then
+            wcl_strip:show()
+            wcl_strip:setList("OPERATION", operations)
+            wcl_strip:setValue("OPERATION", operations[1])
+            wcl_strip:setList("SUBJECT", subjects)
+            wcl_strip:setValue("SUBJECT", subjects[1])
+        else
+            --print("Impossibile continuare. Il file corrente non si trova all'interno di un repository!")
+            print(_t(404))
+        end
+    end
     
     --funzione principale
     -- cmd= dipende dal programma al quale va ed è il comando
@@ -275,7 +424,7 @@ do
     -- type= programma da lanciare TSVN, TGIT oppure GITE
     -- filter= può valere FILE nel caso del file corrente, FOLDER nel caso della cartella
     --oppure ALL nel caso di tutto il repository
-    local function modrev_main(cmd, filter, typeSoftware)
+    function modrev_main(cmd, filter, typeSoftware)
         local cm = false
         local tblCmd = {}
         local path = false
@@ -367,8 +516,6 @@ do
                     path = string.sub(path, 0, string.len(path) - 1)
                 end
                 tblCmd = modrev_composeCommand(cm, path, typeSoftware)
-                --print(tblCmd[0])
-                --print(tblCmd[1])
                 rwfx_ShellExecute(tblCmd[0],tblCmd[1])
             else
                 if (cm) then
@@ -382,103 +529,5 @@ do
         end
     end
 
-    local function modrev_start()
-        --analisi PUBLIC_optionScript
-        --  il suo contenuto è formato da 4 caratteri
-        --Operazioni :
-        --C = commit
-        --A = add
-        --L = log
-        --P = push
-        --Tipi :
-        --F = FILE
-        --L = FOLDER
-        --A = ALL
-        --Software :
-        --GE = Git Extensions
-        --TG = Tortoise Git
-        --TS = Tortoise SVN
-        local valOperation = ""
-        local valSubject = ""
-        local valSoftware = ""
-        local allOk = false
-        
-        --print(PUBLIC_optionScript)
-        valOperation = string.sub(PUBLIC_optionScript,0,1)
-        valSubject = string.sub(PUBLIC_optionScript,2,2)
-        valSoftware = string.sub(PUBLIC_optionScript,3,4)
-        --print(valOperation)
-        --print(valSubject)
-        --print(valSoftware)
-        
-        if (valSubject == "F") then
-            valSubject = "FILE"
-        end
-        if (valSubject == "L") then
-            valSubject = "FOLDER"
-        end
-        if (valSubject == "A") then
-            valSubject = "ALL"
-        end
-        
-        if (valSoftware == "GE") then --GIT Extensions
-            if (valOperation == "C") then
-                modrev_main("commit", valSubject, "GITE")
-            end
-            if (valOperation == "A") then
-                modrev_main("add", valSubject, "GITE")
-            end
-            if (valOperation == "L") then
-                modrev_main("log", valSubject, "GITE")
-            end
-            if (valOperation == "P") then
-                modrev_main("push", valSubject, "GITE")
-            end
-            if (valOperation == "B") then
-                modrev_main("blame", valSubject, "GITE")
-            end
-            if (valOperation == "D") then
-                modrev_main("diff", valSubject, "GITE")
-            end
-        end
-        if (valSoftware == "TG") then --Tortoise GIT
-            if (valOperation == "C") then
-                modrev_main("commit", valSubject, "TGIT")
-            end
-            if (valOperation == "A") then
-                modrev_main("add", valSubject, "TGIT")
-            end
-            if (valOperation == "L") then
-                modrev_main("log", valSubject, "TGIT")
-            end
-            if (valOperation == "P") then
-                modrev_main("push", valSubject, "TGIT")
-            end
-            if (valOperation == "B") then
-                modrev_main("blame", valSubject, "TGIT")
-            end            
-            if (valOperation == "D") then
-                modrev_main("diff", valSubject, "TGIT")
-            end            
-        end
-        if (valSoftware == "TS") then --Tortoise SVN
-            if (valOperation == "C") then
-                modrev_main("commit", valSubject, "TSVN")
-            end
-            if (valOperation == "A") then
-                modrev_main("add", valSubject, "TSVN")
-            end
-            if (valOperation == "L") then
-                modrev_main("log", valSubject, "TSVN")
-            end            
-            if (valOperation == "B") then
-                modrev_main("blame", valSubject, "TSVN")
-            end            
-            if (valOperation == "D") then
-                modrev_main("diff", valSubject, "TSVN")
-            end            
-        end        
-    end
-    
-    modrev_start()
+    main_gui()
 end
