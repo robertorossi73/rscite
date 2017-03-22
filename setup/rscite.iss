@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 ;Autore :   Roberto Rossi
-;Versione : 3.1.0
+;Versione : 3.1.1
 ;Web      : http://www.redchar.net
 
 [Setup]
@@ -30,6 +30,8 @@ UninstallRestartComputer=true
 DisableProgramGroupPage=yes
 Uninstallable=not IsTaskSelected('portablemode')
 DisableWelcomePage=false
+AlwaysShowDirOnReadyPage=yes
+DisableDirPage=no
 
 [Languages]
 Name: english; MessagesFile: compiler:Default.isl
@@ -99,7 +101,6 @@ english.IconRegexerator=Regexerator - RegEx Tester
 italian.IconRegexerator=Regexerator - Tester Espressioni Regolari
 english.IconRSciTEDOC=RSciTE - Guida alle Caratteristiche
 italian.IconRSciTEDOC=RSciTE - Functions Guide
-
 
 [Code]
 var
