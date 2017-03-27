@@ -111,7 +111,7 @@
     </p>
     <blockquote>
 <kbd>
-print "Hi"
+print("hi")
 </kbd>
     </blockquote>
     <p>
@@ -122,15 +122,14 @@ print "Hi"
     the syntax styling to use:
     <blockquote>
         <code>
-                <b><font color="#000080">print </font></b>
-                <i><font color="#800080">"hi"</font></i>
+                <b><font color="#000080">print</font></b><b><font color="#000000">(</font></b><font color="#800080">"hi"</font><b><font color="#000000">)</font></b>
         </code>
     </blockquote>
     Perform the Tools | Go command.<br />
      The output window will be made visible if it is not already visible and will show:<br />
     <blockquote>
         <code>
-                <font color="#0000FF">&gt;python -u printhi.py</font><br />
+                <font color="#0000FF">&gt;pythonw -u printhi.py</font><br />
                 hi<br />
                 <font color="#0000FF">&gt;Exit code: 0</font>
         </code>
@@ -147,8 +146,8 @@ print "Hi"
     </p>
     <blockquote>
         <code>
-        <span style="color:#000080;font-weight:bold;">print </span>
-        <span style="color:#800080;font-style:italic;">"hi"</span><br />
+        <span style="color:#000080;font-weight:bold;">print</span><span style="color:#000000;font-weight:bold;">(</span><span style="color:#800080;">"hi"</span><span style="color:#000000;font-weight:bold;">)</span>
+        <br />
         mistake
         </code>
     </blockquote>
@@ -157,12 +156,12 @@ print "Hi"
     </p>
     <blockquote>
 <pre>
-<span style="color:#0000FF">&gt;python -u printhi.py</span>
+<span style="color:#0000FF">&gt;pythonw -u printhi.py</span>
 hi
-Traceback (innermost last):
-  <span style="color:#FF0000">File "printhi.py", line 2, in ?</span>
+Traceback (most recent call last):
+  <span style="color:#FF0000">File "printhi.py", line 2, in &lt;module&gt;</span>
     mistake
-NameError: mistake
+NameError: name 'mistake' is not defined
 <span style="color:#0000FF">&gt;Exit code: 1</span>
 </pre>
     </blockquote>
@@ -682,7 +681,7 @@ NameError: mistake
        expansion defined in the Abbreviations file. You can open the
        Abbreviations file with a command in the Options menu and
        add abbreviations. There is a default abbreviations file but a different
-	    abbreviations file can be set for particular file extensions.
+       abbreviations file can be set for particular file extensions.
     </p>
     <p>
        Each line in the files looks like "abbreviation=expansion".<br />
@@ -757,16 +756,16 @@ NameError: mistake
        <li>Directory properties file called "SciTEDirectory.properties" which may be
        present in the same or in a parent directory as the file being edited.</li>
        <li>User properties file called "SciTEUser.properties" on Windows
-       and ".SciTEUser.properties" on GTK+</li>
-       <li>Global properties file called "SciTEGlobal.properties"</li>
+       and ".SciTEUser.properties" on GTK+.</li>
+       <li>Global properties file called "SciTEGlobal.properties".</li>
        </ul>
     <p>
       Settings in the local properties file override those in the directory properties file
-	   which overrides those in the user properties file which override those
+      which overrides those in the user properties file which override those
       in the global properties files. Environment variables are also available as properties and these
       are overridden by an explicit setting in one of the properties files.
     </p>
-	<p>
+    <p>
       The directory properties file can be used as project options file where user commands and
       compile, build commands should work in the same manner in subdirectories of a project. The
       benefit is that local properties files in subdirectories can be replaced by one properties file
@@ -783,6 +782,11 @@ NameError: mistake
       command for compiling .java files to "javac". If I want to use the jvc compiler for the files
       in one directory, then the SciTE.properties file in that directory contains an entry setting
       the command to "jvc".
+    </p>
+    <p>
+      The global properties file should not be edited by the user as it is replaced with
+      each release. Instead copy the property into the user properties file
+      and change it there.
     </p>
     <p>
      On Windows, the global properties file is located in the directory of the executable.
@@ -3173,6 +3177,18 @@ c:\cygwin\bin\xargs -0 fgrep -G -n "$(find.what)"
           autocomplete.*.start.characters and calltip.*.word.characters should be given.
           Others such as calltip.parameters.* with ime characters are not supported.
           It defaults to 0, so disabled.
+        </td>
+      </tr>
+      <tr class="gtkonly" id='property-accessibility'>
+        <td>
+          accessibility
+        </td>
+        <td>
+        On GTK+, accessibility of the edit and output panes may be disabled by setting accessibility to 0.
+        Disabling accessibility may moderately improve performance and memory use.
+        This only affects the custom accessibility implementation, not the functionality provided by
+        the system such as speaking the characters typed.
+        It defaults to 1, so enabled.
         </td>
       </tr>
       <tr id='property-imports.include'>
