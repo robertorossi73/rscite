@@ -395,6 +395,15 @@ maxLen=0;
         GetWindowRect(hwndOwner, &rcOwner); 
         GetWindowRect(hwndDlg, &rcDlg);
         GetWindowRect(GetDesktopWindow(), &rcDesktop);
+
+		//multi - monitor
+		HMONITOR hMonitor;
+		MONITORINFO mi;
+		hMonitor = MonitorFromRect(&rcDlg, MONITOR_DEFAULTTONEAREST);
+		mi.cbSize = sizeof(mi);
+		GetMonitorInfo(hMonitor, &mi);
+		rcDesktop = mi.rcMonitor;
+
         if (
             (public_dataDialog.tmpPositionX >= 0) && 
             (public_dataDialog.tmpPositionY >= 0)
@@ -412,14 +421,10 @@ maxLen=0;
           }
 
           //controllo uscita da schermo
-          //if ((posX + (rcDlg.right - rcDlg.left)) > rcDesktop.right)
-          //  posX = rcDesktop.right - (rcDlg.right - rcDlg.left);
           if (posX >= (rcDesktop.right - 10))
             posX = rcDesktop.right - (rcDlg.right - rcDlg.left);
 
           //controllo uscita da schermo
-          //if ((posY + (rcDlg.bottom - rcDlg.top)) > rcDesktop.bottom)
-            //posY = posY - (rcDlg.bottom - rcDlg.top);
           if (posY >= (rcDesktop.bottom - 10))
             posY = posY - (rcDlg.bottom - rcDlg.top);
 

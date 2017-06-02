@@ -2,6 +2,9 @@
   nuova funzione c_callFXex in grado di richiamare funzioni presenti in 
   librerie esterne
 
+V.3.1.0.0
+* aggiunto supporto per configurazioni multi-monitor alle finestre visualizzate
+
 V.3.0.0.0
 * funzione per gestione dialog html (c_ShowHTMLDialog)
 
