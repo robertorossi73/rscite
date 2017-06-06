@@ -27,3 +27,4 @@ c_MP_ParseFunction
 c_MP_SetVariable
 c_MP_Solve
 c_ShowHTMLDialog
+c_SetWindowSize

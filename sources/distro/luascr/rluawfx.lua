@@ -131,6 +131,7 @@ if not(rwfx_info) then
     rwfx_RegGetString = package.loadlib(rwfx_NomeDLL,"c_RegGetString")
     rwfx_Sleep = package.loadlib(rwfx_NomeDLL,"c_Sleep")
     rwfx_addToRecentDocs = package.loadlib(rwfx_NomeDLL,"c_addToRecentDocs")
+    rwfx_SetWindowSize = package.loadlib(rwfx_NomeDLL,"c_SetWindowSize")    
     rfx_GetGUID = package.loadlib(rwfx_NomeDLL,"c_GetGUID")
     rfx_setIniVal = package.loadlib(rwfx_NomeDLL,"c_SetIniValue")
     rwfx_Test = package.loadlib(rwfx_NomeDLL,"c_Test")

@@ -1170,7 +1170,38 @@ LUALIB_API int c_ShowHTMLDialog(lua_State *L)
 
 }
 
+//implementazione settaggio trasparenza
+LUALIB_API int c_SetWindowSize(lua_State *L)
+{
+	const int n = lua_gettop(L);
+	lua_Integer w;
+	lua_Integer h;
+	HWND hwndOwner;
+
+	if ((n == 2) && 
+		(lua_type(L, 1) == LUA_TNUMBER) &&
+		(lua_type(L, 2) == LUA_TNUMBER)
+		) {
+		if ((hwndOwner = GetActiveWindow()) != NULL) {
+			w = lua_tointeger(L, 1);
+			h = lua_tointeger(L, 2);
+			
+			SetWindowPos(hwndOwner, HWND_TOP, NULL, NULL, w, h, SWP_NOMOVE);
+			lua_pushboolean(L, 1);
+		}
+	}
+	else {
+		//lua_pushstring(L, "Argomenti errati! - MsgBox(messaggio [,titolo [,flag])");
+		showErrorMsg("Arguments error! - SetWindowsSize(width, height)");
+		lua_error(L);
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
+
 LUALIB_API int c_Test(lua_State *L)
 {
 	return 0;
 }
+
