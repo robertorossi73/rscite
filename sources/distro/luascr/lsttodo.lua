@@ -1,5 +1,5 @@
 --[[
-Version : 1.0.2
+Version : 1.0.3
 Web     : http://www.redchar.net
 
 Elenca tutte le linee contenenti tag TODO :
@@ -37,17 +37,18 @@ do
                    }
   
   local function main()
-    local i, linea
+    local i, linea, lineaTmp
     local id, value
     local flagok
     
     output:ClearAll()    
     i = 0
     linea = editor:GetLine(i)
-    while linea do      
+    while linea do
       flagok = true
+      lineaTmp = string.upper(linea)
       for id,value in ipairs(listaTAG) do
-        if (string.find(linea, value, 1, true) and flagok) then          
+        if (string.find(lineaTmp, value, 1, true) and flagok) then          
           print(":"..(i + 1)..": "..rfx_RemoveReturnLine(linea))
           flagok = not(flagok)
         end
