@@ -2,6 +2,9 @@
   nuova funzione c_callFXex in grado di richiamare funzioni presenti in 
   librerie esterne
 
+V.4.0.0.0
+* compilato con VS 2017
+
 V.3.2.0.0
 * aggiunta funzione c_SetWindowSize per ridimensionare finestra corrente
 

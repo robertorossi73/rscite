@@ -9,10 +9,10 @@
 #define SCITE_H
 
 // Version numbers and dates
-#define VERSION_SCITE "3.7.1"
-#define VERSION_WORDS 3, 7, 1, 0
-#define COPYRIGHT_DATES "December 1998-December 2016"
-#define COPYRIGHT_YEARS "1998-2016"
+#define VERSION_SCITE "4.1.0"
+#define VERSION_WORDS 4, 1, 0, 0
+#define COPYRIGHT_DATES "December 1998-June 2018"
+#define COPYRIGHT_YEARS "1998-2018"
 
 // Menu IDs.
 // These are located 100 apart. No one will want more than 100 in each menu ;)
@@ -73,6 +73,7 @@
 #define IDM_FINDINFILES		215
 #define IDM_REPLACE			216
 #define IDM_SELECTION_FOR_FIND  217
+#define IDM_LINEREVERSE			218
 #define IDM_GOTO			220
 #define IDM_BOOKMARK_NEXT	221
 #define IDM_BOOKMARK_TOGGLE	222
@@ -80,6 +81,7 @@
 #define IDM_BOOKMARK_CLEARALL	224
 #define IDM_BOOKMARK_NEXT_SELECT	225
 #define IDM_BOOKMARK_PREV_SELECT	226
+#define IDM_BOOKMARK_SELECT_ALL	227
 #define IDM_MATCHBRACE		230
 #define IDM_SELECTTOBRACE	231
 #define IDM_SHOWCALLTIP		232

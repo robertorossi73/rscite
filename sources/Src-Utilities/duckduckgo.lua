@@ -1,5 +1,4 @@
 --[[
---[[
 Version : 1.0.0
 Web     : http://www.redchar.net
 
@@ -49,6 +48,9 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
   ...
   
   Attenzione : la sintassi delle linee è fissa
+  
+  Elenco completo BANG di DuckDuckGO:
+  https://duckduckgo.com/bang_lite.html
 ]]
 
 

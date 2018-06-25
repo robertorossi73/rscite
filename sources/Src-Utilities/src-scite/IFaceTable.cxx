@@ -5,16 +5,19 @@
 // Copyright 1998-2004 by Neil Hodgson <neilh@scintilla.org>
 // The License.txt file describes the conditions under which this software may be distributed.
 
+#include <cstring>
+#include <cctype>
+
+#include <string>
+
 #include "IFaceTable.h"
-#include <string.h>
-#include <ctype.h>
 
 int IFaceTable::FindConstant(const char *name) {
 	int lo = 0;
 	int hi = IFaceTable::constantCount - 1;
 	do {
-		int idx = (lo+hi)/2;
-		int cmp = strcmp(name, constants[idx].name);
+		const int idx = (lo+hi)/2;
+		const int cmp = strcmp(name, constants[idx].name);
 
 		if (cmp > 0) {
 			lo = idx + 1;
@@ -32,8 +35,8 @@ int IFaceTable::FindFunction(const char *name) {
 	int lo = 0;
 	int hi = IFaceTable::functionCount - 1;
 	do {
-		int idx = (lo+hi)/2;
-		int cmp = strcmp(name, functions[idx].name);
+		const int idx = (lo+hi)/2;
+		const int cmp = strcmp(name, functions[idx].name);
 		if (cmp > 0) {
 			lo = idx + 1;
 		} else if (cmp < 0) {
@@ -71,8 +74,8 @@ int IFaceTable::FindProperty(const char *name) {
 	int lo = 0;
 	int hi = IFaceTable::propertyCount - 1;
 	do {
-		int idx = (lo+hi)/2;
-		int cmp = strcmp(name, properties[idx].name);
+		const int idx = (lo+hi)/2;
+		const int cmp = strcmp(name, properties[idx].name);
 
 		if (cmp > 0) {
 			lo = idx + 1;
@@ -86,44 +89,30 @@ int IFaceTable::FindProperty(const char *name) {
 	return -1;
 }
 
-int IFaceTable::GetConstantName(int value, char *nameOut, unsigned nameBufferLen, const char *prefix) {
-	if (nameOut && nameBufferLen > 0) {
-		*nameOut = '\0';
-	}
-
+std::string IFaceTable::GetConstantName(int value, const char *prefix) {
 	// Look in both the constants table and the functions table.  Start with functions.
 	for (int funcIdx = 0; funcIdx < functionCount; ++funcIdx) {
 		if (functions[funcIdx].value == value) {
-			int len = static_cast<int>(strlen(functions[funcIdx].name)) + 4;
-			if (nameOut && (static_cast<int>(nameBufferLen) > len)) {
-				strcpy(nameOut, "SCI_");
-				strcat(nameOut, functions[funcIdx].name);
-				// fix case
-				for (char *nm = nameOut + 4; *nm; ++nm) {
-					if (*nm >= 'a' && *nm <= 'z') {
-						*nm = static_cast<char>(*nm - 'a' + 'A');
-					}
+			std::string nameOut = "SCI_";
+			nameOut += functions[funcIdx].name;
+			// fix case
+			for (char &ch : nameOut) {
+				if (ch >= 'a' && ch <= 'z') {
+					ch = static_cast<char>(ch - 'a' + 'A');
 				}
-				return len;
-			} else {
-				return -1 - len;
 			}
+			return nameOut;
 		}
 	}
 
 	for (int constIdx = 0; constIdx < constantCount; ++constIdx) {
 		if (constants[constIdx].value == value && (prefix == NULL || strncmp(prefix, constants[constIdx].name, strlen(prefix)) == 0)) {
-			int len = static_cast<int>(strlen(constants[constIdx].name));
-			if (nameOut && (static_cast<int>(nameBufferLen) > len)) {
-				strcpy(nameOut, constants[constIdx].name);
-				return len;
-			} else {
-				return -1 - len;
-			}
+			std::string nameOut = constants[constIdx].name;
+			return nameOut;
 		}
 	}
 
-	return 0;
+	return std::string();
 }
 
 #if defined(__GNUC__)
@@ -160,6 +149,7 @@ static IFaceConstant ifaceConstants[] = {
 	{"IDM_BOOKMARK_NEXT_SELECT",225},
 	{"IDM_BOOKMARK_PREV",223},
 	{"IDM_BOOKMARK_PREV_SELECT",226},
+	{"IDM_BOOKMARK_SELECT_ALL",227},
 	{"IDM_BOOKMARK_TOGGLE",222},
 	{"IDM_BOX_COMMENT",246},
 	{"IDM_BUFFER",1200},
@@ -212,6 +202,7 @@ static IFaceConstant ifaceConstants[] = {
 	{"IDM_JOIN",248},
 	{"IDM_LANGUAGE",1400},
 	{"IDM_LINENUMBERMARGIN",407},
+	{"IDM_LINEREVERSE",218},
 	{"IDM_LOADSESSION",132},
 	{"IDM_LWRCASE",241},
 	{"IDM_MACROLIST",314},
@@ -317,6 +308,8 @@ static IFaceConstant ifaceConstants[] = {
 	{"INDIC_DOTBOX",12},
 	{"INDIC_DOTS",10},
 	{"INDIC_FULLBOX",16},
+	{"INDIC_GRADIENT",20},
+	{"INDIC_GRADIENTCENTRE",21},
 	{"INDIC_HIDDEN",5},
 	{"INDIC_IME",32},
 	{"INDIC_IME_MAX",35},
@@ -715,7 +708,11 @@ static IFaceConstant ifaceConstants[] = {
 	{"SCE_DIFF_DEFAULT",0},
 	{"SCE_DIFF_DELETED",5},
 	{"SCE_DIFF_HEADER",3},
+	{"SCE_DIFF_PATCH_ADD",8},
+	{"SCE_DIFF_PATCH_DELETE",9},
 	{"SCE_DIFF_POSITION",4},
+	{"SCE_DIFF_REMOVED_PATCH_ADD",10},
+	{"SCE_DIFF_REMOVED_PATCH_DELETE",11},
 	{"SCE_DMAP_COMMENT",1},
 	{"SCE_DMAP_DEFAULT",0},
 	{"SCE_DMAP_IDENTIFIER",7},
@@ -1290,6 +1287,14 @@ static IFaceConstant ifaceConstants[] = {
 	{"SCE_MATLAB_NUMBER",3},
 	{"SCE_MATLAB_OPERATOR",6},
 	{"SCE_MATLAB_STRING",5},
+	{"SCE_MAXIMA_COMMAND",5},
+	{"SCE_MAXIMA_COMMANDENDING",1},
+	{"SCE_MAXIMA_COMMENT",2},
+	{"SCE_MAXIMA_NUMBER",3},
+	{"SCE_MAXIMA_OPERATOR",0},
+	{"SCE_MAXIMA_STRING",4},
+	{"SCE_MAXIMA_UNKNOWN",7},
+	{"SCE_MAXIMA_VARIABLE",6},
 	{"SCE_METAPOST_COMMAND",4},
 	{"SCE_METAPOST_DEFAULT",0},
 	{"SCE_METAPOST_EXTRA",6},
@@ -1596,6 +1601,10 @@ static IFaceConstant ifaceConstants[] = {
 	{"SCE_P_DECORATOR",15},
 	{"SCE_P_DEFAULT",0},
 	{"SCE_P_DEFNAME",9},
+	{"SCE_P_FCHARACTER",17},
+	{"SCE_P_FSTRING",16},
+	{"SCE_P_FTRIPLE",18},
+	{"SCE_P_FTRIPLEDOUBLE",19},
 	{"SCE_P_IDENTIFIER",11},
 	{"SCE_P_NUMBER",2},
 	{"SCE_P_OPERATOR",10},
@@ -2062,6 +2071,7 @@ static IFaceConstant ifaceConstants[] = {
 	{"SCI_CALLTIPUSESTYLE",2212},
 	{"SCI_DISTANCETOSECONDARYSTYLES",4025},
 	{"SCI_FOLDDISPLAYTEXTSETSTYLE",2701},
+	{"SCI_GETACCESSIBILITY",2703},
 	{"SCI_GETADDITIONALCARETFORE",2605},
 	{"SCI_GETADDITIONALCARETSBLINK",2568},
 	{"SCI_GETADDITIONALCARETSVISIBLE",2609},
@@ -2071,10 +2081,12 @@ static IFaceConstant ifaceConstants[] = {
 	{"SCI_GETANCHOR",2009},
 	{"SCI_GETAUTOMATICFOLD",2664},
 	{"SCI_GETBACKSPACEUNINDENTS",2263},
+	{"SCI_GETBIDIRECTIONAL",2708},
 	{"SCI_GETBUFFEREDDRAW",2034},
 	{"SCI_GETCARETFORE",2138},
 	{"SCI_GETCARETLINEBACK",2097},
 	{"SCI_GETCARETLINEBACKALPHA",2471},
+	{"SCI_GETCARETLINEFRAME",2704},
 	{"SCI_GETCARETLINEVISIBLE",2095},
 	{"SCI_GETCARETLINEVISIBLEALWAYS",2654},
 	{"SCI_GETCARETPERIOD",2075},
@@ -2091,6 +2103,7 @@ static IFaceConstant ifaceConstants[] = {
 	{"SCI_GETDIRECTFUNCTION",2184},
 	{"SCI_GETDIRECTPOINTER",2185},
 	{"SCI_GETDOCPOINTER",2357},
+	{"SCI_GETDOCUMENTOPTIONS",2379},
 	{"SCI_GETEDGECOLOUR",2364},
 	{"SCI_GETEDGECOLUMN",2360},
 	{"SCI_GETEDGEMODE",2362},
@@ -2148,8 +2161,10 @@ static IFaceConstant ifaceConstants[] = {
 	{"SCI_GETMOUSEDWELLTIME",2265},
 	{"SCI_GETMOUSESELECTIONRECTANGULARSWITCH",2669},
 	{"SCI_GETMOUSEWHEELCAPTURES",2697},
+	{"SCI_GETMOVEEXTENDSSELECTION",2706},
 	{"SCI_GETMULTIPASTE",2615},
 	{"SCI_GETMULTIPLESELECTION",2564},
+	{"SCI_GETNAMEDSTYLES",4029},
 	{"SCI_GETOVERTYPE",2187},
 	{"SCI_GETPASTECONVERTENDINGS",2468},
 	{"SCI_GETPHASESDRAW",2673},
@@ -2186,8 +2201,6 @@ static IFaceConstant ifaceConstants[] = {
 	{"SCI_GETSELEOLFILLED",2479},
 	{"SCI_GETSTATUS",2383},
 	{"SCI_GETSTYLEAT",2010},
-	{"SCI_GETSTYLEBITS",2091},
-	{"SCI_GETSTYLEBITSNEEDED",4011},
 	{"SCI_GETSTYLEFROMSUBSTYLE",4027},
 	{"SCI_GETSUBSTYLEBASES",4026},
 	{"SCI_GETSUBSTYLESLENGTH",4022},
@@ -2201,7 +2214,6 @@ static IFaceConstant ifaceConstants[] = {
 	{"SCI_GETTARGETTEXT",2687},
 	{"SCI_GETTECHNOLOGY",2631},
 	{"SCI_GETTEXTLENGTH",2183},
-	{"SCI_GETTWOPHASEDRAW",2283},
 	{"SCI_GETUNDOCOLLECTION",2019},
 	{"SCI_GETUSETABS",2125},
 	{"SCI_GETVIEWEOL",2355},
@@ -2253,6 +2265,7 @@ static IFaceConstant ifaceConstants[] = {
 	{"SCI_RGBAIMAGESETSCALE",2651},
 	{"SCI_RGBAIMAGESETWIDTH",2624},
 	{"SCI_SELECTIONISRECTANGLE",2372},
+	{"SCI_SETACCESSIBILITY",2702},
 	{"SCI_SETADDITIONALCARETFORE",2604},
 	{"SCI_SETADDITIONALCARETSBLINK",2567},
 	{"SCI_SETADDITIONALCARETSVISIBLE",2608},
@@ -2263,10 +2276,12 @@ static IFaceConstant ifaceConstants[] = {
 	{"SCI_SETANCHOR",2026},
 	{"SCI_SETAUTOMATICFOLD",2663},
 	{"SCI_SETBACKSPACEUNINDENTS",2262},
+	{"SCI_SETBIDIRECTIONAL",2709},
 	{"SCI_SETBUFFEREDDRAW",2035},
 	{"SCI_SETCARETFORE",2069},
 	{"SCI_SETCARETLINEBACK",2098},
 	{"SCI_SETCARETLINEBACKALPHA",2470},
+	{"SCI_SETCARETLINEFRAME",2705},
 	{"SCI_SETCARETLINEVISIBLE",2096},
 	{"SCI_SETCARETLINEVISIBLEALWAYS",2655},
 	{"SCI_SETCARETPERIOD",2076},
@@ -2359,14 +2374,12 @@ static IFaceConstant ifaceConstants[] = {
 	{"SCI_SETSELECTIONSTART",2142},
 	{"SCI_SETSELEOLFILLED",2480},
 	{"SCI_SETSTATUS",2382},
-	{"SCI_SETSTYLEBITS",2090},
 	{"SCI_SETTABDRAWMODE",2699},
 	{"SCI_SETTABINDENTS",2260},
 	{"SCI_SETTABWIDTH",2036},
 	{"SCI_SETTARGETEND",2192},
 	{"SCI_SETTARGETSTART",2190},
 	{"SCI_SETTECHNOLOGY",2630},
-	{"SCI_SETTWOPHASEDRAW",2284},
 	{"SCI_SETUNDOCOLLECTION",2012},
 	{"SCI_SETUSETABS",2124},
 	{"SCI_SETVIEWEOL",2356},
@@ -2485,6 +2498,7 @@ static IFaceConstant ifaceConstants[] = {
 	{"SCLEX_HASKELL",68},
 	{"SCLEX_HTML",4},
 	{"SCLEX_IHEX",118},
+	{"SCLEX_INDENT",122},
 	{"SCLEX_INNOSETUP",76},
 	{"SCLEX_JSON",120},
 	{"SCLEX_KIX",57},
@@ -2499,6 +2513,7 @@ static IFaceConstant ifaceConstants[] = {
 	{"SCLEX_MAKEFILE",11},
 	{"SCLEX_MARKDOWN",98},
 	{"SCLEX_MATLAB",32},
+	{"SCLEX_MAXIMA",123},
 	{"SCLEX_METAPOST",50},
 	{"SCLEX_MMIXAL",44},
 	{"SCLEX_MODULA",101},
@@ -2571,6 +2586,8 @@ static IFaceConstant ifaceConstants[] = {
 	{"SCWS_VISIBLEAFTERINDENT",2},
 	{"SCWS_VISIBLEALWAYS",1},
 	{"SCWS_VISIBLEONLYININDENT",3},
+	{"SC_ACCESSIBILITY_DISABLED",0},
+	{"SC_ACCESSIBILITY_ENABLED",1},
 	{"SC_AC_COMMAND",5},
 	{"SC_AC_DOUBLECLICK",2},
 	{"SC_AC_FILLUP",1},
@@ -2582,6 +2599,9 @@ static IFaceConstant ifaceConstants[] = {
 	{"SC_AUTOMATICFOLD_CHANGE",0x0004},
 	{"SC_AUTOMATICFOLD_CLICK",0x0002},
 	{"SC_AUTOMATICFOLD_SHOW",0x0001},
+	{"SC_BIDIRECTIONAL_DISABLED",0},
+	{"SC_BIDIRECTIONAL_L2R",1},
+	{"SC_BIDIRECTIONAL_R2L",2},
 	{"SC_CACHE_CARET",1},
 	{"SC_CACHE_DOCUMENT",3},
 	{"SC_CACHE_NONE",0},
@@ -2622,6 +2642,9 @@ static IFaceConstant ifaceConstants[] = {
 	{"SC_CURSORNORMAL",-1},
 	{"SC_CURSORREVERSEARROW",7},
 	{"SC_CURSORWAIT",4},
+	{"SC_DOCUMENTOPTION_DEFAULT",0},
+	{"SC_DOCUMENTOPTION_STYLES_NONE",0x1},
+	{"SC_DOCUMENTOPTION_TEXT_LARGE",0x100},
 	{"SC_EFF_QUALITY_ANTIALIASED",2},
 	{"SC_EFF_QUALITY_DEFAULT",0},
 	{"SC_EFF_QUALITY_LCD_OPTIMIZED",3},
@@ -2753,6 +2776,7 @@ static IFaceConstant ifaceConstants[] = {
 	{"SC_PRINT_COLOURONWHITEDEFAULTBG",4},
 	{"SC_PRINT_INVERTLIGHT",1},
 	{"SC_PRINT_NORMAL",0},
+	{"SC_PRINT_SCREENCOLOURS",5},
 	{"SC_SEL_LINES",2},
 	{"SC_SEL_RECTANGLE",1},
 	{"SC_SEL_STREAM",0},
@@ -2778,6 +2802,7 @@ static IFaceConstant ifaceConstants[] = {
 	{"SC_WEIGHT_BOLD",700},
 	{"SC_WEIGHT_NORMAL",400},
 	{"SC_WEIGHT_SEMIBOLD",600},
+	{"SC_WRAPINDENT_DEEPINDENT",3},
 	{"SC_WRAPINDENT_FIXED",0},
 	{"SC_WRAPINDENT_INDENT",2},
 	{"SC_WRAPINDENT_SAME",1},
@@ -2809,7 +2834,7 @@ static IFaceConstant ifaceConstants[] = {
 
 static IFaceFunction ifaceFunctions[] = {
 	{"AddRefDocument", 2376, iface_void, {iface_void, iface_int}},
-	{"AddSelection", 2573, iface_int, {iface_position, iface_position}},
+	{"AddSelection", 2573, iface_void, {iface_position, iface_position}},
 	{"AddStyledText", 2002, iface_void, {iface_length, iface_cells}},
 	{"AddTabStop", 2676, iface_void, {iface_int, iface_int}},
 	{"AddText", 2001, iface_void, {iface_length, iface_string}},
@@ -2871,8 +2896,8 @@ static IFaceFunction ifaceFunctions[] = {
 	{"CopyRange", 2419, iface_void, {iface_position, iface_position}},
 	{"CopyText", 2420, iface_void, {iface_length, iface_string}},
 	{"CountCharacters", 2633, iface_int, {iface_position, iface_position}},
-	{"CreateDocument", 2375, iface_int, {iface_void, iface_void}},
-	{"CreateLoader", 2632, iface_int, {iface_int, iface_void}},
+	{"CreateDocument", 2375, iface_int, {iface_int, iface_int}},
+	{"CreateLoader", 2632, iface_int, {iface_int, iface_int}},
 	{"Cut", 2177, iface_void, {iface_void, iface_void}},
 	{"DelLineLeft", 2395, iface_void, {iface_void, iface_void}},
 	{"DelLineRight", 2396, iface_void, {iface_void, iface_void}},
@@ -2884,6 +2909,7 @@ static IFaceFunction ifaceFunctions[] = {
 	{"DeleteRange", 2645, iface_void, {iface_position, iface_int}},
 	{"DescribeKeyWordSets", 4017, iface_int, {iface_void, iface_stringresult}},
 	{"DescribeProperty", 4016, iface_int, {iface_string, iface_stringresult}},
+	{"DescriptionOfStyle", 4032, iface_int, {iface_int, iface_stringresult}},
 	{"DocLineFromVisible", 2221, iface_int, {iface_int, iface_void}},
 	{"DocumentEnd", 2318, iface_void, {iface_void, iface_void}},
 	{"DocumentEndExtend", 2319, iface_void, {iface_void, iface_void}},
@@ -2958,6 +2984,7 @@ static IFaceFunction ifaceFunctions[] = {
 	{"LineEndWrapExtend", 2452, iface_void, {iface_void, iface_void}},
 	{"LineFromPosition", 2166, iface_int, {iface_position, iface_void}},
 	{"LineLength", 2350, iface_int, {iface_int, iface_void}},
+	{"LineReverse", 2354, iface_void, {iface_void, iface_void}},
 	{"LineScroll", 2168, iface_void, {iface_int, iface_int}},
 	{"LineScrollDown", 2342, iface_void, {iface_void, iface_void}},
 	{"LineScrollUp", 2343, iface_void, {iface_void, iface_void}},
@@ -2991,6 +3018,7 @@ static IFaceFunction ifaceFunctions[] = {
 	{"MultiEdgeClearAll", 2695, iface_void, {iface_void, iface_void}},
 	{"MultipleSelectAddEach", 2689, iface_void, {iface_void, iface_void}},
 	{"MultipleSelectAddNext", 2688, iface_void, {iface_void, iface_void}},
+	{"NameOfStyle", 4030, iface_int, {iface_int, iface_stringresult}},
 	{"NewLine", 2329, iface_void, {iface_void, iface_void}},
 	{"Null", 2172, iface_void, {iface_void, iface_void}},
 	{"PageDown", 2322, iface_void, {iface_void, iface_void}},
@@ -3045,7 +3073,7 @@ static IFaceFunction ifaceFunctions[] = {
 	{"SetSel", 2160, iface_void, {iface_position, iface_position}},
 	{"SetSelBack", 2068, iface_void, {iface_bool, iface_colour}},
 	{"SetSelFore", 2067, iface_void, {iface_bool, iface_colour}},
-	{"SetSelection", 2572, iface_int, {iface_position, iface_position}},
+	{"SetSelection", 2572, iface_void, {iface_position, iface_position}},
 	{"SetStyling", 2033, iface_void, {iface_length, iface_int}},
 	{"SetStylingEx", 2073, iface_void, {iface_length, iface_string}},
 	{"SetTargetRange", 2686, iface_void, {iface_position, iface_position}},
@@ -3067,6 +3095,7 @@ static IFaceFunction ifaceFunctions[] = {
 	{"StyleResetDefault", 2058, iface_void, {iface_void, iface_void}},
 	{"SwapMainAnchorCaret", 2607, iface_void, {iface_void, iface_void}},
 	{"Tab", 2327, iface_void, {iface_void, iface_void}},
+	{"TagsOfStyle", 4031, iface_int, {iface_int, iface_stringresult}},
 	{"TargetAsUTF8", 2447, iface_int, {iface_void, iface_stringresult}},
 	{"TargetFromSelection", 2287, iface_void, {iface_void, iface_void}},
 	{"TargetWholeDocument", 2690, iface_void, {iface_void, iface_void}},
@@ -3108,6 +3137,7 @@ static IFaceFunction ifaceFunctions[] = {
 };
 
 static IFaceProperty ifaceProperties[] = {
+	{"Accessibility", 2703, 2702, iface_int, iface_void},
 	{"AdditionalCaretFore", 2605, 2604, iface_colour, iface_void},
 	{"AdditionalCaretsBlink", 2568, 2567, iface_bool, iface_void},
 	{"AdditionalCaretsVisible", 2609, 2608, iface_bool, iface_void},
@@ -3140,6 +3170,7 @@ static IFaceProperty ifaceProperties[] = {
 	{"AutoCTypeSeparator", 2285, 2286, iface_int, iface_void},
 	{"AutomaticFold", 2664, 2663, iface_int, iface_void},
 	{"BackSpaceUnIndents", 2263, 2262, iface_bool, iface_void},
+	{"Bidirectional", 2708, 2709, iface_int, iface_void},
 	{"BufferedDraw", 2034, 2035, iface_bool, iface_void},
 	{"CallTipBack", 0, 2205, iface_colour, iface_void},
 	{"CallTipFore", 0, 2206, iface_colour, iface_void},
@@ -3150,6 +3181,7 @@ static IFaceProperty ifaceProperties[] = {
 	{"CaretFore", 2138, 2069, iface_colour, iface_void},
 	{"CaretLineBack", 2097, 2098, iface_colour, iface_void},
 	{"CaretLineBackAlpha", 2471, 2470, iface_int, iface_void},
+	{"CaretLineFrame", 2704, 2705, iface_int, iface_void},
 	{"CaretLineVisible", 2095, 2096, iface_bool, iface_void},
 	{"CaretLineVisibleAlways", 2654, 2655, iface_bool, iface_void},
 	{"CaretPeriod", 2075, 2076, iface_int, iface_void},
@@ -3167,6 +3199,7 @@ static IFaceProperty ifaceProperties[] = {
 	{"DirectPointer", 2185, 0, iface_int, iface_void},
 	{"DistanceToSecondaryStyles", 4025, 0, iface_int, iface_void},
 	{"DocPointer", 2357, 2358, iface_int, iface_void},
+	{"DocumentOptions", 2379, 0, iface_int, iface_void},
 	{"EOLMode", 2030, 2031, iface_int, iface_void},
 	{"EdgeColour", 2364, 2365, iface_colour, iface_void},
 	{"EdgeColumn", 2360, 2361, iface_int, iface_void},
@@ -3245,8 +3278,10 @@ static IFaceProperty ifaceProperties[] = {
 	{"MouseDwellTime", 2265, 2264, iface_int, iface_void},
 	{"MouseSelectionRectangularSwitch", 2669, 2668, iface_bool, iface_void},
 	{"MouseWheelCaptures", 2697, 2696, iface_bool, iface_void},
+	{"MoveExtendsSelection", 2706, 0, iface_bool, iface_void},
 	{"MultiPaste", 2615, 2614, iface_int, iface_void},
 	{"MultipleSelection", 2564, 2563, iface_bool, iface_void},
+	{"NamedStyles", 4029, 0, iface_int, iface_void},
 	{"Overtype", 2187, 2186, iface_bool, iface_void},
 	{"PasteConvertEndings", 2468, 2467, iface_bool, iface_void},
 	{"PhasesDraw", 2673, 2674, iface_int, iface_void},
@@ -3288,8 +3323,6 @@ static IFaceProperty ifaceProperties[] = {
 	{"Status", 2383, 2382, iface_int, iface_void},
 	{"StyleAt", 2010, 0, iface_int, iface_position},
 	{"StyleBack", 2482, 2052, iface_colour, iface_int},
-	{"StyleBits", 2091, 2090, iface_int, iface_void},
-	{"StyleBitsNeeded", 4011, 0, iface_int, iface_void},
 	{"StyleBold", 2483, 2053, iface_bool, iface_int},
 	{"StyleCase", 2489, 2060, iface_int, iface_int},
 	{"StyleChangeable", 2492, 2099, iface_bool, iface_int},
@@ -3317,7 +3350,6 @@ static IFaceProperty ifaceProperties[] = {
 	{"TargetText", 2687, 0, iface_stringresult, iface_void},
 	{"Technology", 2631, 2630, iface_int, iface_void},
 	{"TextLength", 2183, 0, iface_int, iface_void},
-	{"TwoPhaseDraw", 2283, 2284, iface_bool, iface_void},
 	{"UndoCollection", 2019, 2012, iface_bool, iface_void},
 	{"UseTabs", 2125, 2124, iface_bool, iface_void},
 	{"VScrollBar", 2281, 2280, iface_bool, iface_void},
@@ -3337,9 +3369,9 @@ static IFaceProperty ifaceProperties[] = {
 };
 
 enum {
-	ifaceFunctionCount = 297,
-	ifaceConstantCount = 2670,
-	ifacePropertyCount = 226
+	ifaceFunctionCount = 301,
+	ifaceConstantCount = 2706,
+	ifacePropertyCount = 229
 };
 
 //--Autogenerated
