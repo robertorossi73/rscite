@@ -2,8 +2,17 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 ;Autore :   Roberto Rossi
-;Versione : 3.1.1
+;Versione : 3.1.3
 ;Web      : http://www.redchar.net
+
+;how check redist vc
+;https://pingfu.net/how-to-detect-which-version-of-visual-c-runtime-is-installed
+;https://stackoverflow.com/questions/29937568/how-can-i-find-the-product-guid-of-an-installed-msi-setup
+;https://github.com/vinaypamnani/wmie2/issues
+;{6F0267F3-7467-350D-A8C8-33B72E3658D8} Microsoft Visual C++ 2017 x86 Additional Runtime - 14.14.26429
+;{7753EC39-3039-3629-98BE-447C5D869C09} Microsoft Visual C++ 2017 x86 Minimum Runtime - 14.14.26429
+;{03EBF679-E886-38AD-8E70-28658449F7F9} Microsoft Visual C++ 2017 x64 Minimum Runtime - 14.14.26429
+;{B12F584A-DE7A-3EE3-8EC4-8A64DBC0F2A7} Microsoft Visual C++ 2017 x64 Additional Runtime - 14.14.26429
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application.
@@ -25,10 +34,13 @@ LicenseFile=..\sources\distro\Licenze_distribuzione.txt
 Compression=lzma
 SolidCompression=no
 ;WizardImageFile=rscite.bmp
+WizardImageFile=compiler:wizmodernimage-is.bmp
+WizardSmallImageFile=compiler:wizmodernsmallimage-is.bmp
 SetupIconFile=rsetup.ico
 UninstallRestartComputer=true
 DisableProgramGroupPage=yes
 Uninstallable=not IsTaskSelected('portablemode')
+UninstallDisplayIcon=rsetup.ico
 DisableWelcomePage=false
 AlwaysShowDirOnReadyPage=yes
 DisableDirPage=no
@@ -68,8 +80,8 @@ Name: {group}\{cm:IconWinMerge}; Filename: "{app}\tools\winmerge\WinMergeU.exe";
 ;Home Page
 Name: {group}\Roberto Rossi Home Page; Filename: "{win}\explorer.exe"; Parameters: "http://www.redchar.net/"; IconFilename: "{win}\explorer.exe"; IconIndex: 14; Tasks: not portablemode;
 
-Name: {commondesktop}\RSciTE; Filename: {app}\SciTE.exe; Tasks: desktopicon
-Name: {sendto}\SciTE; Filename: {app}\SciTE.exe; IconFilename: {app}\scite.ico; Tasks: not portablemode;
+Name: {commondesktop}\RSciTE; Filename: {app}\SciTE.exe; Tasks: desktopicon;
+;Name: {usersendto}\SciTE; Filename: {app}\SciTE.exe; IconFilename: {app}\scite.ico; Tasks: not portablemode;
 
 [Run]
 
@@ -78,7 +90,7 @@ Name: {sendto}\SciTE; Filename: {app}\SciTE.exe; IconFilename: {app}\scite.ico; 
 [UninstallDelete]
 Name: {app}\wscitecm_en.dll; Type: files; Tasks: ; Languages: 
 Name: {app}\wscitecm_it.dll; Type: files
-Name: {userappdata}\RSciTE; Type: filesandordirs; Tasks: ; Languages: 
+;Name: {userappdata}\RSciTE; Type: filesandordirs; Tasks: ; Languages: 
 
 [CustomMessages]
 english.PrevInstall=Is present another version of RSciTE! Do you want proceed with upgrade?
@@ -120,13 +132,13 @@ const
     INSTALLSTATE_ABSENT = 2;       // The product is installed for a different user.
     INSTALLSTATE_DEFAULT = 5;      // The product is installed for the current user.
 
-    //DOWNLOADS FOR VISUAL C++ 2013
-    VC_REDIST2013_URL = 'http://download.microsoft.com/download/2/E/6/2E61CFA4-993B-4DD4-91DA-3737CD5CD6E3/vcredist_x86.exe';
-    VC_REDIST2013_URL_x64 = 'http://download.microsoft.com/download/2/E/6/2E61CFA4-993B-4DD4-91DA-3737CD5CD6E3/vcredist_x64.exe';
+    //DOWNLOADS FOR VISUAL C++ 2017
+    VC_REDIST2017_URL = 'https://aka.ms/vs/15/release/VC_redist.x86.exe';
+    VC_REDIST2017_URL_x64 = 'https://aka.ms/vs/15/release/VC_redist.x64.exe';
 
     //OPTIONS
-    VC_2013_REDIST = '{13A4EE12-23EA-3371-91EE-EFB36DDFFF3E}'; //Microsoft.VS.VC_RuntimeMinimumVSU_x86,v12
-    VC_2013_REDIST_x64 = '{A749D8E6-B613-3BE3-8F5F-045C84EBA29B}'; //Microsoft.VS.VC_RuntimeMinimumVSU_amd64,v12
+    VC_2017_REDIST =     '{7753EC39-3039-3629-98BE-447C5D869C09}'; //Microsoft.VS.VC_RuntimeMinimumVSU_x86
+    VC_2017_REDIST_x64 = '{03EBF679-E886-38AD-8E70-28658449F7F9}'; //Microsoft.VS.VC_RuntimeMinimumVSU_amd64
 
     function MsiQueryProductState(szProduct: String): INSTALLSTATE;
     external 'MsiQueryProductState{#AW}@msi.dll stdcall';
@@ -172,23 +184,23 @@ begin
         if (IsWin64)then
         begin
             //win 64
-            if NOT VCVersionInstalled(VC_2013_REDIST) then
+            if NOT VCVersionInstalled(VC_2017_REDIST) then
             begin
                 //installazione runtime 32bit
-                Exec(ExpandConstant('{app}\tools\runtimes\vcredist_x86-2013.exe'), '/install /passive /norestart', '', SW_SHOW, ewWaitUntilTerminated, ResultCode)
+                Exec(ExpandConstant('{app}\tools\runtimes\vcredist_x86-2017.exe'), '/install /passive /norestart', '', SW_SHOW, ewWaitUntilTerminated, ResultCode)
             end;
-            if NOT VCVersionInstalled(VC_2013_REDIST_x64) then
+            if NOT VCVersionInstalled(VC_2017_REDIST_x64) then
             begin
                 //installazione runtime 64bit
-                Exec(ExpandConstant('{app}\tools\runtimes\vcredist_x64-2013.exe'), '/install /passive /norestart', '', SW_SHOW, ewWaitUntilTerminated, ResultCode)
+                Exec(ExpandConstant('{app}\tools\runtimes\vcredist_x64-2017.exe'), '/install /passive /norestart', '', SW_SHOW, ewWaitUntilTerminated, ResultCode)
             end;
         end else
         begin
             //win 32
-            if NOT VCVersionInstalled(VC_2013_REDIST) then
+            if NOT VCVersionInstalled(VC_2017_REDIST) then
             begin
                 //installazione runtime 32bit
-                Exec(ExpandConstant('{app}\tools\runtimes\vcredist_x86-2013.exe'), '/install /passive /norestart', '', SW_SHOW, ewWaitUntilTerminated, ResultCode)
+                Exec(ExpandConstant('{app}\tools\runtimes\vcredist_x86-2017.exe'), '/install /passive /norestart', '', SW_SHOW, ewWaitUntilTerminated, ResultCode)
             end;
         end;
 

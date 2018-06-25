@@ -1,6 +1,6 @@
 --[[
 Author  : Roberto Rossi
-Version : 2.0.5
+Version : 2.0.6
 Web     : http://www.redchar.net
 
 Questa procedura provvede alla compilazione del file di setup della distribuzione
@@ -109,6 +109,7 @@ local function startProc(version)
       end
       cmd = "/F\""..resultExeName.."\" rscite.iss"
       saveInnoSetup_AppVerName(setupVersion) --save version
+      print("\""..exe.."\" "..cmd)
       rwfx_ShellExecute(exe,cmd)
     else 
       flagErrorNsis = true;
