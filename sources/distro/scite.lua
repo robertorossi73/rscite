@@ -67,7 +67,7 @@ function PUBLIC_add_bufferList(f)
   
   buffers = PUBLIC_get_bufferList(nomef)
 
-  if (table.getn(buffers) > 0) then  
+  if (#buffers > 0) then  
     for i,file in ipairs(buffers) do
        if file == f then  idx = i; break end
     end

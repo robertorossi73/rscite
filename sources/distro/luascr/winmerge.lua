@@ -85,7 +85,7 @@ do
     local buffers2 = {}
     
     buffers = PUBLIC_get_bufferList()
-    ultimo = table.getn(buffers)
+    ultimo = #buffers
     
     while (i <= ultimo) do
       --esclude file corrente

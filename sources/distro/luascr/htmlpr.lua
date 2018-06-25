@@ -1,5 +1,5 @@
 --[[
-Version : 3.0.5
+Version : 3.0.6
 Web     : http://www.redchar.net
 
 Gestione Attributi TAG HTML e classi PHP
@@ -13,7 +13,7 @@ Se il carattere precedente alla posizione del cursode è un >, allora
 viene avviato l'assistente per le classi predefinite di PHP, se così
 non è viene avviata la procedura di completamento TAG HTML
 
-Copyright (C) 2004-2009 Roberto Rossi 
+Copyright (C) 2004-2018 Roberto Rossi 
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -159,7 +159,7 @@ do
     
     if tagHtml then
       lstProp = listaPropTag(cartella..tagHtml..".lst")
-      if (table.getn(lstProp) > 0) then
+      if (#lstProp > 0) then
         tagChiusura = '</'..tagHtml..'>'
         strLst = tagChiusura
         for idv, valore in pairs(lstProp) do
@@ -210,7 +210,7 @@ do
       classe = lstProp[idv+1]
       --print(classe)
       lstProp = listaPropTag(cartella..string.lower(classe)..".lst")
-      if (table.getn(lstProp) > 0) then
+      if (#lstProp > 0) then
         strLst = ""
         for idv, valore in pairs(lstProp) do
           if (strLst == '') then

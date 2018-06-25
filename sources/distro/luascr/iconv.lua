@@ -1,5 +1,5 @@
 --[[
-Version : 1.0.2
+Version : 1.0.3
 Web     : http://www.redchar.net
 
 Questa procedura consente la conversione del file corrente da una codifica 
@@ -156,7 +156,7 @@ do
     
     i = 2;
     lstTxt = codes_list[1];
-    while (i <= table.getn(codes_list)) do
+    while (i <= #codes_list) do
                   lstTxt = lstTxt.."|"..codes_list[i]
                   i = i + 1
     end

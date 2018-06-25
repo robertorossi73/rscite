@@ -1,10 +1,13 @@
 --[[
-Version : 1.0.2
+Version : 1.0.3
 Web     : http://www.redchar.net
 
 Questa procedura consente di utilizzare KDiff in congiunzione a RSciTE
 
 ------------ Versioni ------------
+
+V.1.0.3
+- porting a Lua 5.3
 
 V.1.0.0
 - Corretta selezione file non in lista quando il file corrente non è presente nell'elenco
@@ -12,7 +15,7 @@ V.1.0.0
 V.1.0.0
 - Release iniziale
 
-Copyright (C) 2010-2015 Roberto Rossi 
+Copyright (C) 2010-2018 Roberto Rossi 
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -138,7 +141,7 @@ do
     local line = ""
     
     buffers = PUBLIC_get_bufferList()
-    ultimo = table.getn(buffers)
+    ultimo = #buffers
     
     while (i <= ultimo) do
       --esclude file corrente
@@ -161,7 +164,7 @@ do
       i = i + 1
     end
     
-    ultimo = table.getn(buffers2)
+    ultimo = #buffers2
     
     -- 133=Altro...
     listafile = listafile.."|".._t(133)

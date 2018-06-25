@@ -1,10 +1,10 @@
 --[[ Gestione/Inserimento data-ora
-Version : 4.0.0
+Version : 4.0.1
 Web     : http://www.redchar.net
 
 Questa procedura permette il trattamento delle data/ora. Non solo consete di inserire, la data e l'ora corrente in vari formati ma permette di convertire le date tra vari formati, ad esempio da timestamp a data e viceversa.
 
-Copyright (C) 2004-2015 Roberto Rossi 
+Copyright (C) 2004-2018 Roberto Rossi 
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -97,10 +97,10 @@ do
     --table must have fields year, month, and day, and may have fields hour, min, sec,
     
     tbparts = rfx_Split(data, " ")
-    if (table.getn(tbparts) == 2) then
+    if (#tbparts == 2) then
       parts1 = rfx_Split(tbparts[1],"-")
       parts2 = rfx_Split(tbparts[2],":")
-      if ((table.getn(parts1) == 3) and (table.getn(parts2) == 3)) then
+      if ((#parts1 == 3) and (#parts2 == 3)) then
         year = parts1[3]
         month = parts1[2]
         day = parts1[1]

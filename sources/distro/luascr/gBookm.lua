@@ -1,5 +1,5 @@
 --[[
-Version : 1.0.3
+Version : 1.0.4
 Web     : http://www.redchar.net
 
 Gestore avanzato Bookmark
@@ -27,7 +27,7 @@ il carattere '?'.
   corrente. In base a nuova impostazione da inserire in file di
   configurazione
 
-Copyright (C) 2010-2015 Roberto Rossi 
+Copyright (C) 2010-2018 Roberto Rossi 
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -92,7 +92,7 @@ do
     local maxt = false
     
     if (bookms) then
-      maxt = table.maxn(bookms)
+      maxt = #bookms
       while (i <= maxt) do
         text = text..editor:GetLine(bookms[i])
         i = i + 1
@@ -152,7 +152,7 @@ do
     local idf = 0
     
     if (bookms) then
-      maxt = table.maxn(bookms)
+      maxt = #bookms
       while (i <= maxt) do
         if (text == "") then
           text = tostring(bookms[i])

@@ -1,6 +1,6 @@
 --[[
 Author  : Roberto Rossi
-Version : 1.1.6
+Version : 1.1.7
 Web     : http://www.redchar.net
 
 Questa procedura fornisce all'utente l'elenco di funzioni, variabili e classi
@@ -276,9 +276,9 @@ do
           --print("------------ Elenco Variabili in file Corrente ------------")
           print("------------ ".._t(152).." ------------")
         end
-        --print("-- Numero Elementi trovati : "..table.getn(datiLinea))
-        print("-- ".._t(153).." : "..table.getn(datiLinea))
-        for i=1, table.getn(datiLinea), 1 do
+        --print("-- Numero Elementi trovati : "..#datiLinea)
+        print("-- ".._t(153).." : "..#datiLinea)
+        for i=1, #datiLinea, 1 do
           tmpVar = rfx_Split(datiLinea[i][5],":")
           n = tmpVar[2] --numero linea
           linea = datiLinea[i][3]

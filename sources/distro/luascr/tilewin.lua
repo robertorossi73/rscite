@@ -1,11 +1,11 @@
 --[[
-Version : 1.2.0
+Version : 1.2.1
 Web     : http://www.redchar.net
 
 Questa procedura Consente la gestione dell'affiancamento delle finestre,
 in modo da poter visualizzare contemporaneamente più file.
 
-Copyright (C) 2004-2009 Roberto Rossi 
+Copyright (C) 2004-2018 Roberto Rossi 
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -64,7 +64,7 @@ do
     local buffers
     
     buffers = PUBLIC_get_bufferList()
-    if (table.getn(buffers) < 2) then
+    if (#buffers < 2) then
       rwfx_MsgBox("Impossibile eseguire il comando. Attualmente è presente un solo file, risulta quindi inutile riaprirlo in una nuova finestra.","Attenzione")
       res = false
     end

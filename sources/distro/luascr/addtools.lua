@@ -1,8 +1,8 @@
 --[[
-Version : 4.2.2
+Version : 4.2.4
 Web     : http://www.redchar.net
 
-Copyright (C) 2004-2015 Roberto Rossi 
+Copyright (C) 2004-2018 Roberto Rossi 
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -51,7 +51,7 @@ do
     result = rfx_Split(subfolders,"\n")
 
     --rimuove ultimo elemento, normalmente vuoto
-    table.remove(result,table.getn(result))
+    table.remove(result,#result)
     
     return result
   end
@@ -229,7 +229,7 @@ do
       rwfx_createDirectory(nomed) --cartella mancante
     end
     
-    if (table.maxn(GetExtensionScriptFiles(false)) < 1) then
+    if (#(GetExtensionScriptFiles(false)) < 1) then
       firstExec = true --cartella vuota
     end
     
@@ -282,7 +282,7 @@ do
     CheckAltExtensionsIndex()
     -- elenco script standard
     local listaFx = rfx_GetIniSec(fileIni, nomeSezione)
-    dimStandardList = table.getn(listaFx) --dimensione lista script standard
+    dimStandardList = #listaFx --dimensione lista script standard
     -- aggiunta lista estensioni
     listaFx = rfx_concatTables(listaFx, GetExtensionScriptFiles(true))
     
@@ -300,9 +300,9 @@ do
     end
 
     --scelta =  rwfx_ShowList_presel(listaFxStr,_t(8),"addtools",exeLast)
-    scelta =  rwfx_ShowList_Repos(listaFxStr,_t(8).." (".. tostring(table.getn(listaFx))  ..")","addtools", exeLast)
+    scelta =  rwfx_ShowList_Repos(listaFxStr,_t(8).." (".. tostring(#listaFx)  ..")","addtools", exeLast)
     if (scelta) then
-      dimLista = table.getn(listaFx)
+      dimLista = #listaFx
       if (scelta < dimLista) then
         scelta = scelta + 1
         datistr = rfx_GetIniVal(fileIni, nomeSezione, listaFx[scelta])
@@ -319,8 +319,8 @@ do
         if (string.find(script,"\\",1,true) or
             string.find(script,"/",1,true)) then
           --script con percorso impostato e sostituzioni percorsi standard
-          script = string.gsub(script,"\${SciteDefaultHome}",props["SciteDefaultHome"])
-          script = string.gsub(script,"\${SciteUserHome}",props["SciteUserHome"])
+          script = string.gsub(script,"$${SciteDefaultHome}",props["SciteDefaultHome"])
+          script = string.gsub(script,"$${SciteUserHome}",props["SciteUserHome"])
         else
           script = cartellaScript..script --script con percorso standard
         end

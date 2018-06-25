@@ -1,10 +1,10 @@
 --[[
-Version : 1.0.4
+Version : 1.0.5
 Web     : http://www.redchar.net
 
 Questa procedura permette di calcolare il valore di una espressione matematica
 
-Copyright (C) 2004-2015 Roberto Rossi 
+Copyright (C) 2004-2018 Roberto Rossi 
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -79,7 +79,7 @@ do
       tmpVars = rfx_GF()
       if (tmpVars ~= "") then
         vars = rfx_Split(tmpVars, ",")
-        if (table.maxn(vars) > 0) then
+        if (#vars > 0) then
           wcl_strip:close()
           getVars(vars)
         end

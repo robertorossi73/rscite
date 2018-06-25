@@ -1,5 +1,5 @@
 --[[
-Version : 1.4.1
+Version : 1.4.2
 Web     : http://www.redchar.net
 
 Questa procedura verifica che quella corrente sia l'ultima release disponibile,
@@ -19,7 +19,7 @@ in caso contrario permette lo scaricamento e l'installaizone di quest'ultima
   
   le funzioni sono disponibili per TortoiseSVN, TortoiseGIT e GIT Extensions
 
-Copyright (C) 2016-2017 Roberto Rossi 
+Copyright (C) 2016-2018 Roberto Rossi 
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -41,7 +41,7 @@ do
     require("luascr/rluawfx")
   
     local function modrev_tableReverse ( tbl )
-        local size = table.maxn(tbl)
+        local size = #tbl
         local nTbl = {}
         local i
         local v
@@ -406,7 +406,7 @@ do
             operations = {_t(394), _t(395), _t(397), _t(398), _t(399)}
         end
         
-        if (table.maxn(operations) > 0) then
+        if (#operations > 0) then
             wcl_strip:show()
             wcl_strip:setList("OPERATION", operations)
             wcl_strip:setValue("OPERATION", operations[1])
@@ -444,7 +444,7 @@ do
             if (filter == "FILE") then
                 path = props["FilePath"]
             elseif (filter == "FOLDER") then
-                path = tbl[table.maxn(tbl)]
+                path = tbl[#tbl]
             elseif (filter == "ALL") then
                 if (typeSoftware == "TSVN") then
                     path = modrev_getRepoFolders(props["FilePath"], "SVN")

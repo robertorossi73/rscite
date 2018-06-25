@@ -1,10 +1,10 @@
 --[[
-Version : 2.1.6
+Version : 2.1.7
 Web     : http://www.redchar.net
 
 Questa macro implementa un rudimentale gestore progetti. 
 
-Copyright (C) 2004-2009 Roberto Rossi 
+Copyright (C) 2004-2018 Roberto Rossi 
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -166,7 +166,7 @@ do
       end
       if elencoFile then
         i = 1
-        while (i <= table.getn(elencoFile)) do
+        while (i <= #elencoFile) do
           nomePerFile = rfx_GetIniVal(currentprj,"Files",elencoFile[i])
           if (string.sub(elencoFile[i],1,1) == "*") then
             nomef = "-->    "..string.sub(elencoFile[i],2)
@@ -188,8 +188,8 @@ do
                 _t(77)
       scelta = rwfx_ShowList(strmenu,rfx_GetStr("Prj : ")..tit)
       if scelta then
-        if (scelta > (table.getn(elencoFile) - 1)) then --menu scelta file
-          scelta = scelta - table.getn(elencoFile)
+        if (scelta > (#elencoFile - 1)) then --menu scelta file
+          scelta = scelta - #elencoFile
           if (scelta == 1) then --gestione progetto corrente
             openDocument(currentprj)
             flagContinua = false

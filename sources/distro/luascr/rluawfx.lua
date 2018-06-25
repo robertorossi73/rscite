@@ -1,10 +1,10 @@
 --[[
-Version : 3.2.1
+Version : 3.2.2
 Web     : http://www.redchar.net
 
 Funzioni di utilità per macro SciTE/Lua
 
-Copyright (C) 2004-2016 Roberto Rossi 
+Copyright (C) 2004-2018 Roberto Rossi 
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -230,7 +230,7 @@ if not(rwfx_info) then
       
       idf = io.open(nomeFile, 'r')
       if idf then
-        for linea in idf:lines(nomeFile) do
+        for linea in idf:lines() do
           lineaCorrente = rfx_Trim(linea)
           if ((lineaCorrente~="") and (string.sub(lineaCorrente,1,1)~=";")) then
             if ((string.sub(lineaCorrente,1,1)) == "[") then --sezione
@@ -275,7 +275,7 @@ if not(rwfx_info) then
       
       idf = io.open(nomeFile, 'r')
       if idf then
-        for linea in idf:lines(nomeFile) do
+        for linea in idf:lines() do
           lineaCorrente = rfx_Trim(linea)
           if ((lineaCorrente~="") and (string.sub(lineaCorrente,1,1)~=";")) then
             if ((string.sub(lineaCorrente,1,1)) == "[") then --sezione
@@ -490,7 +490,7 @@ if not(rwfx_info) then
       if (rwfx_isEnglishLang()) then --se è in inglese 
         idf = io.open(nomeFile, 'r')
         if idf then
-          for linea in idf:lines(nomeFile) do
+          for linea in idf:lines() do
             pos = string.find(linea,"=")
             if pos then
               inStringa = string.sub(linea,1, pos -1)
@@ -895,7 +895,7 @@ if not(rwfx_info) then
       table2 = {}
     end
 
-    i = table.maxn(table1)
+    i = #table1
     for k,v in pairs(table2) do 
       table1[i+1] = v
       i = i + 1

@@ -1,18 +1,10 @@
 --[[
-Version : 3.0.0
+Version : 3.0.1
 Web     : http://www.redchar.net
 
 Inserimento guidato abbreviazioni
 
------------- Versioni ------------
-
-V.3.0.0
-TODO : - Supporto multilingua per elenco titoli mostrati
-
-V.2.2.0
-- Introdotta memorizzazione ultima funzione eseguita
-
-Copyright (C) 2004-2015 Roberto Rossi 
+Copyright (C) 2004-2018 Roberto Rossi 
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -226,7 +218,7 @@ do
               lstTxt = lstElementi[1]
               i = 2
               --compone la lista da visualizzare
-              while (i <= table.getn(lstElementi)) do
+              while (i <= #lstElementi) do
                 lstTxt = lstTxt.."|"..lstElementi[i]
                 i = i + 1
               end
@@ -387,7 +379,7 @@ do
     --idv = rwfx_ShowList(strLst,_t(11))
     idv = rwfx_ShowList_presel(strLst,_t(11),"advabbrev_main",false)
     if (idv) then
-      dimLista = table.getn(lstFrmts)
+      dimLista = #lstFrmts
       if (idv < dimLista) then
         formato = GetFormat(lstFrmts[idv+1])
         
