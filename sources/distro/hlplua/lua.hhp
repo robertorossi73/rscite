@@ -1,0 +1,20 @@
+[OPTIONS]
+Compatibility=1.1 or later
+Compiled file=lua.chm
+Default Window=Lua 5.3 Reference Manual
+Default topic=contents.html
+Display compile progress=No
+Language=0x409 Inglese (Stati Uniti d'America)
+Title=Lua 5.3 Reference Manual
+
+[WINDOWS]
+Lua 5.3 Reference Manual="Lua 5.3 Reference Manual",,,"contents.html","contents.html","readme.html","Welcome to Lua 5.3","manual.html","Reference Manual",0x42020,,0xc104e,[0,0,856,554],0x30000,,,,,,0
+
+
+[FILES]
+contents.html
+manual.html
+readme.html
+
+[INFOTYPES]
+
