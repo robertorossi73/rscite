@@ -1,6 +1,6 @@
 ========================================================================
 Context Menu Extension for SciTE (Win32)
-Version: 1.4.0
+Version: 2.0.0
 Date: 12/06/2008
 File Name: wscitecm.dll
 $Id: readme.txt 497 2008-12-07 03:17:37Z andre $
@@ -47,6 +47,10 @@ Until version 1.2.1, wscitecm was built with Visual C++ 6.0. Version 1.3.0 (32-b
 
 History
 -------
+
+Version 2.0.0 (21/06/2018):
+- Compiled with Visual Studio 2017
+
 Version 1.4.0 (12/06/2008):
 - Fixed an issue with the manifest file introduced with VS 2005 compilation
 - Modified the GUID to avoid conflict with Notepad++ reusing wscitecm code with the same GUID
