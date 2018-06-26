@@ -1,10 +1,11 @@
 --[[
-Version : 1.0.0
+Version : 1.0.1
 Web     : http://www.redchar.net
 
-Questa procedura consente l'apertura della documentazione generica relativa alle espressioni regolari.
+Questa procedura consente l'apertura della documentazione generica relativa 
+alle espressioni regolari.
 
-Copyright (C) 2012-2015 Roberto Rossi 
+Copyright (C) 2012-2018 Roberto Rossi 
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -26,7 +27,7 @@ do
   require("luascr/rluawfx")
 
   local function main ()
-    local exeApp = props["SciteDefaultHome"].."/tools/dngrep/doc/regular-expressions-cheat-sheet-v2.pdf"
+    local exeApp = props["SciteDefaultHome"].."/hlpscite/rscite/regex-cheatsheet/index.html"
     local par = ""
       rwfx_ShellExecute(exeApp,"")
   end --end main
