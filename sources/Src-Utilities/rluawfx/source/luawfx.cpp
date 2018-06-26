@@ -273,7 +273,7 @@ LUALIB_API int c_ListDlg(lua_State *L)
     if (res == -1)
       lua_pushnil(L);
     else
-      lua_pushnumber(L, res);
+      lua_pushinteger(L, res);
   } else {
     //lua_pushstring(L, "Argomenti errati! - ListDlg(Elementi, Titolo, flagDialog)");
     showErrorMsg("Argomenti errati! - ListDlg(Elementi, Titolo, flagDialog, XPosition, YPosition, XDimension, YDimension, RelativePosition, regKey, preselectedItem)");
@@ -733,6 +733,7 @@ LUALIB_API int c_RegSetInteger(lua_State *L)
     key = lua_tostring(L,1);
     valueName = lua_tostring(L,2);
     value = lua_tointeger(L,3);    
+	dat = value;
 
     if (RegCreateKeyEx(HKEY_CURRENT_USER, key, 
           0, NULL, REG_OPTION_NON_VOLATILE,
@@ -748,8 +749,8 @@ LUALIB_API int c_RegSetInteger(lua_State *L)
             valueName,        // value name 
             0,                         // must be zero 
             REG_DWORD,             // value type 
-            (LPBYTE) &value,        // pointer to value data 
-            (DWORD) sizeof(value))) // length of value data 
+            (const PBYTE) &dat,        // pointer to value data 
+            (DWORD) sizeof(dat))) // length of value data 
     {      
       RegCloseKey(hk);
       //showErrorMsg("Impossibile scrivere il valore indicato!");
