@@ -1,5 +1,5 @@
 --[[
-Version : 1.1.2
+Version : 1.1.3
 Web     : http://www.redchar.net
 
 Questa procedura Consente l'apertura di uno degli ultimi file modificati.
@@ -34,7 +34,7 @@ do
     local file
     local corrente
     
-    if (buffers) then
+    if (buffers and (#buffers > 0)) then
       corrente = props["FilePath"]
       for i,file in ipairs(buffers) do
         if (lista) then
