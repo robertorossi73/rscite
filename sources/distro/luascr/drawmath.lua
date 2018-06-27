@@ -1,5 +1,5 @@
 --[[ # -*- coding: utf-8 -*-
-Version : 1.1.0
+Version : 1.1.1
 Web     : http://www.redchar.net
 
 Consente di rappresentare una funzione matematica in modo grafico usando
@@ -56,8 +56,8 @@ do
     result = string.gsub(result,"[\\]","%%5C")
     result = string.gsub(result,"[%^]","%%5E")
     result = string.gsub(result,"[~]","%%7E")
-    result = string.gsub(result,"[\[]","%%5B")
-    result = string.gsub(result,"[\]]","%%5D")
+    --result = string.gsub(result,"[\[]","%%5B")
+    --result = string.gsub(result,"[\]]","%%5D")
     result = string.gsub(result,"[`]","%%60")
 
     return result
