@@ -17,43 +17,42 @@ per qualsiasi tipo di testo.
 
 Nel panorama attuale, esistono moltissimi software per l’editazione dei file di
 testo. In questo caso però, non ci si riferisce a editor come Writer(LibreOffice)
-o Word, ma a programmi indirizzati alla stesura di file di testo privi di
+o Microsoft Word, ma a programmi indirizzati alla stesura di file di testo privi di
 formattazione, solitamente utilizzati da programmatori o da chiunque voglia
-scrivere senza la necessità di impaginare e presentare quanto fatto.
+solo scrivere testo, per qualsiasi motivo e con qualsiasi finalità.
 
 SciTE è un potente editor, studiato per il programmatore, ma che può essere
 utilizzato da chiunque, indipendentemente dalla sua professione. Creare e
 modificare un testo con SciTE è semplice e produttivo... Semplice come il
-"Blocco Note", completo e potente come gli editor professionali.
+**Blocco Note**, completo e potente come gli editor **professionali**.
 
-SciTE è nato come esempio di utilizzo del componente Scintilla
+SciTE è nato come esempio di utilizzo del componente **Scintilla**
 (<http://www.scintilla.org>), nel corso del tempo si è poi trasformato in un
 completo e sofisticato editor di testo. Tutto ciò rispettando sempre la
-filosofia dell’Open Source e del Free Software (Software Libero).
+filosofia dell’Open Source e del Free Software (**Software Libero**).
 
 Come detto, l’elemento su cui si basa SciTE porta il nome di Scintilla.
-Quest’ultimo è un componente, a codice libero, per l’editazione del testo,
+Quest’ultimo è un componente, a **codice libero**, per l’editazione del testo,
 distribuito completo di codice sorgente e di una licenza che ne permette
 l’utilizzo in qualsiasi progetto, sia commerciale che gratuito.
 
 Scintilla e SciTE sono attualmente disponibili per gli ambienti Windows,
-Linux e osx. E’ possibile utilizzarlo con Windows 7, 8, 10 o successivi,
-Ubuntu, Linux Red Hat 8, 9 o successivi,
+Linux e osx/Mac. E’ possibile utilizzarlo con Windows, Ubuntu, Linux Red Hat,
 Fedora, Mandrake, Mandriva, ed in genere con tutte le piattaforme Linux che
 supportino l’interfaccia GTK+ (praticamente tutte).
 
 L’autore originale di **SciTE** è **Neil Hodgson**, coadiuvato da moltissimi altri
 programmatori, segno del successo che questo software riscuote.
 
-Ecco un’immagine di SciTE in azione :
+Proprio da SciTE nasce la mia personale distribuzione, **RSciTE**.
 
+Ecco un’immagine di **RSciTE** in azione:
+
+<p style="text-align:center;">
 <img src="completo-ita.png" align="middle" alt="RSciTE" border="0" width="80%">
+</p>
 
-Ed ecco la pagina originale di SciTE:
-
-<http://www.scintilla.org>
-
-### Due Parole su SciTE
+### Ancora su SciTE
 
 Nonostante SciTE faccia un "mestiere" comune a molti altri software
 (l’editor di testo), la sua impostazione e le sue caratteristiche lo
@@ -73,8 +72,8 @@ efficienza e produttività, consentendo così all’operatore di mantenere la
 concentrazione sul proprio lavoro senza distrarlo con l’utilizzo di mouse,
 icone, menu ecc...
 
-Tale approccio non penalizza, in alcun modo le funzionalità del software, che
-rimangono ai massimi livelli, certamente paragonabili con quelle di prodotti
+Tale approccio non penalizza in alcun modo le funzionalità del software che
+rimangono ad alti livelli, certamente paragonabili con quelle di altri prodotti
 ben più blasonati e costosi.
 
 Un’altra caratteristica distintiva di SciTE è la quasi totale assenza di
@@ -82,7 +81,7 @@ maschere di configurazione. Questa "mancanza", di fatto contribuisce a
 ridurre la complessità delle interfacce, riducendo così, anche i tempi di
 sviluppo del programma. Al tempo stesso consente di aumentare, in modo
 significativo, il numero di parametri configurabili, che attualmente sono
-nell’ordine delle centinaia.
+moltissimi.
 
 Tutte le configurazione dell’editor sono memorizzate all’interno di
 semplici file di testo, modificabili a piacere dall’utente.
@@ -93,8 +92,8 @@ menu di aiuto, è possibile intervenire su questi file in modo rapido ed
 immediato.
 
 A tutto ciò va poi aggiunta la possibilità di utilizzare un vero e proprio
-linguaggio di programmazione (di nome LUA), per implementare nuove funzioni o
-estendere quelle già presenti.
+linguaggio di programmazione ([LUA](http://www.lua.org)), 
+per implementare nuove funzioni o estendere quelle già presenti.
 
 Infine, non è da sottovalutare la possibilità di usare l’editor
 direttamente da un dispositivo rimovibile come, ad esempio, un pendrive USB,
@@ -105,28 +104,27 @@ neofita, sia dall’utente esperto o dal programmatore, traendo comunque
 vantaggi significativi dalla sua potenza e dalla sua essenzialità.
 
 In pratica, SciTE, si candida ad essere il sostituto sia del classico "Blocco
-Note", sia degli editor professionali utilizzati nello sviluppo delle
+Note" sia degli editor professionali utilizzati nello sviluppo delle
 applicazioni software.
-
-Da SciTE nasce la mia personale distribuzione, **RSciTE**.
 
 ### Le Caratteristiche Base di SciTE
 
 Ecco qui riassunte le caratteristiche principali della versione originale di
 SciTE, tutte presenti anche in **RSciTE**.
 
-Utilizzo Documenti * Interfaccia MDI per lavorare con più documenti contemporaneamente.
+Utilizzo Documenti:
 
-* Passaggio tra documenti utilizzando una comoda "selection tab".
-* Utilizzo della combinazione Ctrl+Tab per cambiare il documento attivo.
+* **Interfaccia MDI** per lavorare con più documenti contemporaneamente.
+* Passaggio tra documenti utilizzando delle semplici schede.
+* Utilizzo della combinazione **Ctrl+Tab** per cambiare il documento attivo.
 * Possibilità di trascinare i documenti nell’editor per aprirli.
 * Riconoscimento automatico modifica documenti aperti. Se un file aperto viene
 modificato all’esterno dell’editor, viene rilevata la modifica ed è possibile
-ricaricarlo automaticamente
+ricaricarlo automaticamente.
 
 Sintassi evidenziata:
 
-* Configurabile tramite appositi file.
+* Configurabile tramite appositi file (.properties).
 * Preimpostato per riconoscere i linguaggi MQL, AutoCAD/IntelliCAD/progeCAD DCL,
 AutoCAD/IntelliCAD/progeCAD Lisp, Abaqus, Ada, ANS.1 MIB definition files,
 APDL, Assembler (NASM, MASM), Asymptote, AutoIt, Avenue, Batch files (MS-DOS),
@@ -159,7 +157,7 @@ possono essere annullate, le operazioni annullate possono essere facilmente
 ripristinate.
 * Ricerca e Sostituzione con ricerca testo specificato ed eventuale sostituzione,
 ricerca Incrementale testo specificato, ricerca testo con marcatori, supporto delle
-espressioni regolari, ricerca in più file simultanea, evidensiazione automatica del
+espressioni regolari, ricerca in più file simultanea, evidenziazione automatica del
 testo trovato.
 * Funzioni avanzate nella gestione del codice sorgente come ricerca e selezione
 parti di codice utilizzando la definizione della sintassi, gestione completamento
@@ -182,19 +180,22 @@ di copia/incolla/ecc...
 * Altre funzionalità includono la stampa a colori, la modalità sola lettura,
 modalità finestra in primo piano, configurazione indentazione, possibilità di
 automatizzare processi tramite l’uso dei parametri della linea di comando,
-interfaccia di programmazione per il collegamento a software esterni,
-multipiattaforma (Windows / Linux / osx) e molto altro...
+interfaccia di programmazione per il collegamento a software esterni 
+e molto altro...
 
 ### Le Scorciatoie da Tastiera
 
-Come ogni editor che si rispetti, anche SciTE dispone di una vasta schiera di
+Come ogni editor che si rispetti, anche **RSciTE** dispone di una vasta schiera di
 combinazioni di tasti per accedere alla funzionalità più utilizzate. Molte
 delle combinazioni disponibili sono comuni agli ambienti Windows e Linux.
 Inoltre, tutte le combinazioni di tasti sono ridefinibili attraverso
-l’editazione di appositi file di configurazione. Per conoscere i tasti
-veloci disponibili è possibile consultare le tendine dei menu presenti nel
-programma, oppure leggere questa tabella riassuntiva :
+l’editazione di appositi file di configurazione. 
 
+Molte delle combinazioni disponibili sono ereditate da SciTE, mentre altre
+sono proprie della distribuzione RSciTE.
+
+Per conoscere i tasti veloci disponibili è possibile consultare le tendine dei 
+menu presenti nel programma, oppure leggere questa tabella riassuntiva:
 
 * **Ctrl+O**.Apri file.
 * **Ctrl+Maiusc+O**.Apri il file selezionato.
@@ -296,48 +297,60 @@ programma, oppure leggere questa tabella riassuntiva :
 * **Ctrl++Maiusc+ù**.Espandi la selezione fino alla parte precedente della parola corrente.
 * **Ctrl+**.Vai alla parte successiva della parola corrente.
 * **Ctrl+Maiusc+**.Espandi selezione fino alla parte successiva della parola corrente.
-* **Ctrl+(tastierino numerico +/-)**.Ingrandimento/Riduzione dimensione caratteri (disponibile solo in ’RSciTE’).
-* **Ctrl+F1**.Ricerca contestuale online (disponibile solo in ’RSciTE’).
-* **Ctrl+Alt+O**.Lista ultimi file utilizzati (disponibile solo in ’RSciTE’).
-* **F12**.Funzionalità avanzate(disponibile solo in ’RSciTE’).
-* **Ctrl+<**.Inserimento abbreviazione/modello (disponibile solo in ’RSciTE’).
-* **Ctrl+Alt+C**.Copia testo in Appunti Multipli (disponibile solo in ’RSciTE’).
-* **Ctrl+Alt+X**.Taglia testo ed inseriscilo in Appunti Multipli (disponibile solo in ’RSciTE’).
-* **Ctrl+Alt+V**.Incolla testo da Appunti Multipli (disponibile solo in ’RSciTE’).
-* **Ctrl+Alt+N**.Crea nuovo file con il contenuto del pannello di output (disponibile solo in ’RSciTE’).
+* **Ctrl+(tastierino numerico +/-)**.Ingrandimento/Riduzione dimensione caratteri
+(disponibile solo in "RSciTE").
+* **Ctrl+F1**.Ricerca contestuale online
+(disponibile solo in "RSciTE").
+* **Ctrl+Alt+O**.Lista ultimi file utilizzati 
+(disponibile solo in "RSciTE").
+* **F12**.Funzionalità avanzate
+(disponibile solo in "RSciTE").
+* **Ctrl+<**.Inserimento abbreviazione/modello 
+(disponibile solo in "RSciTE").
+* **Ctrl+Alt+C**.Copia testo in Appunti Multipli 
+(disponibile solo in "RSciTE").
+* **Ctrl+Alt+X**.Taglia testo ed inseriscilo in Appunti Multipli 
+(disponibile solo in "RSciTE").
+* **Ctrl+Alt+V**.Incolla testo da Appunti Multipli 
+(disponibile solo in "RSciTE").
+* **Ctrl+Alt+N**.Crea nuovo file con il contenuto del pannello di output 
+(disponibile solo in "RSciTE").
 * **Shift+F1**.Permette di visualizzare le informazioni sulla versione di RsciTE
 che si sta utilizzando, inoltre consente di accedere alla procedura di
-aggiornamento (disponibile solo in ’RSciTE’).
+aggiornamento 
+(disponibile solo in "RSciTE").
 
 ### Il Linguaggio di programmazione LUA
 
+<p>
 <img src="lua.png" align="middle" alt="LUA" border="0" width="10%">
+</p>
 
-Un potente linguaggio di scripting, integrato in SciTE!
+**LUA è un potente linguaggio di scripting, integrato in SciTE!**
 
 Da tempo, SciTE, include un vero e proprio linguaggio di programmazione che
 consente di potenziare l’editor in modo flessibile ed immediato.
 
-LUA è un linguaggio di scripting di utilizzo generico, snello, potente e
+**LUA** è un linguaggio di scripting di utilizzo generico, snello, potente e
 flessibile. Offre un buon supporto per la programmazione object-oriented, per
 la programmazione funzionale e per quella orientata ai dati.
 
-LUA è disponibile sia come linguaggio interpretato a se stante, sia come
+**LUA** è disponibile sia come linguaggio interpretato a se stante, sia come
 libreria ed è scritto utilizzando il linguaggio C, cosa che lo rende adatto
 all’utilizzo su molti sistemi operativi.
 
-LUA è inoltre caratterizzato da una sintassi semplice ed immediata che, per
-alcuni aspetti, ricorda quella del linguaggio basic. A differenza di
-quest’ultimo LUA è estremamente rapido ed efficiente nel’esecuzione degli
+**LUA** è inoltre caratterizzato da una sintassi semplice ed immediata che, per
+alcuni aspetti, ricorda quella del linguaggio Basic. A differenza di
+quest’ultimo **LUA** è estremamente rapido ed efficiente nel’esecuzione degli
 script.
 
-Proprio grazie a queste caratteristiche, gli autori di SciTE, hanno deciso di
-integrarlo nel loro editor, dando agli utenti la possibilità di estendere e
+Proprio grazie a queste caratteristiche l'autore di SciTE hanno deciso di
+integrarlo nell'editor, dando agli utenti la possibilità di estendere e
 di potenziare il programma.
 
-Per chiarire meglio le potenzialità di LUA all’interno di SciTE, ecco un
-esempio tratto dalla distribuzione RSciTE che effettua l’ordinamento del
-file corrente :
+Per chiarire meglio le potenzialità di **LUA** all’interno di SciTE, ecco un
+esempio tratto dalla distribuzione **RSciTE** che effettua l’ordinamento del
+file corrente:
 
     Author  : Roberto Rossi
     Web     : http://www.redchar.net
@@ -366,27 +379,34 @@ file corrente :
      print("Ordinamento File Concluso con successo.")
     end
 
-
-Per approfondire le proprie conoscenze su LUA e sul suo utilizzo, si consulti
+Per approfondire le proprie conoscenze su **LUA** e sul suo utilizzo, si consulti
 la sezione **Siti Utili**.
 
 ### SciTE al Lavoro
 
-RSciTE editando un file .cpp:
+**RSciTE** editando un file .cpp (linguaggio C++):
 
+<p style="text-align:center;">
 <img src="cpp.png" align="middle" alt="C++" border="0" width="80%">
+</p>
 
-RSciTE editando un file .lsp (LISP):
+**RSciTE** editando un file .lsp (linguaggio Lisp):
 
+<p style="text-align:center;">
 <img src="lsp.png" align="middle" alt="Lisp" border="0" width="80%">
+</p>
 
-RSciTE editando un file .php, con l’autocompletamento attivo:
+**RSciTE** editando un file .php (linguaggio PHP), con l’**autocompletamento** attivo:
 
+<p style="text-align:center;">
 <img src="php2.png" align="middle" alt="PHP Autocompletamento" border="0" width="80%">
+</p>
 
-RSciTE editando un file .php, con l’aiuto sulla sintassi:
+**RSciTE** editando un file .php (linguaggio PHP), con l’aiuto sulla **sintassi**:
 
+<p style="text-align:center;">
 <img src="php.png" align="middle" alt="PHP con Aiuto" border="0" width="80%">
+</p>
 
 ### RSciTE
 
@@ -410,12 +430,12 @@ quello di promuovere **SciTE** come editor di testo per tutti gli usi.
 
 Alle volte modificando semplicemente le configurazione, in altri casi,
 sfruttando il suo linguaggio di programmazione interno **LUA**,
-**RSciTE** include una serie di Funzionalità aggiuntive per aumentare (dove
+**RSciTE** include una serie di funzionalità aggiuntive per aumentare (dove
 necessario) la produttività dell’editor.
 
 Inoltre, nella distribuzione **RSciTE** sono inseriti altri software che,
 uniti all’editor di testo, permettono di ottenere un formidabile strumento
-di editazione.
+di editazione e di gestione.
 
 ### Funzionalità Aggiuntive in RSciTE
 
@@ -434,9 +454,9 @@ dell’attributo da inserire.
 * Integrato **HTML TIDY** per la formattazione automatica dei file HTML/XML.
 Per maggiori dettagli si consulti la sezione **HTML Tidy.**
 * Aggiunto **riconoscimento e colorazione sintassi** per il linguaggio
-**LISP** utilizzato in questi software :
+**LISP** utilizzato in questi software:
 * Integrato sistema di **suggerimenti** per il linguaggio **LISP**
-utilizzato in questi software :
+utilizzato in questi software:
 * Aggiunta **sintassi** per il linguaggio **DCL** utilizzato in molti CAD,
 ad esempio in AutoCAD, progeCAD e in tutti i CAD compatibili.
 * Integrato il sistema di **suggerimenti** per il linguaggio **DCL**.
@@ -450,20 +470,18 @@ del linguaggio **Visual Basic.NET/VB/VBA/VBS**
 * Supporto sistema di **suggerimenti per Visual Basic.NET/VB/VBA/VBS**
 * **Tabella ASCII**. Nei momenti di necessità è possibile consultare una
 comoda tabella con i 255 caratteri standard.
-* Supporto abbreviazioni per i seguenti linguaggi :
+* Supporto abbreviazioni per i seguenti linguaggi:
 * Supporto sistema di **suggerimenti per linguaggio LUA**
 * Integrato **manuale per linguaggio LUA**
 * **Editor Esadecimale FRhed** (versione per Windows). Accessibile da **F12**,
 permette l’editazione del file corrente in formato Esadecimale.
-* **Software per il confronto e per l’unione di file, KDiff**. Accessibile
-da **F12**, permette il confronto di file e cartelle.
 * Software per il confronto e per l’unione di file, **WinMerge**.
 Accessibile da **F12**, permette il confronto di file e cartelle.
 * Integrazione con il **menu contestuale di Windows**.
 * **Procedura di installazione**, in lingua italiana, per i sistemi Windows
 (XP / Vista / 7 / 8 / 10 o successivi), con possibilità di personalizzazione
 delle funzionalità da attivare.
-* **File LISP : Esegui in CAD. **Nei file LSP (Lisp) è possibile utilizzare
+* **File LISP: Esegui in CAD. **Nei file LSP (Lisp) è possibile utilizzare
 il tasto F5 per caricare il file corrente nel CAD aperto al momento.
 * **Interprete Diretto Espressioni Lua.** In questo modo sarà possibile
 testare direttamente una linea di codice Lua senza dover creare un apposito
@@ -472,7 +490,6 @@ script.
 inserire con SciTE.
 * **Elenco TODO**. Consente di elencare tutte le linee che rappresentano gli
 elementi da completare nel file di testo corrente
-* **Gestore Finestre Multiple**.
 * **Apertura Gestione Risorse**. Nel caso si renda necessario, direttamente da
 SciTE è possibile aprire il gestione risorse o il risorse del comuper di
 Windows posizionato sulla cartella del file corrente.
@@ -500,33 +517,38 @@ secondarie, alle impostazioni di base (es.: margini, numeri linea ecc..).
 
 ### F12
 
-#### Funzionalità Avanzate per la modifica dei file di testo...
+In questa sezione sono elencate le funzionalità fornite dalla funzione **F12**,
+presente nella distribuzione **RSciTE**.
+
+**F12** ovviamente è richiamabile con l'omonimo tasto **F12**.
+
+### Funzionalità Avanzate per la modifica dei file di testo
 
 Alle volte, durante il lavoro quotidiano, si sente la mancanza di alcune
 funzionalità previste da altri editor e che SciTE ancora non supporta.
 
 Per sopperire a tale mancanza, sfruttando il potente linguaggio interno a
-SciTE (LUA), RSciTE prova ad includere ciò che manca.
+SciTE (LUA), **RSciTE** prova ad includere ciò che manca.
 
-#### E’ nato F12!
+### E’ nato F12!
 
 **F12** prende il suo nome dal tasto che lo richiama, e più che di una singola
 funzione, **F12** può essere visto come insieme di utilità per la manipolazione
-del testo. Alla pressione dell’omonimo tasto (**F12**), apparirà l’apposita
+del testo. Alla pressione dell’omonimo tasto ( **F12** ), apparirà l’apposita
 dialog per la scelta del comando da eseguire:
 
-<div style="text-align:center;">
+<p style="text-align:center;">
 <img src="f12.png" align="middle" alt="F12" border="0" width="40%">
-</div>
+</p>
 
-Attenzione : solo una piccola parte dei comandi disponibili è presente in
+Attenzione: solo una piccola parte dei comandi disponibili è presente in
 questa schermata!
 
 Data la mole di funzioni presenti in **F12** la maschera di selezione è
 dotata di una comoda casella nella quale l’utente può inserire un testo, che
-servirà ad RSciTE per mostrare solo le funzioni che lo riportano. Ad esempio,
+servirà ad **RSciTE** per mostrare solo le funzioni che lo riportano. Ad esempio,
 se volessimo vedere tutte le funzioni riguardanti i l’eliminazione di testo ci
-basterebbe inserire la parola “elimina”, in questo modo:
+basterebbe inserire la parola "elimina", in questo modo:
 
 <p style="text-align:center;">
 <img src="f12-filter.png" align="middle" alt="Filtro F12" border="0" width="40%">
@@ -534,103 +556,273 @@ basterebbe inserire la parola “elimina”, in questo modo:
 
 ### Cosa contiene F12
 
-* **Gestione Data/Ora** Questa funzione permette l’inserimento della data e dell’ora corrente, con la possibilità di scegliere il formato che la rappresenta, compreso lo speciale formato TIMESTAMP. Per consentire la massima flessibilità l’utente può personalizzare la modalità di inserimento aumentando il numero di formati disponibili. In aggiunta, la procedura prevede modalità particolari per la conversione di date generiche in formato TIMESTAMP e viceversa.
-* **Formattazione selezione **Selezionando un testo è possibile chiedere al software l’inserimento automatico dei ritorni a capo ad una determinata colonna. Questa funzionalità di formattazione consente di scegliere la colonna oppure di utilizzare il delimitatore destro (solitamente visibile).
-* **Inserimento caratteri ESCAPE in selezione **Alcuni linguaggi prevedono, all’interno delle stringhe, l’uso di caratteri speciali (chiamati di Escape). Con questo comando è possibile convertire i normali caratteri in caratteri di Escape. Ad esempio : Ritorno a capo = \n, Tabulazione = \t ecc...
-* **Allineamento Selezione **L’allineamento della selezione consente di posizionare le linee a destra/sinistra/centro, come nei normali elaboratori di testo, operazione utili quando si desidera dare un aspetto migliore ai propri scritti. Questa funzione permette anche l’utilizzo di riempimenti per la riga formattata.
-* **Numerazione Linee in Selezione **Alle volte, risulta utile inserire il numero di linea prima del testo della stessa. Questo comando permette di finserire questo dato, consentendo all’operatore di stabilire come, lo stesso numero, debba essere formattato.
-* **Inserimento File** Questa funzione consente l’inserimento, nella posizione corrente del cursore, di un intero file scelto da un’apposita maschera.
-* **Inserimento Lista File **Con questa procedura è possibile inserire l’elenco dei file presenti in una determinata cartella. E’ possibile scegliere quali file elencare attraverso l’uso dei normali caratteri speciali (* ? ecc...), inoltre è consentito stabilire come rappresentare il nome dei file inseriti.
-* **Inserimento Codice Colore **Scegliendo il colore dalla maschera standard di selezione è possibile inserire il suo codice all’interno del documento corrente, nella posizione del cursore. Una volta scelto il colore sarà possibile indicare il formato per l’inserimento (RGB decimale o RGB Esadecimale).
-* **Inserimento Stringa Casuale **Con questa funzione è possibile inserire una stringa casuale, scegliendone la composizione, lunghezza e la rappresentazione (solo numeri, numeri + lettere, formato esadecimale, ecc...).
-* **Inserimento Rientri su linee selezionate **Con questo comando è possibile inserire dei rientri a sinistra della selezione corrente, così da poter allineare, in modo semplice, diversi blocchi di testo tra loro.
-* **Inserisci Testo alla colonna N/Inizio/Fine **Questa funzione consente l’inserimento di testo nelle linee selezionate. E’ possibile decidere di specificare una colonna nella quale verrà posizionato il testo indicato oppure, quest’ultimo potrà essere inserito all’inizio o alla fine delle linee.
-* **Conversione Lettere speciali in codici HTML **Questa funzione permette di scrivere normalmente il testo nelle pagine HTML senza preoccuparsi delle lettere accentate, infatti il suo utilizzo converte questi caratteri nei corrispondenti codici HTML.
-* **Eliminazione Rientri dalle linee selezionate **Con questo comando è possibile eliminare i rientri, eventualmente presenti alla sinistra del testo selezionato.
-* **Eliminazione Righe Vuote **Questa funzione non fa altro che eliminare le linee Vuote dal file corrente.
-* **Eliminazione Righe Doppie **Alle volte, può capitare di dover eliminare eventuali righe doppie da un file di testo. Questa funzione esegue la scansione del documento corrente eliminando eventuali doppioni.
-* **Eliminazione Righe Contenenti Testo... **In modo simile al precedente, questo comando elimina delle linee dal file corrente, richiedendo all’utente di specificare un testo da ricercare, in corrispondenza del quale, verranno fatte le cancellazioni.
-* **Eliminazione Righe NON Contenenti Testo... **In modo simile al precedente, questo comando elimina delle linee dal file corrente, richiedendo all’utente di specificare un testo da ricercare, tutte le linee che NON contengono il testo specificato verranno eliminate.
-* **Eliminazione spazi a fine riga **Spesso capita di trovare file contenenti spazi o tabulazioni alla fine delle linee. Ciò provoca uno spreco di spazio e rende più difficoltosa l’editazione. Questa funzione risolve il problema eliminando ciò che è superfluo. Eliminazione spazi a fine riga Spesso capita di trovare file contenenti spazi o tabulazioni alla fine delle linee. Ciò provoca uno spreco di spazio e rende più difficoltosa l’editazione. Questa funzione risolve il problema eliminando ciò che è superfluo.
-* **Ordinamento file corrente/selezione **Nella mia ’vita da programmatore’, mi è capitato più di una volta, di dover ordinare un file. Questo comando ordina il file corrente con il classico metodo ASCII, consentendo di scegliere se l’ordine debba essere crescente o decrescente.
-* **Ridenominazione File Corrente **Per rinominare il file corrente, senza dover passare ad un file manager o al gestione risorse.
-* **Elimina File Corrente **Anche in questo caso, un’utilità che ci consente di non utilizzare un gestore di file apposito, ma che elimina definitivamente il file corrente.
-* **Copia nome file corrente negli appunti** In alcune circostanze, risulta utile poter disporre del nome del file in editazione, in modo da poterlo utilizzare nel testo o in altri software.
-* **Inserimento Nome File** E’ possibile utilizzare questa funzione per inserire il nome del file corrente, comprensivo di percorso, nella posizione del cursore.
-* **Lista TODO** Molte volte, all’interno dei file sorgente, vengono utilizzato degli identificatori per annotare le cose da fare, gli errori da correggere o le funzionalità da implementare. Questa funzione fornisce l’elenco di questo note, eventualmente presenti nel file corrente. Sono supportati i seguenti identificativi : "TODO :", "HACK :" e "UNDONE :"
-* **Info carattere corrente** Particolare funzione che consente di ottenere informazioni specifiche sul carattere presente nella posizione del cursore. I dati visualizzati si riferiscono al codice ASCII, al codice esadecimale e all’offset del carattere analizzato.
-* **Statistiche su file corrente** Fornisce informazioni dettagliate sulla selezione e sul file corrente. I dati visualizzati si riferiscono al conteggio di Parole, Righe, Caratteri comprensivi di spazi e senza spazi, inoltre gli stessi dati sono riportati per la selezione corrente.
-* **Statistiche su testo** Consente il conteggio di un parziale all’interno del testo corrente. Permette sia il semplice conteggio di occorrenze e linee, sia l’identificazione di queste ultime con segnalibri. Può lavorare sia considerando, sia non considerando le differenze tra maiuscole e minuscole.
-* **Gestore Finestre** Consente l’allineamento e la gestione delle finestre multiple di SciTE.
-* **Imposta trasparenza finestra di SciTE** Con questa funzionalità è possibile rendere trasparente la finestra di SciTE, in modo che diventi, in alcune circostanze, meno evidente. Questa funzione risulta utile soprattutto quando SciTE viene posizionato sempre in primo piano, utilizzando l’apposita opzione.
-* **Analizza file corrente con CTAGS** Attraverso l’utilizzo di CTAGS, il file corrente viene analizzato e vengono mostrate le funzioni, le classi e le variabile definite al suo interno. In questo modo è possibile identificare immediatamente ogni elemento del sorgente editato.
-* **Comprimi file CSS/JavaScript (YuiCompressor)** YuiCompressor è un’utilità scritta in linguaggio Java (e che necessita del relativo runtime) che consente di ridurre le dimensioni di un qualsiasi file CSS e/o JavaScript. La riduzione delle dimensioni avviene attraverso l’utilizzo di alcune tecniche che, senza intaccarne il funzionamento, ne eliminano le parti superflue riuscendo a diminuirne drasticamente le dimensioni. Di conseguenza è possibile ridurre la dimensione delle nostre, care, pagine web, velocizzandone la consultazione e rendendo la navigazione un’esperienza migliore. Inoltre, YuiCompressor effettua anche l’offuscamento del sorgente, in modo che questo sia di difficile comprensione e riutilizzo. Cosi facendo è possibile limitare il rischio di uso non autorizzato del proprio lavoro.
-* **Generatore GUID** Questa funzione permette l’inserimento di una GUID all’interno del testo corrente, consentendone la formattazione per adattarsi a diverse situazioni di utilizzo.
-* **Invertitore barre** Questa piccola utilità consente l’inversione delle barre presenti nel testo selezionato. Nella pratica, il carattere ’\’ sarà trasformato in ’/’ e viceversa.
-* **Apertura prompt dei comandi** E’ possibile aprire la finestra del prompt dei comandi direttamente nella cartella del file corrente. Operazione banale ma, alle volte, comoda per evitare di scomodare il menu dei programmi del sistema operativo.
-* **Sposta linea margine destro** Questa funzionalità consente di posizionare liberamente la linea relativa al margine destro del testo, questo consente una migliore gestione delle funzioni di riformattazione e aiuta a stabilire l’incolonnamento esatto di eventuali file formattati.
-* **Controllo Ortografico** Il controllo ortografico in RSciTE è finalizzato alla correzione di semplici errori di digitazione. Con il programma sono forniti due dizionari, uno per la lingua italiana e uno per la lingua inglese. Le funzionalità implementate permettono l’individuazione delle parole errate e la creazione di un proprio dizionario personalizzato. La procedura è di tipo interattivo e segue l’utente passo passo nella selezione e nella correzione dei termini errati.
-* **Informazioni sulle Versioni...** Questo comando, fornisce i numeri di versione per la distribuzione utilizzata di RSciTE, in questo modo è possibile controllare lo stato di aggiornamento del software.
-* **Controlla aggiornamenti di RSciTE** Questa funzione si occupa di controllare la presenza, su internet, di una nuova versione di RSciTE, permette quindi di scaricare ed installare la nuova release.
-* **Codifica/decodifica in Base64** Consente di codificare a decodificare una stringa usando l’algoritmo BASE64.
-* **Traduci testo selezionato in...** Utile per tradurre piccole frasi in qualsiasi altra lingua supportata da Google Translator. Richiede una connessione a internet attiva.
-* **Confronta / Fondi / Unisci File** Consente l’utilizzo di Kdiff o WinMerge per il confronto e la fusione di file e cartelle.
-* **Apri Tester Espressioni Regolari** Apre una piccola, ma preziosa, utilità in grado di testare le espressioni regolari.
-* **Apri editor esadecimale** Apre l’editor esadecimale con il file corrente caricato.
-* **Apri Gestione Risorse in cartella file** Come “dice” la voce stessa, apre il gestore file del sistema operativo nella cartella del file corrente.
-* **Converti codifica file corrente (ICONV)** Attraverso l’utilizzo dell’utilità ICONV, RSciTE è in grado di convertire un file da una codifica ad un’altra. Supporta piu di 100 codifiche diverse sia come sorgente, sia come destinazione.
-* **Crea immagine QRCode da testo** Funzione in grado di convertire un testo nel relativo codice QRCode. Questa funzionalità può sfruttare servizi online oppure può funzionare in modo completamente indipendente.
-* **Verifica IP in blacklists**Verifica se l’IP specificato/selezionato è presente in qualche blacklist internet„ sfruttando un apposito servizio online.
-* **Verifica prestazioni pagina Web**Verifica le prestazioni della pagina web spacificata/selezionata, sfruttando un apposito servizio online.
-* **Converti testo in Ascii Art**Utilizzando un apposito servizio web, questa funzione permette di convertire un testo nella relativa forma di Ascii Art.
-* **Calcolatrice**Questa funzionalità permette di risolvere espressioni matematiche ottenendo il risultato numerico. Sono supportate sia le normali funzioni matematiche di base, sia quelle avanzate, inoltre è consentito l’utilizzo delle variabili modificabili in modo dinamico. Per interpretare le espressioni è stata utilizzata la liberia MathParserKit ([http://www.bernaschina.com/it/progetti/mathparsekit/ http://www.bernaschina.com/it/progetti/mathparsekit/]).
-* **Trova Sinonimi e Contrari**Questa funzione, utilizzando un servizio internet, fornisce l’elenco dei sinonimi e contrari della parola selezionata/indicata.
-* **Procedura di conteggio linee**Questa funzione conta le linee che corrispondono ai parametri di ricerca. E’ possibile contare le linee che contengono o menu un testo, quelle che iniziano o terminano con un determinato parziale ed è possibile inserire dei segnalibri sulle linee trovate.
-* **Procedura per criptare e decriptare un file**Con questa funzione, sfruttando il famoso software libero **GNU Privacy Guard**, è possibile criptare il file corrente e, ovviamente, decriptare il risultato per renderlo nuovamente leggibile.
-* **Gestione delle operazioni di Commit, Push e Log/History** sui software **GIT Extensions, TortoiseGIT e TortoiseSVN**. In questo modo, senza l’asciare l’editor di testo, sarà possibile utilizzare i comandi fondamentali dei sistemi di gestione revisioni GIT e SVN.
-* **Selezione rettangolare**Una semplice funzione che consente, specificando le coordinate in forma riga/colonna, di selezionare un’area rettangolare nel testo.
+* **Gestione Data/Ora** Questa funzione permette l’inserimento della data e
+dell’ora corrente, con la possibilità di scegliere il formato che la
+rappresenta, compreso lo speciale formato TIMESTAMP. Per consentire la massima
+flessibilità l’utente può personalizzare la modalità di inserimento
+aumentando il numero di formati disponibili. In aggiunta, la procedura prevede
+modalità particolari per la conversione di date generiche in formato
+TIMESTAMP e viceversa.
+* **Formattazione selezione**. Selezionando un testo è possibile chiedere al
+software l’inserimento automatico dei ritorni a capo ad una determinata
+colonna. Questa funzionalità di formattazione consente di scegliere la
+colonna oppure di utilizzare il delimitatore destro (solitamente visibile).
+* **Inserimento caratteri ESCAPE in selezione**. Alcuni linguaggi prevedono,
+all’interno delle stringhe, l’uso di caratteri speciali (chiamati di
+Escape). Con questo comando è possibile convertire i normali caratteri in
+caratteri di Escape. Ad esempio : Ritorno a capo = \n, Tabulazione = \t ecc...
+* **Allineamento Selezione**. L’allineamento della selezione consente di
+posizionare le linee a destra/sinistra/centro, come nei normali elaboratori di
+testo, operazione utili quando si desidera dare un aspetto migliore ai propri
+scritti. Questa funzione permette anche l’utilizzo di riempimenti per la
+riga formattata.
+* **Numerazione Linee in Selezione**. Alle volte, risulta utile inserire il
+numero di linea prima del testo della stessa. Questo comando permette di
+finserire questo dato, consentendo all’operatore di stabilire come, lo
+stesso numero, debba essere formattato.
+* **Inserimento File**. Questa funzione consente l’inserimento, nella
+posizione corrente del cursore, di un intero file scelto da un’apposita
+maschera.
+* **Inserimento Lista File**. Con questa procedura è possibile inserire
+l’elenco dei file presenti in una determinata cartella. E’ possibile
+scegliere quali file elencare attraverso l’uso dei normali caratteri
+speciali (* ? ecc...), inoltre è consentito stabilire come rappresentare il
+nome dei file inseriti.
+* **Inserimento Codice Colore**. Scegliendo il colore dalla maschera standard
+di selezione è possibile inserire il suo codice all’interno del documento
+corrente, nella posizione del cursore. Una volta scelto il colore sarà
+possibile indicare il formato per l’inserimento (RGB decimale o RGB
+Esadecimale).
+* **Inserimento Stringa Casuale**. Con questa funzione è possibile inserire
+una stringa casuale, scegliendone la composizione, lunghezza e la
+rappresentazione (solo numeri, numeri + lettere, formato esadecimale, ecc...).
+* **Inserimento Rientri su linee selezionate**. Con questo comando è
+possibile inserire dei rientri a sinistra della selezione corrente, così da
+poter allineare, in modo semplice, diversi blocchi di testo tra loro.
+* **Inserisci Testo alla colonna N/Inizio/Fine**. Questa funzione consente
+l’inserimento di testo nelle linee selezionate. E’ possibile decidere di
+specificare una colonna nella quale verrà posizionato il testo indicato
+oppure, quest’ultimo potrà essere inserito all’inizio o alla fine delle
+linee.
+* **Conversione Lettere speciali in codici HTML**. Questa funzione permette di
+scrivere normalmente il testo nelle pagine HTML senza preoccuparsi delle
+lettere accentate, infatti il suo utilizzo converte questi caratteri nei
+corrispondenti codici HTML.
+* **Eliminazione Rientri dalle linee selezionate**. Con questo comando è
+possibile eliminare i rientri, eventualmente presenti alla sinistra del testo
+selezionato.
+* **Eliminazione Righe Vuote**. Questa funzione non fa altro che eliminare le
+linee Vuote dal file corrente.
+* **Eliminazione Righe Doppie**. Alle volte, può capitare di dover eliminare
+eventuali righe doppie da un file di testo. Questa funzione esegue la
+scansione del documento corrente eliminando eventuali doppioni.
+* **Eliminazione Righe Contenenti Testo...** In modo simile al precedente,
+questo comando elimina delle linee dal file corrente, richiedendo all’utente
+di specificare un testo da ricercare, in corrispondenza del quale, verranno
+fatte le cancellazioni.
+* **Eliminazione Righe NON Contenenti Testo...** In modo simile al precedente,
+questo comando elimina delle linee dal file corrente, richiedendo all’utente
+di specificare un testo da ricercare, tutte le linee che NON contengono il
+testo specificato verranno eliminate.
+* **Eliminazione spazi a fine riga**. Spesso capita di trovare file contenenti
+spazi o tabulazioni alla fine delle linee. Ciò provoca uno spreco di spazio e
+rende più difficoltosa l’editazione. Questa funzione risolve il problema
+eliminando ciò che è superfluo. Eliminazione spazi a fine riga Spesso capita
+di trovare file contenenti spazi o tabulazioni alla fine delle linee. Ciò
+provoca uno spreco di spazio e rende più difficoltosa l’editazione. Questa
+funzione risolve il problema eliminando ciò che è superfluo.
+* **Ordinamento file corrente/selezione**. Nella mia ’vita da
+programmatore’, mi è capitato più di una volta, di dover ordinare un file.
+Questo comando ordina il file corrente con il classico metodo ASCII,
+consentendo di scegliere se l’ordine debba essere crescente o decrescente.
+* **Ridenominazione File Corrente**. Per rinominare il file corrente, senza
+dover passare ad un file manager o al gestione risorse.
+* **Elimina File Corrente**. Anche in questo caso, un’utilità che ci
+consente di non utilizzare un gestore di file apposito, ma che elimina
+definitivamente il file corrente.
+* **Copia nome file corrente negli appunti**. In alcune circostanze, risulta
+utile poter disporre del nome del file in editazione, in modo da poterlo
+utilizzare nel testo o in altri software.
+* **Inserimento Nome File**. E’ possibile utilizzare questa funzione per
+inserire il nome del file corrente, comprensivo di percorso, nella posizione
+del cursore.
+* **Lista TODO**. Molte volte, all’interno dei file sorgente, vengono
+utilizzato degli identificatori per annotare le cose da fare, gli errori da
+correggere o le funzionalità da implementare. Questa funzione fornisce
+l’elenco di questo note, eventualmente presenti nel file corrente. Sono
+supportati i seguenti identificativi : "TODO :", "HACK :" e "UNDONE :"
+* **Info carattere corrente**. Particolare funzione che consente di ottenere
+informazioni specifiche sul carattere presente nella posizione del cursore. I
+dati visualizzati si riferiscono al codice ASCII, al codice esadecimale e
+all’offset del carattere analizzato.
+* **Statistiche su file corrente**. Fornisce informazioni dettagliate sulla
+selezione e sul file corrente. I dati visualizzati si riferiscono al conteggio
+di Parole, Righe, Caratteri comprensivi di spazi e senza spazi, inoltre gli
+stessi dati sono riportati per la selezione corrente.
+* **Statistiche su testo**. Consente il conteggio di un parziale all’interno
+del testo corrente. Permette sia il semplice conteggio di occorrenze e linee,
+sia l’identificazione di queste ultime con segnalibri. Può lavorare sia
+considerando, sia non considerando le differenze tra maiuscole e minuscole.
+* **Imposta trasparenza finestra di SciTE**. Con questa funzionalità è
+possibile rendere trasparente la finestra di SciTE, in modo che diventi, in
+alcune circostanze, meno evidente. Questa funzione risulta utile soprattutto
+quando SciTE viene posizionato sempre in primo piano, utilizzando l’apposita
+opzione.
+* **Analizza file corrente con CTAGS**. Attraverso l’utilizzo di CTAGS, il
+file corrente viene analizzato e vengono mostrate le funzioni, le classi e le
+variabile definite al suo interno. In questo modo è possibile identificare
+immediatamente ogni elemento del sorgente editato.
+* **Comprimi file CSS/JavaScript (YuiCompressor)**. YuiCompressor è
+un’utilità scritta in linguaggio Java (e che necessita del relativo
+runtime) che consente di ridurre le dimensioni di un qualsiasi file CSS e/o
+JavaScript. La riduzione delle dimensioni avviene attraverso l’utilizzo di
+alcune tecniche che, senza intaccarne il funzionamento, ne eliminano le parti
+superflue riuscendo a diminuirne drasticamente le dimensioni. Di conseguenza
+è possibile ridurre la dimensione delle nostre, care, pagine web,
+velocizzandone la consultazione e rendendo la navigazione un’esperienza
+migliore. Inoltre, YuiCompressor effettua anche l’offuscamento del sorgente,
+in modo che questo sia di difficile comprensione e riutilizzo. Cosi facendo è
+possibile limitare il rischio di uso non autorizzato del proprio lavoro.
+* **Generatore GUID**. Questa funzione permette l’inserimento di una GUID
+all’interno del testo corrente, consentendone la formattazione per adattarsi
+a diverse situazioni di utilizzo.
+* **Invertitore barre**. Questa piccola utilità consente l’inversione delle
+barre presenti nel testo selezionato. Nella pratica, il carattere ’\’
+sarà trasformato in ’/’ e viceversa.
+* **Apertura prompt dei comandi**. E’ possibile aprire la finestra del
+prompt dei comandi direttamente nella cartella del file corrente. Operazione
+banale ma, alle volte, comoda per evitare di scomodare il menu dei programmi
+del sistema operativo.
+* **Sposta linea margine destro**. Questa funzionalità consente di
+posizionare liberamente la linea relativa al margine destro del testo, questo
+consente una migliore gestione delle funzioni di riformattazione e aiuta a
+stabilire l’incolonnamento esatto di eventuali file formattati.
+* **Controllo Ortografico**. Il controllo ortografico in RSciTE è finalizzato
+alla correzione di semplici errori di digitazione. Con il programma sono
+forniti due dizionari, uno per la lingua italiana e uno per la lingua inglese.
+Le funzionalità implementate permettono l’individuazione delle parole
+errate e la creazione di un proprio dizionario personalizzato. La procedura è
+di tipo interattivo e segue l’utente passo passo nella selezione e nella
+correzione dei termini errati.
+* **Informazioni sulle Versioni...** Questo comando, fornisce i numeri di
+versione per la distribuzione utilizzata di RSciTE, in questo modo è
+possibile controllare lo stato di aggiornamento del software.
+* **Controlla aggiornamenti di RSciTE**. Questa funzione si occupa di
+controllare la presenza, su internet, di una nuova versione di RSciTE,
+permette quindi di scaricare ed installare la nuova release.
+* **Codifica/decodifica in Base64**. Consente di codificare a decodificare una 
+stringa usando l’algoritmo BASE64.
+* **Traduci testo selezionato in...** Utile per tradurre piccole frasi in
+qualsiasi altra lingua supportata da Google Translator. Richiede una
+connessione a internet attiva.
+* **Confronta / Fondi / Unisci File**. Consente l’utilizzo di WinMerge per il 
+confronto e la fusione di file e cartelle.
+* **Apri Tester Espressioni Regolari (Online)**. Apre un apposito sito web,
+interamente dedicato al test delle espressioni regolari.
+* **Apri editor esadecimale**. Apre l’editor esadecimale con il file
+corrente caricato.
+* **Apri Gestione Risorse in cartella file**. Come “dice” la voce stessa,
+apre il gestore file del sistema operativo nella cartella del file corrente.
+* **Converti codifica file corrente (ICONV)**. Attraverso l’utilizzo
+dell’utilità ICONV, RSciTE è in grado di convertire un file da una
+codifica ad un’altra. Supporta piu di 100 codifiche diverse sia come
+sorgente, sia come destinazione.
+* **Crea immagine QRCode da testo**. Funzione in grado di convertire un testo
+nel relativo codice QRCode. Questa funzionalità può sfruttare servizi online
+oppure può funzionare in modo completamente indipendente.
+* **Verifica IP in blacklists**. Verifica se l’IP specificato/selezionato è
+presente in qualche blacklist internet„ sfruttando un apposito servizio
+online.
+* **Verifica prestazioni pagina Web**. Verifica le prestazioni della pagina
+web spacificata/selezionata, sfruttando un apposito servizio online.
+* **Converti testo in Ascii Art**. Utilizzando un apposito servizio web,
+questa funzione permette di convertire un testo nella relativa forma di Ascii
+Art.
+* **Calcolatrice**. Questa funzionalità permette di risolvere espressioni
+matematiche ottenendo il risultato numerico. Sono supportate sia le normali
+funzioni matematiche di base, sia quelle avanzate, inoltre è consentito
+l’utilizzo delle variabili modificabili in modo dinamico. Per interpretare
+le espressioni è stata utilizzata la liberia MathParserKit
+([http://www.bernaschina.com/it/progetti/mathparsekit/
+http://www.bernaschina.com/it/progetti/mathparsekit/]).
+* **Trova Sinonimi e Contrari**. Questa funzione, utilizzando un servizio
+internet, fornisce l’elenco dei sinonimi e contrari della parola
+selezionata/indicata.
+* **Procedura di conteggio linee**. Questa funzione conta le linee che
+corrispondono ai parametri di ricerca. E’ possibile contare le linee che
+contengono o menu un testo, quelle che iniziano o terminano con un determinato
+parziale ed è possibile inserire dei segnalibri sulle linee trovate.
+* **Procedura per criptare e decriptare un file**. Con questa funzione,
+sfruttando il famoso software libero **GNU Privacy Guard**, è possibile
+criptare il file corrente e, ovviamente, decriptare il risultato per renderlo
+nuovamente leggibile.
+* **Gestione delle operazioni di Commit, Push e Log/History** sui software
+**GIT Extensions, TortoiseGIT e TortoiseSVN**. In questo modo, senza
+l’asciare l’editor di testo, sarà possibile utilizzare i comandi
+fondamentali dei sistemi di gestione revisioni GIT e SVN.
+* **Selezione rettangolare**. Una semplice funzione che consente, specificando
+le coordinate in forma riga/colonna, di selezionare un’area rettangolare nel
+testo.
 
-In aggiunta a queste funzionalità, **F12** consente all’utente la realizzazione dei propri script e la loro integrazione direttamente all’interno del pannello principale, senza alcuno sforzo, attraverso l’utilizzo dell’apposita funzione posta al termine dell’elenco di **F12**.
+In aggiunta a queste funzionalità, **F12** consente all’utente la
+realizzazione degli script personalizzati e la loro integrazione direttamente
+all’interno del pannello principale, senza alcuno sforzo, attraverso
+l’utilizzo dell’apposita funzione, posta al termine dell’elenco di
+**F12**.
 
 ### Ricerca Contestuale alternativa in RSciTE
 
-**RSciTE** incorpora una particolare funzione che gli consente di cercare un testo su vari siti web in base alla selezione fatta nell’editor.
+**RSciTE** incorpora una particolare funzione che gli consente di cercare un
+testo su vari siti web in base alla selezione fatta nell’editor.
 
-In questo modo potremo utilizzare tutti quei servizi web informativi, utili per il Nostro lavoro. Il software aprirà automaticamente il browser web, effettuando la ricerca direttamente sul sito desiderato.
+In questo modo potremo utilizzare tutti quei servizi web informativi, utili
+per il Nostro lavoro. Il software aprirà automaticamente il browser web,
+effettuando la ricerca direttamente sul sito desiderato.
 
-Questa funzione riesce, molte volte, ad essere più utile e flessibile del normale aiuto contestuale eseguito attraverso i normali canali off-line (es.: documentazione .chm).
+Questa funzione riesce, molte volte, ad essere più utile e flessibile del
+normale aiuto contestuale eseguito attraverso i normali canali off-line (es.:
+documentazione .chm).
 
-Prima di osservare alcuni esempi, bisogna sapere che la funzionalità di ricerca contestuale può essere richiamata attraverso la combinazione di tasti **CTRL+F1**, oppure dal menu Strumenti alla voce **Ricerca Web**.
+Prima di osservare alcuni esempi, bisogna sapere che la funzionalità di
+ricerca contestuale può essere richiamata attraverso la combinazione di tasti
+**CTRL+F1**, oppure dal menu Strumenti alla voce **Ricerca Web**.
 
-Richiamando la funzione di ricerca web apparirà una semplice maschera nella quale sarà possibile selezionare il sito/servizio sul quale effettuare l’operazione :
-
+Richiamando la funzione di ricerca web apparirà una semplice maschera nella
+quale sarà possibile selezionare il sito/servizio sul quale effettuare
+l’operazione di ricerca:
 
 <p style="text-align:center;">
 <img src="ctrl-f1.png" align="middle" alt="Ctrl+F1" border="0" width="80%">
 </p>
 
-Facciamo ora alcuni esempi, iniziando da un file .PHP. Basta selezionare parte del testo, in questo caso la funzione *file_exist*, quindi premere CTRL+F1 e selezionare Php :
+Facciamo ora alcuni esempi, iniziando da un file .PHP. Basta selezionare parte
+del testo, in questo caso la funzione *file_exist*, quindi premere **CTRL+F1** e
+selezionare Php:
 
 <p style="text-align:center;">
 <img src="ctrl-f1-php.png" align="middle" alt="Ctrl+F1 PHP" border="0" width="80%">
 </p>
 
-Una volta premuto su Ok, oppure con un doppio clic sulla voce desiderata, verrà aperto il browser alla pagina voluta :
+Una volta premuto su **Ok**, oppure con un doppio clic sulla voce desiderata,
+verrà aperto il browser alla pagina voluta:
 
 <p style="text-align:center;">
 <img src="ctrl-f1-php2.png" align="middle" alt="Ctrl+F1 PHP Indice" border="0" width="80%">
 </p>
+
 <p style="text-align:center;">
 <img src="ctrl-f1-php3.png" align="middle" alt="Ctrl+F1 PHP Pagina" border="0" width="80%">
 </p>
 
-Proviamo ora con una funzione C standard, ’sprintf”, utilizzando il sito web *www.cplusplus.com*:
+Proviamo ora con una funzione C standard, **sprintf**, utilizzando il sito
+web **www.cplusplus.com**:
 
 <p style="text-align:center;">
 <img src="ctrl-f1-cpp.png" align="middle" alt="Ctrl+F1 C++" border="0" width="80%">
 </p>
 
-Oppure, possiamo provare con una funzione di Windows e il servizio fornito da microsoft (MSDN):
+Oppure, possiamo provare con una funzione di Windows e il servizio fornito da
+Microsoft (Developer):
 
 <p style="text-align:center;">
 <img src="ctrl-f1-cpp2.png" align="middle" alt="Ctrl+F1 API Windows" border="0" width="80%">
@@ -642,69 +834,72 @@ Oppure, possiamo provare con una funzione di Windows e il servizio fornito da mi
 
 ### Tools Aggiuntivi presenti in RSciTE
 
-Nella distribuzione **RSciTE** sono stati introdotti una serie di software aggiuntivi, al fine di potenziare gli strumenti di modifica del testo.
+Nella distribuzione **RSciTE** sono stati introdotti una serie di software
+aggiuntivi, al fine di potenziare gli strumenti di modifica del testo.
 
-Tali software, sono disponibili, sia in forma indipendente, sia richiamabili direttamente dall’interno di SciTE, questo consente un più rapido utilizzo.
+Tali software, sono disponibili, sia in forma indipendente, sia richiamabili
+direttamente dall’interno dell'editor di testo, cosa che ne 
+consente un più rapido utilizzo.
 
-In tutti i casi, tali strumenti seguono le filosofie dell’"Open Source", rimanendo gratuiti, esattamente come l’editor, SciTE.
+In tutti i casi, tali strumenti seguono le filosofie dell’"Open Source",
+rimanendo gratuiti e liberi, esattamente come l’editor, SciTE.
 
 I programmi inclusi in RSciTE, oltre SciTE, sono:
 
-* **KDiff**, per i confronto e la fusione di differenti versioni dello stesso
-file o cartella. Per maggiori dettagli si consulti la sezione **KDiff**.
 * **FRhed**, per l’editazione e la visualizzazione di file binari. Per maggiori
 dettagli si consulti la sezione **Frhed**.
 * <div style="margin-left:0cm;margin-right:0cm;">**HTML Tidy**, per la
 formattazione automatica di file HTML e XML. Per maggiori dettagli si consulti
 la sezione **HTML Tidy**.
-* **dnGREP,** software multi piattaforma per semplificare la ricerca e la
+* **dnGREP**, software multi piattaforma per semplificare la ricerca e la
 sostituzione del testo.
+* **Cloc**, consente di ottenere statistiche sui file sorgenti che si stanno
+editando.
+* **GpPG**, in **RSciTE** permette di criptare e decriptare file di testo.
+* **Iconv**, consente di cambiare la codifica di un file.
 
 ### WinMerge, Confrontare e Unire File
 
-WinMerge è un software Open Source dedicato al mondo Windows, in grado di confrontare e unire file di testo e cartelle. E’ estremamente utile nel caso si vogliano visualizzare le differenze tra diverse versioni dello stesso progetto, inoltre consente l’inserimento delle modifiche di una versione nell’altra.
+WinMerge è un software Open Source dedicato al mondo Windows, in grado di
+confrontare e unire file di testo e cartelle. 
 
-Rispetto a KDiff, WinMerge si contraddustingue per un’interfaccia più semplice e per modlità operative più intuitive.
+WinMerge è particolarmente famoso e utilizzato. RSciTE include una versione
+particolare di WinMerge.
 
-Dal punto di vista delle caratteristiche, WinMerge dispone della maggior parte delle funzione presenti in KDiff con l’aggiunta di alcune esclusività : * Supporto per Microsoft Windows 98/ME/2000/XP/2003/Vista/2008/7.
-* Supporto per file in formato Windows, Unix e Mac.
-* Supporto per codifica Unicode, UTF-8 e altre...
-* Interfaccia a sezioni (Tab).
-* Modalità visuale per confronto e unione.
-* Editor flessibile con evidenziazione della sintassi, numeri di linea e ritorno a capo.
-* Visualizzazione delle differenze in due pannelli verticali con modalità di unione subito attiva.
-* Riconoscimento linee spostate.
-* Confronto cartelle con supporto per espressioni regolari.
-* Confronto cartelle con dimensioni e date.
-* Supporto per il confronto di sottocartelle.
-* Supporto per il controllo delle versioni con modalità di risoluzione conflitti e applicazione patch.
-* Supporto per gli archivi in formato 7-Zip.
-* Supporto per Plugin aggiuntivi.
-* Manuale online ed offline in formato HTML.
+Il software incluso con RSciTE non è il WinMerge originale ma è un derivato, il
+suo nome completo è **WinMerge 2011**. Questa scelta è stata fatta per poter includere,
+in RSciTE, un programma di confronto **attivamente e costantentemente sviluppato**
+([WinMerge 2011](https://bitbucket.org/jtuc/winmerge2011)).
 
+WinMerge è estremamente utile nel caso
+si vogliano visualizzare le differenze tra diverse versioni dello stesso
+progetto, inoltre consente l’inserimento delle modifiche di una versione
+nell’altra.
+
+Dal punto di vista delle caratteristiche ecco quelle di WinMerge:
+
+* Supporto e integrazione con **Microsoft Windows**.
+* Supporto per file in **formato Windows, Unix, Linux e Mac**.
+* Supporto per codifica **Unicode, UTF-8 e altre...**
+* Interfaccia a **sezioni** (Tab).
+* **Modalità visuale** per confronto e unione.
+* **Editor integrato** con evidenziazione della sintassi, numeri di linea e 
+ritorno a capo.
+* Visualizzazione delle differenze in **due pannelli** verticali con modalità 
+di unione subito attiva.
+* Riconoscimento **linee spostate**.
+* **Confronto cartelle** con supporto per **espressioni regolari**.
+* **Confronto cartelle** con dimensioni e date.
+* Supporto per il confronto di **sottocartelle**.
+* Supporto per il **controllo delle versioni** con modalità di risoluzione 
+conflitti e applicazione patch.
+* Supporto per gli archivi in formato **7-Zip**.
+* Supporto **per Plugin aggiuntivi**.
+* **Manuale** online ed offline in formato HTML.
+
+<p style="text-align:center;">
 <img src="winmerge.png" align="middle" alt="WinMerge" border="0" width="80%">
-
-### Kdiff, Confrontare e Unire
-
-**KDiff** è un software Open Source multipiattaforma utile per confrontare e unire file di testo e cartelle. E’ estremamente utile nel caso si vogliano visualizzare le differenze tra diverse versioni dello stesso progetto, inoltre consente l’inserimento delle modifiche di una versione nell’altra.
-
-Le sue funzionalità di base possono essere così riassunte:
-
-* Confronta e permette la fusione fra due o tre sorgenti di testo come file o
-intere cartelle.
-* Consente la visualizzazione delle differenze in modalità linea o carattere.
-* Permette la fusione semplificata dei file attraverso l’uso di funzioni automatiche.
-* Dispone di un facile editore per la l’unione dei file e la risoluzione dei
-conflitti che possono insorgere.
-* Consente l’utilizzo delle connessioni di rete attraverso l’uso di KIO.
-* Consente di evidenziare o nascondere le modifiche apportate da spazi
-bianchi o commenti.
-* Supporto per codifica Unicode, UTF-8 e altre...
-* Consente la stampa delle differenze.
-* Supporto per "version control keyword and history".
-* Manuale in formato HTML.
-
-<img src="kdiff.png" align="middle" alt="KDiff" border="0" width="80%">
+</p>
 
 ### FRhed
 
@@ -718,34 +913,37 @@ libertà di utilizzo e modifica.
 **FRhed** viene installato con **RSciTE** ed è presente sia nel menu dei
 programma di Windows, sia nel menu **Strumenti** interno a SciTE.
 
+<p style="text-align:center;">
 <img src="frhed.png" align="middle" alt="FRhed" border="0" width="80%">
+</p>
 
-Per comprendere meglio la potenza di FRhed, ecco in sintesi, le sue funzionalità salienti :
-* Applicazione nativa 32 bit Windows con supporto ai file con nomi lunghi e
+Per comprendere meglio la potenza di **FRhed**, ecco in sintesi, le sue funzionalità
+salienti:
+
+* **Applicazione nativa Windows** con supporto ai file con nomi lunghi e
 dimensione file editabili limitata solo dalla quantità di memoria presente nel
 sistema.
-* Dimensione programma ridotta (circa 100k) con caricamento istantaneo.
-* Taglia, copia e incolla di valori binari.
-* Sintassi per descrivere valori di tipo byte, word, longword, float and
+* **Dimensione programma ridotta** con caricamento istantaneo.
+* **Taglia, copia e incolla** di valori binari.
+* **Sintassi** per descrivere valori di tipo byte, word, longword, float and
 double binary.
-* Inserimento diretto di valori esadecimali o di testo.
-* Possibilità di confrontare due file.
-* Trova/Sostituisci di qualsiasi combinazione di valori testuali o esadecimali.
-* Manipolazione diretta dei bit.
-* Esportazione hexdump.
-* Impostazione automatica/manuale dei byte visualizzati.
-* Possibilità di personalizzare la dimensione dei font, il set dei caratteri,
+* Inserimento diretto di **valori esadecimali o di testo**.
+* Possibilità di **confrontare** due file.
+* **Trova/Sostituisci** di qualsiasi combinazione di valori testuali o esadecimali.
+* Manipolazione diretta dei **bit**.
+* Esportazione **hexdump**.
+* **Impostazione** automatica/manuale dei byte visualizzati.
+* Possibilità di **personalizzare** la dimensione dei font, il set dei caratteri,
 i colori e lo sfondo.
-* Supporto per formati binari Intel e Motorola.
-* Comando per "Inviare a...".
-* Supporto per segnalibri personalizzabili.
-* Supporto per il caricamento parziale dei file.
-* Drag & Drop.
-* Possibilità di applicare modelli a informazioni strutturate.
-* Accesso diretto ai settori dei dischi.
-* Supporto alla Crittografia.
-* Sorgenti disponibili e liberamente modificabili secondo la licenza GPL.
-* Software Libero.
+* Supporto per **formati binari Intel e Motorola**.
+* Comando per **Inviare a...**.
+* Supporto per **segnalibri** personalizzabili.
+* Supporto per il **caricamento parziale** dei file.
+* **Drag & Drop**.
+* Possibilità di **applicare modelli** a informazioni strutturate.
+* **Accesso diretto** ai settori dei dischi.
+* Supporto alla **Crittografia**.
+* **Software Libero** con sorgenti disponibili e liberamente modificabili secondo la licenza GPL.
 
 ### HTML Tidy, Formattare HTML e XML
 
@@ -797,10 +995,10 @@ viene trasformato in:
 
 e molto altro ancora...
 
-HTML Tidy non solo lavora sui file HTML ma, con alcune limitazioni, anche su
+**HTML Tidy** non solo lavora sui file HTML ma, con alcune limitazioni, anche su
 file XML, ASP, PHP, JSTE.
 
-HTML Tidy è distribuito come programma a linea di comando, è comunque
+**HTML Tidy** è distribuito come programma a linea di comando, è comunque
 possibile semplificare il suo utilizzo tramite l’uso di una delle interfacce
 grafiche realizzate da programmatori indipendenti. Per maggiori dettagli si
 consulti la sezione **Siti Utili**.
@@ -814,7 +1012,9 @@ Questo importante software, disponibile i **F12** alla voce **Trova/Sostituisci
 su file multipli** semplifica le operazione di ricerca e sostituzione del testo
 consentendo di operare in modo automatico su più file.
 
+<p style="text-align:center;">
 <img src="dngrep.png" align="middle" alt="dnGREP" border="0" width="80%">
+</p>
 
 **dnGREP** risulta essere un programma estremamente potente e flessibile,
 adatto sia al neofita, sia all’esperto programmatore, consentendo un utilizzo
@@ -826,24 +1026,24 @@ file .properties presenti in una cartella.
 
 ### Personalizzare e Configurare RSciTE
 
-RSciTE è estremamente flessibile, consentendo la modifica di una sterminata
+**RSciTE** è estremamente flessibile, consentendo la modifica di una sterminata
 serie di parametri, vediamo come configurare e personalizzare l’editor, per
 renderlo più consono alle nostre abitudini.
 
 In questa sezione sono raccolte diverse procedure per il settaggio dei
-parametri più comuni di RSciTE, cosi da poter diventare, nel più breve tempo
-possibile, operativi al 100%.
+parametri più comuni di **RSciTE**, cosi da poter diventare, nel più breve tempo
+possibile, operativi al **100%**.
 
 #### Aiuto sensibile al contesto, per i file PHP, in RSciTE!
 
 **F1**, il tasto di aiuto più utilizzato dai programmatori.
 
-Durante l’editazione dei file scritti in linguaggio PHP, cosa c’è di
-meglio che premere il tasto F1 e visualizzare la guida della funzione che si
+Durante l’editazione dei file scritti in **linguaggio PHP**, cosa c’è di
+meglio che premere il tasto **F1** e visualizzare la guida della funzione che si
 trova in corrispondenza del cursore?
 
-Esattamente come gli editor più blasonati, anche RSciTE (a partire dalla V.2),
-implementa l’aiuto sensibile al contesto, per utilizzarlo è sufficiente copiare
+Esattamente come gli editor più blasonati, anche **RSciTE** (a partire dalla V.2),
+implementa **l’aiuto sensibile al contesto**, per utilizzarlo è sufficiente copiare
 un file!
 
 Prima di tutto procuriamoci il file ufficiale di aiuto per il linguaggio PHP.
@@ -851,23 +1051,23 @@ Avendo l’accortezza di scaricare la versione in formato CHM :
 
 [Clicca qui per scaricare il manuale ufficiale di PHP in formato CHM.](http://www.php.net/download-docs.php)
 
-Attenzione : Utilizzando XP SP2 o successivo, dopo aver scaricato il file,
+Attenzione : in Windows, dopo aver scaricato il file,
 occorre cliccare su di esso con il tasto destro del mouse, quindi premere
-‘Proprietà‘. Fatto ciò occorre cliccare sul tasto ‘Annulla Blocco’.
-Questa operazione consente di utilizzarlo correttamente, senza che il sistema
-dia un antipatico ‘avviso di protezione’.
+"Proprietà". Fatto ciò occorre cliccare sul tasto "Annulla Blocco".
+Questa operazione consente di utilizzarlo correttamente, in caso contrario
+non sarà possibile consultarlo.
 
 Una volta scaricato il nostro file (php_manual_en.chm):
 
-* Posizionarsi nella cartella in cui è installato RSciTE (solitamente C:\Programmi\RScite).
-* Copiare all’interno della cartella di RSciTE il file scaricato (php_manual_en.chm).
+* Posizionarsi nella cartella in cui è installato **RSciTE** (solitamente C:\Programmi\RScite).
+* Copiare all’interno della cartella di **RSciTE** il file scaricato (php_manual_en.chm).
 
-Compiute queste operazione, aprite un file PHP, con RSciTE, posizionate il
+Compiute queste operazione, aprite un file PHP, con **RSciTE**, posizionate il
 cursore in prossimità del nome di una funzione e premete il tasto **F1** :
 
 <div style="text-align:center;">[[Image:|top]] </div>
 
-Ecco comparire l’aiuto relativo!
+Ecco comparire l’aiuto relativo.
 
 #### Colori di PHP come ‘Dreamweaver’
 
@@ -891,7 +1091,7 @@ come valori predefiniti, i seguenti:
     VARIABLES: #0066FF
     TAGS: #000099
 
-* Per fare in modo che SciTE utilizzi le medesime impostazioni, occorrerà
+Per fare in modo che SciTE utilizzi le medesime impostazioni, occorrerà
 modificare il file **html.properties** (presente nella cartella del programma)
 oppure, più semplicemente, cliccare sul menu **Opzioni** e selezionare il
 comando **Apri impostazioni del profilo utente**.
@@ -913,7 +1113,7 @@ iniziano come segue:
     style.hypertext.126 (Variabili PHP presenti nelle stringhe)
     style.hypertext.127 (Operatori)
 
-* Come si vede, ogni voce imposta una diversa opzione di colorazione,
+Come si vede, ogni voce imposta una diversa opzione di colorazione,
 semplicemente reimpostando questi valori e salvando il file si otterrà,
 in SciTE, una sintassi stile Dreamweaver.
 
@@ -935,14 +1135,14 @@ Dreamweaver):
     style.hypertext.126=fore:#0066FF
     style.hypertext.127=fore:#000099
 
-#### Lavorare con fondo Nero e testo Bianco
+#### Lavorare con fondo scuro
 
 Una delle modalità che, personalmente, trovo più riposanti per la vista è
 quella che prevede l’utilizzo di testo chiaro su fondo scuro.
 
 Per ottenere questo effetto occorre modificare le varie configurazioni di
 colori usate nei vari linguaggi, intervenendo sui settaggi presenti nei vari
-file .properties.
+file **.properties**.
 
 Per evitare di modificare i file originali, presenti nella cartella di RSciTE,
 si può cliccare sul menu **Opzioni** e selezionare il comando
@@ -994,7 +1194,7 @@ Una volta aperto il file, inseriamo quanto segue:
     print.colour.mode=1
 
 Queste impostazioni permettono di utilizzare i normali file di testo e i file
-scritti in PHP/HTML/XML/Javascript/Lua/InnoSetup con fondo nero e testo chiaro.
+scritti in **PHP/HTML/XML/Javascript/Lua/InnoSetup** con fondo nero e testo chiaro.
 
 ### Siti Utili
 
@@ -1017,8 +1217,6 @@ ecco l’elenco dei collegamenti ai siti più utili.
     - [Pagina ufficiale del progetto](https://dngrep.github.io/).
 - **WinMerge**, software di confronto
     - [WinMerge Home Page ](http://winmerge.sourceforge.net/).
-- **Kdiff**, software di confronto
-    - [Pagine ufficiale di Kdiff](http://kdiff3.sourceforge.net/).
 - **Frhed**, editor esadecimale
     - [Home Page Ufficiale di Frhed](http://frhed.sourceforge.net/).
 - **HTML Tidy**, elaboratore HTML
