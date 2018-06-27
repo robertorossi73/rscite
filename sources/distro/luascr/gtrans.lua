@@ -1,5 +1,5 @@
 --[[Traduci testo selezionato in...
-Version : 1.0.0
+Version : 1.0.1
 Author  : Roberto Rossi
 Web     : http://www.redchar.net
 
@@ -21,6 +21,10 @@ You should have received a copy of the GNU Lesser General Public
 License along with this library; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
 *******************************************************************************
+
+V.1.0.1
+- corretto link per accesso a sito. Attualmente la lingua di destinazione è
+sempre italiano
 
 V.1.0.0
 - rimossa selezione lingua destinazione, ora è sufficiente lanciare la funzione
@@ -50,12 +54,12 @@ do
   
   local function main()
     local text = editor:GetSelText()
-    local service = "http://translate.google.com/#auto|#auto"
+    local service = "http://translate.google.com/#auto/it/"
     local command = ""
     local lang 
         
     if (text ~= "") then    
-      service = service.."#auto|"
+      --service = service.."#auto|"
       command = service..convertCR(text)
       rwfx_ShellExecute(command,"")
     else
