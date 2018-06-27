@@ -1,5 +1,5 @@
 --[[
-Version : 3.0.1
+Version : 3.0.2
 Web     : http://www.redchar.net
 
 Inserimento guidato abbreviazioni
@@ -413,6 +413,8 @@ do
           formato = compilaModello(formato)
           --fine sostituzioni
           posPipe = string.find(formato,"|")
+          
+          selezione = string.gsub(selezione, "%%", "%%%%")
           formato = string.gsub(formato,"|",selezione)
 
           editor:ReplaceSel(formato)
