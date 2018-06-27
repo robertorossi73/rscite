@@ -36,17 +36,6 @@ License for WinMerge
 This program is free. It's licensed under GNU General Public License (http://www.gnu.org/copyleft/gpl.html). The newest version and source code is available on official homepage (http://winmerge.sourceforge.net).
 
 **************************************************************
-License for KDiff
--------------------------------
-KDiff3 :               Copyright (C) 2002-2009 Joachim Eibl
-                       License: GNU-General Public License
-                       License: tools\kdiff\COPYING.txt
-
-Diff-Ext-For-KDiff3 :  Copyright (c) 2003-2006, Sergey Zorin
-                       Extensions for KDiff3 by Joachim Eibl           
-                       License: tools\kdiff\COPYING.txt
-
-**************************************************************
 License for Frhed
 -------------------------------
 
