@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 ;Autore :   Roberto Rossi
-;Versione : 3.1.3
+;Versione : 3.1.5
 ;Web      : http://www.redchar.net
 
 ;how check redist vc
@@ -93,8 +93,8 @@ Name: {app}\wscitecm_it.dll; Type: files
 ;Name: {userappdata}\RSciTE; Type: filesandordirs; Tasks: ; Languages: 
 
 [CustomMessages]
-english.PrevInstall=Is present another version of RSciTE! Do you want proceed with upgrade?
-italian.PrevInstall=E' presente una precedente versione di RSciTE.%nPer evitare qualsiasi tipo di conflitto suggerisco di procedere, prima di proseguire, ad una disinstallazione dell'attuale RSciTE tramite il pannello di controllo.%nE' comunque possibile continuare ed aggiornare la versione corrente.%n%nSi desidera procedere comunque all'aggiornamento?
+english.PrevInstall=Is present another version of RSciTE! I recommend to uninstalling the previous version before proceeding.%n%nDo you want open Control Panel to uninstall previous version of RSciTE?
+italian.PrevInstall=E' presente una precedente versione di RSciTE.%nPer evitare qualsiasi tipo di conflitto suggerisco di procedere, prima di proseguire, ad una DISINSTALLAZIONE dell'attuale RSciTE tramite il pannello di controllo.%n%nE' comunque possibile continuare e tentare di aggiornare la versione corrente. Questa operazione NON è consigliata.%n%nSi desidera aprire il pannello di controllo per disinstallare la precedente versione di RSciTE?
 english.PortableVersion=Don't install RSciTE, but extract the files for the portable version.
 italian.PortableVersion=Non installare il programma, ma estrai solo i file della versione Portabile.
 english.PortableVersionGroup=RSciTE Portable Version
@@ -158,8 +158,10 @@ begin
     
     if FileExists(ExpandConstant('{app}\scite.exe')) then
     begin
-      if MsgBox(ExpandConstant('{cm:PrevInstall}'), mbConfirmation, MB_YESNO) = IDNO then
-      begin
+      if MsgBox(ExpandConstant('{cm:PrevInstall}'), mbConfirmation, MB_YESNO) = IDYES then
+      begin      
+        //rundll32.exe shell32.dll,Control_RunDLL Appwiz.cpl
+        Exec(ExpandConstant('{sys}\rundll32.exe'), 'shell32.dll,Control_RunDLL Appwiz.cpl', '', SW_SHOW, ewNoWait, ResultCode);
         // user clicked No
         Abort();
       end else

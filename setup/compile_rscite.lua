@@ -9,6 +9,8 @@ RSciTE, utilizzando Inno Setup come compilatore.
 ATTENZIONE : 
   Questa procedura dere essere eseguita dall'interno di RSciTE, utilizzando
   il comando "Esegui" presente nel menu "Strumenti"
+  Il file AppVerName.iss e il file rscite.iss devono risiedere nella stessa
+  cartella del file corrente.
 
 ]]
 
