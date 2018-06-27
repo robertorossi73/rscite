@@ -36,11 +36,11 @@ local hex2bin = {
 	["8"] = "1000",
 	["9"] = "1001",
 	["a"] = "1010",
-        ["b"] = "1011",
-        ["c"] = "1100",
-        ["d"] = "1101",
-        ["e"] = "1110",
-        ["f"] = "1111"
+    ["b"] = "1011",
+    ["c"] = "1100",
+    ["d"] = "1101",
+    ["e"] = "1110",
+    ["f"] = "1111"
 	}
 
 local bin2hex = {
@@ -55,11 +55,11 @@ local bin2hex = {
 	["1000"] = "8",
 	["1001"] = "9",
 	["1010"] = "A",
-        ["1011"] = "B",
-        ["1100"] = "C",
-        ["1101"] = "D",
-        ["1110"] = "E",
-        ["1111"] = "F"
+    ["1011"] = "B",
+    ["1100"] = "C",
+    ["1101"] = "D",
+    ["1110"] = "E",
+    ["1111"] = "F"
 	}
 
 -- These functions are big-endian and take up to 32 bits
@@ -75,7 +75,7 @@ function Hex2Bin(s)
 local ret = ""
 local i = 0
 
-	for i in string.gfind(s, ".") do
+	for i in string.gmatch(s, ".") do
 		i = string.lower(i)
 		ret = ret..hex2bin[i]
 	end
