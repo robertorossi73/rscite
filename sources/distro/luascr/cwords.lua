@@ -1,5 +1,5 @@
 --[[
-Version : 2.1.6
+Version : 2.1.7
 Web     : http://www.redchar.net
 
 Questa procedura mostra statistiche sul file corrente
@@ -36,10 +36,10 @@ do
     local numR=0;
     local numN=0;
     
-    for w in string.gfind(linea, "\r") do
+    for w in string.gmatch(linea, "\r") do
       numR = numR + 1;
     end
-    for w in string.gfind(linea, "\r") do
+    for w in string.gmatch(linea, "\r") do
       numN = numN + 1;
     end
     
