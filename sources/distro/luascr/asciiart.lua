@@ -1,11 +1,11 @@
 --[[
-Version : 1.0.1
+Version : 1.0.2
 Web : http://www.redchar.net
 
 Consente di rappresentare un testo in forma di ascii art utilizzando il
 servizio fornito dal sito http://patorjk.com
 
-Copyright (C) 2013 Roberto Rossi
+Copyright (C) 2013-2018 Roberto Rossi
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -50,8 +50,8 @@ do
     result = string.gsub(result,"[\\]","%%%%5C")
     result = string.gsub(result,"[%^]","%%%%5E")
     result = string.gsub(result,"[~]","%%%%7E")
-    result = string.gsub(result,"[\[]","%%%%5B")
-    result = string.gsub(result,"[\]]","%%%%5D")
+    --result = string.gsub(result,"[\[]","%%%%5B")
+    --result = string.gsub(result,"[\]]","%%%%5D")
     result = string.gsub(result,"[`]","%%%%60")
 
     return result
