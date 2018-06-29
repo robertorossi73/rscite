@@ -1,5 +1,5 @@
 --[[
-Version : 3.0.2
+Version : 3.0.3
 Web     : http://www.redchar.net
 
 Inserimento guidato abbreviazioni
@@ -421,6 +421,8 @@ do
           if ((cursorpos > -1) and (posPipe)) then
             editor:GotoPos(cursorpos + posPipe - 1)
           end
+          
+          wcl_strip:close() --active edit area
         end
         
       elseif ((idv - 1) == dimLista) then
