@@ -1,11 +1,11 @@
 --[[
-Version : 1.1.3
+Version : 2.0.0
 Web     : http://www.redchar.net
 
 Questa procedura permette l'anteprima di un file markdown, convertendolo in html
 per poi mostrarlo all'interno del browser web del sistema
 
-Copyright (C) 2015-2016 Roberto Rossi 
+Copyright (C) 2015-2018 Roberto Rossi 
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -33,67 +33,14 @@ do
          <head>
          <meta http-equiv="content-type" content="text/html; charset=UTF-8">
          <meta charset="utf-8">
-          <style type="text/css">
-        a, a * { cursor: pointer; outline: none;}
-        a { color: #2281cf; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        p, h1, h2, h3, h4, h5 { margin: 0 0 1em 0; line-height: 1.6em;}
-
-        h1 {
-            font-size: 32px;
-            margin: 0 0 15px 0;
-        }
-
-        h2 {
-            font-size: 20px;
-            font-weight: bold;
-            padding-top: 8px;
-            padding-bottom: 0;
-            margin-bottom: 2px;
-        }
-
-        h3 {
-            font-size: 14px;
-            margin-bottom: 2px;
-        }
-
-        ul li, ol li {
-            margin: 7px 0;
-        }
-
-        ul {
-            margin-left: 1em;
-            padding-left: 1em;
-        }
-
-        ul ul, ol ul {
-            margin-left: .5em;
-        }
-
-        ul ol, ol ol {
-            margin-left: 1.25em;
-        }
-
-        ol {
-            margin-left: 1.75em;
-            padding-left: .25em;
-        }
-
-        pre {
-            margin-left: 1em;
-        }
-
-        body {
-            font-size: 14px;
-            font-family: "Open Sans", "lucida grande", "Segoe UI", arial, verdana, "lucida sans unicode", tahoma, sans-serif;
-            padding: 20px 45px;
-        }
-        </style>
+         <STYLE type="text/css">
+        ]]    
+        local markdown_header2 = [[
+         </STYLE>
          </head>
          <body class="markdown">
+        ]]
         
-        
-        ]]        
         local markdown_footer = [[
          </body>
         </html>
@@ -105,11 +52,31 @@ do
         return props["FileDir"].."\\preview-"..props["FileNameExt"]..".html"
     end
     
+    local function get_Css_from_file(nomef)
+      local result = ""
+      local idf
+      
+      idf = io.open(nomef, "r")
+      if (idf) then
+        result = idf:read("*a")    
+        io.close(idf)
+      end
+
+      return result
+    end
+    
     --aggiunge intestazione e piedi al file html specificato
     local function markdown_modHtml(htmlFile)
         local idf
         local text = ""
         local result = false
+        local cssText = ""
+        local headerTxt = ""
+        
+        cssText = get_Css_from_file(props["SciteDefaultHome"]..
+                                        "\\luascr\\md\\default.css")
+        
+        headerTxt = markdown_header.."\n"..cssText.."\n"..markdown_header2
         
         idf = io.open(htmlFile, "r")
         if (idf) then
@@ -118,7 +85,7 @@ do
         end
         
         --aggiunta intestazione
-        text = markdown_header.."\n"..text
+        text = headerTxt.."\n"..text
         --aggiunta chiusura
         text = text.."\n"..markdown_footer
         
@@ -162,7 +129,7 @@ do
         markdown_modHtml(htmlFile)
         if (PUBLIC_optionScript == "RUN") then
             --preview in browser
-            rwfx_ShellExecute("file://"..markdown_getHtmlName(),"")
+            rwfx_ShellExecute(markdown_getHtmlName(),"")
         elseif (PUBLIC_optionScript == "CREATE") then
             print(_t(338)..htmlFileDest.._t(343))
         end
