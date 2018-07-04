@@ -4,45 +4,24 @@ to Subversion revision numbers (rXXXXX).
 
 For changes in version 1.1 beta 1 and earlier, see the History.txt file.
 
-Frhed 0.10902.2013 experimental
-  Auto-elevate the application for CMD_OpenDrive()
+Frhed 1.6.0 2009-06-23 (r745)
+  Add ReadMe.txt (r710)
+  Install ReadMe.txt and show it after installing (r710)
+  Add link to ReadMe.txt to start-menu (r710)
+  Manual updates
+  Bugfix: Could not change language when installed from zip (#2808491)
+  New translation:
+  - Dutch (#2805592)
+  Translation updates:
+  - French (#2806325)
 
-Frhed 0.10901.2013 experimental
-  Try to revert all the malicious changes that have piled up in mainline trunk
-    due to misconceptions on how to set up a proper Unicode build configuration
-  Fix broken offset_parse()
-  Add x64 build configurations
-  Adopt String classes from MoSync SDK (This imposes a restriction to GPLv2!)
-  Adopt H2O.h from WinMerge 2011
-
-Frhed 1.7.1 2009-07-30 (r787)
+Frhed 1.5.10 2006-06-10 (r702)
   Improve Export HexDump -dialog layout (r677)
   Improve Binary Mode -dialog layout (r684)
   Prefix hex offsets with 'x' in HexDump-dialog (r682)
-  Add ReadMe.txt (r704)
-  Install ReadMe.txt and show it after installing (r705)
-  Add link to ReadMe.txt to start-menu (r705)
-  Drop VC6 compiler support (r735, r736)
-  Recognize 0x as hex offset prefix (r757)
-  Recognize X and 0X (capital X) as hex offset prefix (r760)
-  Load custom encoder dlls from Encoders-subfolder (r776)
-  Add example encoder plugin "AddOne" (r778)
-  Manual: Document need for runtime files (r784)
   Bugfix: Zero-size files were opened as link files (r671)
   Bugfix: Don't allow de-selecting program files in installer (r675)
   Bugfix: Crash when going to DLL import names (#2800045)
-  Bugfix: Could not change language when installed from zip (#2808491)
-  Bugfix: Command line and shell context menu failed if command line
-    contained many space characters (#2814846)
-  Bugfix: Replace-dialog didn't wrap long selection properly (r758)
-  Bugfix: Some dialogs did show hex numbers prefixed with 'x'
-   instead of '0x' (r761)
-  Bugfix: tried to import hex dump file twice (r766)
-  Bugfix: Garbage was shown in hex dump loading message box (r767)
-  Bugfix: Didn't add space after offset in display type hex dump (r770)
-  New translation:
-  - Dutch (#2805592)
-  - French (#2806325)
 
 Frhed 1.6.x (R1_6) branch created (r698)
 

@@ -26,7 +26,7 @@ do
   require("luascr/rluawfx")
 
   local function main()
-    local exe = props["SciteDefaultHome"].."/tools/frhed/frhed.exe" 
+    local exe = props["SciteDefaultHome"].."/tools/WinMerge/frhed/frhed.exe" 
     local last = string.sub(props["FilePath"], -1)
     if ((last == "\\") or (last == "/")) then
       rwfx_ShellExecute(exe,"");

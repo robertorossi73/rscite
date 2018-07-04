@@ -4,8 +4,12 @@ People who have contributed to Frhed
 Original developer:
 Raihan Kibria <raihan@kibria.de>
 
-Maintainer of this version:
-Jochen Neubeck
+Current project (@SourceForge) lead:
+Kimmo Varis <kimmov@winmerge.org>
+
+Developers (@SourceForge):
+Tim Gerundt <gerundt@users.sourceforge.net>
+Jochen Tucht <jtuc@users.sourceforge.net>
 
 Localization:
 
@@ -18,12 +22,8 @@ Localization:
 * German
   Tim Gerundt <gerundt@users.sourceforge.net>
 
-Other contributors (heksedit versions):
-Kimmo Varis <kimmov@winmerge.org>
-Tim Gerundt <gerundt@users.sourceforge.net>
-Martin Hughes <martinhughes@users.sourceforge.net>
 
-Other contributors (pre-heksedit versions):
+Other contributors:
 Dario Bagnoli - bug reports and beta testing
 Tom Foth - suggestions
 Bo Wannerberg - Win2000 opening bugfix
