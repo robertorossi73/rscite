@@ -1,8 +1,9 @@
 --[[
-Version : 1.0.5
+Version : 1.1.0
 Web     : http://www.redchar.net
 
-Questa procedura permette di calcolare il valore di una espressione matematica
+Questa procedura permette di calcolare il valore di una espressione matematica.
+Opzionalmente c'è la possibilità di avviare la calcolatrice di windows
 
 Copyright (C) 2004-2018 Roberto Rossi 
 *******************************************************************************
@@ -34,6 +35,11 @@ do
 
   local MATH_Expression = ""
 
+  function buttonCalcW_click(control, change)
+    rwfx_ShellExecute("calc.exe","")
+    wcl_strip:close()
+  end
+  
   function buttonCalc_click(control, change)
     local tmpVars = rfx_GF()
     local vars = rfx_Split(tmpVars, ",")
@@ -99,6 +105,7 @@ do
     wcl_strip:addLabel(nil, _t(306))
     wcl_strip:addText("TVAL",editor:GetSelText(), nil)
     wcl_strip:addButton("OKBTN",_t(305),buttonOk_click, true)
+    wcl_strip:addButton("CALC",_t(409),buttonCalcW_click, false)
     wcl_strip:show()
   end
   
