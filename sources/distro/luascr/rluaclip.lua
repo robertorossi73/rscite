@@ -1,11 +1,14 @@
 --[[
-Version : 1.2.0
+Version : 1.3.4
 Web     : http://www.redchar.net
 
 Questa procedura implementa la copia dei dati in slot fissi. Nella pratica
 implementa un gestore appunti avanzati.
 
-Copyright (C) 2010 Roberto Rossi 
+Nel caso in cui non ci sia una selezione viene copiata o tagliata la linea
+corrente, però senza che intervenga il gestore degli appunti.
+
+Copyright (C) 2010-2018 Roberto Rossi 
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -187,10 +190,9 @@ do
   local result = true
   
     if (editor:GetSelText() == "") then
-      
       --attenzione seleziona mancante
       --rwfx_MsgBox("Selezione Mancante","Attenzione",MB_OK)
-      rwfx_MsgBox(_t(159),_t(9),MB_OK)
+      --rwfx_MsgBox(_t(159),_t(9),MB_OK)
       result = false
     end
   return result
@@ -215,17 +217,21 @@ do
 
     
     if ((operation == 1) or (operation == 2)) then --copia
-      if (checkSelection()) then
-        scelta = rwfx_ShowList(tableToStringList(lista),"Salvare testo in...")
-        if (scelta) then
-          text = lista[scelta+1]
-          pos = string.find(text, SLOT_DATA_SEP)
-          nslot = string.sub(text,1,pos-1)
-          setSlot(nslot,editor:GetSelText())
-          editor:CopyText(editor:GetSelText()); --copia nella clipboard
-          cutcopyOk = true
+        if (checkSelection()) then
+            scelta = rwfx_ShowList(tableToStringList(lista),"Salvare testo in...")
+            if (scelta) then
+                text = lista[scelta+1]
+                pos = string.find(text, SLOT_DATA_SEP)
+                nslot = string.sub(text,1,pos-1)
+                setSlot(nslot,editor:GetSelText())
+                editor:CopyText(editor:GetSelText()); --copia nella clipboard
+                cutcopyOk = true
+            end
+        else
+            --copia/taglia linea corrente
+            editor:CopyText(editor:GetCurLine()); --copia nella clipboard
+            cutcopyOk = true
         end
-      end
     elseif (operation == 3) then --incolla
       --scelta = rwfx_ShowList(tableToStringList(lista),"Selezionare elemento da inserire...")
       scelta = rwfx_ShowList_presel(tableToStringList(lista),_t(101),"rluaclip",false)
@@ -242,9 +248,11 @@ do
     end
     
     if ((operation == 2) and cutcopyOk) then --taglia
-      if (checkSelection()) then --elimina selezione
-        editor:ReplaceSel("")
-      end
+        if (checkSelection()) then --elimina selezione
+            editor:ReplaceSel("")
+        else
+            editor:LineDelete()
+        end
     end
     
   end --endmain
