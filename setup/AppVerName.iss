@@ -1,0 +1,1 @@
+AppVerName=RSciTE 74

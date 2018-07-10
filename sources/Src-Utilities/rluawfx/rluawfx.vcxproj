@@ -111,9 +111,6 @@
     <ClCompile Include="source\genguid.cpp" />
     <ClCompile Include="source\luawfx.cpp" />
     <ClCompile Include="source\maindlg.cpp" />
-    <ClCompile Include="source\MParser.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
-    </ClCompile>
     <ClCompile Include="source\rHDialog.cpp" />
     <ClCompile Include="source\rMsgBx.cpp" />
   </ItemGroup>
@@ -134,6 +131,9 @@
       <FileType>Document</FileType>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
     </CustomBuildStep>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="source\change.log" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

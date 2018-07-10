@@ -2,6 +2,9 @@
   nuova funzione c_callFXex in grado di richiamare funzioni presenti in 
   librerie esterne
 
+V.4.1.0.0
+* rimossa libreria MathParseKit che causava rilevamento da parte di vari antivirus
+
 V.4.0.0.0
 * compilato con VS 2017
 
