@@ -1,6 +1,6 @@
 --[[
 Author  : Roberto Rossi
-Version : 1.0.0
+Version : 1.0.1
 Web     : http://www.redchar.net
 
 Questo modulo consente di ridimensionare la finestra corrente ad una dimensione
