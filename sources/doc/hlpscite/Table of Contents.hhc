@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<!-- Sitemap 1.0 -->
+</HEAD><BODY>
+<OBJECT type="text/site properties">
+	<param name="ImageType" value="Folder">
+</OBJECT>
+<UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SciteDoc">
+		<param name="Local" value="SciTEDoc.html">
+		<param name="ImageNumber" value="1">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SciTE Director Interface">
+		<param name="Local" value="SciTEDirector.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SciTE Home">
+		<param name="Local" value="SciTE.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SciTE menu commands">
+		<param name="Local" value="CommandValues.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Scintilla API calls">
+		<param name="Local" value="PaneAPI.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Scintilla">
+		<param name="Local" value="ScintillaDoc.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Download Scintilla and SciTE">
+		<param name="Local" value="SciTEDownload.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SciTE Extension Interface">
+		<param name="Local" value="SciTEExtension.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="API files and property files for SciTE">
+		<param name="Local" value="SciTEExtras.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SciTE Frequently Asked Question">
+		<param name="Local" value="SciTEFAQ.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Add a lexer to Scintilla and SciTE">
+		<param name="Local" value="SciTELexer.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SciTE Lua Scripting Extension">
+		<param name="Local" value="SciTELua.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="">
+		<param name="Local" value="SciTERegEx.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="">
+		<param name="Local" value="ScriptLexer.html">
+		</OBJECT>
+</UL>
+</BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

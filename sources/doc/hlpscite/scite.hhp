@@ -1,0 +1,34 @@
+[OPTIONS]
+Compatibility=1.1 or later
+Compiled file=scite.chm
+Contents file=Table of Contents.hhc
+Default Window=SciTE
+Default topic=SciTEDoc.html
+Display compile progress=No
+Language=0x409 Inglese (Stati Uniti d'America)
+Title=SciTE Documentation
+
+[WINDOWS]
+SciTE="SciTE Documentation","Table of Contents.hhc",,"SciTEDoc.html","SciTEDoc.html",,,,,0x2021,,0x304c,,0xb0000,,,,,,0
+
+
+[FILES]
+CommandValues.html
+PaneAPI.html
+ScintillaDoc.html
+SciTE.html
+SciTEDirector.html
+SciTEDoc.html
+SciTEDownload.html
+SciTEExtension.html
+SciTEExternalLexer.html
+SciTEExtras.html
+SciTEFAQ.html
+SciTEImage.html
+SciTELexer.html
+SciTELua.html
+SciTERegEx.html
+ScriptLexer.html
+
+[INFOTYPES]
+
