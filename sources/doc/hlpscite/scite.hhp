@@ -9,7 +9,7 @@ Language=0x409 Inglese (Stati Uniti d'America)
 Title=SciTE Documentation
 
 [WINDOWS]
-SciTE="SciTE Documentation","Table of Contents.hhc",,"SciTEDoc.html","SciTEDoc.html",,,,,0x2021,,0x304c,,0xb0000,,,,,,0
+SciTE="SciTE Documentation","Table of Contents.hhc",,"SciTEDoc.html","SciTEDoc.html",,,,,0x42020,250,0x304e,[2,2,752,510],0xb0000,,,,,,0
 
 
 [FILES]
