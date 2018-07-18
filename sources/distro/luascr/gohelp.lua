@@ -26,7 +26,7 @@ do
   require("luascr/rluawfx")
 
   local function main()
-    local exe = props["SciteDefaultHome"].."/hlpscite/rscite/guida_a_rscite.pdf" 
+    local exe = props["SciteDefaultHome"].."/hlpscite/rscite/guida_a_rscite.html" 
     rwfx_ShellExecute(exe,"");
   end
 
