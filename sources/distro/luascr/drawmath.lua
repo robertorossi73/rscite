@@ -83,9 +83,14 @@ do
     local samples = {"sin(x^2)",
                       "x^2, x, sin(x), ln(x)",
                       "sin(x)*log(x)*(pi*2)",
-                      "x/4,(x/3.2)^2,sin(pi*x+174),sin(cos(pi)*7)",
-                      "x^2, (x/2)^2, ln(x), cos(pi*x/5)",                      "100-3/(sqrt(x^2+y^2))+sin(sqrt(x^2+y^2))+sqrt(200-(x^2+y^2)+10*sin(x)+10sin(y))/1000, x is from -15 to 15, y is from -15 to 15, z is from 90 to 101",
-                      "exp(-((x-4)^2+(y-4)^2)^2/1000) + exp(-((x+4)^2+(y+4)^2)^2/1000) + 0.1exp(-((x+4)^2+(y+4)^2)^2)+0.1exp(-((x-4)^2+(y-4)^2)^2)"
+                      "x/4,(x/3.2)^2",
+                      "sin(pi * x+174)",
+                      "sin(cos(pi)*7)",
+                      "x^2, (x / 2)^2",
+                      "ln(x)",
+                      "cos(pi * x / 5)",
+                      "100-3/(sqrt(x^2+y^2))+sin(sqrt(x^2+y^2))+sqrt(200-(x^2+y^2)+10*sin(x)+10sin(y))/1000, x is from -15 to 15, y is from -15 to 15, z is from 90 to 101",
+                      "exp(-((x-4)^2+(y-4)^2)^2/1000) + exp(-((x+4)^2+(y+4)^2)^2/1000) + 0.1 * exp(-((x+4)^2+(y+4)^2)^2)+0.1 * exp(-((x-4)^2+(y-4)^2)^2)"
                       }
   
     wcl_strip:init()
