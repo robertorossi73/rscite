@@ -1,5 +1,5 @@
 --[[
-Version : 3.2.2
+Version : 3.3.0
 Web     : http://www.redchar.net
 
 Funzioni di utilità per macro SciTE/Lua
@@ -134,6 +134,7 @@ if not(rwfx_info) then
     rwfx_SetWindowSize = package.loadlib(rwfx_NomeDLL,"c_SetWindowSize")    
     rfx_GetGUID = package.loadlib(rwfx_NomeDLL,"c_GetGUID")
     rfx_setIniVal = package.loadlib(rwfx_NomeDLL,"c_SetIniValue")
+    rfx_shellAndWait = package.loadlib(rwfx_NomeDLL,"c_shellAndWait")
     rwfx_Test = package.loadlib(rwfx_NomeDLL,"c_Test")
 
     --elimina spazi e tabulazioni all'inizio e alla fine della linea passata
