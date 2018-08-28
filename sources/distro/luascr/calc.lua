@@ -1,5 +1,5 @@
 --[[
-Version : 2.1.0
+Version : 2.3.0
 Web     : http://www.redchar.net
 
 Questa procedura permette di calcolare il valore di una espressione matematica.
@@ -36,23 +36,14 @@ do
     local MATH_Expression_Vars = ""
 
     function rfx_MPSolve()
-        local parser = "\""..props["SciteDefaultHome"].."\\tools\\MathParseKit\\CmdCalculator.exe\""
+        local parser = "\""..props["SciteDefaultHome"].."\\tools\\MathParseKit\\WinCalculator.exe\""
         local cmdStr = ""
         local batFile = rfx_FN()..".bat"
-        local idf
         local pos
 
-        cmdStr = parser.." -vs \""..MATH_Expression.."\" "..MATH_Expression_Vars
-
-        idf = io.open(batFile, "w")
-        idf:write("@"..cmdStr)
-        io.close(idf)
-
-        tmpVars = rfx_exeCapture("CMD /C "..batFile)
-        pos = string.find(tmpVars, "=")
-        if (pos) then
-            tmpVars = string.sub(tmpVars, pos+1)
-        end
+        cmdStr = parser.." \""..rfx_FN().."\" -vs \""..MATH_Expression.."\" "..MATH_Expression_Vars
+        rfx_shellAndWait(cmdStr)
+        tmpVars = rfx_GF()
         return tmpVars
     end
 
@@ -211,20 +202,15 @@ do
     MATH_Expression = wcl_strip:getValue("TVAL")
     local vars = {}
     local tmpVars
-    local parser = "\""..props["SciteDefaultHome"].."\\tools\\MathParseKit\\CmdCalculator.exe\""
+    local parser = "\""..props["SciteDefaultHome"].."\\tools\\MathParseKit\\WinCalculator.exe\""
     local cmdStr = ""
     local batFile = rfx_FN()..".bat"
-    local idf
     
-    cmdStr = parser.." -v \""..MATH_Expression.."\">\""..rfx_FN().."\""
+    cmdStr = parser.." \""..rfx_FN().."\" -v \""..MATH_Expression.."\""
     
-    idf = io.open(batFile, "w")
-    idf:write("@"..cmdStr)
-    io.close(idf)
-    
-    rfx_exeCapture("CMD /C "..batFile)
+    rfx_shellAndWait(cmdStr)
     tmpVars = rfx_GF()
-      if (tmpVars ~= "") then
+    if (tmpVars ~= "") then
         vars = rfx_Split(tmpVars, "|")
         if ((#vars > 0) and
             (string.sub(tmpVars,1,5) ~= "Error")
@@ -235,13 +221,14 @@ do
             --print("Espressione matematica non valida.")
             print(_t(308))
         end
-      else
-          math_result_write()
-          wcl_strip:close()
-      end
+    else
+        math_result_write()
+        wcl_strip:close()
+    end
   end
   
   local function main()
+    
     calc_math_initialize()
   
     MATH_Expression_Vars = ""
@@ -250,7 +237,6 @@ do
     wcl_strip:addButtonClose()
     
     wcl_strip:addLabel(nil, _t(306))
-    --wcl_strip:addText("TVAL",editor:GetSelText(), nil)
     wcl_strip:addCombo("TVAL")
     wcl_strip:addButton("OKBTN",_t(305),buttonOk_click, true)
     wcl_strip:addButton("CALC",_t(409),buttonCalcW_click, false)
