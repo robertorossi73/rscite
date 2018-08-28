@@ -2,6 +2,11 @@
   nuova funzione c_callFXex in grado di richiamare funzioni presenti in 
   librerie esterne
 
+
+V.4.1.1.0
+* eliminate tutti i riferimenti a MathParseKit
+* rimossa dialog html (c_ShowHTMLDialog), dimostratasi inutile
+
 V.4.1.0.0
 * rimossa libreria MathParseKit che causava rilevamento da parte di vari antivirus
 

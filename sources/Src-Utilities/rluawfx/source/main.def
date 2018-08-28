@@ -23,5 +23,4 @@ c_addToRecentDocs
 c_SetIniValue
 c_MsgBox_Customize_Btn
 c_RegGetString
-c_ShowHTMLDialog
 c_SetWindowSize

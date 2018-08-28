@@ -61,7 +61,7 @@
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>shlwapi.lib; urlmon.lib;../luascite/lib/scite.lib;../MathParseKit/MathParseKit/lib/win32/debug/MathParseKit.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>shlwapi.lib;urlmon.lib;../luascite/lib/scite.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)rluawfx.dll</OutputFile>
       <AdditionalLibraryDirectories>./lib/;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <IgnoreSpecificDefaultLibraries>libc.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
@@ -87,7 +87,7 @@
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>shlwapi.lib; urlmon.lib;../luascite/lib/scite.lib;../MathParseKit/MathParseKit/lib/win32/release/MathParseKit.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>shlwapi.lib;urlmon.lib;../luascite/lib/scite.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)rluawfx.dll</OutputFile>
       <AdditionalLibraryDirectories>./lib/;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
@@ -111,7 +111,6 @@
     <ClCompile Include="source\genguid.cpp" />
     <ClCompile Include="source\luawfx.cpp" />
     <ClCompile Include="source\maindlg.cpp" />
-    <ClCompile Include="source\rHDialog.cpp" />
     <ClCompile Include="source\rMsgBx.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -119,7 +118,6 @@
     <ClInclude Include="source\commutil.h" />
     <ClInclude Include="source\genguid.h" />
     <ClInclude Include="source\resource.h" />
-    <ClInclude Include="source\rHDialog.h" />
     <ClInclude Include="source\rMsgBx.h" />
   </ItemGroup>
   <ItemGroup>
