@@ -1,5 +1,5 @@
 --[[Traduci testo selezionato in...
-Version : 1.0.1
+Version : 1.0.2
 Author  : Roberto Rossi
 Web     : http://www.redchar.net
 
@@ -21,6 +21,9 @@ You should have received a copy of the GNU Lesser General Public
 License along with this library; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
 *******************************************************************************
+
+V.1.0.2
+- inserita conversione carattere /
 
 V.1.0.1
 - corretto link per accesso a sito. Attualmente la lingua di destinazione è
@@ -48,6 +51,7 @@ do
     --result = string.gsub(result, "\r", "%%0A")
     result = string.gsub(result, "\r", " ")
     result = string.gsub(result, " ", "%%20")
+    result = string.gsub(result, "/", "%%2F")
     
     return result
   end
