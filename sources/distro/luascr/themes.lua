@@ -1,6 +1,6 @@
 --[[
 Author  : Roberto Rossi
-Version : 1.1.0
+Version : 1.1.2
 Web     : http://www.redchar.net
 
 Questa procedura consente l'attivazione di un tema che modifica la colorazione
@@ -172,9 +172,9 @@ do
         --            " del profilo utente corrente (SciTEUser.properties).\n\n"..
         --            " Si desidera procedere?"
         --            ,"Attenzione",MB_YESNO + MB_DEFBUTTON2)
-        rwfx_MsgBox(_t(426),_t(427),MB_YESNO + MB_DEFBUTTON2)
+        isOk = rwfx_MsgBox(_t(426),_t(427),MB_YESNO + MB_DEFBUTTON2)
         
-        if (isOk == MB_YES) then
+        if (isOk == IDYES) then
             output:ClearAll()
             --apertura file opzioni
             scite.Open(userOpt)
