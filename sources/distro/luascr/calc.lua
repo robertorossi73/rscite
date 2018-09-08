@@ -1,5 +1,5 @@
 --[[
-Version : 2.3.0
+Version : 2.3.1
 Web     : http://www.redchar.net
 
 Questa procedura permette di calcolare il valore di una espressione matematica.
@@ -109,6 +109,8 @@ do
             gotoNext = false
         end
     end
+    
+    print("------ Calc -------")
     if (gotoNext) then
         --print(MATH_Expression.." = "..rfx_MPSolve())
         math_result_write()
@@ -210,6 +212,7 @@ do
     
     rfx_shellAndWait(cmdStr)
     tmpVars = rfx_GF()
+    print("------ Calc -------")
     if (tmpVars ~= "") then
         vars = rfx_Split(tmpVars, "|")
         if ((#vars > 0) and
