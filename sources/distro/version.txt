@@ -1,1 +1,1 @@
-Roberto Rossi	RSciTE	0004	0001	0000	0000	0075		http://www.redchar.net	https://bitbucket.org/robertorossi73/rscite/downloads/	http://www.redchar.net/utilities/datafiles/rscite/version.txt
+Roberto Rossi	RSciTE	0004	0001	0001	0000	0075		http://www.redchar.net	https://bitbucket.org/robertorossi73/rscite/downloads/	http://www.redchar.net/utilities/datafiles/rscite/version.txt
