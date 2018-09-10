@@ -5,11 +5,12 @@ Contents file=Table of Contents.hhc
 Default Window=SciTE
 Default topic=SciTEDoc.html
 Display compile progress=No
+Full-text search=Yes
 Language=0x409 Inglese (Stati Uniti d'America)
 Title=SciTE Documentation
 
 [WINDOWS]
-SciTE="SciTE Documentation","Table of Contents.hhc",,"SciTEDoc.html","SciTEDoc.html",,,,,0x42020,250,0x304e,[2,2,752,510],0xb0000,,,,,,0
+SciTE="SciTE Documentation","Table of Contents.hhc",,"SciTEDoc.html","SciTEDoc.html",,,,,0x42420,250,0x304e,[2,2,752,510],0xb0000,,,,,,0
 
 
 [FILES]
@@ -29,6 +30,7 @@ SciTELexer.html
 SciTELua.html
 SciTERegEx.html
 ScriptLexer.html
+ScintillaHistory.html
 
 [INFOTYPES]
 

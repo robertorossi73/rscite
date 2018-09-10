@@ -67,5 +67,9 @@
 		<param name="Name" value="Download Scintilla and SciTE">
 		<param name="Local" value="SciTEDownload.html">
 		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="History of Scintilla and SciTE">
+		<param name="Local" value="ScintillaHistory.html">
+		</OBJECT>
 </UL>
 </BODY></HTML>
