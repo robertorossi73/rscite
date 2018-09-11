@@ -69,9 +69,6 @@ ol,ul{
     padding-left:15px;
     margin-left:5px
 }
-ol{
-    list-style-type:lower-roman
-}
 table tr{
     border-top:1px solid #ccc;
     margin:0
