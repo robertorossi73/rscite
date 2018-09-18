@@ -1,5 +1,5 @@
 --[[
-Version : 3.1.2
+Version : 3.2.4
 Web     : http://www.redchar.net
 
 Questa procedura permette l'anteprima di un file markdown, convertendolo in html
@@ -28,10 +28,7 @@ do
     require("luascr/rluawfx")
 
     local markdown_header = [[
-    <!DOCTYPE html>
-    <html>
-     <head>
-     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <!DOCTYPE html><html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8">
      <meta charset="utf-8">
      <STYLE type="text/css">
     ]]
@@ -46,6 +43,40 @@ do
     </html>
     ]]
 
+    local function getUsedModel(fileName)
+        local idf
+        local txt
+        local line = ""
+        local pos
+        local result = ""
+        
+        idf = io.open(fileName, "r")
+        if (idf) then
+            line = idf:read()
+            io.close(idf)
+            
+            pos = string.find(line, ":")
+            if (pos) then
+                result = rfx_Trim(rfx_RemoveReturnLine(string.sub(line, pos + 1)))
+                return result
+            end
+        end
+        
+        return result
+    end
+    
+    local function prepareHtmlHeader(html, template)
+        local result = "<!-- Template:"..template.."\n"
+        
+        result = result.."Produced By : ".._t(442)
+        
+        result = result.."\n"
+        
+        result = result.." -->\n"..html.."\n"
+        
+        return result 
+    end
+    
     --ritorna il nome del file html di preview
     local function markdown_getHtmlName()
         --return os.getenv("TMP").."\\preview-"..props["FileName"]..".html"
@@ -66,21 +97,27 @@ do
     end
 
     --aggiunge intestazione e piedi al file html specificato
-    local function markdown_modHtml(htmlFile, cssFile)
+    local function markdown_modHtml(htmlFile, cssFile, model)
         local idf
         local text = ""
         local result = false
         local cssText = ""
         local headerTxt = ""
+        local fileName
         
+        fileName = props["SciteDefaultHome"].."\\luascr\\md\\"..model..".css"
         if (cssFile == false) then
-            cssText = get_Css_from_file(props["SciteDefaultHome"]..
-                                            "\\luascr\\md\\default.css")
+            if (rfx_fileExist(fileName)) then
+                cssText = get_Css_from_file(fileName)
+            else
+                cssText = get_Css_from_file(props["SciteDefaultHome"]..
+                                                "\\luascr\\md\\default.css")
+            end
         else
             cssText = get_Css_from_file(cssFile)
         end
         
-        headerTxt = markdown_header.."\n"..cssText.."\n"..markdown_header2
+        headerTxt = prepareHtmlHeader(markdown_header, model).."\n"..cssText.."\n"..markdown_header2
 
         idf = io.open(htmlFile, "r")
         if (idf) then
@@ -126,6 +163,21 @@ do
 
 ---------------------------- Procedura principale ----------------------------
     local function markdown_main()
+        local function exist_in_table(tbl, value)
+            local val
+            local i
+            local result = false
+            
+            for i, val in ipairs(tbl) do
+                if (val == value) then
+                    result = true
+                    break
+                end
+            end
+            
+            return result
+        end
+        
         local tblTemplates = {
                               "github",
                               "dark",
@@ -139,6 +191,9 @@ do
                               "solarized_dark",
                               "solarized_light"
                              }
+        local htmlFile = markdown_getHtmlName()
+        local previousModel = getUsedModel(htmlFile)
+                             
         wcl_strip:init()
         wcl_strip:addButtonClose()
 
@@ -149,7 +204,11 @@ do
         wcl_strip:show()
 
         wcl_strip:setList("TVAL", tblTemplates)
-        wcl_strip:setValue("TVAL", tblTemplates[1])
+        if (exist_in_table(tblTemplates, previousModel)) then
+            wcl_strip:setValue("TVAL", previousModel)
+        else
+            wcl_strip:setValue("TVAL", tblTemplates[1])
+        end        
     end
 
     function buttonOk_click(control, change)
@@ -173,7 +232,7 @@ do
         
         print(_t(338)..htmlFileDest.._t(343))
         rfx_exeCapture(markdown_genBat())        
-        markdown_modHtml(htmlFile, cssFile)
+        markdown_modHtml(htmlFile, cssFile, htmlModel)
         
         if (OpenHtml) then
             rwfx_ShellExecute(htmlFile,"")
@@ -184,12 +243,16 @@ do
     
     local function main()
         local htmlFile = markdown_getHtmlName()
-        local htmlFileDest = markdown_getHtmlName()
-
+        local previousModel = getUsedModel(htmlFile)
+        
+        if (previousModel == "") then
+            previousModel = "default"
+        end
+        
         if (PUBLIC_optionScript == "RUN") then
             --preview in browser
             rfx_exeCapture(markdown_genBat())
-            markdown_modHtml(htmlFile, false)
+            markdown_modHtml(htmlFile, false, previousModel)
             rwfx_ShellExecute(markdown_getHtmlName(),"")
             PUBLIC_optionScript = ""
         elseif (PUBLIC_optionScript == "CREATE") then
