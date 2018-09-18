@@ -1,5 +1,5 @@
 --[[ # -*- coding: utf-8 -*-
-Version : 1.0.2
+Version : 1.0.3
 Web     : http://www.redchar.net
 
 Consente di analizzare un colore selezionato usando un servizio web
@@ -22,8 +22,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
 *******************************************************************************
 
 ]]
-
---TODO : da tradurre
 
 do
     require("luascr/rluawfx")
