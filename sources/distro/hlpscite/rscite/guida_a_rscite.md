@@ -763,6 +763,22 @@ fondamentali dei sistemi di gestione revisioni GIT e SVN.
 * **Selezione rettangolare**. Una semplice funzione che consente, specificando
 le coordinate in forma riga/colonna, di selezionare un’area rettangolare nel
 testo.
+* **Ricerca immagini online**. Una funzione che, date delle parole chiave,
+effettua una ricerca su alcuni servizi online che forniscono immagini gratuite
+da poter usare nei propri progetti.
+* **Genera report informazioni di sistema**. Una funzionalità che permette di
+creare un rapporto dettagliato sul sistema in uso tramite l'utilità standard
+System Information.
+* **Analizza colore**. Questa funzione permette di analizzare, tramite un
+servizio web, il colore selezionato espresso in forma esadecimale o attraverso
+il suo nome come espresso nelle pagine web html/css.
+* **Unisci linee/testo selezionato su singola linea**. Dato un testo questo
+viene portato su una singola linea eliminando qualsiasi ritorno a capo.
+* **Elenca colori esadecimali utilizzati nel file corrente**. Con questa funzione
+si può ottenere l'elenco dei colori utilizzati (espressi in forma esadecimale)
+all'interno di un file html/css o simili.
+* **Gestore temi/colori SciTE**. Questo comando permette di cambiare la combinazione
+colori utilizzata dall'editor di testo.
 
 In aggiunta a queste funzionalità, **F12** consente all’utente la
 realizzazione degli script personalizzati e la loro integrazione direttamente
