@@ -1,6 +1,6 @@
 --[[
 Author  : Roberto Rossi
-Version : 1.1.2
+Version : 1.1.4
 Web     : http://www.redchar.net
 
 Questa procedura consente l'attivazione di un tema che modifica la colorazione
@@ -166,6 +166,7 @@ do
         local option = wcl_strip:getValue("TVAL")
         local userOpt = props["SciteUserHome"].."\\SciTEUser.properties"
         local isOk = false
+        local idf
 
         --messaggio di conferma definitivo
         --rwfx_MsgBox("Sta per essere modificato il file di configurazione"..
@@ -177,6 +178,11 @@ do
         if (isOk == IDYES) then
             output:ClearAll()
             --apertura file opzioni
+            if (not(rfx_fileExist(userOpt))) then
+                idf = io.open(userOpt, "w")
+                io.close(idf)
+            end
+            
             scite.Open(userOpt)
             if (option == THEMES_list_functions[1]) then
                 --attiva tema
