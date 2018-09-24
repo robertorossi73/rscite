@@ -57,10 +57,10 @@ Name: desktopicon; Description: {cm:CreateDesktopIcon}; GroupDescription: {cm:Ad
 [Files]
 Source: ..\sources\distro\*; DestDir: {app}; Flags: ignoreversion recursesubdirs createallsubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
-Source: ..\sources\distro_dll\wscitecm_it.dll; DestDir: {app}; Flags: restartreplace uninsrestartdelete; Check: not IsWin64; Tasks: ; Languages: italian
-Source: ..\sources\distro_dll\wscitecm_en.dll; DestDir: {app}; Flags: restartreplace uninsrestartdelete; Check: not IsWin64; Tasks: ; Languages: english
-Source: ..\sources\distro_dll\wscitecm64_it.dll; DestDir: {app}; Flags: restartreplace uninsrestartdelete; Check: IsWin64; Languages: italian
-Source: ..\sources\distro_dll\wscitecm64_en.dll; DestDir: {app}; Flags: restartreplace uninsrestartdelete; Check: IsWin64; Tasks: ; Languages: english
+Source: ..\sources\distro_dll\wscitecm_it.dll; DestDir: {app}; Flags: onlyifdoesntexist uninsrestartdelete; Check: not IsWin64; Tasks: ; Languages: italian
+Source: ..\sources\distro_dll\wscitecm_en.dll; DestDir: {app}; Flags: onlyifdoesntexist uninsrestartdelete; Check: not IsWin64; Tasks: ; Languages: english
+Source: ..\sources\distro_dll\wscitecm64_it.dll; DestDir: {app}; Flags: onlyifdoesntexist uninsrestartdelete; Check: IsWin64; Languages: italian
+Source: ..\sources\distro_dll\wscitecm64_en.dll; DestDir: {app}; Flags: onlyifdoesntexist uninsrestartdelete; Check: IsWin64; Tasks: ; Languages: english
 ;Elimina superflui per trasformare versione italiana in inglese
 Source: ..\sources\distro\loctools.properties; DestDir: {app}; Flags: deleteafterinstall; Tasks: ; Languages: english
 Source: ..\sources\distro\locale.properties; DestDir: {app}; Flags: deleteafterinstall; Tasks: ; Languages: english
