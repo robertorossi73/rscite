@@ -1,8 +1,15 @@
 --[[
-Version : 3.0.3
+Version : 3.2.1
 Web     : http://www.redchar.net
 
 Inserimento guidato abbreviazioni
+
+------------ Versioni ------------
+TODO : - Supporto multilingua per elenco titoli mostrati
+
+V.3.2.0
+- Fusione file abbreviazioni. Se nell'elenco c'è un file di abbreviazioni questo
+    viene incluso nell'elenco corrente
 
 Copyright (C) 2004-2018 Roberto Rossi 
 *******************************************************************************
@@ -268,25 +275,76 @@ do
     return result
   end
 
+  
+  --ritorna la parte di linea successiva a =
+  local function GetFormat( linea )
+    local pos
+    local formato=""
+
+    pos = string.find(linea,"=")
+    if (pos) then
+      formato=string.sub(linea,pos+1)
+    end
+    return formato
+  end
+  
+  --indica se la lineaa non è un commento ed è valida
+  local function isValidLine (line)
+    local result = false
+    local ch
+    
+    ch = string.sub(trimStringa(line),1,1)
+    if ((ch ~= "#") and --elimina commenti, sezioni e linee vuote
+        (ch ~= "[") and
+        (ch ~= ";") and
+        (line ~= "")) then
+        result = true
+    end
+    
+    return result
+  end
+  
   --caricamento file con modelli
   local function getAbbrevFormats(nomefModels)
     local lstFormat={}
     local idf
     local i
     local line
+    local line2
     local ch
+    local modelAbbrev
+    local idf2
 
+    --print(nomefModels)
     idf = io.open(nomefModels, "r")
     if (idf) then
       i = 1
       for line in idf:lines() do
-        ch = string.sub(trimStringa(line),1,1)        
-        if ((ch ~= "#") and --elimina commenti, sezioni e linee vuote
-            (ch ~= "[") and
-            (ch ~= ";") and
-            (line ~= "")) then
-          lstFormat[i] = line;
-          i = i + 1;
+        --ch = string.sub(trimStringa(line),1,1)        
+        if (isValidLine(line)) then
+
+            --verifica presenza file modello ed eventuale caricamento
+            modelAbbrev = GetFormat(line)
+            modelAbbrev = getModelFileFromLine(modelAbbrev)
+            if (modelAbbrev ~= "") then
+                --print(modelAbbrev)
+                modelAbbrev = getNomeModelFile(modelAbbrev)
+                
+                idf2 = io.open(modelAbbrev, "r")
+                if (idf2) then                  
+                  for line2 in idf2:lines() do                    
+                    if (isValidLine(line2)) then
+                        lstFormat[i] = line2;
+                        i = i + 1;
+                    end
+                  end
+                end
+                io.close(idf2)                
+            else
+                lstFormat[i] = line;
+                i = i + 1;
+            end
+            
         end
       end
       io.close(idf)
@@ -309,18 +367,6 @@ do
       end
     end
     return titolo
-  end
-
-  --ritorna la parte di linea successiva a =
-  local function GetFormat( linea )
-    local pos
-    local formato=""
-
-    pos = string.find(linea,"=")
-    if (pos) then
-      formato=string.sub(linea,pos+1)
-    end
-    return formato
   end
 
   -- splitta le linee che compongono il modello e ritorna una tabella
