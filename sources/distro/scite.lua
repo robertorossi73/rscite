@@ -69,7 +69,7 @@ function PUBLIC_add_bufferList(f)
 
   if (#buffers > 0) then  
     for i,file in ipairs(buffers) do
-       if file == f then  idx = i; break end
+       if string.lower(file) == string.lower(f) then  idx = i; break end
     end
     
     if idx then
