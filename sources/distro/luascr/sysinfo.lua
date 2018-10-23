@@ -1,5 +1,5 @@
 --[[Traduci testo selezionato in...
-Version : 1.0.0
+Version : 1.1.0
 Author  : Roberto Rossi
 Web     : http://www.redchar.net
 
@@ -30,14 +30,24 @@ do
     
     local function main()
         local testo    
-        local tmp = rfx_UserFolderRSciTE().."\\SystemInformation.txt"
+        local tmp = rfx_UserFolderRSciTE().."\\SystemInformation.ini"
         local cmd = "msinfo32 /report ".."\""..tmp.."\""
+        local genReport = true
+        
+        
+        if (rfx_fileExist(tmp)) then
+            if (rwfx_MsgBox(_t(443), "System Information", MB_YESNO + MB_DEFBUTTON2) == IDNO) then
+                genReport = false
+            end
+        end
         
         cmd = "start /B "..cmd
         --print(cmd)
+        if (genReport) then
+            os.remove(tmp)
+            rfx_exeCapture(cmd)
+        end
         
-        os.remove(tmp)
-        rfx_exeCapture(cmd)
         if (rfx_fileExist(tmp)) then
             scite.Open(tmp);
         end
