@@ -144,21 +144,21 @@ do
 
         --TODO : verifica coerenza nuovo valore
         if (newValue == "") then
-            -- TODO : da tradurre
-            print("\n--- Editor di configurazione di RSciTE ---")
-            --TODO : da tradurre
-            print("> Valore specificato NON VALIDO!")
+            --print("\n--- Editor di configurazione di RSciTE ---")
+            print(_t(444))
+            --print("> Valore specificato NON VALIDO!")
+            print(_t(445))
         else
             cfgEditor_writeConfig(filePath, nameCfg, newValue)
             --messaggio che dice all'utente di chiudere e riaprire il programma
             output:ClearAll()
-            --TODO : da tradurre
-            print("\n--- Editor di configurazione di RSciTE ---")
-            --TODO : da tradurre
-            print("Configurazione impostata:")
+            --print("\n--- Editor di configurazione di RSciTE ---")
+            print(_t(444))
+            --print("Configurazione impostata:")
+            print(_t(446))
             print(nameCfg.." -> "..newValue)
-            --TODO : da tradurre
-            print("> Attenzione! Per rendere attive alcune impostazione è necessario chiudere e riaprire SciTE. <")
+            --print("> Attenzione! Per rendere attive alcune impostazione è necessario chiudere e riaprire SciTE. <")
+            print(_t(447))
         end
         
     end
@@ -180,11 +180,10 @@ do
         local item = cfgEditor_tblItems[cfgEditor_CurrentCfgId]
         if (item ~= nil) then
             if (type(item[5]) == "number") then
-            --TODO : da tradurre
-                print("Configurazione : "..item[3].."\n\n".._t(item[5]))
+                --print("Configurazione : "..item[3].."\n\n".._t(item[5]))
+                print(_t(448).." "..item[3].."\n\n".._t(item[5]))
             elseif (type(item[5]) == "string") then
-            --TODO : da tradurre
-                print("Configurazione : "..item[3].."\n\n"..item[5])
+                print(_t(448).." "..item[3].."\n\n"..item[5])
             end
         end
     end
@@ -202,17 +201,17 @@ do
         wcl_strip:init()
         wcl_strip:addButtonClose()
         
-            --TODO : da tradurre
-        wcl_strip:addLabel(nil, "Nome configurazione : ")
+        --wcl_strip:addLabel(nil, "Nome configurazione : ")
+        wcl_strip:addLabel(nil, _t(449))
         wcl_strip:addLabel(nil, item[3].."   ")
         wcl_strip:addNewLine()
         wcl_strip:addLabel(nil, "  "..title.." : ")
         wcl_strip:addCombo("ITEMVALUES")
 
-            --TODO : da tradurre
-        wcl_strip:addButton("SAVE","&Salva configurazione", buttonOk_click)
-            --TODO : da tradurre
-        wcl_strip:addButton("CANCEL","&Annulla", buttonCancel_click)
+        --wcl_strip:addButton("SAVE","&Salva configurazione", buttonOk_click)
+        wcl_strip:addButton("SAVE",_t(450), buttonOk_click)
+        --wcl_strip:addButton("CANCEL","&Annulla", buttonCancel_click)
+        wcl_strip:addButton("CANCEL",_t(451), buttonCancel_click)
         wcl_strip:show()
         
         if (item[4] ~= false) then
@@ -250,8 +249,8 @@ do
         
         lista = cfgEditor_TableToString(cfgEditor_tblItems, "|")
         while (nextSelection) do
-            --TODO : da tradurre
-            scelta = rwfx_ShowList_Repos(lista,"Editor Configurazioni", "configuration_editor", false)
+            --scelta = rwfx_ShowList_Repos(lista,"Editor Configurazioni", "configuration_editor", false)
+            scelta = rwfx_ShowList_Repos(lista,_t(452), "configuration_editor", false)
             if scelta then
                 output:ClearAll()
                 item = cfgEditor_tblItems[scelta+1]
