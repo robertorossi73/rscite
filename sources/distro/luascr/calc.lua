@@ -35,7 +35,7 @@ do
     local MATH_Expression = ""
     local MATH_Expression_Vars = ""
 
-    function rfx_MPSolve()
+    local function rfx_MPSolve()
         local parser = "\""..props["SciteDefaultHome"].."\\tools\\MathParseKit\\WinCalculator.exe\""
         local cmdStr = ""
         local batFile = rfx_FN()..".bat"
@@ -230,7 +230,7 @@ do
     end
   end
   
-  local function main()
+  function main()
     
     calc_math_initialize()
   
