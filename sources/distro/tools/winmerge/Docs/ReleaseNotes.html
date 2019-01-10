@@ -1,111 +1,515 @@
-<!DOCTYPE HTML 4.0 Transitional>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+  "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
 <head>
-<title>Release Notes</title>
-<meta http-equiv='content-type' content='text/html; charset=ISO-8859-1'>
-<style type='text/css'>
-body
-{
-	font-family: verdana, sans-serif;
-	font-size: 10pt;
-}
-li
-{
-	margin-bottom: 1em;
-}
-</style>
-<script type='text/javascript'>
-function OnReadyStateChangeExternalDoc()
-{
-	var doc = window.event.srcElement;
-	if (doc.readyState == "interactive")
-	{
-		var elements = document.getElementsByName(doc.src);
-		for (var i = 0; i < elements.length; ++i)
-		{
-			elements[i].href = doc.src;
-			elements[i].onclick = function()
-			{
-				var sh = new ActiveXObject("wscript.shell");
-				sh.run(document.URL.replace(/(.*)(\/+)(.*[\/\\])(.*)/, "$3") + this.href);
-				return false;
-			}
-		}
-	}
-}
-</script>
+  <title>Release Notes</title>
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+  <style type="text/css">
+  <!--
+    body {
+      font-family: Verdana,Helvetica,Arial,sans-serif;
+      font-size: small;
+    }
+    code,pre {
+      font-family: "Courier New",Courier,monospace;
+      font-size: 1em;
+    }
+    h3 {
+      padding: 2px;
+      border-left: 4px solid #FFCC00;
+      border-bottom: 1px solid #FFCC00;
+    }
+    h4 {
+      padding: 2px;
+      border-left: 8px solid #FF9933;
+      border-bottom: 1px solid #FF9933;
+    }
+    h5 {
+      font-size: small;
+    }
+    pre {
+      margin-left: 25px;
+      margin-right: 25px;
+      padding: 5px;
+      background-color: #EEEEEE;
+      border: 1px solid black;
+    }
+    p.note {
+      padding: 5px;
+      background-color: #DDDDFF;
+      border: 1px solid blue;
+    }
+    acronym {
+      cursor: help;
+      border-bottom: 1px dotted black;
+    }
+  -->
+  </style>
 </head>
 <body>
-<h2>WinMerge 0.2011.007.025 Release Notes</h2>
-This is a beta release of WinMerge&nbsp;2011.
-<br>Besides fixing bugs, it includes the following functional enhancements as
-compared to the latest stable release:
+
+<h2>WinMerge 2.16.0 Release Notes</h2>
 <ul>
-<li><p>File transform scriptlets can provide custom logic for writing back
-	edited files. They do so by implementing method <code>CreateTextFile</code>,
-	which returns an interface that implements method <code>Write</code>.
-	<br>As an example of such scriptlet, <i>gedcom.wsc</i> transforms GEDCOM
-	files in a way that enables WinMerge to produce more meaningful results, by
-	adding complete nesting context to every line of involved files.
-	<br>When saving back edited files, <i>gedcom.wsc</i> removes the added
-	context, thereby restoring syntactic integrity.
-	<br>Another interesting aspect of <i>gedcom.wsc</i> is how it reads ANSEL or
-	UTF-8 input, and writes UTF-8 output, using the Scripting.FileSystemObject,
-	despite of its TextStream interface not exactly being designed to support
-	anything but ANSI or UTF-16 encoding.
-<li><p>File transform scriptlet <i>astyle.wsc</i> can be used to run several types of source code files
-	through <a target='_blank' href='http://astyle.sourceforge.net/'>Artistic Style</a>.
-	<br>It takes effect when you choose to <i>Compare As &rarr; Astyle Formatted Source Code</i>.
-	<br>The <i>FileTransforms</i> folder also contains an associated options file <i>astyle.opt</i>,
-	which you may want to edit to tweak various aspects of source code formatting to your needs.
-<li><p>Find &amp; Replace with regular expressions allows replacement strings to
-	contain submatch references \0 through \9 (where \0 refers to the complete
-	match), as well as C-style control character escapes.
-	<br>As a side effect, this enhancement solves
-	<a target='_blank' href='https://bitbucket.org/jtuc/winmerge2011/issues/70'>Issue #70</a>.
-<li><p>Option <i>/config</i> points WinMerge to a JSON configuration file which
-	it will use instead of the system registry to maintain most of its settings.
-	<br>Settings for the WinMerge shell extension are an exception in that they
-	are always kept in the system registry.
-	<br><i>/config</i> replaces the defective <i>/reghive</i> option, which
-	turned out to be inherently unfixable.
-	<br>If a <i>WinMergeU.json</i> exists in the folder from where
-	<i>WinMergeU.exe</i> is started, then WinMerge will use it by default.
-	This is a preferable way to install WinMerge on portable media.
-	<br>There is no <i>WinMergeU.json</i> included in the distro because it can
-	be trivially created as an empty text file.
-<li><p>When creating a .WinMerge project file, you can instruct WinMerge to
-	maintain most settings in a project specific JSON configuration file so you
-	can tweak them to specific needs without affecting the global settings. 
-	The configuration file is created in the same folder as the project file.
-	The name of the configuration file is formed by appending extension
-	<i>.json</i> to the name of the project file.
-<li><p>Menu command <i>File &rarr; Use desktop specific settings</i> allows you
-	to maintain settings in a desktop specific location.
-	<br>The core motivation for this option was to ease working with TFS and
-	ClearCase at the same time, by doing ClearCase stuff on a separate desktop.
-	<br>The feature is designed to work with
-	<a target='_blank' href='https://technet.microsoft.com/en-us/sysinternals/cc817881'>Sysinternals Desktops v2.0</a>.
-	<br>It may or may not work with other tools which create (the illusion of) additional desktops.
-	<br>In particular, it does not work with the <i>Virtual Desktops</i> feature built into Windows&nbsp;10.
-<li><p>Context menu commands <i>Open &rarr; Containing Folder</i> are
-	provided where applicable, essentially following the suggestion from
-	<a target='_blank' href='https://bitbucket.org/jtuc/winmerge2011/issues/54'>Issue #54</a>.
-<li><p>When prompted to confirm a <i>Copy/Move &rarr; Left/Right to...</i>
-	operation, you have the option to <i>Ignore folder structure</i>.
-<li><p>The <i>Open</i> dialog allows you to specify filter masks with spaces
-	by enclosing them in quotation marks, as per 
-	<a target='_blank' href='http://forums.winmerge.org/viewtopic.php?f=4&t=1142'>this suggestion</a>.
-<li><p>Disabling the new system option <i>Use Shell file operations</i> allows the
-	Folder Compare window to perform file operations on files with long paths.
-	<br>Note, however, that this option comes at the price of losing the option to
-	<i>Send deleted files to Recycle Bin</i>.
+  <li><a href="#about">About This Release</a></li>
+  <li><a href="#new2160">What Is New in 2.16.0?</a></li>
+  <li><a href="#issues">Known Issues</a></li>
 </ul>
+<p>November 2018</p>
+
+<h3><a name="about">About This Release</a></h3>
+
 <p>
-Click <a href='https://bitbucket.org/jtuc/winmerge2011/get/0.2011.007.025.zip'>here</a> to obtain the source code for this release.
+This is a WinMerge 2.16 stable release. This release replaces earlier WinMerge 
+stable releases as a recommended release.
+</p>
+
 <p>
-Click <a href='https://bitbucket.org/jtuc/frhed/get/0.10902.2013.zip'>here</a> to obtain source code for Frhed binaries included in this release.
+Please submit bug reports to our <a href="http://bitbucket.org/winmerge/winmerge/issues">bug-tracker</a>.
+</p>
+
+<h3><a name="#new2160">What Is New in 2.16.0?</a></h3>
+
+<h4>General</h4>
+<ul>
+  <li>Bugfix: Disabled icon on toolbar not gray out when running on XP</li>
+</ul>
+
+<h4>File compare</h4>
+<ul>
+  <li>Bugfix: Copy to X and Advance" not work in 3way-compare (Bitbucket #123)</li>
+  <li>Bugfix: File compare always showing different ending (GitHub #106)</li>
+  <li>Bugfix: Scrolling issue (GitHub #105)</li>
+  <li>Bugfix: A crash (GitHub #104)</li>
+  <li>Add separators to "Zoom" and "Diff Context" menus (Bitbucket PR #5)</li>
+</ul>
+
+<h4>Open dialog</h4>
+<ul>
+  <li>Bugfix: Drag&amp;Drop in Open Dialog won't work correct (Bitbucket #125)</li>
+</ul>
+
+<h4>Installer</h4>
+<ul>
+  <li>Drop ClearCase integration (Bitbucket PR #6)</li>
+</ul>
+
+<h4>Translations</h4>
+<ul>
+  <li>Add Lithuanian translation (Bitbucket #124)</li>
+  <li>Update Portuguese translation (GitHub #102,103)</li>
+</ul>
+
+<h3><a name="#new2155">What Is New in 2.15.5 Beta?</a></h3>
+
+<h4>General</h4>
+<ul>
+  <li>Add support for very long path and file names (GitHub #87,95,99)</li>
+  <li>Enable Ctrl+C shortcut key on the file path bar</li>
+  <li>Remove support for old version control system (GitHub #96)</li>
+  <li>Improve Options &gt; Color &gt; Differences dialog layout (GitHub #89)</li>
+  <li>Improve information and formatting in Help &gt; Configuration reporting (GitHub #92)</li>
+  <li>Improve visual layout of Open dialog (GitHub #97)</li>
+  <li>Add icon for "New (3 panes)" menu item (GitHub #97)</li>
+</ul>
+
+<h4>File compare</h4>
+<ul>
+  <li>Add Window/Split menu item</li>
+  <li>Improve handling of last lines in files (GitHub #89,90,93)</li>
+  <li>Improve "Visual C++ Loose" filter (GitHub #95)</li>
+  <li>BugFix: Crash when saving a file if the active pane is diff detail pane</li>
+  <li>BugFix: Crash when pressing Alt+Down key while loading large files</li>
+  <li>BugFix: Crash when "mousing over" Plugin Setting context menu if Plugins are disabled</li>
+  <li>BugFix: Various problems reading of files > 2GB (GitHub #81)</li>
+  <li>BugFix: Selecting files "From MRU list" again works correctly</li>
+</ul>
+
+<h4>Translations</h4>
+<ul>
+  <li>Update Italian translation (GitHub #86)</li>
+  <li>Update Japanese translation (Bitbucket #3)</li>
+  <li>Update Dutch translation</li>
+  <li>Update German translation</li>
+  <li>Bugfix Spanish translation error (Bitbucket Issue #108)</li>
+</ul>
+
+<h4>Internals</h4>
+<ul>
+  <li> Various diffengine and compilation/build fixes (GitHub #89,90,91,92,94)</li>
+</ul>
+
+<h3><a name="#new2154">What Is New in 2.15.4 Beta?</a></h3>
+
+<h4>Appearance</h4>
+<ul>
+  <li>BugFix: Dot icon in a drop-down menu is not drawn correctly</li>
+</ul>
+
+<h4>File compare</h4>
+<ul>
+  <li>BugFix: Crash when reading a file in Google Drive File Stream (sf.net#2206)</li>
+  <li>BugFix: Crash when removing ghost lines (GitHub #80)</li>
+  <li>BugFix: Lines without EOL appears even though it is not the last line</li>
+  <li>Add Ctrl++/Ctrl+-(not numpad key) shortcut key to zoom in/out (sf.net#1727)</li>
+  <li>Remove 2GB file size limit for 64-bit build (GitHub #81, #82)</li>
+</ul>
+
+<h4>Folder compare</h4>
+<ul>
+  <li>Add Pause button to Folder Compare Progress dialog (sf.net#828,#1222,#1237)</li>
+  <li>Re-detect the file encoding when opening files (sf.net#2131)</li>
+</ul>
+ 
+<h4>Open dialog</h4>
+<ul>
+  <li>Add Options button to Open dialog</li>
+  <li>Add Save Project button to Open dialog</li>
+</ul>
+
+<h4>Patch generator dialog</h4>
+<ul>
+  <li>BugFix: File1/File2 fields don't remember manual input (sf.net#1949)</li>
+</ul>
+
+<h4>Reports</h4>
+<ul>
+  <li>BugFix: Garbled text was copied to the clipboard when generating a report
+  on the clipboard (sf.net#2200)</li>
+</ul>
+
+<h4>Plugins</h4>
+<ul>
+  <li>Add PrediffLineFilter.sct plugin</li>
+  <li>Make ignored lines by Prediffer plugin colored</li>
+</ul>
+
+<h4>Translations</h4>
+<ul>
+  <li>Update Slovak translation (sf.net#2902)</li>
+  <li>Update Portuguese translation (GitHub #84,#85)</li>
+</ul>
+
+<h4>Internals</h4>
+<ul>
+  <li>Adapt to VS2017 version 15.6.1 (GitHub #79)</li>
+</ul>
+
+<h3><a name="#new2153">What Is New in 2.15.3 Beta?</a></h3>
+
+<h4>File compare</h4>
+<ul>
+  <li>Fix assertion error when started on Windows XP</li>
+  <li>Fix a problem that moved blocks are sometimes shown as normal diff blocks</li>
+  <li>Fix a problem that EOL is removed unexpectedly when removing lines
+    included ghost lines</li>
+  <li>Fix reverse search to search last line correctly</li>
+  <li>Fix infinite loop when replacing ^ (sf.net#2094)</li>
+  <li>Fix to show text that contains &amp; on message box, correctly (sf.net#2067)</li>
+</ul>
+
+<h4>Folder compare</h4>
+<ul>
+  <li>Fix a problem that unique files are invisible when comparing files using
+    'Date' compare method</li>
+  <li>Remove trailing garbage from a dragged text (Github#75)</li>
+</ul>
+
+<h4>Patch generator dialog</h4>
+<ul>
+  <li>Fix a problem that typed-in Context in Generate Patch is not applied
+    (sf.net#2179)</li>
+</ul>
+
+<h4>Location pane</h4>
+<ul>
+  <li>Add support for HiDPI screens (Github #54)</li>
+</ul>
+
+<h4>Plugins</h4>
+<ul>
+  <li>CompareMSExcelFiles.sct: Add "Compare headers and footers" checkbox to
+    settings dialog (sf.net#2102)</li>
+</ul>
+
+<h4>Installer</h4>
+<ul>
+  <li>Remove extra space in installer: " Launch WinMerge" (sf.net#2144)</li>
+  <li>Add "How to Apply These Terms to Your New Programs" section into GPL.rtf
+    (sf.net#2098)</li>
+</ul>
+
+<h4>Translations</h4>
+<ul>
+  <li>Add Finnish translation (sf.net#3031)</li>
+  <li>Add Sinhala translation (sf.net#3032)</li>
+  <li>Update Korean translation (Github #61)</li>
+  <li>Update Portuguese translation (GitHub #56-78)</li>
+  <li>Update Polish translation (sf.net#2177)</li>
+  <li>Update Turkish translation (Bitbucket#85, #86)</li>
+  <li>Change the file encodings of all .po files of WinMerge GUI to UTF-8</li>
+</ul>
+
+<h3><a name="#new2152">What Is New in 2.15.2 Beta?</a></h3>
 <p>
-<i>Jochen Neubeck, January 2017</i>
-<xml src='WinMerge.chm' onreadystatechange='OnReadyStateChangeExternalDoc()'></xml>
+WinMerge 2.15.2 is a beta release which mainly adds support for experimental 3-way comparison and image comparison.
+</p>
+
+<h4>Appearance</h4>
+<ul>
+  <li>Flatten GUI pane edges</li>
+  <li>Partial support for HiDPI (not Per-Monitor DPI Aware)</li>
+  <li>Remove splash screen. The splash screen image is now displayed in About dialog</li>
+</ul>
+
+<h4>Tool bar</h4>
+<ul>
+  <li>Add "View-&gt;Toolbar-&gt;Huge" menu item</li>
+  <li>Add drop down menu to Options icon</li>
+  <li>Add icons for 3-way merge functions</li>
+</ul>
+
+<h4>Open dialog</h4>
+<ul>
+  <li>Change window type of Open dialog from modal window to MDI child window</li>
+  <li>Add Read-only checkbox to Open dialog</li>
+  <li>Add buttons to swap items</li>
+  <li>Add the third path combobox for 3-way comparison</li>
+  <li>Allow file name patterns like not only *.ext but file*.ext</li>
+</ul>
+
+<h4>Tab bar</h4>
+<ul>
+  <li>Make Tabbar reorderable by using drag-and-drop</li>
+  <li>Add "Close Other Tabs", "Close Right Tabs" and "Close Left Tabs" menu items
+      to system menu</li>
+  <li>Add "Enable Auto Max Width" menu item to Tab Bar context menu</li>
+  <li>Show close button when hovering over tabs</li>
+  <li>Add icons to each tab</li>
+</ul>
+<h4>Options dialog</h4>
+<ul>
+  <li>Add "Close Select Files or Folders Dialog on clicking OK button" checkbox
+     to "General" page</li>
+  <li>Add "Language" combobox to "General" page and remove Language dialog</li>
+  <li>Add "Ignore codepage differences" checkbox to "Compare/General" page</li>
+  <li>Remove checkboxes in "Enable multiple compare windows for" group from
+      "General" page (Now always enabled multi compare windows)</li>
+  <li>Add "Include Subfolders" checkbox to "Compare/Folder" page</li>
+  <li>Add "Automatically expand all subfolders" checkbox to "Compare/Folder" page</li>
+  <li>Add "Ignore Reparse Points" checkbox to "Compare/Folder" page</li>
+  <li>Add "Number of compare threads" textbox to "Compare/Folder" page</li>
+  <li>Add "Compare/Binary" page</li>
+  <li>Add "Compare/Image" page</li>
+  <li>Add checkboxes whether to use custom colors for text to
+      "Colors/Differences" page</li>
+  <li>Add "GitHub/Bitbucket" button to "Colors/Differences" page</li>
+  <li>Add "Margin" color button to "Colors/Text" page</li>
+  <li>Add "Colors/Markers" page</li>
+  <li>Remove "Use stand-alone 7-Zip if available" and
+      "Use local 7-Zip from WinMerge folder" radio button from
+      "Archive Support" page
+      (Now always use local 7-Zip from WinMerge folder)</li>
+  <li>Make $file and $linenum parameters available in External editor textbox
+      on "System" page</li>
+  <li>Make Custom codepage on "Codepage" page selectable from dropdown list </li>
+  <li>Add "Detect codepage for text files using mlang.dll" checkbox to
+      "Codepage" page</li>
+  <li>Remove "Include subfolders by default" checkbox from </li>
+      "Shell Integration" page
+      (ShellExtension now refers to "Include subfolders" checkbox
+        on "Compare/Folder" page or on "Select Files or Folders" dialog)</li>
+  <li>Remove "Add Shell menu to context menu" from "Shell Integration" page
+      (WinMerge now always adds shell menu to context menu in Folder window)</li>
+  <li>Add "Register shell extension" button to "Shell Integration" page</li>
+</ul>
+
+<h4>Folder Compare</h4>
+<ul>
+  <li>Add Multi-thread compare support for Full Contents or Quick Contents
+      method</li>
+  <li>Color the background of items in list view</li>
+  <li>Restore collapse/expand state of folder tree after re-comparison </li>
+  <li>Make comparing window closeable</li>
+  <li>Make sub-folder re-comparable</li>
+  <li>Display folder items in list view during comparison</li>
+  <li>Display the file name currently being compared in progress window</li>
+  <li>Add "Parent Folder" menu item in 'Open Left/Middle/Right' menu</li>
+  <li>Add "Compare Non-horizontally" menu item to context menu</li>
+  <li>Add "Copy items To Clipboard" menu item to context menu</li>
+  <li>Add "Swap panes" menu item to View menu</li>
+  <li>Add "Auto/Manual Prediffer" menu item to Plugin menu</li>
+  <li>Open selected folders in new tab when clicking "Compare" menu item with
+    pressing Ctrl key</li>
+  <li>Cleanup Date column alignment (GitHub #25)</li>
+  <li>Bugfix: Version column not sorted correctly</li>
+  <li>Bugfix: A unique item that is a binary file was not detected
+      as a binary file</li>
+  <li>Bugfix: Properly handle 3-way comparison of Binary files (Github #23)</li>
+  <li>Bugfix: Use proper font for View&gt;Use Default Font menu item (GitHub #24)</li>
+</ul>
+
+<h4>File Compare</h4>
+<ul>
+  <li>Add support for 3-way compare/merge</li>
+  <li>Add "Diff Context" menu to View menu to adjust the number of displayed
+    diff context lines</li>
+  <li>Add "Split Vertically" menu item to View menu</li>
+  <li>Add "Add Synchronization Point" to Merge menu</li>
+  <li>Add "Auto/Manual Prediffer" menu item to Plugin menu</li>
+  <li>Show the name of the applied plugin in the status bar</li>
+  <li>Add shortcut(Ctrl+Alt+E) to open with external editor</li>
+  <li>Add Go and Rust highlighter</li>
+  <li>Add VHDL syntax highlighter (Bitbucket #2)</li>
+  <li>Add C++11 keywords</li>
+  <li>Make merge editor window D&amp;Dable</li>
+  <li>Highlight the search text and implement Marker</li>
+  <li>Highlight the EOL pane in status bar if there is a difference
+      in the EOL of files</li>
+  <li>Reload files when another application changes files opened by WinMerge</li>
+  <li>Improve in-line diff algorithm</li>
+  <li>Bugfix: More on Issue #73 Fixed the -dl -dm and -dr description parameters
+    for conflict files
+    (for both 2 way and 3 way conflict files).(Bitbucket #1)</li>
+  <li>Bugfix: Fix Memory Leak with Drop Targets (GitHub #26)</li>
+</ul>
+
+<h4>Binary Compare</h4>
+<ul>
+  <li>Install binary file editor (frhed) component again by default</li>
+  <li>Make binary file editor undoable</li>
+</ul>
+
+<h4>Image Compare</h4>
+<ul>
+  <li>Add image file compare/merge support</li>
+</ul>
+
+<h4>Reports</h4>
+<ul>
+  <li>Add "Include File Compare Report" checkbox to "Folder Compare Report"
+      dialog</li>
+  <li>Change the encoding of HTML folder compare report from ANSI to UTF-8</li>
+  <li>Add icons to the HTML folder compare report</li>
+  <li>Change visual style of HTML report</li>
+</ul>
+
+<h4>Archive Support</h4>
+<ul>
+  <li>Install 7-zip plugin by default</li>
+</ul>
+
+<h4>Drag and Drop</h4>
+</ul>
+<ul>
+  <li>Accept drag&amp;droped files or folders from various places like:
+    Zip folder, FTP folder, Recycle bin, images in Web browser</li>
+</ul>
+
+<h4>Plugins</h4>
+<ul>
+  <li>Introduce new plugin type FILE_FOLDER_PACK_UNPACKER
+    which allows unpacking data in a file to multiple files in a folder</li>
+  <li>Use FILE_FOLDER_PACK_UNPACKER plugin for decompressing archives</li>
+  <li>Add support for unpacker plugin written in VBScript/Javascript.</li>
+  <li>Add WinMerge32BitPluginProxy.exe to make 32-bit plugins usable in 64-bit
+    WinMerge </li>
+  <li>Rewrite some plugins in VBScript</li>
+  <li>Add CompareMSPowerPointFiles.sct plugin</li>
+  <li>Add ApplyPatch.sct plugin</li>
+  <li>Add SortAscending, SortDescending and ExecFilterCommand menu item to
+    Plugin-&gt;Script menu</li>
+  <li>Make plugins configurable with settings dialog of each plugin</li>
+</ul>
+
+<h4>Filters</h4>
+<ul>
+  <li>Update *.flt files for Visual Studio 2015 and 2017</li>
+</ul>
+
+<h4>Shell extension</h4>
+<ul>
+  <li>Display another WinMerge icon in Explorer's context menu 
+    when a folder is selected</li>
+</ul>
+
+<h4>Installer</h4>
+<ul>
+  <li>64-bit version of WinMerge is available</li>
+  <li>Install plugins by default</li>
+</ul>
+
+<h4>Translations</h4>
+<ul>
+  <li>Update Portuguese translation (GitHub #2-17)</li>
+  <li>Update Korean translation (GitHub #45)</li>
+  <li>Update Traditional Chinese translation (GitHub #53)</li>
+  <li>Remove "Language" menu item from View menu
+    (You can specify UI language at Options dialog)</li>
+</ul>
+
+<h4>Command line</h4>
+<ul>
+  <li>Incompatible change: The third file path is now treated as a right path
+    for 3-way comparison, not output path
+    Use /o option for ouput path instead</li>
+  <li>Add /wm, /dm, /fl, /fm, /fr, /al, /am and /ar option for 3-way comparison</li>
+</ul>
+
+<h4>Other changes</h4>
+<ul>
+  <li>Add support for jump list introduced in Windows 7</li>
+</ul>
+
+<h4>Internals</h4>
+<ul>
+  <li>Use POCO C++ libraries instead of pcre, expat and scew.
+    They use pcre, expat internally</li>
+  <li>Link statically with MFC and VC runtime libraries</li>
+  <li>Various compilation/build fixes
+    (GitHub #1,19,21,29,31-33,36-38,42-44,49-52)</li>
+</ul>
+
+<h3><a name="issues">Known Issues</a></h3>
+<ul>
+  <li>
+    <p><strong>Old IE version can cause crashes when handling archive files.</strong></p>
+    <p><i>Workaround</i>: If WinMerge crashes when handling archives, consider
+      updating IE to version 6.0 or later.</p>
+  </li>
+  <li>
+    <p><strong>Supercopier application causes WinMerge to hang.</strong></p>
+    <p><a href="http://supercopier.sfxteam.org/modules/mydownloads/">Supercopier</a>
+    application causes WinMerge to not exit properly and leaves WinMerge process
+    hang. See the bug reports:
+    <ul>
+      <li><a href="http://winmerge.org/bug/1976241">#1976241</a> the winmerge.exe
+        process doesn't stop itself</li>
+      <li><a href="http://winmerge.org/bug/1602313">#1602313</a> WinMerge stays
+        in tasklist after closing</li>
+    </ul>
+    <p><i>Workaround</i>: Disable the Supercopier when using WinMerge.</p>
+  </li>
+  <li>
+    <p><strong>Filters only applied when using full compare.</strong></p>
+    <p>Line filtering is only applied in folder compare when using <i>Full Contents</i>-compare method.</p>
+    <p>If you are using any other compare method, line filters are not applied. Files marked different
+    in folder compare can get status changed to identical when opening them to file compare.</p>
+  </li>
+  <li>
+    <p><strong>Unset WinMerge integration from ClearCase</strong></p>
+    <p>To remove WinMerge integration, you'll need to edit one file by hand:</p>
+    <ol>
+      <li>Find ClearCase installation folder<br>
+          Usually it is something like <code>C:\Program Files\Rational\ClearCase</code></li>
+      <li>Go to subfolder <code>lib\mgrs\</code></li>
+      <li>Open file <code>map</code> in there to editor program</li>
+      <li>Comment-out the line starting with "<code>text_file_delta xcompare</code>", containing "<code>WinMergeU.exe</code>"</li>
+      <li>Uncomment the line starting with "<code>text_file_delta xcompare</code>", containing "<code>cleardiffmrg.exe</code>"</li>
+    </ol>
+  </li>
+</ul>
 </body>
+</html>
+
+ 	  	 

@@ -1,28 +1,34 @@
+
 People who have contributed to WinMerge
 ---------------------------------------
 
-Representatives of original WinMerge project on SourceForge:
-* Dean Grimm (Original Developer) <grimmdp@yahoo.com>
-* Christian List (Project Lead) <list1974@hotmail.com>
+Original developer, project admin:
+* Dean Grimm <grimmdp@yahoo.com>
 
-Current and past members of WinMerge development staff:
-* Chris Mumford
-* Denis Bradford (Doc Writer) <denisbradford@users.sourceforge.net>
-* Dennis Limm
-* Gal Hammer <galh@users.sourceforge.net>
-* Tim Gerundt (Web Designer) <tim@gerundt.de>
-* Takashi Sawanaka <sdottaka@users.sourceforge.net>
-* Christian Blackburn (Installer)
-* Jochen Neubeck <jtuc@users.sourceforge.net>
-* Kimmo Varis <kimmov@winmerge.org>
+Project lead:
+* Christian List <list1974@hotmail.com>
+
+Developers:
+* Denis Bradford <denisbradford@users.sourceforge.net>
+* Tim Gerundt <tim@gerundt.de>
 * Marcel Gosselin <marcelgosselin@users.sourceforge.net>
+* Gal Hammer <galh@users.sourceforge.net>
+* Takashi Sawanaka <sdottaka@users.sourceforge.net>
 * Alexander Skinner (Graphic Design) <neonapple@users.sourceforge.net>
-* Jan Hryz (Translator) <janhryz@users.sourceforge.net>
-* sf-mensch (Build Engineer)
+* Jochen Tucht <jtuc@users.sourceforge.net>
+* Kimmo Varis <kimmov@winmerge.org>
+
+Inactive/past developers:
 * Laurent Ganier
+* Dennis Limm
+* Chris Mumford
 * Perry Rapp
+* Christian "Seier" Blackburn (Installer)
 
 Localization:
+* Basque:
+  Xabier Aramendi <Azpidatziak@gmail.com>  
+
 * Bulgarian:
   Sld <sld|mail.bg>
   tigertron <ivg_18@yahoo.com>
@@ -35,9 +41,10 @@ Localization:
 
 * Traditional Chinese:
   Koko <kokokoko@giga.net.tw>
+  Calvin Lin <ylin77 at gmail.com>
 
 * Croatian:
-  Hasan Osmanagiæ <hasan.osmanagic@public.carnet.hr>
+  Hasan OsmanagiÃ¦ <hasan.osmanagic@public.carnet.hr>
 
 * Czech:
   Jiri Tax <jt@taxoft.cz>
@@ -51,6 +58,9 @@ Localization:
   Michel Coene
   Thomas De Rocker <thomasderocker@yahoo.com>
   Ronald Schaap <ronald@schaap.demon.nl>
+
+* Finnish:
+  Veikko Muurikainen <veikko.muurikainen at kolumbus.fi>
 
 * French:
   Jean-F Jolin <jean-f-j@users.sourceforge.net>
@@ -71,8 +81,8 @@ Localization:
   Polyvios J. Simopoulos <polyvios.j.simopoulos@gmail.com>
 
 * Hungarian:
-  Márton Balázs <documan@users.sourceforge.net>
-  Mihalicza József <jmihalicza@gmail.com>
+  MÃ¡rton BalÃ¡zs <documan@users.sourceforge.net>
+  Mihalicza JÃ³zsef <jmihalicza@gmail.com>
 
 * Italian:
   Andrea Decorte <deco1985@hotmail.com>
@@ -83,6 +93,10 @@ Localization:
   Sukjoon <bbcool@gmail.com>
   Lee Jae-Hong <pyrasis@users.sourceforge.net>
   Sushizang <sushizang@empal.com>
+  sheppaul <sheppaul at gmail.com>
+
+* Lithuanian:
+  Dalius Guzauskas (aka Tichij) <tichij AT mail DOT com>
 
 * Norwegian:
   Hans Fredrik Nordhaug <hansfn@users.sourceforge.net>
@@ -100,8 +114,8 @@ Localization:
   Felipe Periard Lopes <felipefpl@ig.com.br>
 
 * Portuguese (Portugal):
-  Nelson Simão
-  David Cunha
+  Nelson SimÃ£o
+  Lippe35
 
 * Romanian:
   Cristian Arghiroiu <cristi.arghiroiu@gmail.com>
@@ -112,9 +126,12 @@ Localization:
 * Serbian:
   Ozzii <ivanstar61@gmail.com>
 
+* Sinhala:
+  T G E Perera
+
 * Slovak:
   Majvan <vancojur@decef.elf.stuba.sk>
-  Ivan Masár <helix84@centrum.sk>
+  Ivan MasÃ¡r <helix84@centrum.sk>
 
 * Slovenian:
   Iztok Osredkar <iztok.osredkar@institut-oko.si>
@@ -122,16 +139,17 @@ Localization:
 
 * Spanish:
   Mario Angel <marioangel70@gmail.com>
-  Jesús M. Delgado 'MacK' <nncsoft@yahoo.com>
+  JesÃºs M. Delgado 'MacK' <nncsoft@yahoo.com>
   Dean Grimm <grimmdp@yahoo.com>
 
 * Swedish:
   Hans Eriksson <hans.ericson@bredband.net>
-  Göran Håkansson <goran.x.hakansson@telia.com>
+  GÃ¶ran HÃ¥kansson <goran.x.hakansson@telia.com>
 
 * Turkish:
   Afyonlu <afyonlu@users.sourceforge.net>
   Ozkan UNVER <turquaz37915@users.sourceforge.net>
+  Kaya Zeren <kaya.zeren at zeron.net>
 
 * Ukranian
   Vitaliy Stopchans'kyy <stopcha@gmail.com>
@@ -157,7 +175,7 @@ Other Contributors (code, ideas, testing..):
 * Joe Kidd <cassiusdrow@sourceforge.net>
 * Robert Knienider
 * Ferenc Kubatovics
-* René Leonhardt
+* RenÃ© Leonhardt
 * Vladimir Lukianov
 * LynX <devlynx@users.sourceforge.net>
 * David Maisonave
@@ -183,9 +201,12 @@ Other Contributors (code, ideas, testing..):
 * Gilbert Wellisch
 * Paul Welter
 * Lars Wittenburg
+* Etienne Faisant
+* Bill Gord
+* H.Saido
 
 
-Current or past versions of WinMerge include code from:
+WinMerge includes code from:
 * Jared Breland <jbreland@legroom.net> (Installer's modpath script)
 * Brent Corkum (BCMenu)
 * Paul DiLascia (CStaticLink) 
@@ -198,5 +219,9 @@ Current or past versions of WinMerge include code from:
 * Paul Senzee (String formatting)
 * Henry Spencer (CRegExp)
 * Andrei Stcherbatchenko (CrystalEditor)
-* Serge Baltic (SettingStore)
-* David Nash (Win32++, portions of which have made it into H2O)
+
+*** NOTE ***
+If your name is missing please email us at:
+winmerge-support@lists.sourceforge.net
+
+Thanks!

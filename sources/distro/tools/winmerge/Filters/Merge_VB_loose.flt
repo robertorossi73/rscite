@@ -19,14 +19,11 @@ f: \.ocx$ ## OLE Control Extension
 f: \.exe$ ## Windows/DOS executable
 f: \.bak$ ## backup
 
-d: \\cvs$ ## CVS control directory
-d: \\\.svn$ ## Subversion control directory
-d: \\\.hg$ ## Mercurial control directory
+d: \\\.svn$ ## Subversion working copy
+d: \\_svn$  ## Subversion working copy ASP.NET Hack
+d: \\cvs$   ## CVS control directory
+d: \\\.git$ ## Git directory
+d: \\\.bzr$ ## Bazaar branch
+d: \\\.hg$ ## Mercurial repository
+d: \\\.vs$ ## A hidden folder that stores .suo and *.db files
 
-## Optional SQL filter
-WHERE
-	Attributes LIKE 'D%' -- Include all directories
-OR	(LastWriteTime >= TO_TIMESTAMP(%Minimum Time%) OR %Minimum Time% IS NULL)
-AND (LastWriteTime <= TO_TIMESTAMP(%Maximum Time%) OR %Maximum Time% IS NULL)
-AND (Size >= TO_INT(%Minimum Size%) OR %Minimum Size% IS NULL)
-AND (Size <= TO_INT(%Maximum Size%) OR %Maximum Size% IS NULL)
