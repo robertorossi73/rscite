@@ -1,5 +1,5 @@
 --[[
-Version : 1.1.6
+Version : 1.1.7
 Web     : http://www.redchar.net
 
 Questa libreria consente un utilizzo più flessibile e dinamico dell'interfaccia 
@@ -8,7 +8,7 @@ Questa libreria consente un utilizzo più flessibile e dinamico dell'interfaccia
 La classe qui definita, "wcl_strip", si pone come obbiettivo quello di 
 semplificare l'utilizzo dell'interfaccia grafica standard i SciTE (strip)
 
-Copyright (C) 2012-2015 Roberto Rossi 
+Copyright (C) 2012-2018 Roberto Rossi 
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -211,6 +211,11 @@ function wcl_strip:getID(uniqueName)
       break
     end
   end
+  
+--   if (idx == nil) then
+--     print("Missing uniqueName :")
+--     print(uniqueName)
+--   end
   
   return idx
 end
