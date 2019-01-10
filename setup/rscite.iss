@@ -228,6 +228,9 @@ begin
             RegisterServer(true, ExpandConstant('{app}\wscitecm64_it.dll'), True);
           end;
         end;
+        
+        //rimozione eventuali configurazioni di dnGrep
+        DeleteFile(ExpandConstant('{userappdata}\dnGREP\dnGREP.Settings.dat'));
     end; //not portablemode
 
   end; //end conclusione
