@@ -1,10 +1,10 @@
 --[[
-Version : 2.0.1
+Version : 2.1.0
 Web     : http://www.redchar.net
 
 Questa procedura permette il caricamente del file lisp corrente in un CAD supprotato
 
-Copyright (C) 2015-2016 Roberto Rossi 
+Copyright (C) 2015-2018 Roberto Rossi 
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -164,8 +164,15 @@ do
     end
     
 ---------------------------- Procedure principale ---------------------------- 
-    function MainLoadLsp (isDCL)
+    function MainLoadLsp ()
         local tbl =  {}
+        local isDCL = false --lisp == true, dcl == false
+        
+        if (props["Language"] == "lisp") then
+            isDCL = false;
+        else
+            isDCL = true;
+        end
         
         tbl = { --"Ricerca automatica, progeCAD/AutoCAD/BricsCAD/ZwCAD/*",
                 _t(337),
@@ -209,6 +216,6 @@ do
         wcl_strip:setValue("CAD", tbl[loadCADLsp_presel(nil)])
     end
 
-    MainLoadLsp(true)
+    MainLoadLsp()
 end
 
