@@ -67,7 +67,7 @@ cfgEditor_tblItems = {
 },
 
 {
-    "Visibilita' barra delle schede",
+    "Visualizzazione barra delle schede",
     "int", "tabbar.visible",
     {
         "Nascondi la barra (0)","0",
@@ -78,7 +78,7 @@ cfgEditor_tblItems = {
 },
 
 {
-    "Visibilita' schede con un solo elemento",
+    "Visualizzazione schede con un solo elemento",
     "int", "tabbar.hide.one",
     {
         "Mostra sempre le schede (0)","0",
