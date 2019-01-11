@@ -216,7 +216,10 @@ function GetAcad()
         set obj = GetAcadApp("AutoCAD.Application.22")
     end if
     if (obj is Nothing) then
-        set obj = GetAcadApp("AutoCAD.Application.23")
+        set obj = GetAcadApp("AutoCAD.Application.23")'AutoCAD 2019
+    end if
+    if (obj is Nothing) then
+        set obj = GetAcadApp("AutoCAD.Application.23.1")'AutoCAD 2020
     end if
     
     if (IsEmpty(obj)) then
