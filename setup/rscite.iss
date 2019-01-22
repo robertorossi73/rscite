@@ -72,9 +72,9 @@ Name: {group}\{cm:IconRscite}; Filename: "{app}\SciTE.exe"; IconFilename: {app}\
 ;dnGrep
 Name: {group}\{cm:IcondnGREP}; Filename: "{app}\tools\dngrep\dnGREP.exe"; Tasks: not portablemode;
 ;Frhed
-Name: {group}\{cm:IconFrhed}; Filename: "{app}\tools\frhed\Frhed.exe"; Tasks: not portablemode;
+Name: {group}\{cm:IconFrhed}; Filename: "{app}\tools\winmerge\frhed\Frhed.exe"; Tasks: not portablemode;
 ;KDiff
-Name: {group}\{cm:IconKDiff}; Filename: "{app}\tools\kdiff\kdiff3.exe"; Tasks: not portablemode;
+;Name: {group}\{cm:IconKDiff}; Filename: "{app}\tools\kdiff\kdiff3.exe"; Tasks: not portablemode;
 ;WinMerge
 Name: {group}\{cm:IconWinMerge}; Filename: "{app}\tools\winmerge\WinMergeU.exe"; Tasks: not portablemode;
 ;Home Page
@@ -88,8 +88,6 @@ Name: {commondesktop}\RSciTE; Filename: {app}\SciTE.exe; Tasks: desktopicon;
 [Registry]
 
 [UninstallDelete]
-Name: {app}\wscitecm_en.dll; Type: files; Tasks: ; Languages: 
-Name: {app}\wscitecm_it.dll; Type: files
 ;Name: {userappdata}\RSciTE; Type: filesandordirs; Tasks: ; Languages: 
 
 [CustomMessages]
@@ -158,7 +156,7 @@ begin
     
     if FileExists(ExpandConstant('{app}\scite.exe')) then
     begin
-      if MsgBox(ExpandConstant('{cm:PrevInstall}'), mbConfirmation, MB_YESNO) = IDYES then
+      if MsgBox(ExpandConstant('{cm:PrevInstall}'), mbConfirmation, MB_YESNO or MB_DEFBUTTON2) = IDYES then
       begin      
         //rundll32.exe shell32.dll,Control_RunDLL Appwiz.cpl
         Exec(ExpandConstant('{sys}\rundll32.exe'), 'shell32.dll,Control_RunDLL Appwiz.cpl', '', SW_SHOW, ewNoWait, ResultCode);
