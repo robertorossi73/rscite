@@ -512,6 +512,10 @@ interno che permette la trasposizione di due semplici numeri.
 * **Disegna/Calcola espressione matematica**. Tramite questa funzione, data
 un’espressione matematica completa, sarà possibile rappresentarla
 graficamente utilizzando alcuni servizi online.
+* **Opzioni RSciTE**. Dal menu strumento è disponibile una funzione per la 
+configurazione semplificata di SciTE. Tramite una semplice maschera di dialogo
+sarà possibile impostare i parametri operativi dell'editor di testo senza
+essere costretti ad agire direttamente sui file di configurazione.
 * Oltre a quanto riportato in questo elenco, sono presenti molte modifiche,
 secondarie, alle impostazioni di base (es.: margini, numeri linea ecc..).
 
@@ -779,6 +783,11 @@ si può ottenere l'elenco dei colori utilizzati (espressi in forma esadecimale)
 all'interno di un file html/css o simili.
 * **Gestore temi/colori SciTE**. Questo comando permette di cambiare la combinazione
 colori utilizzata dall'editor di testo.
+* **Generazione Report Informazioni di sistema**. Permette la generazione di un
+report relativo all'ardware e al software corrente. Sfrutta l'utilità
+System Information di Windows.
+* **Apertura file in nuova finesta**. Permette l'apertura del file corrente in
+una nuova finestra di SciTE.
 
 In aggiunta a queste funzionalità, **F12** consente all’utente la
 realizzazione degli script personalizzati e la loro integrazione direttamente
