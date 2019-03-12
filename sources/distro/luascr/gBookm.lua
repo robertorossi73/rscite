@@ -1,5 +1,5 @@
 --[[
-Version : 1.0.4
+Version : 1.1.0
 Web     : http://www.redchar.net
 
 Gestore avanzato Bookmark
@@ -27,7 +27,7 @@ il carattere '?'.
   corrente. In base a nuova impostazione da inserire in file di
   configurazione
 
-Copyright (C) 2010-2018 Roberto Rossi 
+Copyright (C) 2010-2019 Roberto Rossi 
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -179,6 +179,26 @@ do
     return result
   end
   
+    --mostra tutte le linee con bookmark in modo che cliccandoci si vada alla
+    -- linea relativa
+    local function showBookm()
+        local bookms = getBookLinesNum()
+        local i = 0
+        local text = ""
+        local maxt = false
+
+        print("")
+        if (bookms) then
+          maxt = #bookms
+          while (i <= maxt) do
+            text = ":"..tostring(bookms[i]+1)..": "..
+                    rfx_RemoveReturnLine(rfx_Trim(editor:GetLine(bookms[i])))
+            print(text)
+            i = i + 1
+          end
+        end
+    end
+  
   --ottimizza database bookmarks eliminando i riferimenti
   --ai file non esistenti
   --ritorna true nel caso qualcosa sia stato ottimizzato
@@ -264,31 +284,34 @@ do
         --salva segnalibri
         saveBookm()
       elseif (scelta==2) then
+        --mostra tutte le linee con bookmark
+        showBookm()
+      elseif (scelta==3) then
         --copia linee in clipboard
         copyBookLines()
-      elseif (scelta==3) then
+      elseif (scelta==4) then
         --selezione segnalibri da ripristinare
         loadOtherBookm()
-      elseif (scelta==4) then
+      elseif (scelta==5) then
         --commuta segnalibro
         scite.MenuCommand(IDM_BOOKMARK_TOGGLE)
-      elseif (scelta==5) then
+      elseif (scelta==6) then
         ----elimina segnalibri
         scite.MenuCommand(IDM_BOOKMARK_CLEARALL)
-      elseif (scelta==6) then
+      elseif (scelta==7) then
         --successivo
         scite.MenuCommand(IDM_BOOKMARK_NEXT)
-      elseif (scelta==7) then
+      elseif (scelta==8) then
         --precedente
         scite.MenuCommand(IDM_BOOKMARK_PREV)
-      elseif (scelta==8) then
+      elseif (scelta==9) then
         --seleziona filo al successivo
         scite.MenuCommand(IDM_BOOKMARK_NEXT_SELECT)
-      elseif (scelta==9) then
+      elseif (scelta==10) then
         --seleziona fino al precedente
         scite.MenuCommand(IDM_BOOKMARK_PREV_SELECT)
-      elseif (scelta==10) then
-        --compattazione database
+      elseif (scelta==11) then
+        --apri base dati
         optiDB()
       end --endif
     end 
