@@ -1,10 +1,10 @@
 --[[
-Version : 1.1.3
+Version : 1.2.0
 Web     : http://www.redchar.net
 
 Questa procedura Consente l'apertura di uno degli ultimi file modificati.
 
-Copyright (C) 2004-2015 Roberto Rossi 
+Copyright (C) 2004-2019 Roberto Rossi 
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -46,13 +46,17 @@ do
       
       --scelta = rwfx_ShowList(lista,"Ultimi file Aperti...")
       --scelta = rwfx_ShowList(lista,_t(141))
-      scelta = rwfx_ShowList_Repos(lista,_t(141),"openLast")
+      scelta = rwfx_ShowList_Repos(lista, --lista files
+                                    --titolo con numero file elencati
+                                    "("..tostring(#buffers + 1)..") ".._t(141),
+                                    "openLast")
       if scelta then
         if (rfx_fileExist(buffers[scelta + 1])) then
           scite.Open(buffers[scelta + 1])        
         else
           --il file xxxx non esiste, attenzione
-          rwfx_MsgBox(_t(68)..buffers[scelta + 1].._t(69),_t(9),MB_ICONSTOP + MB_OK)
+          rwfx_MsgBox(_t(68)..buffers[scelta + 1].._t(69),
+                      _t(9),MB_ICONSTOP + MB_OK)
         end
       end
     end
