@@ -1,11 +1,11 @@
 --[[
-Version : 1.0.0
+Version : 1.1.0
 Web     : http://www.redchar.net
 
 Questa procedura apre la shell dei comandi nella cartella che contiene il file
 corrente
 
-Copyright (C) 2010 Roberto Rossi 
+Copyright (C) 2010-2019 Roberto Rossi 
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -25,7 +25,15 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
 
 do
 
-  require("luascr/rluawfx")
-  rwfx_ShellExecute("cmd","")
+    require("luascr/rluawfx")
+    
+    local function main()
+        local cf = props["FileDir"]
+        
+        rwfx_ShellExecute("cmd","/k \"cd "..cf.."\"")
+    end
+  
+  
 
+    main()
 end
