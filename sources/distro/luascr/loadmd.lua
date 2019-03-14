@@ -1,11 +1,11 @@
 --[[
-Version : 3.2.4
+Version : 3.3.4
 Web     : http://www.redchar.net
 
 Questa procedura permette l'anteprima di un file markdown, convertendolo in html
 per poi mostrarlo all'interno del browser web del sistema
 
-Copyright (C) 2015-2018 Roberto Rossi
+Copyright (C) 2015-2019 Roberto Rossi
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -66,7 +66,7 @@ do
     end
     
     local function prepareHtmlHeader(html, template)
-        local result = "<!-- Template:"..template.."\n"
+        local result = "<!-- coding=utf-8 - Template:"..template.."\n"
         
         result = result.."Produced By : ".._t(442)
         
@@ -79,8 +79,11 @@ do
     
     --ritorna il nome del file html di preview
     local function markdown_getHtmlName()
+        local fname = props["FileNameExt"]
+        
+        --fname = string.gsub(fname, "%.", "_")
         --return os.getenv("TMP").."\\preview-"..props["FileName"]..".html"
-        return props["FileDir"].."\\preview-"..props["FileNameExt"]..".html"
+        return props["FileDir"].."\\preview-"..fname..".html"
     end
 
     local function get_Css_from_file(nomef)
