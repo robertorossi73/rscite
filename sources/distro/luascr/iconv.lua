@@ -1,11 +1,9 @@
 --[[
-Version : 1.0.3
+Version : 1.0.5
 Web     : http://www.redchar.net
 
 Questa procedura consente la conversione del file corrente da una codifica 
 ad un'altra sfruttando l'utilità iconv
-
-TODO : apertura file convertito dopo conversione (su richiesta)
 ]]
 
 do
@@ -217,8 +215,15 @@ do
       exeStr = "cmd /C \"\""..exeStr.."\" -c -f "..codIn.." -t "..codOut.." \""..curfile.."\" > \""..destfile.."\" \""
       --print(exeStr)
       os.execute(exeStr)
+
       --procedura conclusa con successo
       print(_t(198))
+      
+      --if (rwfx_MsgBox("Si desidera Aprire il file '"..destfile.."' ?",
+        if (rwfx_MsgBox(_t(147).." '"..destfile.."' ?",
+            _t(148), MB_YESNO) == IDYES) then
+            scite.Open(destfile)
+        end
     end
   
   end
