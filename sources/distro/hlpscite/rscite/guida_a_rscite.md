@@ -788,6 +788,8 @@ report relativo all'ardware e al software corrente. Sfrutta l'utilità
 System Information di Windows.
 * **Apertura file in nuova finesta**. Permette l'apertura del file corrente in
 una nuova finestra di SciTE.
+* **Generatore Password**. Con questa funzione è possibile generare delle password
+casuali selezionando le caratteristiche della parola chiave da generare.
 
 In aggiunta a queste funzionalità, **F12** consente all’utente la
 realizzazione degli script personalizzati e la loro integrazione direttamente
