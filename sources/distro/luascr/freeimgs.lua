@@ -54,7 +54,7 @@ do
         end
         
         local function openServices(text)
-            local service = "https://pixabay.com/it/photos/?q="
+            local service = "https://pixabay.com/it/images/search/"
             local service2 = "https://www.pexels.com/search/"
             local command = ""
             local lang 
