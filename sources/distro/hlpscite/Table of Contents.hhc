@@ -9,9 +9,19 @@
 </OBJECT>
 <UL>
 	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="SciteDoc">
+		<param name="Name" value="SciTE Documentation">
 		<param name="Local" value="SciTEDoc.html">
-		<param name="ImageNumber" value="2">
+		<param name="ImageNumber" value="12">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SciTE Home">
+		<param name="Local" value="SciTE.html">
+		<param name="ImageNumber" value="17">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Scintilla">
+		<param name="Local" value="ScintillaDoc.html">
+		<param name="ImageNumber" value="17">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="SciTE Regular Expressions">
@@ -44,16 +54,6 @@
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="SciTE Frequently Asked Question">
 		<param name="Local" value="SciTEFAQ.html">
-		</OBJECT>
-	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="SciTE Home">
-		<param name="Local" value="SciTE.html">
-		<param name="ImageNumber" value="13">
-		</OBJECT>
-	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="Scintilla">
-		<param name="Local" value="ScintillaDoc.html">
-		<param name="ImageNumber" value="13">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="SciTE Extension Interface">
