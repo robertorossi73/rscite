@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 ;Autore :   Roberto Rossi
-;Versione : 3.1.5
+;Versione : 3.1.6
 ;Web      : http://www.redchar.net
 
 ;how check redist vc
@@ -14,16 +14,20 @@
 ;{03EBF679-E886-38AD-8E70-28658449F7F9} Microsoft Visual C++ 2017 x64 Minimum Runtime - 14.14.26429
 ;{B12F584A-DE7A-3EE3-8EC4-8A64DBC0F2A7} Microsoft Visual C++ 2017 x64 Additional Runtime - 14.14.26429
 
+#define RSciTEVersion 79
+
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application.
 ; Do not use the same AppId value in installers for other applications.
 ; (To generate a new GUID, click Tools | Generate GUID inside the IDE.)
 AppId={{A4729A09-46FB-4766-9D9D-24358E58E453}
+
 AppName=RSciTE
-#include "appvername.iss"
-;AppVerName=RSciTE
+AppVerName=RSciTE {#RSciTEVersion}
+OutputDir=d:\temp\output\
+OutputBaseFilename=setup-rscite-{#RSciTEVersion}
+
 UninstallDisplayName=RSciTE
-;OutputBaseFilename=rscite_setup3_1_0-29
 AppPublisher=Roberto Rossi
 AppPublisherURL=http://www.redchar.net/
 AppSupportURL=http://www.redchar.net/
@@ -92,7 +96,7 @@ Name: {commondesktop}\RSciTE; Filename: {app}\SciTE.exe; Tasks: desktopicon;
 
 [CustomMessages]
 english.PrevInstall=Is present another version of RSciTE! I recommend to uninstalling the previous version before proceeding.%n%nDo you want open Control Panel to uninstall previous version of RSciTE?
-italian.PrevInstall=E' presente una precedente versione di RSciTE.%nPer evitare qualsiasi tipo di conflitto suggerisco di procedere, prima di proseguire, ad una DISINSTALLAZIONE dell'attuale RSciTE tramite il pannello di controllo.%n%nE' comunque possibile continuare e tentare di aggiornare la versione corrente. Questa operazione NON è consigliata.%n%nSi desidera aprire il pannello di controllo per disinstallare la precedente versione di RSciTE?
+italian.PrevInstall=E' presente una precedente versione di RSciTE.%nPer evitare qualsiasi tipo di conflitto suggerisco di procedere, prima di proseguire, ad una DISINSTALLAZIONE dell'attuale RSciTE tramite il pannello di controllo.%n%nE' comunque possibile continuare e tentare di aggiornare la versione corrente. %n%nSi desidera aprire il pannello di controllo per disinstallare la precedente versione di RSciTE?
 english.PortableVersion=Don't install RSciTE, but extract the files for the portable version.
 italian.PortableVersion=Non installare il programma, ma estrai solo i file della versione Portabile.
 english.PortableVersionGroup=RSciTE Portable Version
