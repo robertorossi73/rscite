@@ -130,6 +130,7 @@ do
                             "styles\\visualprolog",
                             "styles\\yaml",
                             "styles\\nim",
+                            "styles\\cil",
                             "dark-theme"
                             }
         local pos
