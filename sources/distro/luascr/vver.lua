@@ -1,5 +1,5 @@
 --[[
-Version : 3.2.0
+Version : 3.2.1
 Web     : http://www.redchar.net
 
 Questa procedura visualizza informazioni sulla distribuzione di SciTE, inoltre
@@ -105,7 +105,8 @@ do
     wcl_strip:addNewLine()
 
     wcl_strip:addLabel(nil, _t(124).." : ")
-    wcl_strip:addLabel(nil,vScite.."-"..vDistribuzione.." "..versionTbl.AddPart)
+    --wcl_strip:addLabel(nil,vScite.."-"..vDistribuzione.." "..versionTbl.AddPart)
+    wcl_strip:addLabel(nil, vDistribuzione.." "..versionTbl.AddPart)
     wcl_strip:addNewLine()
 
     wcl_strip:addLabel(nil, _t(125).." : ")

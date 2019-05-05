@@ -1,5 +1,5 @@
 --[[
-Version : 2.0.0
+Version : 2.0.1
 Web     : http://www.redchar.net
 
 Questa procedura verifica che quella corrente sia l'ultima release disponibile,
@@ -55,9 +55,9 @@ do
     local localVerStr = ""
     local versionTbl
         versionTbl = rfx_GetVersionTable()
-        localVerStr =   versionTbl.FileMajorPart.."."..
-                        versionTbl.FileMinorPart.."."..
-                        versionTbl.FileBuildPart.."-"..
+        localVerStr =   --versionTbl.FileMajorPart.."."..
+                        --versionTbl.FileMinorPart.."."..
+                        --versionTbl.FileBuildPart.."-"..
                         versionTbl.Distro
         return localVerStr
     end
