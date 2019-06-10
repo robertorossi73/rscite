@@ -545,13 +545,60 @@
     </tr>
     </table>
     <p>
-       Images used in GTK+ version
+       Images used in GTK version
     </p>
     <ul>
       <li>
         <a href="http://sourceforge.net/projects/icon-collection/">
         Icons</a> Copyright(C) 1998 by Dean S. Jones<br />
       </li>
+    </ul>
+    <h3>
+       <a href="https://www.scintilla.org/scite416.zip">Release 4.1.6</a>
+    </h3>
+    <ul>
+	<li>
+	Released 10 June 2019.
+	</li>
+	<li>
+	For Visual C++ 2019, /std:c++latest now includes some C++20 features so switch to /std:c++17.
+	</li>
+	<li>
+	SciTE supports editing files larger than 2 gigabytes when built as a 64-bit application.
+	</li>
+ 	<li>
+	Lexer added for X12.
+	<a href="https://sourceforge.net/p/scintilla/feature-requests/1280/">Feature #1280</a>.
+	</li>
+ 	<li>
+	CMake folder folds function - endfunction.
+	<a href="https://sourceforge.net/p/scintilla/feature-requests/1289/">Feature #1289</a>.
+	</li>
+ 	<li>
+	VB lexer adds support for VB2017 binary literal &amp;B and digit separators 123_456.
+	<a href="https://sourceforge.net/p/scintilla/feature-requests/1288/">Feature #1288</a>.
+	</li>
+	<li>
+	Improved performance of line folding code on large files when no folds are contracted.
+	This improves the time taken to open or close large files.
+	</li>
+	<li>
+	Fix bug where changing identifier sets in lexers preserved previous identifiers.
+	</li>
+	<li>
+	Fixed bug where changing to Unicode would rediscover line end positions even if still
+	sticking to ASCII (not Unicode NEL, LS, PS) line ends.
+	Only noticeable on huge files with over 100,000 lines.
+	</li>
+ 	<li>
+	Changed behaviour of SCI_STYLESETCASE(*,SC_CASE_CAMEL) so that it only treats 'a-zA-Z'
+	as word characters because this covers the feature's intended use (viewing case-insensitive ASCII-only
+	keywords in a specified casing style) and simplifies the behaviour and code.
+	<a href="https://sourceforge.net/p/scintilla/feature-requests/1238/">Feature #1238</a>.
+	</li>
+ 	<li>
+	In SciTE added Camel case option "case:c" for styles to show keywords with initial capital.
+	</li>
     </ul>
     <h3>
        <a href="https://www.scintilla.org/scite415.zip">Release 4.1.5</a>
