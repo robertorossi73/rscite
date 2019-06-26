@@ -13,6 +13,8 @@ per qualsiasi tipo di testo.
 
 <http://www.redchar.net/>
 
+<p style="page-break-before: always;">&nbsp;</p>
+
 ### Chi è SciTE
 
 Nel panorama attuale, esistono moltissimi software per l’editazione dei file di
@@ -51,6 +53,8 @@ Ecco un’immagine di **RSciTE** in azione:
 <p style="text-align:center;">
 <img src="completo-ita.png" align="middle" alt="RSciTE" border="0" width="80%">
 </p>
+
+<p style="page-break-before: always;">&nbsp;</p>
 
 ### Ancora su SciTE
 
@@ -106,6 +110,8 @@ vantaggi significativi dalla sua potenza e dalla sua essenzialità.
 In pratica, SciTE, si candida ad essere il sostituto sia del classico "Blocco
 Note" sia degli editor professionali utilizzati nello sviluppo delle
 applicazioni software.
+
+<p style="page-break-before: always;">&nbsp;</p>
 
 ### Le Caratteristiche Base di SciTE
 
@@ -182,6 +188,8 @@ modalità finestra in primo piano, configurazione indentazione, possibilità di
 automatizzare processi tramite l’uso dei parametri della linea di comando,
 interfaccia di programmazione per il collegamento a software esterni 
 e molto altro...
+
+<p style="page-break-before: always;">&nbsp;</p>
 
 ### Le Scorciatoie da Tastiera
 
@@ -320,6 +328,8 @@ che si sta utilizzando, inoltre consente di accedere alla procedura di
 aggiornamento 
 (disponibile solo in "RSciTE").
 
+<p style="page-break-before: always;">&nbsp;</p>
+
 ### Il Linguaggio di programmazione LUA
 
 <p>
@@ -382,6 +392,8 @@ file corrente:
 Per approfondire le proprie conoscenze su **LUA** e sul suo utilizzo, si consulti
 la sezione **Siti Utili**.
 
+<p style="page-break-before: always;">&nbsp;</p>
+
 ### SciTE al Lavoro
 
 **RSciTE** editando un file .cpp (linguaggio C++):
@@ -407,6 +419,8 @@ la sezione **Siti Utili**.
 <p style="text-align:center;">
 <img src="php.png" align="middle" alt="PHP con Aiuto" border="0" width="80%">
 </p>
+
+<p style="page-break-before: always;">&nbsp;</p>
 
 ### RSciTE
 
@@ -436,6 +450,8 @@ necessario) la produttività dell’editor.
 Inoltre, nella distribuzione **RSciTE** sono inseriti altri software che,
 uniti all’editor di testo, permettono di ottenere un formidabile strumento
 di editazione e di gestione.
+
+<p style="page-break-before: always;">&nbsp;</p>
 
 ### Funzionalità Aggiuntive in RSciTE
 
@@ -519,12 +535,16 @@ essere costretti ad agire direttamente sui file di configurazione.
 * Oltre a quanto riportato in questo elenco, sono presenti molte modifiche,
 secondarie, alle impostazioni di base (es.: margini, numeri linea ecc..).
 
+<p style="page-break-before: always;">&nbsp;</p>
+
 ### F12
 
 In questa sezione sono elencate le funzionalità fornite dalla funzione **F12**,
 presente nella distribuzione **RSciTE**.
 
 **F12** ovviamente è richiamabile con l'omonimo tasto **F12**.
+
+<p style="page-break-before: always;">&nbsp;</p>
 
 ### Funzionalità Avanzate per la modifica dei file di testo
 
@@ -533,6 +553,8 @@ funzionalità previste da altri editor e che SciTE ancora non supporta.
 
 Per sopperire a tale mancanza, sfruttando il potente linguaggio interno a
 SciTE (LUA), **RSciTE** prova ad includere ciò che manca.
+
+<p style="page-break-before: always;">&nbsp;</p>
 
 ### E’ nato F12!
 
@@ -557,6 +579,8 @@ basterebbe inserire la parola "elimina", in questo modo:
 <p style="text-align:center;">
 <img src="f12-filter.png" align="middle" alt="Filtro F12" border="0" width="40%">
 </p>
+
+<p style="page-break-before: always;">&nbsp;</p>
 
 ### Cosa contiene F12
 
@@ -797,6 +821,8 @@ all’interno del pannello principale, senza alcuno sforzo, attraverso
 l’utilizzo dell’apposita funzione, posta al termine dell’elenco di
 **F12**.
 
+<p style="page-break-before: always;">&nbsp;</p>
+
 ### Ricerca Contestuale alternativa in RSciTE
 
 **RSciTE** incorpora una particolare funzione che gli consente di cercare un
@@ -859,6 +885,8 @@ Microsoft (Developer):
 <img src="ctrl-f1-cpp3.png" align="middle" alt="Ctrl+F1 API Windows" border="0" width="80%">
 </p>
 
+<p style="page-break-before: always;">&nbsp;</p>
+
 ### Tools Aggiuntivi presenti in RSciTE
 
 Nella distribuzione **RSciTE** sono stati introdotti una serie di software
@@ -884,6 +912,8 @@ sostituzione del testo.
 editando.
 * **GpPG**, in **RSciTE** permette di criptare e decriptare file di testo.
 * **Iconv**, consente di cambiare la codifica di un file.
+
+<p style="page-break-before: always;">&nbsp;</p>
 
 ### WinMerge, Confrontare e Unire File
 
@@ -928,6 +958,8 @@ conflitti e applicazione patch.
 <img src="winmerge.png" align="middle" alt="WinMerge" border="0" width="80%">
 </p>
 
+<p style="page-break-before: always;">&nbsp;</p>
+
 ### FRhed
 
 **FRhed** è un potente editor esadecimale, adatto alla visualizzazione e alla
@@ -971,6 +1003,8 @@ i colori e lo sfondo.
 * **Accesso diretto** ai settori dei dischi.
 * Supporto alla **Crittografia**.
 * **Software Libero** con sorgenti disponibili e liberamente modificabili secondo la licenza GPL.
+
+<p style="page-break-before: always;">&nbsp;</p>
 
 ### HTML Tidy, Formattare HTML e XML
 
@@ -1030,6 +1064,8 @@ possibile semplificare il suo utilizzo tramite l’uso di una delle interfacce
 grafiche realizzate da programmatori indipendenti. Per maggiori dettagli si
 consulti la sezione **Siti Utili**.
 
+<p style="page-break-before: always;">&nbsp;</p>
+
 ### dnGREP
 
 **dnGREP** è un software, multi piattaforma, studiato per semplificare la
@@ -1050,6 +1086,8 @@ esteso delle espressioni regolari.
 Nell’immagine riportata sopra, si può osservare **dnGREP** durante
 l’operazione di ricerca del testo **.fore** all’interno di tutti i
 file .properties presenti in una cartella.
+
+<p style="page-break-before: always;">&nbsp;</p>
 
 ### Personalizzare e Configurare RSciTE
 
@@ -1223,6 +1261,8 @@ Una volta aperto il file, inseriamo quanto segue:
 Queste impostazioni permettono di utilizzare i normali file di testo e i file
 scritti in **PHP/HTML/XML/Javascript/Lua/InnoSetup** con fondo nero e testo chiaro.
 
+<p style="page-break-before: always;">&nbsp;</p>
+
 ### Siti Utili
 
 **Siti relativi ai software inclusi in RSciTE**
@@ -1254,6 +1294,8 @@ ecco l’elenco dei collegamenti ai siti più utili.
     - [HTML validator che sfrutta HTML Tidy per il controllo delle pagine](http://www.thedumbterminal.co.uk/services/tidy.shtml).
 - **Cloc**, Count Lines of Code
     - [Pagina Ufficiale di Cloc](http://cloc.sourceforge.net/).
+
+<p style="page-break-before: always;">&nbsp;</p>
 
 ### Nota di Copyright
 
