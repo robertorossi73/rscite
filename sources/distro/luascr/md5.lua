@@ -1,6 +1,6 @@
 --[[
 Author  : Roberto Rossi
-Version : 1.1.1
+Version : 1.1.2
 Web     : http://www.redchar.net
 
 Genera l'MD5 del file corrente o della selezione
@@ -64,7 +64,7 @@ do
     local posn
     
     md5lua_genText(testo,false)
-    result = rfx_exeCapture(md5lua_genBat())
+    result = rfx_exeCapture("\""..md5lua_genBat().."\"")
     md5lua_genText(testo,true)
     pos = string.find(result, "*")
     if pos then

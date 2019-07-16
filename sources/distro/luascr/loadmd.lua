@@ -1,5 +1,5 @@
 --[[
-Version : 3.3.4
+Version : 3.3.6
 Web     : http://www.redchar.net
 
 Questa procedura permette l'anteprima di un file markdown, convertendolo in html
@@ -234,7 +234,7 @@ do
         end
         
         print(_t(338)..htmlFileDest.._t(343))
-        rfx_exeCapture(markdown_genBat())        
+        rfx_exeCapture("\""..markdown_genBat().."\"")
         markdown_modHtml(htmlFile, cssFile, htmlModel)
         
         if (OpenHtml) then
@@ -254,7 +254,7 @@ do
         
         if (PUBLIC_optionScript == "RUN") then
             --preview in browser
-            rfx_exeCapture(markdown_genBat())
+            rfx_exeCapture("\""..markdown_genBat().."\"")
             markdown_modHtml(htmlFile, false, previousModel)
             rwfx_ShellExecute(markdown_getHtmlName(),"")
             PUBLIC_optionScript = ""
