@@ -6,7 +6,7 @@ Editor di configurazione per le proprietà di SciTE
 
 Configurazioni
 
-Copyright (C) 2017-2018 Roberto Rossi 
+Copyright (C) 2017-2019 Roberto Rossi 
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -99,6 +99,12 @@ cfgEditor_tblItems = {
 "Setting tabbar.hide.index to 1 will hide the buffer number in tabs. "
 },
 
+{
+    "Font testo in editazione",
+    "str", "font.monospace", false,
+    "The font name and size to be used."
+},
+
 -- --------------------------------------------------------------------
 -- "Dimensione e visibilita'",
 
@@ -125,6 +131,17 @@ cfgEditor_tblItems = {
 
 -- --------------------------------------------------------------------
 "Controllo",
+
+{
+    "Interfaccia per funzione Sostituisci",
+    "int", "replace.use.strip", 
+    {
+        "Utilizza una interfaccia a finestra indipendente (0)","0",
+        "Integra l'interfaccia nella finestra principale (1)","1",
+        "Valore predefinito", "*REMOVE*"
+    },
+"Use in-window strips rather than dialogs for performing Replace commands."
+},
 
 {
     "Numero massimo di file contemporanei", 
