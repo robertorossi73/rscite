@@ -1488,8 +1488,7 @@ NameError: name 'mistake' is not defined
           Without this setting, SciTE will use less memory but will fail for files that are
           larger than 2 gigabytes when opened or grow larger than 2 gigabytes.
           The default value is 100000000 so files larger than 100,000,000 bytes are opened in large mode.<br />
-          The large mode only works when SciTE is built as a 64-bit application and the
-          downloads available from scintilla.org are only 32-bit builds.
+          The large mode only works when SciTE is built as a 64-bit application.
         </td>
       </tr>
       <tr id='property-file.size.no.styles'>
@@ -2309,6 +2308,10 @@ NameError: name 'mistake' is not defined
 	<td>fold.d.syntax.based</td>
 	<td>Set this property to 0 to disable syntax based folding.</td>
 	</tr>
+	<tr id='property-fold.dataflex.compilerlist'>
+	<td>fold.dataflex.compilerlist</td>
+	<td>Set to 1 for enabling the code folding feature in *.prn files</td>
+	</tr>
 	<tr id='property-fold.haskell.imports'>
 	<td>fold.haskell.imports</td>
 	<td>Set to 1 to enable folding of import declarations</td>
@@ -2384,6 +2387,10 @@ NameError: name 'mistake' is not defined
 	<tr id='property-fold.verilog.flags'>
 	<td>fold.verilog.flags</td>
 	<td>This option enables folding module definitions. Typically source files contain only one module definition so this option is somewhat useless.</td>
+	</tr>
+	<tr id='property-fold.xml.at.tag.open'>
+	<td>fold.xml.at.tag.open</td>
+	<td>Enable folding for XML at the start of open tag. The default is off.</td>
 	</tr>
 	<tr id='property-html.tags.case.sensitive'>
 	<td>html.tags.case.sensitive</td>
@@ -2592,11 +2599,13 @@ NameError: name 'mistake' is not defined
         This is a '|' delimited list of keys and the commands they produce.
         The commands are either <a href="CommandValues.html">string or numeric IDs</a>.
         Numeric IDs above 2000 are Scintilla commands and are sent to the focussed pane.
-        Named IDs and numeric IDs below 2000 are SciTE menu commands.
-        The modifiers are Ctrl, Shift, Alt, and Super and the named keys are Left,
-        Right, Up, Down, Insert, End, Home, Enter, Space, Tab, KeypadPlus, KeypadMinus,
-        KeypadMultiply, KeypadDivide, Escape, Delete, PageUp, PageDown, Slash,
-        Question, Equal, Win.
+        Named IDs and numeric IDs below 2000 are SciTE menu commands.<br/>
+        The modifiers are Ctrl, Shift, Alt, <span class="gtkonly">Super</span>, and <span class="osxonly">Control</span>.<br/>
+        The named keys are Left, Right, Up, Down, Insert, End, Home, Enter, Space, Tab,
+        KeypadPlus, KeypadMinus, KeypadMultiply, KeypadDivide, <span class="windowsonly">KeypadDecimal</span>,
+        Escape, Delete, PageUp, PageDown,
+        <span class="gtkonly">Slash</span>, <span class="gtkonly">Question</span>, <span class="gtkonly">Equal</span>, 
+        Win, Menu.
         <br/>
         On macOS the command key uses the modifier Ctrl+ as this eases using one setting between platforms and
         the control key uses the modifier Control+.

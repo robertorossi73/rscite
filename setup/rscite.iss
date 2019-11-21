@@ -14,7 +14,7 @@
 ;{03EBF679-E886-38AD-8E70-28658449F7F9} Microsoft Visual C++ 2017 x64 Minimum Runtime - 14.14.26429
 ;{B12F584A-DE7A-3EE3-8EC4-8A64DBC0F2A7} Microsoft Visual C++ 2017 x64 Additional Runtime - 14.14.26429
 
-#define RSciTEVersion 81
+#define RSciTEVersion 82
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application.
@@ -24,7 +24,7 @@ AppId={{A4729A09-46FB-4766-9D9D-24358E58E453}
 
 AppName=RSciTE
 AppVerName=RSciTE {#RSciTEVersion}
-OutputDir=d:\temp\output\
+OutputDir=c:\temp\output\
 OutputBaseFilename=setup-rscite-{#RSciTEVersion}
 
 UninstallDisplayName=RSciTE
