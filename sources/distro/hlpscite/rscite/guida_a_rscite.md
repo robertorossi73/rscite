@@ -4,7 +4,7 @@
 
 **Autore : Roberto Rossi**
 
-**Versione 83**
+**Versione 84**
 
 Un gestore di testi **potente**, **semplice**, **veloce**, **poliedrico**...
 
@@ -146,7 +146,7 @@ most of it except for some ambiguous cases, PL/M, Progress, PostScript,
 POV-Ray, PowerBasic, PowerShell, PowerPro, PureBasic, Python, R, Rebol,
 Registry, Ruby, Rust, Scheme, scriptol, SORCUS Installation, Specman E, Spice,
 Smalltalk, SQL and PLSQL, S-Record, Swift, TADS3, TeX and LaTeX, Tcl/Tk, Vala,
-VB and VBScript, Verilog, VHDL, XML, YAML.
+VB and VBScript, Verilog, VHDL, XML, YAML, Raku(Perl 6), DataFlex.
 * Evidenziazione dinamica parentesi.
 * Folding del codice sorgente con possibilità di scegliere la simbologia per la
 visualizzazione.
@@ -1302,7 +1302,7 @@ ecco l’elenco dei collegamenti ai siti più utili.
 Questo documento, **RSciTE. Guida alle Caratteristiche**, è distribuito 
 secondo la seguente licenza.
 
-Copyright (c) 2005-2018 Roberto Rossi.
+Copyright (c) 2005-2020 Roberto Rossi.
 
 Permission is granted to copy, distribute and/or modify this document under
 the terms of the GNU Free Documentation License, Version 1.2 or any later

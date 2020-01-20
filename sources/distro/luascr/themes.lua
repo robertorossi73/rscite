@@ -131,6 +131,8 @@ do
                             "styles\\yaml",
                             "styles\\nim",
                             "styles\\cil",
+                            "styles\\raku",
+                            "styles\\dataflex",
                             "dark-theme"
                             }
         local pos

@@ -14,7 +14,7 @@
 ;{03EBF679-E886-38AD-8E70-28658449F7F9} Microsoft Visual C++ 2017 x64 Minimum Runtime - 14.14.26429
 ;{B12F584A-DE7A-3EE3-8EC4-8A64DBC0F2A7} Microsoft Visual C++ 2017 x64 Additional Runtime - 14.14.26429
 
-#define RSciTEVersion 83
+#define RSciTEVersion 84
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application.
@@ -223,11 +223,11 @@ begin
           //registrazione menu contestuale a 64 bit
           if FileExists(ExpandConstant('{app}\wscitecm64_en.dll')) then
           begin
-            RegisterServer(true, ExpandConstant('{app}\wscitecm64_en.dll'), True);
+            RegisterServer(Is64BitInstallMode, ExpandConstant('{app}\wscitecm64_en.dll'), True);
           end;
           if FileExists(ExpandConstant('{app}\wscitecm64_it.dll')) then
           begin
-            RegisterServer(true, ExpandConstant('{app}\wscitecm64_it.dll'), True);
+            RegisterServer(Is64BitInstallMode, ExpandConstant('{app}\wscitecm64_it.dll'), True);
           end;
         end;
         
