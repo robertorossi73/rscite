@@ -14,7 +14,7 @@
 ;{03EBF679-E886-38AD-8E70-28658449F7F9} Microsoft Visual C++ 2017 x64 Minimum Runtime - 14.14.26429
 ;{B12F584A-DE7A-3EE3-8EC4-8A64DBC0F2A7} Microsoft Visual C++ 2017 x64 Additional Runtime - 14.14.26429
 
-#define RSciTEVersion 84
+#define RSciTEVersion 85
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application.
@@ -24,7 +24,7 @@ AppId={{A4729A09-46FB-4766-9D9D-24358E58E453}
 
 AppName=RSciTE
 AppVerName=RSciTE {#RSciTEVersion}
-OutputDir=c:\temp\output\
+OutputDir=d:\temp\output\
 OutputBaseFilename=setup-rscite-{#RSciTEVersion}
 
 UninstallDisplayName=RSciTE
@@ -48,6 +48,7 @@ UninstallDisplayIcon=rsetup.ico
 DisableWelcomePage=false
 AlwaysShowDirOnReadyPage=yes
 DisableDirPage=no
+ArchitecturesAllowed=x64 ia64
 
 [Languages]
 Name: english; MessagesFile: compiler:Default.isl
@@ -61,8 +62,8 @@ Name: desktopicon; Description: {cm:CreateDesktopIcon}; GroupDescription: {cm:Ad
 [Files]
 Source: ..\sources\distro\*; DestDir: {app}; Flags: ignoreversion recursesubdirs createallsubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
-Source: ..\sources\distro_dll\wscitecm_it.dll; DestDir: {app}; Flags: onlyifdoesntexist uninsrestartdelete; Check: not IsWin64; Tasks: ; Languages: italian
-Source: ..\sources\distro_dll\wscitecm_en.dll; DestDir: {app}; Flags: onlyifdoesntexist uninsrestartdelete; Check: not IsWin64; Tasks: ; Languages: english
+;Source: ..\sources\distro_dll\wscitecm_it.dll; DestDir: {app}; Flags: onlyifdoesntexist uninsrestartdelete; Check: not IsWin64; Tasks: ; Languages: italian
+;Source: ..\sources\distro_dll\wscitecm_en.dll; DestDir: {app}; Flags: onlyifdoesntexist uninsrestartdelete; Check: not IsWin64; Tasks: ; Languages: english
 Source: ..\sources\distro_dll\wscitecm64_it.dll; DestDir: {app}; Flags: onlyifdoesntexist uninsrestartdelete; Check: IsWin64; Languages: italian
 Source: ..\sources\distro_dll\wscitecm64_en.dll; DestDir: {app}; Flags: onlyifdoesntexist uninsrestartdelete; Check: IsWin64; Tasks: ; Languages: english
 ;Elimina superflui per trasformare versione italiana in inglese
@@ -185,50 +186,20 @@ begin
     if (not IsTaskSelected('portablemode')) then
     begin
         //gestione runtimes
-        if (IsWin64)then
+        if NOT VCVersionInstalled(VC_2017_REDIST_x64) then
         begin
-            //win 64
-            if NOT VCVersionInstalled(VC_2017_REDIST) then
-            begin
-                //installazione runtime 32bit
-                Exec(ExpandConstant('{app}\tools\runtimes\vcredist_x86-2017.exe'), '/install /passive /norestart', '', SW_SHOW, ewWaitUntilTerminated, ResultCode)
-            end;
-            if NOT VCVersionInstalled(VC_2017_REDIST_x64) then
-            begin
-                //installazione runtime 64bit
-                Exec(ExpandConstant('{app}\tools\runtimes\vcredist_x64-2017.exe'), '/install /passive /norestart', '', SW_SHOW, ewWaitUntilTerminated, ResultCode)
-            end;
-        end else
-        begin
-            //win 32
-            if NOT VCVersionInstalled(VC_2017_REDIST) then
-            begin
-                //installazione runtime 32bit
-                Exec(ExpandConstant('{app}\tools\runtimes\vcredist_x86-2017.exe'), '/install /passive /norestart', '', SW_SHOW, ewWaitUntilTerminated, ResultCode)
-            end;
+            //installazione runtime 64bit
+            Exec(ExpandConstant('{app}\tools\runtimes\vcredist_x64-2017.exe'), '/install /passive /norestart', '', SW_SHOW, ewWaitUntilTerminated, ResultCode)
         end;
 
-        //registrazione menu contestuale a 32 bit
-        if FileExists(ExpandConstant('{app}\wscitecm_en.dll')) then
+        //registrazione menu contestuale a 64 bit
+        if FileExists(ExpandConstant('{app}\wscitecm64_en.dll')) then
         begin
-          RegisterServer(false, ExpandConstant('{app}\wscitecm_en.dll'), True);
-        end;
-        if FileExists(ExpandConstant('{app}\wscitecm_it.dll')) then
-        begin
-          RegisterServer(false, ExpandConstant('{app}\wscitecm_it.dll'), True);
-        end;
-
-        if (IsWin64)then
-        begin
-          //registrazione menu contestuale a 64 bit
-          if FileExists(ExpandConstant('{app}\wscitecm64_en.dll')) then
-          begin
             RegisterServer(Is64BitInstallMode, ExpandConstant('{app}\wscitecm64_en.dll'), True);
-          end;
-          if FileExists(ExpandConstant('{app}\wscitecm64_it.dll')) then
-          begin
+        end;
+        if FileExists(ExpandConstant('{app}\wscitecm64_it.dll')) then
+        begin
             RegisterServer(Is64BitInstallMode, ExpandConstant('{app}\wscitecm64_it.dll'), True);
-          end;
         end;
         
         //rimozione eventuali configurazioni di dnGrep
