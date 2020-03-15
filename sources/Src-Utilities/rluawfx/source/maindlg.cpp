@@ -377,13 +377,13 @@ maxLen=0;
 
     switch (message) 
     { 
-			case WM_KEYDOWN:
+	  case WM_KEYDOWN:
 				hdc=0;
 				break;
       case WM_INITDIALOG:
 				//impostazione callback per editbox
-				public_LstDlg_data.LstDlg_EditProc = (WNDPROC)GetWindowLong(GetDlgItem(hwndDlg,IDC_EDIT1), GWL_WNDPROC);
-				SetWindowLong(GetDlgItem(hwndDlg,IDC_EDIT1), GWL_WNDPROC, (LONG)LstDlg_Edit_SubProc);
+				public_LstDlg_data.LstDlg_EditProc = (WNDPROC)GetWindowLongPtr(GetDlgItem(hwndDlg,IDC_EDIT1), GWLP_WNDPROC);
+				SetWindowLongPtrA(GetDlgItem(hwndDlg,IDC_EDIT1), GWLP_WNDPROC, (LONG_PTR)LstDlg_Edit_SubProc);
 
         //centratura posizionamento dialog
 		if ((hwndOwner = GetActiveWindow()) == NULL)

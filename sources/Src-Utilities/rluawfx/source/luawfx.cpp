@@ -24,9 +24,9 @@ extern "C"
 }
 //#include <lua.h>
 
-#ifndef WIN32
+/*#ifndef WIN32
   #error "Only for Win32!"
-#endif
+#endif*/
 
 #include <shlwapi.h>
 #include <io.h>

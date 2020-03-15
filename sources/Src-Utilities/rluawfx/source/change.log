@@ -2,6 +2,8 @@
   nuova funzione c_callFXex in grado di richiamare funzioni presenti in 
   librerie esterne
 
+V.5.1.0.0
+* versione 64bit
 
 V.4.1.1.0
 * eliminate tutti i riferimenti a MathParseKit
