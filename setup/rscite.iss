@@ -49,6 +49,7 @@ DisableWelcomePage=false
 AlwaysShowDirOnReadyPage=yes
 DisableDirPage=no
 ArchitecturesAllowed=x64 ia64
+ArchitecturesInstallIn64BitMode=x64 ia64
 
 [Languages]
 Name: english; MessagesFile: compiler:Default.isl
