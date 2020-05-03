@@ -1,7 +1,7 @@
 Option Explicit
 ' Autore : Roberto Rossi
 ' Web    : http://www.redchar.net
-' Versione : 1.6
+' Versione : 1.7
 '
 ' Questo script consente il caricamento di un file lsp
 ' in un cad
@@ -220,6 +220,9 @@ function GetAcad()
     end if
     if (obj is Nothing) then
         set obj = GetAcadApp("AutoCAD.Application.23.1")'AutoCAD 2020
+    end if
+    if (obj is Nothing) then
+        set obj = GetAcadApp("AutoCAD.Application.24")'AutoCAD 2021
     end if
     
     if (IsEmpty(obj)) then
