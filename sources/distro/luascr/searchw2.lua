@@ -1,5 +1,5 @@
 --[[
-Version : 2.0.2
+Version : 2.1.2
 Web     : http://www.redchar.net
 
 Questa procedura consente l'apertura di una pagina web all'interno del browser
@@ -8,7 +8,7 @@ di default
 Inoltre consente l'inserimento della selezione corrente all'interno dell'url
 di connessione
 
-Copyright (C) 2004-2018 Roberto Rossi 
+Copyright (C) 2004-2020 Roberto Rossi 
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -58,6 +58,7 @@ do
     local nome
     local url
     local espressione
+    local espressione2
     local cartellaScript = props["SciteDefaultHome"].."/luascr/"
     local nomefini = cartellaScript.."searchw.ini"
     local elementi = rfx_GetIniSec(nomefini,"General")
@@ -71,6 +72,8 @@ do
 --~     --  C++;http://www.cplusplus.com/query/search.cgi?q=xxxxxxx
 --~     --  MSN;http://search.msn.com/results.aspx?q=xxxxxxx
 --~     --  MSDN;http://search.msdn.microsoft.com/search/Default.aspx?query=xxxxxxx&brand=msdn&locale=en-us&refinement=00&lang=en-us
+--      Nella qeury xxxxxxx viene sostituito con il testo cercato
+--                  xxxxxxxdashx viene sostituito con il testo nel quale gli spazi diventano "-"
 --~     --  ....
 --~     lista = _t(139)
 --~     elementi = rfx_Split(lista,"|")
@@ -100,8 +103,10 @@ do
       end
       
       espressione = rfx_Trim(espressione)
+      espressione2 = string.gsub(espressione," ","-")
       if espressione ~= "" then
-        comando = string.gsub(url,"xxxxxxx",espressione)
+        comando = string.gsub(url,"xxxxxxxdashx",espressione2)
+        comando = string.gsub(comando,"xxxxxxx",espressione)
         --print(comando)
         rwfx_ShellExecute(comando,"")
       end
