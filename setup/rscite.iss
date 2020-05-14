@@ -2,8 +2,10 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 ;Autore :   Roberto Rossi
-;Versione : 3.1.6
+;Versione : 4.0.0
 ;Web      : http://www.redchar.net
+
+;Compatible with Inno Setup 6 or later
 
 ;how check redist vc
 ;https://pingfu.net/how-to-detect-which-version-of-visual-c-runtime-is-installed
@@ -32,18 +34,19 @@ AppPublisher=Roberto Rossi
 AppPublisherURL=http://www.redchar.net/
 AppSupportURL=http://www.redchar.net/
 AppUpdatesURL=http://www.redchar.net/
-DefaultDirName={pf}\RSciTE
+DefaultDirName={commonpf}\RSciTE
 DefaultGroupName=RSciTE
 LicenseFile=..\sources\distro\Licenze_distribuzione.txt
 Compression=lzma
 SolidCompression=no
 ;WizardImageFile=rscite.bmp
+WizardStyle=modern
 WizardImageFile=compiler:wizmodernimage-is.bmp
 WizardSmallImageFile=compiler:wizmodernsmallimage-is.bmp
 SetupIconFile=rsetup.ico
 UninstallRestartComputer=true
 DisableProgramGroupPage=yes
-Uninstallable=not IsTaskSelected('portablemode')
+Uninstallable=not WizardIsTaskSelected('portablemode')
 UninstallDisplayIcon=rsetup.ico
 DisableWelcomePage=false
 AlwaysShowDirOnReadyPage=yes
@@ -184,7 +187,7 @@ begin
   if (CurStep=ssPostInstall) then //installazione conclusive
   begin
 
-    if (not IsTaskSelected('portablemode')) then
+    if (not WizardIsTaskSelected('portablemode')) then
     begin
         //gestione runtimes
         if NOT VCVersionInstalled(VC_2017_REDIST_x64) then
