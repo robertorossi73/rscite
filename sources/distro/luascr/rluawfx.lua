@@ -1,5 +1,5 @@
 --[[
-Version : 3.3.1
+Version : 3.4.1
 Web     : http://www.redchar.net
 
 Funzioni di utilità per macro SciTE/Lua
@@ -183,36 +183,27 @@ if not(rwfx_info) then
     --  .NameDistro --nome distribuzione
     --  .UrlUpg --url ultima versione
     function rfx_GetVersionTable()
-        return rfx_GetVerTblFromFile(props["SciteDefaultHome"].."\\version.txt")
+        return rfx_GetVerTblFromIniFile(props["SciteDefaultHome"].."\\version.txt")
     end
+    
     --funzione complementare a rfx_GetVersionTable
-    function rfx_GetVerTblFromFile(nomef)
+    function rfx_GetVerTblFromIniFile(nomef)
       local resultTbl = {}
       local idf 
       local linea
       local lineaTbl
-      idf = io.open(nomef,"r")
-      --formato version.txt (-> = tabulazione)
-      --autore->nomeDistro->V.XXXX->V.YYYY->V.ZZZZ->V.AAAA->V.BBBB->URL->url aggiornamento
       
-      if idf then
-        for linea in idf:lines() do
-          lineaTbl = rfx_Split(linea, "\t")
-          resultTbl.Source = linea
-          resultTbl.Author = lineaTbl[1]
-          resultTbl.NameDistro = lineaTbl[2]
-          resultTbl.FileMajorPart = tonumber(lineaTbl[3]) --versione 1
-          resultTbl.FileMinorPart = tonumber(lineaTbl[4]) --versione 2
-          resultTbl.FileBuildPart = tonumber(lineaTbl[5]) --versione 3
-          resultTbl.FilePrivatePart = tonumber(lineaTbl[6]) --versione 4
-          resultTbl.Distro = tonumber(lineaTbl[7]) --versione distro
-          resultTbl.AddPart = lineaTbl[8] --parte verisone libera
-          resultTbl.Url = lineaTbl[9] --url
-          resultTbl.UrlUpg = lineaTbl[10] --url
-          break
-        end
-        io.close(idf)      
-      end
+      resultTbl.Author = rfx_GetIniVal(nomef,"General","Author")
+      resultTbl.NameDistro = rfx_GetIniVal(nomef,"General","Name")
+      resultTbl.FileMajorPart = rfx_GetIniVal(nomef,"SciTE","MajorSciTE")
+      resultTbl.FileMinorPart = rfx_GetIniVal(nomef,"SciTE","MinorSciTE")
+      resultTbl.FileBuildPart = rfx_GetIniVal(nomef,"SciTE","BuildSciTE")
+      resultTbl.FilePrivatePart = "" --non definito
+      resultTbl.Distro = rfx_GetIniVal(nomef,"RSciTE","Major")
+      resultTbl.AddPart = "" --non definito
+      resultTbl.Url = rfx_GetIniVal(nomef,"RSciTE","WebRSciTE")
+      resultTbl.UrlUpg = rfx_GetIniVal(nomef,"RSciTE","Download")
+      resultTbl.AuthorUrl = rfx_GetIniVal(nomef,"General","Web")
       
       return resultTbl 
     end
