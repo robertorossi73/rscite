@@ -16,6 +16,6 @@ IniOnline=https://www.redchar.net/rscite/version.txt
 ;Versione di SciTE inclusa
 [SciTE]
 MajorSciTE=4
-MinorSciTE=3
+MinorSciTE=4
 BuildSciTE=3
 
