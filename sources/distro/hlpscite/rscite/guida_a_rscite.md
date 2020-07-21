@@ -912,6 +912,7 @@ sostituzione del testo.
 editando.
 * **GpPG**, in **RSciTE** permette di criptare e decriptare file di testo.
 * **Iconv**, consente di cambiare la codifica di un file.
+* **SQLite**, consente di interpretare ed eseguire un file SQL attraverso l'uso di questo diffuso motore di database.
 
 <p style="page-break-before: always;">&nbsp;</p>
 
