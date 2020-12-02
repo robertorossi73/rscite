@@ -4,7 +4,7 @@
 
 **Autore : Roberto Rossi**
 
-**Versione 89**
+**Versione 90**
 
 Un gestore di testi **potente**, **semplice**, **veloce**, **poliedrico**...
 
@@ -814,6 +814,8 @@ System Information di Windows.
 una nuova finestra di SciTE.
 * **Generatore Password**. Con questa funzione è possibile generare delle password
 casuali selezionando le caratteristiche della parola chiave da generare.
+* **Accorcia indirizzo web selezionato**. Una semplice funzione che, grazie al
+servizio offerto da Tinyurl.com riduce la lunghezza degli indirizzi web.
 
 In aggiunta a queste funzionalità, **F12** consente all’utente la
 realizzazione degli script personalizzati e la loro integrazione direttamente
