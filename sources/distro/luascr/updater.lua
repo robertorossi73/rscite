@@ -47,7 +47,7 @@ do
     function buttonOk_click(control, change)
         local versionTbl
         versionTbl = rfx_GetVersionTable()
-        rwfx_ShellExecute(versionTbl.Url.."/rscite","")
+        rwfx_ShellExecute(versionTbl.Url,"")
     end
   
     --ritorna la stringa con la versione corrente del programma
