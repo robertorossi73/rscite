@@ -48,21 +48,43 @@ HWND GetHWNDDirectorExtension (void)
 
 
 //scrive un testo nel file di scambio temporaneo specificato
-int writeStrinToTmp (const char* origin, const char *fileName )
+int writeStrinToTmp(const char* origin, const char* fileName)
 {
-  FILE *stream;
-  int res;
+    FILE* stream;
+    int res;
 
-  stream = fopen(fileName,"w");
-  if (stream == NULL) 
-    return 0; //impossibile aprire file di scambio
-  res = fprintf(stream,origin);
-  if (res < 0) 
-    return -1; //impossibile scrivere nel file di scambio
-  if (fclose(stream) != 0)
-    return -2; //impossibile chiudere il file di scambio
+    stream = fopen(fileName, "w");
+    if (stream == NULL)
+        return 0; //impossibile aprire file di scambio
+    res = fprintf(stream, origin);
+    if (res < 0)
+        return -1; //impossibile scrivere nel file di scambio
+    if (fclose(stream) != 0)
+        return -2; //impossibile chiudere il file di scambio
 
-  return 1;
+    return 1;
+}
+
+int writeStrinToTmpW(const wchar_t* origin, const wchar_t* fileName)
+{
+    FILE* stream;
+    int res;
+    size_t  strSize;
+
+    stream = _wfopen(fileName, L"wt,ccs=UTF-8");
+    if (stream == NULL)
+        return 0; //impossibile aprire file di scambio
+    
+    rewind(stream); //riposiziona all'inizio per eliminare la BOM
+
+    strSize = wcslen(origin);
+    if (fwrite(origin, sizeof(wchar_t), strSize, stream) != strSize)
+        return -1;
+
+    if (fclose(stream) != 0)
+        return -2; //impossibile chiudere il file di scambio
+
+    return 1;
 }
 
 //visualizza una dialog di errore contenente il messaggio specificato
@@ -73,4 +95,18 @@ void showErrorMsg ( const char* msg )
           hwndOwner = GetDesktopWindow();
       }
   MessageBox(hwndOwner,msg,"Error",MB_OK | MB_ICONERROR);
+}
+
+const wchar_t* CharToW(const char* c)
+{
+    const size_t cSize = strlen(c) + 1;
+    wchar_t* wc = new wchar_t[cSize];
+    mbstowcs(wc, c, cSize);
+
+    return wc;
+}
+
+void DeleteChToW(const wchar_t* c)
+{
+    delete[] c;
 }

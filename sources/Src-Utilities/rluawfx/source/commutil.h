@@ -5,7 +5,12 @@
 HWND GetHWNDDirectorExtension (void);
 
 //scrive un testo nel file indicato
-int writeStrinToTmp (const char*, const char *);
+int writeStrinToTmp(const char*, const char*);
+int writeStrinToTmpW(const wchar_t*, const wchar_t*);
+
+//converte un char in wchar_t
+const wchar_t* CharToW(const char*);
+void DeleteChToW(const wchar_t*); //elimna la stringa convertita da CharToW
 
 //visualizza messaggio di errore
 void showErrorMsg ( const char*  );

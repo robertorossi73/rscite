@@ -284,12 +284,12 @@ LUALIB_API int c_ListDlg(lua_State *L)
 
 LUALIB_API int c_GetFileName(lua_State *L)
 {
-  OPENFILENAME ofn;       // common dialog box structure
-  char szFile[_MAX_PATH];       // buffer for file name
+  OPENFILENAMEW ofn;       // common dialog box structure
+  wchar_t szFile[_MAX_PATH];       // buffer for file name
   const int n = lua_gettop(L);
-  const char *title, *defaultPath, *fileName;
-  const char *estensione;
-  char bufferExt[255];
+  const wchar_t *title, *defaultPath, *fileName;
+  const wchar_t *estensione;
+  wchar_t bufferExt[255];
   lua_Number opt;
 
   if ((lua_type(L,1)==LUA_TSTRING) && 
@@ -299,17 +299,17 @@ LUALIB_API int c_GetFileName(lua_State *L)
       (n > 3))
   {
 
-    title = lua_tostring(L,1); //titolo finestra
-    defaultPath = lua_tostring(L,2); //percorso di default
+    title = CharToW(lua_tostring(L,1)); //titolo finestra
+    defaultPath = CharToW(lua_tostring(L,2)); //percorso di default
     opt = lua_tonumber(L,3); //opzioni 
-		fileName = lua_tostring(L,4); //nome file scambio temporaneo
+	fileName = CharToW(lua_tostring(L,4)); //nome file scambio temporaneo
     
     if ( (n==5) &&(lua_type(L,5)==LUA_TSTRING))
     {
-      estensione = lua_tostring(L,5);//filtro
+      estensione = CharToW(lua_tostring(L,5));//filtro
       ZeroMemory(bufferExt, sizeof(bufferExt));
       //sostituisce i %c con il carattere '\0'
-      sprintf(bufferExt,estensione,'\0');
+      swprintf(bufferExt,estensione,'\0');
     } else
       estensione = NULL;
 
@@ -321,7 +321,7 @@ LUALIB_API int c_GetFileName(lua_State *L)
     ofn.lpstrFile[0] = '\0';
     ofn.nMaxFile = sizeof(szFile);
     if (estensione == NULL)
-      ofn.lpstrFilter = "Tutto\0*.*\0";
+      ofn.lpstrFilter = L"Tutto\0*.*\0";
     else
       ofn.lpstrFilter = bufferExt;
     ofn.nFilterIndex = 0;
@@ -331,13 +331,18 @@ LUALIB_API int c_GetFileName(lua_State *L)
     ofn.Flags = OFN_HIDEREADONLY | (DWORD)opt;//OFN_CREATEPROMPT | OFN_HIDEREADONLY;
     ofn.lpstrTitle = title;
 
-    // Display the Open dialog box. 
-		if (GetOpenFileName(&ofn)==TRUE) {
-      //lua_pushstring(L, ofn.lpstrFile);
-			writeStrinToTmp(ofn.lpstrFile, fileName);
+        // Display the Open dialog box. 
+		if (GetOpenFileNameW(&ofn)==TRUE) {
+			writeStrinToTmpW(ofn.lpstrFile, fileName);
 			lua_pushboolean(L, 1);
 		} else
-      lua_pushnil(L);
+            lua_pushnil(L);
+
+        DeleteChToW(title);
+        DeleteChToW(defaultPath);
+        DeleteChToW(fileName);
+        if (estensione != NULL)
+            DeleteChToW(estensione);
   } else {
     //lua_pushstring(L, "Argomenti errati! - GetFileName(Titolo, Percorso di Default, Opzioni)");
 		showErrorMsg("Argomenti errati! - GetFileName(Titolo, Percorso di Default, Opzioni,Path File Temporaneo,[Filtri])");
@@ -1123,7 +1128,7 @@ LUALIB_API int c_SetWindowSize(lua_State *L)
 	if ((n == 2) && 
 		(lua_type(L, 1) == LUA_TNUMBER) &&
 		(lua_type(L, 2) == LUA_TNUMBER)
-		) {
+		) { 
 		if ((hwndOwner = GetActiveWindow()) != NULL) {
 			w = lua_tointeger(L, 1);
 			h = lua_tointeger(L, 2);
@@ -1144,6 +1149,8 @@ LUALIB_API int c_SetWindowSize(lua_State *L)
 
 LUALIB_API int c_Test(lua_State *L)
 {
-	return 0;
+
+    lua_pushstring(L, "Dati ritornati dalla funzione");
+	return 1;
 }
 
