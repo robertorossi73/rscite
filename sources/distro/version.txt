@@ -8,14 +8,14 @@ Web=https://www.redchar.net
 
 ;Dati sulla distribuzione
 [RSciTE]
-Major=90
+Major=91
 WebRSciTE=https://www.redchar.net/rscite
 Download=https://github.com/robertorossi73/rscite/releases
 IniOnline=https://www.redchar.net/rscite/version.txt
 
 ;Versione di SciTE inclusa
 [SciTE]
-MajorSciTE=4
-MinorSciTE=4
-BuildSciTE=6
+MajorSciTE=5
+MinorSciTE=0
+BuildSciTE=2
 
