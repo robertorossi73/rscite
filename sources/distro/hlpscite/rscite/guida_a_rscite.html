@@ -124,7 +124,7 @@ pre code{
      </head>
      <body class="markdown">
     
-<!-- # -*- coding: utf-8 -*- -->
+<!-- # -*- coding: utf-8 -*- -->
 
 <h1>RSciTE</h1>
 
@@ -132,7 +132,7 @@ pre code{
 
 <p><strong>Autore : Roberto Rossi</strong></p>
 
-<p><strong>Versione 92</strong></p>
+<p><strong>Versione 93</strong></p>
 
 <p>Un gestore di testi <strong>potente</strong>, <strong>semplice</strong>, <strong>veloce</strong>, <strong>poliedrico</strong>...</p>
 
@@ -141,7 +141,7 @@ per qualsiasi tipo di testo.</p>
 
 <p><a href="http://www.redchar.net/">http://www.redchar.net/</a></p>
 
-<p style="page-break-before: always;">&nbsp;</p>
+<p style="page-break-before: always;">&nbsp;</p>
 
 <h3>Chi è SciTE</h3>
 
@@ -178,11 +178,11 @@ programmatori, segno del successo che questo software riscuote.</p>
 
 <p>Ecco un’immagine di <strong>RSciTE</strong> in azione:</p>
 
-<p style="text-align:center;">
-<img src="completo-ita.png" align="middle" alt="RSciTE" border="0" width="80%">
-</p>
+<p style="text-align:center;">
+<img src="completo-ita.png" align="middle" alt="RSciTE" border="0" width="80%">
+</p>
 
-<p style="page-break-before: always;">&nbsp;</p>
+<p style="page-break-before: always;">&nbsp;</p>
 
 <h3>Ancora su SciTE</h3>
 
@@ -239,7 +239,7 @@ vantaggi significativi dalla sua potenza e dalla sua essenzialità.</p>
 Note&quot; sia degli editor professionali utilizzati nello sviluppo delle
 applicazioni software.</p>
 
-<p style="page-break-before: always;">&nbsp;</p>
+<p style="page-break-before: always;">&nbsp;</p>
 
 <h3>Le Caratteristiche Base di SciTE</h3>
 
@@ -321,7 +321,7 @@ interfaccia di programmazione per il collegamento a software esterni
 e molto altro...</li>
 </ul>
 
-<p style="page-break-before: always;">&nbsp;</p>
+<p style="page-break-before: always;">&nbsp;</p>
 
 <h3>Le Scorciatoie da Tastiera</h3>
 
@@ -329,7 +329,7 @@ e molto altro...</li>
 combinazioni di tasti per accedere alla funzionalità più utilizzate. Molte
 delle combinazioni disponibili sono comuni agli ambienti Windows e Linux.
 Inoltre, tutte le combinazioni di tasti sono ridefinibili attraverso
-l’editazione di appositi file di configurazione. </p>
+l’editazione di appositi file di configurazione.</p>
 
 <p>Molte delle combinazioni disponibili sono ereditate da SciTE, mentre altre
 sono proprie della distribuzione RSciTE.</p>
@@ -462,13 +462,13 @@ aggiornamento
 (disponibile solo in &quot;RSciTE&quot;).</li>
 </ul>
 
-<p style="page-break-before: always;">&nbsp;</p>
+<p style="page-break-before: always;">&nbsp;</p>
 
 <h3>Il Linguaggio di programmazione LUA</h3>
 
-<p>
-<img src="lua.png" align="middle" alt="LUA" border="0" width="10%">
-</p>
+<p>
+<img src="lua.png" align="middle" alt="LUA" border="0" width="10%">
+</p>
 
 <p><strong>LUA è un potente linguaggio di scripting, integrato in SciTE!</strong></p>
 
@@ -496,66 +496,66 @@ di potenziare il programma.</p>
 esempio tratto dalla distribuzione <strong>RSciTE</strong> che effettua l’ordinamento del
 file corrente:</p>
 
-<pre><code>Author  : Roberto Rossi
-Web     : http://www.redchar.net
-Questa procedura ordina il file corrente]]
-do
- local tbLinee = { } −−tabella file
-
- local function insertLinea( idx, linea )
-   editor:AddText(linea)
- end
-
- local function OrderCurrentBuffer()
-   local linea,pos
-   local i=0
-   linea = editor:GetLine(i)
-   while linea do
-     tbLinee[i] = linea
-     i = i + 1
-     linea = editor:GetLine(i)
-   end
-   table.sort(tbLinee)
-   editor:ClearAll()
-   table.foreach(tbLinee, insertLinea)
- end
- OrderCurrentBuffer()
- print(&quot;Ordinamento File Concluso con successo.&quot;)
-end
+<pre><code>Author  : Roberto Rossi
+Web     : http://www.redchar.net
+Questa procedura ordina il file corrente]]
+do
+ local tbLinee = { } −−tabella file
+
+ local function insertLinea( idx, linea )
+   editor:AddText(linea)
+ end
+
+ local function OrderCurrentBuffer()
+   local linea,pos
+   local i=0
+   linea = editor:GetLine(i)
+   while linea do
+     tbLinee[i] = linea
+     i = i + 1
+     linea = editor:GetLine(i)
+   end
+   table.sort(tbLinee)
+   editor:ClearAll()
+   table.foreach(tbLinee, insertLinea)
+ end
+ OrderCurrentBuffer()
+ print(&quot;Ordinamento File Concluso con successo.&quot;)
+end
 </code></pre>
 
 <p>Per approfondire le proprie conoscenze su <strong>LUA</strong> e sul suo utilizzo, si consulti
 la sezione <strong>Siti Utili</strong>.</p>
 
-<p style="page-break-before: always;">&nbsp;</p>
+<p style="page-break-before: always;">&nbsp;</p>
 
 <h3>SciTE al Lavoro</h3>
 
 <p><strong>RSciTE</strong> editando un file .cpp (linguaggio C++):</p>
 
-<p style="text-align:center;">
-<img src="cpp.png" align="middle" alt="C++" border="0" width="80%">
-</p>
+<p style="text-align:center;">
+<img src="cpp.png" align="middle" alt="C++" border="0" width="80%">
+</p>
 
 <p><strong>RSciTE</strong> editando un file .lsp (linguaggio Lisp):</p>
 
-<p style="text-align:center;">
-<img src="lsp.png" align="middle" alt="Lisp" border="0" width="80%">
-</p>
+<p style="text-align:center;">
+<img src="lsp.png" align="middle" alt="Lisp" border="0" width="80%">
+</p>
 
 <p><strong>RSciTE</strong> editando un file .php (linguaggio PHP), con l’<strong>autocompletamento</strong> attivo:</p>
 
-<p style="text-align:center;">
-<img src="php2.png" align="middle" alt="PHP Autocompletamento" border="0" width="80%">
-</p>
+<p style="text-align:center;">
+<img src="php2.png" align="middle" alt="PHP Autocompletamento" border="0" width="80%">
+</p>
 
 <p><strong>RSciTE</strong> editando un file .php (linguaggio PHP), con l’aiuto sulla <strong>sintassi</strong>:</p>
 
-<p style="text-align:center;">
-<img src="php.png" align="middle" alt="PHP con Aiuto" border="0" width="80%">
-</p>
+<p style="text-align:center;">
+<img src="php.png" align="middle" alt="PHP con Aiuto" border="0" width="80%">
+</p>
 
-<p style="page-break-before: always;">&nbsp;</p>
+<p style="page-break-before: always;">&nbsp;</p>
 
 <h3>RSciTE</h3>
 
@@ -586,7 +586,7 @@ necessario) la produttività dell’editor.</p>
 uniti all’editor di testo, permettono di ottenere un formidabile strumento
 di editazione e di gestione.</p>
 
-<p style="page-break-before: always;">&nbsp;</p>
+<p style="page-break-before: always;">&nbsp;</p>
 
 <h3>Funzionalità Aggiuntive in RSciTE</h3>
 
@@ -633,7 +633,7 @@ Accessibile da <strong>F12</strong>, permette il confronto di file e cartelle.</
 <li><strong>Procedura di installazione</strong>, in lingua italiana, per i sistemi Windows
 (XP / Vista / 7 / 8 / 10 o successivi), con possibilità di personalizzazione
 delle funzionalità da attivare.</li>
-<li><strong>File LISP: Esegui in CAD. </strong>Nei file LSP (Lisp) è possibile utilizzare
+<li>**File LISP: Esegui in CAD. **Nei file LSP (Lisp) è possibile utilizzare
 il tasto F5 per caricare il file corrente nel CAD aperto al momento.</li>
 <li><strong>Interprete Diretto Espressioni Lua.</strong> In questo modo sarà possibile
 testare direttamente una linea di codice Lua senza dover creare un apposito
@@ -645,13 +645,13 @@ elementi da completare nel file di testo corrente</li>
 <li><strong>Apertura Gestione Risorse</strong>. Nel caso si renda necessario, direttamente da
 SciTE è possibile aprire il gestione risorse o il risorse del comuper di
 Windows posizionato sulla cartella del file corrente.</li>
-<li><strong>Gestore Trasparenza finestra di SciTE. </strong>E’ possibile modificare il
+<li>**Gestore Trasparenza finestra di SciTE. **E’ possibile modificare il
 livello di trasparenza della finestra dell’editor in modo da poterlo
 utilizzare in ogni situazione.</li>
 <li><strong>Gestore Appunti Multipli</strong>. Grazie alla gestione di più appunti sarà
 possibile salvare e riutilizzare semplicemente i nostri spezzoni di testo più
 utili.</li>
-<li><strong>Gestore Avanzato Segnalibri/Bookmarks. </strong></li>
+<li>**Gestore Avanzato Segnalibri/Bookmarks. **</li>
 <li><strong>Ricerca Contestuale Online (CTRL+F1)</strong></li>
 <li><strong>Trova/Sostituisci su file multipli</strong>. Una potente funzione di ricerca e
 sostituzione che si affianca alla gia validà procedura interna di SciTE.</li>
@@ -672,7 +672,7 @@ essere costretti ad agire direttamente sui file di configurazione.</li>
 secondarie, alle impostazioni di base (es.: margini, numeri linea ecc..).</li>
 </ul>
 
-<p style="page-break-before: always;">&nbsp;</p>
+<p style="page-break-before: always;">&nbsp;</p>
 
 <h3>F12</h3>
 
@@ -681,7 +681,7 @@ presente nella distribuzione <strong>RSciTE</strong>.</p>
 
 <p><strong>F12</strong> ovviamente è richiamabile con l'omonimo tasto <strong>F12</strong>.</p>
 
-<p style="page-break-before: always;">&nbsp;</p>
+<p style="page-break-before: always;">&nbsp;</p>
 
 <h3>Funzionalità Avanzate per la modifica dei file di testo</h3>
 
@@ -691,7 +691,7 @@ funzionalità previste da altri editor e che SciTE ancora non supporta.</p>
 <p>Per sopperire a tale mancanza, sfruttando il potente linguaggio interno a
 SciTE (LUA), <strong>RSciTE</strong> prova ad includere ciò che manca.</p>
 
-<p style="page-break-before: always;">&nbsp;</p>
+<p style="page-break-before: always;">&nbsp;</p>
 
 <h3>E’ nato F12!</h3>
 
@@ -700,9 +700,9 @@ funzione, <strong>F12</strong> può essere visto come insieme di utilità per la
 del testo. Alla pressione dell’omonimo tasto ( <strong>F12</strong> ), apparirà l’apposita
 dialog per la scelta del comando da eseguire:</p>
 
-<p style="text-align:center;">
-<img src="f12.png" align="middle" alt="F12" border="0" width="40%">
-</p>
+<p style="text-align:center;">
+<img src="f12.png" align="middle" alt="F12" border="0" width="40%">
+</p>
 
 <p>Attenzione: solo una piccola parte dei comandi disponibili è presente in
 questa schermata!</p>
@@ -713,11 +713,11 @@ servirà ad <strong>RSciTE</strong> per mostrare solo le funzioni che lo riporta
 se volessimo vedere tutte le funzioni riguardanti i l’eliminazione di testo ci
 basterebbe inserire la parola &quot;elimina&quot;, in questo modo:</p>
 
-<p style="text-align:center;">
-<img src="f12-filter.png" align="middle" alt="Filtro F12" border="0" width="40%">
-</p>
+<p style="text-align:center;">
+<img src="f12-filter.png" align="middle" alt="Filtro F12" border="0" width="40%">
+</p>
 
-<p style="page-break-before: always;">&nbsp;</p>
+<p style="page-break-before: always;">&nbsp;</p>
 
 <h3>Cosa contiene F12</h3>
 
@@ -904,13 +904,11 @@ web spacificata/selezionata, sfruttando un apposito servizio online.</li>
 <li><strong>Converti testo in Ascii Art</strong>. Utilizzando un apposito servizio web,
 questa funzione permette di convertire un testo nella relativa forma di Ascii
 Art.</li>
-<li><strong>Calcolatrice</strong>. Questa funzionalità permette di risolvere espressioni
-matematiche ottenendo il risultato numerico. Sono supportate sia le normali
-funzioni matematiche di base, sia quelle avanzate, inoltre è consentito
-l’utilizzo delle variabili modificabili in modo dinamico. Per interpretare
-le espressioni è stata utilizzata la liberia MathParserKit
-([http://www.bernaschina.com/it/progetti/mathparsekit/
-http://www.bernaschina.com/it/progetti/mathparsekit/]).</li>
+<li><strong>Calcolatrice Windows</strong>. Questa funzionalità permette di aprire la calcolatrice
+del sistema operativo direttamente dall'interno di SciTE.</li>
+<li><strong>Calcolatrice Online</strong>. Questa funzionalità permette di accedere ad una
+calcolatrive avanzata utilizzabile online. Un software che fornisce funzionalità
+avanzate rispetto alla normale calcolatrice di sistema.</li>
 <li><strong>Trova Sinonimi e Contrari</strong>. Questa funzione, utilizzando un servizio
 internet, fornisce l’elenco dei sinonimi e contrari della parola
 selezionata/indicata.</li>
@@ -962,7 +960,7 @@ all’interno del pannello principale, senza alcuno sforzo, attraverso
 l’utilizzo dell’apposita funzione, posta al termine dell’elenco di
 <strong>F12</strong>.</p>
 
-<p style="page-break-before: always;">&nbsp;</p>
+<p style="page-break-before: always;">&nbsp;</p>
 
 <h3>Ricerca Contestuale alternativa in RSciTE</h3>
 
@@ -985,48 +983,48 @@ ricerca contestuale può essere richiamata attraverso la combinazione di tasti
 quale sarà possibile selezionare il sito/servizio sul quale effettuare
 l’operazione di ricerca:</p>
 
-<p style="text-align:center;">
-<img src="ctrl-f1.png" align="middle" alt="Ctrl+F1" border="0" width="80%">
-</p>
+<p style="text-align:center;">
+<img src="ctrl-f1.png" align="middle" alt="Ctrl+F1" border="0" width="80%">
+</p>
 
 <p>Facciamo ora alcuni esempi, iniziando da un file .PHP. Basta selezionare parte
 del testo, in questo caso la funzione <em>file_exist</em>, quindi premere <strong>CTRL+F1</strong> e
 selezionare Php:</p>
 
-<p style="text-align:center;">
-<img src="ctrl-f1-php.png" align="middle" alt="Ctrl+F1 PHP" border="0" width="80%">
-</p>
+<p style="text-align:center;">
+<img src="ctrl-f1-php.png" align="middle" alt="Ctrl+F1 PHP" border="0" width="80%">
+</p>
 
 <p>Una volta premuto su <strong>Ok</strong>, oppure con un doppio clic sulla voce desiderata,
 verrà aperto il browser alla pagina voluta:</p>
 
-<p style="text-align:center;">
-<img src="ctrl-f1-php2.png" align="middle" alt="Ctrl+F1 PHP Indice" border="0" width="80%">
-</p>
+<p style="text-align:center;">
+<img src="ctrl-f1-php2.png" align="middle" alt="Ctrl+F1 PHP Indice" border="0" width="80%">
+</p>
 
-<p style="text-align:center;">
-<img src="ctrl-f1-php3.png" align="middle" alt="Ctrl+F1 PHP Pagina" border="0" width="80%">
-</p>
+<p style="text-align:center;">
+<img src="ctrl-f1-php3.png" align="middle" alt="Ctrl+F1 PHP Pagina" border="0" width="80%">
+</p>
 
 <p>Proviamo ora con una funzione C standard, <strong>sprintf</strong>, utilizzando il sito
 web <strong>www.cplusplus.com</strong>:</p>
 
-<p style="text-align:center;">
-<img src="ctrl-f1-cpp.png" align="middle" alt="Ctrl+F1 C++" border="0" width="80%">
-</p>
+<p style="text-align:center;">
+<img src="ctrl-f1-cpp.png" align="middle" alt="Ctrl+F1 C++" border="0" width="80%">
+</p>
 
 <p>Oppure, possiamo provare con una funzione di Windows e il servizio fornito da
 Microsoft (Developer):</p>
 
-<p style="text-align:center;">
-<img src="ctrl-f1-cpp2.png" align="middle" alt="Ctrl+F1 API Windows" border="0" width="80%">
-</p>
+<p style="text-align:center;">
+<img src="ctrl-f1-cpp2.png" align="middle" alt="Ctrl+F1 API Windows" border="0" width="80%">
+</p>
 
-<p style="text-align:center;">
-<img src="ctrl-f1-cpp3.png" align="middle" alt="Ctrl+F1 API Windows" border="0" width="80%">
-</p>
+<p style="text-align:center;">
+<img src="ctrl-f1-cpp3.png" align="middle" alt="Ctrl+F1 API Windows" border="0" width="80%">
+</p>
 
-<p style="page-break-before: always;">&nbsp;</p>
+<p style="page-break-before: always;">&nbsp;</p>
 
 <h3>Tools Aggiuntivi presenti in RSciTE</h3>
 
@@ -1057,12 +1055,12 @@ editando.</li>
 <li><strong>SQLite</strong>, consente di interpretare ed eseguire un file SQL attraverso l'uso di questo diffuso motore di database.</li>
 </ul>
 
-<p style="page-break-before: always;">&nbsp;</p>
+<p style="page-break-before: always;">&nbsp;</p>
 
 <h3>WinMerge, Confrontare e Unire File</h3>
 
 <p>WinMerge è un software Open Source dedicato al mondo Windows, in grado di
-confrontare e unire file di testo e cartelle. </p>
+confrontare e unire file di testo e cartelle.</p>
 
 <p>WinMerge è particolarmente famoso e utilizzato. RSciTE include una versione
 particolare di WinMerge.</p>
@@ -1100,11 +1098,11 @@ conflitti e applicazione patch.</li>
 <li><strong>Manuale</strong> online ed offline in formato HTML.</li>
 </ul>
 
-<p style="text-align:center;">
-<img src="winmerge.png" align="middle" alt="WinMerge" border="0" width="80%">
-</p>
+<p style="text-align:center;">
+<img src="winmerge.png" align="middle" alt="WinMerge" border="0" width="80%">
+</p>
 
-<p style="page-break-before: always;">&nbsp;</p>
+<p style="page-break-before: always;">&nbsp;</p>
 
 <h3>FRhed</h3>
 
@@ -1118,9 +1116,9 @@ libertà di utilizzo e modifica.</p>
 <p><strong>FRhed</strong> viene installato con <strong>RSciTE</strong> ed è presente sia nel menu dei
 programma di Windows, sia nel menu <strong>Strumenti</strong> interno a SciTE.</p>
 
-<p style="text-align:center;">
-<img src="frhed.png" align="middle" alt="FRhed" border="0" width="80%">
-</p>
+<p style="text-align:center;">
+<img src="frhed.png" align="middle" alt="FRhed" border="0" width="80%">
+</p>
 
 <p>Per comprendere meglio la potenza di <strong>FRhed</strong>, ecco in sintesi, le sue funzionalità
 salienti:</p>
@@ -1152,7 +1150,7 @@ i colori e lo sfondo.</li>
 <li><strong>Software Libero</strong> con sorgenti disponibili e liberamente modificabili secondo la licenza GPL.</li>
 </ul>
 
-<p style="page-break-before: always;">&nbsp;</p>
+<p style="page-break-before: always;">&nbsp;</p>
 
 <h3>HTML Tidy, Formattare HTML e XML</h3>
 
@@ -1174,38 +1172,38 @@ come il software interviene sul codice HTML.</p>
 
 <p><strong>Rilevamento e correzione TAG mancanti</strong>:</p>
 
-<pre><code>&lt;h1&gt;Titolo
-&lt;h2&gt;Sottotitolo&lt;/h2&gt;
+<pre><code>&lt;h1&gt;Titolo
+&lt;h2&gt;Sottotitolo&lt;/h2&gt;
 </code></pre>
 
 <p>viene corretto in :</p>
 
-<pre><code>&lt;h1&gt;Titolo&lt;h1&gt;
-&lt;h2&gt;Sottotitolo&lt;/h2&gt;
+<pre><code>&lt;h1&gt;Titolo&lt;h1&gt;
+&lt;h2&gt;Sottotitolo&lt;/h2&gt;
 </code></pre>
 
 <p><strong>Correzione ordinamento TAG</strong>:</p>
 
-<pre><code>&lt;p&gt;Questo è un paragrafo &lt;b&gt;grassetto &lt;i&gt;
-grassetto italico&lt;/b&gt; grassetto?&lt;/i&gt; normale?
+<pre><code>&lt;p&gt;Questo è un paragrafo &lt;b&gt;grassetto &lt;i&gt;
+grassetto italico&lt;/b&gt; grassetto?&lt;/i&gt; normale?
 </code></pre>
 
 <p>viene corretto in:</p>
 
-<pre><code>&lt;p&gt;Questo è un paragrafo &lt;b&gt;grassetto &lt;i&gt;
-grassetto italico&lt;/i&gt; grassetto?&lt;/b&gt; normale?
+<pre><code>&lt;p&gt;Questo è un paragrafo &lt;b&gt;grassetto &lt;i&gt;
+grassetto italico&lt;/i&gt; grassetto?&lt;/b&gt; normale?
 </code></pre>
 
 <p><strong>Formattazione automatica codice HTML</strong>:</p>
 
-<pre><code>&lt;td&gt;&lt;img src=&quot;prova.gif&quot;&gt;&lt;/td&gt;
-&lt;td&gt;&lt;img src=&quot;prova.gif&quot;&gt;&lt;/td&gt;
+<pre><code>&lt;td&gt;&lt;img src=&quot;prova.gif&quot;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&quot;prova.gif&quot;&gt;&lt;/td&gt;
 </code></pre>
 
 <p>viene trasformato in:</p>
 
-<pre><code>&lt;td&gt; &lt;img src=&quot;prova.gif&quot;&gt; &lt;/td&gt;
-&lt;td&gt; &lt;img src=&quot;prova.gif&quot;&gt; &lt;/td&gt;
+<pre><code>&lt;td&gt; &lt;img src=&quot;prova.gif&quot;&gt; &lt;/td&gt;
+&lt;td&gt; &lt;img src=&quot;prova.gif&quot;&gt; &lt;/td&gt;
 </code></pre>
 
 <p>e molto altro ancora...</p>
@@ -1218,7 +1216,7 @@ possibile semplificare il suo utilizzo tramite l’uso di una delle interfacce
 grafiche realizzate da programmatori indipendenti. Per maggiori dettagli si
 consulti la sezione <strong>Siti Utili</strong>.</p>
 
-<p style="page-break-before: always;">&nbsp;</p>
+<p style="page-break-before: always;">&nbsp;</p>
 
 <h3>dnGREP</h3>
 
@@ -1229,9 +1227,9 @@ ricerca e la sostituzione del testo.</p>
 su file multipli</strong> semplifica le operazione di ricerca e sostituzione del testo
 consentendo di operare in modo automatico su più file.</p>
 
-<p style="text-align:center;">
-<img src="dngrep.png" align="middle" alt="dnGREP" border="0" width="80%">
-</p>
+<p style="text-align:center;">
+<img src="dngrep.png" align="middle" alt="dnGREP" border="0" width="80%">
+</p>
 
 <p><strong>dnGREP</strong> risulta essere un programma estremamente potente e flessibile,
 adatto sia al neofita, sia all’esperto programmatore, consentendo un utilizzo
@@ -1241,7 +1239,7 @@ esteso delle espressioni regolari.</p>
 l’operazione di ricerca del testo <strong>.fore</strong> all’interno di tutti i
 file .properties presenti in una cartella.</p>
 
-<p style="page-break-before: always;">&nbsp;</p>
+<p style="page-break-before: always;">&nbsp;</p>
 
 <h3>Personalizzare e Configurare RSciTE</h3>
 
@@ -1276,17 +1274,17 @@ occorre cliccare su di esso con il tasto destro del mouse, quindi premere
 Questa operazione consente di utilizzarlo correttamente, in caso contrario
 non sarà possibile consultarlo.</p>
 
-<p>Una volta scaricato il nostro file (php<em>manual</em>en.chm):</p>
+<p>Una volta scaricato il nostro file (php_manual_en.chm):</p>
 
 <ul>
 <li>Posizionarsi nella cartella in cui è installato <strong>RSciTE</strong> (solitamente C:\Programmi\RScite).</li>
-<li>Copiare all’interno della cartella di <strong>RSciTE</strong> il file scaricato (php<em>manual</em>en.chm).</li>
+<li>Copiare all’interno della cartella di <strong>RSciTE</strong> il file scaricato (php_manual_en.chm).</li>
 </ul>
 
 <p>Compiute queste operazione, aprite un file PHP, con <strong>RSciTE</strong>, posizionate il
 cursore in prossimità del nome di una funzione e premete il tasto <strong>F1</strong> :</p>
 
-<div style="text-align:center;">[[Image:|top]] </div>
+<div style="text-align:center;">[[Image:|top]] </div>
 
 <p>Ecco comparire l’aiuto relativo.</p>
 
@@ -1298,19 +1296,19 @@ sia simile a quella presente nell’editor <strong>Macromedia Dreamweaver MX</st
 <p>La colorazione per il linguaggio PHP, in <strong>Macromedia Dreamweaver</strong> prevede,
 come valori predefiniti, i seguenti:</p>
 
-<pre><code>BRACKET: #000099
-COMMENT: #FF9900
-CONSTANT: #552200
-FUNCTION KEYWORDS: #0000FF
-FUNCTIONS: #0000FF
-IDENTIFIER: #000000
-NUMBER: #FF0000
-OPERATOR: #0000FF
-RESERVED: #006600
-STRING: #CC0000
-TYPES: #009999
-VARIABLES: #0066FF
-TAGS: #000099
+<pre><code>BRACKET: #000099
+COMMENT: #FF9900
+CONSTANT: #552200
+FUNCTION KEYWORDS: #0000FF
+FUNCTIONS: #0000FF
+IDENTIFIER: #000000
+NUMBER: #FF0000
+OPERATOR: #0000FF
+RESERVED: #006600
+STRING: #CC0000
+TYPES: #009999
+VARIABLES: #0066FF
+TAGS: #000099
 </code></pre>
 
 <p>Per fare in modo che SciTE utilizzi le medesime impostazioni, occorrerà
@@ -1321,19 +1319,19 @@ comando <strong>Apri impostazioni del profilo utente</strong>.</p>
 <p>Una volta aperto il file, occorre aggiungere e/o modificare le linee che
 iniziano come segue:</p>
 
-<pre><code>style.hypertext.1 (Tags)
-style.hypertext.34 (Testo Predefinito)
-style.hypertext.35 (Testo Predefinito)
-style.hypertext.118 (Identificatori)
-style.hypertext.119 (Stringhe racchiuse tra doppi apici)
-style.hypertext.120 (Stringhe racchiuse tra apici singoli)
-style.hypertext.121 (Parole chiave)
-style.hypertext.122 (Numeri)
-style.hypertext.123 (Variabili)
-style.hypertext.124 (Commenti)
-style.hypertext.125 (Commenti a linea singola)
-style.hypertext.126 (Variabili PHP presenti nelle stringhe)
-style.hypertext.127 (Operatori)
+<pre><code>style.hypertext.1 (Tags)
+style.hypertext.34 (Testo Predefinito)
+style.hypertext.35 (Testo Predefinito)
+style.hypertext.118 (Identificatori)
+style.hypertext.119 (Stringhe racchiuse tra doppi apici)
+style.hypertext.120 (Stringhe racchiuse tra apici singoli)
+style.hypertext.121 (Parole chiave)
+style.hypertext.122 (Numeri)
+style.hypertext.123 (Variabili)
+style.hypertext.124 (Commenti)
+style.hypertext.125 (Commenti a linea singola)
+style.hypertext.126 (Variabili PHP presenti nelle stringhe)
+style.hypertext.127 (Operatori)
 </code></pre>
 
 <p>Come si vede, ogni voce imposta una diversa opzione di colorazione,
@@ -1344,19 +1342,19 @@ in SciTE, una sintassi stile Dreamweaver.</p>
 configurazione complete, una volta applicati i corretti valori (presi da
 Dreamweaver):</p>
 
-<pre><code>style.hypertext.1=fore:#000099
-style.hypertext.34=fore:#FF0000
-style.hypertext.35=fore:#FF0000
-style.hypertext.118=fore:#000000
-style.hypertext.119=fore:#CC0000
-style.hypertext.120=fore:#CC0000
-style.hypertext.121=fore:#0000FF
-style.hypertext.122=fore:#FF0000
-style.hypertext.123=fore:#0066FF
-style.hypertext.124=fore:#FF9900
-style.hypertext.125=fore:#FF9900
-style.hypertext.126=fore:#0066FF
-style.hypertext.127=fore:#000099
+<pre><code>style.hypertext.1=fore:#000099
+style.hypertext.34=fore:#FF0000
+style.hypertext.35=fore:#FF0000
+style.hypertext.118=fore:#000000
+style.hypertext.119=fore:#CC0000
+style.hypertext.120=fore:#CC0000
+style.hypertext.121=fore:#0000FF
+style.hypertext.122=fore:#FF0000
+style.hypertext.123=fore:#0066FF
+style.hypertext.124=fore:#FF9900
+style.hypertext.125=fore:#FF9900
+style.hypertext.126=fore:#0066FF
+style.hypertext.127=fore:#000099
 </code></pre>
 
 <h4>Lavorare con fondo scuro</h4>
@@ -1374,54 +1372,54 @@ si può cliccare sul menu <strong>Opzioni</strong> e selezionare il comando
 
 <p>Una volta aperto il file, inseriamo quanto segue:</p>
 
-<pre><code>style.*.32=$(font.base),back:#000000,fore:#ffffff
-style.*.33=back:000000,$(font.base)
-style.*.37=fore:#939393
-caret.fore=#FFFFFF
-selection.alpha=75
-selection.back=#FFFFFF
-colour.keyword=fore:#649bff
-colour.operator=fore:#727272
-style.errorlist.32=$(font.small),back:#ffffff
-style.lua.32=$(font.code.base)
-style.lua.13=$(style.lua.5)
-style.lua.14=$(style.lua.5)
-style.lua.15=$(style.lua.5)
-style.lua.16=$(style.lua.5)
-style.lua.17=$(style.lua.5)
-style.lua.18=$(style.lua.5)
-style.lua.19=$(style.lua.5)
-style.lua.8=$(colour.string),$(font.code.comment.box)
-style.lua.1=$(colour.code.comment.box),$(font.code.comment.box),eolfilled
-style.lua.12=eolfilled
-style.hypertext.0=$(font.text)
-style.hypertext.1=fore:#0000ff
-colour.embedded.js=back:#000000
-style.hypertext.41=bold,$(fontcolour.js),eolfilled
-style.hypertext.46=$(fontcolour.js)
-style.hypertext.118=eolfilled
-style.hypertext.119=fore:#007F00
-style.hypertext.120=fore:#009F00
-style.hypertext.121=$(colour.keyword)
-style.hypertext.122=fore:#CC9900
-style.hypertext.123=bold
-style.hypertext.124=fore:#999999,$(font.comment)
-style.hypertext.125=fore:#666666,italics,$(font.comment)
-style.hypertext.126=fore:#00007F,italics
-style.hypertext.127=
-style.xml.0=$(font.text)
-style.xml.1=fore:#aaaa00
-style.batch.0=$(font.text)
-style.batch.7=$(font.text)
-style.inno.2=$(colour.keyword)
-style.inno.3=$(colour.keyword)
-print.colour.mode=1
+<pre><code>style.*.32=$(font.base),back:#000000,fore:#ffffff
+style.*.33=back:000000,$(font.base)
+style.*.37=fore:#939393
+caret.fore=#FFFFFF
+selection.alpha=75
+selection.back=#FFFFFF
+colour.keyword=fore:#649bff
+colour.operator=fore:#727272
+style.errorlist.32=$(font.small),back:#ffffff
+style.lua.32=$(font.code.base)
+style.lua.13=$(style.lua.5)
+style.lua.14=$(style.lua.5)
+style.lua.15=$(style.lua.5)
+style.lua.16=$(style.lua.5)
+style.lua.17=$(style.lua.5)
+style.lua.18=$(style.lua.5)
+style.lua.19=$(style.lua.5)
+style.lua.8=$(colour.string),$(font.code.comment.box)
+style.lua.1=$(colour.code.comment.box),$(font.code.comment.box),eolfilled
+style.lua.12=eolfilled
+style.hypertext.0=$(font.text)
+style.hypertext.1=fore:#0000ff
+colour.embedded.js=back:#000000
+style.hypertext.41=bold,$(fontcolour.js),eolfilled
+style.hypertext.46=$(fontcolour.js)
+style.hypertext.118=eolfilled
+style.hypertext.119=fore:#007F00
+style.hypertext.120=fore:#009F00
+style.hypertext.121=$(colour.keyword)
+style.hypertext.122=fore:#CC9900
+style.hypertext.123=bold
+style.hypertext.124=fore:#999999,$(font.comment)
+style.hypertext.125=fore:#666666,italics,$(font.comment)
+style.hypertext.126=fore:#00007F,italics
+style.hypertext.127=
+style.xml.0=$(font.text)
+style.xml.1=fore:#aaaa00
+style.batch.0=$(font.text)
+style.batch.7=$(font.text)
+style.inno.2=$(colour.keyword)
+style.inno.3=$(colour.keyword)
+print.colour.mode=1
 </code></pre>
 
 <p>Queste impostazioni permettono di utilizzare i normali file di testo e i file
 scritti in <strong>PHP/HTML/XML/Javascript/Lua/InnoSetup</strong> con fondo nero e testo chiaro.</p>
 
-<p style="page-break-before: always;">&nbsp;</p>
+<p style="page-break-before: always;">&nbsp;</p>
 
 <h3>Siti Utili</h3>
 
@@ -1484,7 +1482,7 @@ ecco l’elenco dei collegamenti ai siti più utili.</p>
 </ul></li>
 </ul>
 
-<p style="page-break-before: always;">&nbsp;</p>
+<p style="page-break-before: always;">&nbsp;</p>
 
 <h3>Nota di Copyright</h3>
 

@@ -149,6 +149,7 @@
 	<p>editor:<a href='ScintillaDoc.html#SCI_COPYRANGE'>CopyRange</a>(position start, position end)<span class="comment"> -- Copy a range of text to the clipboard. Positions are clipped into the document.</span></p>
 	<p>editor:<a href='ScintillaDoc.html#SCI_COPYTEXT'>CopyText</a>(string text)<span class="comment"> -- Copy argument text to the clipboard.</span></p>
 	<p>bool editor.<a href='ScintillaDoc.html#SCI_SETPASTECONVERTENDINGS'>PasteConvertEndings</a><span class="comment"> -- Enable/Disable convert-on-paste for line endings</span></p>
+	<p>editor:<a href='ScintillaDoc.html#SCI_REPLACERECTANGULAR'>ReplaceRectangular</a>(string text)<span class="comment"> -- Replace the selection with text like a rectangular paste.</span></p>
 	<h2>Error handling</h2>
 	<p>int editor.<a href='ScintillaDoc.html#SCI_SETSTATUS'>Status</a><span class="comment"> -- Change error status - 0 = OK.</span></p>
 	<h2>Undo and Redo</h2>
@@ -354,6 +355,9 @@
 	<h2>Character representations</h2>
 	<p>string editor.<a href='ScintillaDoc.html#SCI_SETREPRESENTATION'>Representation</a>[string encodedCharacter]<span class="comment"> -- Set the way a character is drawn.</span></p>
 	<p>editor:<a href='ScintillaDoc.html#SCI_CLEARREPRESENTATION'>ClearRepresentation</a>(string encodedCharacter)<span class="comment"> -- Remove a character representation.</span></p>
+	<p>editor:<a href='ScintillaDoc.html#SCI_CLEARALLREPRESENTATIONS'>ClearAllRepresentations</a>()<span class="comment"> -- Clear representations to default.</span></p>
+	<p>int editor.<a href='ScintillaDoc.html#SCI_SETREPRESENTATIONAPPEARANCE'>RepresentationAppearance</a>[string encodedCharacter]<span class="comment"> -- Set the appearance of a representation.</span></p>
+	<p>colouralpha editor.<a href='ScintillaDoc.html#SCI_SETREPRESENTATIONCOLOUR'>RepresentationColour</a>[string encodedCharacter]<span class="comment"> -- Set the colour of a representation.</span></p>
 	<p>int editor.<a href='ScintillaDoc.html#SCI_SETCONTROLCHARSYMBOL'>ControlCharSymbol</a><span class="comment"> -- Change the way control characters are displayed: If symbol is &lt; 32, keep the drawn way, else, use the given character.</span></p>
 	<h2>Margins</h2>
 	<p>int editor.<a href='ScintillaDoc.html#SCI_SETMARGINS'>Margins</a><span class="comment"> -- Allocate a non-standard number of margins.</span></p>
@@ -525,6 +529,7 @@
 	<p>int editor.<a href='ScintillaDoc.html#SCI_SETPRINTWRAPMODE'>PrintWrapMode</a><span class="comment"> -- Set printing to line wrapped (SC_WRAP_WORD) or not line wrapped (SC_WRAP_NONE).</span></p>
 	<h2>Direct access</h2>
 	<p>pointer editor.<a href='ScintillaDoc.html#SCI_GETDIRECTFUNCTION'>DirectFunction</a> read-only</p>
+	<p>pointer editor.<a href='ScintillaDoc.html#SCI_GETDIRECTSTATUSFUNCTION'>DirectStatusFunction</a> read-only</p>
 	<p>pointer editor.<a href='ScintillaDoc.html#SCI_GETDIRECTPOINTER'>DirectPointer</a> read-only</p>
 	<p>pointer editor.<a href='ScintillaDoc.html#SCI_GETCHARACTERPOINTER'>CharacterPointer</a> read-only</p>
 	<p>pointer editor:<a href='ScintillaDoc.html#SCI_GETRANGEPOINTER'>GetRangePointer</a>(position start, position lengthRange)<span class="comment"> -- Return a read-only pointer to a range of characters in the document. May move the gap so that the range is contiguous, but will only move up to lengthRange bytes.</span></p>

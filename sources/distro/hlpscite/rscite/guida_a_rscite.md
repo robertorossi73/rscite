@@ -4,7 +4,7 @@
 
 **Autore : Roberto Rossi**
 
-**Versione 92**
+**Versione 93**
 
 Un gestore di testi **potente**, **semplice**, **veloce**, **poliedrico**...
 
@@ -766,13 +766,11 @@ web spacificata/selezionata, sfruttando un apposito servizio online.
 * **Converti testo in Ascii Art**. Utilizzando un apposito servizio web,
 questa funzione permette di convertire un testo nella relativa forma di Ascii
 Art.
-* **Calcolatrice**. Questa funzionalità permette di risolvere espressioni
-matematiche ottenendo il risultato numerico. Sono supportate sia le normali
-funzioni matematiche di base, sia quelle avanzate, inoltre è consentito
-l’utilizzo delle variabili modificabili in modo dinamico. Per interpretare
-le espressioni è stata utilizzata la liberia MathParserKit
-([http://www.bernaschina.com/it/progetti/mathparsekit/
-http://www.bernaschina.com/it/progetti/mathparsekit/]).
+* **Calcolatrice Windows**. Questa funzionalità permette di aprire la calcolatrice
+del sistema operativo direttamente dall'interno di SciTE.
+* **Calcolatrice Online**. Questa funzionalità permette di accedere ad una
+calcolatrive avanzata utilizzabile online. Un software che fornisce funzionalità
+avanzate rispetto alla normale calcolatrice di sistema.
 * **Trova Sinonimi e Contrari**. Questa funzione, utilizzando un servizio
 internet, fornisce l’elenco dei sinonimi e contrari della parola
 selezionata/indicata.
