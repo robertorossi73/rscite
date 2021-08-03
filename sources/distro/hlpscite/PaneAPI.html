@@ -106,6 +106,7 @@
 	<p>editor:<a href='ScintillaDoc.html#SCI_REPLACESEL'>ReplaceSel</a>(string text)<span class="comment"> -- Replace the selected text with the argument text.</span></p>
 	<p>bool editor.<a href='ScintillaDoc.html#SCI_SETREADONLY'>ReadOnly</a><span class="comment"> -- Set to read only or read write.</span></p>
 	<p>editor:<a href='ScintillaDoc.html#SCI_ALLOCATE'>Allocate</a>(position bytes)<span class="comment"> -- Enlarge the document to a particular size of text bytes.</span></p>
+	<p>line editor.<a href='ScintillaDoc.html#SCI_ALLOCATELINES'>AllocateLines</a> write-only<span class="comment"> -- Enlarge the number of lines allocated.</span></p>
 	<p>editor:<a href='ScintillaDoc.html#SCI_ADDTEXT'>AddText</a>(string text)<span class="comment"> -- Add text to the document at current position.</span></p>
 	<p>editor:<a href='ScintillaDoc.html#SCI_APPENDTEXT'>AppendText</a>(string text)<span class="comment"> -- Append a string to the end of the document without changing the selection.</span></p>
 	<p>editor:<a href='ScintillaDoc.html#SCI_INSERTTEXT'>InsertText</a>(position pos, string text)<span class="comment"> -- Insert string at a position.</span></p>
@@ -493,6 +494,7 @@
 	<p>int editor.<a href='ScintillaDoc.html#SCI_AUTOCSETORDER'>AutoCOrder</a><span class="comment"> -- Set the way autocompletion lists are ordered.</span></p>
 	<p>bool editor.<a href='ScintillaDoc.html#SCI_AUTOCSETAUTOHIDE'>AutoCAutoHide</a><span class="comment"> -- Set whether or not autocompletion is hidden automatically when nothing matches.</span></p>
 	<p>bool editor.<a href='ScintillaDoc.html#SCI_AUTOCSETDROPRESTOFWORD'>AutoCDropRestOfWord</a><span class="comment"> -- Set whether or not autocompletion deletes any word characters after the inserted text upon completion.</span></p>
+	<p>int editor.<a href='ScintillaDoc.html#SCI_AUTOCSETOPTIONS'>AutoCOptions</a><span class="comment"> -- Set autocompletion options.</span></p>
 	<p>editor:<a href='ScintillaDoc.html#SCI_REGISTERIMAGE'>RegisterImage</a>(int type, string xpmData)<span class="comment"> -- Register an XPM image for use in autocompletion lists.</span></p>
 	<p>editor:<a href='ScintillaDoc.html#SCI_REGISTERRGBAIMAGE'>RegisterRGBAImage</a>(int type, string pixels)<span class="comment"> -- Register an RGBA image for use in autocompletion lists. It has the width and height from RGBAImageSetWidth/Height</span></p>
 	<p>editor:<a href='ScintillaDoc.html#SCI_CLEARREGISTEREDIMAGES'>ClearRegisteredImages</a>()<span class="comment"> -- Clear all the registered XPM images.</span></p>
