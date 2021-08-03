@@ -1,11 +1,11 @@
 --[[
-Version : 3.2.1
+Version : 3.3.0
 Web     : http://www.redchar.net
 
 Questa procedura visualizza informazioni sulla distribuzione di SciTE, inoltre
 consente l'avvio della provedura di aggiornamento
 
-Copyright (C) 2004-2015 Roberto Rossi 
+Copyright (C) 2004-2021 Roberto Rossi 
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -23,6 +23,9 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
 *******************************************************************************
 
 ---------------------------------- Versioni -----------------------------------
+
+V.3.1.0
+- Aggiunte informazioni sulla versione di SciTE
 
 V.3.1.0
 - Eliminato tasto chiudi
@@ -109,8 +112,8 @@ do
     wcl_strip:addLabel(nil, vDistribuzione.." "..versionTbl.AddPart)
     wcl_strip:addNewLine()
 
-    wcl_strip:addLabel(nil, _t(125).." : ")
-    wcl_strip:addLabel(nil,autore)
+    wcl_strip:addLabel(nil, _t(128).." : ")
+    wcl_strip:addLabel(nil,vScite)
     wcl_strip:addNewLine()
 
     wcl_strip:addLabel(nil, _t(126).." : ")
