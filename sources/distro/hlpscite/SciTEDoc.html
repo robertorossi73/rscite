@@ -1740,10 +1740,12 @@ representations=π=Pi,\u20AA=shekel(\u20AA),!0,#FF000090,\x0D\x0A=crlf</div>
       </tr>
       <tr id='property-caret.fore'>
         <td>
-          caret.fore
+          caret.fore<br />
+          <a name='property-caret.additional.fore'></a>
+          caret.additional.fore
         </td>
         <td>
-          Sets the colour used for the caret.
+          Sets the colour used for the main and additional carets.
         </td>
       </tr>
       <tr id='property-caret.additional.blinks'>
@@ -1771,7 +1773,7 @@ representations=π=Pi,\u20AA=shekel(\u20AA),!0,#FF000090,\x0D\x0A=crlf</div>
         </td>
         <td>
           This setting allows the caret line to be drawn as a rectangle inside the line instead of the whole line.
-          It sets the width of rectanges sides. A setting of 0 returns to drawing the whole line.
+          It sets the width of rectangles sides. A setting of 0 returns to drawing the whole line.
         </td>
       </tr>
       <tr id='property-caret.period'>
@@ -2767,7 +2769,7 @@ representations=π=Pi,\u20AA=shekel(\u20AA),!0,#FF000090,\x0D\x0A=crlf</div>
         Define keys that perform commands.
         This is a '|' delimited list of keys and the commands they produce.
         The commands are either <a href="CommandValues.html">string or numeric IDs</a>.
-        Numeric IDs above 2000 are Scintilla commands and are sent to the focussed pane.
+        Numeric IDs above 2000 are Scintilla commands and are sent to the focused pane.
         Named IDs and numeric IDs below 2000 are SciTE menu commands.<br/>
         The modifiers are Ctrl, Shift, Alt, <span class="gtkonly">Super</span>, and <span class="osxonly">Control</span>.<br/>
         The named keys are Left, Right, Up, Down, Insert, End, Home, Enter, Space, Tab,
@@ -3142,7 +3144,7 @@ Prev File|IDM_PREVFILE|<br/>
         </td>
         <td>
           Set find.close.on.find to 0, 1 or 2 to prevent (0) or allow (1) closing the
-          the find strip automatically when the Find button is pressed.
+          find strip automatically when the Find button is pressed.
           The value 2 causes the strip to close automatically only when the search finds a match
           which enables the user to change options or search string if a mistake was made.
           The default value is 1.
@@ -3228,6 +3230,53 @@ Prev File|IDM_PREVFILE|<br/>
             <a href="#IndicatorProperty">structured property</a> with multiple attributes similar to:
          <div class="example">
               find.indicator.incremental=style:compositionthick,colour:#FFB700,under
+         </div>
+        </td>
+       </tr>
+      <tr id='property-filter.match.indicator'>
+        <td>
+          filter.match.indicator
+        </td>
+        <td>
+          Sets the indicator to used to mark matches for filter views.
+          This is a
+            <a href="#IndicatorProperty">structured property</a> with multiple attributes similar to:
+         <div class="example">
+              filter.match.indicator=style:roundbox,colour:#00FFDF,under
+         </div>
+        </td>
+       </tr>
+      <tr id='property-filter.match.back'>
+        <td>
+          filter.match.back
+        </td>
+        <td>
+          The background colour with alpha to use for matching lines in filter views when context shown.
+          Either a 6-digit RGB or 8-digit RGBA value.
+         <div class="example">
+          filter.match.back=#0000FF20
+         </div>
+        </td>
+       </tr>
+      <tr id='property-filter.context'>
+        <td>
+          filter.context
+        </td>
+        <td>
+          The number of lines of context around each matching line to show in a filter view when in context mode.
+         <div class="example">
+          filter.context=3
+         </div>
+        </td>
+       </tr>
+      <tr id='property-hidden.line.colour'>
+        <td>
+          hidden.line.colour
+        </td>
+        <td>
+          The colour to draw horizontal lines between ranges of visible lines.
+         <div class="example">
+          hidden.line.colour=#00800040
          </div>
         </td>
        </tr>
@@ -3851,6 +3900,21 @@ imports.include=fortran lisp
         command is performed.
         </td>
       </tr>
+      </tr>
+      <tr id='property-font.monospaced.list'>
+        <td>
+        font.monospaced.list
+        </td>
+        <td>
+        A ';'-separated list of font names which are monospace over the ASCII graphics characters
+        which includes 'a'-'z', 'A'-'Z', '0'-'9', ' ', and common punctuation.
+        The value may be '*' in which case each font is checked for being monospaced.
+        Fonts in this list may be optimized for speed and memory use if they are actually monospaced.
+          <div class="example">
+                font.monospaced.list=Noto Mono;Menlo;Lucida Console
+          </div>
+        </td>
+      </tr>
       <tr id='property-command.compile'>
         <td>
           <a name='property-command.compile.subsystem'></a><a name='property-command.build'></a><a name='property-command.build.subsystem'></a><a name='property-command.build.directory'></a><a name='property-command.go'></a><a name='property-command.go.subsystem'></a><a name='property-command.clean'></a>
@@ -4265,6 +4329,15 @@ groupundo - yes or no
         Set to 64 to help debug folding by showing hexadecimal fold levels in margin.
         </td>
       </tr>
+      <tr id='property-fold.line.colour'>
+        <td>
+          fold.line.colour
+        </td>
+        <td>
+                Set the colour for lines specified with fold.flags.
+                6 digit colours (#FF3020) and 8 digit colour+alpha (#FF302040) are supported.
+        </td>
+      </tr>
       <tr id='property-fold.compact'>
         <td>
           fold.compact<br />
@@ -4280,7 +4353,7 @@ groupundo - yes or no
         </td>
         <td>
         Set to 1 to enable highlight for current folding block (smallest one that contains the caret).
-        By default, it's disable. Note : The highlight is enabled only when fold.symbols equals
+        By default, it's disable. Note: The highlight is enabled only when fold.symbols equals
         to 2 (round headers) or 3 (square headers).
         </td>
       </tr>
