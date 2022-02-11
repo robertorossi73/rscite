@@ -5,7 +5,7 @@
 * * *
 cloc counts blank lines, comment lines, and physical lines of source code in many programming languages.
 
-Latest release:  v1.90 (May 1, 2021)
+Latest release:  v1.92 (Dec. 5, 2021)
 
 cloc moved to GitHub in September 2015 after being hosted
 at http://cloc.sourceforge.net/ since August 2006.
@@ -40,6 +40,7 @@ at http://cloc.sourceforge.net/ since August 2006.
 *   [Limitations](#limitations-)
 *   [Requesting Support for Additional Languages](#requesting-support-for-additional-languages-)
 *   [Reporting Problems](#reporting-problems-)
+*   [Citation](#citation-)
 *   [Acknowledgments](#acknowledgments-)
 *   [Copyright](#copyright-)
 
@@ -57,8 +58,8 @@ Step 3:  Invoke cloc to count your source files, directories, archives,
 or git commits.
 The executable name differs depending on whether you use the
 development source version (`cloc`), source for a
-released version (`cloc-1.90.pl`) or a Windows executable
-(`cloc-1.90.exe`).  On this page, `cloc` is the generic term
+released version (`cloc-1.92.pl`) or a Windows executable
+(`cloc-1.92.exe`).  On this page, `cloc` is the generic term
 used to refer to any of these.
 
 **a file**
@@ -355,6 +356,7 @@ and Digest::MD5 installed locally.
 # [Building a Windows Executable &#9650;](#___top "click to go to top of document")
 
 The Windows downloads
+<tt>cloc-1.92.exe</tt>,
 <tt>cloc-1.90.exe</tt> and
 <tt>cloc-1.88.exe</tt> were built on a 64 bit Windows 10 computer
 using
@@ -398,6 +400,9 @@ You are encouraged to run your own virus scanners against the
 executable and also check sites such
 https://www.virustotal.com/ .
 The entries for recent versions are:
+
+cloc-1.92.exe:
+https://www.virustotal.com/gui/file/2668fcf8609c431e8934fe9e1866bc620c58d198c4eb262f1d3ef31ef4a690f7
 
 cloc-1.90.exe:
 https://www.virustotal.com/gui/file/d655caae55486f9bac39f7e3c7b7553bcfcfe2b88914c79bfc328055f22b8a37/detection
@@ -472,7 +477,7 @@ C:> cpan -i Digest::MD5
 C:> cpan -i Regexp::Common
 C:> cpan -i Algorithm::Diff
 C:> cpan -i PAR::Packer
-C:> pp -M Digest::MD5 -c -x -o cloc-1.90.exe cloc-1.90.pl
+C:> pp -M Digest::MD5 -c -x -o cloc-1.92.exe cloc-1.92.pl
 </pre>
 
 A variation on the instructions above is if you installed the portable
@@ -1009,7 +1014,7 @@ AspectJ                    (aj)
 Assembly                   (a51, asm, nasm, S, s)
 AutoHotkey                 (ahk, ahkl)
 awk                        (auk, awk, gawk, mawk, nawk)
-Bazel                      (bazel, BUILD)
+Bazel                      (BUILD)
 BizTalk Orchestration      (odx)
 BizTalk Pipeline           (btp)
 Blade                      (blade, blade.php)
@@ -1140,6 +1145,7 @@ Mathematica                (cdf, ma, mathematica, mt, nbp, wl, wlt, m)
 MATLAB                     (m)
 Maven                      (pom, pom.xml)
 Meson                      (meson.build)
+Metal                      (metal)
 Modula3                    (i3, ig, m3, mg)
 Mojo                       (mojom)
 MSBuild script             (btproj, csproj, msbuild, vcproj, wdproj, wixproj)
@@ -1168,11 +1174,13 @@ PHP/Pascal                 (inc)
 Pig Latin                  (pig)
 PL/I                       (pl1)
 PL/M                       (lit, plm)
+PlantUML                   (puml)
 PO File                    (po)
 PowerBuilder               (pbt, sra, srf, srm, srs, sru, srw)
 PowerShell                 (ps1, psd1, psm1)
 ProGuard                   (pro)
 Prolog                     (P, prolog, yap, pl, p6, pro)
+Properties                 (properties)
 Protocol Buffers           (proto)
 Pug                        (jade, pug)
 PureScript                 (purs)
@@ -1200,9 +1208,10 @@ Ruby HTML                  (rhtml)
 Rust                       (rs, rs.in)
 SaltStack                  (sls)
 SAS                        (sas)
-Sass                       (sass, scss)
+Sass                       (sass)
 Scala                      (kojo, sbt, scala)
 Scheme                     (sc, sch, scm, sld, sps, ss, sls)
+SCSS                       (scss)
 sed                        (sed)
 SKILL                      (il)
 SKILL++                    (ils)
@@ -1219,7 +1228,7 @@ SQL Data                   (data.sql)
 SQL Stored Procedure       (spc.sql, spoc.sql, sproc.sql, udf.sql)
 Squirrel                   (nut)
 Standard ML                (fun, sig, sml)
-Starlark                   (bzl)
+Starlark                   (bazel, bzl)
 Stata                      (ado, DO, do, doh, ihlp, mata, matah, sthlp)
 Stylus                     (styl)
 SugarSS                    (sss)
@@ -1239,6 +1248,7 @@ TOML                       (toml)
 TTCN                       (ttcn, ttcn2, ttcn3, ttcnpp)
 Twig                       (twig)
 TypeScript                 (tsx, ts)
+Umka                       (um)
 Unity-Prefab               (mat, prefab)
 Vala                       (vala)
 Vala Header                (vapi)
@@ -2855,7 +2865,7 @@ comment out blocks of code, or they can be regular strings (when
 they appear on the right hand side of an assignment or as a function argument).
 cloc is unable to infer the meaning of docstrings by context; by default
 cloc treats all docstrings as comments.  The switch
-<tt>--docstring-as--code</tt>
+<tt>--docstring-as-code</tt>
 treats all docstrings as code.
 </li>
 <li> Language definition files read with <tt>--read-lang-def</tt> or
@@ -2918,6 +2928,25 @@ the problem with an existing public code base.
 
 Problem reports that cannot be reproduced will be ignored and
 eventually closed.
+
+[](1}}})
+<a name="citation"></a> []({{{1)
+#  [Citation &#9650;](#___top "click to go to top of document")
+
+Please use the following bibtex entry to cite cloc in a publication:
+
+<pre>
+@software{adanial_cloc,
+  author       = {Albert Danial},
+  title        = {cloc},
+  version      = {1.92},
+  year         = 2021,
+  url          = {https://github.com/AlDanial/cloc}
+}
+</pre>
+
+(Update the version number and corresponding year if this
+entry is outdated.)
 
 [](1}}})
 <a name="Acknowledgments"></a> []({{{1)
