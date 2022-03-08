@@ -1,10 +1,10 @@
 --[[
-Version : 2.1.7
+Version : 2.1.8
 Web     : http://www.redchar.net
 
 Questa procedura mostra statistiche sul file corrente
 
-Copyright (C) 2004-2009 Roberto Rossi 
+Copyright (C) 2004-2022 Roberto Rossi 
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -137,7 +137,7 @@ do
     lung = editor.Length;--lunghezza file
     i = 0;
     linea = editor:GetLine(i);
-    while linea do 
+    while i < editor.LineCount do 
       dati = GetStatLine(linea);
       numWords = numWords + dati[1]; --parole
       numChars = numChars + dati[2]; --caratteri in parole
