@@ -19,27 +19,28 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
 *********************************************************************/
 
 //#include "stdafx.h"
-#include <lauxlib.h>
+#include <..\..\luascite\include\lualib.h>
 #include "rMsgBx.h"
+#include "commutil.h"
 
 LRESULT CALLBACK rMsgBx_hookProc(INT, WPARAM, LPARAM );
 
 HHOOK rMsgBx_hhk; //windowsHook
-const char *rMsgBx_okButtonLabel;
-const char *rMsgBx_yesButtonLabel;
-const char *rMsgBx_noButtonLabel;
-const char *rMsgBx_cancelButtonLabel;
-const char *rMsgBx_retryButtonLabel;
-const char *rMsgBx_abortButtonLabel;
+std::wstring rMsgBx_okButtonLabel;
+std::wstring rMsgBx_yesButtonLabel;
+std::wstring rMsgBx_noButtonLabel;
+std::wstring rMsgBx_cancelButtonLabel;
+std::wstring rMsgBx_retryButtonLabel;
+std::wstring rMsgBx_abortButtonLabel;
 
 void rMsgBx_new (void) //initialize dialog
 {
-	rMsgBx_okButtonLabel = NULL;
-	rMsgBx_yesButtonLabel = NULL;
-	rMsgBx_noButtonLabel = NULL;
-	rMsgBx_cancelButtonLabel = NULL;
-	rMsgBx_retryButtonLabel = NULL;
-	rMsgBx_abortButtonLabel = NULL;
+	rMsgBx_okButtonLabel = L"";
+	rMsgBx_yesButtonLabel = L"";
+	rMsgBx_noButtonLabel = L"";
+	rMsgBx_cancelButtonLabel = L"";
+	rMsgBx_retryButtonLabel = L"";
+	rMsgBx_abortButtonLabel = L"";
 }
 
 int rMsgBx_is_customized (void) //check customize button
@@ -47,19 +48,19 @@ int rMsgBx_is_customized (void) //check customize button
 	int result;
 
 	result = 0;
-	if ((rMsgBx_okButtonLabel != NULL) ||
-		(rMsgBx_yesButtonLabel != NULL) ||
-		(rMsgBx_noButtonLabel != NULL) ||
-		(rMsgBx_cancelButtonLabel != NULL) ||
-		(rMsgBx_retryButtonLabel != NULL) ||
-		(rMsgBx_abortButtonLabel != NULL)
+	if ((rMsgBx_okButtonLabel != L"") ||
+		(rMsgBx_yesButtonLabel != L"") ||
+		(rMsgBx_noButtonLabel != L"") ||
+		(rMsgBx_cancelButtonLabel != L"") ||
+		(rMsgBx_retryButtonLabel != L"") ||
+		(rMsgBx_abortButtonLabel != L"")
 		)
 		result = 1;
 
 	return result;
 }
 
-void rMsgBx_setLabel(int typeLabel, const char label[])
+void rMsgBx_setLabel(int typeLabel, std::wstring label)
 {
 
   switch (typeLabel)
@@ -85,7 +86,7 @@ void rMsgBx_setLabel(int typeLabel, const char label[])
   }
 }
 
-int rMsgBx_show(HWND hwnd, const char lpText[], const char lpCaption[], UINT uType)
+int rMsgBx_show(HWND hwnd, const wchar_t lpText[], const wchar_t lpCaption[], UINT uType)
 {
 	int result;
 	if (rMsgBx_is_customized() > 0)
@@ -93,7 +94,7 @@ int rMsgBx_show(HWND hwnd, const char lpText[], const char lpCaption[], UINT uTy
 		rMsgBx_hhk = SetWindowsHookEx(WH_CBT, &rMsgBx_hookProc, 0, GetCurrentThreadId());
 	}
 	
-	result = MessageBox(hwnd, lpText, lpCaption, uType); 
+	result = MessageBoxW(hwnd, lpText, lpCaption, uType);
 	rMsgBx_new();
    return result;
 }
@@ -107,29 +108,29 @@ LRESULT CALLBACK rMsgBx_hookProc(INT nCode, WPARAM wParam, LPARAM lParam)
 
    if (nCode == HCBT_ACTIVATE)
    {
-      if ((GetDlgItem(hChildWnd,IDYES)!=NULL) && rMsgBx_yesButtonLabel)
+      if ((GetDlgItem(hChildWnd,IDYES)!=NULL) && (rMsgBx_yesButtonLabel != L""))
       {
-		result = SetDlgItemText(hChildWnd,IDYES,rMsgBx_yesButtonLabel);
+		result = SetDlgItemTextW(hChildWnd,IDYES,rMsgBx_yesButtonLabel.c_str());
       }
-    if ((GetDlgItem(hChildWnd,IDOK)!=NULL) && rMsgBx_okButtonLabel)
+    if ((GetDlgItem(hChildWnd,IDOK)!=NULL) && (rMsgBx_okButtonLabel != L""))
       {
-		result = SetDlgItemText(hChildWnd,IDOK,rMsgBx_okButtonLabel);
+		result = SetDlgItemTextW(hChildWnd,IDOK,rMsgBx_okButtonLabel.c_str());
       }
-    if ((GetDlgItem(hChildWnd,IDNO)!=NULL) && rMsgBx_noButtonLabel)
+    if ((GetDlgItem(hChildWnd,IDNO)!=NULL) && (rMsgBx_noButtonLabel != L""))
       {
-		result = SetDlgItemText(hChildWnd,IDNO,rMsgBx_noButtonLabel);
+		result = SetDlgItemTextW(hChildWnd,IDNO,rMsgBx_noButtonLabel.c_str());
       }
-    if ((GetDlgItem(hChildWnd,IDCANCEL)!=NULL) && rMsgBx_cancelButtonLabel)
+    if ((GetDlgItem(hChildWnd,IDCANCEL)!=NULL) && (rMsgBx_cancelButtonLabel != L""))
       {
-		result = SetDlgItemText(hChildWnd,IDCANCEL, rMsgBx_cancelButtonLabel);
+		result = SetDlgItemTextW(hChildWnd,IDCANCEL, rMsgBx_cancelButtonLabel.c_str());
       }
-    if ((GetDlgItem(hChildWnd,IDRETRY)!=NULL) && rMsgBx_retryButtonLabel)
+    if ((GetDlgItem(hChildWnd,IDRETRY)!=NULL) && (rMsgBx_retryButtonLabel != L""))
       {
-		result = SetDlgItemText(hChildWnd,IDRETRY,rMsgBx_retryButtonLabel);
+		result = SetDlgItemTextW(hChildWnd,IDRETRY,rMsgBx_retryButtonLabel.c_str());
       }
-    if ((GetDlgItem(hChildWnd,IDABORT)!=NULL) && rMsgBx_abortButtonLabel)
+    if ((GetDlgItem(hChildWnd,IDABORT)!=NULL) && (rMsgBx_abortButtonLabel != L""))
       {
-		result = SetDlgItemText(hChildWnd,IDABORT,rMsgBx_abortButtonLabel);
+		result = SetDlgItemTextW(hChildWnd,IDABORT,rMsgBx_abortButtonLabel.c_str());
       }
 
       UnhookWindowsHookEx(rMsgBx_hhk);

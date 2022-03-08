@@ -22,6 +22,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
 Modulo gestione dialog
 */
 #include <windows.h>
+#include <stdio.h>
 #include "commutil.h"
 #include "cdialog.h"
 #include "resource.h"

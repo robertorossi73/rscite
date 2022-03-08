@@ -2,6 +2,9 @@
   nuova funzione c_callFXex in grado di richiamare funzioni presenti in 
   librerie esterne
 
+V.5.3.0.0
+* Le funzioni MsgBox accettano stringe in formato utf-8.
+
 V.5.2.0.0
 * Modificata funzione c_GetFileName in modo che ritorni i file con nomi contenenti
 	caratteri unicode.

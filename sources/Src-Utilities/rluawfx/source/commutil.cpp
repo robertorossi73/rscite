@@ -18,10 +18,9 @@ License along with this library; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
 *********************************************************************/
 
-
 #include <windows.h>
 #include <stdio.h>
-
+#include "commutil.h"
 
 //funzione callback per GetHWNDDirectorExtension
 BOOL CALLBACK EnumWindowsProcForDirExt(HWND  hwnd, LPARAM lParam)
@@ -109,4 +108,20 @@ const wchar_t* CharToW(const char* c)
 void DeleteChToW(const wchar_t* c)
 {
     delete[] c;
+}
+
+std::wstring UTF8CharToWChar(const char* c)
+{
+    std::wstring wmsg = L"";
+    int convertResult = MultiByteToWideChar(CP_UTF8, 0, c, (int)strlen(c), NULL, 0);
+    if (convertResult > 0)
+    {
+        wmsg.resize(convertResult + 10);
+        convertResult = MultiByteToWideChar(CP_UTF8, 0, c, (int)strlen(c), &wmsg[0], (int)wmsg.size());
+        if (convertResult <= 0)
+        {
+            wmsg = L"";
+        }
+    }
+    return wmsg;
 }

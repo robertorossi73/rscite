@@ -20,7 +20,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
 
 extern "C" 
 {
-	#include <lauxlib.h>
+    #include <..\..\luascite\include\lualib.h>
 }
 //#include <lua.h>
 
@@ -93,14 +93,14 @@ int isEnglishLang(void)
 LUALIB_API int c_MsgBox_Customize_Btn(lua_State *L)
 {
   const int n = lua_gettop(L);
-  const char *text;
+  std::wstring text;
   lua_Integer opt;
 
   if ((n == 2) && (lua_type(L,1)==LUA_TNUMBER) && (lua_type(L,2)==LUA_TSTRING)) 
   {
     opt = lua_tointeger( L, 1 );
-    text = lua_tostring( L, 2 );
-    rMsgBx_setLabel(opt, text);
+    text = UTF8CharToWChar(lua_tostring( L, 2 ));
+    rMsgBx_setLabel(opt, text.c_str());
   } else {
     showErrorMsg("Arguments Error! - MsgBox_Customize_Btn(buttonId ,text)");
     lua_error(L); 
@@ -113,30 +113,35 @@ LUALIB_API int c_MsgBox_Customize_Btn(lua_State *L)
 LUALIB_API int c_MsgBox(lua_State *L)
 {
   const int n = lua_gettop(L);
-  const char *msg;
-  const char *title;
+  std::wstring msg;
+  std::wstring title;
   lua_Number opt;
   int res;
   HWND hwndOwner;
+  /*std::wstring_convert<std::codecvt_utf8<char32_t>, char32_t> convert;
+  std::wstring utf8 = convert.to_bytes(0x5e9);*/
+  
 
   if ((n > 0) && (n < 4) && (lua_type(L,1)==LUA_TSTRING)) {    
     if ((hwndOwner = GetActiveWindow()) == NULL) {
             hwndOwner = GetDesktopWindow();
         }
-    msg = lua_tostring(L,1);
+    msg = UTF8CharToWChar(lua_tostring(L,1));
+
     if (n > 1)
-      title = lua_tostring( L, 2 );
+      title = UTF8CharToWChar(lua_tostring( L, 2 ));
     else
-      title = LS_NAMESPACE;
+      title = UTF8CharToWChar(LS_NAMESPACE);
     if (n > 2)
       opt = lua_tonumber( L, 3 );
     else
       opt = MB_OK;
 	
 	//res = MessageBox(hwndOwner,msg,title,(UINT)opt);
-	res = rMsgBx_show(hwndOwner, msg, title,(UINT)opt);
+	res = rMsgBx_show(hwndOwner, msg.c_str(), title.c_str(),(UINT)opt);
 
     lua_pushnumber(L, res);
+
   } else {
     showErrorMsg("Arguments Error! - MsgBox(messaggio [,titolo [,flag, [custom_button]]])");
     lua_error(L); 

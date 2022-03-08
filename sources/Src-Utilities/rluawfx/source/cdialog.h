@@ -1,5 +1,5 @@
 
-#include <lauxlib.h>
+#include <..\..\luascite\include\lualib.h>
 #include <lua.h>
 
 struct stDataDialog {
