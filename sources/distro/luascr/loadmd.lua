@@ -1,11 +1,11 @@
---[[
-Version : 3.3.6
+--[[ # -*- coding: utf-8 -*-
+Version : 4.0.0
 Web     : http://www.redchar.net
 
 Questa procedura permette l'anteprima di un file markdown, convertendolo in html
 per poi mostrarlo all'interno del browser web del sistema
 
-Copyright (C) 2015-2019 Roberto Rossi
+Copyright (C) 2015-2022 Roberto Rossi
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -144,15 +144,20 @@ do
     end
 
     --genera file bat con comando completo, ritorna il path del bat
-    local function markdown_genBat(inPath)
+    local function markdown_genBat(modePar)
         local batfile
         local idf
         local exe = props["SciteDefaultHome"].."\\tools\\markdown\\multimarkdown.exe"
         local tmpFileName = markdown_getHtmlName()
         --local par = "\""..props["FilePath"].."\" > \""..tmpFileName.."\""
-        local par = "-c \""..props["FilePath"].."\" > \""..tmpFileName.."\""
-        local cmd = "\""..exe.."\" "..par
-
+        local mode = "-c "
+        local par = "\""..props["FilePath"].."\" > \""..tmpFileName.."\""
+        local cmd = ""
+        
+        mode = modePar
+        
+        cmd = "\""..exe.."\" "..mode..par
+        
         batfile = os.getenv("TMP")
         batfile = batfile.."\\sciteMarkdown.bat"
         idf = io.open(batfile, "w")
@@ -194,6 +199,10 @@ do
                               "solarized_dark",
                               "solarized_light"
                              }
+        local tblModes = {  
+                            _t(476), --multimarkdown
+                            _t(477)  --basic markdown
+                         }
         local htmlFile = markdown_getHtmlName()
         local previousModel = getUsedModel(htmlFile)
                              
@@ -202,10 +211,17 @@ do
 
         wcl_strip:addLabel(nil, _t(416))
         wcl_strip:addCombo("TVAL", nil)
+        --TODO: tradurre
+        wcl_strip:addLabel(nil, _t(475))
+        wcl_strip:addCombo("TVALMOD", nil)
+        
         wcl_strip:addButton("OKBTN",_t(418),buttonOk_click, true)
         wcl_strip:addButton("OKBTN2",_t(419),buttonOk2_click, false)
         wcl_strip:show()
 
+        wcl_strip:setList("TVALMOD", tblModes)
+        wcl_strip:setValue("TVALMOD", tblModes[2])
+        
         wcl_strip:setList("TVAL", tblTemplates)
         if (exist_in_table(tblTemplates, previousModel)) then
             wcl_strip:setValue("TVAL", previousModel)
@@ -228,13 +244,21 @@ do
         local htmlFileDest = markdown_getHtmlName()
         local cssFile = props["SciteDefaultHome"].."\\luascr\\md\\"..
                         htmlModel..".css"
+        local mode
+        
+        --controllo basci markdown
+        if (wcl_strip:getValue("TVALMOD") == _t(477)) then
+            mode = "-c "
+        else
+            mode = ""
+        end
         
         if (rfx_fileExist(cssFile) == false) then
             cssFile = props["SciteDefaultHome"].."\\luascr\\md\\default.css"
         end
         
-        print(_t(338)..htmlFileDest.._t(343))
-        rfx_exeCapture("\""..markdown_genBat().."\"")
+        print(_t(338)..htmlFileDest.._t(343))        
+        rfx_exeCapture("\""..markdown_genBat(mode).."\"")
         markdown_modHtml(htmlFile, cssFile, htmlModel)
         
         if (OpenHtml) then
@@ -254,7 +278,7 @@ do
         
         if (PUBLIC_optionScript == "RUN") then
             --preview in browser
-            rfx_exeCapture("\""..markdown_genBat().."\"")
+            rfx_exeCapture("\""..markdown_genBat("-c ").."\"")
             markdown_modHtml(htmlFile, false, previousModel)
             rwfx_ShellExecute(markdown_getHtmlName(),"")
             PUBLIC_optionScript = ""
