@@ -1,9 +1,9 @@
 --[[Autostart File
 Autore : Roberto Rossi
 Web    : http://www.redchar.net
-Versione : 1.9.0
+Versione : 1.10.0
 
-Copyright (C) 2004-2013 Roberto Rossi 
+Copyright (C) 2004-2022 Roberto Rossi 
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
