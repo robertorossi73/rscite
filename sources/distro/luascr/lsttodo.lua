@@ -1,12 +1,12 @@
 --[[
-Version : 1.0.3
+Version : 1.1.0
 Web     : http://www.redchar.net
 
 Elenca tutte le linee contenenti tag TODO :
 
 "HACK", "TODO", "UNDONE"
 
-Copyright (C) 2004-2009 Roberto Rossi 
+Copyright (C) 2004-2021 Roberto Rossi 
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -33,7 +33,10 @@ do
                     "UNDONE ", 
                     "HACK:", 
                     "TODO:", 
-                    "UNDONE:"
+                    "UNDONE:",
+                    "HACK :", 
+                    "TODO :", 
+                    "UNDONE :"
                    }
   
   local function main()
@@ -55,6 +58,9 @@ do
       end      
       i = i + 1;
       linea = editor:GetLine(i);
+        if (i > editor.LineCount) then
+            linea = false
+        end
     end
     
   end--endfunction
