@@ -1,5 +1,5 @@
 --[[
-Version : 2.2.1
+Version : 2.2.5
 Web     : http://www.redchar.net
 
 Questa procedura consente l'eliminazione dei doppioni presenti
@@ -7,7 +7,7 @@ nel file vorrente.
 In questo file sono definite solamente le funzioni, che NON vengono
 eseguite atuomaticamente al suo caricamento.
 
-Copyright (C) 2004-2009 Roberto Rossi 
+Copyright (C) 2004-2022 Roberto Rossi 
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -25,8 +25,8 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
 *******************************************************************************
 ]]
 
-local tbLinee = {} --tabella file
-local searchString = "" --stringa da cercare in tabella
+tbLinee = {} --tabella file
+searchString = "" --stringa da cercare in tabella
 
 --ritorna l'ultimo carattere della stringa data
 local function LastCH (s)
@@ -88,24 +88,25 @@ end
 --eliminazione linee doppie
 function EliminaLineeDoppie()
   local linea,pos
-  local i=0
+  local i = 0
   
-  i = 0
-  linea = editor:GetLine(i)
-  while linea do 
+  while i < editor.LineCount do 
+    linea = editor:GetLine(i)
     searchString = RemoveReturnLine(linea)
     if IsTbPresent() then
       pos = editor:PositionFromLine(i)
       editor.CurrentPos = pos
       editor:LineDelete()
-      i = i - 1
+      if i < (editor.LineCount-1) then
+        i = i - 1
+      end
     else
       tbLinee[i] = RemoveReturnLine(linea)
     end
     i = i + 1
-    linea = editor:GetLine(i)
   end
   editor.CurrentPos = 0
   editor.SelectionStart = 0
   editor.SelectionEnd = 0  
+  tbLinee = {}
 end
