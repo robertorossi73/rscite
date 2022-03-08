@@ -473,9 +473,9 @@
 	<p>int editor:<a href='ScintillaDoc.html#SCI_INDICATORVALUEAT'>IndicatorValueAt</a>(int indicator, position pos)<span class="comment"> -- What value does a particular indicator have at a position?</span></p>
 	<p>position editor:<a href='ScintillaDoc.html#SCI_INDICATORSTART'>IndicatorStart</a>(int indicator, position pos)<span class="comment"> -- Where does a particular indicator start?</span></p>
 	<p>position editor:<a href='ScintillaDoc.html#SCI_INDICATOREND'>IndicatorEnd</a>(int indicator, position pos)<span class="comment"> -- Where does a particular indicator end?</span></p>
-	<p>editor:<a href='ScintillaDoc.html#SCI_FINDINDICATORSHOW'>FindIndicatorShow</a>(position start, position end)<span class="comment"> -- On OS X, show a find indicator.</span></p>
-	<p>editor:<a href='ScintillaDoc.html#SCI_FINDINDICATORFLASH'>FindIndicatorFlash</a>(position start, position end)<span class="comment"> -- On OS X, flash a find indicator, then fade out.</span></p>
-	<p>editor:<a href='ScintillaDoc.html#SCI_FINDINDICATORHIDE'>FindIndicatorHide</a>()<span class="comment"> -- On OS X, hide the find indicator.</span></p>
+	<p>editor:<a href='ScintillaDoc.html#SCI_FINDINDICATORSHOW'>FindIndicatorShow</a>(position start, position end)<span class="comment"> -- On macOS, show a find indicator.</span></p>
+	<p>editor:<a href='ScintillaDoc.html#SCI_FINDINDICATORFLASH'>FindIndicatorFlash</a>(position start, position end)<span class="comment"> -- On macOS, flash a find indicator, then fade out.</span></p>
+	<p>editor:<a href='ScintillaDoc.html#SCI_FINDINDICATORHIDE'>FindIndicatorHide</a>()<span class="comment"> -- On macOS, hide the find indicator.</span></p>
 	<h2>Autocompletion</h2>
 	<p>editor:<a href='ScintillaDoc.html#SCI_AUTOCSHOW'>AutoCShow</a>(position lengthEntered, string itemList)<span class="comment"> -- Display a auto-completion list. The lengthEntered parameter indicates how many characters before the caret should be used to provide context.</span></p>
 	<p>editor:<a href='ScintillaDoc.html#SCI_AUTOCCANCEL'>AutoCCancel</a>()<span class="comment"> -- Remove the auto-completion list from the screen.</span></p>
@@ -579,6 +579,7 @@
 	<p>int editor.<a href='ScintillaDoc.html#SCI_SETWRAPSTARTINDENT'>WrapStartIndent</a><span class="comment"> -- Set the start indent for wrapped lines.</span></p>
 	<p>int editor.<a href='ScintillaDoc.html#SCI_SETLAYOUTCACHE'>LayoutCache</a><span class="comment"> -- Sets the degree of caching of layout information.</span></p>
 	<p>int editor.<a href='ScintillaDoc.html#SCI_SETPOSITIONCACHE'>PositionCache</a><span class="comment"> -- Set number of entries in position cache</span></p>
+	<p>int editor.<a href='ScintillaDoc.html#SCI_SETLAYOUTTHREADS'>LayoutThreads</a><span class="comment"> -- Set maximum number of threads used for layout</span></p>
 	<p>editor:<a href='ScintillaDoc.html#SCI_LINESSPLIT'>LinesSplit</a>(int pixelWidth)<span class="comment"> -- Split the lines in the target into lines that are less wide than pixelWidth where possible.</span></p>
 	<p>editor:<a href='ScintillaDoc.html#SCI_LINESJOIN'>LinesJoin</a>()<span class="comment"> -- Join the lines in the target.</span></p>
 	<p>line editor:<a href='ScintillaDoc.html#SCI_WRAPCOUNT'>WrapCount</a>(line docLine)<span class="comment"> -- The number of display lines needed to wrap a document line</span></p>
