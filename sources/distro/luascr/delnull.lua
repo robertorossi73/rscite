@@ -1,12 +1,12 @@
 --[[
-Version : 2.1.5
+Version : 2.1.6
 Web     : http://www.redchar.net
 
 Questa procedura consente l'eliminazione di tutte le righe
 vuote presenti. Vengono considerate vuote anche le linee contenenti
 solamente spazi.
 
-Copyright (C) 2004-2009 Roberto Rossi 
+Copyright (C) 2004-2022 Roberto Rossi 
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -33,7 +33,7 @@ do
     
     i = 0
     linea = editor:GetLine(i)
-    while linea do
+    while i < editor.LineCount do
       x = string.gsub(linea,"%s*","") --eliminazione spazi
       if ((x == "\n\r") or (x == "\r\n") or 
           (x == "\n") or (x == "\r") or (x == "")) then
@@ -41,7 +41,9 @@ do
         pos = editor:PositionFromLine(i)
         editor.CurrentPos = pos
         editor:LineDelete()
-        i = i - 1
+        if i < (editor.LineCount-1) then
+            i = i - 1
+        end
       end
       i = i + 1
       linea = editor:GetLine(i)
