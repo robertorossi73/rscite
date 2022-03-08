@@ -1,10 +1,10 @@
 --[[
-Version : 3.1.1
+Version : 3.1.2
 Web     : http://www.redchar.net
 
 Questa procedura ordina il file corrente
 
-Copyright (C) 2012-2015 Roberto Rossi e Luigi Altomare: 
+Copyright (C) 2012-2022 Roberto Rossi e Luigi Altomare: 
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -161,7 +161,7 @@ do
       --lettura tutto file
       i = 1
       linea = editor:GetLine(i-1)
-      while linea do --lettura linee
+      while (i - 1) < editor.LineCount do --lettura linee
         tbLinee[i] = linea
         i = i + 1
         linea = editor:GetLine(i-1)
