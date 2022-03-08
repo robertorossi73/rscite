@@ -1,5 +1,5 @@
 --[[
-Version : 3.4.1
+Version : 3.5.1
 Web     : http://www.redchar.net
 
 Funzioni di utilità per macro SciTE/Lua
@@ -204,6 +204,8 @@ if not(rwfx_info) then
       resultTbl.Url = rfx_GetIniVal(nomef,"RSciTE","WebRSciTE")
       resultTbl.UrlUpg = rfx_GetIniVal(nomef,"RSciTE","Download")
       resultTbl.AuthorUrl = rfx_GetIniVal(nomef,"General","Web")
+      resultTbl.IniOnline = rfx_GetIniVal(nomef,"RSciTE","IniOnline")      
+      resultTbl.DownloadFile = rfx_GetIniVal(nomef,"RSciTE","DownloadFile")
       
       return resultTbl 
     end
