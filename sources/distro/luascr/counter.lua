@@ -1,5 +1,5 @@
 --[[ Conta linee
-Version : 1.1.4
+Version : 1.1.6
 Web     : http://www.redchar.net
 
 Questa procedura consente di contare le linee che :
@@ -10,7 +10,7 @@ Questa procedura consente di contare le linee che :
 
 In aggiunta esiste la possibilità di inserire dei segnalibri sulle linee trovate e di abilitare o meno la ricerca ignorando le maiuscole e le minuscole
 
-Copyright (C) 2013 Roberto Rossi 
+Copyright (C) 2013-2022 Roberto Rossi 
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -77,7 +77,7 @@ do
         scite.MenuCommand(IDM_BOOKMARK_CLEARALL)
       end
 
-      while linea do      
+      while i < editor.LineCount do      
         linea = rfx_RemoveReturnLine(linea)
         
         if (ignoreCaseOpt) then --ignora maiuscole/minuscole
