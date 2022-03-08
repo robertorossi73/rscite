@@ -16,7 +16,6 @@ Developers:
 * Takashi Sawanaka <sdottaka@users.sourceforge.net>
 * Alexander Skinner (Graphic Design) <neonapple@users.sourceforge.net>
 * Jochen Tucht <jtuc@users.sourceforge.net>
-* Kimmo Varis <kimmov@winmerge.org>
 
 Inactive/past developers:
 * Laurent Ganier
@@ -24,24 +23,39 @@ Inactive/past developers:
 * Chris Mumford
 * Perry Rapp
 * Christian "Seier" Blackburn (Installer)
+* Kimmo Varis <kimmov@winmerge.org>
 
 Localization:
+* Arabic:
+  Downzen team <https://downzen.com>
+
 * Basque:
   Xabier Aramendi <Azpidatziak@gmail.com>  
 
 * Bulgarian:
   Sld <sld|mail.bg>
   tigertron <ivg_18@yahoo.com>
+  Yanko Yankov <yankonik70 at hotmail.com>
+  Стоян <stoyan от гмаил>
 
 * Catalan:
   Jordi Vilar <jvilar@users.sourceforge.net>
+  Domènec <domenec72 at gmail.com>
 
 * Simplified Chinese:
   Liaobin <liaobin@jite. net>
+  xmpdhml <xmpdhml at users.sourceforge.net>
+  MaysWind <i at mayswind.net>
+  YFdyh000 <yfdyh000 at gmail.com>
+  CharlesMengCA <CharlesMeng at outlook.com>
 
 * Traditional Chinese:
   Koko <kokokoko@giga.net.tw>
   Calvin Lin <ylin77 at gmail.com>
+  SiderealArt <admin at siderealart.me>
+
+* Corsican:
+  Patriccollu di Santa Maria è Sichè
 
 * Croatian:
   Hasan Osmanagiæ <hasan.osmanagic@public.carnet.hr>
@@ -68,14 +82,18 @@ Localization:
   Laurent Ganier <ccganier@club-internet.fr>
   Dominique Saussereau <redguff@users.sourceforge.net>
   Matthieu Pupat
+  gandf
+  Lolo S. <slolo2000 at hotmail.com>
 
 * Galician:
   Medulio
+  Luis A. Martínez Sobrino <luis.martinez.sobrino at gmail.com>
 
 * German:
   Tim Gerundt <tim@gerundt.de>
   Winfried Peter <winfried.peter@omicron.at>
   Joerg Schneider <tonda@users.sourceforge.net>
+  Mr-Update
 
 * Greek:
   Polyvios J. Simopoulos <polyvios.j.simopoulos@gmail.com>
@@ -83,17 +101,24 @@ Localization:
 * Hungarian:
   Márton Balázs <documan@users.sourceforge.net>
   Mihalicza József <jmihalicza@gmail.com>
+  Egyed Ferenc <efi99 at freemail.hu>
 
 * Italian:
   Andrea Decorte <deco1985@hotmail.com>
   Antonio Angelo <antonio.angelo@gmail.com>
   Michele Merega <michele.merega@ifminfomaster.com>
+  Michele Locati <michele@locati.it>
+  bovirus
+  Massimiliano Caniparoli
 
 * Korean:
   Sukjoon <bbcool@gmail.com>
   Lee Jae-Hong <pyrasis@users.sourceforge.net>
   Sushizang <sushizang@empal.com>
   sheppaul <sheppaul at gmail.com>
+  teamzamong <teamzamong at gmail.com>
+  BrainS <29201475+BraINstinct0 at users.noreply.github.com>
+  cynilyn <cynilyn at gmail.com>
 
 * Lithuanian:
   Dalius Guzauskas (aka Tichij) <tichij AT mail DOT com>
@@ -108,20 +133,28 @@ Localization:
   M.T <mtrz@users.sourceforge.net>
   Skiff <skiffatsf@users.sourceforge.net>
   Pawel Wawrzysko <traduc@kki.pl>
+  Mirosław Żylewicz
+  Michał Lipok
 
 * Portuguese (Brazilian):
   Wender Firmino <wender@pta.com.br>
   Felipe Periard Lopes <felipefpl@ig.com.br>
+  Igor Rückert
+  jota11
+  Gabriel Camargo Fukushima
 
 * Portuguese (Portugal):
   Nelson Simão
   Lippe35
+  Hugo Carvalho <hugokarvalho@hotmail.com>
 
 * Romanian:
   Cristian Arghiroiu <cristi.arghiroiu@gmail.com>
 
 * Russian:
   Dmitriy S. Aleshkowskiy <wwarlock@mail.ru>
+  Timon34
+  wvxwxvw
 
 * Serbian:
   Ozzii <ivanstar61@gmail.com>
@@ -132,19 +165,25 @@ Localization:
 * Slovak:
   Majvan <vancojur@decef.elf.stuba.sk>
   Ivan Masár <helix84@centrum.sk>
+  Jozef Matta <jozef.m923@gmail.com>
 
 * Slovenian:
   Iztok Osredkar <iztok.osredkar@institut-oko.si>
   Filip Komar <filip.komar@gmail.com>
+  Jadran Rudec <jrudec@gmail.com>
 
 * Spanish:
-  Mario Angel <marioangel70@gmail.com>
-  Jesús M. Delgado 'MacK' <nncsoft@yahoo.com>
   Dean Grimm <grimmdp@yahoo.com>
+  Jesús M. Delgado 'MacK' <nncsoft@yahoo.com>
+  Mario Angel <marioangel70@gmail.com>
+  Nelson Ariza <njarizas@hotmail.com>
+  borjafg
 
 * Swedish:
   Hans Eriksson <hans.ericson@bredband.net>
   Göran Håkansson <goran.x.hakansson@telia.com>
+  pgert <pgert at yahoo.se>
+  Timmy Almroth <timmy.almroth at tim-international.net>
 
 * Turkish:
   Afyonlu <afyonlu@users.sourceforge.net>
@@ -204,7 +243,15 @@ Other Contributors (code, ideas, testing..):
 * Etienne Faisant
 * Bill Gord
 * H.Saido
-
+* Flaviu_
+* Jun Tajima
+* EugeneLaptev
+* ranjwarrior
+* elsonwei
+* evoc
+* devmynote
+* Michał Lipok
+* Samuel Plentz
 
 WinMerge includes code from:
 * Jared Breland <jbreland@legroom.net> (Installer's modpath script)
@@ -214,14 +261,15 @@ WinMerge includes code from:
 * Francis Irving (original conflict file parser)
 * Michael P. Mehl (CMessageBoxDialog)
 * Cristi Posea (CSizingControlBar)
-* Ferdinand Prantl (CrystalEditor syntax rules)
+* Ferdinand Prantl (Crystal Edit syntax rules)
 * Keith Rule (CMemDC - memory DC)
 * Paul Senzee (String formatting)
 * Henry Spencer (CRegExp)
-* Andrei Stcherbatchenko (CrystalEditor)
+* Andrei Stcherbatchenko (Author of Crystal Edit)
+* Sven Wiegand (Crystal Edit)
 
 *** NOTE ***
-If your name is missing please email us at:
-winmerge-support@lists.sourceforge.net
+If your name is missing please let us know (or create a pull request).
+https://github.com/WinMerge/winmerge
 
 Thanks!

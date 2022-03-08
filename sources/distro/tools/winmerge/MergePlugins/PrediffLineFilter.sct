@@ -12,6 +12,9 @@
   <property name="PluginIsAutomatic">
     <get/>
   </property>
+  <property name="PluginExtendedProperties">
+    <get/>
+  </property>
   <method name="PrediffBufferW"/>
   <method name="ShowSettingsDialog"/>
 </implements>
@@ -66,6 +69,10 @@ Function get_PluginIsAutomatic()
   get_PluginIsAutomatic = True
 End Function
 
+Function get_PluginExtendedProperties()
+  get_PluginExtendedProperties = "MenuCaption=Apply Prediff Substitution Filters"
+End Function
+
 Function SafeUBound(ary)
   On Error Resume Next
   SafeUBound = -1
@@ -118,9 +125,14 @@ End Function
 Function ShowSettingsDialog()
   Dim tname: tname = fso.BuildPath(fso.GetSpecialFolder(2), fso.GetTempName() & ".hta")
   Dim tfile: Set tfile = fso.CreateTextFile(tname)
+  Dim mshta
   tfile.Write getResource("dialog1")
   tfile.Close
-  Run wsh, "mshta.exe """ & tname & """"
+  mshta = wsh.ExpandEnvironmentStrings("%SystemRoot%\mshta.exe")
+  If Not fso.FileExists(mshta) Then
+    mshta = wsh.ExpandEnvironmentStrings("%SystemRoot%\SysWOW64\mshta.exe")
+  End If
+  Run wsh, """" & mshta & """ """ & tname & """"
   fso.DeleteFile tname 
 End Function
 
@@ -135,7 +147,7 @@ End Sub
 <html>
   <head>
     <title>PrediffLineFilter.sct WinMerge Plugin Options</title>
-    <meta content="text/html" charset="ShiftJIS">
+    <meta content="text/html" charset="Shift_JIS">
     <style>
       body { background-color: lightgray; }
       ul { list-style:none; }
@@ -166,8 +178,10 @@ End Sub
         newRow.insertCell(-1).innerHTML = '<input type="checkbox" name="chkEnabled" ' + (regRead(REGKEY_PATH + "Enabled" + r, true) ? 'checked' : '') + ' />';
         newRow.insertCell(-1).innerHTML = '<input type="checkbox" name="chkIgnoreCase" ' + (regRead(REGKEY_PATH + "IgnoreCase" + r, false) ? 'checked' : '') + ' />';
         newRow.insertCell(-1).innerHTML = '<input type="checkbox" name="chkUseRegExp" ' + (regRead(REGKEY_PATH + "UseRegExp" + r, false) ? 'checked' : '') + ' />';
-        newRow.insertCell(-1).innerHTML = '<input type="text" name="txtPattern" value="' + regRead(REGKEY_PATH + "Pattern" + r,  "") + '" />';
-        newRow.insertCell(-1).innerHTML = '<input type="text" name="txtReplaceText" value="' + regRead(REGKEY_PATH + "ReplaceText" + r,  "") + '" />';
+        newRow.insertCell(-1).innerHTML = '<input class="textbox" type="text" name="txtPattern" value="" />'
+        newRow.insertCell(-1).innerHTML = '<input class="textbox" type="text" name="txtReplaceText" value="" />'
+        newRow.cells[3].childNodes[0].value = regRead(REGKEY_PATH + "Pattern" + r,  "");
+        newRow.cells[4].childNodes[0].value = regRead(REGKEY_PATH + "ReplaceText" + r,  "");
       }
 
       function deleteRow(r) {
@@ -195,9 +209,9 @@ End Sub
         div.id = "language";
         var html = '&shy;<style>';
         if (lang.substr(0, 2).toLowerCase() === 'ja') {
-          html += '.en { display: none } .ja { display: inline }';
+          html += '.en { display: none } .ja { display: inline } .textbox { font-family: "MS Gothic" }';    
         } else {
-          html += '.ja { display: none } .en { display: inline }';
+          html += '.ja { display: none } .en { display: inline } .textbox { font-family: "Courier New" }';
         }
         div.innerHTML = html;
         if (!document.getElementById("language"))
