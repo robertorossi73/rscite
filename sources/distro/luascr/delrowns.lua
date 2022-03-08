@@ -1,12 +1,12 @@
 --[[
-Version : 2.0.8
+Version : 2.0.9
 Web     : http://www.redchar.net
 
 Questa procedura consente l'eliminazione di tutte le righe
 che NON contengono il testo specificato. E' possibile utilizzare tutte le espressioni
 previste per la funzione find di LUA.
 
-Copyright (C) 2004-2018 Roberto Rossi 
+Copyright (C) 2004-2022 Roberto Rossi 
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -45,14 +45,16 @@ do
       strDaCercare=rfx_GF()
       i = 0
       linea = editor:GetLine(i)
-      while linea do
+      while i < editor.LineCount do
         x = string.find(linea, strDaCercare, 1, true)
         if not(x) then
           pos = editor:PositionFromLine(i)
           editor.CurrentPos = pos
           editor:LineDelete()
           lineeEliminate = lineeEliminate + 1
-          i = i - 1
+          if i < (editor.LineCount - 1) then
+            i = i - 1
+          end
         end
         i = i + 1
         linea = editor:GetLine(i)
