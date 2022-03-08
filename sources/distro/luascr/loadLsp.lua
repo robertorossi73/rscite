@@ -1,10 +1,10 @@
 --[[
-Version : 2.1.0
+Version : 2.2.0
 Web     : http://www.redchar.net
 
 Questa procedura permette il caricamente del file lisp corrente in un CAD supprotato
 
-Copyright (C) 2015-2018 Roberto Rossi 
+Copyright (C) 2015-2021 Roberto Rossi 
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -81,6 +81,32 @@ do
         rwfx_ShellExecute(exe,par)
     end
 
+    --ritorna la selezione corrente se esiste, oppure l'ultima selezione
+    -- G_SelOrLastWord  --variabile globale con ultima selezione
+    local function GetSelOrLastWord()
+        local tag
+        local pos
+        local currentPos
+        
+        tag = editor:GetSelText()
+        if (tag == "") then
+            -- currentPos = editor.CurrentPos
+            -- editor:WordLeft()
+            -- editor:WordRightEndExtend()
+            -- tag = editor:GetSelText()
+            -- editor.CurrentPos = currentPos
+            -- editor.SelectionStart = currentPos
+            if (G_SelOrLastWord == nil) then
+                G_SelOrLastWord = ""
+            end
+            tag = G_SelOrLastWord
+        else
+            G_SelOrLastWord = tag
+        end
+
+        return tag
+    end
+    
     function buttonOkDcl_click(control, change)
         local exe = "wscript"
         local cad = ""
@@ -189,7 +215,7 @@ do
         wcl_strip:addButtonClose()
         if (isDCL) then
             wcl_strip:addLabel(nil, "Dialog : ")
-            wcl_strip:addText("DCL", rfx_Trim(editor:GetSelText()))
+            wcl_strip:addText("DCL", rfx_Trim(GetSelOrLastWord()))
         end
         
         --wcl_strip:addLabel(nil, "CAD : ")
