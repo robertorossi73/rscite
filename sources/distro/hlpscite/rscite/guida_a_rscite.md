@@ -4,7 +4,7 @@
 
 **Autore : Roberto Rossi**
 
-**Versione 97**
+**Versione 98**
 
 Un gestore di testi **potente**, **semplice**, **veloce**, **poliedrico**...
 
@@ -814,6 +814,8 @@ una nuova finestra di SciTE.
 casuali selezionando le caratteristiche della parola chiave da generare.
 * **Accorcia indirizzo web selezionato**. Una semplice funzione che, grazie al
 servizio offerto da Tinyurl.com riduce la lunghezza degli indirizzi web.
+* **Converti codice sorgente in immagine**. Una funzione che, sfruttando un
+servizio online converte un testo in una immagine.
 
 In aggiunta a queste funzionalità, **F12** consente all’utente la
 realizzazione degli script personalizzati e la loro integrazione direttamente
@@ -1303,7 +1305,7 @@ ecco l’elenco dei collegamenti ai siti più utili.
 Questo documento, **RSciTE. Guida alle Caratteristiche**, è distribuito 
 secondo la seguente licenza.
 
-Copyright (c) 2005-2020 Roberto Rossi.
+Copyright (c) 2005-2022 Roberto Rossi.
 
 Permission is granted to copy, distribute and/or modify this document under
 the terms of the GNU Free Documentation License, Version 1.2 or any later
