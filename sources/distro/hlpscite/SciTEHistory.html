@@ -585,6 +585,10 @@
 	<td>Arkadiusz Michalski</td>
 	<td>Christian Schmitz</td>
 	<td>Red_M</td>
+	<td>j-camp</td>
+      </tr><tr>
+	<td>Michael Berlenz</td>
+	<td>cdbdev</td>
       </tr>
     </table>
     <p>
@@ -593,6 +597,111 @@
         Icons</a> Copyright(C) 1998 by Dean S. Jones<br />
     </p>
     <h2>Releases</h2>
+    <h3>
+       <a href="https://www.scintilla.org/scite522.zip">Release 5.2.2</a>
+    </h3>
+    <ul>
+	<li>SciTE</li>
+	<ul>
+		<li>
+		Released 31 March 2022.
+		</li>
+		<li>
+		Add "match" statement to local and directories properties to simplify setting properties
+		for particular files. Add $(RelativePath) for path from directory properties directory to
+		current file. Set file name properties in wider scope to allow use in "if" tests.
+		</li>
+		<li>
+		Fix pattern matching for EditorConfig: '?' does not match '/'.
+		Support numeric ranges {start..end} and set ranges [a-z].
+		</li>
+		<li>
+		Fix showing folded lines when using find strip.
+		</li>
+		<li>
+		Add scite.ReloadProperties function to Lua.
+		<a href="https://sourceforge.net/p/scintilla/feature-requests/1434/">Feature #1434</a>.
+		</li>
+		<li>
+		Fix read-only indicator on GTK.
+		<a href="https://sourceforge.net/p/scintilla/bugs/2313/">Bug #2313</a>.
+		</li>
+		<li>
+		Show read-only indicator in title bar.
+		<a href="https://sourceforge.net/p/scintilla/bugs/2313/">Bug #2313</a>.
+		</li>
+		<li>
+		Fix icon showing on GTK.
+		<a href="https://sourceforge.net/p/scintilla/bugs/2314/">Bug #2314</a>.
+		</li>
+	</ul>
+	<li>Lexilla 5.1.6</li>
+	<ul>
+		<li>
+		Implement conditional statements "if" and "match", comparison function "$(=", and "FileNameExt"
+		property in TestLexers to allow varying lexer properties over different files.
+		<a href="https://github.com/ScintillaOrg/lexilla/issues/62">Issue #62</a>.
+		</li>
+		<li>
+		Add LexAccessor::BufferStyleAt to retrieve style values to simplify logic and
+		improve performance.
+		<a href="https://github.com/ScintillaOrg/lexilla/issues/54">Issue #54</a>.
+		</li>
+		<li>
+		Markdown: Optionally style all of Markdown header lines.
+		Enabled with lexer.markdown.header.eolfill=1.
+		<a href="https://github.com/ScintillaOrg/lexilla/issues/60">Issue #60</a>.
+		</li>
+		<li>
+		Ruby: Fix operator method styling so next word not treated as method name.
+		<a href="https://github.com/ScintillaOrg/lexilla/issues/65">Issue #65</a>.
+		</li>
+		<li>
+		Ruby: Fix folding for Ruby 3 endless method definition.
+		<a href="https://github.com/ScintillaOrg/lexilla/issues/65">Issue #65</a>.
+		</li>
+		<li>
+		Ruby: Fold string array SCE_RB_STRING_QW.
+		<a href="https://github.com/ScintillaOrg/lexilla/issues/65">Issue #65</a>.
+		</li>
+		<li>
+		Ruby: Fix final \n in indented heredoc to be SCE_RB_HERE_Q.
+		<a href="https://github.com/ScintillaOrg/lexilla/issues/66">Issue #66</a>.
+		</li>
+		<li>
+		Ruby: Fix heredoc recognition when '.' and ',' used in method calls and after SCE_RB_GLOBAL.
+		Classify word after heredoc delimiter instead of styling as keyword.
+		<a href="https://github.com/ScintillaOrg/lexilla/issues/67">Issue #67</a>.
+		</li>
+		<li>
+		Ruby: Improve method highlighting so method name is styled as SCE_RB_DEFNAME and class/object
+		is styled appropriately.
+		<a href="https://github.com/ScintillaOrg/lexilla/issues/68">Issue #68</a>.
+		</li>
+	</ul>
+	<li>Scintilla 5.2.2</li>
+	<ul>
+		<li>
+		Add SCI_GETSTYLEINDEXAT API to return styles over 127 as positive integers.
+		<a href="https://sourceforge.net/p/scintilla/feature-requests/1431/">Feature #1431</a>.
+		</li>
+		<li>
+		On GTK, scroll horizontally with shift + scroll wheel.
+		</li>
+		<li>
+		Fix crash with unexpected right-to-left text on GTK.
+		<a href="https://sourceforge.net/p/scintilla/bugs/2309/">Bug #2309</a>.
+		</li>
+		<li>
+		Fix position of end-of-line annotation when fold display text is visible.
+		<a href="https://sourceforge.net/p/scintilla/bugs/2320/">Bug #2320</a>.
+		</li>
+		<li>
+		On Direct2D, support per-monitor text rendering parameters.
+		<a href="https://sourceforge.net/p/scintilla/feature-requests/1432/">Feature #1432</a>.
+		</li>
+	</ul>
+    </ul>
     <h3>
        <a href="https://www.scintilla.org/scite521.zip">Release 5.2.1</a>
     </h3>
