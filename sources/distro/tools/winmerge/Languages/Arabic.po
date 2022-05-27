@@ -2,7 +2,7 @@
 # Released under the "GNU General Public License"
 #
 # Translators:
-#	Downzen team <https://downzen.com>
+# * Downzen team <https://downzen.com>
 #
 msgid ""
 msgstr ""
@@ -30,20 +30,20 @@ msgstr "LANG_ARABIC, SUBLANG_ARABIC_SAUDI_ARABIA"
 msgid "Copy to Middle"
 msgstr ""
 
-msgid "C&opy to Right"
-msgstr "نسخ إلى ال&يمين"
+msgid "C&opy to Right\tAlt+Right"
+msgstr "نسخ إلى ال&يمين\tAlt+Right"
 
 msgid "Copy from Middle"
 msgstr ""
 
-msgid "Copy fro&m Right"
-msgstr "نسخ م&ن اليمين"
+msgid "Copy fro&m Right\tAlt+Shift+Left"
+msgstr "نسخ م&ن اليمين\tAlt+Shift+Left"
 
-msgid "Cop&y to Left"
-msgstr "نسخ إلى الي&سار"
+msgid "Cop&y to Left\tAlt+Left"
+msgstr "نسخ إلى الي&سار\tAlt+Left"
 
-msgid "Copy &from Left"
-msgstr "نسخ &من اليسار"
+msgid "Copy &from Left\tAlt+Shift+Right"
+msgstr "نسخ &من اليسار\tAlt+Shift+Right"
 
 msgid "Copy Selected Line(s) to Middle"
 msgstr ""
@@ -116,6 +116,12 @@ msgstr "المجلد الأساسي..."
 
 msgid "S&hell Menu"
 msgstr "&قائمة البرنامج الوسيطي (الغلاف)"
+
+msgid "Use First Line as Headers"
+msgstr ""
+
+msgid "Auto-Fit All Columns"
+msgstr ""
 
 msgid "View &Differences"
 msgstr "عرض ال&اختلافات"
@@ -209,7 +215,46 @@ msgstr "&تغيير لون الخلفية"
 msgid "&Vector Image Scaling"
 msgstr ""
 
-msgid "Compare Extracted &Text From Image"
+msgid "Compare Extracted &Text From Images"
+msgstr ""
+
+msgid "Co&mpare"
+msgstr "مقارنة"
+
+msgid "&Screenshots"
+msgstr ""
+
+msgid "&Full Size Screenshots"
+msgstr ""
+
+msgid "&HTMLs"
+msgstr ""
+
+msgid "&Texts"
+msgstr ""
+
+msgid "&Resource Trees"
+msgstr ""
+
+msgid "&Size"
+msgstr ""
+
+msgid "Fit to Window"
+msgstr ""
+
+msgid "Clear &Browsing Data"
+msgstr ""
+
+msgid "&Disk Cache"
+msgstr ""
+
+msgid "&Cookies"
+msgstr ""
+
+msgid "&Browsing History"
+msgstr ""
+
+msgid "&All Profile"
 msgstr ""
 
 msgid "&File"
@@ -229,6 +274,9 @@ msgstr "ملف &ثنائي"
 
 msgid "&Image"
 msgstr "&صورة"
+
+msgid "&Webpage"
+msgstr ""
 
 msgid "New (&3 panes)"
 msgstr "جديد - &3 أجزاء"
@@ -539,8 +587,8 @@ msgstr "&تحويل نهاية الأسطر إلى"
 msgid "Mer&ge Mode\tF9"
 msgstr "&وضع الدمج\tF9"
 
-msgid "Re&load\tCtrl+F5"
-msgstr "إ&عادة تحميل\tCtrl+F5"
+msgid "Reloa&d\tCtrl+F5"
+msgstr "إ&عادةتحميل\tCtrl+F5"
 
 msgid "Reco&mpare As"
 msgstr "إعادة مقارنة بصيغة أخرى"
@@ -637,6 +685,9 @@ msgstr "عرض &أرقام الأسطر"
 
 msgid "View &Margins"
 msgstr "عرض ال&هوامش"
+
+msgid "View To&p Margins"
+msgstr ""
 
 msgid "W&rap Lines"
 msgstr "إلت&فاف الأسطر"
@@ -844,9 +895,6 @@ msgstr "إ&خفاء العناصر"
 
 msgid "&Open Left"
 msgstr "&فتح الجزء الأيسر"
-
-msgid "With &External Editor"
-msgstr "باستخدام محرر خارجي"
 
 msgid "Open Midd&le"
 msgstr "ف&تح الجزء الأوسط"
@@ -1059,9 +1107,6 @@ msgstr " ملف: إضافة فك الحزمة"
 msgid "Se&lect..."
 msgstr "تحديد..."
 
-msgid "Co&mpare"
-msgstr "مقارنة"
-
 msgid "Cancel"
 msgstr "إلغاء"
 
@@ -1098,8 +1143,8 @@ msgstr "الحفاظ على وقت الملف في مقارنة الملفات"
 msgid "Show \"Select Files or Folders\" Dialog on Startup"
 msgstr "عرض نافذة \"اختيار الملفات أو المجلدات\" عند بدء التشغيل"
 
-msgid "Close \"Select Files or Folders\" Dialog on clicking OK button"
-msgstr "إغلاق نافذة \"اختيار الملفات أو المجلدات\" عند الضغط على زر الموافقة"
+msgid "Close \"Select Files or Folders\" Dialog on clicking Compare button"
+msgstr ""
 
 msgid "Op&en-dialog Auto-Completion:"
 msgstr "فتح نافذة الإكمال التلقائي:"
@@ -1374,10 +1419,10 @@ msgstr "الوصف:"
 msgid "Default arguments:"
 msgstr ""
 
-msgid "Display all plugins, don't check the extension."
+msgid "Display all plugins, don't check the extension"
 msgstr ""
 
-msgid "&Open files in the same window type after unpacking."
+msgid "&Open files in the same window type after unpacking"
 msgstr ""
 
 msgid "&Plugin Pipeline:"
@@ -1443,8 +1488,8 @@ msgstr "تجاهل ال&كل"
 msgid "E&nable moved block detection"
 msgstr "&تفعيل كشف المجموعات التي نقلها"
 
-msgid "&Match similar lines"
-msgstr "مطابقة الأسطر المتماثلة"
+msgid "Align &similar lines"
+msgstr ""
 
 msgid "Diff &algorithm (Experimental):"
 msgstr "خوارزمية المقارنة (تجريبي):"
@@ -1565,6 +1610,15 @@ msgstr "صحفة الترميز الإفتراضي"
 msgid "Select the default codepage assumed when loading non-Unicode files:"
 msgstr "تحديد صفحة الترميز الافتراضية عند تحميل ملفات دون ترميز يونيكود:"
 
+msgid "System codepage"
+msgstr "صحفة الترميز للنظام"
+
+msgid "According to WinMerge User Interface"
+msgstr "حسب واجهة المستخدم لبرنامج WinMerge"
+
+msgid "Custom codepage:"
+msgstr "صفحة ترميز مخصصة:"
+
 msgid "Detect codepage info for these type of files: .html, .rc, .xml\nNeed to restart session."
 msgstr ""
 "التحقق من معلومات صفحة الترميز للملفات التالية: .html, .rc, .xml \n"
@@ -1574,15 +1628,6 @@ msgid "Detect codepage for text files with mlang.dll\nNeed to restart session."
 msgstr ""
 "التحقق من ترميز الصفحة للملفات النصية باستخدام mlang.dll\n"
 "هذا الأمر يتطلب إعادة تشغيل الجلسة."
-
-msgid "System codepage"
-msgstr "صحفة الترميز للنظام"
-
-msgid "According to WinMerge User Interface"
-msgstr "حسب واجهة المستخدم لبرنامج WinMerge"
-
-msgid "Custom codepage:"
-msgstr "صفحة ترميز مخصصة:"
 
 msgid "Options"
 msgstr "الخيارات"
@@ -1965,6 +2010,21 @@ msgstr ""
 msgid "OCR result:"
 msgstr ""
 
+msgid "Webpage"
+msgstr ""
+
+msgid "URL pattern to &include (Regular expression):"
+msgstr ""
+
+msgid "URL pattern to &exclude (Regular expression):"
+msgstr ""
+
+msgid "&User data folder location:"
+msgstr ""
+
+msgid "&Separate user data folders for each pane"
+msgstr ""
+
 msgid "&Hex View"
 msgstr "ع&رض بصيغة نظام عد ستة عشري"
 
@@ -2255,16 +2315,8 @@ msgid "File Filters (*.flt)|*.flt|All Files (*.*)|*.*||"
 msgstr "مرشحات الملفات (*.flt)|*.flt|كل الملفات All Files (*.*)|*.*||"
 
 #, c-format
-msgid ""
-"Cannot find file filter template file!\n"
-"\n"
-"Please copy file %1 to WinMerge/Filters -folder:\n"
-"%2."
-msgstr ""
-"لا يمكن إيجاد قالب ملف المرشح!\n"
-"\n"
-"يرجى نسخ الملف %1 إلى WinMerge/Filters -folder:\n"
-"%2."
+msgid "Cannot find file filter template file!\n\nPlease copy file %1 to WinMerge/Filters folder:\n%2."
+msgstr "لا يمكن إيجاد قالب ملف المرشح!\n\nيرجى نسخ الملف %1 إلى WinMerge/Filters folder:\n%2."
 
 #, c-format
 msgid ""
@@ -2774,6 +2826,9 @@ msgstr "فشل في تشغيل المحرر الخارجي: %1"
 msgid "Unknown archive format"
 msgstr "نوع أرشيف غير معروف"
 
+msgid "Failed to extract archive files.\nDo you want to compare the archive files as text files?"
+msgstr ""
+
 msgid "Filename"
 msgstr "اسم الملف"
 
@@ -3023,14 +3078,14 @@ msgstr "خطأ"
 msgid "Text files are identical"
 msgstr "الملفات النصية متطابقة"
 
-msgid "(Middle and right are identical)"
-msgstr "(الجزء الأوسط والجزء الأيمن متطابقان)"
+msgid " (Middle and right are identical)"
+msgstr " (الجزء الأوسط والجزء الأيمن متطابقان)"
 
-msgid "(Left and right are identical)"
-msgstr "(الجزء الأيسر والجزء الأيمن متطابقان)"
+msgid " (Left and right are identical)"
+msgstr " (الجزء الأيسر والجزء الأيمن متطابقان)"
 
-msgid "(Left and middle are identical)"
-msgstr "(الجزء الأيسر والجزء الأوسط متطابقان)"
+msgid " (Left and middle are identical)"
+msgstr " (الجزء الأيسر والجزء الأوسط متطابقان)"
 
 msgid "Text files are different"
 msgstr "الملفات النصية مختلفة"
@@ -3107,13 +3162,13 @@ msgstr "وقت إنشاء الملف في الجزء الأوسط."
 msgid "Tells which side has newer modification date."
 msgstr "يحدد أي جانب لديه تاريخ تعديل أحدث."
 
-msgid "Left side file version, only for some filetypes."
+msgid "Left side file version, only for some file types."
 msgstr "إصدار الملف في الجانب الأيسر، فقط لبعض أنواع الملفات."
 
-msgid "Right side file version, only for some filetypes."
+msgid "Right side file version, only for some file types."
 msgstr "إصدار الملف في الجانب الأيمن، فقط لبعض أنواع الملفات."
 
-msgid "Middle side file version, only for some filetypes."
+msgid "Middle side file version, only for some file types."
 msgstr "إصدار الملف في الجانب الأوسط، فقط لبعض أنواع الملفات."
 
 msgid "Short comparison result."
@@ -3500,47 +3555,23 @@ msgstr ""
 "\n"
 "الاختلاف الأخير (Alt+End)"
 
-msgid ""
-"\n"
-"Copy Right (Alt+Right)"
-msgstr ""
-"\n"
-"النسخ لليمين (Alt+Right)"
+msgid "\nCopy to Right (Alt+Right)"
+msgstr "\nالنسخ لليمين (Alt+Right)"
 
-msgid ""
-"\n"
-"Copy Left (Alt+Left)"
-msgstr ""
-"\n"
-"النسخ لليسار (Alt+Left)"
+msgid "\nCopy to Left (Alt+Left)"
+msgstr "\nالنسخ لليسار (Alt+Left)"
 
-msgid ""
-"\n"
-"Copy Right and Advance (Ctrl+Alt+Right)"
-msgstr ""
-"\n"
-"النسخ لليمين والتقدم (Ctrl+Alt+Right)"
+msgid "\nCopy to Right and Advance (Ctrl+Alt+Right)"
+msgstr "\nالنسخ لليمين والتقدم (Ctrl+Alt+Right)"
 
-msgid ""
-"\n"
-"Copy Left and Advance (Ctrl+Alt+Left)"
-msgstr ""
-"\n"
-"النسخ لليسار والتقدم (Ctrl+Alt+Left)"
+msgid "\nCopy to Left and Advance (Ctrl+Alt+Left)"
+msgstr "\nالنسخ لليسار والتقدم (Ctrl+Alt+Left)"
 
-msgid ""
-"\n"
-"All Right"
-msgstr ""
-"\n"
-"الكل لليمين"
+msgid "\nCopy All to Right"
+msgstr "\nنسخ الكل إلى الجزء الأيمن"
 
-msgid ""
-"\n"
-"All Left"
-msgstr ""
-"\n"
-"الكل لليسار"
+msgid "\nCopy All to Left"
+msgstr "\nنسخ الكل إلى الجزء الأيسر"
 
 msgid ""
 "\n"
@@ -3640,6 +3671,9 @@ msgstr "إغلا&ق التبويبات الأخرى"
 
 msgid "Enable &Auto Max Width"
 msgstr "&تفعيل النطاق الأقصى التلقائي"
+
+msgid "We&bpage"
+msgstr ""
 
 msgid "Frhed is not installed."
 msgstr "المحرر Frhed غير مثبت."
@@ -3825,6 +3859,12 @@ msgstr ""
 msgid "Word-by-word position and text"
 msgstr ""
 
+msgid "AppData folder"
+msgstr ""
+
+msgid "Install folder"
+msgstr ""
+
 msgid "Allow only one instance to run"
 msgstr "السماح بتشغيل عنصر واحد فقط"
 
@@ -3853,6 +3893,9 @@ msgid "Decompilation"
 msgstr ""
 
 msgid "&Others"
+msgstr ""
+
+msgid "URL Handling"
 msgstr ""
 
 msgid "Make Uppercase"
@@ -4086,6 +4129,12 @@ msgstr ""
 msgid "Basic text functions for the context menu"
 msgstr ""
 
+msgid "HTTP URL Scheme Handler with curl. \r\nArguments: Command line options passed to the curl command."
+msgstr ""
+
+msgid "Windows Registry URL Scheme Handler. \r\nArguments: Command line options passed to the reg.exe command."
+msgstr ""
+
 msgid "Filter applied"
 msgstr ""
 
@@ -4100,4 +4149,7 @@ msgid "This system does not support clipboard history."
 msgstr ""
 
 msgid "The 32-bit version of WinMerge does not support Clipboard Compare"
+msgstr ""
+
+msgid "WebView2 runtime is not installed. Do you want to download it?"
 msgstr ""

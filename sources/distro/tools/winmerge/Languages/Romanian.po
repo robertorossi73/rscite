@@ -28,23 +28,19 @@ msgstr "LANG_ROMANIAN, SUBLANG_DEFAULT"
 msgid "Copy to Middle"
 msgstr ""
 
-#, c-format
-msgid "C&opy to Right"
-msgstr "Copie la &dreapta"
+msgid "C&opy to Right\tAlt+Right"
+msgstr "Copie la &dreapta\tAlt+Right"
 
 msgid "Copy from Middle"
 msgstr ""
 
-#, c-format
-msgid "Copy fro&m Right"
+msgid "Copy fro&m Right\tAlt+Shift+Left"
 msgstr ""
 
-#, c-format
-msgid "Cop&y to Left"
-msgstr "Copie la &stânga"
+msgid "Cop&y to Left\tAlt+Left"
+msgstr "Copie la &stânga\tAlt+Left"
 
-#, c-format
-msgid "Copy &from Left"
+msgid "Copy &from Left\tAlt+Shift+Right"
 msgstr ""
 
 msgid "Copy Selected Line(s) to Middle"
@@ -126,6 +122,12 @@ msgid "Open &Parent Folder..."
 msgstr ""
 
 msgid "S&hell Menu"
+msgstr ""
+
+msgid "Use First Line as Headers"
+msgstr ""
+
+msgid "Auto-Fit All Columns"
 msgstr ""
 
 #, c-format
@@ -238,7 +240,46 @@ msgstr ""
 msgid "&Vector Image Scaling"
 msgstr ""
 
-msgid "Compare Extracted &Text From Image"
+msgid "Compare Extracted &Text From Images"
+msgstr ""
+
+msgid "Co&mpare"
+msgstr ""
+
+msgid "&Screenshots"
+msgstr ""
+
+msgid "&Full Size Screenshots"
+msgstr ""
+
+msgid "&HTMLs"
+msgstr ""
+
+msgid "&Texts"
+msgstr ""
+
+msgid "&Resource Trees"
+msgstr ""
+
+msgid "&Size"
+msgstr ""
+
+msgid "Fit to Window"
+msgstr ""
+
+msgid "Clear &Browsing Data"
+msgstr ""
+
+msgid "&Disk Cache"
+msgstr ""
+
+msgid "&Cookies"
+msgstr ""
+
+msgid "&Browsing History"
+msgstr ""
+
+msgid "&All Profile"
 msgstr ""
 
 #, c-format
@@ -262,6 +303,9 @@ msgstr ""
 
 #, c-format
 msgid "&Image"
+msgstr ""
+
+msgid "&Webpage"
 msgstr ""
 
 #, c-format
@@ -663,8 +707,7 @@ msgstr "Converteşte sfârşiturile de linie la"
 msgid "Mer&ge Mode\tF9"
 msgstr "&Modul fuziune\tF9"
 
-#, c-format
-msgid "Re&load\tCtrl+F5"
+msgid "Reloa&d\tCtrl+F5"
 msgstr ""
 
 #, c-format
@@ -792,6 +835,9 @@ msgstr "Afişează numărul liniei"
 #, c-format
 msgid "View &Margins"
 msgstr "Afişează &marginile"
+
+msgid "View To&p Margins"
+msgstr ""
 
 #, c-format
 msgid "W&rap Lines"
@@ -1042,10 +1088,6 @@ msgstr "Ascunde e&lementele"
 #, c-format
 msgid "&Open Left"
 msgstr "Deschide stâ&nga"
-
-#, c-format
-msgid "With &External Editor"
-msgstr "Cu editor &extern"
 
 #, c-format
 msgid "Open Midd&le"
@@ -1310,9 +1352,6 @@ msgstr ""
 msgid "Se&lect..."
 msgstr ""
 
-msgid "Co&mpare"
-msgstr ""
-
 #, c-format
 msgid "Cancel"
 msgstr "Renunţă"
@@ -1358,8 +1397,7 @@ msgstr "Păstrează data şi timpul fişierului pentru compararea fişierelor"
 msgid "Show \"Select Files or Folders\" Dialog on Startup"
 msgstr ""
 
-#, c-format
-msgid "Close \"Select Files or Folders\" Dialog on clicking OK button"
+msgid "Close \"Select Files or Folders\" Dialog on clicking Compare button"
 msgstr ""
 
 #, c-format
@@ -1705,10 +1743,10 @@ msgstr "Descriere:"
 msgid "Default arguments:"
 msgstr ""
 
-msgid "Display all plugins, don't check the extension."
+msgid "Display all plugins, don't check the extension"
 msgstr ""
 
-msgid "&Open files in the same window type after unpacking."
+msgid "&Open files in the same window type after unpacking"
 msgstr ""
 
 msgid "&Plugin Pipeline:"
@@ -1789,9 +1827,8 @@ msgstr "I&gnoră tot"
 msgid "E&nable moved block detection"
 msgstr "Activea&ză detecţie blocuri mutate"
 
-#, c-format
-msgid "&Match similar lines"
-msgstr "Potriveşte linii si&milare"
+msgid "Align &similar lines"
+msgstr ""
 
 msgid "Diff &algorithm (Experimental):"
 msgstr ""
@@ -1942,12 +1979,6 @@ msgstr "Codare caractere implicită"
 msgid "Select the default codepage assumed when loading non-Unicode files:"
 msgstr "Selectează codarea caracterelor folosită implicit la încărcarea fişierelor non-Unicode:"
 
-msgid "Detect codepage info for these type of files: .html, .rc, .xml\nNeed to restart session."
-msgstr ""
-
-msgid "Detect codepage for text files with mlang.dll\nNeed to restart session."
-msgstr ""
-
 #, c-format
 msgid "System codepage"
 msgstr "Codarea sistemului"
@@ -1958,6 +1989,12 @@ msgstr "Conform cu interfaţa WinMerge"
 
 #, c-format
 msgid "Custom codepage:"
+msgstr ""
+
+msgid "Detect codepage info for these type of files: .html, .rc, .xml\nNeed to restart session."
+msgstr ""
+
+msgid "Detect codepage for text files with mlang.dll\nNeed to restart session."
 msgstr ""
 
 #, c-format
@@ -2436,6 +2473,21 @@ msgstr ""
 msgid "OCR result:"
 msgstr ""
 
+msgid "Webpage"
+msgstr ""
+
+msgid "URL pattern to &include (Regular expression):"
+msgstr ""
+
+msgid "URL pattern to &exclude (Regular expression):"
+msgstr ""
+
+msgid "&User data folder location:"
+msgstr ""
+
+msgid "&Separate user data folders for each pane"
+msgstr ""
+
 #, c-format
 msgid "&Hex View"
 msgstr ""
@@ -2750,11 +2802,7 @@ msgid "File Filters (*.flt)|*.flt|All Files (*.*)|*.*||"
 msgstr "Fişiere filtru (*.flt)|*.flt|Toate fişierele (*.*)|*.*||"
 
 #, c-format
-msgid ""
-"Cannot find file filter template file!\n"
-"\n"
-"Please copy file %1 to WinMerge/Filters -folder:\n"
-"%2."
+msgid "Cannot find file filter template file!\n\nPlease copy file %1 to WinMerge/Filters folder:\n%2."
 msgstr ""
 "Nu s-a găsit fişierul filtru şablon!\n"
 "\n"
@@ -3285,6 +3333,9 @@ msgstr "Execuţia editorului extern a eşuat: %1"
 msgid "Unknown archive format"
 msgstr "Format arhivă necunoscut"
 
+msgid "Failed to extract archive files.\nDo you want to compare the archive files as text files?"
+msgstr ""
+
 #, c-format
 msgid "Filename"
 msgstr "Nume fişier"
@@ -3580,16 +3631,13 @@ msgstr "Eroare"
 msgid "Text files are identical"
 msgstr ""
 
-#, c-format
-msgid "(Middle and right are identical)"
+msgid " (Middle and right are identical)"
 msgstr ""
 
-#, c-format
-msgid "(Left and right are identical)"
+msgid " (Left and right are identical)"
 msgstr ""
 
-#, c-format
-msgid "(Left and middle are identical)"
+msgid " (Left and middle are identical)"
 msgstr ""
 
 #, c-format
@@ -3686,16 +3734,13 @@ msgstr ""
 msgid "Tells which side has newer modification date."
 msgstr "Spune care parte are o dată a modificării mai recentă."
 
-#, c-format
-msgid "Left side file version, only for some filetypes."
+msgid "Left side file version, only for some file types."
 msgstr "Versiune fişier stânga, numai pentru unele tipuri de fişiere."
 
-#, c-format
-msgid "Right side file version, only for some filetypes."
+msgid "Right side file version, only for some file types."
 msgstr "Versiune fişier dreapta, numai pentru unele tipuri de fişiere."
 
-#, c-format
-msgid "Middle side file version, only for some filetypes."
+msgid "Middle side file version, only for some file types."
 msgstr ""
 
 #, fuzzy, c-format
@@ -4092,29 +4137,23 @@ msgstr ""
 msgid "\nLast Difference (Alt+End)"
 msgstr ""
 
-#, c-format
-msgid "\nCopy Right (Alt+Right)"
+msgid "\nCopy to Right (Alt+Right)"
 msgstr ""
 
-#, c-format
-msgid "\nCopy Left (Alt+Left)"
+msgid "\nCopy to Left (Alt+Left)"
 msgstr ""
 
-#, c-format
-msgid "\nCopy Right and Advance (Ctrl+Alt+Right)"
+msgid "\nCopy to Right and Advance (Ctrl+Alt+Right)"
 msgstr ""
 
-#, c-format
-msgid "\nCopy Left and Advance (Ctrl+Alt+Left)"
+msgid "\nCopy to Left and Advance (Ctrl+Alt+Left)"
 msgstr ""
 
-#, c-format
-msgid "\nAll Right"
-msgstr ""
+msgid "\nCopy All to Right"
+msgstr "\nCopiază tot la dreapta"
 
-#, c-format
-msgid "\nAll Left"
-msgstr ""
+msgid "\nCopy All to Left"
+msgstr "\nCopiază tot la stânga"
 
 #, c-format
 msgid "\nAuto Merge (Ctrl+Alt+M)"
@@ -4222,6 +4261,9 @@ msgstr ""
 
 #, c-format
 msgid "Enable &Auto Max Width"
+msgstr ""
+
+msgid "We&bpage"
 msgstr ""
 
 msgid "Frhed is not installed."
@@ -4404,6 +4446,12 @@ msgstr ""
 msgid "Word-by-word position and text"
 msgstr ""
 
+msgid "AppData folder"
+msgstr ""
+
+msgid "Install folder"
+msgstr ""
+
 #, c-format
 msgid "Allow only one instance to run"
 msgstr "Permite rularea unei singure instanţe"
@@ -4433,6 +4481,9 @@ msgid "Decompilation"
 msgstr ""
 
 msgid "&Others"
+msgstr ""
+
+msgid "URL Handling"
 msgstr ""
 
 msgid "Make Uppercase"
@@ -4666,6 +4717,12 @@ msgstr ""
 msgid "Basic text functions for the context menu"
 msgstr ""
 
+msgid "HTTP URL Scheme Handler with curl. \r\nArguments: Command line options passed to the curl command."
+msgstr ""
+
+msgid "Windows Registry URL Scheme Handler. \r\nArguments: Command line options passed to the reg.exe command."
+msgstr ""
+
 msgid "Filter applied"
 msgstr ""
 
@@ -4680,4 +4737,7 @@ msgid "This system does not support clipboard history."
 msgstr ""
 
 msgid "The 32-bit version of WinMerge does not support Clipboard Compare"
+msgstr ""
+
+msgid "WebView2 runtime is not installed. Do you want to download it?"
 msgstr ""

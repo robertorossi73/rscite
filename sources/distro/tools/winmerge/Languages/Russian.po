@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WinMerge\n"
 "Report-Msgid-Bugs-To: https://bugs.winmerge.org/\n"
-"POT-Creation-Date: 2021-10-23 10:36+0000\n"
-"PO-Revision-Date: 2021-10-28 00:00+0000\n"
+"POT-Creation-Date: 2022-01-22 21:51+0000\n"
+"PO-Revision-Date: 2022-01-27 00:00+0000\n"
 "Last-Translator: wvxwxvw\n"
 "Language-Team: Russian <winmerge-translate@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -29,31 +29,31 @@ msgid "LANG_ENGLISH, SUBLANG_ENGLISH_US"
 msgstr "LANG_RUSSIAN, SUBLANG_DEFAULT"
 
 msgid "Copy to Middle"
-msgstr ""
+msgstr "Копировать в центр"
 
-msgid "C&opy to Right"
-msgstr "Копировать направо"
+msgid "C&opy to Right\tAlt+Right"
+msgstr "Копировать направо\tAlt+Right"
 
 msgid "Copy from Middle"
-msgstr ""
+msgstr "Копировать из центра"
 
-msgid "Copy fro&m Right"
-msgstr "Копировать справа"
+msgid "Copy fro&m Right\tAlt+Shift+Left"
+msgstr "Копировать справа\tAlt+Shift+Left"
 
-msgid "Cop&y to Left"
-msgstr "Копировать налево"
+msgid "Cop&y to Left\tAlt+Left"
+msgstr "Копировать налево\tAlt+Left"
 
-msgid "Copy &from Left"
-msgstr "Копировать слева"
+msgid "Copy &from Left\tAlt+Shift+Right"
+msgstr "Копировать слева\tAlt+Shift+Right"
 
 msgid "Copy Selected Line(s) to Middle"
-msgstr ""
+msgstr "Копировать выбранные строки в центр"
 
 msgid "Copy Selected Line(s) to Right"
 msgstr "Копировать выбранные строки вправо"
 
 msgid "Copy Selected Line(s) from Middle"
-msgstr ""
+msgstr "Копировать выбранные строки из центра"
 
 msgid "Copy Selected Line(s) from Right"
 msgstr "Копировать выбранные строки справа"
@@ -95,10 +95,10 @@ msgid "&Go to...\tCtrl+G"
 msgstr "Перейти к...\tCtrl+G"
 
 msgid "Go to Moved Line Between Left and Middle\tCtrl+Shift+G"
-msgstr "Перейти к перемещенной между левой и средней\tCtrl+Shift+G"
+msgstr "... перемещенной между лево/центр\tCtrl+Shift+G"
 
 msgid "Go to Moved Line Between Middle and Right\tCtrl+Alt+G"
-msgstr "Перейти к перемещенной между средней и правой\tCtrl+Alt+G"
+msgstr "... перемещенной между центр/право\tCtrl+Alt+G"
 
 msgid "Op&en"
 msgstr "От&крыть"
@@ -117,6 +117,12 @@ msgstr "Открыть &родительскую папку..."
 
 msgid "S&hell Menu"
 msgstr "Меню оболочки"
+
+msgid "Use First Line as Headers"
+msgstr ""
+
+msgid "Auto-Fit All Columns"
+msgstr ""
 
 msgid "View &Differences"
 msgstr "Показывать отличия"
@@ -210,8 +216,47 @@ msgstr "Цвет фона"
 msgid "&Vector Image Scaling"
 msgstr "&Масштаб изображений"
 
-msgid "Compare Extracted &Text From Image"
+msgid "Compare Extracted &Text From Images"
 msgstr "Сравнить извлеченный из изображения текст"
+
+msgid "Co&mpare"
+msgstr "Сравнить"
+
+msgid "&Screenshots"
+msgstr ""
+
+msgid "&Full Size Screenshots"
+msgstr ""
+
+msgid "&HTMLs"
+msgstr ""
+
+msgid "&Texts"
+msgstr ""
+
+msgid "&Resource Trees"
+msgstr ""
+
+msgid "&Size"
+msgstr ""
+
+msgid "Fit to Window"
+msgstr ""
+
+msgid "Clear &Browsing Data"
+msgstr ""
+
+msgid "&Disk Cache"
+msgstr ""
+
+msgid "&Cookies"
+msgstr ""
+
+msgid "&Browsing History"
+msgstr ""
+
+msgid "&All Profile"
+msgstr ""
 
 msgid "&File"
 msgstr "&Файл"
@@ -231,6 +276,9 @@ msgstr "Двоичный"
 msgid "&Image"
 msgstr "Изображение"
 
+msgid "&Webpage"
+msgstr ""
+
 msgid "New (&3 panes)"
 msgstr "Создать (&3 панели)"
 
@@ -241,7 +289,7 @@ msgid "Open Conflic&t File..."
 msgstr "Открыть файл конфликтов..."
 
 msgid "Open C&lipboard"
-msgstr ""
+msgstr "Открыть буфер обмена"
 
 msgid "Open Pro&ject...\tCtrl+J"
 msgstr "Открыть проект...\tCtrl+J"
@@ -367,7 +415,7 @@ msgid "L&eft Read-only"
 msgstr "С&лева только для чтения"
 
 msgid "M&iddle Read-only"
-msgstr "Середина только для чтения"
+msgstr "Центр только для чтения"
 
 msgid "Ri&ght Read-only"
 msgstr "С&права только для чтения"
@@ -388,7 +436,7 @@ msgid "Show L&eft Unique Items"
 msgstr "Уникальные слева"
 
 msgid "Show Midd&le Unique Items"
-msgstr "Уникальные по середине"
+msgstr "Уникальные в центре"
 
 msgid "Show Ri&ght Unique Items"
 msgstr "Уникальные справа"
@@ -406,7 +454,7 @@ msgid "Show &Left Only Different Items"
 msgstr "Только отличия слева"
 
 msgid "Show &Middle Only Different Items"
-msgstr "Только отличия по середине"
+msgstr "Только отличия в центре"
 
 msgid "Show &Right Only Different Items"
 msgstr "Только отличия справа"
@@ -415,7 +463,7 @@ msgid "Show L&eft Only Missing Items"
 msgstr "Только отсутствующие слева"
 
 msgid "Show Mi&ddle Only Missing Items"
-msgstr "Только отсутствующие посередине"
+msgstr "Только отсутствующие в центре"
 
 msgid "Show Rig&ht Only Missing Items"
 msgstr "Только отсутствующие справа"
@@ -508,7 +556,7 @@ msgid "Save &Left"
 msgstr "Сохранить с&лева"
 
 msgid "Save &Middle"
-msgstr "Сохранить посередине"
+msgstr "Сохранить в центре"
 
 msgid "Save &Right"
 msgstr "Сохранить с&права"
@@ -520,7 +568,7 @@ msgid "Save &Left As..."
 msgstr "Сохранить слева как..."
 
 msgid "Save &Middle As..."
-msgstr "Сохранить посередине как..."
+msgstr "Сохранить в центре как..."
 
 msgid "Save &Right As..."
 msgstr "Сохранить справа как..."
@@ -540,7 +588,7 @@ msgstr "&Заменить концы строк на"
 msgid "Mer&ge Mode\tF9"
 msgstr "Режим объединения\tF9"
 
-msgid "Re&load\tCtrl+F5"
+msgid "Reloa&d\tCtrl+F5"
 msgstr "Обновить\tCtrl+F5"
 
 msgid "Reco&mpare As"
@@ -639,6 +687,9 @@ msgstr "Показывать номера строк"
 msgid "View &Margins"
 msgstr "Показывать поля"
 
+msgid "View To&p Margins"
+msgstr ""
+
 msgid "W&rap Lines"
 msgstr "Переносить по словам"
 
@@ -685,10 +736,10 @@ msgid "Previous Left Only Difference\tAlt+Shift+7"
 msgstr "Предыдущее только слева\tAlt+Shift+7"
 
 msgid "Next Middle Only Difference\tAlt+8"
-msgstr "Следующее только посередине\tAlt+8"
+msgstr "Следующее только в центре\tAlt+8"
 
 msgid "Previous Middle Only Difference\tAlt+Shift+8"
-msgstr "Предыдущее только посередине\tAlt+Shift+8"
+msgstr "Предыдущее только в центре\tAlt+Shift+8"
 
 msgid "Next Right Only Difference\tAlt+9"
 msgstr "Следующее только справа\tAlt+9"
@@ -697,31 +748,31 @@ msgid "Previous Right Only Difference\tAlt+Shift+9"
 msgstr "Предыдущее только справа\tAlt+Shift+9"
 
 msgid "Copy from &Left to"
-msgstr ""
+msgstr "Копировать слева на"
 
 msgid "&Middle"
-msgstr "Середина"
+msgstr "центр"
 
 msgid "&Right"
-msgstr "Справа"
+msgstr "право"
 
 msgid "Copy from &Middle to"
-msgstr ""
+msgstr "Копировать из центра на"
 
 msgid "&Left"
-msgstr "Слева"
+msgstr "лево"
 
 msgid "Copy from &Right to"
-msgstr ""
+msgstr "Копировать справа на"
 
 msgid "Copy Selected Line(s) from Le&ft to"
-msgstr ""
+msgstr "Копировать выбранные строки слева на"
 
 msgid "Copy Selected Line(s) from Mi&ddle to"
-msgstr ""
+msgstr "Копировать выбранные строки из центра на"
 
 msgid "Copy Selected Line(s) from Ri&ght to"
-msgstr ""
+msgstr "Копировать выбранные строки справа на"
 
 msgid "Copy from Left\tAlt+Shift+Right"
 msgstr "Копировать слева\tAlt+Shift+Right"
@@ -760,7 +811,7 @@ msgid "Apply Pre&differ..."
 msgstr "Применить предсравнение..."
 
 msgid "&Transform with editor script..."
-msgstr "Преобразовать скриптом редактора..."
+msgstr "Редактор скриптов..."
 
 msgid "Sp&lit"
 msgstr "Разделить"
@@ -794,7 +845,7 @@ msgstr "Сравнить как"
 
 #, c-format
 msgid "Left to Middle (%1 of %2)"
-msgstr "Слева на середину (%1 из %2)"
+msgstr "Слева в центр (%1 из %2)"
 
 #, c-format
 msgid "Left to Right (%1 of %2)"
@@ -806,19 +857,19 @@ msgstr "Слева на... (%1 из %2)"
 
 #, c-format
 msgid "Middle to Left (%1 of %2)"
-msgstr "Из середины налево (%1 из %2)"
+msgstr "Из центра налево (%1 из %2)"
 
 #, c-format
 msgid "Middle to Right (%1 of %2)"
-msgstr "Из середины направо (%1 из %2)"
+msgstr "Из центра направо (%1 из %2)"
 
 #, c-format
 msgid "Middle to... (%1 of %2)"
-msgstr "Из середины на... (%1 из %2)"
+msgstr "Из центра на... (%1 из %2)"
 
 #, c-format
 msgid "Right to Middle (%1 of %2)"
-msgstr "Справа на середину (%1 из %2)"
+msgstr "Справа в центр (%1 из %2)"
 
 #, c-format
 msgid "Right to Left (%1 of %2)"
@@ -846,9 +897,6 @@ msgstr "&Скрыть"
 msgid "&Open Left"
 msgstr "Открыть левый"
 
-msgid "With &External Editor"
-msgstr "Внешним редактором"
-
 msgid "Open Midd&le"
 msgstr "Открыть средний"
 
@@ -864,7 +912,7 @@ msgstr "Слева (%1 из %2)"
 
 #, c-format
 msgid "Middle (%1 of %2)"
-msgstr "Середина (%1 из %2)"
+msgstr "В центре (%1 из %2)"
 
 #, c-format
 msgid "Right (%1 of %2)"
@@ -903,7 +951,7 @@ msgid "Left Shell menu"
 msgstr "Меню оболочки слева"
 
 msgid "Middle Shell menu"
-msgstr "Меню оболочки посередине"
+msgstr "Меню оболочки в центре"
 
 msgid "Right Shell menu"
 msgstr "Меню оболочки справа"
@@ -1058,9 +1106,6 @@ msgstr " Файл: плагин распаковщика"
 msgid "Se&lect..."
 msgstr "Выбрать..."
 
-msgid "Co&mpare"
-msgstr "Сравнить"
-
 msgid "Cancel"
 msgstr "Отмена"
 
@@ -1097,8 +1142,8 @@ msgstr "Сохранять время файла при сравнении"
 msgid "Show \"Select Files or Folders\" Dialog on Startup"
 msgstr "Показывать диалог \"Выбрать файлы или папки\" при запуске"
 
-msgid "Close \"Select Files or Folders\" Dialog on clicking OK button"
-msgstr "Закрывать диалог \"Выбрать файлы или папки\" при нажатии ОК"
+msgid "Close \"Select Files or Folders\" Dialog on clicking Compare button"
+msgstr "Закрывать диалог \"Выбрать файлы или папки\" по Сравнение"
 
 msgid "Op&en-dialog Auto-Completion:"
 msgstr "Автозавершение в диалоге открытия:"
@@ -1373,11 +1418,11 @@ msgstr "Описание:"
 msgid "Default arguments:"
 msgstr "Аргументы по умолчанию:"
 
-msgid "Display all plugins, don't check the extension."
-msgstr "Отображать все плагины, не проверяя расширение."
+msgid "Display all plugins, don't check the extension"
+msgstr "Отображать все плагины, не проверяя расширение"
 
-msgid "&Open files in the same window type after unpacking."
-msgstr "Открыть файлы в том же типе окна после распаковки."
+msgid "&Open files in the same window type after unpacking"
+msgstr "Открыть файлы в том же типе окна после распаковки"
 
 msgid "&Plugin Pipeline:"
 msgstr "Конвейер плагинов:"
@@ -1442,8 +1487,8 @@ msgstr "Игнорировать &все невидимые"
 msgid "E&nable moved block detection"
 msgstr "Обнаружение переме&щенных блоков"
 
-msgid "&Match similar lines"
-msgstr "Искать похожие строки"
+msgid "Align &similar lines"
+msgstr ""
 
 msgid "Diff &algorithm (Experimental):"
 msgstr "Алгоритм сравнения (эксперимент.):"
@@ -1533,7 +1578,7 @@ msgid "&Discard changes"
 msgstr "&Отменить изменения"
 
 msgid "Middle side file"
-msgstr "Файл посередине"
+msgstr "Файл в центре"
 
 msgid "Sa&ve changes"
 msgstr "Сохранить изменения"
@@ -1562,12 +1607,6 @@ msgstr "Кодовая страница по умолчанию"
 msgid "Select the default codepage assumed when loading non-Unicode files:"
 msgstr "Выберите кодовую страницу по умолчанию, для не Юникод-файлов:"
 
-msgid "Detect codepage info for these type of files: .html, .rc, .xml\nNeed to restart session."
-msgstr "Определять кодировку для типов файлов: .html, .rc, .xml \nНеобходим перезапуск сессии."
-
-msgid "Detect codepage for text files with mlang.dll\nNeed to restart session."
-msgstr "Определять кодировку для текстовых файлов с помощью mlang.dll\nНеобходим перезапуск сессии."
-
 msgid "System codepage"
 msgstr "Системная кодовая страница"
 
@@ -1576,6 +1615,12 @@ msgstr "В зависимости от интерфейса WinMerge"
 
 msgid "Custom codepage:"
 msgstr "Пользовательская:"
+
+msgid "Detect codepage info for these type of files: .html, .rc, .xml\nNeed to restart session."
+msgstr "Определять кодировку для типов файлов: .html, .rc, .xml \nНеобходим перезапуск сессии."
+
+msgid "Detect codepage for text files with mlang.dll\nNeed to restart session."
+msgstr "Определять кодировку для текстовых файлов с помощью mlang.dll\nНеобходим перезапуск сессии."
 
 msgid "Options"
 msgstr "Настройки"
@@ -1701,13 +1746,13 @@ msgid "Close"
 msgstr "Закрыть"
 
 msgid "Middle:"
-msgstr "Посередине:"
+msgstr "В центре:"
 
 msgid "Missing Left:"
 msgstr "Отсутствует слева:"
 
 msgid "Missing Middle:"
-msgstr "Отсутствует посередине:"
+msgstr "Отсутствует в центре:"
 
 msgid "Missing Right:"
 msgstr "Отсутствует справа:"
@@ -1906,10 +1951,10 @@ msgid "Ignore &Reparse Points"
 msgstr "Игнорировать точки повторной обработки"
 
 msgid "Threshold for switching to &quick compare (MB):"
-msgstr ""
+msgstr "Порог для перехода к быстрому сравнению (MB)"
 
 msgid "Threshold for switching to &binary compare (MB):"
-msgstr ""
+msgstr "Порог для перехода к двоичному сравнению (MB)"
 
 msgid "\n&Number of compare threads (a negative value implies addition of the number of available CPU cores):"
 msgstr "\nЧисло потоков сравнения\n(отрицательное значение = ядрам процессора)"
@@ -1956,6 +2001,21 @@ msgstr "Cравнивать изображения в папках сравне�
 
 msgid "OCR result:"
 msgstr "Результат OCR"
+
+msgid "Webpage"
+msgstr ""
+
+msgid "URL pattern to &include (Regular expression):"
+msgstr ""
+
+msgid "URL pattern to &exclude (Regular expression):"
+msgstr ""
+
+msgid "&User data folder location:"
+msgstr ""
+
+msgid "&Separate user data folders for each pane"
+msgstr ""
 
 msgid "&Hex View"
 msgstr "&Hex"
@@ -2087,10 +2147,10 @@ msgid "To right:"
 msgstr "Направо:"
 
 msgid "From middle:"
-msgstr "Из середины:"
+msgstr "Из центра:"
 
 msgid "To middle:"
-msgstr "На середину:"
+msgstr "В центр:"
 
 #, c-format
 msgid "Version %1"
@@ -2183,7 +2243,7 @@ msgid "File Filters (*.flt)|*.flt|All Files (*.*)|*.*||"
 msgstr "Файлы фильтров (*.flt)|*.flt|Все файлы (*.*)|*.*||"
 
 #, c-format
-msgid "Cannot find file filter template file!\n\nPlease copy file %1 to WinMerge/Filters -folder:\n%2."
+msgid "Cannot find file filter template file!\n\nPlease copy file %1 to WinMerge/Filters folder:\n%2."
 msgstr "Не удается найти файл шаблона фильтра!\n\nСкопируйте файл %1 в папку с фильтрами:\n%2."
 
 #, c-format
@@ -2222,7 +2282,7 @@ msgid "Untitled left"
 msgstr "Безымянный слева"
 
 msgid "Untitled middle"
-msgstr "Безымянный посередине"
+msgstr "Безымянный в центре"
 
 msgid "Untitled right"
 msgstr "Безымянный справа"
@@ -2294,7 +2354,7 @@ msgid "Left (1st) path is invalid!"
 msgstr "Путь слева (1-й) указан неверно!"
 
 msgid "Middle (2nd) path is invalid!"
-msgstr "Путь посередине (2-й) указан неверно!"
+msgstr "Путь в центре (2-й) указан неверно!"
 
 msgid "Right (2nd) path is invalid!"
 msgstr "Путь справа (2-й) указан неверно!"
@@ -2306,13 +2366,13 @@ msgid "Both paths are invalid!"
 msgstr "Оба пути указаны неверно!"
 
 msgid "Left (1st) and Middle (2nd) paths are invalid!"
-msgstr "Пути слева (1-й) и посередине (2-й) указаны неверно!"
+msgstr "Пути слева (1-й) и в центре (2-й) указаны неверно!"
 
 msgid "Left (1st) and Right (3rd) paths are invalid!"
 msgstr "Пути слева (1-й) и справа (3-й) указаны неверно!"
 
 msgid "Middle (2nd) and Right (3rd) paths are invalid!"
-msgstr "Пути посередине (2-й) и справа (3-й) указаны неверно!"
+msgstr "Пути в центре (2-й) и справа (3-й) указаны неверно!"
 
 msgid "All paths are invalid!"
 msgstr "Все пути указаны неверно!"
@@ -2395,7 +2455,7 @@ msgid "Save Left File As"
 msgstr "Сохранить файл слева как"
 
 msgid "Save Middle File As"
-msgstr "Сохранить файл посередине как"
+msgstr "Сохранить файл в центре как"
 
 msgid "Save Right File As"
 msgstr "Сохранить файл справа как"
@@ -2414,25 +2474,25 @@ msgid "Break at whitespace or punctuation"
 msgstr "Разбивать по пробельным и знакам пунктуации"
 
 msgid "Copy to &Middle\tAlt+Right"
-msgstr ""
+msgstr "Копировать в центр\tAlt+Right"
 
 msgid "Copy to &Middle\tAlt+Left"
-msgstr ""
+msgstr "Копировать в центр\tAlt+Left"
 
 msgid "Copy from Middle\tAlt+Shift+Right"
-msgstr ""
+msgstr "Копировать из центра\tAlt+Shift+Right"
 
 msgid "Copy from Middle\tAlt+Shift+Left"
-msgstr ""
+msgstr "Копировать из центра\tAlt+Shift+Left"
 
 msgid "Copy to Middle and Advance\tCtrl+Alt+Right"
-msgstr ""
+msgstr "Копировать в центр и продвинуть\tCtrl+Alt+Right"
 
 msgid "Copy to Middle and Advance\tCtrl+Alt+Left"
-msgstr ""
+msgstr "Копировать в центр и продвинуть\tCtrl+Alt+Left"
 
 msgid "Copy All to Middle"
-msgstr ""
+msgstr "Копировать все в центр"
 
 #, c-format
 msgid "Right to Left (%1)"
@@ -2440,15 +2500,15 @@ msgstr "Справа налево (%1)"
 
 #, c-format
 msgid "Right to Middle (%1)"
-msgstr "Справа на середину (%1)"
+msgstr "Справа в центр (%1)"
 
 #, c-format
 msgid "Middle to Left (%1)"
-msgstr "Из середины налево (%1)"
+msgstr "Из центра налево (%1)"
 
 #, c-format
 msgid "Middle to Right (%1)"
-msgstr "Из середины направо (%1)"
+msgstr "Из центра направо (%1)"
 
 #, c-format
 msgid "Left to Right (%1)"
@@ -2456,7 +2516,7 @@ msgstr "Слева направо (%1)"
 
 #, c-format
 msgid "Left to Middle (%1)"
-msgstr "Слева на середину (%1)"
+msgstr "Слева в центр (%1)"
 
 #, c-format
 msgid "Left to... (%1)"
@@ -2464,7 +2524,7 @@ msgstr "Слева на... (%1)"
 
 #, c-format
 msgid "Middle to... (%1)"
-msgstr "Из середины... (%1)"
+msgstr "Из центра... (%1)"
 
 #, c-format
 msgid "Right to... (%1)"
@@ -2488,7 +2548,7 @@ msgstr "Слева (%1)"
 
 #, c-format
 msgid "Middle (%1)"
-msgstr "Из середины (%1)"
+msgstr "Из центра (%1)"
 
 #, c-format
 msgid "Right (%1)"
@@ -2506,7 +2566,7 @@ msgid "Left side - select destination folder:"
 msgstr "Слева - выбор папки назначения:"
 
 msgid "Middle side - select destination folder:"
-msgstr "Посередине - выбор папки назначения:"
+msgstr "В центре - выбор папки назначения:"
 
 msgid "Right side - select destination folder:"
 msgstr "Справа - выбор папки назначения:"
@@ -2554,6 +2614,9 @@ msgstr "Не удается запустить внешний редактор: 
 msgid "Unknown archive format"
 msgstr "Неизвестный формат архива"
 
+msgid "Failed to extract archive files.\nDo you want to compare the archive files as text files?"
+msgstr ""
+
 msgid "Filename"
 msgstr "Имя файла"
 
@@ -2571,7 +2634,7 @@ msgid "Right Date"
 msgstr "Дата справа"
 
 msgid "Middle Date"
-msgstr "Дата посередине"
+msgstr "Дата в центре"
 
 msgid "Left Size"
 msgstr "Размер слева"
@@ -2580,7 +2643,7 @@ msgid "Right Size"
 msgstr "Размер справа"
 
 msgid "Middle Size"
-msgstr "Размер посередине"
+msgstr "Размер в центре"
 
 msgid "Right Size (Short)"
 msgstr "Размер справа (сокр.)"
@@ -2589,7 +2652,7 @@ msgid "Left Size (Short)"
 msgstr "Размер слева (сокр.)"
 
 msgid "Middle Size (Short)"
-msgstr "Размер посередине (сокр.)"
+msgstr "Размер в центре (сокр.)"
 
 msgid "Left Creation Time"
 msgstr "Время создания слева"
@@ -2598,7 +2661,7 @@ msgid "Right Creation Time"
 msgstr "Время создания справа"
 
 msgid "Middle Creation Time"
-msgstr "Время создания посередине"
+msgstr "Время создания в центре"
 
 msgid "Newer File"
 msgstr "Более новый файл"
@@ -2610,7 +2673,7 @@ msgid "Right File Version"
 msgstr "Версия файла справа"
 
 msgid "Middle File Version"
-msgstr "Версия файла посередине"
+msgstr "Версия файла в центре"
 
 msgid "Short Result"
 msgstr "Упрощенный результат"
@@ -2622,13 +2685,13 @@ msgid "Right Attributes"
 msgstr "Атрибуты справа"
 
 msgid "Middle Attributes"
-msgstr "Атрибуты посередине"
+msgstr "Атрибуты в центре"
 
 msgid "Left EOL"
 msgstr "EOL слева"
 
 msgid "Middle EOL"
-msgstr "EOL посередине"
+msgstr "EOL в центре"
 
 msgid "Right EOL"
 msgstr "EOL справа"
@@ -2640,7 +2703,7 @@ msgid "Right Encoding"
 msgstr "Кодировка справа"
 
 msgid "Middle Encoding"
-msgstr "Кодировка посередине"
+msgstr "Кодировка в центре"
 
 msgid "Ignored Diff"
 msgstr "Игнор. отличия"
@@ -2659,7 +2722,7 @@ msgid "Left"
 msgstr "Слева"
 
 msgid "Middle"
-msgstr "Посередине"
+msgstr "В центре"
 
 msgid "Right"
 msgstr "Справа"
@@ -2668,13 +2731,13 @@ msgid "Diff"
 msgstr "Отличия"
 
 msgid "Left Duplicate Count"
-msgstr "Кол-во дубликатов слева"
+msgstr "Кол-во дублей слева"
 
 msgid "Right Duplicate Count"
-msgstr "Кол-во дубликатов справа"
+msgstr "Кол-во дублей справа"
 
 msgid "Middle Duplicate Count"
-msgstr "Кол-во дубликатов посередине"
+msgstr "Кол-во дублей в центре"
 
 msgid "Move"
 msgstr ""
@@ -2757,7 +2820,7 @@ msgstr "Только слева: %1"
 
 #, c-format
 msgid "Middle only: %1"
-msgstr "Только посередине: %1"
+msgstr "Только в центре: %1"
 
 #, c-format
 msgid "Right only: %1"
@@ -2786,7 +2849,7 @@ msgid "Right Only"
 msgstr "Только справа"
 
 msgid "Middle Only"
-msgstr "Только посередине"
+msgstr "Только в центре"
 
 msgid "No item in left"
 msgstr "Нет элемента слева"
@@ -2795,7 +2858,7 @@ msgid "No item in right"
 msgstr "Нет элемента справа"
 
 msgid "No item in middle"
-msgstr "Нет элемента посередине"
+msgstr "Нет элемента в центре"
 
 msgid "Error"
 msgstr "Ошибка"
@@ -2803,14 +2866,14 @@ msgstr "Ошибка"
 msgid "Text files are identical"
 msgstr "Текстовые файлы идентичны"
 
-msgid "(Middle and right are identical)"
-msgstr "(Посередине и справа идентичны)"
+msgid " (Middle and right are identical)"
+msgstr " (В центре и справа идентичны)"
 
-msgid "(Left and right are identical)"
-msgstr "(Слева и справа идентичны)"
+msgid " (Left and right are identical)"
+msgstr " (Слева и справа идентичны)"
 
-msgid "(Left and middle are identical)"
-msgstr "(Слева и посередине идентичны)"
+msgid " (Left and middle are identical)"
+msgstr " (Слева и в центре идентичны)"
 
 msgid "Text files are different"
 msgstr "Текстовые файлы отличаются"
@@ -2852,7 +2915,7 @@ msgid "Right side modification date."
 msgstr "Дата изменения справа."
 
 msgid "Middle side modification date."
-msgstr "Дата изменения посередине."
+msgstr "Дата изменения в центре."
 
 msgid "File's extension."
 msgstr "Расширение файла."
@@ -2864,7 +2927,7 @@ msgid "Right file size in bytes."
 msgstr "Размер файла справа в байтах."
 
 msgid "Middle file size in bytes."
-msgstr "Размер файла посередине в байтах."
+msgstr "Размер файла в центре в байтах."
 
 msgid "Left file size abbreviated."
 msgstr "Размер файла слева (сокр.)"
@@ -2873,7 +2936,7 @@ msgid "Right file size abbreviated."
 msgstr "Размер файла справа (сокр.)"
 
 msgid "Middle file size abbreviated."
-msgstr "Размер файла посередине (сокр.)"
+msgstr "Размер файла в центре (сокр.)"
 
 msgid "Left side creation time."
 msgstr "Время создания файла слева."
@@ -2882,19 +2945,19 @@ msgid "Right side creation time."
 msgstr "Время создания файла справа."
 
 msgid "Middle side creation time."
-msgstr "Время создания файла посередине."
+msgstr "Время создания файла в центре."
 
 msgid "Tells which side has newer modification date."
 msgstr "Показать на какой из сторон дата изменения файла новее."
 
-msgid "Left side file version, only for some filetypes."
+msgid "Left side file version, only for some file types."
 msgstr "Версия файла слева, только для некоторых типов файлов."
 
-msgid "Right side file version, only for some filetypes."
+msgid "Right side file version, only for some file types."
 msgstr "Версия файла справа, только для некоторых типов файлов."
 
-msgid "Middle side file version, only for some filetypes."
-msgstr "Версия файла посередине, только для некоторых типов файлов."
+msgid "Middle side file version, only for some file types."
+msgstr "Версия файла в центре, только для некоторых типов файлов."
 
 msgid "Short comparison result."
 msgstr "Результат быстрого сравнения."
@@ -2906,7 +2969,7 @@ msgid "Right side attributes."
 msgstr "Атрибуты справа."
 
 msgid "Middle side attributes."
-msgstr "Атрибуты посередине."
+msgstr "Атрибуты в центре."
 
 msgid "Left side file EOL type."
 msgstr "Тип конца строки для файла слева."
@@ -2915,7 +2978,7 @@ msgid "Right side file EOL type."
 msgstr "Тип конца строки для файла справа."
 
 msgid "Middle side file EOL type."
-msgstr "Тип конца строки для файла посередине."
+msgstr "Тип конца строки для файла в центре."
 
 msgid "Left side encoding."
 msgstr "Кодировка слева."
@@ -2924,7 +2987,7 @@ msgid "Right side encoding."
 msgstr "Кодировка справа."
 
 msgid "Middle side encoding."
-msgstr "Кодировка посередине."
+msgstr "Кодировка в центре."
 
 msgid "Number of ignored differences in file. These differences are ignored by WinMerge and cannot be merged."
 msgstr "Количество проигнорированных отличий в файле. Эти отличия проигнорированы WinMerge и не могут быть обработаны."
@@ -3190,23 +3253,23 @@ msgstr "\nТекущее отличие (Alt+Enter)"
 msgid "\nLast Difference (Alt+End)"
 msgstr "\nПоследнее отличие (Alt+End)"
 
-msgid "\nCopy Right (Alt+Right)"
+msgid "\nCopy to Right (Alt+Right)"
 msgstr "\nКопировать направо (Alt+Right)"
 
-msgid "\nCopy Left (Alt+Left)"
+msgid "\nCopy to Left (Alt+Left)"
 msgstr "\nКопировать налево (Alt+Left)"
 
-msgid "\nCopy Right and Advance (Ctrl+Alt+Right)"
+msgid "\nCopy to Right and Advance (Ctrl+Alt+Right)"
 msgstr "\nКопировать направо и перейти (Ctrl+Alt+Right)"
 
-msgid "\nCopy Left and Advance (Ctrl+Alt+Left)"
+msgid "\nCopy to Left and Advance (Ctrl+Alt+Left)"
 msgstr "\nКопировать налево и перейти (Ctrl+Alt+Left)"
 
-msgid "\nAll Right"
-msgstr "\nВсе направо"
+msgid "\nCopy All to Right"
+msgstr "\nКопировать все направо"
 
-msgid "\nAll Left"
-msgstr "\nВсе налево"
+msgid "\nCopy All to Left"
+msgstr "\nКопировать все налево"
 
 msgid "\nAuto Merge (Ctrl+Alt+M)"
 msgstr "\nАвто объединение (Ctrl+Alt+M)"
@@ -3233,7 +3296,7 @@ msgid "Suggested plugins"
 msgstr "Предлагаемые плагины"
 
 msgid "All plugins"
-msgstr ""
+msgstr "Все плагины"
 
 #, c-format
 msgid "Private Build: %1"
@@ -3298,6 +3361,9 @@ msgstr "Закрыть другие вкладки"
 msgid "Enable &Auto Max Width"
 msgstr "Включить максимальную авто ширину"
 
+msgid "We&bpage"
+msgstr ""
+
 msgid "Frhed is not installed."
 msgstr "Frhed не установлен."
 
@@ -3351,7 +3417,7 @@ msgid "MDI child window only"
 msgstr "MDI дочернее окно только"
 
 msgid "Close main window if there is only one MDI child window"
-msgstr ""
+msgstr "Закрыть главное окно, если дочернее окно MDI единственное"
 
 msgctxt "ImgMergeFrame|LocationPane"
 msgid "Diff"
@@ -3450,7 +3516,7 @@ msgid "Rotated: %d  "
 msgstr "Повернут: %d  "
 
 msgid "All pages"
-msgstr ""
+msgstr "Все страницы"
 
 msgid "<Edit here>"
 msgstr "<Редактировать здесь>"
@@ -3475,6 +3541,12 @@ msgstr "Построчная позиция и текст"
 
 msgid "Word-by-word position and text"
 msgstr "Пословная позиция и текст"
+
+msgid "AppData folder"
+msgstr ""
+
+msgid "Install folder"
+msgstr ""
 
 msgid "Allow only one instance to run"
 msgstr "Разрешить запуск только одной копии"
@@ -3506,6 +3578,9 @@ msgstr "Декомпиляция"
 msgid "&Others"
 msgstr "Другое"
 
+msgid "URL Handling"
+msgstr ""
+
 msgid "Make Uppercase"
 msgstr "Сделать прописными"
 
@@ -3516,7 +3591,7 @@ msgid "Remove Duplicate Lines"
 msgstr "Удалить дубли строк"
 
 msgid "Count Duplicate Lines"
-msgstr "Подсчитать дубли строк"
+msgstr "Кол-во дублей слева"
 
 msgid "Sort Lines Ascending"
 msgstr "Сортировать строки по возрастанию"
@@ -3623,132 +3698,141 @@ msgid "Specify plugin arguments"
 msgstr "Укажите аргументы плагина"
 
 msgid "Make characters uppercase"
-msgstr ""
+msgstr "В верхний регистр"
 
 msgid "Make characters lowercase"
-msgstr ""
+msgstr "В нижний регистр"
 
 msgid "Remove duplicate lines"
-msgstr ""
+msgstr "Удалить дубли строк"
 
 msgid "Count duplicate lines"
-msgstr ""
+msgstr "Кол-во дублей строк"
 
 msgid "Sort lines ascending"
 msgstr ""
 
 msgid "Sort lines descending"
-msgstr ""
+msgstr "Сортировать строки по убыванию"
 
 msgid "Reverse columns"
-msgstr ""
+msgstr "Реверс столбцов"
 
 msgid "Reverse lines"
-msgstr ""
+msgstr "Реверс строк"
 
 msgid "Replace text with another text.\r\nUsage: Replace [-i] [-e] FIND REPLACE\r\n  FIND    - text to find\r\n  REPLACE - text to replace\r\n  -i - ignore case (only for -e)\r\n  -e - treat the specified text as a regular expression"
-msgstr ""
+msgstr "Заменить текст.\r\n• : Replace [-i] [-e] FIND REPLACE\r\n FIND - текст для поиска\r\n REPLACE - текст для замены\r\n -i - игнорировать регистр (только с -e)\r\n -e - рассматривать как регулярное выражение"
 
 #, c-format
 msgid "Apply filter command. \r\nUsage: ExecFilterCommand COMMAND\r\n  COMMAND - command to execute. %1 in the command is replaced with the filename."
-msgstr ""
+msgstr "Применить фильтрацию. \r\n• : ExecFilterCommand COMMAND\r\n COMMAND - команда для выполнения. %1 в команде заменяется именем файла"
 
 msgid "Tokenize selection. \r\nUsage: Tokenize PATTERNS\r\n  PATTERNS - regular expression for tokenizing. (e.g. [^\\w]+)"
-msgstr ""
+msgstr "Токенизировать выбранное. \r\n• : Tokenize PATTERNS\r\n PATTERNS - регулярное выражение токенизации. (например. [^\\w]+)"
 
 msgid "Trim spaces"
-msgstr ""
+msgstr "Обрезать пробелы"
 
 msgid "Select some columns.\r\nUsage: SelectColumns RANGES\r\n   or: SelectColumns [-v] [-i] [-g] -e PATTERNS\r\n  RANGES   - list of column ranges to select. (e.g. -3,5-10,30-)\r\n  PATTERNS - regular expression\r\n  -v - select non-matching columns\r\n  -i - ignore case\r\n  -g - enable global flag\r\n  -e - use PATTERNS for matching"
-msgstr ""
+msgstr "Выбор нескольких столбцов.\r\nИспользование: SelectColumns RANGES\r\n или: SelectColumns [-v] [-i] [-g] -e PATTERNS\r\n RANGES - список диапазонов столбцов для выбора. (например. -3,5-10,30-)\r\n PATTERNS - регулярное выражение\r\n -v - выбрать несовпадающие столбцы\r\n -i - игнорировать регистр\r\n -g - включить глобальный флаг\r\n -e - использовать PATTERNS для сопоставления"
 
 msgid "Select some lines.\r\nUsage: SelectLines RANGES\r\n   or: SelectLines [-v] [-i] -e PATTERNS\r\n  RANGES   - list of line ranges to select. (e.g. -3,5-10,30-)\r\n  PATTERNS - regular expression\r\n  -v - select non-matching lines\r\n  -i - ignore case\r\n  -e - use PATTERNS for matching"
-msgstr ""
+msgstr "Выбор нескольких строк.\r\nИспользование: SelectLines RANGES\r\n или: SelectLines [-v] [-i] -e PATTERNS\r\n RANGES - список диапазонов строк для выбора. (например. -3,5-10,30-)\r\n PATTERNS - регулярное выражение\r\n -v - выбрать не совпадающие строки\r\n -i - игнорировать регистр\r\n -e - использовать PATTERNS для сопоставления"
 
 msgid "HTML Prettier with tidy-html5. \r\nArguments: Command line options passed to the tidy command."
-msgstr ""
+msgstr "HTML Prettier с tidy-html5. \r\nАргументы: Параметры командной строки, передаваемые команде tidy."
 
 msgid "JSON Prettier with jq command. \r\nArguments: Filter or command line options passed to the jq command."
-msgstr ""
+msgstr "JSON Prettier с jq. \r\nАргументы: Фильтр или параметры командной строки, передаваемые команде jq."
 
 msgid "XML Prettier with tidy-html5. \r\nArguments: Command line options passed to the tidy command."
-msgstr ""
+msgstr "XML Prettier с tidy-html5. \r\nАргументы: Параметры командной строки, передаваемые команде tidy."
 
 msgid "YAML Prettier with yq command. \r\nArguments: Filter or command line options passed to the yq command."
-msgstr ""
+msgstr "YAML Prettier с yq. \r\nАргументы: Фильтр или параметры командной строки, передаваемые команде yq."
 
 msgid "Graphviz Visualizer. \r\nArguments: Command line options passed to the dot command."
-msgstr ""
+msgstr "Визуализатор Graphviz. \r\nАргументы: Параметры командной строки, передаваемые команде dot."
 
 msgid "CSV Querier with q command. \r\nArguments: SQL statement or command line options passed to the q command."
-msgstr ""
+msgstr "CSV Querier с q. \r\nАргументы: Оператор SQL или параметры командной строки, передаваемые команде q."
 
 msgid "TSV Querier with q command. \r\nArguments: SQL statement or command line options passed to the q command."
-msgstr ""
+msgstr "TSV Querier с q. \r\nАргументы: Оператор SQL или параметры командной строки, передаваемые команде q."
 
 msgid "JSON Querier with jq command. \r\nArguments: Filter or command line options passed to the jq command."
-msgstr ""
+msgstr "JSON Querier с jq. \r\nАргументы: Фильтр или параметры командной строки, передаваемые команде jq."
 
 msgid "YAML Querier with yq command. \r\nArguments: Filter or command line options passed to the yq command."
-msgstr ""
+msgstr "YAML Querier с yq. \r\nАргументы: Фильтр или параметры командной строки, передаваемые команде yq."
 
 msgid "HTML Validator with tidy-html5. \r\nArguments: Command line options passed to the tidy command."
-msgstr ""
+msgstr "Валидатор HTML с tidy-html5. \r\nАргументы: Параметры командной строки, передаваемые команде tidy."
 
 msgid "JVM bytecode disassembler with javap. \r\nArguments: Command line options passed to the javap command."
-msgstr ""
+msgstr "Дизассемблер байткода JVM с javap. \r\nАргументы: Параметры командной строки, передаваемые команде javap."
 
 msgid "IL disassembler with ildasm. \r\nArguments: Command line options passed to the ildasm command."
-msgstr ""
+msgstr "IL дизассемблер с ildasm. \r\nАргументы: Параметры командной строки, передаваемые команде ildasm."
 
 msgid "Native code disassembler with dumpbin. \r\nArguments: Command line options passed to the dumpbin command."
-msgstr ""
+msgstr "Дизассемблер нативного кода с dumpbin. \r\nАргументы: Параметры командной строки, передаваемые команде dumpbin."
 
 msgid "General content extractor with Apache Tika. \r\nArguments: Command line options passed to the tika-app.jar."
-msgstr ""
+msgstr "Экстрактор общего содержания с Apache Tika. \r\nАргументы: Параметры командной строки, передаваемые в tika-app.jar."
 
 msgid "Apply patch using GnuWin32 Patch for Windows"
-msgstr ""
+msgstr "Применить патч GnuWin32 Patch for Windows"
 
 msgid "Display the text content of MS Excel files"
-msgstr ""
+msgstr "Показывать текстовое содержимое файлов MS Excel"
 
 msgid "Display the text content of MS PowerPoint files"
-msgstr ""
+msgstr "Показывать текстовое содержимое файлов MS PowerPoint"
 
 msgid "Display the text content of MS Visio files"
-msgstr ""
+msgstr "Показывать текстовое содержимое файлов MS Visio"
 
 msgid "Display the text content of MS Word files"
-msgstr ""
+msgstr "Показывать текстовое содержимое файлов MS Word"
 
 msgid "Ignore some columns - ignored columns list from the plugin name or the plugin argument"
-msgstr ""
+msgstr "Игнорировать некоторые столбцы - список игнорируемых столбцов по названию или аргументу плагина"
 
 msgid "The plugin ignores comments (//... and /* ... */) in C, C++, PHP and JavaScript files."
-msgstr ""
+msgstr "Плагин игнорирует комментарии (//... и /* ... */) в файлах на C, C++, PHP и JavaScript."
 
 msgid "Ignore some fields - ignored fields list from the plugin name or the plugin argument"
-msgstr ""
+msgstr "Игнорировать некоторые поля - список игнорируемых полей по названию или аргументу плагина"
 
 msgid "Prediff Line Filter"
-msgstr ""
+msgstr "Фильтр предсравнения строк"
 
 msgid "Basic text functions for the context menu"
+msgstr "Основные текстовые функции контекстного меню"
+
+msgid "HTTP URL Scheme Handler with curl. \r\nArguments: Command line options passed to the curl command."
+msgstr ""
+
+msgid "Windows Registry URL Scheme Handler. \r\nArguments: Command line options passed to the reg.exe command."
 msgstr ""
 
 msgid "Filter applied"
-msgstr ""
+msgstr "Фильтр применен"
 
 #, c-format
 msgid "Clipboard at %s"
-msgstr ""
+msgstr "Буфер обмена на %s"
 
 msgid "Clipboard history is disabled.\r\nTo enable clipboard history, press Windows logo key + V and then click the Turn on button."
-msgstr ""
+msgstr "История буфера обмена отключена.\r\nЧтобы включить историю буфера обмена, нажмите Win+V, а затем кнопку 'включить'."
 
 msgid "This system does not support clipboard history."
-msgstr ""
+msgstr "Эта система не поддерживает историю буфера обмена."
 
 msgid "The 32-bit version of WinMerge does not support Clipboard Compare"
+msgstr "32-битная версия WinMerge не поддерживает буфера обмена"
+
+msgid "WebView2 runtime is not installed. Do you want to download it?"
 msgstr ""

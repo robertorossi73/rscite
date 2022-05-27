@@ -26,20 +26,20 @@ msgstr "LANG_BULGARIAN, SUBLANG_DEFAULT"
 msgid "Copy to Middle"
 msgstr ""
 
-msgid "C&opy to Right"
-msgstr "Копиране в&дясно"
+msgid "C&opy to Right\tAlt+Right"
+msgstr "Копиране в&дясно\tAlt+Right"
 
 msgid "Copy from Middle"
 msgstr ""
 
-msgid "Copy fro&m Right"
-msgstr "Копиране отд&ясно"
+msgid "Copy fro&m Right\tAlt+Shift+Left"
+msgstr "Копиране отд&ясно\tAlt+Shift+Left"
 
-msgid "Cop&y to Left"
-msgstr "Копиране в&ляво"
+msgid "Cop&y to Left\tAlt+Left"
+msgstr "Копиране в&ляво\tAlt+Left"
 
-msgid "Copy &from Left"
-msgstr "Копиране &отляво"
+msgid "Copy &from Left\tAlt+Shift+Right"
+msgstr "Копиране &отляво\tAlt+Shift+Right"
 
 msgid "Copy Selected Line(s) to Middle"
 msgstr ""
@@ -111,6 +111,12 @@ msgid "Open &Parent Folder..."
 msgstr "&Родителска папка…"
 
 msgid "S&hell Menu"
+msgstr ""
+
+msgid "Use First Line as Headers"
+msgstr ""
+
+msgid "Auto-Fit All Columns"
 msgstr ""
 
 msgid "View &Differences"
@@ -205,7 +211,46 @@ msgstr "&Настройка на фоновия цвят"
 msgid "&Vector Image Scaling"
 msgstr "Мащабиране на &векторно изображение"
 
-msgid "Compare Extracted &Text From Image"
+msgid "Compare Extracted &Text From Images"
+msgstr ""
+
+msgid "Co&mpare"
+msgstr "&Сравняване"
+
+msgid "&Screenshots"
+msgstr ""
+
+msgid "&Full Size Screenshots"
+msgstr ""
+
+msgid "&HTMLs"
+msgstr ""
+
+msgid "&Texts"
+msgstr ""
+
+msgid "&Resource Trees"
+msgstr ""
+
+msgid "&Size"
+msgstr ""
+
+msgid "Fit to Window"
+msgstr ""
+
+msgid "Clear &Browsing Data"
+msgstr ""
+
+msgid "&Disk Cache"
+msgstr ""
+
+msgid "&Cookies"
+msgstr ""
+
+msgid "&Browsing History"
+msgstr ""
+
+msgid "&All Profile"
 msgstr ""
 
 msgid "&File"
@@ -226,6 +271,9 @@ msgstr "&Двоични файлове"
 msgid "&Image"
 msgstr "&Изображения"
 
+msgid "&Webpage"
+msgstr ""
+
 msgid "New (&3 panes)"
 msgstr "Нов (&3 панела)"
 
@@ -236,7 +284,7 @@ msgid "Open Conflic&t File..."
 msgstr "Отваряне на файл с &конфликти…"
 
 msgid "Open C&lipboard"
-msgstr ""
+msgstr "Отваряне на междинната &памет"
 
 msgid "Open Pro&ject...\tCtrl+J"
 msgstr "Отваряне на &проект…\tCtrl+J"
@@ -535,7 +583,7 @@ msgstr "Про&меняне на знака за нов ред"
 msgid "Mer&ge Mode\tF9"
 msgstr "Режим на &сливане\tF9"
 
-msgid "Re&load\tCtrl+F5"
+msgid "Reloa&d\tCtrl+F5"
 msgstr "Пре&зареждане\tCtrl+F5"
 
 msgid "Reco&mpare As"
@@ -633,6 +681,9 @@ msgstr "&Номериране на редовете"
 
 msgid "View &Margins"
 msgstr "Показване на &отстъпа"
+
+msgid "View To&p Margins"
+msgstr ""
 
 msgid "W&rap Lines"
 msgstr "Прена&сяне на редовете"
@@ -841,9 +892,6 @@ msgstr "&Скрий"
 msgid "&Open Left"
 msgstr "&Отвори в ляво"
 
-msgid "With &External Editor"
-msgstr "С &външен редактор"
-
 msgid "Open Midd&le"
 msgstr "Отвори сре&ден"
 
@@ -961,7 +1009,7 @@ msgid "Ignore codepage &differences"
 msgstr "Пропускане на &различия в кодова страница"
 
 msgid "Ignore num&bers"
-msgstr ""
+msgstr "Пропускане на &числа"
 
 msgid "Ignore c&omment differences"
 msgstr "Пропускане на различия в &коментари"
@@ -1053,9 +1101,6 @@ msgstr " Файл: добавка разопаковчик"
 msgid "Se&lect..."
 msgstr "Изби&ране…"
 
-msgid "Co&mpare"
-msgstr "&Сравняване"
-
 msgid "Cancel"
 msgstr "Отменяне"
 
@@ -1092,8 +1137,8 @@ msgstr "Запазване &времето на файла при сравняв
 msgid "Show \"Select Files or Folders\" Dialog on Startup"
 msgstr "Показване „Избиране на файлове или папки“ при стартиране"
 
-msgid "Close \"Select Files or Folders\" Dialog on clicking OK button"
-msgstr "Затваряне „Избиране на файлове или папки“ при избиране на бутон Добре"
+msgid "Close \"Select Files or Folders\" Dialog on clicking Compare button"
+msgstr "Затваряне „Избиране на файлове или папки“ при избиране на бутон Сравняване"
 
 msgid "Op&en-dialog Auto-Completion:"
 msgstr "Автоматично &довършване в „Избиране на файлове или папки“:"
@@ -1302,7 +1347,7 @@ msgid "&Swap"
 msgstr "&Разменяне"
 
 msgid "&Copy to Clipboard"
-msgstr "&Копиране в системния буфер"
+msgstr "&Копиране в междинната памет"
 
 msgid "&Append to existing file"
 msgstr "&Прилагане към съществуващ файл"
@@ -1370,10 +1415,10 @@ msgstr "Описание:"
 msgid "Default arguments:"
 msgstr "Aргументи:"
 
-msgid "Display all plugins, don't check the extension."
+msgid "Display all plugins, don't check the extension"
 msgstr ""
 
-msgid "&Open files in the same window type after unpacking."
+msgid "&Open files in the same window type after unpacking"
 msgstr ""
 
 msgid "&Plugin Pipeline:"
@@ -1439,8 +1484,8 @@ msgstr "Пренебре&гване на всички"
 msgid "E&nable moved block detection"
 msgstr "Разпознаване на преместени па&раграфи"
 
-msgid "&Match similar lines"
-msgstr "Съот&ветствие на подобни редове"
+msgid "Align &similar lines"
+msgstr "Подра&вняване на подобни редове"
 
 msgid "Diff &algorithm (Experimental):"
 msgstr "&Алгоритъм за различия (експериментално):"
@@ -1563,6 +1608,15 @@ msgstr "Стандартна кодова страница"
 msgid "Select the default codepage assumed when loading non-Unicode files:"
 msgstr "Изберете стандартната кодова страница за не-Unicode файлове:"
 
+msgid "System codepage"
+msgstr "Кодова страница на системата"
+
+msgid "According to WinMerge User Interface"
+msgstr "Според интерфейса на WinMerge"
+
+msgid "Custom codepage:"
+msgstr "Потребителска кодова страница:"
+
 msgid ""
 "Detect codepage info for these type of files: .html, .rc, .xml\n"
 "Need to restart session."
@@ -1576,15 +1630,6 @@ msgid ""
 msgstr ""
 "Разпознаване на кодовата страница на текстовите файлове, чрез mlang.dll\n"
 "изисква рестартиране."
-
-msgid "System codepage"
-msgstr "Кодова страница на системата"
-
-msgid "According to WinMerge User Interface"
-msgstr "Според интерфейса на WinMerge"
-
-msgid "Custom codepage:"
-msgstr "Потребителска кодова страница:"
 
 msgid "Options"
 msgstr "Настройки"
@@ -1674,7 +1719,7 @@ msgid "&Detect archive type from file signature"
 msgstr "Откриване на вида на &архива от подписа на файла"
 
 msgid "Items saved to or restored from the project file:"
-msgstr ""
+msgstr "Елементи, възстановени от или запазени в проект:"
 
 msgid "Compare Statistics"
 msgstr "Статистика на сравнението"
@@ -1915,10 +1960,10 @@ msgid "Ignore &Reparse Points"
 msgstr ""
 
 msgid "Threshold for switching to &quick compare (MB):"
-msgstr ""
+msgstr "Ограничение за превключване към &бързо сравняване (МБ):"
 
 msgid "Threshold for switching to &binary compare (MB):"
-msgstr ""
+msgstr "Ограничение за превключване към &двоично сравняване (МБ):"
 
 msgid ""
 "\n"
@@ -1971,6 +2016,21 @@ msgstr "&Сравняване и на изображения при сравня
 
 msgid "OCR result:"
 msgstr "Резултат от OCR:"
+
+msgid "Webpage"
+msgstr ""
+
+msgid "URL pattern to &include (Regular expression):"
+msgstr ""
+
+msgid "URL pattern to &exclude (Regular expression):"
+msgstr ""
+
+msgid "&User data folder location:"
+msgstr ""
+
+msgid "&Separate user data folders for each pane"
+msgstr ""
 
 msgid "&Hex View"
 msgstr "&Шестнадесетичен изглед"
@@ -2132,7 +2192,7 @@ msgid "Folder Compare"
 msgstr "Сравняване на папки"
 
 msgid "Project"
-msgstr ""
+msgstr "Проект"
 
 msgid "Differences"
 msgstr "Различия"
@@ -2262,16 +2322,8 @@ msgid "File Filters (*.flt)|*.flt|All Files (*.*)|*.*||"
 msgstr "Файлове с филтри (*.flt)|*.flt|Всички файлове (*.*)|*.*||"
 
 #, c-format
-msgid ""
-"Cannot find file filter template file!\n"
-"\n"
-"Please copy file %1 to WinMerge/Filters -folder:\n"
-"%2."
-msgstr ""
-"Шаблонът за филтри не може да бъде намерен!\n"
-"\n"
-"Моля, копирайте файла %1 в папката WinMerge/Filters:\n"
-"%2."
+msgid "Cannot find file filter template file!\n\nPlease copy file %1 to WinMerge/Filters folder:\n%2."
+msgstr "Шаблонът за филтри не е намерен!\n\nKопирайте файла %1 в папката WinMerge/Filters:\n%2."
 
 #, c-format
 msgid ""
@@ -2817,6 +2869,9 @@ msgstr "Не може да се стартира външния редактор
 msgid "Unknown archive format"
 msgstr "Непознат архивен формат"
 
+msgid "Failed to extract archive files.\nDo you want to compare the archive files as text files?"
+msgstr ""
+
 msgid "Filename"
 msgstr "Име"
 
@@ -3066,14 +3121,14 @@ msgstr "Грешка"
 msgid "Text files are identical"
 msgstr "Текстовите файлове са еднакви"
 
-msgid "(Middle and right are identical)"
-msgstr "(Среда и дясно са еднакви)"
+msgid " (Middle and right are identical)"
+msgstr " (Среда и дясно са еднакви)"
 
-msgid "(Left and right are identical)"
-msgstr "(Ляво и дясно са еднакви)"
+msgid " (Left and right are identical)"
+msgstr " (Ляво и дясно са еднакви)"
 
-msgid "(Left and middle are identical)"
-msgstr "(Ляво и среда са еднакви)"
+msgid " (Left and middle are identical)"
+msgstr " (Ляво и среда са еднакви)"
 
 msgid "Text files are different"
 msgstr "Текстовите файлове са различни"
@@ -3086,7 +3141,7 @@ msgstr "Файловете с изображения са различни"
 
 #, c-format
 msgid "Group%d"
-msgstr ""
+msgstr "Група%d"
 
 #, c-format
 msgid "Elapsed time: %ld ms"
@@ -3150,13 +3205,13 @@ msgstr "Дата на създаване на средната секция."
 msgid "Tells which side has newer modification date."
 msgstr "Показва коя секция има късна дата на промяна."
 
-msgid "Left side file version, only for some filetypes."
+msgid "Left side file version, only for some file types."
 msgstr "Версия на файла вляво, само за файлове от един вид."
 
-msgid "Right side file version, only for some filetypes."
+msgid "Right side file version, only for some file types."
 msgstr "Версия на файла вдясно, само за файлове от един вид."
 
-msgid "Middle side file version, only for some filetypes."
+msgid "Middle side file version, only for some file types."
 msgstr "Версия на файла всредата, само за файлове от един вид."
 
 msgid "Short comparison result."
@@ -3570,47 +3625,23 @@ msgstr ""
 "\n"
 "Последно различие (Alt+End)"
 
-msgid ""
-"\n"
-"Copy Right (Alt+Right)"
-msgstr ""
-"\n"
-"Копира вдясно (Alt+Right)"
+msgid "\nCopy to Right (Alt+Right)"
+msgstr "\nКопира вдясно (Alt+Right)"
 
-msgid ""
-"\n"
-"Copy Left (Alt+Left)"
-msgstr ""
-"\n"
-"Копира вляво (Alt+Left)"
+msgid "\nCopy to Left (Alt+Left)"
+msgstr "\nКопира вляво (Alt+Left)"
 
-msgid ""
-"\n"
-"Copy Right and Advance (Ctrl+Alt+Right)"
-msgstr ""
-"\n"
-"Копира вдясно и продължава (Ctrl+Alt+Right)"
+msgid "\nCopy to Right and Advance (Ctrl+Alt+Right)"
+msgstr "\nКопира вдясно и продължава (Ctrl+Alt+Right)"
 
-msgid ""
-"\n"
-"Copy Left and Advance (Ctrl+Alt+Left)"
-msgstr ""
-"\n"
-"Копира вляво и продължава (Ctrl+Alt+Left)"
+msgid "\nCopy to Left and Advance (Ctrl+Alt+Left)"
+msgstr "\nКопира вляво и продължава (Ctrl+Alt+Left)"
 
-msgid ""
-"\n"
-"All Right"
-msgstr ""
-"\n"
-"Всичко вдясно"
+msgid "\nCopy All to Right"
+msgstr "\nКопира всичко вдясно"
 
-msgid ""
-"\n"
-"All Left"
-msgstr ""
-"\n"
-"Всичко вляво"
+msgid "\nCopy All to Left"
+msgstr "\nКопира всичко вляво"
 
 msgid ""
 "\n"
@@ -3661,7 +3692,7 @@ msgid "Suggested plugins"
 msgstr "Предложена добавка"
 
 msgid "All plugins"
-msgstr ""
+msgstr "Всички добавки"
 
 #, c-format
 msgid "Private Build: %1"
@@ -3729,6 +3760,9 @@ msgstr "Затваряне на д&ругите раздели"
 
 msgid "Enable &Auto Max Width"
 msgstr "Автоматична &максимална ширина"
+
+msgid "We&bpage"
+msgstr ""
 
 msgid "Frhed is not installed."
 msgstr "Frhed не е инсталиран."
@@ -3888,7 +3922,7 @@ msgid "Rotated: %d  "
 msgstr ""
 
 msgid "All pages"
-msgstr ""
+msgstr "Всички страници"
 
 msgid "<Edit here>"
 msgstr "<въведете>"
@@ -3913,6 +3947,12 @@ msgstr "Позиция на редове и текст"
 
 msgid "Word-by-word position and text"
 msgstr "Позиция на думи и текст"
+
+msgid "AppData folder"
+msgstr ""
+
+msgid "Install folder"
+msgstr ""
 
 msgid "Allow only one instance to run"
 msgstr "Позволи само едно стартирано копие"
@@ -3942,6 +3982,9 @@ msgid "Decompilation"
 msgstr ""
 
 msgid "&Others"
+msgstr ""
+
+msgid "URL Handling"
 msgstr ""
 
 msgid "Make Uppercase"
@@ -4175,6 +4218,12 @@ msgstr ""
 msgid "Basic text functions for the context menu"
 msgstr ""
 
+msgid "HTTP URL Scheme Handler with curl. \r\nArguments: Command line options passed to the curl command."
+msgstr ""
+
+msgid "Windows Registry URL Scheme Handler. \r\nArguments: Command line options passed to the reg.exe command."
+msgstr ""
+
 msgid "Filter applied"
 msgstr ""
 
@@ -4189,4 +4238,7 @@ msgid "This system does not support clipboard history."
 msgstr ""
 
 msgid "The 32-bit version of WinMerge does not support Clipboard Compare"
+msgstr ""
+
+msgid "WebView2 runtime is not installed. Do you want to download it?"
 msgstr ""
