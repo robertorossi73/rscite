@@ -1,10 +1,10 @@
 --[[
-Version : 1.1.1
+Version : 1.1.2
 Web     : http://www.redchar.net
 
 Questa procedura apre l'editor esadecimale con il file corrente
 
-Copyright (C) 2011-2015 Roberto Rossi 
+Copyright (C) 2011-2022 Roberto Rossi 
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -26,7 +26,7 @@ do
   require("luascr/rluawfx")
 
   local function main()
-    local exe = props["SciteDefaultHome"].."/tools/WinMerge/frhed/frhed.exe" 
+    local exe = props["SciteDefaultHome"].."/tools/frhed/frhed.exe" 
     local last = string.sub(props["FilePath"], -1)
     if ((last == "\\") or (last == "/")) then
       rwfx_ShellExecute(exe,"");
