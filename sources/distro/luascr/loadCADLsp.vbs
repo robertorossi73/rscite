@@ -1,7 +1,7 @@
 Option Explicit
 ' Autore : Roberto Rossi
 ' Web    : http://www.redchar.net
-' Versione : 1.10
+' Versione : 1.11
 '
 ' Questo script consente il caricamento di un file lsp
 ' in un cad
