@@ -1,7 +1,7 @@
 Option Explicit
 ' Autore : Roberto Rossi
 ' Web    : http://www.redchar.net
-' Versione : 1.9
+' Versione : 1.10
 '
 ' Questo script consente il caricamento di un file lsp
 ' in un cad
@@ -50,7 +50,7 @@ function SentToIcad(cmdStr)
     set shl = CreateObject("WScript.Shell")
     shl.AppActivate obj.caption
     
-    obj.RunCommand("(load """ & cmdStr & """)")
+    obj.LoadLisp(cmdStr)
 end function
 
 'ritorna l'oggetto riferito a IntelliCAD/ProgeCAD
