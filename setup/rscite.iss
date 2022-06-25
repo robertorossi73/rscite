@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 ;Autore :   Roberto Rossi
-;Versione : 4.0.0
+;Versione : 4.0.1
 ;Web      : http://www.redchar.net
 
 ;Compatible with Inno Setup 6 or later
@@ -70,10 +70,12 @@ Source: ..\sources\distro\*; DestDir: {app}; Flags: ignoreversion recursesubdirs
 ;Source: ..\sources\distro_dll\wscitecm_en.dll; DestDir: {app}; Flags: onlyifdoesntexist uninsrestartdelete; Check: not IsWin64; Tasks: ; Languages: english
 Source: ..\sources\distro_dll\wscitecm64_it.dll; DestDir: {app}; Flags: onlyifdoesntexist uninsrestartdelete; Check: IsWin64; Languages: italian
 Source: ..\sources\distro_dll\wscitecm64_en.dll; DestDir: {app}; Flags: onlyifdoesntexist uninsrestartdelete; Check: IsWin64; Tasks: ; Languages: english
-;Elimina superflui per trasformare versione italiana in inglese
+;Elimina superflui per attivare versione inglese
 Source: ..\sources\distro\loctools.properties; DestDir: {app}; Flags: deleteafterinstall; Tasks: ; Languages: english
 Source: ..\sources\distro\locale.properties; DestDir: {app}; Flags: deleteafterinstall; Tasks: ; Languages: english
 Source: ..\sources\distro\luascr\locale.properties; DestDir: {app}\luascr\; Flags: deleteafterinstall; Tasks: ; Languages: english
+;Elimina superflui per attivare versione italiana
+Source: ..\sources\distro\loctools-en.properties; DestDir: {app}; Flags: deleteafterinstall; Tasks: ; Languages: italian
 
 [Icons]
 ;SciTE
