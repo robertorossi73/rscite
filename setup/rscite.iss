@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 ;Autore :   Roberto Rossi
-;Versione : 4.0.1
+;Versione : 4.0.2
 ;Web      : http://www.redchar.net
 
 ;Compatible with Inno Setup 6 or later
@@ -26,7 +26,7 @@ AppId={{A4729A09-46FB-4766-9D9D-24358E58E453}
 
 AppName=RSciTE
 AppVerName=RSciTE {#RSciTEVersion}
-OutputDir=d:\temp\output\
+OutputDir=c:\temp\output\
 OutputBaseFilename=setup-rscite-{#RSciTEVersion}
 
 UninstallDisplayName=RSciTE
@@ -41,8 +41,8 @@ Compression=lzma
 SolidCompression=no
 ;WizardImageFile=rscite.bmp
 WizardStyle=modern
-WizardImageFile=compiler:wizmodernimage-is.bmp
-WizardSmallImageFile=compiler:wizmodernsmallimage-is.bmp
+WizardImageFile=compiler:WizClassicImage-IS.bmp
+WizardSmallImageFile=compiler:WizClassicSmallImage-IS.bmp
 SetupIconFile=rsetup.ico
 UninstallRestartComputer=true
 DisableProgramGroupPage=yes
@@ -83,7 +83,7 @@ Name: {group}\{cm:IconRscite}; Filename: "{app}\SciTE.exe"; IconFilename: {app}\
 ;dnGrep
 Name: {group}\{cm:IcondnGREP}; Filename: "{app}\tools\dngrep\dnGREP.exe"; Tasks: not portablemode;
 ;Frhed
-Name: {group}\{cm:IconFrhed}; Filename: "{app}\tools\winmerge\frhed\Frhed.exe"; Tasks: not portablemode;
+Name: {group}\{cm:IconFrhed}; Filename: "{app}\tools\frhed\Frhed.exe"; Tasks: not portablemode;
 ;KDiff
 ;Name: {group}\{cm:IconKDiff}; Filename: "{app}\tools\kdiff\kdiff3.exe"; Tasks: not portablemode;
 ;WinMerge
