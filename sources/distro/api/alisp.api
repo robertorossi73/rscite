@@ -398,4 +398,5 @@ vlr-undo-reactor data callbacks)
 vlr-wblock-reactor data callbacks)
 vlr-window-reactor data callbacks)
 vlr-xref-reactor data callbacks)
+vlax-get-acad-object
 ~ int)
