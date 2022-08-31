@@ -2,10 +2,10 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 ;Autore :   Roberto Rossi
-;Versione : 4.0.2
+;Versione : 4.0.3
 ;Web      : http://www.redchar.net
 
-;Compatible with Inno Setup 6 or later
+;Compatible with Inno Setup 6.2.0 or later
 
 ;how check redist vc
 ;https://pingfu.net/how-to-detect-which-version-of-visual-c-runtime-is-installed
@@ -26,7 +26,7 @@ AppId={{A4729A09-46FB-4766-9D9D-24358E58E453}
 
 AppName=RSciTE
 AppVerName=RSciTE {#RSciTEVersion}
-OutputDir=c:\temp\output\
+OutputDir=d:\temp\output\
 OutputBaseFilename=setup-rscite-{#RSciTEVersion}
 
 UninstallDisplayName=RSciTE
