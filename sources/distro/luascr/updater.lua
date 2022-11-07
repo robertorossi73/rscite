@@ -1,5 +1,5 @@
 --[[
-Version : 3.0.0
+Version : 3.0.1
 Web     : http://www.redchar.net
 
 Questa procedura verifica che quella corrente sia l'ultima release disponibile,
@@ -90,7 +90,7 @@ do
                 if (OnlineVersionTbl.DownloadFile ~= "") then
                     if (versionTbl.Distro and OnlineVersionTbl.Distro) then
                         if (tonumber(versionTbl.Distro) < 
-                            tonumber(OnlineVersionTbl.Distro) + 1) then
+                            tonumber(OnlineVersionTbl.Distro)) then
                             OnlineFile = OnlineVersionTbl.DownloadFile
                             
                             retVal = upd_genBat(OnlineFile)
