@@ -4,7 +4,7 @@
 -- Questo modulo consente l'uso di script sqlite
 
 --[[
-Version : 1.3.1
+Version : 1.3.2
 Web     : http://www.redchar.net
 
 Questo modulo consente l'utilizzo con sqlite in versione a linea di comando
@@ -148,7 +148,7 @@ do
         
         bat = createBat(dbpath, sqlpath, sqlfolder)
         
-        print(rfx_exeCapture(bat))
+        print(rfx_exeCapture("cmd /c \""..bat.."\""))
         
         os.remove(bat)
         print(_t(464))
