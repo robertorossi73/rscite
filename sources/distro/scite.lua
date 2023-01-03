@@ -59,7 +59,7 @@ function PUBLIC_add_bufferList(f)
   local linea = "" --linea con nomi file
   local buffers = {} --lista file
   local folderSciTE
-  local max_files = 100 --numero massimo di file memorizzati
+  local max_files = 200 --numero massimo di file memorizzati
   
   --cartella temporanea scite
   folderSciTE = rfx_UserTmpFolderRSciTE().."\\tmp"
