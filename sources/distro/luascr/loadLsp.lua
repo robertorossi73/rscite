@@ -202,7 +202,7 @@ do
         
         tbl = { --"Ricerca automatica, progeCAD/AutoCAD/BricsCAD/ZwCAD/*",
                 _t(337),
-                "progeCAD",
+                "progeCAD/IntelliCAD",
                 "AutoCAD",
                 "BricsCAD",
                 "ZwCAD"
