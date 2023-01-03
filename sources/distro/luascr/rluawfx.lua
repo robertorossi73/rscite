@@ -1,5 +1,5 @@
 --[[
-Version : 3.5.1
+Version : 3.5.2
 Web     : http://www.redchar.net
 
 Funzioni di utilità per macro SciTE/Lua
@@ -728,6 +728,8 @@ if not(rwfx_info) then
         patterns = 'file.patterns.css'
       elseif (string.find(props['file.patterns.latex'],estensione,1,true)) then
         patterns = 'file.patterns.latex'
+      elseif (string.find(props['file.patterns.sql'],estensione,1,true)) then
+        patterns = 'file.patterns.sql'
       else
         patterns = 'default'
       end
