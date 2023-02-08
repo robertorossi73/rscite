@@ -607,6 +607,96 @@
     </p>
     <h2>Releases</h2>
     <h3>
+       <a href="https://www.scintilla.org/scite533.zip">Release 5.3.3</a>
+    </h3>
+    <ul>
+	<li>SciTE</li>
+	<ul>
+		<li>
+		Released 8 February 2023.
+		</li>
+		<li>
+		Add 0-based byte position properties SelectionStart and SelectionEnd that may help when developing
+		scripts as they correspond to Scintilla arguments.
+		</li>
+		<li>
+		Fix slow-down with folding on huge documents that occurred with version 4.1.6.
+		</li>
+	</ul>
+	<li>Lexilla 5.2.2</li>
+	<ul>
+		<li>
+		C++: Fix keywords that start with non-ASCII. Also affects other lexers.
+		<a href="https://github.com/ScintillaOrg/lexilla/issues/130">Issue #130</a>.
+		</li>
+		<li>
+		Matlab: Include more prefix and suffix characters in numeric literals.
+		<a href="https://github.com/ScintillaOrg/lexilla/issues/120">Issue #120</a>.
+		</li>
+		<li>
+		Matlab: More accurate treatment of line ends inside strings. Matlab and Octave are different here.
+		<a href="https://github.com/ScintillaOrg/lexilla/issues/18">Issue #18</a>.
+		</li>
+		<li>
+		Modula-3: Don't treat identifier suffix that matches keyword as keyword.
+		<a href="https://github.com/ScintillaOrg/lexilla/issues/129">Issue #129</a>.
+		</li>
+		<li>
+		Modula-3: Fix endless loop in folder.
+		<a href="https://github.com/ScintillaOrg/lexilla/issues/128">Issue #128</a>.
+		</li>
+		<li>
+		Modula-3: Fix access to lines beyond document end in folder.
+		<a href="https://github.com/ScintillaOrg/lexilla/issues/131">Issue #131</a>.
+		</li>
+		<li>
+		Python: Don't highlight match and case as keywords in contexts where they probably aren't used as keywords.
+		<a href="https://github.com/ScintillaOrg/lexilla/pull/122">Pull request #122</a>.
+		</li>
+		<li>
+		X12: Support empty envelopes.
+		<a href="https://sourceforge.net/p/scintilla/bugs/2369/">Bug #2369</a>.
+		</li>
+	</ul>
+	<li>Scintilla 5.3.3</li>
+	<ul>
+		<li>
+		Fix SCI_LINESJOIN bug where carriage returns were incorrectly retained.
+		<a href="https://sourceforge.net/p/scintilla/bugs/2372/">Bug #2372</a>.
+		</li>
+		<li>
+		Fix SCI_VERTICALCENTRECARET to update the vertical scroll position.
+		</li>
+		<li>
+		When an autocompletion list is shown in response to SCN_CHARADDED, do not process character as fill-up or stop.
+		This avoids closing immediately when a character may both trigger and finish autocompletion.
+		</li>
+		<li>
+		On Cocoa fix character input bug where dotless 'i' and some other extended
+		Latin characters could not be entered.
+		The change also stops SCI_ASSIGNCMDKEY from working with these characters
+		on Cocoa.
+		<a href="https://sourceforge.net/p/scintilla/bugs/2374/">Bug #2374</a>.
+		</li>
+		<li>
+		On GTK, support IME context.
+		<a href="https://sourceforge.net/p/scintilla/feature-requests/1476/">Feature #1476</a>.
+		</li>
+		<li>
+		On GTK on Win32, fix scrolling speed to not be too fast.
+		<a href="https://sourceforge.net/p/scintilla/bugs/2375/">Bug #2375</a>.
+		</li>
+		<li>
+		On Qt, fix indicator drawing past left of text pane over margin.
+		<a href="https://sourceforge.net/p/scintilla/bugs/2373/">Bug #2373</a>,
+		<a href="https://sourceforge.net/p/scintilla/bugs/1956/">Bug #1956</a>.
+		</li>
+		<li>
+		On Qt, allow scrolling with mouse wheel when scroll bar hidden.
+		</li>
+	</ul>
+    </ul>
+    <h3>
        <a href="https://www.scintilla.org/scite532.zip">Release 5.3.2</a>
     </h3>
     <ul>
