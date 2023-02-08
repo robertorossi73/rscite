@@ -18,5 +18,5 @@ DownloadFile=https://github.com/robertorossi73/rscite/releases/download/v.105/se
 [SciTE]
 MajorSciTE=5
 MinorSciTE=3
-BuildSciTE=2
+BuildSciTE=3
 
