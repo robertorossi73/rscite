@@ -4,7 +4,7 @@
 
 **Autore : Roberto Rossi**
 
-**Versione 105**
+**Versione 106**
 
 Un gestore di testi **potente**, **semplice**, **veloce**, **poliedrico**...
 
@@ -132,7 +132,8 @@ Sintassi evidenziata:
 
 * Configurabile tramite appositi file (.properties).
 * Preimpostato per riconoscere i linguaggi MQL, AutoCAD/IntelliCAD/progeCAD DCL,
-AutoCAD/IntelliCAD/progeCAD Lisp, Abaqus, Ada, ANS.1 MIB definition files,
+AutoCAD/IntelliCAD/progeCAD Lisp, AutoCAD/IntelliCAD/progeCAD Script, 
+Abaqus, Ada, ANS.1 MIB definition files,
 APDL, Assembler (NASM, MASM), Asymptote, AutoIt, Avenue, Batch files (MS-DOS),
 Baan, Bash, BlitzBasic, Bullant, C/C++/C#, Clarion, cmake, COBOL,
 Coffeescript, conf (Apache), CSound, CSS, D, diff files, E-Script, Eiffel,
