@@ -67,6 +67,9 @@ msgstr "&Marker linjeforskjell\tF4"
 msgid "Add this change to Substitution &Filters"
 msgstr ""
 
+msgid "Add to &Line Filters"
+msgstr ""
+
 msgid "&Undo"
 msgstr "&Angre"
 
@@ -929,6 +932,9 @@ msgstr "Kopier &filnavn"
 msgid "Copy Items To Clip&board"
 msgstr ""
 
+msgid "Copy All Di&splayed Columns"
+msgstr ""
+
 msgid "&Zip"
 msgstr "&Zip"
 
@@ -961,6 +967,12 @@ msgstr "&Kopier full bane"
 
 msgid "Copy &Filename"
 msgstr "Kopier &filnavn"
+
+msgid "&Edit Caption"
+msgstr ""
+
+msgid "&Open..."
+msgstr ""
 
 msgid "Unpacker Settings"
 msgstr ""
@@ -1097,6 +1109,9 @@ msgstr "Bla gjennom.."
 msgid " Folder: Filter"
 msgstr ""
 
+msgid " File: Prediffer Plugin"
+msgstr ""
+
 msgid " File: Unpacker Plugin"
 msgstr ""
 
@@ -1144,6 +1159,9 @@ msgstr ""
 
 msgid "Op&en-dialog Auto-Completion:"
 msgstr "Auto-fullførelse for Å&pne-dialog:"
+
+msgid "Auto-&reload modified files:"
+msgstr ""
 
 msgid "Language:"
 msgstr ""
@@ -1966,10 +1984,7 @@ msgstr ""
 msgid "Threshold for switching to &binary compare (MB):"
 msgstr ""
 
-msgid ""
-"\n"
-"&Number of compare threads (a negative value implies addition of the number "
-"of available CPU cores):"
+msgid "&Number of CPU cores to use:"
 msgstr ""
 
 msgid "&CSV File Patterns:"
@@ -2299,6 +2314,9 @@ msgid "Include Subfolders"
 msgstr ""
 
 msgid "Compare Options"
+msgstr ""
+
+msgid "Hidden Items"
 msgstr ""
 
 msgid "Name"
@@ -2851,6 +2869,9 @@ msgid ""
 "you want to close the window?"
 msgstr ""
 
+msgid "The file or folder name is invalid."
+msgstr ""
+
 #, c-format
 msgid "Failed to execute external editor: %1"
 msgstr "Feilet i å kjøre eksternt redigeringsprogram: %1"
@@ -3259,6 +3280,10 @@ msgstr ""
 #, c-format
 msgid "Compare %1 with %2"
 msgstr "Sammenligning %1 med %2"
+
+#, c-format
+msgid "Compare %1 with %2 and %3"
+msgstr ""
 
 msgid "Comma-separated list"
 msgstr "Komma-separert liste"
@@ -3777,6 +3802,9 @@ msgstr ""
 msgid "histogram"
 msgstr ""
 
+msgid "none"
+msgstr ""
+
 msgid "GDI"
 msgstr ""
 
@@ -3942,6 +3970,12 @@ msgstr "Tillat bare en instans å kjøre"
 msgid "Allow only one instance to run and wait for the instance to terminate"
 msgstr ""
 
+msgid "Only on window activated"
+msgstr ""
+
+msgid "Immediately"
+msgstr ""
+
 msgid "Al&l"
 msgstr ""
 
@@ -3951,7 +3985,7 @@ msgstr ""
 msgid "Content Extraction"
 msgstr ""
 
-msgid "Visualization"
+msgid "Preview"
 msgstr ""
 
 msgid "Data Query"
@@ -4047,7 +4081,13 @@ msgstr ""
 msgid "Prettify YAML"
 msgstr ""
 
-msgid "Visualize Graphviz"
+msgid "Preview Graphviz"
+msgstr ""
+
+msgid "Preview Markdown"
+msgstr ""
+
+msgid "Preview PlantUML"
 msgstr ""
 
 msgid "Query CSV Data..."
@@ -4178,9 +4218,13 @@ msgid ""
 "Arguments: Filter or command line options passed to the yq command."
 msgstr ""
 
-msgid ""
-"Graphviz Visualizer. \r\n"
-"Arguments: Command line options passed to the dot command."
+msgid "Graphviz Previewer. \r\nArguments: Command line options passed to the dot command."
+msgstr ""
+
+msgid "Markdown Previewer. \r\nArguments: Command line options passed to the md2html command."
+msgstr ""
+
+msgid "PlantUML Previewer. \r\nArguments: Command line options passed to the plantuml.jar command."
 msgstr ""
 
 msgid ""

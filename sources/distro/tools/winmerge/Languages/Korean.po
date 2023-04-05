@@ -76,6 +76,9 @@ msgstr "다음 차이점 선택(&D)\tF4"
 msgid "Add this change to Substitution &Filters"
 msgstr "변경 사항을 치환 필터에 추가하기(&F)"
 
+msgid "Add to &Line Filters"
+msgstr ""
+
 #, c-format
 msgid "&Undo"
 msgstr "실행 취소(&U)"
@@ -1137,6 +1140,9 @@ msgstr "파일 이름들 복사(&F)"
 msgid "Copy Items To Clip&board"
 msgstr "항목을 클립보드로 복사(&B)"
 
+msgid "Copy All Di&splayed Columns"
+msgstr ""
+
 #, c-format
 msgid "&Zip"
 msgstr "Zip 압축(&Z)"
@@ -1176,6 +1182,12 @@ msgstr "전체 경로 복사(&C)"
 #, c-format
 msgid "Copy &Filename"
 msgstr "파일 이름 복사(&F)"
+
+msgid "&Edit Caption"
+msgstr ""
+
+msgid "&Open..."
+msgstr ""
 
 msgid "Unpacker Settings"
 msgstr "언패커 설정"
@@ -1352,6 +1364,9 @@ msgstr "찾아보기..."
 msgid " Folder: Filter"
 msgstr " 폴더: 필터"
 
+msgid " File: Prediffer Plugin"
+msgstr ""
+
 #, c-format
 msgid " File: Unpacker Plugin"
 msgstr " 파일: 언패커 플러그인"
@@ -1411,6 +1426,9 @@ msgstr "비교 버튼 누를 때 \"파일 또는 폴더 선택\" 대화 상자 �
 #, c-format
 msgid "Op&en-dialog Auto-Completion:"
 msgstr "열기 대화 상자 자동 완성(&E):"
+
+msgid "Auto-&reload modified files:"
+msgstr ""
 
 #, c-format
 msgid "Language:"
@@ -2437,12 +2455,8 @@ msgstr "&quick compare로 전환하기 위한 임계값 (MB):"
 msgid "Threshold for switching to &binary compare (MB):"
 msgstr "&binary compare로 전환하기 위한 임계값 (MB):"
 
-msgid ""
-"\n"
-"&Number of compare threads (a negative value implies addition of the number of available CPU cores):"
+msgid "&Number of CPU cores to use:"
 msgstr ""
-"\n"
-"비교 쓰레드 개수(&N) (음수값은 사용 가능한 CPU 코어 개수의 추가를 뜻합니다):"
 
 msgid "&CSV File Patterns:"
 msgstr "CSV 파일 패턴(&C)"
@@ -2812,6 +2826,9 @@ msgstr "하위 폴더 포함"
 
 msgid "Compare Options"
 msgstr "옵션 비교"
+
+msgid "Hidden Items"
+msgstr ""
 
 #, c-format
 msgid "Name"
@@ -3405,6 +3422,9 @@ msgstr "이동 확인"
 msgid "You are about to close the window that is comparing folders. Are you sure you want to close the window?"
 msgstr "폴더 비교 중인 창을 닫으려고 합니다. 이 창을 정말 닫을까요?"
 
+msgid "The file or folder name is invalid."
+msgstr ""
+
 #, c-format
 msgid "Failed to execute external editor: %1"
 msgstr "외부 편집기 실행 실패: %1"
@@ -3881,6 +3901,10 @@ msgstr "Prediffer 플러그인 이름 또는 파이프라인."
 #, c-format
 msgid "Compare %1 with %2"
 msgstr "%1을 %2와 비교"
+
+#, c-format
+msgid "Compare %1 with %2 and %3"
+msgstr ""
 
 #, c-format
 msgid "Comma-separated list"
@@ -4458,6 +4482,9 @@ msgstr "patience"
 msgid "histogram"
 msgstr "히스토그램"
 
+msgid "none"
+msgstr ""
+
 msgid "GDI"
 msgstr "GDI"
 
@@ -4624,6 +4651,12 @@ msgstr "중복 실행 금지하기"
 msgid "Allow only one instance to run and wait for the instance to terminate"
 msgstr "중복 실행 금지 및 기존 실행 종료 대기"
 
+msgid "Only on window activated"
+msgstr ""
+
+msgid "Immediately"
+msgstr ""
+
 msgid "Al&l"
 msgstr "전체(&L)"
 
@@ -4633,8 +4666,8 @@ msgstr "꾸미기"
 msgid "Content Extraction"
 msgstr "내용 추출"
 
-msgid "Visualization"
-msgstr "시각화"
+msgid "Preview"
+msgstr ""
 
 msgid "Data Query"
 msgstr "데이터 쿼리"
@@ -4729,8 +4762,14 @@ msgstr "XML 꾸미기"
 msgid "Prettify YAML"
 msgstr "YAML 꾸미기"
 
-msgid "Visualize Graphviz"
-msgstr "Graphviz 시각화"
+msgid "Preview Graphviz"
+msgstr ""
+
+msgid "Preview Markdown"
+msgstr ""
+
+msgid "Preview PlantUML"
+msgstr ""
 
 msgid "Query CSV Data..."
 msgstr "CSV 데이터 쿼리..."
@@ -4859,10 +4898,14 @@ msgstr ""
 "'yq command'를 사용하여 YAML 꾸미기. \r\n"
 "인수: yq command에 전달할 필터 또는 명령줄 옵션."
 
-msgid "Graphviz Visualizer. \r\nArguments: Command line options passed to the dot command."
+msgid "Graphviz Previewer. \r\nArguments: Command line options passed to the dot command."
 msgstr ""
-"Graphviz 시각화 도우미. \r\n"
-"인수: dot command에 전달할 명령줄 옵션."
+
+msgid "Markdown Previewer. \r\nArguments: Command line options passed to the md2html command."
+msgstr ""
+
+msgid "PlantUML Previewer. \r\nArguments: Command line options passed to the plantuml.jar command."
+msgstr ""
 
 msgid "CSV Querier with q command. \r\nArguments: SQL statement or command line options passed to the q command."
 msgstr ""

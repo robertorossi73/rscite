@@ -70,6 +70,9 @@ msgstr "選取行內差異 (&D)\tF4"
 msgid "Add this change to Substitution &Filters"
 msgstr "將此變動加入替代篩選器 (&F)"
 
+msgid "Add to &Line Filters"
+msgstr ""
+
 #, c-format
 msgid "&Undo"
 msgstr "復原 (&U)"
@@ -1136,6 +1139,9 @@ msgstr "複製檔名 (&F)"
 msgid "Copy Items To Clip&board"
 msgstr "複製項目到剪貼簿 (&B)"
 
+msgid "Copy All Di&splayed Columns"
+msgstr ""
+
 #, c-format
 msgid "&Zip"
 msgstr "Zip (&Z)"
@@ -1175,6 +1181,12 @@ msgstr "複製完整路徑 (&C)"
 #, c-format
 msgid "Copy &Filename"
 msgstr "複製檔名 (&F)"
+
+msgid "&Edit Caption"
+msgstr ""
+
+msgid "&Open..."
+msgstr ""
 
 msgid "Unpacker Settings"
 msgstr "解壓縮程式設定"
@@ -1351,6 +1363,9 @@ msgstr "瀏覽..."
 msgid " Folder: Filter"
 msgstr ""
 
+msgid " File: Prediffer Plugin"
+msgstr ""
+
 #, c-format
 msgid " File: Unpacker Plugin"
 msgstr ""
@@ -1412,6 +1427,9 @@ msgstr ""
 #, c-format
 msgid "Op&en-dialog Auto-Completion:"
 msgstr "「開啟」對話方塊之自動完成 (&E)："
+
+msgid "Auto-&reload modified files:"
+msgstr ""
 
 #, c-format
 msgid "Language:"
@@ -2439,12 +2457,8 @@ msgstr ""
 msgid "Threshold for switching to &binary compare (MB):"
 msgstr ""
 
-msgid ""
-"\n"
-"&Number of compare threads (a negative value implies addition of the number of available CPU cores):"
+msgid "&Number of CPU cores to use:"
 msgstr ""
-"\n"
-"比較進程數 (&N)(負數表示附加可用的CPU內核數量)："
 
 msgid "&CSV File Patterns:"
 msgstr "&CSV 檔案模式："
@@ -2814,6 +2828,9 @@ msgstr "包括子資料夾"
 
 msgid "Compare Options"
 msgstr "比較選項"
+
+msgid "Hidden Items"
+msgstr ""
 
 #, c-format
 msgid "Name"
@@ -3407,6 +3424,9 @@ msgstr "確認移除"
 msgid "You are about to close the window that is comparing folders. Are you sure you want to close the window?"
 msgstr "您要關閉一個正在比較資料夾的視窗，您確定要關閉視窗嗎？"
 
+msgid "The file or folder name is invalid."
+msgstr ""
+
 #, c-format
 msgid "Failed to execute external editor: %1"
 msgstr "無法執行外部編輯器 %1"
@@ -3883,6 +3903,10 @@ msgstr ""
 #, c-format
 msgid "Compare %1 with %2"
 msgstr "比較 %1 和 %2"
+
+#, c-format
+msgid "Compare %1 with %2 and %3"
+msgstr ""
 
 #, c-format
 msgid "Comma-separated list"
@@ -4469,6 +4493,9 @@ msgstr "耐心"
 msgid "histogram"
 msgstr "長條圖"
 
+msgid "none"
+msgstr ""
+
 msgid "GDI"
 msgstr "GDI"
 
@@ -4635,6 +4662,12 @@ msgstr "不能同時執行一個以上本程式"
 msgid "Allow only one instance to run and wait for the instance to terminate"
 msgstr ""
 
+msgid "Only on window activated"
+msgstr ""
+
+msgid "Immediately"
+msgstr ""
+
 msgid "Al&l"
 msgstr "全部 (&L)"
 
@@ -4644,8 +4677,8 @@ msgstr "美化"
 msgid "Content Extraction"
 msgstr "擷取內容"
 
-msgid "Visualization"
-msgstr "視覺化"
+msgid "Preview"
+msgstr ""
 
 msgid "Data Query"
 msgstr "資料查詢"
@@ -4740,8 +4773,14 @@ msgstr "美化 XML"
 msgid "Prettify YAML"
 msgstr "美化 YAML"
 
-msgid "Visualize Graphviz"
-msgstr "Graphviz 視覺化"
+msgid "Preview Graphviz"
+msgstr ""
+
+msgid "Preview Markdown"
+msgstr ""
+
+msgid "Preview PlantUML"
+msgstr ""
 
 msgid "Query CSV Data..."
 msgstr "查詢 CSV 資料..."
@@ -4870,9 +4909,13 @@ msgid ""
 "Arguments: Filter or command line options passed to the yq command."
 msgstr ""
 
-msgid ""
-"Graphviz Visualizer. \r\n"
-"Arguments: Command line options passed to the dot command."
+msgid "Graphviz Previewer. \r\nArguments: Command line options passed to the dot command."
+msgstr ""
+
+msgid "Markdown Previewer. \r\nArguments: Command line options passed to the md2html command."
+msgstr ""
+
+msgid "PlantUML Previewer. \r\nArguments: Command line options passed to the plantuml.jar command."
 msgstr ""
 
 msgid ""

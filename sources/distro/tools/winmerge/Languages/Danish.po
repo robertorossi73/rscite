@@ -69,6 +69,9 @@ msgstr "Vælg &linjeforskel\tF4"
 msgid "Add this change to Substitution &Filters"
 msgstr ""
 
+msgid "Add to &Line Filters"
+msgstr ""
+
 #, c-format
 msgid "&Undo"
 msgstr "&Fortryd"
@@ -1130,6 +1133,9 @@ msgstr "Ko&pier filnavne"
 msgid "Copy Items To Clip&board"
 msgstr ""
 
+msgid "Copy All Di&splayed Columns"
+msgstr ""
+
 #, c-format
 msgid "&Zip"
 msgstr "&Zip"
@@ -1169,6 +1175,12 @@ msgstr "&Kopier det fulde stinavn"
 #, c-format
 msgid "Copy &Filename"
 msgstr "Kopier &filnavn"
+
+msgid "&Edit Caption"
+msgstr ""
+
+msgid "&Open..."
+msgstr ""
 
 msgid "Unpacker Settings"
 msgstr ""
@@ -1345,6 +1357,9 @@ msgstr "Gennemse..."
 msgid " Folder: Filter"
 msgstr ""
 
+msgid " File: Prediffer Plugin"
+msgstr ""
+
 #, c-format
 msgid " File: Unpacker Plugin"
 msgstr ""
@@ -1404,6 +1419,9 @@ msgstr ""
 #, c-format
 msgid "Op&en-dialog Auto-Completion:"
 msgstr "Å&ben-dialog Auto-fuldførelse:"
+
+msgid "Auto-&reload modified files:"
+msgstr ""
 
 #, c-format
 msgid "Language:"
@@ -2428,7 +2446,7 @@ msgstr ""
 msgid "Threshold for switching to &binary compare (MB):"
 msgstr ""
 
-msgid "\n&Number of compare threads (a negative value implies addition of the number of available CPU cores):"
+msgid "&Number of CPU cores to use:"
 msgstr ""
 
 msgid "&CSV File Patterns:"
@@ -2788,6 +2806,9 @@ msgid "Include Subfolders"
 msgstr ""
 
 msgid "Compare Options"
+msgstr ""
+
+msgid "Hidden Items"
 msgstr ""
 
 #, c-format
@@ -3362,6 +3383,9 @@ msgstr "Bekræft flytning"
 msgid "You are about to close the window that is comparing folders. Are you sure you want to close the window?"
 msgstr ""
 
+msgid "The file or folder name is invalid."
+msgstr ""
+
 #, c-format
 msgid "Failed to execute external editor: %1"
 msgstr "Kunne ikke eksekvere ekstern editor: %1"
@@ -3844,6 +3868,10 @@ msgstr ""
 #, c-format
 msgid "Compare %1 with %2"
 msgstr "Sammenlign %1 med %2"
+
+#, c-format
+msgid "Compare %1 with %2 and %3"
+msgstr ""
 
 #, c-format
 msgid "Comma-separated list"
@@ -4348,6 +4376,9 @@ msgstr ""
 msgid "histogram"
 msgstr ""
 
+msgid "none"
+msgstr ""
+
 msgid "GDI"
 msgstr ""
 
@@ -4514,6 +4545,12 @@ msgstr "Tillad kun et eksempel ad gangen"
 msgid "Allow only one instance to run and wait for the instance to terminate"
 msgstr ""
 
+msgid "Only on window activated"
+msgstr ""
+
+msgid "Immediately"
+msgstr ""
+
 msgid "Al&l"
 msgstr ""
 
@@ -4523,7 +4560,7 @@ msgstr ""
 msgid "Content Extraction"
 msgstr ""
 
-msgid "Visualization"
+msgid "Preview"
 msgstr ""
 
 msgid "Data Query"
@@ -4619,7 +4656,13 @@ msgstr ""
 msgid "Prettify YAML"
 msgstr ""
 
-msgid "Visualize Graphviz"
+msgid "Preview Graphviz"
+msgstr ""
+
+msgid "Preview Markdown"
+msgstr ""
+
+msgid "Preview PlantUML"
 msgstr ""
 
 msgid "Query CSV Data..."
@@ -4712,7 +4755,13 @@ msgstr ""
 msgid "YAML Prettier with yq command. \r\nArguments: Filter or command line options passed to the yq command."
 msgstr ""
 
-msgid "Graphviz Visualizer. \r\nArguments: Command line options passed to the dot command."
+msgid "Graphviz Previewer. \r\nArguments: Command line options passed to the dot command."
+msgstr ""
+
+msgid "Markdown Previewer. \r\nArguments: Command line options passed to the md2html command."
+msgstr ""
+
+msgid "PlantUML Previewer. \r\nArguments: Command line options passed to the plantuml.jar command."
 msgstr ""
 
 msgid "CSV Querier with q command. \r\nArguments: SQL statement or command line options passed to the q command."

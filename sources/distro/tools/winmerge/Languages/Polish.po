@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WinMerge\n"
 "Report-Msgid-Bugs-To: https://bugs.winmerge.org/\n"
-"POT-Creation-Date: 2020-11-13 12:00+0000\n"
-"PO-Revision-Date: \n"
+"POT-Creation-Date: 2022-10-16 00:15+0000\n"
+"PO-Revision-Date: 2022-11-10 00:15+0000\n"
 "Last-Translator: Mirosław Żylewicz\n"
 "Language-Team: Polish\n"
 "MIME-Version: 1.0\n"
@@ -69,6 +69,9 @@ msgstr "Zaznacz różniące się wiersze\tF4"
 msgid "Add this change to Substitution &Filters"
 msgstr "Dodaj tę zmianę do filtrów zamiany"
 
+msgid "Add to &Line Filters"
+msgstr "Dodaj do filtrów wiersza"
+
 msgid "&Undo"
 msgstr "Cofnij"
 
@@ -109,7 +112,7 @@ msgid "With &External Editor\tCtrl+Alt+E"
 msgstr "W zewnętrznym edytorze\tCtrl+Alt+E"
 
 msgid "&With..."
-msgstr "Z..."
+msgstr "Za pomocą..."
 
 msgid "Open &Parent Folder..."
 msgstr "Otwórz nadrzędny katalog..."
@@ -222,40 +225,40 @@ msgid "Co&mpare"
 msgstr "Porównaj"
 
 msgid "&Screenshots"
-msgstr ""
+msgstr "Zrzuty ekranu"
 
 msgid "&Full Size Screenshots"
-msgstr ""
+msgstr "Zrzuty ekranu całej strony"
 
 msgid "&HTMLs"
-msgstr ""
+msgstr "Pliki HTML"
 
 msgid "&Texts"
-msgstr ""
+msgstr "Pliki tekstowe"
 
 msgid "&Resource Trees"
-msgstr ""
+msgstr "Drzewa zasobów"
 
 msgid "&Size"
-msgstr ""
+msgstr "Rozmiar"
 
 msgid "Fit to Window"
-msgstr ""
+msgstr "Dopasuj do okna"
 
 msgid "Clear &Browsing Data"
-msgstr ""
+msgstr "Wyczyść dane przeglądania"
 
 msgid "&Disk Cache"
-msgstr ""
+msgstr "Pamięć podręczna dysku"
 
 msgid "&Cookies"
-msgstr ""
+msgstr "Ciasteczka"
 
 msgid "&Browsing History"
-msgstr ""
+msgstr "Historia przeglądania"
 
 msgid "&All Profile"
-msgstr ""
+msgstr "Wszystkie profile"
 
 msgid "&File"
 msgstr "Plik"
@@ -276,7 +279,7 @@ msgid "&Image"
 msgstr "Obraz"
 
 msgid "&Webpage"
-msgstr ""
+msgstr "Strona internetowa"
 
 msgid "New (&3 panes)"
 msgstr "Nowy (3 panele)"
@@ -402,7 +405,7 @@ msgid "C&onfiguration"
 msgstr "Konfiguracja"
 
 msgid "&GNU General Public License"
-msgstr "GNU Powszechna Licencja Publiczna"
+msgstr "Powszechna Licencja Publiczna GNU"
 
 msgid "&About WinMerge..."
 msgstr "O WinMerge..."
@@ -931,6 +934,9 @@ msgstr "Kopiuj nazwy plików"
 msgid "Copy Items To Clip&board"
 msgstr "Kopiuj elementy do schowka"
 
+msgid "Copy All Di&splayed Columns"
+msgstr "Kopiuj wszystkie wyświetlone kolumny"
+
 msgid "&Zip"
 msgstr "Spakuj"
 
@@ -963,6 +969,12 @@ msgstr "Kopiuj pełną ś&cieżkę"
 
 msgid "Copy &Filename"
 msgstr "Kopiuj nazwę pliku"
+
+msgid "&Edit Caption"
+msgstr "Edytuj podpis"
+
+msgid "&Open..."
+msgstr "Otwórz..."
 
 msgid "Unpacker Settings"
 msgstr "Ustawienia programu rozpakowującego"
@@ -1099,6 +1111,9 @@ msgstr "Przeglądaj..."
 msgid " Folder: Filter"
 msgstr " Folder: filtr"
 
+msgid " File: Prediffer Plugin"
+msgstr " Plik: wtyczka porównywająca"
+
 msgid " File: Unpacker Plugin"
 msgstr " Plik: wtyczka rozpakowująca"
 
@@ -1133,7 +1148,7 @@ msgid "Single instance mode:"
 msgstr "Tryb pojedynczej instancji:"
 
 msgid "As&k when closing multiple windows"
-msgstr "Zapytaj przed zamykaniem wielu o&kien"
+msgstr "Zapytaj przed zamknięciem wielu o&kien"
 
 msgid "&Preserve file time in file compare"
 msgstr "Zachowaj czas &pliku w porównanym pliku"
@@ -1142,10 +1157,13 @@ msgid "Show \"Select Files or Folders\" Dialog on Startup"
 msgstr "Po uruchomieniu pokaż okno \"wybierz pliki lub foldery\""
 
 msgid "Close \"Select Files or Folders\" Dialog on clicking Compare button"
-msgstr "Zamknij okno \"wybierz pliki lub foldery\" przyciskiem Porównaj"
+msgstr "Zamknij okno \"wybierz pliki lub foldery\" po kliknięciu \"porównaj\""
 
 msgid "Op&en-dialog Auto-Completion:"
 msgstr "Otwórz okno automatycznego uzu&pełniania:"
+
+msgid "Auto-&reload modified files:"
+msgstr "Automatycznie przeładuj zmodyfikowane pliki:"
 
 msgid "Language:"
 msgstr "Język:"
@@ -1223,10 +1241,10 @@ msgid "&Apply"
 msgstr "Z&astosuj"
 
 msgid "Line Filters"
-msgstr "Filtry wierszy"
+msgstr "Filtry wiersza"
 
 msgid "Enable Line Filters"
-msgstr "Włącz filtry wierszy"
+msgstr "Włącz filtry wiersza"
 
 msgid "Regular Expressions (one per line):"
 msgstr "Wyrażenia regularne (jedno na wiersz):"
@@ -1256,7 +1274,7 @@ msgid "Colors"
 msgstr "Kolory"
 
 msgid "Color Scheme:"
-msgstr "Schemat koloru:"
+msgstr "Schemat kolorów:"
 
 msgid "Background"
 msgstr "Tło"
@@ -1487,7 +1505,7 @@ msgid "E&nable moved block detection"
 msgstr "Włącz wykrywanie przeniesionych bloków"
 
 msgid "Align &similar lines"
-msgstr ""
+msgstr "Wyrównaj podobne wiersze"
 
 msgid "Diff &algorithm (Experimental):"
 msgstr "Algorytm porównywania (eksperymentalny):"
@@ -1950,13 +1968,13 @@ msgid "Ignore &Reparse Points"
 msgstr "Ignoruj punkty ponownej analizy składniowej"
 
 msgid "Threshold for switching to &quick compare (MB):"
-msgstr ""
+msgstr "Próg przejścia na szybkie porównywanie (MB):"
 
 msgid "Threshold for switching to &binary compare (MB):"
-msgstr ""
+msgstr "Próg przejścia na binarne porównywanie (MB):"
 
-msgid "\n&Number of compare threads (a negative value implies addition of the number of available CPU cores):"
-msgstr "Liczba porównywanych wątków (wartość ujemna oznacza dodanie liczby dostępnych rdzeni procesora):"
+msgid "&Number of CPU cores to use:"
+msgstr "Liczba rdzeni CPU do wykorzystania:"
 
 msgid "&CSV File Patterns:"
 msgstr "Szablony pliku &CSV:"
@@ -2002,19 +2020,19 @@ msgid "OCR result:"
 msgstr "Wynik OCR:"
 
 msgid "Webpage"
-msgstr ""
+msgstr "Strona internetowa"
 
 msgid "URL pattern to &include (Regular expression):"
-msgstr ""
+msgstr "Szablon adresu URL do uwzględnienia (wyrażenie regularne):"
 
 msgid "URL pattern to &exclude (Regular expression):"
-msgstr ""
+msgstr "Szablon adresu URL do wykluczenia (wyrażenie regularne):"
 
 msgid "&User data folder location:"
-msgstr ""
+msgstr "Lokalizacja folderu danych użytkownika:"
 
 msgid "&Separate user data folders for each pane"
-msgstr ""
+msgstr "Oddzielne foldery danych użytkownika dla każdego panelu"
 
 msgid "&Hex View"
 msgstr "Widok szesnastkowy"
@@ -2220,6 +2238,9 @@ msgstr "Uwzględnij podfoldery"
 msgid "Compare Options"
 msgstr "Opcje porównania"
 
+msgid "Hidden Items"
+msgstr "Ukryte elementy"
+
 msgid "Name"
 msgstr "Nazwa"
 
@@ -2395,7 +2416,7 @@ msgid "Cannot open file\n%1\n\n%2"
 msgstr "Nie można otworzyć pliku\n%1\n\n%2"
 
 msgid "Failed to parse conflict file."
-msgstr "Nie można przeanalizować pliku konfliktu."
+msgstr "Nie udało się przeanalizować pliku konfliktu."
 
 #, c-format
 msgid "The file\n%1\nis not a conflict file."
@@ -2485,10 +2506,10 @@ msgid "Copy from Middle\tAlt+Shift+Left"
 msgstr "Kopiuj ze środka\tAlt+Shift+Left"
 
 msgid "Copy to Middle and Advance\tCtrl+Alt+Right"
-msgstr ""
+msgstr "Kopiuj do środka i przejdź dalej\tCtrl+Alt+Right"
 
 msgid "Copy to Middle and Advance\tCtrl+Alt+Left"
-msgstr ""
+msgstr "Kopiuj do środka i przejdź dalej\tCtrl+Alt+Left"
 
 msgid "Copy All to Middle"
 msgstr "Kopiuj wszystko do środka"
@@ -2606,6 +2627,9 @@ msgstr "Potwierdzenie przenoszenia"
 msgid "You are about to close the window that is comparing folders. Are you sure you want to close the window?"
 msgstr "Zamierzasz zamknąć okno porównujące foldery. Czy na pewno chcesz zamknąć okno?"
 
+msgid "The file or folder name is invalid."
+msgstr "Nazwa pliku lub folderu jest nieprawidłowa."
+
 #, c-format
 msgid "Failed to execute external editor: %1"
 msgstr "Nie można uruchomić zewnętrznego edytora: %1"
@@ -2614,7 +2638,7 @@ msgid "Unknown archive format"
 msgstr "Nieznany format archiwum"
 
 msgid "Failed to extract archive files.\nDo you want to compare the archive files as text files?"
-msgstr ""
+msgstr "Nie udało się wyodrębnić plików archiwum.\nCzy chcesz porównać pliki archiwum jak pliki tekstowe?"
 
 msgid "Filename"
 msgstr "Nazwa pliku"
@@ -2799,7 +2823,7 @@ msgid "Video"
 msgstr "Wideo"
 
 msgid "Hash"
-msgstr ""
+msgstr "Hash"
 
 msgid "Unable to compare files"
 msgstr "Nie można porównać plików"
@@ -2885,7 +2909,7 @@ msgstr "Pliki obrazów są różne"
 
 #, c-format
 msgid "Group%d"
-msgstr ""
+msgstr "Grupa%d"
 
 #, c-format
 msgid "Elapsed time: %ld ms"
@@ -3006,6 +3030,10 @@ msgstr "Nazwa wtyczki porównywającej lub pipeline."
 #, c-format
 msgid "Compare %1 with %2"
 msgstr "Porównaj %1 z %2"
+
+#, c-format
+msgid "Compare %1 with %2 and %3"
+msgstr "Porównaj %1 z %2 i %3"
 
 msgid "Comma-separated list"
 msgstr "Lista z przecinkami"
@@ -3170,7 +3198,7 @@ msgid "Cannot create a patch file from binary files."
 msgstr "Nie można utworzyć łatki z plików binarnych."
 
 msgid "Please save all files first.\n\nCreating a patch requires that there are no unsaved changes in files."
-msgstr "Proszę najpierw zapisać wszystkie pliki.\n\nTworzenie łatki wymaga zapisania wszystkich zmian w plikach."
+msgstr "Najpierw zapisz wszystkie pliki.\n\nAby utworzyć łatkę, konieczne jest, aby w plikach nie było żadnych niezapisanych zmian."
 
 msgid "Folder does not exist."
 msgstr "Folder nie istnieje."
@@ -3259,10 +3287,10 @@ msgid "\nCopy to Left (Alt+Left)"
 msgstr "\nKopiuj do lewej (Alt+Left)"
 
 msgid "\nCopy to Right and Advance (Ctrl+Alt+Right)"
-msgstr "\nKopiuj prawą i przejdź dalej (Ctrl+Alt+Right)"
+msgstr "\nKopiuj do prawej i przejdź dalej (Ctrl+Alt+Right)"
 
 msgid "\nCopy to Left and Advance (Ctrl+Alt+Left)"
-msgstr "\nKopiuj lewą i przejdź dalej (Ctrl+Alt+Left)"
+msgstr "\nKopiuj do lewej i przejdź dalej (Ctrl+Alt+Left)"
 
 msgid "\nCopy All to Right"
 msgstr "\nKopiuj wszystko do prawej"
@@ -3337,7 +3365,7 @@ msgid "No Highlighting"
 msgstr "Bez podświetlenia"
 
 msgid "Batch"
-msgstr ""
+msgstr "Program wsadowy"
 
 msgid "Portable Object"
 msgstr "Obiekt przenośny"
@@ -3358,10 +3386,10 @@ msgid "Close &Other Tabs"
 msgstr "Zamknij inne karty"
 
 msgid "Enable &Auto Max Width"
-msgstr "Włącz automatyczną maksymalną szerokość"
+msgstr "Włącz automatycznie maksymalną szerokość"
 
 msgid "We&bpage"
-msgstr ""
+msgstr "Strona internetowa"
 
 msgid "Frhed is not installed."
 msgstr "Free Hex Editor nie został zainstalowany."
@@ -3387,6 +3415,9 @@ msgstr "Cierpliwy"
 
 msgid "histogram"
 msgstr "Histogram"
+
+msgid "none"
+msgstr "brak"
 
 msgid "GDI"
 msgstr "GDI"
@@ -3416,7 +3447,7 @@ msgid "MDI child window only"
 msgstr "Tylko okno podrzędne"
 
 msgid "Close main window if there is only one MDI child window"
-msgstr "Zamknij okno główne, jeśli jest tylko jedno okno podrzędne"
+msgstr "Zamknij okno główne, jeśli istnieje tylko jedno okno podrzędne"
 
 msgctxt "ImgMergeFrame|LocationPane"
 msgid "Diff"
@@ -3492,11 +3523,11 @@ msgstr "Poz: (%d, %d)  RGBA: (%d, %d, %d, %d)  "
 
 #, c-format
 msgid "Dist: %g  "
-msgstr ""
+msgstr "Odległość: %g  "
 
 #, c-format
 msgid "Dist: %g, %g  "
-msgstr ""
+msgstr "Odległość: %g, %g  "
 
 #, c-format
 msgid "Page: %d/%d  Zoom: %d%%  %dx%dpx  %dbpp  "
@@ -3542,10 +3573,10 @@ msgid "Word-by-word position and text"
 msgstr "Pozycja i tekst słowo-po-słowie"
 
 msgid "AppData folder"
-msgstr ""
+msgstr "Folder AppData"
 
 msgid "Install folder"
-msgstr ""
+msgstr "Folder instalacji"
 
 msgid "Allow only one instance to run"
 msgstr "Zezwól na uruchomienie tylko jednej instancji programu"
@@ -3553,20 +3584,26 @@ msgstr "Zezwól na uruchomienie tylko jednej instancji programu"
 msgid "Allow only one instance to run and wait for the instance to terminate"
 msgstr "Zezwól na uruchomienie tylko jednej instancji i poczekaj, aż zakończy pracę"
 
+msgid "Only on window activated"
+msgstr "Tylko w aktywnym oknie"
+
+msgid "Immediately"
+msgstr "Natychmiast"
+
 msgid "Al&l"
 msgstr "Wszystkie"
 
 msgid "Prettification"
-msgstr ""
+msgstr "Upiększanie"
 
 msgid "Content Extraction"
-msgstr ""
+msgstr "Wydobywanie zawartości"
 
-msgid "Visualization"
-msgstr "Wizualizacja"
+msgid "Preview"
+msgstr ""
 
 msgid "Data Query"
-msgstr ""
+msgstr "Kwerenda danych"
 
 msgid "Validation"
 msgstr "Walidacja"
@@ -3578,7 +3615,7 @@ msgid "&Others"
 msgstr "Pozostałe"
 
 msgid "URL Handling"
-msgstr ""
+msgstr "Obsługa adresów URL"
 
 msgid "Make Uppercase"
 msgstr "Zrób duże litery"
@@ -3611,7 +3648,7 @@ msgid "Apply Filter Command..."
 msgstr "Zastosuj filtrowanie..."
 
 msgid "Tokenize..."
-msgstr ""
+msgstr "Tokenizacja tekstu..."
 
 msgid "Trim Spaces"
 msgstr "Usuń spacje"
@@ -3647,43 +3684,49 @@ msgid "Apply Prediff Substitution Filters"
 msgstr "Zastosuj filtry zamiany przed porównaniem"
 
 msgid "Prettify HTML"
-msgstr ""
+msgstr "Upiększ kod HTML"
 
 msgid "Prettify JSON"
-msgstr ""
+msgstr "Upiększ kod JSON"
 
 msgid "Prettify XML"
-msgstr ""
+msgstr "Upiększ kod XML"
 
 msgid "Prettify YAML"
+msgstr "Upiększ kod YAML"
+
+msgid "Preview Graphviz"
 msgstr ""
 
-msgid "Visualize Graphviz"
-msgstr "Wizualizacja Graphviz"
+msgid "Preview Markdown"
+msgstr ""
+
+msgid "Preview PlantUML"
+msgstr ""
 
 msgid "Query CSV Data..."
-msgstr ""
+msgstr "Kwerenda danych CSV..."
 
 msgid "Query TSV Data..."
-msgstr ""
+msgstr "Kwerenda danych TSV..."
 
 msgid "Query JSON Data..."
-msgstr ""
+msgstr "Kwerenda danych JSON..."
 
 msgid "Query YAML Data..."
-msgstr ""
+msgstr "Kwerenda danych YAML..."
 
 msgid "Validate HTML"
 msgstr "Walidacja HTML"
 
 msgid "Disassemble JVM Bytecode"
-msgstr ""
+msgstr "Dezasembluj kod bajtowy JVM"
 
 msgid "Disassemble IL Code"
-msgstr ""
+msgstr "Dezasembluj kod IL"
 
 msgid "Disassemble Native Code"
-msgstr ""
+msgstr "Dezasembluj kod natywny"
 
 #, c-format
 msgid "Missing plugin name in plugin pipeline: %1"
@@ -3728,7 +3771,7 @@ msgid "Apply filter command. \r\nUsage: ExecFilterCommand COMMAND\r\n  COMMAND -
 msgstr ""
 
 msgid "Tokenize selection. \r\nUsage: Tokenize PATTERNS\r\n  PATTERNS - regular expression for tokenizing. (e.g. [^\\w]+)"
-msgstr ""
+msgstr "Tokenizacja zaznaczonego tekstu. \r\nUżycie:: Tokenize SZABLONY\r\n  SZABLONY - wyrażenie regularne do tokenizacji. (np. [^\\w]+)"
 
 msgid "Trim spaces"
 msgstr "Usuń spacje"
@@ -3751,7 +3794,13 @@ msgstr ""
 msgid "YAML Prettier with yq command. \r\nArguments: Filter or command line options passed to the yq command."
 msgstr ""
 
-msgid "Graphviz Visualizer. \r\nArguments: Command line options passed to the dot command."
+msgid "Graphviz Previewer. \r\nArguments: Command line options passed to the dot command."
+msgstr ""
+
+msgid "Markdown Previewer. \r\nArguments: Command line options passed to the md2html command."
+msgstr ""
+
+msgid "PlantUML Previewer. \r\nArguments: Command line options passed to the plantuml.jar command."
 msgstr ""
 
 msgid "CSV Querier with q command. \r\nArguments: SQL statement or command line options passed to the q command."
@@ -3776,13 +3825,13 @@ msgid "IL disassembler with ildasm. \r\nArguments: Command line options passed t
 msgstr ""
 
 msgid "Native code disassembler with dumpbin. \r\nArguments: Command line options passed to the dumpbin command."
-msgstr ""
+msgstr "Natywny kod disassemblera z dumpbin. \r\nArgumenty: Opcje linii poleceń przekazywane do polecenia dumpbin."
 
 msgid "General content extractor with Apache Tika. \r\nArguments: Command line options passed to the tika-app.jar."
-msgstr ""
+msgstr "Ogólny ekstraktor zawartości z Apache Tika. \r\nArgumenty: Opcje linii poleceń przekazywane do tika-app.jar."
 
 msgid "Apply patch using GnuWin32 Patch for Windows"
-msgstr ""
+msgstr "Zastosuj poprawkę używając GnuWin32 Patch dla Windows"
 
 msgid "Display the text content of MS Excel files"
 msgstr "Wyświetl zawartość tekstową plików MS Excel"
@@ -3812,10 +3861,10 @@ msgid "Basic text functions for the context menu"
 msgstr "Podstawowe funkcje tekstowe dla menu kontekstowego"
 
 msgid "HTTP URL Scheme Handler with curl. \r\nArguments: Command line options passed to the curl command."
-msgstr ""
+msgstr "Obsługa schematu HTTP URL z curl. \r\nArgumenty: Opcje linii poleceń przekazywane do polecenia curl."
 
 msgid "Windows Registry URL Scheme Handler. \r\nArguments: Command line options passed to the reg.exe command."
-msgstr ""
+msgstr "Obsługa schematu URL rejestru Windows. \r\nArgumenty: Opcje linii poleceń przekazywane do polecenia reg.exe."
 
 msgid "Filter applied"
 msgstr "Zastosowano filtr"
@@ -3834,4 +3883,4 @@ msgid "The 32-bit version of WinMerge does not support Clipboard Compare"
 msgstr "32-bitowa wersja programu WinMerge nie obsługuje funkcji porównywania schowka"
 
 msgid "WebView2 runtime is not installed. Do you want to download it?"
-msgstr ""
+msgstr "WebView2 Runtime nie został zainstalowany. Czy chcesz go pobrać?"

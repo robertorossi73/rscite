@@ -49,6 +49,7 @@ Localization:
   MaysWind <i at mayswind.net>
   YFdyh000 <yfdyh000 at gmail.com>
   CharlesMengCA <CharlesMeng at outlook.com>
+  Yin Gang <zenith.yin at gmail.com>
 
 * Traditional Chinese:
   Koko <kokokoko@giga.net.tw>
@@ -89,6 +90,7 @@ Localization:
 * Galician:
   Medulio
   Luis A. Martínez Sobrino <luis.martinez.sobrino at gmail.com>
+  P0rsche-911
 
 * German:
   Tim Gerundt <tim@gerundt.de>
@@ -111,6 +113,7 @@ Localization:
   Michele Locati <michele@locati.it>
   bovirus
   Massimiliano Caniparoli
+  Simone Saviolo
 
 * Japanese:
   Takashi Sawanaka <sdottaka@users.sourceforge.net>
@@ -149,6 +152,7 @@ Localization:
   Igor Rückert
   jota11
   Gabriel Camargo Fukushima
+  Marcello-mco
 
 * Portuguese (Portugal):
   Nelson Simão
@@ -162,6 +166,7 @@ Localization:
   Dmitriy S. Aleshkowskiy <wwarlock@mail.ru>
   Timon34
   wvxwxvw
+  Den1704
 
 * Serbian:
   Ozzii <ivanstar61@gmail.com>
@@ -185,6 +190,7 @@ Localization:
   Mario Angel <marioangel70@gmail.com>
   Nelson Ariza <njarizas@hotmail.com>
   borjafg
+  Mauricio Gracia Gutierrez
 
 * Swedish:
   Hans Eriksson <hans.ericson@bredband.net>
@@ -259,7 +265,14 @@ Other Contributors (code, ideas, testing..):
 * devmynote
 * Michał Lipok
 * Samuel Plentz
-* Herman Semenov 
+* Herman Semenov
+* stonee-K
+* yuanshouyan1823
+* Mauricio Gracia Gutierrez
+* HaroldPetersInskipp (Midnight color schema)
+* srgank
+* baka0815
+* Yurii Hordiienko 
 
 WinMerge includes code from:
 * Jared Breland <jbreland@legroom.net> (Installer's modpath script)

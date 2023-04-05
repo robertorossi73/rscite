@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: WinMerge\n"
 "Report-Msgid-Bugs-To: https://bugs.winmerge.org/\n"
 "POT-Creation-Date: 2020-12-05 22:07+0000\n"
-"PO-Revision-Date: 2022-04-20 22:45+0900\n"
+"PO-Revision-Date: 2023-01-08 22:25+0900\n"
 "Last-Translator: Takashi Sawanaka <sawanaka@d1.dion.ne.jp>\n"
 "Language-Team: Japanese <winmerge-translate@lists.sourceforge.net>\n"
 "Language: ja\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-Basepath: ..\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #. LANGUAGE, SUBLANGUAGE
 msgid "LANG_ENGLISH, SUBLANG_ENGLISH_US"
@@ -66,6 +66,9 @@ msgstr "行内差異を選択(&D)\tF4"
 
 msgid "Add this change to Substitution &Filters"
 msgstr "この差異を置換フィルターに追加する(&F)"
+
+msgid "Add to &Line Filters"
+msgstr "行フィルターに追加する(&L)"
 
 msgid "&Undo"
 msgstr "元に戻す(&U)"
@@ -223,7 +226,7 @@ msgid "&Screenshots"
 msgstr "スクリーンショット(&S)"
 
 msgid "&Full Size Screenshots"
-msgstr "フルサイズスクリーンショット(&F)"
+msgstr "フルサイズ スクリーンショット(&F)"
 
 msgid "&HTMLs"
 msgstr "&HTML"
@@ -232,7 +235,7 @@ msgid "&Texts"
 msgstr "テキスト(&T)"
 
 msgid "&Resource Trees"
-msgstr "リソースツリー(&R)"
+msgstr "リソース ツリー(&R)"
 
 msgid "&Size"
 msgstr "サイズ(&S)"
@@ -244,7 +247,7 @@ msgid "Clear &Browsing Data"
 msgstr "閲覧データのクリア(&B)"
 
 msgid "&Disk Cache"
-msgstr "ディスクキャッシュ(&D)"
+msgstr "ディスク キャッシュ(&D)"
 
 msgid "&Cookies"
 msgstr "クッキー(&C)"
@@ -274,7 +277,7 @@ msgid "&Image"
 msgstr "画像(&I)"
 
 msgid "&Webpage"
-msgstr "Web ページ(&W)"
+msgstr "&Webページ"
 
 msgid "New (&3 panes)"
 msgstr "新規 (&3 ペイン)"
@@ -397,7 +400,7 @@ msgid "&Translations"
 msgstr "翻訳(&T)"
 
 msgid "C&onfiguration"
-msgstr "設定(&O)"
+msgstr "設定ログ(&O)"
 
 msgid "&GNU General Public License"
 msgstr "&GNU General Public License"
@@ -929,6 +932,9 @@ msgstr "ファイル名をコピー(&F)"
 msgid "Copy Items To Clip&board"
 msgstr "項目をクリップボードにコピー(&B)"
 
+msgid "Copy All Di&splayed Columns"
+msgstr "すべての表示列をコピー(&S)"
+
 msgid "&Zip"
 msgstr "圧縮(&Z)"
 
@@ -961,6 +967,12 @@ msgstr "フルパスをコピー(&C)"
 
 msgid "Copy &Filename"
 msgstr "ファイル名をコピー(&F)"
+
+msgid "&Edit Caption"
+msgstr "キャプションの編集(&E)"
+
+msgid "&Open..."
+msgstr "開く(&O)..."
 
 msgid "Unpacker Settings"
 msgstr "展開プラグイン設定"
@@ -1097,6 +1109,9 @@ msgstr "参照..."
 msgid " Folder: Filter"
 msgstr " フォルダー: フィルター"
 
+msgid " File: Prediffer Plugin"
+msgstr " ファイル: 比較前処理プラグイン"
+
 msgid " File: Unpacker Plugin"
 msgstr " ファイル: 展開プラグイン"
 
@@ -1144,6 +1159,9 @@ msgstr "[比較] 押下時に [ファイルまたはフォルダーの選択] �
 
 msgid "Op&en-dialog Auto-Completion:"
 msgstr "[開く] ダイアログのオートコンプリート(&E):"
+
+msgid "Auto-&reload modified files:"
+msgstr "変更されたファイルの自動再読み込み(&R):"
 
 msgid "Language:"
 msgstr "言語:"
@@ -1782,7 +1800,7 @@ msgid "File &Saving:"
 msgstr "ファイルの保存(&S)"
 
 msgid "&Use same codepage for both"
-msgstr "両側に同じコードページを使用する(&U)"
+msgstr "読み込みと保存で同じコードページを使用する(&U)"
 
 msgid "&Cancel"
 msgstr "キャンセル(&C)"
@@ -1965,12 +1983,8 @@ msgstr "クイック比較切替閾値 (MB)(&Q):"
 msgid "Threshold for switching to &binary compare (MB):"
 msgstr "バイナリ比較切替閾値 (MB)(&B):"
 
-msgid ""
-"\n"
-"&Number of compare threads (a negative value implies addition of the number of available CPU cores):"
-msgstr ""
-"比較スレッドの数(&N):\n"
-"負の値を指定した場合、スレッド数は使用可能な CPU コア数を加算した値になります。"
+msgid "&Number of CPU cores to use:"
+msgstr "使用するCPUコアの数(&N):"
 
 msgid "&CSV File Patterns:"
 msgstr "&CSV ファイルとして扱うパターン:"
@@ -2019,16 +2033,16 @@ msgid "Webpage"
 msgstr "Webページ"
 
 msgid "URL pattern to &include (Regular expression):"
-msgstr "URL パターン (正規表現) (&I):"
+msgstr "URL パターン (正規表現)(&I):"
 
 msgid "URL pattern to &exclude (Regular expression):"
-msgstr "除外 URL パターン (正規表現) (&E):"
+msgstr "除外 URL パターン (正規表現)(&E):"
 
 msgid "&User data folder location:"
-msgstr "ユーザーデータフォルダーの場所(&U):"
+msgstr "ユーザー データ フォルダーの場所(&U):"
 
 msgid "&Separate user data folders for each pane"
-msgstr "ユーザーデータフォルダーをペイン毎に分離する(&S)"
+msgstr "ユーザー データ フォルダーをペイン毎に分離する(&S)"
 
 msgid "&Hex View"
 msgstr "HEX 表示(&H)"
@@ -2287,6 +2301,9 @@ msgstr "サブフォルダーを含める"
 
 msgid "Compare Options"
 msgstr "比較オプション"
+
+msgid "Hidden Items"
+msgstr "非表示の項目"
 
 msgid "Name"
 msgstr "名前"
@@ -2840,6 +2857,9 @@ msgstr "移動の確認"
 msgid "You are about to close the window that is comparing folders. Are you sure you want to close the window?"
 msgstr "フォルダー比較中のウィンドウを閉じようとしています。本当にウィンドウを閉じますか?"
 
+msgid "The file or folder name is invalid."
+msgstr "ファイル名またはフォルダー名が無効です。"
+
 #, c-format
 msgid "Failed to execute external editor: %1"
 msgstr "外部エディターの実行に失敗しました: %1"
@@ -3244,6 +3264,10 @@ msgstr "比較前処理プラグイン名またはパイプラインを表示し
 #, c-format
 msgid "Compare %1 with %2"
 msgstr "%1 と %2 の比較"
+
+#, c-format
+msgid "Compare %1 with %2 and %3"
+msgstr "%1 と %2 および %3 の比較"
 
 msgid "Comma-separated list"
 msgstr "CSV 形式"
@@ -3775,6 +3799,9 @@ msgstr "patience"
 msgid "histogram"
 msgstr "histogram"
 
+msgid "none"
+msgstr "none"
+
 msgid "GDI"
 msgstr "GDI"
 
@@ -3929,16 +3956,22 @@ msgid "Word-by-word position and text"
 msgstr "単語毎の位置情報とテキスト"
 
 msgid "AppData folder"
-msgstr "AppData フォルダ"
+msgstr "AppData フォルダー"
 
 msgid "Install folder"
-msgstr "インストールフォルダ"
+msgstr "インストール フォルダー"
 
 msgid "Allow only one instance to run"
 msgstr "1 つのみインスタンスを起動する"
 
 msgid "Allow only one instance to run and wait for the instance to terminate"
 msgstr "1 つのみインスタンスを起動し、既起動インスタンスの終了を待つ"
+
+msgid "Only on window activated"
+msgstr "ウインドウがアクティブになった時のみ"
+
+msgid "Immediately"
+msgstr "即時"
 
 msgid "Al&l"
 msgstr "すべて(&L)"
@@ -3949,8 +3982,8 @@ msgstr "整形"
 msgid "Content Extraction"
 msgstr "内容抽出"
 
-msgid "Visualization"
-msgstr "視覚化"
+msgid "Preview"
+msgstr "プレビュー"
 
 msgid "Data Query"
 msgstr "データ問い合わせ"
@@ -4045,8 +4078,14 @@ msgstr "XML整形"
 msgid "Prettify YAML"
 msgstr "YAML 整形"
 
-msgid "Visualize Graphviz"
-msgstr "Graphviz 視覚化"
+msgid "Preview Graphviz"
+msgstr "Graphvizプレビュー"
+
+msgid "Preview Markdown"
+msgstr "Markdownプレビュー"
+
+msgid "Preview PlantUML"
+msgstr "PlantUMLプレビュー"
 
 msgid "Query CSV Data..."
 msgstr "CSV データの問い合わせ..."
@@ -4213,11 +4252,23 @@ msgstr ""
 "引数: フィルターまたは yq コマンドに渡すコマンドライン オプション。"
 
 msgid ""
-"Graphviz Visualizer. \r\n"
+"Graphviz Previewer. \r\n"
 "Arguments: Command line options passed to the dot command."
 msgstr ""
-"Graphviz ファイルを画像化します。\r\n"
+"Graphviz ファイルを画像化して表示します。\r\n"
 "引数: dot コマンドに渡すコマンドライン オプション。"
+
+msgid ""
+"Markdown Previewer. \r\n"
+"Arguments: Command line options passed to the md2html command."
+msgstr ""
+"Markdown ファイルをHTMLに変換して表示します。\r\n"
+"引数: md2html コマンドに渡すコマンドラインオプション。"
+
+msgid "PlantUML Previewer. \r\nArguments: Command line options passed to the plantuml.jar command."
+msgstr ""
+"PlantUML ファイルを画像に変換して表示します。\r\n"
+"引数: plantuml.jar コマンドに渡すコマンドラインオプション。"
 
 msgid ""
 "CSV Querier with q command. \r\n"

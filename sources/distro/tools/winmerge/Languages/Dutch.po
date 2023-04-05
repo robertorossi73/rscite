@@ -68,6 +68,9 @@ msgstr "Regelverschil selecteren\tF4"
 msgid "Add this change to Substitution &Filters"
 msgstr "Deze wijziging aan vervangingsfilters toevoegen"
 
+msgid "Add to &Line Filters"
+msgstr ""
+
 msgid "&Undo"
 msgstr "Ongedaan maken"
 
@@ -930,6 +933,9 @@ msgstr "Bestandsnamen kopiëren"
 msgid "Copy Items To Clip&board"
 msgstr "Items naar klembord kopiëren"
 
+msgid "Copy All Di&splayed Columns"
+msgstr ""
+
 msgid "&Zip"
 msgstr "Zippen"
 
@@ -962,6 +968,12 @@ msgstr "Volledig pad kopiëren"
 
 msgid "Copy &Filename"
 msgstr "Bestandsnaam kopiëren"
+
+msgid "&Edit Caption"
+msgstr ""
+
+msgid "&Open..."
+msgstr ""
 
 msgid "Unpacker Settings"
 msgstr "Instellingen uitpakker"
@@ -1098,6 +1110,9 @@ msgstr "Bladeren..."
 msgid " Folder: Filter"
 msgstr "Map: filter"
 
+msgid " File: Prediffer Plugin"
+msgstr ""
+
 msgid " File: Unpacker Plugin"
 msgstr "Bestand: uitpak-plugin"
 
@@ -1145,6 +1160,9 @@ msgstr "\"Bestanden of mappen selecteren\" sluiten bij klikken op Vergelijken"
 
 msgid "Op&en-dialog Auto-Completion:"
 msgstr "Auto-aanvullen openen-venster:"
+
+msgid "Auto-&reload modified files:"
+msgstr ""
 
 msgid "Language:"
 msgstr "Language:"
@@ -1974,12 +1992,8 @@ msgstr "Drempel voor overschakelen naar snel vergelijken (MB):"
 msgid "Threshold for switching to &binary compare (MB):"
 msgstr "Drempel voor overschakelen naar binair vergelijken (MB):"
 
-msgid ""
-"\n"
-"&Number of compare threads (a negative value implies addition of the number of available CPU cores):"
+msgid "&Number of CPU cores to use:"
 msgstr ""
-"\n"
-"Aantal vergelijkingsthreads (een negatieve waarde impliceert optelling van het aantal beschikbare CPU-kernen):"
 
 msgid "&CSV File Patterns:"
 msgstr "CSV-bestand-patronen:"
@@ -2310,6 +2324,9 @@ msgstr "Submappen bijvoegen"
 
 msgid "Compare Options"
 msgstr "Vergelijkingsopties"
+
+msgid "Hidden Items"
+msgstr ""
 
 msgid "Name"
 msgstr "Naam"
@@ -2866,6 +2883,9 @@ msgstr ""
 "U staat op het punt om het venster te sluiten dat mappen aan het vergelijken"
 " is. Weet u zeker dat u het venster wilt sluiten?"
 
+msgid "The file or folder name is invalid."
+msgstr ""
+
 #, c-format
 msgid "Failed to execute external editor: %1"
 msgstr "Uitvoeren externe editor mislukt: %1"
@@ -3273,6 +3293,10 @@ msgstr "Voorvergelijking pluginnaam of pipeline"
 #, c-format
 msgid "Compare %1 with %2"
 msgstr "%1 met %2 vergelijken"
+
+#, c-format
+msgid "Compare %1 with %2 and %3"
+msgstr ""
 
 msgid "Comma-separated list"
 msgstr "Komma-gescheiden lijst"
@@ -3791,6 +3815,9 @@ msgstr "geduld"
 msgid "histogram"
 msgstr "histogram"
 
+msgid "none"
+msgstr ""
+
 msgid "GDI"
 msgstr "GDI"
 
@@ -3958,6 +3985,12 @@ msgstr ""
 "Slechts één draaiende instantie toestaan en wachten totdat de instantie "
 "beëindigd is"
 
+msgid "Only on window activated"
+msgstr ""
+
+msgid "Immediately"
+msgstr ""
+
 msgid "Al&l"
 msgstr "Alles"
 
@@ -3967,8 +4000,8 @@ msgstr "Mooi maken"
 msgid "Content Extraction"
 msgstr "Inhoud uitpakken"
 
-msgid "Visualization"
-msgstr "Visualisatie"
+msgid "Preview"
+msgstr ""
 
 msgid "Data Query"
 msgstr "Gegevensbevraging"
@@ -4063,8 +4096,14 @@ msgstr "XML mooi maken"
 msgid "Prettify YAML"
 msgstr "YAML mooi maken"
 
-msgid "Visualize Graphviz"
-msgstr "Graphviz visualiseren"
+msgid "Preview Graphviz"
+msgstr ""
+
+msgid "Preview Markdown"
+msgstr ""
+
+msgid "Preview PlantUML"
+msgstr ""
 
 msgid "Query CSV Data..."
 msgstr "CSV-gegevens bevragen..."
@@ -4230,12 +4269,14 @@ msgstr ""
 "YAML mooi maken met de yq-opdracht. \r\n"
 "Argumenten: filteren of opdrachtregelopties doorgegeven aan de yq-opdracht."
 
-msgid ""
-"Graphviz Visualizer. \r\n"
-"Arguments: Command line options passed to the dot command."
+msgid "Graphviz Previewer. \r\nArguments: Command line options passed to the dot command."
 msgstr ""
-"Graphviz-visualizer. \r\n"
-"Argumenten: opdrachtregelopties doorgegeven aan de dot-opdracht."
+
+msgid "Markdown Previewer. \r\nArguments: Command line options passed to the md2html command."
+msgstr ""
+
+msgid "PlantUML Previewer. \r\nArguments: Command line options passed to the plantuml.jar command."
+msgstr ""
 
 msgid ""
 "CSV Querier with q command. \r\n"
