@@ -1,5 +1,5 @@
 --[[
-Version : 2.2.0
+Version : 2.3.0
 Web     : http://www.redchar.net
 
 Questa procedura permette il caricamente del file lisp corrente in un CAD supprotato
@@ -78,7 +78,9 @@ do
                 cad..
                 " \""..inverterSlash(props["FilePath"]).."\""
 
-        rwfx_ShellExecute(exe,par)
+        --rwfx_ShellExecute(exe,par)
+        --rfx_exeCapture(exe.." "..par)
+        rfx_exeCapture("start /b "..exe.." "..par)
     end
 
     --ritorna la selezione corrente se esiste, oppure l'ultima selezione
