@@ -5,7 +5,13 @@
 * * *
 cloc counts blank lines, comment lines, and physical lines of source code in many programming languages.
 
-Latest release:  v1.92 (Dec. 5, 2021)
+Latest release:  v1.96 (Dec. 18, 2022)
+
+<a href="https://github.com/AlDanial/cloc/graphs/contributors" alt="Contributors">
+    <img src="https://img.shields.io/github/contributors/AlDanial/cloc" /></a>
+<a href="https://zenodo.org/badge/latestdoi/42029482">
+    <img src="https://zenodo.org/badge/42029482.svg" alt="DOI"></a>
+<img src="https://img.shields.io/badge/Maintained%3F-yes-green.svg>" />
 
 cloc moved to GitHub in September 2015 after being hosted
 at http://cloc.sourceforge.net/ since August 2006.
@@ -58,9 +64,13 @@ Step 3:  Invoke cloc to count your source files, directories, archives,
 or git commits.
 The executable name differs depending on whether you use the
 development source version (`cloc`), source for a
-released version (`cloc-1.92.pl`) or a Windows executable
-(`cloc-1.92.exe`).  On this page, `cloc` is the generic term
+released version (`cloc-1.94.pl`) or a Windows executable
+(`cloc-1.94.exe`).  On this page, `cloc` is the generic term
 used to refer to any of these.
+
+[Include Security](https://www.youtube.com/user/IncludeSecurity) has a
+[YouTube video](https://www.youtube.com/watch?v=eRLTkDMsCqs)
+showing the steps in action.
 
 **a file**
 <pre>
@@ -226,6 +236,13 @@ Alternatively one can use the Windows binary of cloc
 generated with [PAR::Packer](http://search.cpan.org/~rschupp/PAR-Packer-1.019/lib/pp.pm)
 to run on Windows computers that have neither Perl nor Cygwin.)
 
+In addition to counting code in individual text files, directories,
+and git repositories, cloc can also count code in archive files such
+as ``.tar`` (including compressed versions), ``.zip``, Python
+wheel ``.whl``, Jupyter notebook ``.ipynb``, source RPMs ``.rpm``
+or ``.src`` (requires ``rpm2cpio``),
+and Debian ``.deb`` files (requires ``dpkg-deb``).
+
 cloc contains code from David Wheeler's
 [SLOCCount](http://www.dwheeler.com/sloccount/),
 Damian Conway and Abigail's Perl module
@@ -236,6 +253,8 @@ and Tye McQueen's Perl module
 [Algorithm::Diff](http://search.cpan.org/%7Etyemq/Algorithm-Diff-1.1902/lib/Algorithm/Diff.pm).
 Language scale factors were derived from Mayes Consulting, LLC web site
 http://softwareestimator.com/IndustryData2.htm.
+
+New releases nominally appear every six months.
 [](1}}})
 
 <a name="Docker"></a> []({{{1)
@@ -243,6 +262,12 @@ http://softwareestimator.com/IndustryData2.htm.
 ```shell
 docker run --rm -v $PWD:/tmp aldanial/cloc
 ```
+
+### Run via docker on git-bash
+```shell
+docker run --rm -v "/$(pwd -W)":/tmp aldanial/cloc
+```
+
 ## Install via package manager
 Depending your operating system, one of these installation methods may
 work for you (all but the last two entries for Windows require
@@ -308,6 +333,7 @@ cloc has many features that make it easy to use, thorough, extensible, and porta
 If cloc does not suit your needs here are other freely available counters to consider:
 
 *   [loc](https://github.com/cgag/loc/)
+*   [gcloc](https://github.com/JoaoDanielRufino/gcloc)
 *   [gocloc](https://github.com/hhatto/gocloc/)
 *   [Ohcount](https://github.com/blackducksoftware/ohcount/)
 *   [scc](https://github.com/boyter/scc/)
@@ -356,6 +382,7 @@ and Digest::MD5 installed locally.
 # [Building a Windows Executable &#9650;](#___top "click to go to top of document")
 
 The Windows downloads
+<tt>cloc-1.94.exe</tt>,
 <tt>cloc-1.92.exe</tt>,
 <tt>cloc-1.90.exe</tt> and
 <tt>cloc-1.88.exe</tt> were built on a 64 bit Windows 10 computer
@@ -400,6 +427,12 @@ You are encouraged to run your own virus scanners against the
 executable and also check sites such
 https://www.virustotal.com/ .
 The entries for recent versions are:
+
+cloc-1.96.exe:
+https://www.virustotal.com/gui/file/54bf5f46fbaba7949c4eb2d4837b03c774c0ba587448a5bad9b8efc0222b1583?nocache=1
+
+cloc-1.94.exe:
+https://www.virustotal.com/gui/file/b48a6002fb75fa66ec5d0c05a5c4d51f2ad22b5b025b7eb4e3945d18419c0952?nocache=1
 
 cloc-1.92.exe:
 https://www.virustotal.com/gui/file/2668fcf8609c431e8934fe9e1866bc620c58d198c4eb262f1d3ef31ef4a690f7
@@ -477,7 +510,7 @@ C:> cpan -i Digest::MD5
 C:> cpan -i Regexp::Common
 C:> cpan -i Algorithm::Diff
 C:> cpan -i PAR::Packer
-C:> pp -M Digest::MD5 -c -x -o cloc-1.92.exe cloc-1.92.pl
+C:> pp -M Digest::MD5 -c -x -o cloc-1.94.exe cloc-1.94.pl
 </pre>
 
 A variation on the instructions above is if you installed the portable
@@ -893,7 +926,8 @@ Usage: cloc [options] &lt;file(s)/dir(s)/git hash(es)&gt; | &lt;set 1&gt; &lt;se
    --skip-win-hidden         On Windows, ignore hidden files.
 
  Debug Options
-   --categorized=&lt;file&gt;      Save names of categorized files to &lt;file&gt;.
+   --categorized=&lt;file&gt;      Save file sizes in bytes, identified languages
+                             and names of categorized files to &lt;file&gt;.
    --counted=&lt;file&gt;          Save names of processed source files to &lt;file&gt;.
    --diff-alignment=&lt;file&gt;   Write to &lt;file&gt; a list of files and file pairs
                              showing which files were added, removed, and/or
@@ -1028,9 +1062,12 @@ C#                         (cs)
 C# Designer                (designer.cs)
 C++                        (C, c++, cc, CPP, cpp, cxx, h++, inl, ipp, pcc, tcc, tpp)
 C/C++ Header               (H, h, hh, hpp, hxx)
+Cairo                      (cairo)
 Cake Build Script          (cake)
+Carbon                     (carbon)
 CCS                        (ccs)
 Chapel                     (chpl)
+Circom                     (circom)
 Clean                      (dcl, icl)
 Clojure                    (boot, cl2, clj, cljs.hl, cljscm, cljx, hic, riemann.config)
 ClojureC                   (cljc)
@@ -1040,6 +1077,7 @@ COBOL                      (CBL, cbl, ccp, COB, cob, cobol, cpy)
 CoffeeScript               (_coffee, cakefile, cjsx, coffee, iced)
 ColdFusion                 (cfm, cfml)
 ColdFusion CFScript        (cfc)
+Containerfile              (Containerfile)
 Coq                        (v)
 Crystal                    (cr)
 CSON                       (cson)
@@ -1052,6 +1090,8 @@ D                          (d)
 DAL                        (da)
 Dart                       (dart)
 Delphi Form                (dfm)
+DenizenScript              (dsc)
+Derw                       (derw)
 dhall                      (dhall)
 DIET                       (dt)
 diff                       (diff, patch)
@@ -1074,13 +1114,16 @@ Expect                     (exp)
 F#                         (fsi, fs, fs)
 F# Script                  (fsx)
 Fennel                     (fnl)
+Finite State Language      (fsl, jssm)
 Fish Shell                 (fish)
+Flatbuffers                (fbs)
 Focus                      (focexec)
 Forth                      (4th, e4, f83, fb, forth, fpm, fr, frt, ft, fth, rx, fs, f, for)
 Fortran 77                 (F, F77, f77, FOR, FTN, ftn, pfo, f, for)
 Fortran 90                 (F90, f90)
 Fortran 95                 (F95, f95)
 Freemarker Template        (ftl)
+Futhark                    (fut)
 FXML                       (fxml)
 GDScript                   (gd)
 Gencat NLS                 (msg)
@@ -1090,6 +1133,7 @@ GLSL                       (comp, fp, frag, frg, fsh, fshader, geo, geom, glsl, 
 Go                         (go)
 Godot Resource             (tres)
 Godot Scene                (tscn)
+Godot Shaders              (gdshader)
 Gradle                     (gradle, gradle.kts)
 Grails                     (gsp)
 GraphQL                    (gql, graphql, graphqls)
@@ -1101,8 +1145,10 @@ Haskell                    (hs, hsc, lhs)
 Haxe                       (hx, hxsl)
 HCL                        (hcl, nomad, tf, tfvars)
 HLSL                       (cg, cginc, fxh, hlsl, hlsli, shader)
+HolyC                      (HC)
 Hoon                       (hoon)
 HTML                       (htm, html, html.hl, xht)
+HTML EEx                   (heex)
 IDL                        (dlm, idl, pro)
 Idris                      (idr)
 Igor Pro                   (ipf)
@@ -1111,7 +1157,7 @@ INI                        (buildozer.spec, ini, lektorproject, prefs)
 InstallShield              (ism)
 IPL                        (ipl)
 Java                       (java)
-JavaScript                 (_js, bones, es6, jake, jakefile, js, jsb, jscad, jsfl, jsm, jss, mjs, njs, pac, sjs, ssjs, xsjs, xsjslib)
+JavaScript                 (_js, bones, cjs, es6, jake, jakefile, js, jsb, jscad, jsfl, jsm, jss, mjs, njs, pac, sjs, ssjs, xsjs, xsjslib)
 JavaServer Faces           (jsf)
 JCL                        (jcl)
 Jinja Template             (jinja, jinja2)
@@ -1125,7 +1171,9 @@ Jupyter Notebook           (ipynb)
 Kermit                     (ksc)
 Korn Shell                 (ksh)
 Kotlin                     (kt, ktm, kts)
+kvlang                     (kv)
 Lean                       (hlean, lean)
+Lem                        (lem)
 LESS                       (less)
 lex                        (l, lex)
 LFE                        (lfe)
@@ -1157,18 +1205,25 @@ NASTRAN DMAP               (dmap)
 Nemerle                    (n)
 Nim                        (nim, nim.cfg, nimble, nimrod, nims)
 Nix                        (nix)
+Nunjucks                   (njk)
 Objective-C                (m)
 Objective-C++              (mm)
 OCaml                      (eliom, eliomi, ml, ml4, mli, mll, mly)
 Odin                       (odin)
 OpenCL                     (cl)
+OpenSCAD                   (scad)
 Oracle Forms               (fmt)
 Oracle PL/SQL              (bod, fnc, prc, spc, trg)
 Oracle Reports             (rex)
+P4                         (p4)
 Pascal                     (dpr, lpr, p, pas, pascal)
 Pascal/Puppet              (pp)
 Patran Command Language    (pcl, ses)
+PEG                        (peg)
+peg.js                     (pegjs)
+peggy                      (peggy)
 Perl                       (ack, al, cpanfile, makefile.pl, perl, ph, plh, plx, pm, psgi, rexfile, pl, p6)
+Pest                       (pest)
 PHP                        (aw, ctp, phakefile, php, php3, php4, php5, php_cs, php_cs.dist, phps, phpt, phtml)
 PHP/Pascal                 (inc)
 Pig Latin                  (pig)
@@ -1176,6 +1231,7 @@ PL/I                       (pl1)
 PL/M                       (lit, plm)
 PlantUML                   (puml)
 PO File                    (po)
+Pony                       (pony)
 PowerBuilder               (pbt, sra, srf, srm, srs, sru, srw)
 PowerShell                 (ps1, psd1, psm1)
 ProGuard                   (pro)
@@ -1236,15 +1292,19 @@ Svelte                     (svelte)
 SVG                        (SVG, svg)
 Swift                      (swift)
 SWIG                       (i)
+TableGen                   (td)
 Tcl/Tk                     (itk, tcl, tk)
+TEAL                       (teal)
 Teamcenter met             (met)
 Teamcenter mth             (mth)
 TeX                        (aux, bbx, bib, bst, cbx, dtx, ins, lbx, ltx, mkii, mkiv, mkvi, sty, tex, cls)
+Text                       (text, txt)
 Thrift                     (thrift)
 TITAN Project File Information (tpd)
 Titanium Style Sheet       (tss)
 TNSDL                      (cii, cin, in1, in2, in3, in4, inf, interface, rou, sdl, sdt, spd, ssc, sst)
 TOML                       (toml)
+tspeg                      (jspeg, tspeg)
 TTCN                       (ttcn, ttcn2, ttcn3, ttcnpp)
 Twig                       (twig)
 TypeScript                 (tsx, ts)
@@ -1261,12 +1321,14 @@ Visual Basic               (BAS, bas, ctl, dsr, frm, FRX, frx, VBHTML, vbhtml, v
 Visual Basic .NET          (VB, vb, vbproj)
 Visual Basic Script        (VBS, vbs)
 Visual Fox Pro             (SCA, sca)
+Visual Studio Module       (ixx)
 Visual Studio Solution     (sln)
 Visualforce Component      (component)
 Visualforce Page           (page)
 Vuejs Component            (vue)
 Web Services Description   (wsdl)
 WebAssembly                (wast, wat)
+WGSL                       (wgsl)
 Windows Message File       (mc)
 Windows Module Definition  (def)
 Windows Resource File      (rc, rc2)
@@ -1275,6 +1337,7 @@ WiX source                 (wxs)
 WiX string localization    (wxl)
 WXML                       (wxml)
 WXSS                       (wxss)
+X++                        (xpo)
 XAML                       (xaml)
 xBase                      (prg, prw)
 xBase Header               (ch)
@@ -2880,6 +2943,10 @@ directory at <embedded>/File/Find.pm</tt> if the code being scanned has
 file paths longer than 255 characters.  A work-around is to run cloc
 from the Windows Subsystem for Linux (WSL).
 </li>
+<li> cloc's comment match code uses regular expressions
+which cannot properly account for nested comments using
+the same comment markers (such as <tt>/*  /*  */  */</tt>).
+</li>
 </ol>
 
 [](1}}})
@@ -2938,10 +3005,13 @@ Please use the following bibtex entry to cite cloc in a publication:
 <pre>
 @software{adanial_cloc,
   author       = {Albert Danial},
-  title        = {cloc},
-  version      = {1.92},
+  title        = {cloc: v1.92},
+  month        = dec,
   year         = 2021,
-  url          = {https://github.com/AlDanial/cloc}
+  publisher    = {Zenodo},
+  version      = {v1.92},
+  doi          = {10.5281/zenodo.5760077},
+  url          = {https://doi.org/10.5281/zenodo.5760077}
 }
 </pre>
 

@@ -1,3 +1,65 @@
+                Release Notes for cloc version 1.96
+                   https://github.com/AlDanial/cloc
+                             Dec. 18, 2022
+
+New Languages and File Types:
+    o Cairo
+    o Carbon
+    o Circom
+    o Containerfile
+    o HolyC
+    o kvlang
+    o Nunjucks
+    o OpenSCAD
+    o P4
+    o Pest
+    o Pony
+    o TEAL
+    o WGSL
+
+Updates:
+    o New switch --diff-list-files to run diff given two list
+      files.
+    o Handle comments embedded in OCaml strings.
+    o Write empty JSON and XML structures if the inputs yield zero
+      counts.
+    o Including Win32::LongPath to support long paths on Windows.
+    o Better support for building and running Docker image on Windows
+    o Better output file names when running with --count-and-diff 
+      and --out.
+    o Resolve internal file handle conflict when running --diff with
+      --sdir or --categorized.
+
+============================================================================
+                Release Notes for cloc version 1.94
+                   https://github.com/AlDanial/cloc
+                             July 4, 2022
+
+New Languages and File Types:
+    o Derw
+    o Finite State Language
+    o Flatbuffers
+    o Futhark
+    o Godot Shaders
+    o HTML EEx
+    o Lem
+    o PEG, peg.js, peggy, tspeg
+    o Text (.txt and .text)
+    o Visual Studio Module
+    o X++
+
+Updates:
+    o Handle empty Unicode files which contain only a BOM (byte
+      order mark).
+    o The arguments to --include-lang are now case insensitive.
+    o .cjs added as JavaScript extension.
+    o Switches --git and --xml together now include additional git
+      metadata (origin, branch, commit hash) in the XML output.  Future
+      releases will include these additions in YAML, JSON, SQL, and
+      Markdown output as well.
+    o New switch --no-recurse prevents recursive directory traversal.
+
+============================================================================
                 Release Notes for cloc version 1.92
                    https://github.com/AlDanial/cloc
                              Dec. 5, 2021
