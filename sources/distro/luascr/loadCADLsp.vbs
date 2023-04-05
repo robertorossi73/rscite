@@ -1,12 +1,12 @@
 Option Explicit
 ' Autore : Roberto Rossi
 ' Web    : http://www.redchar.net
-' Versione : 1.11
+' Versione : 2.0
 '
-' Questo script consente il caricamento di un file lsp
+' Questo script consente il caricamento di un file lsp e scr(script)
 ' in un cad
 '
-'~ Copyright (C) 2015-2022 Roberto Rossi 
+'~ Copyright (C) 2015-2023 Roberto Rossi 
 '~ *******************************************************************************
 '~ This library is free software; you can redistribute it and/or
 '~ modify it under the terms of the GNU Lesser General Public
@@ -39,6 +39,26 @@ Option Explicit
 '
 
 
+Function IsScrFile(filePath)
+    Dim result
+    Dim name
+    Dim ext
+    name = UCase(filePath)
+    ext = ""
+    If (Len(name) > 4) Then
+        ext = Mid(name, Len(name) - 3)
+    End If
+    
+    If (ext = ".SCR") Then
+        result = True
+    Else
+        result = False
+    End If
+    
+    IsScrFile = result
+End Function
+
+
 '---------------------------- Intellicad/progeCAD ---------------------------- 
 'invia nome di file lsp a IntelliCAD/ProgeCAD
 'per essere caricato
@@ -50,7 +70,11 @@ function SentToIcad(cmdStr)
     set shl = CreateObject("WScript.Shell")
     shl.AppActivate obj.caption
     
-    obj.LoadLisp(cmdStr)
+    if (IsScrFile(cmdStr)) then
+        obj.RunScript(cmdStr)
+    else
+        obj.LoadLisp(cmdStr)
+    end if
 end function
 
 'ritorna l'oggetto riferito a IntelliCAD/ProgeCAD
@@ -92,7 +116,12 @@ function SentToZcad(cmdStr)
     dim shl
 
     set obj = GetZcad()
-    obj.ActiveDocument.SendCommand("(load """ & cmdStr & """)" & vbcr)
+    
+    if (IsScrFile(cmdStr)) then
+        obj.ActiveDocument.SendCommand("(command ""_.script"" """ & cmdStr & """)" & vbcr)
+    else
+        obj.ActiveDocument.SendCommand("(load """ & cmdStr & """)" & vbcr)
+    end if
     
     set shl = CreateObject("WScript.Shell")
     shl.AppActivate obj.caption
@@ -135,7 +164,11 @@ function SentToBcad(cmdStr)
     dim shl
 
     set obj = GetBcad()
-    obj.ActiveDocument.SendCommand("(load """ & cmdStr & """)" & vbcr)
+    if (IsScrFile(cmdStr)) then
+        obj.ActiveDocument.SendCommand("(command ""_.script"" """ & cmdStr & """)" & vbcr)
+    else
+        obj.ActiveDocument.SendCommand("(load """ & cmdStr & """)" & vbcr)
+    end if
 
     set shl = CreateObject("WScript.Shell")
     shl.AppActivate obj.caption
@@ -179,7 +212,12 @@ function SentToAcad(cmdStr)
     dim shl
 
     set obj = GetAcad()
-    obj.ActiveDocument.SendCommand("(load """ & cmdStr & """)" & vbcr)
+    
+    if (IsScrFile(cmdStr)) then
+        obj.ActiveDocument.SendCommand("(command ""_.script"" """ & cmdStr & """)" & vbcr)
+    else
+        obj.ActiveDocument.SendCommand("(load """ & cmdStr & """)" & vbcr)
+    end if
 
     set shl = CreateObject("WScript.Shell")
     shl.AppActivate obj.caption
