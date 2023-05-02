@@ -1,11 +1,11 @@
 --[[
-Version : 3.0.0
+Version : 4.0.1
 Web     : http://www.redchar.net
 
 Questa procedura permette l'inserimento dei numeri di linea nella
 selezione o nel file corrente
 
-Copyright (C) 2004-2015 Roberto Rossi 
+Copyright (C) 2004-2023 Roberto Rossi 
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -56,7 +56,8 @@ do
   --indica se tutti i numeri inseriti devono avere lo stesso numero di
   --caratteri (true), oppure possono avere lunghezza variabile (false)
   local function NumeraLinee ( numeroIniziale, nLineaFisica, 
-                               lunNumCostante, carNumCostante )
+                               lunNumCostante, carNumCostante,
+                               txtBefore, txtAfter)
     local primaLinea
     local ultimaLinea
     local lineaCorrente
@@ -93,7 +94,7 @@ do
         testo = FormattaTesto(dimMax, testo, carNumCostante)
       end
 
-      editor:ReplaceSel(testo.." ")
+      editor:ReplaceSel(txtBefore..testo..txtAfter.." ")
       
       lineaCorrente = lineaCorrente + 1
       i = i + 1
@@ -103,14 +104,16 @@ do
   function buttonOk_click(control, change)
     local numinit = tonumber(wcl_strip:getValue("NVAL"))
     local tipo = wcl_strip:getValue("TVAL")
+    local tbefore = wcl_strip:getValue("TBEFORE")
+    local tafter = wcl_strip:getValue("TAFTER")
     
     if (numinit) then
       if (tipo == numlineeOpt[1]) then --0 iniziale
-          NumeraLinee(numinit,false,true,"0")
+          NumeraLinee(numinit,false,true,"0", tbefore, tafter)
       elseif (tipo == numlineeOpt[2]) then --spazi iniziali
-          NumeraLinee(numinit,false,true," ")
+          NumeraLinee(numinit,false,true," ", tbefore, tafter)
       elseif (tipo == numlineeOpt[3]) then --senza nulla
-          NumeraLinee(numinit,false,true,"")
+          NumeraLinee(numinit,false,true,"", tbefore, tafter)
       end
     else
         --print("->Numerazione Linee\nImpossibile continuare, Numero iniziale errato!")
@@ -120,7 +123,7 @@ do
   end
 
   local function main()
-    local primaLinea
+      local primaLinea
     
       primaLinea = editor:LineFromPosition(editor.SelectionStart) + 1
   
@@ -130,9 +133,19 @@ do
       --wcl_strip:addLabel(nil, "Numerazione Linee :")
       wcl_strip:addLabel(nil, _t(110))
       wcl_strip:addCombo("TVAL")
+      
+      --wcl_strip:addLabel(nil, "Prefisso : ")
+      wcl_strip:addLabel(nil, _t(483))
+      wcl_strip:addText("TBEFORE", "")
+
       --wcl_strip:addLabel(nil, "Numero prima linea : ")
       wcl_strip:addLabel(nil, _t(111))
       wcl_strip:addText("NVAL", primaLinea)
+
+      --wcl_strip:addLabel(nil, "Suffisso : ")
+      wcl_strip:addLabel(nil, _t(484))
+      wcl_strip:addText("TAFTER", "")
+      
       --wcl_strip:addButton("OK","&Esegui Numerazione Selezione",buttonOk_click, true)
       wcl_strip:addButton("OK",_t(112),buttonOk_click, true)
       
