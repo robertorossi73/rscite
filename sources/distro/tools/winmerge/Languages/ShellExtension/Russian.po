@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: WinMerge Shell Extension\n"
 "Report-Msgid-Bugs-To: https://bugs.winmerge.org/\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 20-02-25\n"
+"PO-Revision-Date: 2020-02-25\n"
 "Last-Translator: wvxwxvw\n"
 "Language-Team: Russian <winmerge-translate@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -43,30 +43,35 @@ msgstr "Расширение проводника"
 
 #: ShellExtension.rc:112
 #, c-format
-msgid "&WinMerge"
-msgstr "&WinMerge"
+msgid "Win&Merge"
+msgstr "Win&Merge"
 
 #: ShellExtension.rc:113
+#, c-format
+msgid "Compare &As"
+msgstr ""
+
+#: ShellExtension.rc:114
 #, c-format
 msgid "&Compare"
 msgstr "&Сравнить"
 
-#: ShellExtension.rc:114
+#: ShellExtension.rc:115
 #, c-format
 msgid "Compare&..."
 msgstr "Сравнить&..."
 
-#: ShellExtension.rc:115
+#: ShellExtension.rc:116
 #, c-format
 msgid "Select &Left"
 msgstr "Выбрать &левый"
 
-#: ShellExtension.rc:116
+#: ShellExtension.rc:117
 #, c-format
 msgid "Select &Middle"
 msgstr "Выбрать &средний"
 
-#: ShellExtension.rc:117
+#: ShellExtension.rc:118
 #, c-format
 msgid "Re-select &Left"
 msgstr "Перевыбрать &левый"

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WinMerge\n"
 "Report-Msgid-Bugs-To: https://bugs.winmerge.org/\n"
-"POT-Creation-Date: 2023-01-14 12:20+0000\n"
-"PO-Revision-Date: 2023-01-16 06:26+0200\n"
+"POT-Creation-Date: 2023-04-15 08:40+0000\n"
+"PO-Revision-Date: 2023-04-24 13:48+0200\n"
 "Last-Translator: Tichij <tichij@mail.com>\n"
 "Language-Team: Lithuanian <winmerge-translate@lists.sourceforge.net>\n"
 "Language: lt\n"
@@ -1029,7 +1029,7 @@ msgstr "Ignoruoti skai&čius"
 msgid "Ignore c&omment differences"
 msgstr "Nepaisyti skirtumų k&omentaruose"
 
-msgid "&Include Subfolders"
+msgid "&Include subfolders"
 msgstr "Įtraukt&i pakatalogius"
 
 msgid "&Compare method:"
@@ -1152,10 +1152,10 @@ msgstr "&Klausti patvirtinimo, kai uždaromi keli langai"
 msgid "&Preserve file time in file compare"
 msgstr "Lyginant failus ne&pakeisti failo keitimo laiko"
 
-msgid "Show \"Select Files or Folders\" Dialog on Startup"
+msgid "Show \"Select Files or Folders\" dialog on startup"
 msgstr "Rodyti „Parinkite failus ar katalogus“ startuojant"
 
-msgid "Close \"Select Files or Folders\" Dialog on clicking Compare button"
+msgid "Close \"Select Files or Folders\" dialog on clicking Compare button"
 msgstr "Užverti „Parinkite failus ar katalogus“ po „Lyginti“ paspaudimo"
 
 msgid "Op&en-dialog Auto-Completion:"
@@ -1923,11 +1923,14 @@ msgstr "Integr. Windows aplinkoje"
 msgid "Explorer"
 msgstr "„Explorer“'is"
 
+msgid "&Add to context menu"
+msgstr "&Pridėti į kontekstinį meniu"
+
 msgid "E&nable advanced menu"
 msgstr "Įju&ngti išplėstinį meniu"
 
-msgid "&Add to context menu"
-msgstr "&Pridėti į kontekstinį meniu"
+msgid "Enable &Compare As menu"
+msgstr "Įtraukti &Lyginti į meniu"
 
 msgid "&Register shell extension"
 msgstr "&Registruoti aplinkos plėtinį"
@@ -1963,7 +1966,7 @@ msgstr "Įtraukti &unikalų pakatalogių turinį"
 msgid "&Automatically expand all subfolders"
 msgstr "&Automatiškai išskleisti visus pakatalogius"
 
-msgid "Ignore &Reparse Points"
+msgid "Ignore &reparse points"
 msgstr "Ignoruoti paka&rtotinio apdorojimo taškus"
 
 msgid "Threshold for switching to &quick compare (MB):"
@@ -1975,23 +1978,17 @@ msgstr "Persijungimo į &binarinį palyginimą riba (MB):"
 msgid "&Number of CPU cores to use:"
 msgstr "&Naudojamas procesoriaus branduolių skaičius:"
 
-msgid "&CSV File Patterns:"
-msgstr "&CSV failų šablonai:"
-
-msgid "&TSV File Patterns:"
-msgstr "&TSV failų šablonai:"
+msgid "File patterns:"
+msgstr "Failų šablonai:"
 
 msgid "Custom Delimiter-Separated Values"
 msgstr "Pasirinkt. skirtukais atskirtos reikšmės"
-
-msgid "File Patterns:"
-msgstr "Failų šablonai:"
 
 msgctxt "Options dialog|Categories"
 msgid "Binary"
 msgstr "Binarinių"
 
-msgid "Binary File &Patterns:"
+msgid "Binary file &patterns:"
 msgstr "Binarinių failų š&ablonai:"
 
 msgid "Frhed settings"
@@ -2009,7 +2006,7 @@ msgstr "&Simbolių rinkinys..."
 msgid "Image"
 msgstr "Paveikslėlių"
 
-msgid "Image File &Patterns:"
+msgid "Image file &patterns:"
 msgstr "&Paveikslėlių failų šablonai:"
 
 msgid "&Enable image compare in folder compare"
@@ -3390,6 +3387,9 @@ msgstr "Įjungti &Automatinį maks. plotį"
 msgid "We&bpage"
 msgstr "Ti&nklapiai"
 
+msgid "W&rap Text"
+msgstr "S&kaidyti tekstą"
+
 msgid "Frhed is not installed."
 msgstr "„Frhed“ neįdiegtas."
 
@@ -3592,6 +3592,39 @@ msgstr "Nedelsiant"
 msgid "Al&l"
 msgstr "Visi"
 
+msgid "&Others"
+msgstr "Kiti"
+
+#, c-format
+msgid "Missing plugin name in plugin pipeline: %1"
+msgstr "Trūksta papildinio pavadinimo papildinio komandų grandinėje: %1"
+
+#, c-format
+msgid "Missing quotation mark in plugin pipeline: %1"
+msgstr "Trūksta kabučių papildinio komandų grandinėje: %1"
+
+msgid "Specify plugin arguments"
+msgstr "Nurodykite papildinio argumentus"
+
+msgid "Filter applied"
+msgstr "Pritaikytas filtras"
+
+#, c-format
+msgid "Clipboard at %s"
+msgstr "Mainų sritis %s"
+
+msgid "Clipboard history is disabled.\r\nTo enable clipboard history, press Windows logo key + V and then click the Turn on button."
+msgstr "Mainų srities istorijos funkcionalumas išjungtas.\r\nNorėdami įjungti, paspauskite Win+V klavišus ir tada „Įjungti“ mygtuką."
+
+msgid "This system does not support clipboard history."
+msgstr "Ši sistema nepalaiko mainų srities istorijos."
+
+msgid "The 32-bit version of WinMerge does not support Clipboard Compare"
+msgstr "32 bitų „WinMerge“ versija nepalaiko lyginimo mainų srityje"
+
+msgid "WebView2 runtime is not installed. Do you want to download it?"
+msgstr "„WebView2“ vykdymo aplinka neįdiegta. Norite ją parsisiųsti?"
+
 msgid "Prettification"
 msgstr "Sutvarkymas"
 
@@ -3609,9 +3642,6 @@ msgstr "Patikra"
 
 msgid "Decompilation"
 msgstr "Dekompiliavimas"
-
-msgid "&Others"
-msgstr "Kiti"
 
 msgid "URL Handling"
 msgstr "URL apdorojimas"
@@ -3679,6 +3709,9 @@ msgstr "Ignoruoti CSV laukus"
 msgid "Ignore TSV Fields"
 msgstr "Ignoruoti TSV laukus"
 
+msgid "Ignore Leading Line Numbers"
+msgstr "Ignoruoti priekinius eil. numerius"
+
 msgid "Apply Prediff Substitution Filters"
 msgstr "Taikyti parengėjo keitinių filtrus"
 
@@ -3726,17 +3759,6 @@ msgstr "Deaseblinti IL kodą"
 
 msgid "Disassemble Native Code"
 msgstr "Deaseblinti savajį kodą"
-
-#, c-format
-msgid "Missing plugin name in plugin pipeline: %1"
-msgstr "Trūksta papildinio pavadinimo papildinio komandų grandinėje: %1"
-
-#, c-format
-msgid "Missing quotation mark in plugin pipeline: %1"
-msgstr "Trūksta kabučių papildinio komandų grandinėje: %1"
-
-msgid "Specify plugin arguments"
-msgstr "Nurodykite papildinio argumentus"
 
 msgid "Make characters uppercase"
 msgstr "Konvertuoti į didžiąsias raides"
@@ -3853,6 +3875,9 @@ msgstr "Papildinys ignoruoja komentarus (//... ir /* ... */) C, C++, PHP and Jav
 msgid "Ignore some fields - ignored fields list from the plugin name or the plugin argument"
 msgstr "Ignoruoti kai kuriuos laukus - ignoruojamų laukų sąrašas iš papildinio pavadinimo arba argumento"
 
+msgid "This plugin ignores the leading line numbers in text files (e.g. NC and BASIC files)."
+msgstr "Šis papildinys ignoruoja priekinius eil. numerius tekstiniuose failuose (pvz. NC ir BASIC failai)."
+
 msgid "Prediff Line Filter"
 msgstr "Parengėjo eilutės filtras"
 
@@ -3865,21 +3890,129 @@ msgstr ""
 msgid "Windows Registry URL Scheme Handler. \r\nArguments: Command line options passed to the reg.exe command."
 msgstr ""
 
-msgid "Filter applied"
-msgstr "Pritaikytas filtras"
+msgid "CompareMSExcelFiles.sct WinMerge Plugin Options"
+msgstr "CompareMSExcelFiles.sct „WinMerge“ papildinio nuostatos"
+
+msgid "Extract workbook data to multiple files"
+msgstr "Išskleisti darbaknygės duomenis į kelis failus"
+
+msgid "Update external references(links)"
+msgstr "Naujinti išorines nuorodas(saitus)"
+
+msgid "Compare document properties"
+msgstr "Lyginti dokumento savybes"
+
+msgid "Compare names"
+msgstr "Lyginti pavadinimus"
+
+msgid "Compare cell values"
+msgstr "Lyginti langelių reikšmes"
+
+msgid "Compare worksheets as image (very slow)"
+msgstr "Lyginti darbalapius kaip vaizdus (labai lėta)"
+
+msgid " - Image split size: "
+msgstr " - Vaizdo padalijimo dydis: "
+
+msgid "Compare worksheets as HTML"
+msgstr "Lyginti darbalapius kaip HTML failus"
+
+msgid "Compare formulas"
+msgstr "Lyginti formules"
+
+msgid "Compare texts in shapes"
+msgstr "Lyginti kaukių tekstus"
+
+msgid "Compare headers and footers"
+msgstr "Lyginti puslapių antraštes ir poraštes"
+
+msgid "Cannot get Macros.\r\n   To allow WinMerge to compare macros, use MS Office to alter the settings in the Macro Security for the current application.\r\n   The Trust access to Visual Basic Project feature should be turned on to use this feature in WinMerge.\r\n"
+msgstr "Nepavyksta gauti makrokomandų.\r\n   Norėdami leisti „WinMerge“ palyginti makrokomandas, MS Office pagalba pakeiskite makrokomandų saugos parametrus.\r\n   Norint naudoti šią funkciją „WinMerge“, reikia įjungti pasitikėti prieiga prie „Visual Basic Project“ funkciją.\r\n"
+
+msgid "Compare VBA macros"
+msgstr "Lyginti VBA makrokomandas"
+
+msgid "CompareMSWordFiles.sct WinMerge Plugin Options"
+msgstr "CompareMSWordFiles.sct „WinMerge“ papildinio nuostatos"
+
+msgid "Extract document data to multiple files"
+msgstr "Išskleisti dokumento duomenis į kelis failus"
+
+msgid "Compare bookmarks"
+msgstr "Lyginti žymes"
+
+msgid "Compare text contents of documents"
+msgstr "Lyginti dokumentų turinio tekstus"
+
+msgid "Compare documents as HTML file (very slow)"
+msgstr "Lyginti dokumentus kaip HTML failus (labai lėta)"
+
+msgid "CompareMSPowerPointFiles.sct WinMerge Plugin Options"
+msgstr "CompareMSPowerPointFiles.sct „WinMerge“ papildinio nuostatos"
+
+msgid "Extract slide data to multiple files"
+msgstr "Išskleisti skaidrių duomenis į kelis failus"
+
+msgid "Compare slides as image (very slow)"
+msgstr "Lyginti skaidres kaip vaizdus (labai lėta)"
+
+msgid "Compare texts in notes page"
+msgstr "Lyginti pastabų puslapio tekstus"
+
+msgid "CompareMSVisioFiles.sct WinMerge Plugin Options"
+msgstr "CompareMSVisioFiles.sct „WinMerge“ papildinio nuostatos"
+
+msgid "Extract page data to multiple files"
+msgstr "Išskleisti puslapių duomenis į kelis failus"
+
+msgid "Compare pages as image (very slow)"
+msgstr "Lyginti puslapius kaip vaizdus (labai lėta)"
+
+msgid "PrediffLineFilter.sct WinMerge Plugin Options"
+msgstr "PrediffLineFilter.sct „WinMerge“ papildinio nuostatos"
+
+msgid "Delete"
+msgstr "Trinti"
+
+msgid "Enabled"
+msgstr "Įjungta"
+
+msgid "Ignore Case"
+msgstr "Nepaisyti raidžių dydžio"
+
+msgid "Use RegExp"
+msgstr "Naudoti RegExp"
+
+msgid "Find what"
+msgstr "Ką rasti"
+
+msgid "Replace with"
+msgstr "Pakeisti į"
+
+msgid "Settings"
+msgstr "Parametrai"
+
+msgid "Column Ranges To Ignore:\ne.g.)  3,10-20,32-33\n"
+msgstr "Nepaisomų stulpelių diapazonai:\npvz.)  3,10-20,32-33\n"
 
 #, c-format
-msgid "Clipboard at %s"
-msgstr "Mainų sritis %s"
+msgid "Enter the name of the file to which the patch '%1' will be applied"
+msgstr "Įveskite failo, kuriam bus taikoma pataisa '%1', pavadinimą"
 
-msgid "Clipboard history is disabled.\r\nTo enable clipboard history, press Windows logo key + V and then click the Turn on button."
-msgstr "Mainų srities istorijos funkcionalumas išjungtas.\r\nNorėdami įjungti, paspauskite Win+V klavišus ir tada „Įjungti“ mygtuką."
+#, c-format
+msgid "File '%1' does not exist"
+msgstr "Failas '%1' nerastas"
 
-msgid "This system does not support clipboard history."
-msgstr "Ši sistema nepalaiko mainų srities istorijos."
+msgid "Enter the command line arguments for patch command"
+msgstr "Įveskite pataisos komandinės eilutės argumentus"
 
-msgid "The 32-bit version of WinMerge does not support Clipboard Compare"
-msgstr "32 bitų „WinMerge“ versija nepalaiko lyginimo mainų srityje"
+#, c-format
+msgid "Enter the name of the folder to which the patch '%1' will be applied"
+msgstr "Įveskite katalogo, kuriam bus taikoma pataisa '%1', pavadinimą"
 
-msgid "WebView2 runtime is not installed. Do you want to download it?"
-msgstr "„WebView2“ vykdymo aplinka neįdiegta. Norite ją parsisiųsti?"
+#, c-format
+msgid "Folder '%1' does not exist"
+msgstr "Katalogas '%1' nerastas"
+
+msgid "Do not specify the '-p0' command line option for the patch file which includes absolute paths"
+msgstr "Nenurodykite komandinės eilutės parametro '-p0' pataisos failui, kuriame yra absoliutusis kelio vardas"
