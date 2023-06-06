@@ -1,6 +1,6 @@
 --[[
 Author  : Roberto Rossi
-Version : 1.1.6
+Version : 1.2.0
 Web     : http://www.redchar.net
 
 Questa procedura consente l'attivazione di un tema che modifica la colorazione
@@ -9,7 +9,7 @@ delle entità nella finestra di SciTE.
 La procedura è pensata per gestire, in futuro, anche temi diversi dal classico
 chiaro/scuro.
 
-Copyright (C) 2018-2022 Roberto Rossi 
+Copyright (C) 2018-2023 Roberto Rossi 
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -134,6 +134,7 @@ do
                             "styles\\raku",
                             "styles\\dataflex",
                             "styles\\asciidoc",
+                            "styles\\hollywood",
                             "dark-theme"
                             }
         local pos
