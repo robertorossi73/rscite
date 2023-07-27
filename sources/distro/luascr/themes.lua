@@ -92,7 +92,7 @@ do
                             "styles\\mmixal",
                             "styles\\modula3",
                             "styles\\mql",
-                            "styles\\nimrod",
+                            "styles\\nim",
                             "styles\\nncrontab",
                             "styles\\nsis",
                             "styles\\opal",
