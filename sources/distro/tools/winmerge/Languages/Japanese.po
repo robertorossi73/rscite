@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: WinMerge\n"
 "Report-Msgid-Bugs-To: https://bugs.winmerge.org/\n"
 "POT-Creation-Date: 2020-12-05 22:07+0000\n"
-"PO-Revision-Date: 2023-04-09 09:28+0900\n"
+"PO-Revision-Date: 2023-05-01 23:19+0900\n"
 "Last-Translator: Takashi Sawanaka <sawanaka@d1.dion.ne.jp>\n"
 "Language-Team: Japanese <winmerge-translate@lists.sourceforge.net>\n"
 "Language: ja\n"
@@ -1458,14 +1458,14 @@ msgstr "一時停止"
 msgid "Continue"
 msgstr "再開"
 
-msgid "Comparing items..."
-msgstr "項目を比較しています..."
-
-msgid "Items compared:"
-msgstr "比較した項目:"
+msgid "&Number of CPU cores to use:"
+msgstr "使用するCPUコアの数(&N):"
 
 msgid "Items total:"
 msgstr "全項目数:"
+
+msgid "Items compared:"
+msgstr "比較した項目:"
 
 msgid "Go to"
 msgstr "移動"
@@ -1961,6 +1961,12 @@ msgstr "Windows 11 以降用シェル拡張を登録(&W)"
 msgid "Unregister shell extension for W&indows 11 or later"
 msgstr "Windows 11 以降用シェル拡張の登録を解除(&I)"
 
+msgid "Jump List"
+msgstr "ジャンプリスト"
+
+msgid "Clear all recent items"
+msgstr "すべての最近使ったものの履歴をクリアする"
+
 msgctxt "Options dialog|Categories"
 msgid "Folder"
 msgstr "フォルダー"
@@ -1985,9 +1991,6 @@ msgstr "クイック比較切替閾値 (MB)(&Q):"
 
 msgid "Threshold for switching to &binary compare (MB):"
 msgstr "バイナリ比較切替閾値 (MB)(&B):"
-
-msgid "&Number of CPU cores to use:"
-msgstr "使用するCPUコアの数(&N):"
 
 msgid "File patterns:"
 msgstr "ファイル パターン:"
@@ -2461,6 +2464,13 @@ msgstr "項目 %1 / %2"
 #, c-format
 msgid "Items: %1"
 msgstr "項目: %1"
+
+msgid "Comparing items..."
+msgstr "項目を比較しています..."
+
+#, c-format
+msgid "%.1f[items/sec]"
+msgstr "%.1f[項目/秒]"
 
 msgid "Select two existing folders or files to compare."
 msgstr "存在するフォルダーまたはファイルを選択してください。"
@@ -3341,6 +3351,9 @@ msgstr ""
 "他方にマッチする以下のフォルダーを作成し、フォルダーを開きますか?:\n"
 "%1"
 
+msgid "Are you sure you want to copy all differences to the other file?"
+msgstr "本当にすべての差異を他のファイルにコピーしますか?"
+
 msgid "Do you want to move to the next file?"
 msgstr "次のファイルに移動しますか?"
 
@@ -3990,6 +4003,22 @@ msgstr "プラグイン パイプラインが引用符で閉じていません: 
 msgid "Specify plugin arguments"
 msgstr "プラグイン引数を指定してください"
 
+#, c-format
+msgid "Plugin not found or invalid: %1"
+msgstr "プラグインが見つからないまたは無効です: %1"
+
+#, c-format
+msgid "'%1' is not unpacker plugin"
+msgstr "'%1'は展開プラグインではありません"
+
+#, c-format
+msgid "'%1' is not prediffer plugin"
+msgstr "'%1'は比較前処理プラグインではありません"
+
+#, c-format
+msgid "An error occurred while prediffing the file '%1' with the plugin '%2'. The prediffing is not applied any more."
+msgstr "プラグイン'%2'でファイル'%1'の比較前処理を実行中にエラーが発生しました。比較前処理は適用されませんでした。"
+
 msgid "Filter applied"
 msgstr "フィルター適用"
 
@@ -4012,6 +4041,24 @@ msgstr "32bit版 WinMerge ではクリップボード比較はサポートされ
 
 msgid "WebView2 runtime is not installed. Do you want to download it?"
 msgstr "WebView2 ランタイムがインストールされていません。ダウンロードしますか?"
+
+msgid "New Text Compare"
+msgstr "新規テキスト比較"
+
+msgid "New Table Compare"
+msgstr "新規テーブル比較"
+
+msgid "New Binary Compare"
+msgstr "新規バイナリ比較"
+
+msgid "New Image Compare"
+msgstr "新規画像比較"
+
+msgid "New Webpage Compare"
+msgstr "新規Webページ比較"
+
+msgid "Clipboard Compare"
+msgstr "クリップボード比較"
 
 msgid "Prettification"
 msgstr "整形"
@@ -4361,8 +4408,8 @@ msgstr ""
 "Apache Tika を使用してファイルからテキストを抽出します。\r\n"
 "引数: tika-app.jar に渡すコマンドライン オプション。"
 
-msgid "Apply patch using GnuWin32 Patch for Windows"
-msgstr "GnuWin32 Patch for Windows を使用してパッチを適用します。"
+msgid "Apply patch using GNU patch"
+msgstr "GNU patch を使用してパッチを適用します。"
 
 msgid "Display the text content of MS Excel files"
 msgstr "MS Excel ファイルの内容を表示します。"
@@ -4444,8 +4491,14 @@ msgstr "図形内のテキストを比較する"
 msgid "Compare headers and footers"
 msgstr "ヘッダーとフッターを比較する"
 
-msgid "Cannot get Macros.\r\n   To allow WinMerge to compare macros, use MS Office to alter the settings in the Macro Security for the current application.\r\n   The Trust access to Visual Basic Project feature should be turned on to use this feature in WinMerge.\r\n"
-msgstr "マクロを取得できません。\r\nWinMergeでマクロを比較するには、MS Officeを使用して、現在のアプリケーションのマクロセキュリティの設定を変更してください。\r\nWinMergeでこの機能を使用するには、「VBA プロジェクトへのアクセスを信頼する」をオンにする必要があります。\r\n"
+msgid ""
+"Cannot get Macros.\r\n"
+"   To allow WinMerge to compare macros, use MS Office to alter the settings in the Macro Security for the current application.\r\n"
+"   The Trust access to Visual Basic Project feature should be turned on to use this feature in WinMerge.\r\n"
+msgstr ""
+"マクロを取得できません。\r\n"
+"WinMergeでマクロを比較するには、MS Officeを使用して、現在のアプリケーションのマクロセキュリティの設定を変更してください。\r\n"
+"WinMergeでこの機能を使用するには、「VBA プロジェクトへのアクセスを信頼する」をオンにする必要があります。\r\n"
 
 msgid "Compare VBA macros"
 msgstr "VBA マクロを比較する"

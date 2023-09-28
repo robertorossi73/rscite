@@ -1464,14 +1464,14 @@ msgstr "Paus"
 msgid "Continue"
 msgstr "Fortsätt"
 
-msgid "Comparing items..."
-msgstr "Jämför objekt..."
-
-msgid "Items compared:"
-msgstr "Jämförda objekt:"
+msgid "&Number of CPU cores to use:"
+msgstr "Antal CPU-kärnor att använda:"
 
 msgid "Items total:"
 msgstr "Objekt totalt:"
+
+msgid "Items compared:"
+msgstr "Jämförda objekt:"
 
 msgid "Go to"
 msgstr "Gå till"
@@ -1971,6 +1971,12 @@ msgstr "Registrera filändelse för &Windows 11 eller senare"
 msgid "Unregister shell extension for W&indows 11 or later"
 msgstr "Avregistrera filändelse för W&indows 11 eller senare"
 
+msgid "Jump List"
+msgstr ""
+
+msgid "Clear all recent items"
+msgstr ""
+
 msgctxt "Options dialog|Categories"
 msgid "Folder"
 msgstr "Katalog"
@@ -1995,9 +2001,6 @@ msgstr "Tröskelvärde för växling till snabbjämförelse (MB):"
 
 msgid "Threshold for switching to &binary compare (MB):"
 msgstr "Tröskelvärde för växling till binär jämförelse (MB):"
-
-msgid "&Number of CPU cores to use:"
-msgstr "Antal CPU-kärnor att använda:"
 
 msgid "File patterns:"
 msgstr "Filnamnsmönster:"
@@ -2489,6 +2492,13 @@ msgstr "Förekomst %1 av %2"
 #, c-format
 msgid "Items: %1"
 msgstr "Förekomster: %1"
+
+msgid "Comparing items..."
+msgstr "Jämför objekt..."
+
+#, c-format
+msgid "%.1f[items/sec]"
+msgstr ""
 
 msgid "Select two existing folders or files to compare."
 msgstr "Välj två befintliga mappar eller filer att jämföra."
@@ -3398,6 +3408,9 @@ msgstr ""
 "%1\n"
 "på andra sidan och öppna dessa kataloger?"
 
+msgid "Are you sure you want to copy all differences to the other file?"
+msgstr ""
+
 msgid "Do you want to move to the next file?"
 msgstr "Vill du gå till nästa fil?"
 
@@ -4066,6 +4079,22 @@ msgstr "Saknar citationstecken i programtilläggets kommandoslinga: %1"
 msgid "Specify plugin arguments"
 msgstr "Ange programtilläggets kommandoalternativ"
 
+#, c-format
+msgid "Plugin not found or invalid: %1"
+msgstr ""
+
+#, c-format
+msgid "'%1' is not unpacker plugin"
+msgstr ""
+
+#, c-format
+msgid "'%1' is not prediffer plugin"
+msgstr ""
+
+#, c-format
+msgid "An error occurred while prediffing the file '%1' with the plugin '%2'. The prediffing is not applied any more."
+msgstr ""
+
 msgid "Filter applied"
 msgstr "Filter verkställt"
 
@@ -4091,6 +4120,24 @@ msgstr "32-bitarsversionen av WinMerge stöder inte Clipboard Compare"
 msgid "WebView2 runtime is not installed. Do you want to download it?"
 msgstr ""
 "Körbara filer för WebView2 är inte installerade. Vill du ladda ned det?"
+
+msgid "New Text Compare"
+msgstr ""
+
+msgid "New Table Compare"
+msgstr ""
+
+msgid "New Binary Compare"
+msgstr ""
+
+msgid "New Image Compare"
+msgstr ""
+
+msgid "New Webpage Compare"
+msgstr ""
+
+msgid "Clipboard Compare"
+msgstr ""
 
 msgid "Prettification"
 msgstr "Finputsning"
@@ -4444,8 +4491,8 @@ msgstr ""
 "Innehållsextrahering med Apache Tika.\r\n"
 "Argument: Kommandoradsalternativ som passeras till tika-app.jar-kommandot."
 
-msgid "Apply patch using GnuWin32 Patch for Windows"
-msgstr "Applicera patch med GnuWin32 för Windows"
+msgid "Apply patch using GNU patch"
+msgstr ""
 
 msgid "Display the text content of MS Excel files"
 msgstr "Visa textinnehållet i MS Excel-filer"

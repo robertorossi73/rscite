@@ -55,6 +55,7 @@ Localization:
   Koko <kokokoko@giga.net.tw>
   Calvin Lin <ylin77 at gmail.com>
   SiderealArt <admin at siderealart.me>
+  abc0922001
 
 * Corsican:
   Patriccollu di Santa Maria è Sichè
@@ -105,6 +106,7 @@ Localization:
   Márton Balázs <documan@users.sourceforge.net>
   Mihalicza József <jmihalicza@gmail.com>
   Egyed Ferenc <efi99 at freemail.hu>
+  boglarkla
 
 * Italian:
   Andrea Decorte <deco1985@hotmail.com>
@@ -128,7 +130,7 @@ Localization:
   BrainS <29201475+BraINstinct0 at users.noreply.github.com>
   cynilyn <cynilyn at gmail.com>
   gro00 <gheong.ro at gmail.com>
-  VenusGirl <venusgirl at gmail.com>
+  VenusGirl <https://github.com/VenusGirl>
 
 * Lithuanian:
   Dalius Guzauskas (aka Tichij) <tichij AT mail DOT com>
@@ -192,12 +194,16 @@ Localization:
   Nelson Ariza <njarizas@hotmail.com>
   borjafg
   Mauricio Gracia Gutierrez
+  P0rsche-911
 
 * Swedish:
   Hans Eriksson <hans.ericson@bredband.net>
   Göran Håkansson <goran.x.hakansson@telia.com>
   pgert <pgert at yahoo.se>
   Timmy Almroth <timmy.almroth at tim-international.net>
+
+* Tamil:
+  தமிழ்நேரம் <https://TamilNeram.github.io>
 
 * Turkish:
   Afyonlu <afyonlu@users.sourceforge.net>
@@ -275,6 +281,8 @@ Other Contributors (code, ideas, testing..):
 * baka0815
 * Yurii Hordiienko 
 * wiera987
+* wilfzim
+* Mavaddat Javid
 
 WinMerge includes code from:
 * Jared Breland <jbreland@legroom.net> (Installer's modpath script)
@@ -290,6 +298,29 @@ WinMerge includes code from:
 * Henry Spencer (CRegExp)
 * Andrei Stcherbatchenko (Author of Crystal Edit)
 * Sven Wiegand (Crystal Edit)
+
+External components used by WinMerge
+
+* POCO (BSL-1.0) (https://pocoproject.org/)
+* boost (BSL-1.0) (https://www.boost.org/)
+* frhed (GPL-2.0) (https://frhed.sourceforge.net/)
+* WinIMerge (GPL-2.0) (https://github.com/WinMerge/winimerge/)
+  * freeimage (GPL-2.0) (https://freeimage.sourceforge.io/)
+  * LibXDiff (LGPL-2.1) (https://github.com/git/git/tree/master/xdiff)
+* WinWebDiff (BSD-3-Clause) (https://github.com/WinMerge/winwebdiff/)
+  * WebView2 (BSD-3-Clause) (https://learn.microsoft.com/ja-jp/microsoft-edge/webview2/)
+  * wil (MIT) (https://github.com/microsoft/wil)
+  * rapidjson (MIT) (https://rapidjson.org/)
+  * LibXDiff (LGPL-2.1) (https://github.com/git/git/tree/master/xdiff)
+* Google C++ Testing Framework (BSD-3-Clause) (http://google.github.io/googletest/)
+* GNU patch (msys2 package) (GPL-3.0) (https://savannah.gnu.org/projects/patch/, https://github.com/msys2/MSYS2-packages/tree/master/patch)
+* 7-zip (LGPL) (https://www.7-zip.org/)
+* LibXDiff (LGPL-2.1) (https://github.com/git/git/tree/master/xdiff)
+* html-tidy5 (https://github.com/htacg/tidy-html5/blob/next/README/LICENSE.md) (http://www.html-tidy.org/)
+* jq (MIT) (https://stedolan.github.io/jq/)
+* wil (MIT) (https://github.com/microsoft/wil)
+* md4c (MIT) (https://github.com/mity/md4c)
+* Inno Setup (https://jrsoftware.org/files/is/license.txt) (https://jrsoftware.org/isinfo.php)
 
 *** NOTE ***
 If your name is missing please let us know (or create a pull request).

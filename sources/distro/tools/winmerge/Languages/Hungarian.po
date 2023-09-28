@@ -1787,17 +1787,16 @@ msgstr "Szünet"
 msgid "Continue"
 msgstr "Folytatás"
 
-#, c-format
-msgid "Comparing items..."
-msgstr "Elemek összehasonlítása..."
-
-#, c-format
-msgid "Items compared:"
-msgstr "Összehasonlított elemek:"
+msgid "&Number of CPU cores to use:"
+msgstr "Használandó CPU magok száma:"
 
 #, c-format
 msgid "Items total:"
 msgstr "Összes elem:"
+
+#, c-format
+msgid "Items compared:"
+msgstr "Összehasonlított elemek:"
 
 msgid "Go to"
 msgstr "Ugrás"
@@ -2422,6 +2421,12 @@ msgstr "Shellbővítmény regisztrálása Windows 11-hez"
 msgid "Unregister shell extension for W&indows 11 or later"
 msgstr "Shellbővítmény regisztrálás törlése Windows 11-hez"
 
+msgid "Jump List"
+msgstr "Ugráslista"
+
+msgid "Clear all recent items"
+msgstr "Az összes legutóbbi elem törlése"
+
 msgctxt "Options dialog|Categories"
 msgid "Folder"
 msgstr "Könyvtár"
@@ -2451,9 +2456,6 @@ msgstr "A gyors összehasonlítás méretkorlátja (MB):"
 
 msgid "Threshold for switching to &binary compare (MB):"
 msgstr "A bináris összehasonlítás méretkorlátja (MB):"
-
-msgid "&Number of CPU cores to use:"
-msgstr "Használandó CPU magok száma:"
 
 msgid "File patterns:"
 msgstr "Fájlfajták:"
@@ -2996,6 +2998,14 @@ msgstr "elem: %1 / %2"
 #, c-format
 msgid "Items: %1"
 msgstr "%1 elem"
+
+#, c-format
+msgid "Comparing items..."
+msgstr "Elemek összehasonlítása..."
+
+#, c-format
+msgid "%.1f[items/sec]"
+msgstr ""
 
 msgid "Select two existing folders or files to compare."
 msgstr "Válassz ki két összehasonlítandó fájlt vagy könyvtárat."
@@ -3985,6 +3995,9 @@ msgstr ""
 "%1\n"
 "a másik oldalhoz és megnyitod ezeket a mappákat?"
 
+msgid "Are you sure you want to copy all differences to the other file?"
+msgstr "Biztos, hogy minden eltérést át akarsz másolni a másik fájlba?"
+
 #, c-format
 msgid "Do you want to move to the next file?"
 msgstr "Továbblépsz a következő fájlra?"
@@ -4669,6 +4682,22 @@ msgstr "Hiányzó idézőjel a bővítmény pipeline-ban: %1"
 msgid "Specify plugin arguments"
 msgstr "Bővítmény argumentumok megadása"
 
+#, c-format
+msgid "Plugin not found or invalid: %1"
+msgstr "A bővítmény nem található vagy érvénytelen: %1"
+
+#, c-format
+msgid "'%1' is not unpacker plugin"
+msgstr "A(z) '%1' nem kitömörítő bővítmény"
+
+#, c-format
+msgid "'%1' is not prediffer plugin"
+msgstr "A(z) '%1' nem elővizsgáló bővítmény""
+
+#, c-format
+msgid "An error occurred while prediffing the file '%1' with the plugin '%2'. The prediffing is not applied any more."
+msgstr "Hiba történt a(z) „%1” fájl „%2” bővítménnyel történő elővizsgálatakor. Az elővizsgálat többé nem kerül alkalmazásra."
+
 msgid "Filter applied"
 msgstr "Szűrő alkalmazva"
 
@@ -4687,6 +4716,24 @@ msgstr "A WinMerge 32 bites verziója nem támogatja a vágólap összehasonlít
 
 msgid "WebView2 runtime is not installed. Do you want to download it?"
 msgstr "A WebView2 runtime nincs telepítve. Le akarod tölteni?"
+
+msgid "New Text Compare"
+msgstr "Új szöveg összehasonlítás"
+
+msgid "New Table Compare"
+msgstr "Új táblázat összehasonlítás"
+
+msgid "New Binary Compare"
+msgstr "Új bináris összehasonlítás"
+
+msgid "New Image Compare"
+msgstr "Új kép összehasonlítás"
+
+msgid "New Webpage Compare"
+msgstr "Új weboldal összehasonlítás"
+
+msgid "Clipboard Compare"
+msgstr "Vágólap összehasonlítás"
 
 msgid "Prettification"
 msgstr "Megjelenés optimalizálás"
@@ -4914,8 +4961,8 @@ msgstr "Natív kód disassembler dumpbin-nel. \r\nArgumentumok: A dumpbin paranc
 msgid "General content extractor with Apache Tika. \r\nArguments: Command line options passed to the tika-app.jar."
 msgstr "Általános tartalom kitömörítő Apach Tika-val  \r\nArgumentumok: A tika-app.jar-nak megfelelő parancssori opciók."
 
-msgid "Apply patch using GnuWin32 Patch for Windows"
-msgstr "Patchelés alkalmazása a GnuWin32 Patch for Windows segítségével"
+msgid "Apply patch using GNU patch"
+msgstr "GNU patch alkalmazása"
 
 msgid "Display the text content of MS Excel files"
 msgstr "MS Excel fájlok szöveges tartalmának megjelenítése"

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WinMerge\n"
 "Report-Msgid-Bugs-To: https://bugs.winmerge.org/\n"
-"POT-Creation-Date: 2023-04-15 08:40+0000\n"
-"PO-Revision-Date: 2023-04-24 13:48+0200\n"
+"POT-Creation-Date: 2023-07-26 07:00+0000\n"
+"PO-Revision-Date: 2023-07-26 08:08+0200\n"
 "Last-Translator: Tichij <tichij@mail.com>\n"
 "Language-Team: Lithuanian <winmerge-translate@lists.sourceforge.net>\n"
 "Language: lt\n"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Poedit-Language: Lithuanian\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-Basepath: ../../Src/\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.3.1\n"
 
 #. LANGUAGE, SUBLANGUAGE
 msgid "LANG_ENGLISH, SUBLANG_ENGLISH_US"
@@ -1455,14 +1455,14 @@ msgstr "Pristabdyti"
 msgid "Continue"
 msgstr "Tęsti"
 
-msgid "Comparing items..."
-msgstr "Lygina elementus..."
-
-msgid "Items compared:"
-msgstr "Elementų palyginta:"
+msgid "&Number of CPU cores to use:"
+msgstr "&Naudojamas procesoriaus branduolių skaičius:"
 
 msgid "Items total:"
 msgstr "Iš viso elementų:"
+
+msgid "Items compared:"
+msgstr "Elementų palyginta:"
 
 msgid "Go to"
 msgstr "Pereiti į"
@@ -1950,6 +1950,12 @@ msgstr "Registruoti aplinkos plėtinį &Windows 11 ar vėlesnei"
 msgid "Unregister shell extension for W&indows 11 or later"
 msgstr "Išregistruoti aplinkos plėtinį W&indows 11 ar vėlesnei"
 
+msgid "Jump List"
+msgstr "Spartusis sąrašas"
+
+msgid "Clear all recent items"
+msgstr "Išvalyti visus naujausius elementus"
+
 msgctxt "Options dialog|Categories"
 msgid "Folder"
 msgstr "Katalogų"
@@ -1974,9 +1980,6 @@ msgstr "Persijungimo į &spartųjį palyginimą riba (MB):"
 
 msgid "Threshold for switching to &binary compare (MB):"
 msgstr "Persijungimo į &binarinį palyginimą riba (MB):"
-
-msgid "&Number of CPU cores to use:"
-msgstr "&Naudojamas procesoriaus branduolių skaičius:"
 
 msgid "File patterns:"
 msgstr "Failų šablonai:"
@@ -2356,6 +2359,13 @@ msgstr "Elementas %1 iš %2"
 #, c-format
 msgid "Items: %1"
 msgstr "Elementų: %1"
+
+msgid "Comparing items..."
+msgstr "Lygina elementus..."
+
+#, c-format
+msgid "%.1f[items/sec]"
+msgstr "%.1f[elementų/sek.]"
 
 msgid "Select two existing folders or files to compare."
 msgstr "Nurodykite lyginimui du egzistuojančius katalogus ar failus."
@@ -3021,7 +3031,7 @@ msgid "Unpacker plugin name or pipeline."
 msgstr "Išpakuotojo papildinio pavadinimas arba komandų grandinė."
 
 msgid "Prediffer plugin name or pipeline."
-msgstr "Paruošėjo papildinio pavadinimas arba komandų grandinė."
+msgstr "Parengėjo papildinio pavadinimas arba komandų grandinė."
 
 #, c-format
 msgid "Compare %1 with %2"
@@ -3080,6 +3090,9 @@ msgstr "Negalima atidaryti binarinio failo redaktoriuje."
 #, c-format
 msgid "The folder exists only in other side and cannot be opened.\n\nDo you want to create a matching folder:\n%1\nto the other side and open these folders?"
 msgstr "Katalogas egzistuoja tiktai kitoje pusėje ir negali būti atidarytas.\n\nAr norite sukurti atitinkamą katalogą:\n%1\nkitoje pusėje ir atverti šiuos katalogus?"
+
+msgid "Are you sure you want to copy all differences to the other file?"
+msgstr "Ar tikrai norite nukopijuoti visus skirtumus į kitą failą?"
 
 msgid "Do you want to move to the next file?"
 msgstr "Ar norite pereiti prie kito failo?"
@@ -3606,6 +3619,22 @@ msgstr "Trūksta kabučių papildinio komandų grandinėje: %1"
 msgid "Specify plugin arguments"
 msgstr "Nurodykite papildinio argumentus"
 
+#, c-format
+msgid "Plugin not found or invalid: %1"
+msgstr "Nerastas arba netinkamas papildinys: %1"
+
+#, c-format
+msgid "'%1' is not unpacker plugin"
+msgstr "'%1' nėra išpakuotojas"
+
+#, c-format
+msgid "'%1' is not prediffer plugin"
+msgstr "'%1' nėra parengėjas"
+
+#, c-format
+msgid "An error occurred while prediffing the file '%1' with the plugin '%2'. The prediffing is not applied any more."
+msgstr "Parengimo papildiniui '%2' apdorojant failą '%1' įvyko klaida. Parengimas daugiau nebetaikomas."
+
 msgid "Filter applied"
 msgstr "Pritaikytas filtras"
 
@@ -3624,6 +3653,24 @@ msgstr "32 bitų „WinMerge“ versija nepalaiko lyginimo mainų srityje"
 
 msgid "WebView2 runtime is not installed. Do you want to download it?"
 msgstr "„WebView2“ vykdymo aplinka neįdiegta. Norite ją parsisiųsti?"
+
+msgid "New Text Compare"
+msgstr "Naujas teksto palyginimas"
+
+msgid "New Table Compare"
+msgstr "Naujas lentelių palyginimas"
+
+msgid "New Binary Compare"
+msgstr "Naujas binarinių failų palyginimas"
+
+msgid "New Image Compare"
+msgstr "Naujas vaizdų palyginimas"
+
+msgid "New Webpage Compare"
+msgstr "Naujas tinklapių palyginimas"
+
+msgid "Clipboard Compare"
+msgstr "Mainų srities palyginimas"
 
 msgid "Prettification"
 msgstr "Sutvarkymas"
@@ -3851,8 +3898,8 @@ msgstr ""
 msgid "General content extractor with Apache Tika. \r\nArguments: Command line options passed to the tika-app.jar."
 msgstr ""
 
-msgid "Apply patch using GnuWin32 Patch for Windows"
-msgstr "Taikyti pataisą naudojant „GnuWin32 Patch for Windows“"
+msgid "Apply patch using GNU patch"
+msgstr "Taikyti pataisą naudojant „GNU patch“"
 
 msgid "Display the text content of MS Excel files"
 msgstr "Rodyti „MS Excel“ failų teksto turinį"

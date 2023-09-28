@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: WinMerge\n"
 "Report-Msgid-Bugs-To: https://bugs.winmerge.org/\n"
 "POT-Creation-Date: 2023-03-13 09:30-0300\n"
-"PO-Revision-Date:  2023-04-16 15:20-0300\n"
+"PO-Revision-Date: 2023-07-25 22:20-0300\n"
 "Last-Translator: Marcello <marcello.mco@gmail.com>\n"
 "Language-Team: Felipe\n"
 "Language: pt_BR\n"
@@ -1455,14 +1455,14 @@ msgstr "Pausar"
 msgid "Continue"
 msgstr "Continuar"
 
-msgid "Comparing items..."
-msgstr "Comparando os itens..."
-
-msgid "Items compared:"
-msgstr "Itens comparados:"
+msgid "&Number of CPU cores to use:"
+msgstr "&Número de núcleos de CPU a serem utilizados:"
 
 msgid "Items total:"
 msgstr "Total de itens:"
+
+msgid "Items compared:"
+msgstr "Itens comparados:"
 
 msgid "Go to"
 msgstr "Ir para"
@@ -1950,6 +1950,12 @@ msgstr "Registrar a extensão do shell para o &Windows 11 ou superior"
 msgid "Unregister shell extension for W&indows 11 or later"
 msgstr "Remover o registro da extensão do shell para o &Windows 11 ou superior"
 
+msgid "Jump List"
+msgstr "Lista de Atalhos"
+
+msgid "Clear all recent items"
+msgstr "Limpar todos os itens recentes"
+
 msgctxt "Options dialog|Categories"
 msgid "Folder"
 msgstr "Pasta"
@@ -1974,9 +1980,6 @@ msgstr "Limite para alternar para comparação rápida (MB):"
 
 msgid "Threshold for switching to &binary compare (MB):"
 msgstr "Limite para alternar para comparação binária (MB):"
-
-msgid "&Number of CPU cores to use:"
-msgstr "&Número de núcleos de CPU a serem utilizados:"
 
 msgid "File patterns:"
 msgstr "Modelos de Arquivos:"
@@ -2357,6 +2360,13 @@ msgstr "Item %1 de %2"
 msgid "Items: %1"
 msgstr "Itens: %1"
 
+msgid "Comparing items..."
+msgstr "Comparando os itens..."
+
+#, c-format
+msgid "%.1f[items/sec]"
+msgstr "%.1f[itens/seg]"
+
 msgid "Select two existing folders or files to compare."
 msgstr "Selecione duas pastas ou arquivos existentes pra comparar."
 
@@ -2634,7 +2644,7 @@ msgid "Unknown archive format"
 msgstr "Formato do arquivo desconhecido"
 
 msgid "Failed to extract archive files.\nDo you want to compare the archive files as text files?"
-msgstr "Não foi possível extrair arquivos compactados.\nDeseja compararos arquivos compactados como arquivos de texto?"
+msgstr "Não foi possível extrair arquivos compactados.\nDeseja comparar os arquivos compactados como arquivos de texto?"
 
 msgid "Filename"
 msgstr "Nome do Arquivo"
@@ -3080,6 +3090,9 @@ msgstr "Não foi possível abrir um arquivo binário no editor."
 #, c-format
 msgid "The folder exists only in other side and cannot be opened.\n\nDo you want to create a matching folder:\n%1\nto the other side and open these folders?"
 msgstr "A pasta existe apenas no outro lado e não pode ser aberta.\n\nVocê quer criar uma pasta que combine:\n%1\nno outro lado e abrir estas pastas?"
+
+msgid "Are you sure you want to copy all differences to the other file?"
+msgstr "Você tem certeza que quer copiar todas as diferenças para o outro arquivo?"
 
 msgid "Do you want to move to the next file?"
 msgstr "Você quer mover para o próximo arquivo?"
@@ -3606,6 +3619,22 @@ msgstr "Marca das aspas ausentes na tubulação do plugin: %1"
 msgid "Specify plugin arguments"
 msgstr "Especificar os argumentos do plugin"
 
+#, c-format
+msgid "Plugin not found or invalid: %1"
+msgstr "Plugin não encontrado ou inválido: %1"
+
+#, c-format
+msgid "'%1' is not unpacker plugin"
+msgstr "'%1' não é um plugin de desempacotador"
+
+#, c-format
+msgid "'%1' is not prediffer plugin"
+msgstr "'%1' não é um plugin de pré-diferenciação"
+
+#, c-format
+msgid "An error occurred while prediffing the file '%1' with the plugin '%2'. The prediffing is not applied any more."
+msgstr "Ocorreu um erro na pré-diferenciação do arquivo '%1' com o plugin '%2'. A pré-diferenciação não vai mais ser aplicada."
+
 msgid "Filter applied"
 msgstr "Filtro aplicado"
 
@@ -3624,6 +3653,24 @@ msgstr "A versão 32-bits do WinMerge não suporta Comparação de Área de tran
 
 msgid "WebView2 runtime is not installed. Do you want to download it?"
 msgstr "O runtime do WebView2 não está instalado. Deseja baixá-lo?"
+
+msgid "New Text Compare"
+msgstr "Nova Comparação de Texto"
+
+msgid "New Table Compare"
+msgstr "Nova Comparação de Tabela"
+
+msgid "New Binary Compare"
+msgstr "Nova Comparação Binária"
+
+msgid "New Image Compare"
+msgstr "Nova comparação de Imagem"
+
+msgid "New Webpage Compare"
+msgstr "Nova Comparação de Página Web"
+
+msgid "Clipboard Compare"
+msgstr "Comparação da Área de Transferência"
 
 msgid "Prettification"
 msgstr "Embelezamento"
@@ -3851,8 +3898,8 @@ msgstr "Desmontador de código nativo com dumpbin. \r\nArgumentos: Opções de l
 msgid "General content extractor with Apache Tika. \r\nArguments: Command line options passed to the tika-app.jar."
 msgstr "Extrator de conteúdo geral com Apache Tika. \r\nArgumentos: Opções de linha de comando passadas ao comando ildasm."
 
-msgid "Apply patch using GnuWin32 Patch for Windows"
-msgstr "Aplicar correção usando o comando Patch para Windows do GnuWin32"
+msgid "Apply patch using GNU patch"
+msgstr "Aplicar correção usando o Patch do GNU"
 
 msgid "Display the text content of MS Excel files"
 msgstr "Mostrar o conteúdo em texto de arquivos MS Excel"
