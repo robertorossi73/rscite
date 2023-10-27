@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 ;Autore :   Roberto Rossi
-;Versione : 4.0.3
+;Versione : 4.1.0
 ;Web      : http://www.redchar.net
 
 ;Compatible with Inno Setup 6.2.0 or later
@@ -80,18 +80,10 @@ Source: ..\sources\distro\loctools-en.properties; DestDir: {app}; Flags: deletea
 [Icons]
 ;SciTE
 Name: {group}\{cm:IconRscite}; Filename: "{app}\SciTE.exe"; IconFilename: {app}\scite.ico; Tasks: not portablemode;
-;dnGrep
-Name: {group}\{cm:IcondnGREP}; Filename: "{app}\tools\dngrep\dnGREP.exe"; Tasks: not portablemode;
-;Frhed
-Name: {group}\{cm:IconFrhed}; Filename: "{app}\tools\frhed\Frhed.exe"; Tasks: not portablemode;
-;KDiff
-;Name: {group}\{cm:IconKDiff}; Filename: "{app}\tools\kdiff\kdiff3.exe"; Tasks: not portablemode;
-;WinMerge
-Name: {group}\{cm:IconWinMerge}; Filename: "{app}\tools\winmerge\WinMergeU.exe"; Tasks: not portablemode;
 ;Home Page
 Name: {group}\Roberto Rossi Home Page; Filename: "{win}\explorer.exe"; Parameters: "http://www.redchar.net/"; IconFilename: "{win}\explorer.exe"; IconIndex: 14; Tasks: not portablemode;
 
-Name: {commondesktop}\RSciTE; Filename: {app}\SciTE.exe; Tasks: desktopicon;
+Name: {commondesktop}\{cm:IconRscite}; Filename: {app}\SciTE.exe; Tasks: desktopicon;
 ;Name: {usersendto}\SciTE; Filename: {app}\SciTE.exe; IconFilename: {app}\scite.ico; Tasks: not portablemode;
 
 [Run]
@@ -110,16 +102,6 @@ english.PortableVersionGroup=RSciTE Portable Version
 italian.PortableVersionGroup=Versione Portabile di RSciTE
 english.IconRscite=SciTE - Text Editor
 italian.IconRscite=SciTE - Editor di testo
-english.IcondnGREP=dnGREP - Find and Replace
-italian.IcondnGREP=dnGREP - Trova e Sostituisci
-english.IconFrhed=Frhed - Hex Editor
-italian.IconFrhed=Frhed - Editor Esadecimale
-english.IconKDiff=KDiff - Compare Files
-italian.IconKDiff=KDiff - Confronto File
-english.IconWinMerge=WinMerge - Compare Files
-italian.IconWinMerge=WinMerge - Confronto File
-english.IconRegexerator=Regexerator - RegEx Tester
-italian.IconRegexerator=Regexerator - Tester Espressioni Regolari
 english.IconRSciTEDOC=RSciTE - Guida alle Caratteristiche
 italian.IconRSciTEDOC=RSciTE - Functions Guide
 
@@ -177,10 +159,20 @@ begin
       begin
         // Delete files matching *.properties from old rscite versions
         DelTree(ExpandConstant('{app}\*.properties'), False, True, False);
+        
         // Delete icons from old rscite versions
         DeleteFile(ExpandConstant('{app}\KDiff.lnk'));
         DeleteFile(ExpandConstant('{app}\WinMerge.lnk'));
         DeleteFile(ExpandConstant('{app}\Frhed.lnk'));
+        DeleteFile(ExpandConstant('{app}\dnGREP - Find and Replace.lnk'));
+        DeleteFile(ExpandConstant('{app}\dnGREP - Trova e Sostituisci.lnk'));
+        DeleteFile(ExpandConstant('{app}\Frhed - Hex Editor.lnk'));
+        DeleteFile(ExpandConstant('{app}\Frhed - Editor Esadecimale.lnk'));
+        DeleteFile(ExpandConstant('{app}\KDiff - Compare Files.lnk'));
+        DeleteFile(ExpandConstant('{app}\KDiff - Confronto File.lnk'));
+        DeleteFile(ExpandConstant('{app}\WinMerge - Compare Files.lnk'));
+        DeleteFile(ExpandConstant('{app}\WinMerge - Confronto File.lnk'));
+        
         FirstInstallation := False; //upgrade in corso
       end;
     end;
@@ -208,8 +200,6 @@ begin
             RegisterServer(Is64BitInstallMode, ExpandConstant('{app}\wscitecm64_it.dll'), True);
         end;
         
-        //rimozione eventuali configurazioni di dnGrep
-        DeleteFile(ExpandConstant('{userappdata}\dnGREP\dnGREP.Settings.dat'));
     end; //not portablemode
 
   end; //end conclusione
