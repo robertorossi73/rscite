@@ -2,6 +2,12 @@
   nuova funzione c_callFXex in grado di richiamare funzioni presenti in 
   librerie esterne
 
+V.5.5.0.0
+* Aggiunta funzione c_ShowProperties per visualizzare il menu contestuale sul file corrente
+
+V.5.4.0.0
+* Aggiunta funzione c_GetFilesList per ottenere lista file/cartelle
+
 V.5.3.0.0
 * Le funzioni MsgBox accettano stringe in formato utf-8.
 

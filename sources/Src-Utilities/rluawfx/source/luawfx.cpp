@@ -1,6 +1,6 @@
-/*********************************************************************
+﻿/*********************************************************************
 RLuaWfx
-Copyright (C) 2004-2013 Roberto Rossi 
+Copyright (C) 2004-2023 Roberto Rossi 
 Web : http://www.redchar.net
 
 This library is free software; you can redistribute it and/or
@@ -34,11 +34,15 @@ extern "C"
 #include <shlobj.h>
 #include <direct.h>
 
+#include <list>
+
 #include "cdialog.h"
 #include "commutil.h"
 #include "genguid.h"
 
 #include "rMsgBx.h"
+
+#include "cprops.h"
 
 HINSTANCE public_DllInstance; //istanza corrente DLL
 
@@ -72,7 +76,7 @@ BOOL WINAPI DllMain(
 }
 
 //ritorna 1 se il nome della dll corrente contiene rluawfxen.dll.
-//ci� significa che la dll deve visualizzare i messaggi in lingua inglese
+//ciò significa che la dll deve visualizzare i messaggi in lingua inglese
 int isEnglishLang(void)
 {
   char *copy1;
@@ -935,7 +939,7 @@ LUALIB_API int c_Sleep(lua_State *L)
 }
 
 //genera un GUID
-//la funzione dovr� essere usata specificando :
+//la funzione dovrà essere usata specificando :
 //[File temporaneo da scrivere con le GUID]
 LUALIB_API int c_GetGUID(lua_State *L)
 {
@@ -1017,7 +1021,7 @@ int checkpar_calFXex(lua_State *L)
 		  (lua_type(L,16) != LUA_TNUMBER) //quarto par tipo reale
 		 )
 	  {
-		  result = 1; //errore : un parametro � di tipo errato
+		  result = 1; //errore : un parametro è di tipo errato
 	  }
   }
   return result;
@@ -1151,11 +1155,229 @@ LUALIB_API int c_SetWindowSize(lua_State *L)
 	return 1;
 }
 
+LUALIB_API int c_GetFilesList2(lua_State* L)
+{
+    const int n = lua_gettop(L);
+    bool onlyFolder = false; 
+    bool addOk = false;
+    std::wstring defaultPath;
+    std::wstring outFileName;
+    std::wstring beforeFile;
+    std::wstring afterFile;
+    WIN32_FIND_DATAW FindFileData;
+    HANDLE hFind;
+    std::wstring outStr(L"");
+    DWORD dwError = 0;
+    
+    if ((lua_type(L, 1) == LUA_TSTRING) && //The directory or path, and the file name.
+        (lua_type(L, 2) == LUA_TBOOLEAN) && //get folders
+        (lua_type(L, 3) == LUA_TSTRING) && //before file
+        (lua_type(L, 4) == LUA_TSTRING) && //after file
+        (lua_type(L, 5) == LUA_TSTRING) && //output file
+        (n > 4))
+    {
+        defaultPath = UTF8CharToWChar(lua_tostring(L, 1)); //path
+        onlyFolder = lua_toboolean(L, 2); //get folders
+        beforeFile = UTF8CharToWChar(lua_tostring(L, 3)); //before file
+        afterFile = UTF8CharToWChar(lua_tostring(L, 4)); //after file
+        outFileName = UTF8CharToWChar(lua_tostring(L, 5)); //nome file scambio temporaneo
+
+        hFind = FindFirstFileW(defaultPath.c_str(), &FindFileData);
+        if (hFind == INVALID_HANDLE_VALUE)
+        {
+            lua_pushnil(L);
+        }
+        else
+        {
+            // List all the files in the directory with some info about them.
+            do
+            {
+                if (FindFileData.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY)
+                {
+                    if (onlyFolder)
+                        addOk = true;
+                    else
+                        addOk = false;
+                }
+                else
+                    addOk = !onlyFolder;
+
+                if (addOk)
+                {
+                    if (outStr != L"")
+                        outStr.append(L"\n");
+
+                    outStr.append(beforeFile.c_str());
+                    outStr.append(FindFileData.cFileName);
+                    outStr.append(afterFile.c_str());
+                }
+            } while (FindNextFileW(hFind, &FindFileData) != 0);
+
+            dwError = GetLastError();
+            if (dwError == ERROR_NO_MORE_FILES)
+            {
+                if (writeStrinToTmpW(outStr.c_str(), outFileName.c_str()) == 1)
+                    lua_pushboolean(L, 1);
+                else
+                    lua_pushnil(L);
+            } else
+                lua_pushnil(L);
+
+            FindClose(hFind);            
+        }
+    }
+    else {
+        //lua_pushstring(L, "Argomenti errati!");
+        showErrorMsg("Arguments error! - GetFilesList(path, getOnlyFolders, strBeforeFileName, strAfterFileName, temporaryOutputFile)");
+        lua_error(L);
+        lua_pushnil(L);
+    }
+
+    return 1;
+}
+
+void pushStringsTable(lua_State* L, std::list<std::wstring> lst)
+{
+    lua_Integer i;
+
+    if (lst.size() > 0)
+    {
+        lua_newtable(L);
+        i = 1;
+        for (std::list<std::wstring>::iterator it = lst.begin(); it != lst.end(); ++it)
+        {
+            lua_pushstring(L, WCharToUTF8Char(it->c_str()).c_str());
+            lua_rawseti(L, -2, i);
+            i++;
+        }
+    }
+    else
+    {
+        lua_pushnil(L);
+    }
+}
+
+LUALIB_API int c_GetFilesList(lua_State* L)
+{
+    const int n = lua_gettop(L);
+    bool onlyFolder = false; 
+    bool addOk = false;
+    std::wstring defaultPath;
+    WIN32_FIND_DATAW FindFileData;
+    HANDLE hFind;
+    DWORD dwError = 0;
+    std::list<std::wstring> lst;
+    
+    if ((lua_type(L, 1) == LUA_TSTRING) && //The directory or path, and the file name.
+        (lua_type(L, 2) == LUA_TBOOLEAN) && //get folders
+        (n > 1))
+    {
+        defaultPath = UTF8CharToWChar(lua_tostring(L, 1)); //path
+        onlyFolder = lua_toboolean(L, 2); //get folders
+
+        hFind = FindFirstFileW(defaultPath.c_str(), &FindFileData);
+        if (hFind == INVALID_HANDLE_VALUE)
+        {
+            lua_pushnil(L);
+        }
+        else
+        {
+            // List all the files in the directory with some info about them.
+            do
+            {
+                if (FindFileData.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY)
+                {
+                    if (onlyFolder)
+                        addOk = true;
+                    else
+                        addOk = false;
+                }
+                else
+                    addOk = !onlyFolder;
+
+                if (addOk)
+                {
+                    lst.push_back(FindFileData.cFileName);
+                }
+            } while (FindNextFileW(hFind, &FindFileData) != 0);
+
+            dwError = GetLastError();
+            if (dwError == ERROR_NO_MORE_FILES)
+            {
+                pushStringsTable(L, lst);
+            } else
+                lua_pushnil(L);
+
+            FindClose(hFind);            
+        }
+    }
+    else {
+        //lua_pushstring(L, "Argomenti errati!");
+        showErrorMsg("Arguments error! - GetFilesList(path, getOnlyFolders)");
+        lua_error(L);
+        lua_pushnil(L);
+    }
+
+    return 1;
+}
+
+//visualizza il menu contestuale di windows per il file/cartella specificato
+LUALIB_API int c_ShowProperties(lua_State* L)
+{
+    const int n = lua_gettop(L);
+    std::wstring path;
+    int x = 100;
+    int y = 100;
+    POINT lpPoint;
+
+    if ((lua_type(L, 1) == LUA_TSTRING) && //The directory or path, and the file name.
+        (lua_type(L, 2) == LUA_TNUMBER) &&
+        (lua_type(L, 3) == LUA_TNUMBER) &&
+        (n == 3))
+    {
+        clPropsDialog props;
+        path = UTF8CharToWChar(lua_tostring(L, 1)); //path
+        x = lua_tonumber(L, 2); //posizione X
+        y = lua_tonumber(L, 3); //posizione Y 
+
+        if ((x < 0) || (y < 0))
+        {
+            if (GetCursorPos(&lpPoint) != 0)
+            {
+                x = lpPoint.x;
+                y = lpPoint.y;
+            }
+        }
+
+        props.openMenu(GetActiveWindow(), path, x, y);
+        lua_pushboolean(L, 1);
+    }
+    else {
+        //lua_pushstring(L, "Argomenti errati!");
+        showErrorMsg("Arguments error! - ShowProperties(path, posX, posY)");
+        lua_error(L);
+        lua_pushnil(L);
+    }
+
+    return 1;
+}
+
+
 
 LUALIB_API int c_Test(lua_State *L)
 {
+    std::list<std::wstring> lst;
+    
+    for (int i = 0; i < 10000; i++)
+    {
+        lst.push_back(L"Uno");
+        lst.push_back(L"D©®u֍Փe");
+        lst.push_back(L"Tre");
+        lst.push_back(L"");
+    }
 
-    lua_pushstring(L, "Dati ritornati dalla funzione");
+    pushStringsTable(L, lst);
+
 	return 1;
 }
 

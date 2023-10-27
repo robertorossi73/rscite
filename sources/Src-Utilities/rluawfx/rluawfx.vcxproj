@@ -39,7 +39,7 @@
     <ConfigurationType>DynamicLibrary</ConfigurationType>
   </PropertyGroup>
   <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
@@ -156,6 +156,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="source\commutil.cpp" />
+    <ClCompile Include="source\cprops.cpp" />
     <ClCompile Include="source\genguid.cpp" />
     <ClCompile Include="source\luawfx.cpp" />
     <ClCompile Include="source\maindlg.cpp" />
@@ -164,6 +165,7 @@
   <ItemGroup>
     <ClInclude Include="source\cdialog.h" />
     <ClInclude Include="source\commutil.h" />
+    <ClInclude Include="source\cprops.h" />
     <ClInclude Include="source\genguid.h" />
     <ClInclude Include="source\resource.h" />
     <ClInclude Include="source\rMsgBx.h" />

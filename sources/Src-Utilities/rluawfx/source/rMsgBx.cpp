@@ -1,6 +1,6 @@
 /*********************************************************************
 RLuaWfx
-Copyright (C) 2004-2013 Roberto Rossi 
+Copyright (C) 2004-2023 Roberto Rossi 
 Web : http://www.redchar.net
 
 This library is free software; you can redistribute it and/or

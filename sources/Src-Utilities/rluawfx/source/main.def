@@ -24,3 +24,5 @@ c_SetIniValue
 c_MsgBox_Customize_Btn
 c_RegGetString
 c_SetWindowSize
+c_GetFilesList
+c_ShowProperties

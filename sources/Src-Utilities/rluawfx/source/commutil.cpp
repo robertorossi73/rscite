@@ -1,6 +1,6 @@
 /*********************************************************************
 RLuaWfx
-Copyright (C) 2004-2013 Roberto Rossi 
+Copyright (C) 2004-2023 Roberto Rossi 
 Web : http://www.redchar.net
 
 This library is free software; you can redistribute it and/or
@@ -124,4 +124,19 @@ std::wstring UTF8CharToWChar(const char* c)
         }
     }
     return wmsg;
+}
+
+std::string WCharToUTF8Char(const wchar_t* c)
+{
+    std::string res;
+    size_t len = wcslen(c);
+    size_t maxUtf8len = 4 * len + 1;  // Each wchar_t encodes to a max of 4 bytes
+    char* utf8String = new char[maxUtf8len];
+    WideCharToMultiByte(CP_UTF8, 0, c, len + 1, utf8String, maxUtf8len, NULL, NULL);
+
+    res.assign(utf8String);
+
+    delete[] utf8String;
+
+    return res;
 }
