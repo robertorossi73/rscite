@@ -1,2 +1,0 @@
-https://github.com/harelba/q/releases/download/2.0.19/q-AMD64-Windows.exe
-https://github.com/harelba/q/archive/refs/tags/2.0.19.zip
