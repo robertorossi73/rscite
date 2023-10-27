@@ -19,19 +19,6 @@ Permission to use, copy, modify, and distribute this software and its documentat
 NEIL HODGSON DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE, INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO EVENT SHALL NEIL HODGSON BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 **************************************************************
-License for WinMerge
--------------------------------
-
-This program is free. It's licensed under GNU General Public License (http://www.gnu.org/copyleft/gpl.html). The newest version and source code is available on official homepage (http://winmerge.sourceforge.net).
-
-**************************************************************
-License for Frhed
--------------------------------
-
-This program is free. It's licensed under GNU General Public License (http://www.gnu.org/copyleft/gpl.html). The newest version and source code is available on my homepage (http://frhed.sourceforge.net/).
-
-
-**************************************************************
 HTML Tidy
 
 HTML parser and pretty printer
@@ -107,23 +94,6 @@ Chiedo pure a chiunque lo ridistribuisca, di farlo gratuitamente, senza esigere 
 Qualsiasi uso commerciale e' esplicitamente e strettamente vietato.
 
 Per maggiori informazioni consultare il file "italiano.txt" presente nella sottocartella "luascr\dct\".
-**************************************************************
-dnGREP
-https://code.google.com/p/dngrep/
-
-This program is free software; you can redistribute it and/or
-modify it under the terms of the GNU General Public License
-as published by the Free Software Foundation; either version 2
-of the License, or (at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program; if not, write to the Free Software
-Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 **************************************************************
 ICONV
 
