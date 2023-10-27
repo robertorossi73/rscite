@@ -4,7 +4,7 @@
 
 **Autore : Roberto Rossi**
 
-**Versione 109**
+**Versione 110**
 
 Un gestore di testi **potente**, **semplice**, **veloce**, **poliedrico**...
 
@@ -313,6 +313,10 @@ menu presenti nel programma, oppure leggere questa tabella riassuntiva:
 * **Ctrl+Alt+O**.Lista ultimi file utilizzati 
 (disponibile solo in "RSciTE").
 * **F12**.Funzionalità avanzate
+(disponibile solo in "RSciTE").
+* **Ctrl+F12**. Esegue l'ultima funzione, di F12, utilizzata dall'utente.
+(disponibile solo in "RSciTE").
+* **Shift+F12**. Apri il menu di Windows "Altre Opzioni".
 (disponibile solo in "RSciTE").
 * **Ctrl+<**.Inserimento abbreviazione/modello 
 (disponibile solo in "RSciTE").
@@ -909,8 +913,6 @@ dettagli si consulti la sezione **Frhed**.
 * <div style="margin-left:0cm;margin-right:0cm;">**HTML Tidy**, per la
 formattazione automatica di file HTML e XML. Per maggiori dettagli si consulti
 la sezione **HTML Tidy**.
-* **dnGREP**, software multi piattaforma per semplificare la ricerca e la
-sostituzione del testo.
 * **Cloc**, consente di ottenere statistiche sui file sorgenti che si stanno
 editando.
 * **GpPG**, in **RSciTE** permette di criptare e decriptare file di testo.
@@ -1067,29 +1069,6 @@ file XML, ASP, PHP, JSTE.
 possibile semplificare il suo utilizzo tramite l’uso di una delle interfacce
 grafiche realizzate da programmatori indipendenti. Per maggiori dettagli si
 consulti la sezione **Siti Utili**.
-
-<p style="page-break-before: always;">&nbsp;</p>
-
-### dnGREP
-
-**dnGREP** è un software, multi piattaforma, studiato per semplificare la
-ricerca e la sostituzione del testo.
-
-Questo importante software, disponibile i **F12** alla voce **Trova/Sostituisci
-su file multipli** semplifica le operazione di ricerca e sostituzione del testo
-consentendo di operare in modo automatico su più file.
-
-<p style="text-align:center;">
-<img src="dngrep.png" align="middle" alt="dnGREP" border="0" width="80%">
-</p>
-
-**dnGREP** risulta essere un programma estremamente potente e flessibile,
-adatto sia al neofita, sia all’esperto programmatore, consentendo un utilizzo
-esteso delle espressioni regolari.
-
-Nell’immagine riportata sopra, si può osservare **dnGREP** durante
-l’operazione di ricerca del testo **.fore** all’interno di tutti i
-file .properties presenti in una cartella.
 
 <p style="page-break-before: always;">&nbsp;</p>
 
@@ -1284,8 +1263,6 @@ ecco l’elenco dei collegamenti ai siti più utili.
     - [Script LUA in SciTE ](http://lua-users.org/wiki/SciteScripts).
 - Markdown, linguaggio per la scrittura
     - [Pagina di MultiMarkdown](http://fletcherpenney.net/multimarkdown/).
-- **dnGREP**, trova e sostituisci
-    - [Pagina ufficiale del progetto](https://dngrep.github.io/).
 - **WinMerge**, software di confronto
     - [WinMerge Home Page ](http://winmerge.sourceforge.net/).
 - **Frhed**, editor esadecimale
@@ -1306,7 +1283,7 @@ ecco l’elenco dei collegamenti ai siti più utili.
 Questo documento, **RSciTE. Guida alle Caratteristiche**, è distribuito 
 secondo la seguente licenza.
 
-Copyright (c) 2005-2022 Roberto Rossi.
+Copyright (c) 2005-2023 Roberto Rossi.
 
 Permission is granted to copy, distribute and/or modify this document under
 the terms of the GNU Free Documentation License, Version 1.2 or any later
