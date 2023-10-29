@@ -1,10 +1,10 @@
 --[[
-Version : 3.5.2
+Version : 3.8.0
 Web     : http://www.redchar.net
 
 Funzioni di utilità per macro SciTE/Lua
 
-Copyright (C) 2004-2020 Roberto Rossi 
+Copyright (C) 2004-2023 Roberto Rossi 
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -135,6 +135,7 @@ if not(rwfx_info) then
     rfx_GetGUID = package.loadlib(rwfx_NomeDLL,"c_GetGUID")
     rfx_setIniVal = package.loadlib(rwfx_NomeDLL,"c_SetIniValue")
     rfx_shellAndWait = package.loadlib(rwfx_NomeDLL,"c_shellAndWait")
+    rwfx_ShowProperties = package.loadlib(rwfx_NomeDLL,"c_ShowProperties")    
     rwfx_Test = package.loadlib(rwfx_NomeDLL,"c_Test")
 
     --elimina spazi e tabulazioni all'inizio e alla fine della linea passata
@@ -953,5 +954,104 @@ if not(rwfx_info) then
     end
     return result
   end
+
+    --ritorna il percorso memorizzato nella configurazione specificata (file)
+    function rfx_getCfgFile(fileCfgName)
+        local userpath = rfx_UserFolderRSciTE().."\\"..fileCfgName
+        local result = ""
+        local idf
+        idf = io.open(userpath, "r")
+        if (idf) then
+            result = idf:read("*a")
+            io.close(idf)
+        end        
+        
+        return result
+    end
+    
+    --scrive il valore specificato nella file indicato (file)
+    function rfx_setCfgFile(fileCfgName, value)
+        local userpath = rfx_UserFolderRSciTE().."\\"..fileCfgName
+        local result = false
+        local idf
+        
+        
+        if (value) then
+            idf = io.open(userpath, "w")
+            if (idf) then
+              idf:write(value)
+              result = true
+              io.close(idf)
+            end
+        else
+            os.remove(userpath)
+        end
+        return result
+    end
+  
+    --funzione generale per verifica presenza di una applicazione esterna
+    function rfx_getApplicationPath (
+                                        msgMissingApp, --messaggio di mancanza applicazione
+                                        msgSelectApp,  --titolo finestra selezione exe
+                                        msgError,      --Nessun file selezionato, impossibile continuare
+                                        msgDownload,   --Scaricare applciazione da sito? si/no
+                                        appWebDesc,    --Descrizioni delle applicazioni consigliate, separate da |
+                                        appWebUrls,    --Tabella con gli indirizzi web corrispondenti alle descrizioni. 
+                                                       --   Il primo elemento corrisponderà alla prima descrizione
+                                        fileNameCfg,   --nome file configurazione
+                                        resetCfg       --se true elimina la configurazione e reinizializza
+                                    )
+        local result = ""
+        local savedAppExe = ""
+        local fileName
+        local scelta
+        
+        if (resetCfg) then
+            --cancella configurazione per reset
+            rfx_setCfgFile(fileNameCfg, false)
+        end
+        
+        savedAppExe = rfx_getCfgFile(fileNameCfg)
+        
+        if (not(savedAppExe == "")) then
+            --esiste settaggio
+            if (rfx_fileExist(savedAppExe)) then
+                --esiste eseguibile
+                result = savedAppExe
+            end
+        end
+        
+        --se non esiste chiede selezione
+        if (result == "") then
+            --messaggio introduttivo che chiede di selezionare l'eseguibile 
+            rwfx_MsgBox(msgMissingApp,_t(9),MB_OK)
+            --selezione applicazione
+            fileName = rwfx_GetFileName(msgSelectApp, "", OFN_FILEMUSTEXIST, rfx_FN(), "Exe Files (*.exe)%c*.exe")
+            if (fileName) then
+                fileName = rfx_GF()
+                rfx_setCfgFile(fileNameCfg, fileName)
+                result = fileName              
+            end            
+        end        
+        
+        --se non c'è selezione suggerisce il download        
+        if (result == "") then
+            --chiedi se vuole scaricare 
+            if (rwfx_MsgBox(msgDownload,_t(9),MB_YESNO) == IDYES) then
+                
+                if (string.find(appWebDesc, "|", 1, true)) then --scelta multipla
+                    --TODO: da tradurre
+                    scelta = rwfx_ShowList(appWebDesc,"Applicazioni consigliate...")    
+                    if scelta then
+                      rwfx_ShellExecute(appWebUrls[scelta + 1],"")
+                    end
+                else
+                    rwfx_ShellExecute(appWebDesc,"")
+                end
+            end            
+        end
+        
+        return result
+    end
   
 end --end if modulo
