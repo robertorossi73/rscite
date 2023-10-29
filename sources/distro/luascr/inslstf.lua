@@ -1,12 +1,12 @@
 --[[
-Version : 2.1.2
+Version : 2.1.3
 Web     : http://www.redchar.net
 
 Questa procedura consente di inserire la lista di file presenti in una
 cartella indicata dall'utente. Inoltre consente di scegliere, tramite un
 filtro, quali file elencare
 
-Copyright (C) 2004-2009 Roberto Rossi 
+Copyright (C) 2004-2023 Roberto Rossi 
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -101,7 +101,6 @@ do
             for line in io.lines(nomeFile) do              if ((idv == 3) or --nomi file senza cartelle (ricorsivo)
                   (idv == 4) or --nomi file con cartelle (ricorsivo)
                   (idv == 5)) then --solo nomi cartelle(ricorsivo)
-                --TODO
                 if (not(conPercorso)) then
                   line = string.sub(line,string.len(cartella)+2)
                 end

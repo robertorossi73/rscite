@@ -1,6 +1,6 @@
 --[[
 Author  : Roberto Rossi
-Version : 2.2.0
+Version : 2.2.1
 Web     : http://www.redchar.net
 
 Questa procedura implementa un rudimentale correttore ortografico. 
@@ -242,7 +242,6 @@ do
         elseif (scelta == 1) then -- ignora parola e continua controllo ortografico
           result = true
         elseif (scelta == 2) then -- aggiungi parola al dizionario e continua
-          --TODO : tutto
           add_word_to_personal_dct(word)
           highlight_current_selection(true)
           result = true

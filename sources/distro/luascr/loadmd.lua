@@ -1,11 +1,11 @@
 --[[ # -*- coding: utf-8 -*-
-Version : 4.0.0
+Version : 4.0.1
 Web     : http://www.redchar.net
 
 Questa procedura permette l'anteprima di un file markdown, convertendolo in html
 per poi mostrarlo all'interno del browser web del sistema
 
-Copyright (C) 2015-2022 Roberto Rossi
+Copyright (C) 2015-2023 Roberto Rossi
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -211,7 +211,6 @@ do
 
         wcl_strip:addLabel(nil, _t(416))
         wcl_strip:addCombo("TVAL", nil)
-        --TODO: tradurre
         wcl_strip:addLabel(nil, _t(475))
         wcl_strip:addCombo("TVALMOD", nil)
         

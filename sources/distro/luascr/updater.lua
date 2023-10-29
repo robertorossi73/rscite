@@ -1,5 +1,5 @@
 --[[
-Version : 3.0.1
+Version : 3.0.2
 Web     : http://www.redchar.net
 
 Questa procedura verifica che quella corrente sia l'ultima release disponibile,
@@ -111,7 +111,6 @@ do
                     end
                 end
             else
-                --TODO: traduzione
                 --print("Impossibile verificare la versione online! Controllare la connessione e riprovare.")
                 rwfx_MsgBox(_t(482),_t(9),MB_OK)
             end

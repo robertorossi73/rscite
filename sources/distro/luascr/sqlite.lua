@@ -4,7 +4,7 @@
 -- Questo modulo consente l'uso di script sqlite
 
 --[[
-Version : 1.3.2
+Version : 1.3.3
 Web     : http://www.redchar.net
 
 Questo modulo consente l'utilizzo con sqlite in versione a linea di comando
@@ -94,7 +94,6 @@ do
         wcl_strip:init()
         wcl_strip:addButtonClose()
         
-        --TODO: da tradurre
         --wcl_strip:addLabel(nil, "File di Database (opzionale): ")
         wcl_strip:addLabel(nil, _t(467).." ")
         wcl_strip:addText("TVAL","")

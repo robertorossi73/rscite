@@ -100,7 +100,6 @@ do
         local v
         
         --TODO : da tradurre
-        
         print("File : "..props["FilePath"])
         print("Colors found : "..tostring(#tbl))
         print("Hexadecimal Colors : ")
