@@ -1,10 +1,10 @@
---[[
-Version : 1.1.2
+--[[ # -*- coding: utf-8 -*-
+Version : 2.0.3
 Web     : http://www.redchar.net
 
 Questa procedura apre l'editor esadecimale con il file corrente
 
-Copyright (C) 2011-2022 Roberto Rossi 
+Copyright (C) 2011-2023 Roberto Rossi 
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -25,14 +25,80 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
 do
   require("luascr/rluawfx")
 
-  local function main()
-    local exe = props["SciteDefaultHome"].."/tools/frhed/frhed.exe" 
-    local last = string.sub(props["FilePath"], -1)
-    if ((last == "\\") or (last == "/")) then
-      rwfx_ShellExecute(exe,"");
-    else
-      rwfx_ShellExecute(exe,"\""..props["FilePath"].."\"");
+    --controlla la presenza del software, chiede dove si trova, suggerisce
+    --  di scaricarti e riprovare
+    --  ritorna il path completo del file eseguibile 
+    local function getHexEditor(resetCfg)
+        local result = ""
+        local cfgfile = "hexpath.cfg"
+        
+        result = rfx_getApplicationPath(
+                                    --"Attenzione: è necessario specificare quale applicazioni usare come editor esadecimale. Verrà ora chiesto di selezionare il file eseguibile(.exe)) dell'applicazione che si desidera utilizzare.",
+                                    _t(494),
+                                    --"Selezionare file exe dell'applicazione...",
+                                    _t(495),
+                                    --"Non è stata selezionata nessuna applicazione, impossibile continuare.",
+                                    _t(496),
+                                    --"Si desidere scaricare una applicazione dal web? Rispondendo 'Si' sarà possibile installare, gratuitamente, una delle applicazioni consigliate.",
+                                    _t(497),
+                                    "Frhed - binary file editor for Windows|ImHex - Hex Editor, tool to display, decode and analyze binary data|HxD - Freeware Hex Editor and Disk Editor",
+                                    {"https://sourceforge.net/projects/frhed/", "https://imhex.werwolv.net/","https://mh-nexus.de/en/hxd/"},
+                                    cfgfile,
+                                    resetCfg
+                                )
+        
+        return result
     end
+    
+  local function getOperazione ()
+    local scelta = 0
+    local listaOperazioni
+    local operazioneSelezionata = 0
+    
+    listaOperazioni = --"Apri il file corrente nell'editor esadecimale".."|".. --1
+                        _t(498).."|".. --1
+                      --"Avvia l'editor esadecimale senza alcun file".."|".. --2
+                        _t(499).."|".. --2
+                      --"Seleziona nuovo editor esadecimale..." --3
+                        _t(500) --3
+                      
+    scelta = rwfx_ShowList(listaOperazioni,_t(95))    
+    if scelta then
+      operazioneSelezionata = scelta + 1
+    end
+    
+    return operazioneSelezionata
+  end
+  
+  local function startHexEditor(openFile)
+    local exe = getHexEditor(false)
+    local last = string.sub(props["FilePath"], -1)
+  
+    if ((last == "\\") or (last == "/") or not(openFile)) then
+      rwfx_ShellExecute(exe,"")
+    else
+      rwfx_ShellExecute(exe,"\""..props["FilePath"].."\"")
+    end
+  
+  end
+  
+  local function main()
+    local operazione
+    
+    -- verifica presenza software confronto
+    if (getHexEditor(false) == "") then
+        return false
+    end
+    
+    operazione =  getOperazione()
+    
+    if (operazione == 1) then -- apri file
+        startHexEditor(true)
+    elseif (operazione == 2) then -- avvia editor
+        startHexEditor(false)
+    elseif (operazione == 3) then -- cambia software
+        getHexEditor(true)
+    end --end if    
   end
 
   main()
