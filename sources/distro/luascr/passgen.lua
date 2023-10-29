@@ -249,7 +249,7 @@ do
         wcl_strip:addCombo("MAXCHR", false)
         
         --wcl_strip:addLabel(nil, "Caratteri minuscoli: ")
-        wcl_strip:addLabel(nil, _t(4461).." ")
+        wcl_strip:addLabel(nil, _t(461).." ")
         wcl_strip:addCombo("MINCHR", false)
         
         --wcl_strip:addLabel(nil, "Simboli: ")
