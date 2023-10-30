@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 ;Autore :   Roberto Rossi
-;Versione : 4.1.0
+;Versione : 4.2.0
 ;Web      : http://www.redchar.net
 
 ;Compatible with Inno Setup 6.2.0 or later
@@ -41,8 +41,8 @@ Compression=lzma
 SolidCompression=no
 ;WizardImageFile=rscite.bmp
 WizardStyle=modern
-WizardImageFile=compiler:WizClassicImage-IS.bmp
-WizardSmallImageFile=compiler:WizClassicSmallImage-IS.bmp
+;WizardImageFile=compiler:WizClassicImage-IS.bmp
+;WizardSmallImageFile=compiler:WizClassicSmallImage-IS.bmp
 SetupIconFile=rsetup.ico
 UninstallRestartComputer=true
 DisableProgramGroupPage=yes
