@@ -612,6 +612,99 @@
     </p>
     <h2>Releases</h2>
     <h3>
+       <a href="https://www.scintilla.org/scite540.zip">Release 5.4.0</a>
+    </h3>
+    <ul>
+	<li>SciTE</li>
+	<ul>
+		<li>
+		Released 18 November 2023.
+		</li>
+		<li>
+		Fix crashes on macOS 12 and older.
+		</li>
+	</ul>
+	<li>Lexilla 5.2.9</li>
+	<ul>
+		<li>
+		Xcode build settings changed to avoid problems with Xcode 15.0.
+		</li>
+	</ul>
+	<li>Scintilla 5.4.0</li>
+	<ul>
+		<li>
+		Fix crashes on macOS 12 and older when built with Xcode 15.0.
+		</li>
+	</ul>
+    </ul>
+    <h3>
+       <a href="https://www.scintilla.org/scite539.zip">Release 5.3.9</a>
+    </h3>
+    <ul>
+	<li>SciTE</li>
+	<ul>
+		<li>
+		Released 5 November 2023.
+		</li>
+		<li>
+		Add "Drop Selection" to the context menu to deselect one piece of a multiple selection.
+		</li>
+		<li>
+		Add autocomplete.multi property to insert the autocompletion choice in all selections.
+		</li>
+		<li>
+		For Windows, fix problem where tab bar disappeared.
+		<a href="https://sourceforge.net/p/scintilla/bugs/2347/">Bug #2347</a>.
+		</li>
+		<li>
+		For Windows, set the file extension of a new file to the one shown in the
+		"save as" file type when save.filter is set.
+		</li>
+	</ul>
+	<li>Lexilla 5.2.8</li>
+	<ul>
+		<li>
+		Python: Update f-string handling to match PEP 701 and Python 3.12.
+		Controlled with property lexer.python.strings.f.pep.701.
+		<a href="https://github.com/ScintillaOrg/lexilla/issues/150">Issue #150</a>,
+		<a href="https://github.com/ScintillaOrg/lexilla/pull/209">Pull request #209</a>.
+		</li>
+		<li>
+		R: Fix escape sequence highlighting with change of for loop to while loop.
+		<a href="https://github.com/ScintillaOrg/lexilla/issues/206">Issue #206</a>,
+		<a href="https://github.com/ScintillaOrg/lexilla/pull/207">Pull request #207</a>.
+		</li>
+		<li>
+		Minimum supported macOS release increased to 10.13.
+		</li>
+	</ul>
+	<li>Scintilla 5.3.8</li>
+	<ul>
+		<li>
+		Fix excessive memory use when deleting contiguous ranges backwards.
+		<a href="https://github.com/notepad-plus-plus/notepad-plus-plus/issues/13442">Notepad++ Issue #13442</a>.
+		</li>
+		<li>
+		Fix incorrect substitution when searching for a regular expression backwards.
+		<a href="https://sourceforge.net/p/scintilla/bugs/2405/">Bug #2405</a>.
+		</li>
+		<li>
+		Make SCI_MOVESELECTEDLINESUP and SCI_MOVESELECTEDLINESDOWN work for rectangular selections.
+		<a href="https://sourceforge.net/p/scintilla/bugs/2078/">Bug #2078</a>.
+		</li>
+		<li>
+		For Cocoa, minimum supported macOS release increased to 10.13.
+		</li>
+		<li>
+		For Cocoa, fix invisible text on macOS 14 Sonoma.
+		<a href="https://sourceforge.net/p/scintilla/bugs/2402/">Bug #2402</a>.
+		</li>
+		<li>
+		For Cocoa, do nothing for suspendDrawing on macOS 10.14+ as the underlying calls have been deprecated.
+		</li>
+	</ul>
+    </ul>
+    <h3>
        <a href="https://www.scintilla.org/scite538.zip">Release 5.3.8</a>
     </h3>
     <ul>
