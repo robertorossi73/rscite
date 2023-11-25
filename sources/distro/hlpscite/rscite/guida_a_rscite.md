@@ -4,7 +4,7 @@
 
 **Autore : Roberto Rossi**
 
-**Versione 110**
+**Versione 112**
 
 Un gestore di testi **potente**, **semplice**, **veloce**, **poliedrico**...
 
@@ -821,6 +821,9 @@ casuali selezionando le caratteristiche della parola chiave da generare.
 servizio offerto da Tinyurl.com riduce la lunghezza degli indirizzi web.
 * **Converti codice sorgente in immagine**. Una funzione che, sfruttando un
 servizio online converte un testo in una immagine.
+* **Converti file .DCL in stringa Lisp**. Questa funzione converte un file .DCL
+in una stringa Lisp in modo da integrare interamente il primo all'interno del
+secondo.
 
 In aggiunta a queste funzionalità, **F12** consente all’utente la
 realizzazione degli script personalizzati e la loro integrazione direttamente
