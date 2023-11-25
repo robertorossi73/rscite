@@ -26,7 +26,7 @@ AppId={{A4729A09-46FB-4766-9D9D-24358E58E453}
 
 AppName=RSciTE
 AppVerName=RSciTE {#RSciTEVersion}
-OutputDir=d:\temp\output\
+OutputDir=c:\temp\output\
 OutputBaseFilename=setup-rscite-{#RSciTEVersion}
 
 UninstallDisplayName=RSciTE
