@@ -1,10 +1,10 @@
 --[[
-Version : 1.2.0
+Version : 1.3.1
 Web     : http://www.redchar.net
 
 Questa procedura Consente l'apertura di uno degli ultimi file modificati.
 
-Copyright (C) 2004-2019 Roberto Rossi 
+Copyright (C) 2004-2023 Roberto Rossi 
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -36,6 +36,8 @@ do
     
     if (buffers and (#buffers > 0)) then
       corrente = props["FilePath"]
+      --lista = "Seleziona altro file..."
+      lista = _t(509)
       for i,file in ipairs(buffers) do
         if (lista) then
           lista = lista.."|"..file
@@ -51,11 +53,13 @@ do
                                     "("..tostring(#buffers + 1)..") ".._t(141),
                                     "openLast")
       if scelta then
-        if (rfx_fileExist(buffers[scelta + 1])) then
-          scite.Open(buffers[scelta + 1])        
+        if (scelta == 0) then
+            scite.MenuCommand(IDM_OPEN)
+        elseif (rfx_fileExist(buffers[scelta])) then
+          scite.Open(buffers[scelta])        
         else
           --il file xxxx non esiste, attenzione
-          rwfx_MsgBox(_t(68)..buffers[scelta + 1].._t(69),
+          rwfx_MsgBox(_t(68)..buffers[scelta].._t(69),
                       _t(9),MB_ICONSTOP + MB_OK)
         end
       end
