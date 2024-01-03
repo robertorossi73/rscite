@@ -1,10 +1,10 @@
 --[[
-Version : 1.0.0
+Version : 2.0.0
 Web : http://www.redchar.net
 
-Lancia la calcolatrice online fornita dal sito https://insect.sh/
+Lancia la calcolatrice online fornita dal sito https://numbat.dev/
 
-Copyright (C) 2021-2022 Roberto Rossi
+Copyright (C) 2021-2023 Roberto Rossi
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -26,7 +26,7 @@ do
   require("luascr/rluawfx")
 
   local function main()
-    rwfx_ShellExecute("https://insect.sh/?q=%3F","")
+    rwfx_ShellExecute("https://numbat.dev/","")
   end
 
   main()
