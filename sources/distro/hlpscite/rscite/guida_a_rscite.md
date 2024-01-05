@@ -4,7 +4,7 @@
 
 **Autore : Roberto Rossi**
 
-**Versione 112**
+**Versione 114**
 
 Un gestore di testi **potente**, **semplice**, **veloce**, **poliedrico**...
 
@@ -824,6 +824,10 @@ servizio online converte un testo in una immagine.
 * **Converti file .DCL in stringa Lisp**. Questa funzione converte un file .DCL
 in una stringa Lisp in modo da integrare interamente il primo all'interno del
 secondo.
+* **Conversione apici in apici inclinati**. Questa funzione converte i caratteri
+degli apici semplici ', nei corrispettivi apici inclinati `.
+* **Apertura Visual Studio Code**. Questa funzione consente di aprire il file
+corrente direttamente in una istanza di Visual Studio Code.
 
 In aggiunta a queste funzionalità, **F12** consente all’utente la
 realizzazione degli script personalizzati e la loro integrazione direttamente
