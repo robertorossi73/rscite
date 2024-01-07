@@ -4,7 +4,7 @@
 
 **Autore : Roberto Rossi**
 
-**Versione 114**
+**Versione 115**
 
 Un gestore di testi **potente**, **semplice**, **veloce**, **poliedrico**...
 
@@ -828,6 +828,9 @@ secondo.
 degli apici semplici ', nei corrispettivi apici inclinati `.
 * **Apertura Visual Studio Code**. Questa funzione consente di aprire il file
 corrente direttamente in una istanza di Visual Studio Code.
+* **Statistiche di download per repository Github**. Funzione che utilizza un
+servizio online per mostrare le statistiche relative alle release rilasciate 
+su un repository Github.
 
 In aggiunta a queste funzionalità, **F12** consente all’utente la
 realizzazione degli script personalizzati e la loro integrazione direttamente
