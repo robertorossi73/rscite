@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 ;Autore :   Roberto Rossi
-;Versione : 4.2.0
+;Versione : 4.2.1
 ;Web      : http://www.redchar.net
 
 ;Compatible with Inno Setup 6.2.0 or later
@@ -53,6 +53,7 @@ AlwaysShowDirOnReadyPage=yes
 DisableDirPage=no
 ArchitecturesAllowed=x64 ia64
 ArchitecturesInstallIn64BitMode=x64 ia64
+DefaultDialogFontName=Consolas
 
 [Languages]
 Name: english; MessagesFile: compiler:Default.isl
