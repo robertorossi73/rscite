@@ -1,11 +1,11 @@
 --[[ # -*- coding: utf-8 -*-
-Version : 1.1.5
+Version : 2.0.0
 Web     : http://www.redchar.net
 
 Questa procedura consente di utilizzare i software di comparazione
 in congiunzione a RSciTE
 
-Copyright (C) 2022-2023 Roberto Rossi 
+Copyright (C) 2022-2024 Roberto Rossi 
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -42,8 +42,8 @@ do
                                     _t(488),
                                     --"Si desidere scaricare una applicazione dal web? Rispondendo 'Si' sarà possibile installare, gratuitamente, l'applicazione WinMerge.",
                                     _t(489),
-                                    "WinMerge - Differencing and merging tool for Windows|KDiff - Diff Tools & File Comparison Tools|Meld - Visual diff and merge tool",
-                                    {"https://www.winmerge.org", "https://download.kde.org/stable/kdiff3/", "https://meldmerge.org/"},
+                                    "WinMerge - Differencing and merging tool for Windows|KDiff - Diff Tools & File Comparison Tools|Meld - Visual diff and merge tool|Visual Studio Code - Differencing and merging tool",
+                                    {"https://www.winmerge.org", "https://download.kde.org/stable/kdiff3/", "https://meldmerge.org/", "https://code.visualstudio.com/"},
                                     cfgfile,
                                     resetCfg
                                 )
@@ -278,6 +278,9 @@ do
     
     if (noStop) then
       --print(par)
+      if (string.find(string.upper(comparer), "CODE.EXE", 1, true)) then
+        par = "--diff "..par
+      end
       rwfx_ShellExecute(comparer,par)
     end
   end --end function
