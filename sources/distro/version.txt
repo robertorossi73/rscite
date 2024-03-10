@@ -12,11 +12,11 @@ Major=115
 WebRSciTE=https://www.redchar.net/rscite
 Download=https://github.com/robertorossi73/rscite/releases
 IniOnline=https://www.redchar.net/rscite/version.txt
-DownloadFile=https://github.com/robertorossi73/rscite/releases/download/v.114/setup-rscite-114.zip
+DownloadFile=https://github.com/robertorossi73/rscite/releases/download/v.115/setup-rscite-115.zip
 
 ;Versione di SciTE inclusa
 [SciTE]
 MajorSciTE=5
 MinorSciTE=4
-BuildSciTE=1
+BuildSciTE=3
 
