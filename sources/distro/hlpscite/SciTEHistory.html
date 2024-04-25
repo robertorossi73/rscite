@@ -608,6 +608,7 @@
 	<td>Martin Schäfer</td>
       </tr><tr>
 	<td>RainRat</td>
+	<td>Mavroudis Chatzilazaridis</td>
       </tr>
     </table>
     <p>
@@ -616,6 +617,98 @@
         Icons</a> Copyright(C) 1998 by Dean S. Jones<br />
     </p>
     <h2>Releases</h2>
+    <h3>
+       <a href="https://www.scintilla.org/scite550.zip">Release 5.5.0</a>
+    </h3>
+    <ul>
+	<li>SciTE</li>
+	<ul>
+		<li>
+		Released 23 April 2024.
+		</li>
+		<li>
+		Remove support for Windows XP and Windows Vista.
+		</li>
+		<li>
+		Requires a C++20 compiler. GCC 11.2 and MSVC 2022 are supported.
+		</li>
+		<li>
+		Fix read failure for UTF-16LE files where surrogate pair straddles block boundary and lead
+		surrogate is a multiple of 256.
+		</li>
+		<li>
+		On GTK, treat message box close as cancel.
+		This is safer when closing a file with unsaved changes.
+		<a href="https://sourceforge.net/p/scintilla/bugs/2434/">Bug #2434</a>.
+		</li>
+	</ul>
+	<li>Lexilla 5.3.2</li>
+	<ul>
+		<li>
+		COBOL: Stop string literal continuing over line end.
+		<a href="https://github.com/ScintillaOrg/lexilla/issues/229">Issue #229</a>.
+		</li>
+		<li>
+		COBOL: Stop doc comment assigning different styles to \r and \n at line end.
+		<a href="https://github.com/ScintillaOrg/lexilla/issues/229">Issue #229</a>.
+		</li>
+		<li>
+		COBOL: Recognize keywords that start with 'V'.
+		<a href="https://github.com/ScintillaOrg/lexilla/issues/230">Issue #230</a>.
+		</li>
+		<li>
+		COBOL: Recognize comments after tag or that start with '/'.
+		<a href="https://github.com/ScintillaOrg/lexilla/issues/231">Issue #231</a>.
+		</li>
+		<li>
+		HTML: Implement substyles for tags, attributes, and identifiers
+		SCE_H_TAG, SCE_H_ATTRIBUTE, SCE_HJ_WORD, SCE_HJA_WORD, SCE_HB_WORD, SCE_HP_WORD, SCE_HPHP_WORD.
+		</li>
+		<li>
+		HTML: Implement context-sensitive attributes. "tag.attribute" matches "attribute" only inside "tag".
+		</li>
+		<li>
+		HTML: Match standard handling of comments.
+		<a href="https://github.com/ScintillaOrg/lexilla/issues/232">Issue #232</a>.
+		</li>
+		<li>
+		Lua: Implement substyles for identifiers SCE_LUA_IDENTIFIER.
+		</li>
+		<li>
+		Ruby: Allow non-ASCII here-doc delimiters.
+		<a href="https://github.com/ScintillaOrg/lexilla/issues/234">Issue #234</a>.
+		</li>
+		<li>
+		Ruby: Allow modifier if, unless, while and until after heredoc delimiter.
+		<a href="https://github.com/ScintillaOrg/lexilla/issues/236">Issue #236</a>.
+		</li>
+		<li>
+		Rust: Recognize raw identifiers.
+		<a href="https://github.com/ScintillaOrg/lexilla/issues/239">Issue #239</a>,
+		<a href="https://github.com/ScintillaOrg/lexilla/pull/240">Pull request #240</a>.
+		</li>
+	</ul>
+	<li>Scintilla 5.5.0</li>
+	<ul>
+		<li>
+		Add elements for inactive additional selections SC_ELEMENT_SELECTION_INACTIVE_ADDITIONAL_TEXT
+		and SC_ELEMENT_SELECTION_INACTIVE_ADDITIONAL_BACK.
+		When not set these default to SC_ELEMENT_SELECTION_INACTIVE_TEXT and SC_ELEMENT_SELECTION_INACTIVE_BACK.
+		<a href="https://sourceforge.net/p/scintilla/bugs/2417/">Bug #2417</a>.
+		</li>
+		<li>
+		On Cocoa, avoid use of NSUserDefaults which will soon require justification when used in applications on the App Store.
+		</li>
+		<li>
+		Fix Win32 IME crash in windowed mode.
+		<a href="https://sourceforge.net/p/scintilla/bugs/2433/">Bug #2433</a>.
+		</li>
+		<li>
+		Scale reverse arrow cursor for margins to match other cursors when user changes pointer size.
+		<a href="https://sourceforge.net/p/scintilla/bugs/2321/">Bug #2321</a>.
+		</li>
+	</ul>
+    </ul>
     <h3>
        <a href="https://www.scintilla.org/scite543.zip">Release 5.4.3</a>
     </h3>
