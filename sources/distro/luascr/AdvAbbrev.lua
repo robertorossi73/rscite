@@ -1,5 +1,5 @@
 --[[
-Version : 3.2.1
+Version : 3.3.0
 Web     : http://www.redchar.net
 
 Inserimento guidato abbreviazioni
@@ -7,11 +7,14 @@ Inserimento guidato abbreviazioni
 ------------ Versioni ------------
 TODO : - Supporto multilingua per elenco titoli mostrati
 
+V.3.3.0
+- Aggiunto riconoscimento tabulazione \t e sostituzione con spazi
+
 V.3.2.0
 - Fusione file abbreviazioni. Se nell'elenco c'è un file di abbreviazioni questo
     viene incluso nell'elenco corrente
 
-Copyright (C) 2004-2018 Roberto Rossi 
+Copyright (C) 2004-2024 Roberto Rossi 
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -456,6 +459,7 @@ do
 
           --inizio sostituzioni
           formato = string.gsub(formato,"\\n","\n"..string.rep(" ",nSpazi))
+          formato = string.gsub(formato,"\\t",string.rep(" ",props["tabsize"]))          
           formato = compilaModello(formato)
           --fine sostituzioni
           posPipe = string.find(formato,"|")
