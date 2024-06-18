@@ -1,10 +1,10 @@
 --[[ # -*- coding: utf-8 -*-
-Version : 2.0.3
+Version : 2.1.0
 Web     : http://www.redchar.net
 
 Questa procedura apre l'editor esadecimale con il file corrente
 
-Copyright (C) 2011-2023 Roberto Rossi 
+Copyright (C) 2011-2024 Roberto Rossi 
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -41,8 +41,10 @@ do
                                     _t(496),
                                     --"Si desidere scaricare una applicazione dal web? Rispondendo 'Si' sarà possibile installare, gratuitamente, una delle applicazioni consigliate.",
                                     _t(497),
-                                    "Frhed - binary file editor for Windows|ImHex - Hex Editor, tool to display, decode and analyze binary data|HxD - Freeware Hex Editor and Disk Editor",
-                                    {"https://sourceforge.net/projects/frhed/", "https://imhex.werwolv.net/","https://mh-nexus.de/en/hxd/"},
+                                    "Frhed - binary file editor for Windows|ImHex - Hex Editor, tool to display, decode and analyze binary data|wxMEdit - A cross-platform Text/Hex Editor",
+                                    { "https://github.com/WinMerge/frhed", 
+                                      "https://imhex.werwolv.net/",
+                                      "https://wxmedit.github.io/"},
                                     cfgfile,
                                     resetCfg
                                 )
