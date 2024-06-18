@@ -1,10 +1,10 @@
 --[[
-Version : 3.8.0
+Version : 3.9.0
 Web     : http://www.redchar.net
 
 Funzioni di utilità per macro SciTE/Lua
 
-Copyright (C) 2004-2023 Roberto Rossi 
+Copyright (C) 2004-2024 Roberto Rossi 
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -25,6 +25,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
 if not(rwfx_info) then
     
     require("luascr/wcl_strip") --gestore interfaccia grafica SciTE
+    require("luascr/rluaps") --gestore interfaccia con powershell
 
     --nome file traduzione
     PUBLIC_nomeFileTrad = ""
