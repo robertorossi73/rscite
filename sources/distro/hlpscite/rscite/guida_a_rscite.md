@@ -705,17 +705,6 @@ opzione.
 file corrente viene analizzato e vengono mostrate le funzioni, le classi e le
 variabile definite al suo interno. In questo modo è possibile identificare
 immediatamente ogni elemento del sorgente editato.
-* **Comprimi file CSS/JavaScript (YuiCompressor)**. YuiCompressor è
-un’utilità scritta in linguaggio Java (e che necessita del relativo
-runtime) che consente di ridurre le dimensioni di un qualsiasi file CSS e/o
-JavaScript. La riduzione delle dimensioni avviene attraverso l’utilizzo di
-alcune tecniche che, senza intaccarne il funzionamento, ne eliminano le parti
-superflue riuscendo a diminuirne drasticamente le dimensioni. Di conseguenza
-è possibile ridurre la dimensione delle nostre, care, pagine web,
-velocizzandone la consultazione e rendendo la navigazione un’esperienza
-migliore. Inoltre, YuiCompressor effettua anche l’offuscamento del sorgente,
-in modo che questo sia di difficile comprensione e riutilizzo. Cosi facendo è
-possibile limitare il rischio di uso non autorizzato del proprio lavoro.
 * **Generatore GUID**. Questa funzione permette l’inserimento di una GUID
 all’interno del testo corrente, consentendone la formattazione per adattarsi
 a diverse situazioni di utilizzo.

@@ -49,21 +49,6 @@ The above copyright notice and this permission notice shall be included in all c
 THE  SOFTWARE  IS  PROVIDED "AS IS", WITHOUT WARRANTY OF  ANY KIND, EXPRESS OR IMPLIED,  INCLUDING  BUT NOT  LIMITED  TO  THE WARRANTIES  OF MERCHANTABILITY, FITNESS FOR  A PARTICULAR PURPOSE  AND NONINFRINGEMENT. IN NO EVENT SHALL  THE AUTHORS  OR COPYRIGHT  HOLDERS  BE  LIABLE FOR  ANY CLAIM,  DAMAGES  OR  OTHER LIABILITY, WHETHER IN AN ACTION OF  CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE  SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 **************************************************************
-YUI Compressor - The Yahoo! JavaScript and CSS Compressor
-http://developer.yahoo.com/yui/compressor/
-
-AUTHOR
-  The YUI Compressor was written and is maintained by:
-      Julien Lecomte <jlecomte@yahoo-inc.com>
-  The CSS portion is a port of Isaac Schlueter's cssmin utility.
-
-COPYRIGHT
-  Copyright (c) 2007-2009, Yahoo! Inc. All rights reserved.
-
-LICENSE
-  All code specific to YUI Compressor is issued under a BSD license. YUI Compressor extends and implements code from Mozilla's Rhino project. Rhino is issued under the Mozilla Public License (MPL), and MPL applies to the Rhino source and binaries that are distributed with YUI Compressor.
-
-**************************************************************
 Spell Checking Oriented Word Lists (English.dct)
 Revision 6
 August 10, 2004
