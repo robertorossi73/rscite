@@ -38,7 +38,6 @@ extern "C"
 
 #include "cdialog.h"
 #include "commutil.h"
-#include "genguid.h"
 
 #include "rMsgBx.h"
 
@@ -107,7 +106,6 @@ LUALIB_API int c_MsgBox_Customize_Btn(lua_State *L)
     rMsgBx_setLabel(opt, text.c_str());
   } else {
     showErrorMsg("Arguments Error! - MsgBox_Customize_Btn(buttonId ,text)");
-    lua_error(L); 
     lua_pushnil(L);    
   }
   return 1;
@@ -148,7 +146,6 @@ LUALIB_API int c_MsgBox(lua_State *L)
 
   } else {
     showErrorMsg("Arguments Error! - MsgBox(messaggio [,titolo [,flag, [custom_button]]])");
-    lua_error(L); 
     lua_pushnil(L);
     
   }
@@ -176,7 +173,6 @@ LUALIB_API int c_SetTransparency(lua_State *L)
   } else {
     //lua_pushstring(L, "Argomenti errati! - MsgBox(messaggio [,titolo [,flag])");
     showErrorMsg("Arguments error! - SetTransparency(transparencyLevel)");
-    lua_error(L); 
     lua_pushnil(L);
   }
   return 1;
@@ -225,8 +221,7 @@ LUALIB_API int c_InputBox(lua_State *L)
     }
   } else {
     //lua_pushstring(L, "Argomenti errati! - InputDlg(prompt ,title ,default)");
-    showErrorMsg("Argomenti errati! - InputDlg(prompt ,title ,default, tempFileName)");
-    lua_error(L);
+    showErrorMsg("Wrong arguments! - InputDlg(prompt ,title ,default, tempFileName)");
     lua_pushnil(L);
 		//return 0;
   }
@@ -284,8 +279,7 @@ LUALIB_API int c_ListDlg(lua_State *L)
       lua_pushinteger(L, res);
   } else {
     //lua_pushstring(L, "Argomenti errati! - ListDlg(Elementi, Titolo, flagDialog)");
-    showErrorMsg("Argomenti errati! - ListDlg(Elementi, Titolo, flagDialog, XPosition, YPosition, XDimension, YDimension, RelativePosition, regKey, preselectedItem)");
-    lua_error(L); 
+    showErrorMsg("Wrong arguments! - ListDlg(Elementi, Titolo, flagDialog, XPosition, YPosition, XDimension, YDimension, RelativePosition, regKey, preselectedItem)");
     lua_pushnil(L);
   }
   return 1;
@@ -296,8 +290,8 @@ LUALIB_API int c_GetFileName(lua_State *L)
   OPENFILENAMEW ofn;       // common dialog box structure
   wchar_t szFile[_MAX_PATH];       // buffer for file name
   const int n = lua_gettop(L);
-  const wchar_t *title, *defaultPath, *fileName;
-  const wchar_t *estensione;
+  std::wstring title, defaultPath, fileName;
+  std::wstring estensione;
   wchar_t bufferExt[255];
   lua_Number opt;
 
@@ -308,19 +302,19 @@ LUALIB_API int c_GetFileName(lua_State *L)
       (n > 3))
   {
 
-    title = CharToW(lua_tostring(L,1)); //titolo finestra
-    defaultPath = CharToW(lua_tostring(L,2)); //percorso di default
+    title = UTF8CharToWChar(lua_tostring(L,1)); //titolo finestra
+    defaultPath = UTF8CharToWChar(lua_tostring(L,2)); //percorso di default
     opt = lua_tonumber(L,3); //opzioni 
-	fileName = CharToW(lua_tostring(L,4)); //nome file scambio temporaneo
+	fileName = UTF8CharToWChar(lua_tostring(L,4)); //nome file scambio temporaneo
     
     if ( (n==5) &&(lua_type(L,5)==LUA_TSTRING))
     {
-      estensione = CharToW(lua_tostring(L,5));//filtro
+      estensione = UTF8CharToWChar(lua_tostring(L,5));//filtro
       ZeroMemory(bufferExt, sizeof(bufferExt));
       //sostituisce i %c con il carattere '\0'
-      swprintf(bufferExt,estensione,'\0');
+      swprintf(bufferExt,estensione.c_str(), '\0');
     } else
-      estensione = NULL;
+        estensione = L"";
 
     // Initialize OPENFILENAME
     ZeroMemory(&ofn, sizeof(ofn));
@@ -329,33 +323,26 @@ LUALIB_API int c_GetFileName(lua_State *L)
     ofn.lpstrFile = szFile;
     ofn.lpstrFile[0] = '\0';
     ofn.nMaxFile = sizeof(szFile);
-    if (estensione == NULL)
+    if (estensione.empty())
       ofn.lpstrFilter = L"Tutto\0*.*\0";
     else
       ofn.lpstrFilter = bufferExt;
     ofn.nFilterIndex = 0;
     ofn.lpstrFileTitle = NULL;
     ofn.nMaxFileTitle = 0;
-    ofn.lpstrInitialDir = defaultPath;
+    ofn.lpstrInitialDir = defaultPath.c_str();
     ofn.Flags = OFN_HIDEREADONLY | (DWORD)opt;//OFN_CREATEPROMPT | OFN_HIDEREADONLY;
-    ofn.lpstrTitle = title;
+    ofn.lpstrTitle = title.c_str();
 
         // Display the Open dialog box. 
 		if (GetOpenFileNameW(&ofn)==TRUE) {
-			writeStrinToTmpW(ofn.lpstrFile, fileName);
+			writeStrinToTmpW(ofn.lpstrFile, fileName.c_str());
 			lua_pushboolean(L, 1);
 		} else
             lua_pushnil(L);
-
-        DeleteChToW(title);
-        DeleteChToW(defaultPath);
-        DeleteChToW(fileName);
-        if (estensione != NULL)
-            DeleteChToW(estensione);
   } else {
     //lua_pushstring(L, "Argomenti errati! - GetFileName(Titolo, Percorso di Default, Opzioni)");
-		showErrorMsg("Argomenti errati! - GetFileName(Titolo, Percorso di Default, Opzioni,Path File Temporaneo,[Filtri])");
-    lua_error(L); 
+		showErrorMsg("Wrong arguments! - GetFileName(Titolo, Percorso di Default, Opzioni,Path File Temporaneo,[Filtri])");
     lua_pushnil(L);
   }
 
@@ -395,8 +382,7 @@ const int n = lua_gettop(L);
     }
   } else {
     //lua_pushstring(L, "Argomenti errati! - GetColorDlg()");
-    showErrorMsg("Argomenti errati! - GetColorDlg()");
-    lua_error(L); 
+    showErrorMsg("Wrong arguments! - GetColorDlg()");
     lua_pushnil(L);
     return 1;
   }
@@ -424,8 +410,7 @@ LUALIB_API int c_SendCmdScite(lua_State *L)
     SendMessage(result, WM_COPYDATA,(WPARAM)NULL,(LPARAM)&cds);
   } else {
     //lua_pushstring(L, "Argomenti errati! - SendCmdScite(comando)");
-    showErrorMsg("Argomenti errati! - SendCmdScite(comando)");
-    lua_error(L); 
+    showErrorMsg("Wrong arguments! - SendCmdScite(comando)");
     lua_pushnil(L);
     return 1;
   }
@@ -451,8 +436,7 @@ LUALIB_API int c_PathIsDirectory(lua_State *L)
 
   } else {
     //lua_pushstring(L, "Argomenti errati! - PathIsDirectory(path)");
-    showErrorMsg("Argomenti errati! - PathIsDirectory(path)");
-    lua_error(L); 
+    showErrorMsg("Wrong arguments! - PathIsDirectory(path)");
     lua_pushnil(L);
   }
 
@@ -485,8 +469,7 @@ LUALIB_API int c_SetIniValue(lua_State *L)
 		lua_pushboolean(L, 1); //tutto ok
 
   } else {
-    showErrorMsg("Argomenti errati! - SetIniValue(pathIniFile, Section, Key, Value)");
-    lua_error(L); 
+    showErrorMsg("Wrong arguments! - SetIniValue(pathIniFile, Section, Key, Value)");
     lua_pushnil(L);
   }
 
@@ -495,34 +478,34 @@ LUALIB_API int c_SetIniValue(lua_State *L)
 
 LUALIB_API int c_BrowseForFolder(lua_State *L)
 {
-  char s[MAX_PATH] = "\0";
-  BROWSEINFO bi;
-  ITEMIDLIST *pidl;
+  wchar_t s[MAX_PATH] = L"\0";
+  BROWSEINFOW bi;
+  LPITEMIDLIST pidl;
   const int n = lua_gettop(L);
-  const char *msg;
-  const char *fileName;
+  std::wstring msg;
+  std::wstring fileName;
 
   if ((lua_type(L,1)==LUA_TSTRING) &&
       (lua_type(L,2)==LUA_TSTRING) &&
       (n == 2))
   {
-    msg = lua_tostring(L,1);
-    fileName = lua_tostring(L,2);
+    msg = UTF8CharToWChar(lua_tostring(L,1));
+    fileName = UTF8CharToWChar(lua_tostring(L,2));
 
     bi.hwndOwner = GetActiveWindow();
     bi.pidlRoot = NULL;
     bi.pszDisplayName = s;
-    bi.lpszTitle = msg;
+    bi.lpszTitle = msg.c_str();
     bi.ulFlags = BIF_RETURNONLYFSDIRS;
     bi.lpfn = 0;
     bi.lParam = 0;
 
-    pidl = SHBrowseForFolder(&bi);
+    pidl = SHBrowseForFolderW(&bi);
     if(pidl != NULL) {
-	    SHGetPathFromIDList(pidl, s);
+        SHGetPathFromIDListW(pidl, s);
       //lua_pushstring(L, s);
-			writeStrinToTmp(s, fileName);
-			lua_pushboolean(L, 1);
+        writeStrinToTmpW(s, fileName.c_str());
+		lua_pushboolean(L, 1);
 	    CoTaskMemFree(pidl);
     }
     else
@@ -530,8 +513,7 @@ LUALIB_API int c_BrowseForFolder(lua_State *L)
 
   } else {
     //lua_pushstring(L, "Argomenti errati! - BrowseForFolder(title)");
-    showErrorMsg("Argomenti errati! - BrowseForFolder(title)");
-    lua_error(L); 
+    showErrorMsg("Wrong arguments! - BrowseForFolder(title)");
     lua_pushnil(L);
   }
 
@@ -576,8 +558,7 @@ LUALIB_API int c_shellAndWait(lua_State *L)
       return 1;
     }
   } else {
-    showErrorMsg("Argomenti errati! - shellAndWait(Command)");
-    lua_error(L); 
+    showErrorMsg("Wrong arguments! - shellAndWait(Command)");
     lua_pushnil(L);
     return 1;
   }
@@ -607,8 +588,7 @@ LUALIB_API int c_shellExecute(lua_State *L)
     return 0;
   } else {
     //lua_pushstring(L, "Argomenti errati! - ShellExecute(ExePath, Parameters)");
-    showErrorMsg("Argomenti errati! - ShellExecute(ExePath, Parameters)");
-    lua_error(L); 
+    showErrorMsg("Wrong arguments! - ShellExecute(ExePath, Parameters)");
     lua_pushnil(L);
     return 1;
   }
@@ -621,12 +601,11 @@ LUALIB_API int c_shellExecute(lua_State *L)
 LUALIB_API int c_fileOperation(lua_State *L)
 {
   const int n = lua_gettop(L);
-  const char *from;
-  const char *to;  
-  const char *operation;
-  char *buffer;
+  std::wstring from;
+  std::wstring to;
+  std::wstring operation;
   HWND hwndOwner;
-  SHFILEOPSTRUCT lpFileOp;
+  SHFILEOPSTRUCTW lpFileOp;
   long Op=0;
   lua_Integer value;
 
@@ -637,58 +616,50 @@ LUALIB_API int c_fileOperation(lua_State *L)
       (lua_type(L,4)==LUA_TNUMBER) &&
       (n == 4))
   {
-    from = lua_tostring(L,1); //sorgente
-    to = lua_tostring(L,2); //destinazione
-    operation = lua_tostring(L,3); //operazione
+    from = UTF8CharToWChar(lua_tostring(L,1)); //sorgente
+    to = UTF8CharToWChar(lua_tostring(L,2)); //destinazione
+    operation = UTF8CharToWChar(lua_tostring(L,3)); //operazione
     value = lua_tointeger(L,4); //flag
 
     if ((hwndOwner = GetActiveWindow()) == NULL) {
           hwndOwner = GetDesktopWindow();
     }
    
-    buffer = (char *)calloc(strlen(from)+2,sizeof(char));
-    strcpy(buffer,from);
-
     lpFileOp.hwnd = hwndOwner;
-    lpFileOp.pFrom = buffer;
-    lpFileOp.pTo = to;
+    lpFileOp.pFrom = from.c_str();
+    lpFileOp.pTo = to.c_str();
 
     lpFileOp.fFlags = (FILEOP_FLAGS)value;
 
-    if (_stricmp(operation, "copy")==0) {
+    if (_wcsicmp(operation.c_str(), L"copy") == 0) {
       Op = FO_COPY;
-    } else if (_stricmp(operation, "delete")==0) {
+    } else if (_wcsicmp(operation.c_str(), L"delete") == 0) {
       Op = FO_DELETE;
       lpFileOp.pTo = NULL;
       //lpFileOp.fFlags = FOF_ALLOWUNDO;
-    } else if (_stricmp(operation, "move")==0) {
+    } else if (_wcsicmp(operation.c_str(), L"move")==0) {
       Op = FO_MOVE;
-    } else if (_stricmp(operation, "rename")==0) {
+    } else if (_wcsicmp(operation.c_str(), L"rename") == 0) {
       Op = FO_RENAME;
     }
 
     if (Op > 0) {
       lpFileOp.wFunc = Op;
-      if (SHFileOperation(&lpFileOp)==0){
-        free(buffer);
+      if (SHFileOperationW(&lpFileOp)==0){
         lua_pushboolean(L, 1); //tutto OK
         return 1;
       }else{
-        free(buffer);
         lua_pushnil(L); //ipossibile offettuare l'operazione
         return 1;
       }
     } else {
-      free(buffer);
-      showErrorMsg("Operazione specificata non Valida!");
-      lua_error(L); 
+      showErrorMsg("Operation not valid!");
       lua_pushnil(L);
       return 1;
     }
     return 0;
   } else {
-    showErrorMsg("Argomenti errati! - fileOperation(From, To, Operation, Flag)");
-    lua_error(L); 
+    showErrorMsg("Missing argoments! - fileOperation(From, To, Operation, Flag)");
     lua_pushnil(L);
     return 1;
   }
@@ -718,8 +689,7 @@ LUALIB_API int c_createDirectory(lua_State *L)
       return 1;
     }
   } else {
-    showErrorMsg("Argomenti errati! - createDirectory(directory)");
-    lua_error(L); 
+    showErrorMsg("Wrong arguments! - createDirectory(directory)");
     lua_pushnil(L);
     return 1;
   }
@@ -753,7 +723,6 @@ LUALIB_API int c_RegSetInteger(lua_State *L)
           KEY_WRITE, NULL, &hk, &dwDisp) != ERROR_SUCCESS) 
     {
       //showErrorMsg("Impossibile aprire o creare la chiave indicata!");
-      //lua_error(L); 
       lua_pushnil(L);
       return 1;
     }
@@ -767,7 +736,6 @@ LUALIB_API int c_RegSetInteger(lua_State *L)
     {      
       RegCloseKey(hk);
       //showErrorMsg("Impossibile scrivere il valore indicato!");
-      //lua_error(L); 
       lua_pushnil(L);
       return 1;
     }
@@ -777,8 +745,7 @@ LUALIB_API int c_RegSetInteger(lua_State *L)
     return 1;
 
   } else {
-    showErrorMsg("Argomenti errati! - RegSetInteger(Key, Value, DataNumber)");
-    lua_error(L); 
+    showErrorMsg("Wrong arguments! - RegSetInteger(Key, Value, DataNumber)");
     lua_pushnil(L);
     return 1;
   }
@@ -813,7 +780,6 @@ LUALIB_API int c_RegGetInteger(lua_State *L)
 		lRet = RegOpenKeyEx( HKEY_LOCAL_MACHINE ,key, 0, KEY_QUERY_VALUE, &hk );
 	} else {
       showErrorMsg("Error! Main Key not valid!");
-      lua_error(L); 
       lua_pushnil(L);
       return 1;
 	}
@@ -821,7 +787,6 @@ LUALIB_API int c_RegGetInteger(lua_State *L)
     if( lRet != ERROR_SUCCESS )
     {
       //showErrorMsg("Error! Missing Key!");
-      //lua_error(L); 
       lua_pushnil(L);
       return 1;
     }
@@ -832,7 +797,6 @@ LUALIB_API int c_RegGetInteger(lua_State *L)
     {
       RegCloseKey(hk);
       //showErrorMsg("Impossibile leggere il valore indicato!");
-      //lua_error(L); 
       lua_pushnil(L);
       return 1;
     }
@@ -841,7 +805,6 @@ LUALIB_API int c_RegGetInteger(lua_State *L)
     return 1;
   } else {
     showErrorMsg("Missin Arguments! - RegGetInteger(Key, Value, MainKey)");
-    lua_error(L); 
     lua_pushnil(L);
     return 1;
   }
@@ -879,7 +842,6 @@ LUALIB_API int c_RegGetString(lua_State *L)
 		lRet = RegOpenKeyEx( HKEY_LOCAL_MACHINE ,key, 0, KEY_QUERY_VALUE, &hk );
 	} else {
       showErrorMsg("Error! Main Key not valid!");
-      lua_error(L); 
       lua_pushnil(L);
       return 1;
 	}
@@ -887,18 +849,15 @@ LUALIB_API int c_RegGetString(lua_State *L)
     if( lRet != ERROR_SUCCESS )
     {
       //showErrorMsg("Error! Missing Key!");
-      //lua_error(L); 
       lua_pushnil(L);
       return 1;
     }
 
-    lRet = RegQueryValueEx(hk, valueName, NULL, NULL,
-      (LPBYTE) &buffer_char, &dwBufLen);
+    lRet = RegQueryValueEx(hk, valueName, NULL, NULL, (LPBYTE) &buffer_char, &dwBufLen);
     if(lRet != ERROR_SUCCESS)
     {
       RegCloseKey(hk);
       //showErrorMsg("Impossibile leggere il valore indicato!");
-      //lua_error(L); 
       lua_pushnil(L);
       return 1;
     }
@@ -909,7 +868,6 @@ LUALIB_API int c_RegGetString(lua_State *L)
     return 1;
   } else {
     showErrorMsg("Missin Arguments! - RegGetString(Key, Value, MainKey, outputTempFileName)");
-    lua_error(L); 
     lua_pushnil(L);
     return 1;
   }
@@ -931,39 +889,29 @@ LUALIB_API int c_Sleep(lua_State *L)
     lua_pushboolean(L, 1);
     return 1;
   } else {
-    showErrorMsg("Argomenti errati! - Sleep(Milliseconds)");
-    lua_error(L); 
+    showErrorMsg("Wrong arguments! - Sleep(Milliseconds)");
     lua_pushnil(L);
     return 1;
   }
 }
 
 //genera un GUID
-//la funzione dovrà essere usata specificando :
-//[File temporaneo da scrivere con le GUID]
 LUALIB_API int c_GetGUID(lua_State *L)
 {
-	const int n = lua_gettop(L);
-	const char *fileName;
 	GUID id;
-	WCHAR buffer[255];
-	char buffer_char[255];
+	WCHAR buffer[256];
+	std::string buffer_char;
 
-  if ((lua_type(L,1)==LUA_TSTRING) && (n == 1))
-  {
-    fileName = lua_tostring(L,1); //nome file scambio temporaneo
-		CoCreateGuid(&id);
-		StringFromGUID2(id,buffer,254);
-		UnicodeToAnsi(buffer,buffer_char,sizeof(buffer_char)-1);
-    writeStrinToTmp(buffer_char, fileName);
-    lua_pushboolean(L, 1);
-  } else {
-    //lua_pushstring(L, "Argomenti errati! - GetFileName(Titolo, Percorso di Default, Opzioni)");
-	showErrorMsg("Arguments error! - GetGUID(temporary file path)");
-    lua_error(L); 
-    lua_pushnil(L);
-  }
+    buffer[255] = '\0';
+    buffer_char = "";
 
+    if (CoCreateGuid(&id) == S_OK)
+    {
+        if (StringFromGUID2(id, buffer, 255) > 0)
+            buffer_char = WCharToUTF8Char(buffer);
+    }
+    lua_pushstring(L, buffer_char.c_str());
+  
   return 1;
 }
 
@@ -985,7 +933,6 @@ LUALIB_API int c_addToRecentDocs(lua_State *L)
 	return 1;
   } else {
     showErrorMsg("Arguments error! - addToRecentDocs(document_path)");
-    lua_error(L); 
     lua_pushnil(L);
     return 1;
   }
@@ -1120,7 +1067,6 @@ LUALIB_API int c_callFXex(lua_State *L)
 	return 1;
   } else {
     showErrorMsg("Arguments error! - c_callFXex");
-    lua_error(L); 
     lua_pushnil(L);
     return 1;
   }
@@ -1149,91 +1095,9 @@ LUALIB_API int c_SetWindowSize(lua_State *L)
 	else {
 		//lua_pushstring(L, "Argomenti errati! - MsgBox(messaggio [,titolo [,flag])");
 		showErrorMsg("Arguments error! - SetWindowsSize(width, height)");
-		lua_error(L);
 		lua_pushnil(L);
 	}
 	return 1;
-}
-
-LUALIB_API int c_GetFilesList2(lua_State* L)
-{
-    const int n = lua_gettop(L);
-    bool onlyFolder = false; 
-    bool addOk = false;
-    std::wstring defaultPath;
-    std::wstring outFileName;
-    std::wstring beforeFile;
-    std::wstring afterFile;
-    WIN32_FIND_DATAW FindFileData;
-    HANDLE hFind;
-    std::wstring outStr(L"");
-    DWORD dwError = 0;
-    
-    if ((lua_type(L, 1) == LUA_TSTRING) && //The directory or path, and the file name.
-        (lua_type(L, 2) == LUA_TBOOLEAN) && //get folders
-        (lua_type(L, 3) == LUA_TSTRING) && //before file
-        (lua_type(L, 4) == LUA_TSTRING) && //after file
-        (lua_type(L, 5) == LUA_TSTRING) && //output file
-        (n > 4))
-    {
-        defaultPath = UTF8CharToWChar(lua_tostring(L, 1)); //path
-        onlyFolder = lua_toboolean(L, 2); //get folders
-        beforeFile = UTF8CharToWChar(lua_tostring(L, 3)); //before file
-        afterFile = UTF8CharToWChar(lua_tostring(L, 4)); //after file
-        outFileName = UTF8CharToWChar(lua_tostring(L, 5)); //nome file scambio temporaneo
-
-        hFind = FindFirstFileW(defaultPath.c_str(), &FindFileData);
-        if (hFind == INVALID_HANDLE_VALUE)
-        {
-            lua_pushnil(L);
-        }
-        else
-        {
-            // List all the files in the directory with some info about them.
-            do
-            {
-                if (FindFileData.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY)
-                {
-                    if (onlyFolder)
-                        addOk = true;
-                    else
-                        addOk = false;
-                }
-                else
-                    addOk = !onlyFolder;
-
-                if (addOk)
-                {
-                    if (outStr != L"")
-                        outStr.append(L"\n");
-
-                    outStr.append(beforeFile.c_str());
-                    outStr.append(FindFileData.cFileName);
-                    outStr.append(afterFile.c_str());
-                }
-            } while (FindNextFileW(hFind, &FindFileData) != 0);
-
-            dwError = GetLastError();
-            if (dwError == ERROR_NO_MORE_FILES)
-            {
-                if (writeStrinToTmpW(outStr.c_str(), outFileName.c_str()) == 1)
-                    lua_pushboolean(L, 1);
-                else
-                    lua_pushnil(L);
-            } else
-                lua_pushnil(L);
-
-            FindClose(hFind);            
-        }
-    }
-    else {
-        //lua_pushstring(L, "Argomenti errati!");
-        showErrorMsg("Arguments error! - GetFilesList(path, getOnlyFolders, strBeforeFileName, strAfterFileName, temporaryOutputFile)");
-        lua_error(L);
-        lua_pushnil(L);
-    }
-
-    return 1;
 }
 
 void pushStringsTable(lua_State* L, std::list<std::wstring> lst)
@@ -1314,7 +1178,6 @@ LUALIB_API int c_GetFilesList(lua_State* L)
     else {
         //lua_pushstring(L, "Argomenti errati!");
         showErrorMsg("Arguments error! - GetFilesList(path, getOnlyFolders)");
-        lua_error(L);
         lua_pushnil(L);
     }
 
@@ -1355,7 +1218,6 @@ LUALIB_API int c_ShowProperties(lua_State* L)
     else {
         //lua_pushstring(L, "Argomenti errati!");
         showErrorMsg("Arguments error! - ShowProperties(path, posX, posY)");
-        lua_error(L);
         lua_pushnil(L);
     }
 

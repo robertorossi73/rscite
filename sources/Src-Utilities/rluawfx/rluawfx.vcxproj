@@ -131,6 +131,7 @@
       <AdditionalIncludeDirectories>../MathParseKit/MathParseKit/include/;../luascite/include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_DEBUG;_WINDOWS;_USRDLL;RLUAWFX_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <OutputFile>$(OutDir)rluawfx.dll</OutputFile>
@@ -157,7 +158,6 @@
   <ItemGroup>
     <ClCompile Include="source\commutil.cpp" />
     <ClCompile Include="source\cprops.cpp" />
-    <ClCompile Include="source\genguid.cpp" />
     <ClCompile Include="source\luawfx.cpp" />
     <ClCompile Include="source\maindlg.cpp" />
     <ClCompile Include="source\rMsgBx.cpp" />
@@ -166,7 +166,6 @@
     <ClInclude Include="source\cdialog.h" />
     <ClInclude Include="source\commutil.h" />
     <ClInclude Include="source\cprops.h" />
-    <ClInclude Include="source\genguid.h" />
     <ClInclude Include="source\resource.h" />
     <ClInclude Include="source\rMsgBx.h" />
   </ItemGroup>

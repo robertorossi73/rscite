@@ -2,6 +2,17 @@
   nuova funzione c_callFXex in grado di richiamare funzioni presenti in 
   librerie esterne
 
+V.5.5.1.0
+* modificata function generazione GUID. Eliminato file di transito.
+* aggiunto supporto unicode a c_fileOperation
+* sostituita segnalazione errore con ritorno valore nil legato a messaggio
+* compilazione ISO C++ 20 Standard
+* aggiunto supporto unicode a c_browseForFolder
+* inseriti messaggi di errore in lingua inglese
+* rimosse vecchie funzioni interne CharToW e DeleteChToW
+* rimossa funzione c_GetFilesList, non utilizzata
+* rimosse definizioni superflue
+
 V.5.5.0.0
 * Aggiunta funzione c_ShowProperties per visualizzare il menu contestuale sul file corrente
 

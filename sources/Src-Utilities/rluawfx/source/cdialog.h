@@ -47,7 +47,6 @@ LUALIB_API int c_Test(lua_State *L);
 
 LUALIB_API int c_MsgBox(lua_State *L); //standard message box
 LUALIB_API int c_ListDlg(lua_State *L); //list dialog
-LUALIB_API int c_InputDlg(lua_State *L); //Input dialog
 LUALIB_API int c_GetFileName(lua_State *L); //file box
 LUALIB_API int c_GetColorDlg(lua_State *L); //color dialog
 LUALIB_API int c_PathIsDirectory(lua_State *L); //controlla se un percorso è una cartella

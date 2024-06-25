@@ -127,7 +127,7 @@ BEGIN
             VALUE "FileDescription", "RLuaWfx"
             VALUE "FileVersion", "5.5.1.0"
             VALUE "InternalName", "RLuaWfx"
-            VALUE "LegalCopyright", "Copyright (C) 2005-2023"
+            VALUE "LegalCopyright", "Copyright (C) 2005-2024"
             VALUE "OriginalFilename", "RLuaWfx.Dll"
             VALUE "ProductName", "RLuaWfx"
             VALUE "ProductVersion", "5.5.1.0"

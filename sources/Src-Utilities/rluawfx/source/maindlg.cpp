@@ -23,6 +23,7 @@ Modulo gestione dialog
 */
 #include <windows.h>
 #include <stdio.h>
+#include <algorithm> // for using transform 
 #include "commutil.h"
 #include "cdialog.h"
 #include "resource.h"
@@ -41,13 +42,14 @@ char public_DllFileName[_MAX_PATH]; //file dll corrente comprensivo di percorso
 
 //riempie la lista degli elementi della dialog lista
 //ritorna il numero di elementi della lista
-void LstDlg_FillList (HWND hwndDlg, char *filtro)
+void LstDlg_FillList (HWND hwndDlg, const char *filtro)
 {
   char ch[2];
   size_t lstr;
   int i, nelementi, idx, idxOriginal;
   char item[LSTDLG_MAX_ITEM_LEN], itemMax[LSTDLG_MAX_ITEM_LEN], itemTemp[LSTDLG_MAX_ITEM_LEN];
   size_t maxLen, tmpLen;
+  std::string filter = filtro;
 
   //svuota lista
   SendMessage(GetDlgItem(hwndDlg,IDC_LIST1),LB_RESETCONTENT, 0, 0);
@@ -62,7 +64,8 @@ void LstDlg_FillList (HWND hwndDlg, char *filtro)
   maxLen = 0;
   idx = 0;
   idxOriginal = 0;
-  filtro = _strupr(filtro);
+  //filter = _strupr(filtro);  
+  transform(filter.begin(), filter.end(), filter.begin(), ::toupper);
   for (i=0 ; i < (int)lstr; i++)
   {
     ch[0] = public_tmpItemsString[i];          
@@ -70,7 +73,7 @@ void LstDlg_FillList (HWND hwndDlg, char *filtro)
     {
       strcpy(itemTemp, item);
       _strupr(itemTemp);
-      if((strstr(itemTemp,filtro) != NULL) || (filtro[0]=='\0'))
+      if((strstr(itemTemp,filter.c_str()) != NULL) || (filter.c_str()[0]=='\0'))
       {
         //aggiunta elemento a lista
         SendMessage(GetDlgItem(hwndDlg,IDC_LIST1),LB_ADDSTRING, 0, (LPARAM) item);
@@ -97,7 +100,7 @@ void LstDlg_FillList (HWND hwndDlg, char *filtro)
   if (item[0]!='\0') {
 			strcpy(itemTemp, item);
       _strupr(itemTemp);
-      if((strstr(itemTemp,filtro) != NULL) || (filtro[0]=='\0'))
+      if((strstr(itemTemp, filter.c_str()) != NULL) || (filter.c_str()[0]=='\0'))
       {
         //aggiunta elemento a lista
         SendMessage(GetDlgItem(hwndDlg,IDC_LIST1),LB_ADDSTRING, 0, (LPARAM) item);

@@ -1,12 +1,12 @@
 --[[
 Author  : Roberto Rossi
-Version : 1.1.2
+Version : 1.2.1
 Web     : http://www.redchar.net
 
 Questa procedura consente la generazione e l'inserimento di un certo numero
 di GUID all'interno del file corrente
 
-Copyright (C) 2012-2015 Roberto Rossi 
+Copyright (C) 2012-2024 Roberto Rossi 
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -145,39 +145,32 @@ do
   end
   
   --main function
-  local function main()
-    local nguid
-    local opzioni
+  function main()
     local testo
-    local dest
     local GUIDs = {}
     
-    dest = rfx_FN()
+    testo = rfx_GetGUID()
+    testo = string.lower(testo)
+      
+    GUIDs = { testo, 
+              getDefineGUID(testo),
+              getOleGUID(testo),
+              getConstGUID(testo)
+              }
     
-    if (rfx_GetGUID(dest)) then
-      testo = string.lower(rfx_GF())
-      
-      GUIDs = { testo, 
-                getDefineGUID(testo),
-                getOleGUID(testo),
-                getConstGUID(testo)
-                }
-      
-      wcl_strip:init()      
-      wcl_strip:addButtonClose()
-      
-      wcl_strip:addLabel(nil, _t(165))
-      wcl_strip:addCombo("VAL")
-      wcl_strip:addButton("OK",_t(251),buttonOk_click, true)
-      
-      wcl_strip:show()
-      
-      wcl_strip:setList("VAL", GUIDs)
-      wcl_strip:setValue("VAL", GUIDs[1])
-    end
+    wcl_strip:init()      
+    wcl_strip:addButtonClose()
+    
+    wcl_strip:addLabel(nil, _t(165))
+    wcl_strip:addCombo("VAL")
+    wcl_strip:addButton("OK",_t(251),buttonOk_click, true)
+    
+    wcl_strip:show()
+    
+    wcl_strip:setList("VAL", GUIDs)
+    wcl_strip:setValue("VAL", GUIDs[1])
   end
   
   main()
   
 end
-

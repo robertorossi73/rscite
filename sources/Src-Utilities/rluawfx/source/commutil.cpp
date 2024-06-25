@@ -96,20 +96,6 @@ void showErrorMsg ( const char* msg )
   MessageBox(hwndOwner,msg,"Error",MB_OK | MB_ICONERROR);
 }
 
-const wchar_t* CharToW(const char* c)
-{
-    const size_t cSize = strlen(c) + 1;
-    wchar_t* wc = new wchar_t[cSize];
-    mbstowcs(wc, c, cSize);
-
-    return wc;
-}
-
-void DeleteChToW(const wchar_t* c)
-{
-    delete[] c;
-}
-
 std::wstring UTF8CharToWChar(const char* c)
 {
     std::wstring wmsg = L"";
