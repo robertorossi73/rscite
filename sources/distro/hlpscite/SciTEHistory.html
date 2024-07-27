@@ -609,6 +609,7 @@
       </tr><tr>
 	<td>RainRat</td>
 	<td>Mavroudis Chatzilazaridis</td>
+	<td>Martijn Laan</td>
       </tr>
     </table>
     <p>
@@ -617,6 +618,68 @@
         Icons</a> Copyright(C) 1998 by Dean S. Jones<br />
     </p>
     <h2>Releases</h2>
+    <h3>
+       <a href="https://www.scintilla.org/scite551.zip">Release 5.5.1</a>
+    </h3>
+    <ul>
+	<li>SciTE</li>
+	<ul>
+		<li>
+		Released 22 July 2024.
+		</li>
+	</ul>
+	<li>Lexilla 5.3.3</li>
+	<ul>
+		<li>
+		ASP: Control whether ASP is enabled for XML and HTML with
+		lexer.xml.allow.asp and lexer.html.allow.asp.
+		<a href="https://github.com/ScintillaOrg/lexilla/issues/252">Issue #252</a>.
+		</li>
+		<li>
+		JavaScript: Recognize regular expressions at start or after '&gt;' in JavaScript when lexer is cpp,
+		hypertext, or xml.
+		<a href="https://github.com/ScintillaOrg/lexilla/issues/250">Issue #250</a>,
+		<a href="https://sourceforge.net/p/scintilla/bugs/918/">Bug #918</a>.
+		</li>
+		<li>
+		JavaScript: Recognize initial #! 'shebang' line as a comment in standalone files.
+		<a href="https://github.com/ScintillaOrg/lexilla/issues/253">Issue #253</a>.
+		</li>
+		<li>
+		Lua: Fix non-ASCII identifiers joined with '.' or ':'.
+		<a href="https://github.com/ScintillaOrg/lexilla/issues/242">Issue #242</a>.
+		</li>
+		<li>
+		Lua: Fix folding for multi-line SCE_LUA_LITERALSTRING and SCE_LUA_COMMENT
+		when performed incrementally.
+		<a href="https://github.com/ScintillaOrg/lexilla/issues/247">Issue #247</a>.
+		</li>
+		<li>
+		PHP: Control whether PHP is enabled for XML and HTML with
+		lexer.xml.allow.php and lexer.html.allow.php.
+		<a href="https://github.com/ScintillaOrg/lexilla/issues/252">Issue #252</a>.
+		</li>
+	</ul>
+	<li>Scintilla 5.5.1</li>
+	<ul>
+		<li>
+		SCI_CUTALLOWLINE added which is similar to SCI_COPYALLOWLINE but also deletes the copied text.
+		<a href="https://sourceforge.net/p/scintilla/feature-requests/1518/">Feature #1518</a>.
+		</li>
+		<li>
+		Can set font used for autocompletion lists with SCI_AUTOCSETSTYLE.
+		<a href="https://sourceforge.net/p/scintilla/feature-requests/1523/">Feature #1523</a>.
+		</li>
+		<li>
+		Increase maximum zoom set interactively to +60 points.
+		<a href="https://sourceforge.net/p/scintilla/feature-requests/1517/">Feature #1517</a>.
+		</li>
+		<li>
+		Fix flickering cursor after some mouse action sequences.
+		<a href="https://sourceforge.net/p/scintilla/bugs/2443/">Bug #2443</a>.
+		</li>
+	</ul>
+    </ul>
     <h3>
        <a href="https://www.scintilla.org/scite550.zip">Release 5.5.0</a>
     </h3>
