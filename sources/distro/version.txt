@@ -18,5 +18,5 @@ DownloadFile=https://github.com/robertorossi73/rscite/releases/download/v.116/se
 [SciTE]
 MajorSciTE=5
 MinorSciTE=5
-BuildSciTE=0
+BuildSciTE=1
 
