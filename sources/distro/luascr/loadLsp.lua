@@ -1,5 +1,5 @@
 --[[
-Version : 3.2.2
+Version : 3.3.1
 Web     : http://www.redchar.net
 
 Questa procedura permette il caricamente del file lisp corrente in un CAD supprotato
@@ -214,9 +214,9 @@ do
         tbl = { --"Ricerca automatica, progeCAD/AutoCAD/BricsCAD/ZwCAD/*",
                 --_t(337),
                 "progeCAD/IntelliCAD",
-                "AutoCAD" --,
-                --"BricsCAD",
-                --"ZwCAD"
+                "AutoCAD",
+                "BricsCAD",
+                "ZwCAD"
                 }
 
         local nomef = props["FileNameExt"]

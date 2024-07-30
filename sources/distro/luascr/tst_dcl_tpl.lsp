@@ -5,15 +5,8 @@
                                 msgMissingDialog
                                 lang
                                 )
-    (setq lang (strcase (getvar "LOCALE")))
-    (if (= lang "ITA")
-        (progn
-            (setq msgMissingDialog (strcat "Il nome di Dialog specificato è mancante: '" dialogName "'"))
-        )
-        (progn ;ENG and others
-            (setq msgMissingDialog (strcat "Specified Dialog Name is missing: '" dialogName "'"))
-        )
-    )
+    (setq msgMissingDialog (strcat "[ITA] Il nome di Dialog specificato è mancante: '" dialogName "'"))
+    (setq msgMissingDialog (strcat msgMissingDialog "\n[ENG] Specified Dialog Name is missing: '" dialogName "'"))
     
     (if (/= dialogName "")
         (progn 

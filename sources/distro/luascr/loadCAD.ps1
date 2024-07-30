@@ -2,7 +2,7 @@
 #
 # Autore : Roberto Rossi
 # Web    : http://www.redchar.net
-# Versione : 4.3.4
+# Versione : 4.4.3
 #
 # Questo script consente il caricamento di un file lsp e scr(script)
 # in un cad
@@ -26,6 +26,12 @@
 #
 #
 # Cad Supportati : "acad" AutoCAD, "icad" progeCAD/IntelliCAD
+#                  "bricscad" BricsCAD (BricscadApp.AcadApplication)
+#
+#
+#
+#
+#
 #
 # utilizzo con ricerca automatica cad :
 # loadCADLsp.ps1 "all" "c:\\test\\file.lsp"
@@ -59,9 +65,9 @@ class clsCAD
     if ($this.tryGet() -ne $true)
     {
       $this.errMessage = "`n`n[ita] Il CAD selezionato è mancante o non è aperto!`n[eng] Selected CAD is missing or not opened!"
-      return $false;
+      return $false
     }
-    return $true;
+    return $true
   }
   
   # cerca istanza del cad
@@ -127,6 +133,48 @@ class clsPcad : clsCAD
 
 }
 
+class clsBricscad : clsCAD
+{
+  clsBricscad()
+  {
+    $this.initialize("BricscadApp.AcadApplication", "Bricscad")
+  }
+  
+  loadFile($filename)
+  {
+    if ($this.isScript($filename))
+    {
+      $this.cadObj.RunScript($filename.replace("\","\\"))
+    } else
+    {
+      $this.cadObj.ActiveDocument.EvaluateLisp("(load `"" + $filename.replace("\","\\") + "`")")
+    }
+  }
+
+}
+
+class clsZWCADcad : clsCAD
+{
+  clsZWCADcad()
+  {
+    $this.initialize("ZWCAD.Application", "ZWCAD")
+  }
+  
+  loadFile($filename)
+  {
+    if ($this.isScript($filename))
+    {
+      #$this.cadObj.RunScript($filename.replace("\","\\"))
+      $this.cadObj.ActiveDocument.PostCommand("(command ""_.script"" """ + $filename.replace("\","\\") + """) ")
+    } else
+    {
+      #$this.cadObj.ActiveDocument.EvaluateLisp("(load `"" + $filename.replace("\","\\") + "`")")
+      $this.cadObj.ActiveDocument.PostCommand("(load """ + $filename.replace("\","\\") + """) ")
+    }
+  }
+
+}
+
 class clsAcad : clsCAD
 {
   clsAcad()
@@ -174,7 +222,8 @@ class clsAcad : clsCAD
 }
 
 ### Impostazione base
-$debug = $false #$true #attiva o disattiva la modalità debug
+$debug = $false #attiva o disattiva la modalità debug
+#$debug = $true #attiva o disattiva la modalità debug
 ### Fine Impostazione base
 
 
@@ -185,8 +234,9 @@ $filename = $args[1]
 ###debug
 if ($debug)
 {
-  $verb = "icad"
-  $filename = "C:\Temp\ci®Ωo.lsp"
+  $verb = "zcad"
+  $filename = "C:\Temp\file caricabili\ci®Ωo.lsp"
+  #$filename = "C:\Temp\file caricabili\test.scr"
   $showError = $true
 }
 ###end debug
@@ -212,6 +262,32 @@ if ($verb)
 if ($verb -eq "icad")
 {
   $cad = [clsPcad]::new()
+  if ($cad.cadObj -ne $null) { 
+    #write-output ("ok " + $cad.cadId)
+    $cad.loadFile($filename)
+  }
+  else { 
+    write-output ($cad.errMessage + " - " + $cad.cadName) 
+    $showError = $true
+  }
+}
+
+if ($verb -eq "bcad")
+{
+  $cad = [clsBricscad]::new()
+  if ($cad.cadObj -ne $null) { 
+    #write-output ("ok " + $cad.cadId)
+    $cad.loadFile($filename)
+  }
+  else { 
+    write-output ($cad.errMessage + " - " + $cad.cadName) 
+    $showError = $true
+  }
+}
+
+if ($verb -eq "zcad")
+{
+  $cad = [clsZWCADcad]::new()
   if ($cad.cadObj -ne $null) { 
     #write-output ("ok " + $cad.cadId)
     $cad.loadFile($filename)
