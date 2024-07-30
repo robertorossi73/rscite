@@ -1,10 +1,10 @@
 --[[
-Version : 2.3.0
+Version : 3.2.1
 Web     : http://www.redchar.net
 
 Questa procedura permette il caricamente del file lisp corrente in un CAD supprotato
 
-Copyright (C) 2015-2021 Roberto Rossi 
+Copyright (C) 2015-2024 Roberto Rossi 
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -24,6 +24,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
 
 do
     require("luascr/rluawfx")
+    require("luascr/rluaps")
 
     function inverterSlash(testo)
         local result = ""
@@ -74,13 +75,15 @@ do
 
         wcl_strip:close()
 
-        par = "\""..props["SciteDefaultHome"].."/luascr/loadCADLsp.vbs\" " ..
-                cad..
-                " \""..inverterSlash(props["FilePath"]).."\""
+        rfx_execPowerShell(props["SciteDefaultHome"].."\\luascr\\loadCAD.ps1", false, false, false, cad.." \"".. inverterSlash(props["FilePath"]) .."\"")
+        
+--         par = "\""..props["SciteDefaultHome"].."/luascr/loadCADLsp.vbs\" " ..
+--                 cad..
+--                 " \""..inverterSlash(props["FilePath"]).."\""
 
         --rwfx_ShellExecute(exe,par)
         --rfx_exeCapture(exe.." "..par)
-        rfx_exeCapture("start /b "..exe.." "..par)
+        --rfx_exeCapture("start /b "..exe.." "..par)
     end
 
     --ritorna la selezione corrente se esiste, oppure l'ultima selezione
@@ -162,11 +165,14 @@ do
           io.close(idf)
         end
         
-        par = "\""..props["SciteDefaultHome"].."/luascr/loadCADLsp.vbs\" " ..
-                cad..
-                " \""..inverterSlash(newNomef).."\""
+        
+        rfx_execPowerShell(props["SciteDefaultHome"].."\\luascr\\loadCAD.ps1", false, false, false, cad.." \"".. inverterSlash(newNomef) .."\"")
+        
+--         par = "\""..props["SciteDefaultHome"].."/luascr/loadCADLsp.vbs\" " ..
+--                 cad..
+--                 " \""..inverterSlash(newNomef).."\""
 
-        rwfx_ShellExecute(exe,par)
+--         rwfx_ShellExecute(exe,par)
         --print(par)
     end
     
@@ -185,6 +191,8 @@ do
             sel = rwfx_RegGetInteger(key, "loadCADLsp.CADName", "HKCU")        
             if not(sel) then
                 sel = 1
+            else
+              sel = sel - 1
             end
         end
         
@@ -203,11 +211,11 @@ do
         end
         
         tbl = { --"Ricerca automatica, progeCAD/AutoCAD/BricsCAD/ZwCAD/*",
-                _t(337),
+                --_t(337),
                 "progeCAD/IntelliCAD",
-                "AutoCAD",
-                "BricsCAD",
-                "ZwCAD"
+                "AutoCAD" --,
+                --"BricsCAD",
+                --"ZwCAD"
                 }
 
         local nomef = props["FileNameExt"]
