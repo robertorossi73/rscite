@@ -1224,6 +1224,34 @@ LUALIB_API int c_ShowProperties(lua_State* L)
     return 1;
 }
 
+//modifica lo stato della finestra corrente
+LUALIB_API int c_ShowActiveWindow(lua_State* L)
+{
+    const int n = lua_gettop(L);
+    HWND hwndOwner = NULL;
+    int opt;
+
+    if ((lua_type(L, 1) == LUA_TNUMBER) &&
+        (n == 1))
+    {
+        opt = lua_tointeger(L, 1);
+
+        if ((hwndOwner = GetActiveWindow()) == NULL) {
+            hwndOwner = GetDesktopWindow();
+        }
+
+        ShowWindow(hwndOwner, opt);
+        lua_pushboolean(L, 1);
+    }
+    else {
+        //lua_pushstring(L, "Argomenti errati!");
+        showErrorMsg("Arguments error! - ShowActiveWindow(option)");
+        lua_pushnil(L);
+    }
+
+    return 1;
+}
+
 
 
 LUALIB_API int c_Test(lua_State *L)

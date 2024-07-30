@@ -2,6 +2,9 @@
   nuova funzione c_callFXex in grado di richiamare funzioni presenti in 
   librerie esterne
 
+V.5.6.0.0
+* aggiunta funzione per impostare stato finestra corrente (c_ShowActiveWindow)
+
 V.5.5.1.0
 * modificata function generazione GUID. Eliminato file di transito.
 * aggiunto supporto unicode a c_fileOperation

@@ -1,5 +1,5 @@
 --[[
-Version : 3.9.0
+Version : 4.0.1
 Web     : http://www.redchar.net
 
 Funzioni di utilità per macro SciTE/Lua
@@ -25,7 +25,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
 if not(rwfx_info) then
     
     require("luascr/wcl_strip") --gestore interfaccia grafica SciTE
-    require("luascr/rluaps") --gestore interfaccia con powershell
 
     --nome file traduzione
     PUBLIC_nomeFileTrad = ""
@@ -97,6 +96,9 @@ if not(rwfx_info) then
       FOF_NOCOPYSECURITYATTRIBS  = 0x0800  
       FOF_NORECURSION            = 0x1000  
       
+      --costanti SW_
+      SW_MINIMIZE = 6
+      
       --costanti stringa per funzioni di interazione con registro
       --"HKCU"
       --"HKLM"
@@ -137,6 +139,7 @@ if not(rwfx_info) then
     rfx_setIniVal = package.loadlib(rwfx_NomeDLL,"c_SetIniValue")
     rfx_shellAndWait = package.loadlib(rwfx_NomeDLL,"c_shellAndWait")
     rwfx_ShowProperties = package.loadlib(rwfx_NomeDLL,"c_ShowProperties")    
+    rwfx_ShowActiveWindow = package.loadlib(rwfx_NomeDLL,"c_ShowActiveWindow")    
     rwfx_Test = package.loadlib(rwfx_NomeDLL,"c_Test")
 
     --elimina spazi e tabulazioni all'inizio e alla fine della linea passata
