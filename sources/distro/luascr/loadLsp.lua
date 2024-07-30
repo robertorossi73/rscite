@@ -1,5 +1,5 @@
 --[[
-Version : 3.2.1
+Version : 3.2.2
 Web     : http://www.redchar.net
 
 Questa procedura permette il caricamente del file lisp corrente in un CAD supprotato
@@ -75,6 +75,7 @@ do
 
         wcl_strip:close()
 
+        rwfx_ShowActiveWindow(SW_MINIMIZE)
         rfx_execPowerShell(props["SciteDefaultHome"].."\\luascr\\loadCAD.ps1", false, false, false, cad.." \"".. inverterSlash(props["FilePath"]) .."\"")
         
 --         par = "\""..props["SciteDefaultHome"].."/luascr/loadCADLsp.vbs\" " ..
@@ -165,7 +166,7 @@ do
           io.close(idf)
         end
         
-        
+        rwfx_ShowActiveWindow(SW_MINIMIZE)
         rfx_execPowerShell(props["SciteDefaultHome"].."\\luascr\\loadCAD.ps1", false, false, false, cad.." \"".. inverterSlash(newNomef) .."\"")
         
 --         par = "\""..props["SciteDefaultHome"].."/luascr/loadCADLsp.vbs\" " ..
