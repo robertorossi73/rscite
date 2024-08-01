@@ -1,5 +1,5 @@
 --[[
-Version : 3.3.1
+Version : 3.5.1
 Web     : http://www.redchar.net
 
 Questa procedura permette il caricamente del file lisp corrente in un CAD supprotato
@@ -71,6 +71,12 @@ do
         elseif (string.find(cadselected, "zwcad", 1, true)) then
             cad = "\"zcad\""
             loadCADLsp_presel(5)
+        elseif (string.find(cadselected, "gstarcad", 1, true)) then
+            cad = "\"gcad\""
+            loadCADLsp_presel(6)
+        elseif (string.find(cadselected, "cms", 1, true)) then
+            cad = "\"icad\""
+            loadCADLsp_presel(7)
         end
 
         wcl_strip:close()
@@ -144,6 +150,15 @@ do
         elseif (string.find(cadselected, "zwcad", 1, true)) then
             cad = "\"zcad\""
             loadCADLsp_presel(5)
+        elseif (string.find(cadselected, "gstarcad", 1, true)) then
+            cad = "\"zcad\""
+            loadCADLsp_presel(5)
+        elseif (string.find(cadselected, "gstarcad", 1, true)) then
+            cad = "\"gcad\""
+            loadCADLsp_presel(6)
+        elseif (string.find(cadselected, "cms", 1, true)) then
+            cad = "\"icad\""
+            loadCADLsp_presel(7)
         end
 
         wcl_strip:close()
@@ -216,7 +231,9 @@ do
                 "progeCAD/IntelliCAD",
                 "AutoCAD",
                 "BricsCAD",
-                "ZwCAD"
+                "ZwCAD",
+                "GStarCAD",
+                "CMS IntelliCAD"
                 }
 
         local nomef = props["FileNameExt"]

@@ -2,7 +2,7 @@
 #
 # Autore : Roberto Rossi
 # Web    : http://www.redchar.net
-# Versione : 4.4.3
+# Versione : 4.6.3
 #
 # Questo script consente il caricamento di un file lsp e scr(script)
 # in un cad
@@ -25,8 +25,10 @@
 #~ *******************************************************************************
 #
 #
-# Cad Supportati : "acad" AutoCAD, "icad" progeCAD/IntelliCAD
-#                  "bricscad" BricsCAD (BricscadApp.AcadApplication)
+# Cad Supportati : "acad" AutoCAD, 
+#                  "icad" progeCAD/IntelliCAD/cms
+#                  "bcad" BricsCAD (BricscadApp.AcadApplication)
+#                  "zcad" ZwCAD (ZWCAD.Application)
 #
 #
 #
@@ -172,7 +174,27 @@ class clsZWCADcad : clsCAD
       $this.cadObj.ActiveDocument.PostCommand("(load """ + $filename.replace("\","\\") + """) ")
     }
   }
+}
 
+class clsGSTARcad : clsCAD
+{
+  clsGSTARcad()
+  {
+    $this.initialize("GStarCAD.Application", "GStarCAD")
+  }
+  
+  loadFile($filename)
+  {
+    if ($this.isScript($filename))
+    {
+      #$this.cadObj.RunScript($filename.replace("\","\\"))
+      $this.cadObj.ActiveDocument.PostCommand("(command ""_.script"" """ + $filename.replace("\","\\") + """) ")
+    } else
+    {
+      #$this.cadObj.ActiveDocument.EvaluateLisp("(load `"" + $filename.replace("\","\\") + "`")")
+      $this.cadObj.ActiveDocument.PostCommand("(load """ + $filename.replace("\","\\") + """) ")
+    }
+  }
 }
 
 class clsAcad : clsCAD
@@ -288,6 +310,19 @@ if ($verb -eq "bcad")
 if ($verb -eq "zcad")
 {
   $cad = [clsZWCADcad]::new()
+  if ($cad.cadObj -ne $null) { 
+    #write-output ("ok " + $cad.cadId)
+    $cad.loadFile($filename)
+  }
+  else { 
+    write-output ($cad.errMessage + " - " + $cad.cadName) 
+    $showError = $true
+  }
+}
+
+if ($verb -eq "gcad")
+{
+  $cad = [clsGSTARcad]::new()
   if ($cad.cadObj -ne $null) { 
     #write-output ("ok " + $cad.cadId)
     $cad.loadFile($filename)
