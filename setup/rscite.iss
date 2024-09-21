@@ -26,7 +26,7 @@ AppId={{A4729A09-46FB-4766-9D9D-24358E58E453}
 
 AppName=RSciTE
 AppVerName=RSciTE {#RSciTEVersion}
-OutputDir=c:\temp\output\
+OutputDir=d:\temp\output\
 OutputBaseFilename=setup-rscite-{#RSciTEVersion}
 
 UninstallDisplayName=RSciTE
@@ -51,8 +51,8 @@ UninstallDisplayIcon=rsetup.ico
 DisableWelcomePage=false
 AlwaysShowDirOnReadyPage=yes
 DisableDirPage=no
-ArchitecturesAllowed=x64 ia64
-ArchitecturesInstallIn64BitMode=x64 ia64
+ArchitecturesAllowed=x64compatible
+ArchitecturesInstallIn64BitMode=x64compatible
 DefaultDialogFontName=Consolas
 
 [Languages]
