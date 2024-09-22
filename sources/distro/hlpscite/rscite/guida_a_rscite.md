@@ -1282,7 +1282,7 @@ ecco l’elenco dei collegamenti ai siti più utili.
 Questo documento, **RSciTE. Guida alle Caratteristiche**, è distribuito 
 secondo la seguente licenza.
 
-Copyright (c) 2005-2023 Roberto Rossi.
+Copyright (c) 2005-2024 Roberto Rossi.
 
 Permission is granted to copy, distribute and/or modify this document under
 the terms of the GNU Free Documentation License, Version 1.2 or any later
