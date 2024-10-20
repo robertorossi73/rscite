@@ -610,6 +610,8 @@
 	<td>RainRat</td>
 	<td>Mavroudis Chatzilazaridis</td>
 	<td>Martijn Laan</td>
+	<td>Henrik S. Johansen</td>
+      </tr><tr>
       </tr>
     </table>
     <p>
@@ -618,6 +620,81 @@
         Icons</a> Copyright(C) 1998 by Dean S. Jones<br />
     </p>
     <h2>Releases</h2>
+    <h3>
+       <a href="https://www.scintilla.org/scite553.zip">Release 5.5.3</a>
+    </h3>
+    <ul>
+	<li>SciTE</li>
+	<ul>
+		<li>
+		Released 19 October 2024.
+		</li>
+		<li>
+		Fix find and replace of regular expression like ^.*$ that may match empty range.
+		Find Next previously failed on subsequent searches.
+		</li>
+		<li>
+		Fix marking each match of a regular expression like ^$ for an empty line so it doesn't
+		get stuck, time out, then stop after one segment.
+		</li>
+	</ul>
+	<li>Lexilla 5.4.1</li>
+	<ul>
+		<li>
+		Lexer added for Dart "dart".
+		<a href="https://github.com/ScintillaOrg/lexilla/pull/265">Pull request #265</a>,
+		<a href="https://github.com/ScintillaOrg/lexilla/pull/275">Pull request #275</a>.
+		</li>
+		<li>
+		Lexer added for troff / nroff "troff".
+		<a href="https://github.com/ScintillaOrg/lexilla/pull/264">Pull request #264</a>.
+		</li>
+		<li>
+		Lexer added for Zig "zig".
+		<a href="https://github.com/ScintillaOrg/lexilla/pull/267">Pull request #267</a>.
+		</li>
+		<li>
+		C++: Fix crash for empty documentation comment keyword where '&lt;' occurs at line end.
+		</li>
+		<li>
+		F#: Include EOLs in the style range of SCE_FSHARP_COMMENTLINE.
+		Stabilizes EOL detection when folding line comment groups.
+		<a href="https://github.com/ScintillaOrg/lexilla/issues/276">Issue #276</a>.
+		</li>
+		<li>
+		F#: Fix per-line folding in F# documents.
+		<a href="https://github.com/ScintillaOrg/lexilla/issues/277">Issue #277</a>.
+		</li>
+		<li>
+		HTML: Improve SGML/DTD lexing.
+		Don't terminate SGML when &gt; inside quoted string.
+		Lex both [ and ] as SCE_H_SGML_DEFAULT.
+		Nested sections handled instead of switching to SCE_H_SGML_ERROR.
+		<a href="https://github.com/ScintillaOrg/lexilla/issues/272">Issue #272</a>.
+		</li>
+		<li>
+		JavaScript: New SCE_HJ_TEMPLATELITERAL and SCE_HJA_TEMPLATELITERAL
+		styles for template literals when lexer is hypertext, or xml.
+		<a href="https://github.com/ScintillaOrg/lexilla/issues/280">Issue #280</a>.
+		</li>
+		<li>
+		PHP: Fix failure to recognize PHP start "&lt;?php' at end of document.
+		Caused by not capping retrieval range at document end causing no text to be retrieved.
+		<a href="https://github.com/ScintillaOrg/lexilla/issues/269">Issue #269</a>.
+		</li>
+		<li>
+		Smalltalk: Fix scaled decimal numbers without decimal separator.
+		<a href="https://github.com/ScintillaOrg/lexilla/pull/274">Pull request #274</a>.
+		</li>
+	</ul>
+	<li>Scintilla 5.5.3</li>
+	<ul>
+		<li>
+		On Win32 change direction of horizontal mouse wheel and touchpad scrolling to match other applications.
+		<a href="https://sourceforge.net/p/scintilla/bugs/2449/">Bug #2449</a>.
+		</li>
+	</ul>
+    </ul>
     <h3>
        <a href="https://www.scintilla.org/scite552.zip">Release 5.5.2</a>
     </h3>
