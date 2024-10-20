@@ -4,7 +4,7 @@
 
 **Autore : Roberto Rossi**
 
-**Versione 116**
+**Versione 117**
 
 Un gestore di testi **potente**, **semplice**, **veloce**, **poliedrico**...
 
@@ -147,7 +147,7 @@ most of it except for some ambiguous cases, PL/M, Progress, PostScript,
 POV-Ray, PowerBasic, PowerShell, PowerPro, PureBasic, Python, R, Rebol,
 Registry, Ruby, Rust, Scheme, scriptol, SORCUS Installation, Specman E, Spice,
 Smalltalk, SQL and PLSQL, S-Record, Swift, TADS3, TeX and LaTeX, Tcl/Tk, Vala,
-VB and VBScript, Verilog, VHDL, XML, YAML, Raku(Perl 6), DataFlex.
+VB and VBScript, Verilog, VHDL, XML, YAML, Raku(Perl 6), DataFlex, Troff.
 * Evidenziazione dinamica parentesi.
 * Folding del codice sorgente con possibilità di scegliere la simbologia per la
 visualizzazione.
