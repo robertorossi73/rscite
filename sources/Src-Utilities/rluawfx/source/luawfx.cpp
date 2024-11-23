@@ -572,6 +572,8 @@ LUALIB_API int c_shellExecute(lua_State *L)
   const char *path;  
   const char *parameters;  
   HWND hwndOwner;
+  std::wstring par1;
+  std::wstring par2;
 
   if ((lua_type(L,1)==LUA_TSTRING) &&
       (lua_type(L,2)==LUA_TSTRING) &&
@@ -579,11 +581,16 @@ LUALIB_API int c_shellExecute(lua_State *L)
   {
     path = lua_tostring(L,1);
     parameters = lua_tostring(L,2);
+
+    par1 = UTF8CharToWChar(path);
+    par2 = UTF8CharToWChar(parameters);
+
     if ((hwndOwner = GetActiveWindow()) == NULL) {
           hwndOwner = GetDesktopWindow();
     }
    
-    ShellExecute(hwndOwner, "open", path, parameters, NULL, SW_SHOWNORMAL);
+    //ShellExecute(hwndOwner, "open", path, parameters, NULL, SW_SHOWNORMAL);
+    ShellExecuteW(hwndOwner, L"open", par1.c_str(), par2.c_str(), NULL, SW_SHOWNORMAL);
 
     return 0;
   } else {

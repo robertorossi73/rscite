@@ -2,6 +2,9 @@
   nuova funzione c_callFXex in grado di richiamare funzioni presenti in 
   librerie esterne
 
+V.5.7.0.0
+* funzione ShellExecute accetta parametri in formato unicode(c_ShellExecute)
+
 V.5.6.0.0
 * aggiunta funzione per impostare stato finestra corrente (c_ShowActiveWindow)
 
