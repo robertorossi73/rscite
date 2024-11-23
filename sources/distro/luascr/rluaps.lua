@@ -1,5 +1,5 @@
 --[[ # -*- coding: utf-8 -*-
-Version : 1.3.2
+Version : 1.3.4
 Web     : http://www.redchar.net
 
 Funzioni di utilità per macro SciTE/Lua. Funzioni per la gestione di script
@@ -69,7 +69,9 @@ require("luascr/rluawfx")
     else
       -- ritorna true se il comando termina correttamente
       res = genBat("chcp 65001\nmode 80,15\ncolor 17\ncls\n"..cmd)
-      return os.execute("\""..res.."\"")
+      --return os.execute("\""..res.."\"")
+      rwfx_ShellExecute(res,"")
+      return true
     end  
   end
 
