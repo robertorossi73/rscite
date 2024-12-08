@@ -11,6 +11,7 @@ c_SendCmdScite
 c_PathIsDirectory
 c_BrowseForFolder
 c_shellExecute
+c_shellExecuteEx
 c_fileOperation
 c_RegSetInteger
 c_RegGetInteger

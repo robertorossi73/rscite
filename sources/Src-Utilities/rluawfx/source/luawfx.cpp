@@ -566,6 +566,108 @@ LUALIB_API int c_shellAndWait(lua_State *L)
 } //endfunction
 
 //c_shellExecute
+//verbi utilizzabili
+const enum SHELLEXECUTEEX_VERB {
+    EDIT = 0,
+    EXPLORE = 1,
+    FIND = 2,
+    OPEN = 3,
+    OPENAS = 4,
+    PRINT = 5,
+    PROPERTIES = 6,
+    RUNAS = 7
+};
+
+//c_shellExecute
+LUALIB_API int c_shellExecuteEx(lua_State *L)
+{
+  const int n = lua_gettop(L);
+  const char *path;  
+  const char *parameters;  
+  HWND hwndOwner;
+  std::wstring par1;
+  std::wstring par2;
+  int parVerb;
+  int showFlag;
+  SHELLEXECUTEINFOW ShExecInfo;
+
+  if ((lua_type(L,1)==LUA_TSTRING) &&
+      (lua_type(L,2)==LUA_TSTRING) &&
+      (lua_type(L,3)==LUA_TNUMBER) &&
+      (lua_type(L,4)==LUA_TNUMBER) &&
+      (n == 4))
+  {
+    path = lua_tostring(L,1);
+    parameters = lua_tostring(L,2);
+    parVerb = lua_tointeger(L,3);
+    showFlag = lua_tointeger(L,4);
+
+    par1 = UTF8CharToWChar(path);
+    par2 = UTF8CharToWChar(parameters);
+
+    if ((hwndOwner = GetActiveWindow()) == NULL) {
+          hwndOwner = GetDesktopWindow();
+    }
+   
+    ZeroMemory(&ShExecInfo, sizeof(SHELLEXECUTEINFOW));
+    ShExecInfo.cbSize = sizeof(SHELLEXECUTEINFOW);
+    ShExecInfo.fMask = NULL;
+    ShExecInfo.hwnd = hwndOwner;
+    ShExecInfo.lpVerb = NULL;
+    ShExecInfo.lpFile = par1.c_str();
+    ShExecInfo.lpParameters = NULL;
+    ShExecInfo.lpDirectory = NULL;
+    ShExecInfo.nShow = showFlag;
+    ShExecInfo.hInstApp = NULL;
+
+    switch (parVerb)
+    {
+    case SHELLEXECUTEEX_VERB::EDIT :
+        ShExecInfo.lpVerb = L"edit";
+        break;
+    case SHELLEXECUTEEX_VERB::EXPLORE :
+        ShExecInfo.lpVerb = L"explore";
+        break;
+    case SHELLEXECUTEEX_VERB::FIND :
+        ShExecInfo.lpVerb = L"find";
+        break;
+    case SHELLEXECUTEEX_VERB::OPEN :
+        ShExecInfo.lpVerb = L"open";
+        ShExecInfo.lpParameters = par2.c_str();
+        break;
+    case SHELLEXECUTEEX_VERB::OPENAS :
+        ShExecInfo.lpVerb = L"openas";
+        ShExecInfo.fMask = SEE_MASK_INVOKEIDLIST;
+        break;
+    case SHELLEXECUTEEX_VERB::PRINT :
+        ShExecInfo.lpVerb = L"print";
+        break;
+    case SHELLEXECUTEEX_VERB::PROPERTIES:
+        ShExecInfo.lpVerb = L"properties";
+        ShExecInfo.fMask = SEE_MASK_INVOKEIDLIST;
+        break;
+    case SHELLEXECUTEEX_VERB::RUNAS:
+        ShExecInfo.lpVerb = L"runas";
+        ShExecInfo.lpParameters = par2.c_str();
+        break;
+    default:
+        break;
+    }
+
+    if (ShellExecuteExW(&ShExecInfo))
+        lua_pushboolean(L, 1);
+    else
+        lua_pushboolean(L, 0);
+
+    return 1;
+  } else {
+    showErrorMsg("Wrong arguments! - ShellExecuteEx(ExePath, Parameters, Verb, ShowFlag)");
+    lua_pushnil(L);
+    return 1;
+  }
+}
+
+//c_shellExecute
 LUALIB_API int c_shellExecute(lua_State *L)
 {
   const int n = lua_gettop(L);

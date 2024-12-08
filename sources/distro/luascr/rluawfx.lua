@@ -1,5 +1,5 @@
 --[[
-Version : 4.0.1
+Version : 4.1.0
 Web     : http://www.redchar.net
 
 Funzioni di utilità per macro SciTE/Lua
@@ -111,11 +111,6 @@ if not(rwfx_info) then
     end
     
     --definizione funzioni generali
-    
-    --da usare previo settaggio della compatibilità
-    --https://msdn.microsoft.com/en-us/library/ee330730%28v=vs.85%29.aspx#browser_emulation
-    rwfx_ShowHTMLDialog = package.loadlib(rwfx_NomeDLL,"c_ShowHTMLDialog")
-    
     rwfx_SetTransparency = package.loadlib(rwfx_NomeDLL,"c_SetTransparency")
     rwfx_c_ListBox = package.loadlib(rwfx_NomeDLL,"c_ListDlg")
     rwfx_GetFileName = package.loadlib(rwfx_NomeDLL,"c_GetFileName")
@@ -126,7 +121,6 @@ if not(rwfx_info) then
     rwfx_ExecuteCmd = package.loadlib(rwfx_NomeDLL,"c_SendCmdScite")
     rwfx_BrowseForFolder = package.loadlib(rwfx_NomeDLL,"c_BrowseForFolder")
     rwfx_PathIsDirectory = package.loadlib(rwfx_NomeDLL,"c_PathIsDirectory")
-    rwfx_ShellExecute = package.loadlib(rwfx_NomeDLL,"c_shellExecute")
     rwfx_fileOperation = package.loadlib(rwfx_NomeDLL,"c_fileOperation")
     rwfx_createDirectory = package.loadlib(rwfx_NomeDLL,"c_createDirectory")
     rwfx_RegSetInteger = package.loadlib(rwfx_NomeDLL,"c_RegSetInteger")
@@ -140,8 +134,37 @@ if not(rwfx_info) then
     rfx_shellAndWait = package.loadlib(rwfx_NomeDLL,"c_shellAndWait")
     rwfx_ShowProperties = package.loadlib(rwfx_NomeDLL,"c_ShowProperties")    
     rwfx_ShowActiveWindow = package.loadlib(rwfx_NomeDLL,"c_ShowActiveWindow")    
-    rwfx_Test = package.loadlib(rwfx_NomeDLL,"c_Test")
+    
+    SHELLEXECUTEEX_OPTS = {
+        --operazioni consentite
+        EDIT = 0,
+        EXPLORE = 1,
+        FIND = 2,
+        OPEN = 3,
+        OPENAS = 4,
+        PRINT = 5,
+        PROPERTIES = 6,
+        RUNAS = 7,
+        --opzioni visualizzazione finestre
+        SW_HIDE = 0,
+        SW_SHOWNORMAL = 1, SW_NORMAL = 1,
+        SW_SHOWMINIMIZED = 2,
+        SW_SHOWMAXIMIZED = 3, SW_MAXIMIZE = 3,
+        SW_SHOWNOACTIVATE = 4,
+        SW_SHOW = 5,
+        SW_MINIMIZE = 6,
+        SW_SHOWMINNOACTIVE = 7,
+        SW_SHOWNA = 8,
+        SW_RESTORE = 9,
+        SW_SHOWDEFAULT = 10,
+        SW_FORCEMINIMIZE = 11
+    }    
+    rwfx_ShellExecuteEx = package.loadlib(rwfx_NomeDLL,"c_shellExecuteEx")
+    rwfx_ShellExecute = package.loadlib(rwfx_NomeDLL,"c_shellExecute")
 
+    rwfx_Test = package.loadlib(rwfx_NomeDLL,"c_Test")
+    
+    
     --elimina spazi e tabulazioni all'inizio e alla fine della linea passata
     function rfx_Trim( testo )
       local result = ""
