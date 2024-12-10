@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 ;Autore :   Roberto Rossi
-;Versione : 4.2.1
+;Versione : 4.3.0
 ;Web      : http://www.redchar.net
 
 ;Compatible with Inno Setup 6.2.0 or later
@@ -46,7 +46,6 @@ WizardStyle=modern
 SetupIconFile=rsetup.ico
 UninstallRestartComputer=true
 DisableProgramGroupPage=yes
-Uninstallable=not WizardIsTaskSelected('portablemode')
 UninstallDisplayIcon=rsetup.ico
 DisableWelcomePage=false
 AlwaysShowDirOnReadyPage=yes
@@ -60,8 +59,6 @@ Name: english; MessagesFile: compiler:Default.isl
 Name: italian; MessagesFile: compiler:Languages\Italian.isl
 
 [Tasks]
-; TODO : da tradurre la scritta per la modalità portabile
-Name: portablemode; Description: {cm:PortableVersion}; GroupDescription: {cm:PortableVersionGroup}; Flags: unchecked;
 Name: desktopicon; Description: {cm:CreateDesktopIcon}; GroupDescription: {cm:AdditionalIcons}; Flags: unchecked;
 
 [Files]
@@ -80,12 +77,11 @@ Source: ..\sources\distro\loctools-en.properties; DestDir: {app}; Flags: deletea
 
 [Icons]
 ;SciTE
-Name: {group}\{cm:IconRscite}; Filename: "{app}\SciTE.exe"; IconFilename: {app}\scite.ico; Tasks: not portablemode;
+Name: {group}\{cm:IconRscite}; Filename: "{app}\SciTE.exe"; IconFilename: {app}\scite.ico;
 ;Home Page
-Name: {group}\Roberto Rossi Home Page; Filename: "{win}\explorer.exe"; Parameters: "http://www.redchar.net/"; IconFilename: "{win}\explorer.exe"; IconIndex: 14; Tasks: not portablemode;
+Name: {group}\Roberto Rossi Home Page; Filename: "{win}\explorer.exe"; Parameters: "http://www.redchar.net/"; IconFilename: "{win}\explorer.exe"; IconIndex: 14;
 
 Name: {commondesktop}\{cm:IconRscite}; Filename: {app}\SciTE.exe; Tasks: desktopicon;
-;Name: {usersendto}\SciTE; Filename: {app}\SciTE.exe; IconFilename: {app}\scite.ico; Tasks: not portablemode;
 
 [Run]
 
@@ -97,10 +93,6 @@ Name: {commondesktop}\{cm:IconRscite}; Filename: {app}\SciTE.exe; Tasks: desktop
 [CustomMessages]
 english.PrevInstall=Is present another version of RSciTE! I recommend to uninstalling the previous version before proceeding.%n%nDo you want open Control Panel to uninstall previous version of RSciTE?
 italian.PrevInstall=E' presente una precedente versione di RSciTE.%nPer evitare qualsiasi tipo di conflitto suggerisco di procedere, prima di proseguire, ad una DISINSTALLAZIONE dell'attuale RSciTE tramite il pannello di controllo.%n%nE' comunque possibile continuare e tentare di aggiornare la versione corrente. %n%nSi desidera aprire il pannello di controllo per disinstallare la precedente versione di RSciTE?
-english.PortableVersion=Don't install RSciTE, but extract the files for the portable version.
-italian.PortableVersion=Non installare il programma, ma estrai solo i file della versione Portabile.
-english.PortableVersionGroup=RSciTE Portable Version
-italian.PortableVersionGroup=Versione Portabile di RSciTE
 english.IconRscite=SciTE - Text Editor
 italian.IconRscite=SciTE - Editor di testo
 english.IconRSciTEDOC=RSciTE - Guida alle Caratteristiche
@@ -181,28 +173,22 @@ begin
 
   if (CurStep=ssPostInstall) then //installazione conclusive
   begin
-
-    if (not WizardIsTaskSelected('portablemode')) then
+    //gestione runtimes
+    if NOT VCVersionInstalled(VC_2017_REDIST_x64) then
     begin
-        //gestione runtimes
-        if NOT VCVersionInstalled(VC_2017_REDIST_x64) then
-        begin
-            //installazione runtime 64bit
-            Exec(ExpandConstant('{app}\tools\runtimes\vcredist_x64-2017.exe'), '/install /passive /norestart', '', SW_SHOW, ewWaitUntilTerminated, ResultCode)
-        end;
+        //installazione runtime 64bit
+        Exec(ExpandConstant('{app}\tools\runtimes\vcredist_x64-2017.exe'), '/install /passive /norestart', '', SW_SHOW, ewWaitUntilTerminated, ResultCode)
+    end;
 
-        //registrazione menu contestuale a 64 bit
-        if FileExists(ExpandConstant('{app}\wscitecm64_en.dll')) then
-        begin
-            RegisterServer(Is64BitInstallMode, ExpandConstant('{app}\wscitecm64_en.dll'), True);
-        end;
-        if FileExists(ExpandConstant('{app}\wscitecm64_it.dll')) then
-        begin
-            RegisterServer(Is64BitInstallMode, ExpandConstant('{app}\wscitecm64_it.dll'), True);
-        end;
-        
-    end; //not portablemode
-
+    //registrazione menu contestuale a 64 bit
+    if FileExists(ExpandConstant('{app}\wscitecm64_en.dll')) then
+    begin
+        RegisterServer(Is64BitInstallMode, ExpandConstant('{app}\wscitecm64_en.dll'), True);
+    end;
+    if FileExists(ExpandConstant('{app}\wscitecm64_it.dll')) then
+    begin
+        RegisterServer(Is64BitInstallMode, ExpandConstant('{app}\wscitecm64_it.dll'), True);
+    end;
   end; //end conclusione
 
 
