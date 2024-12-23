@@ -612,6 +612,8 @@
 	<td>Martijn Laan</td>
 	<td>Henrik S. Johansen</td>
       </tr><tr>
+	<td>Pawel Z Wronek</td>
+	<td>Ekopalypse</td>
       </tr>
     </table>
     <p>
@@ -620,6 +622,85 @@
         Icons</a> Copyright(C) 1998 by Dean S. Jones<br />
     </p>
     <h2>Releases</h2>
+    <h3>
+       <a href="https://www.scintilla.org/scite554.zip">Release 5.5.4</a>
+    </h3>
+    <ul>
+	<li>SciTE</li>
+	<ul>
+		<li>
+		Released 18 December 2024.
+		</li>
+		<li>
+		Fix crash on Win32 in strip handling when matching a keypress to a caption which is empty.
+		</li>
+	</ul>
+	<li>Lexilla 5.4.2</li>
+	<ul>
+		<li>
+		Update to Unicode 15.1.
+		<a href="https://github.com/ScintillaOrg/lexilla/issues/285">Issue #285</a>.
+		</li>
+		<li>
+		Lexer added for Nix "nix".
+		<a href="https://github.com/ScintillaOrg/lexilla/pull/282">Pull request #282</a>.
+		</li>
+		<li>
+		JavaScript: Use correct SCE_HJA_TEMPLATELITERAL style for server-side template literals in
+		HTML instead of client-side style.
+		<a href="https://github.com/ScintillaOrg/lexilla/issues/286">Issue #286</a>.
+		</li>
+		<li>
+		JavaScript: Use correct SCE_HJ_SYMBOLS style for '.' after regex instead of SCE_HJ_WORD.
+		Prevent empty word assertion when non-word character after regex flag.
+		<a href="https://github.com/ScintillaOrg/lexilla/issues/289">Issue #289</a>.
+		</li>
+		<li>
+		PHP: Fix unstable lexing with substyled keyword and unterminated string.
+		<a href="https://github.com/ScintillaOrg/lexilla/issues/288">Issue #288</a>.
+		</li>
+		<li>
+		Rust: Add C string and raw C string literal styles SCE_RUST_CSTRING and SCE_RUST_CSTRINGR.
+		<a href="https://github.com/ScintillaOrg/lexilla/pull/292">Pull request #292</a>,
+		<a href="https://github.com/ScintillaOrg/lexilla/issues/268">Issue #268</a>.
+		</li>
+		<li>
+		TOML: Don't treat keys without values as errors.
+		<a href="https://github.com/ScintillaOrg/lexilla/pull/283">Pull request #283</a>.
+		</li>
+		<li>
+		Zig: Add SCE_ZIG_IDENTIFIER_STRING for identifiers expressed as strings.
+		<a href="https://github.com/ScintillaOrg/lexilla/pull/287">Pull request #287</a>.
+		</li>
+	</ul>
+	<li>Scintilla 5.5.4</li>
+	<ul>
+		<li>
+		Update to Unicode 15.1.
+		<a href="https://github.com/ScintillaOrg/lexilla/issues/285">Issue #285</a>.
+		</li>
+		<li>
+		Improve performance of SCI_BRACEMATCH.
+		<a href="https://sourceforge.net/p/scintilla/feature-requests/1533/">Feature #1533</a>.
+		</li>
+		<li>
+		Improve performance of DBCS text.
+		<a href="https://sourceforge.net/p/scintilla/feature-requests/1535/">Feature #1535</a>.
+		</li>
+		<li>
+		Fix wrapping removed lines.
+		<a href="https://sourceforge.net/p/scintilla/bugs/2456/">Bug #2456</a>.
+		</li>
+		<li>
+		Fix moving line down to empty final line and moving empty final line up.
+		<a href="https://sourceforge.net/p/scintilla/bugs/2457/">Bug #2457</a>.
+		</li>
+		<li>
+		On GTK, allow middle click to insert multiple times within a document.
+		<a href="https://github.com/geany/geany/issues/2629">Geany Issue #2629</a>.
+		</li>
+	</ul>
+    </ul>
     <h3>
        <a href="https://www.scintilla.org/scite553.zip">Release 5.5.3</a>
     </h3>
