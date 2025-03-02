@@ -1153,8 +1153,6 @@ NameError: name 'mistake' is not defined
           <div class="example">
 representations=π=Pi,\u20AA=shekel(\u20AA),!0,#FF000090,\x0D\x0A=crlf</div>
         </td>
-
-        </td>
       </tr>
       <tr id='property-view.whitespace'>
         <td>
@@ -1384,6 +1382,15 @@ representations=π=Pi,\u20AA=shekel(\u20AA),!0,#FF000090,\x0D\x0A=crlf</div>
           tool bar buttons to be less accurate. This may improve performance on slow machines.
         </td>
       </tr>
+      <tr id='property-undo.selection.history'>
+        <td>
+          undo.selection.history
+        </td>
+        <td>
+          Setting this to 0 stops collection of the selection at each action to be restored on undo and redo.
+	  This decreases the amount of memory used.
+        </td>
+      </tr>
       <tr id='property-change.history'>
         <td>
           change.history<br />
@@ -1402,7 +1409,7 @@ representations=π=Pi,\u20AA=shekel(\u20AA),!0,#FF000090,\x0D\x0A=crlf</div>
         </td>
         <td>
           The change.history property controls whether changes to the document (insertions, deletions, saved chanes, ...) are
-          shown as margin markers or indicators within text.<br .>
+          shown as margin markers or indicators within text.<br />
           It is a set of bit flags (1=enable, 2=margin markers, 4=indicators in text) so the most likely settings are
           0=disabled; 3=enabled with margin marks, or 7=enabled with margin markers and in-text indicators.<br />
           There is a default set of visuals for this feature but they may be altered with the marker.* and indicator.* properties.<br />
@@ -1597,10 +1604,8 @@ representations=π=Pi,\u20AA=shekel(\u20AA),!0,#FF000090,\x0D\x0A=crlf</div>
         when the UTF-16 encoding is used.
         </td>
       </tr>
-      </tr>
       <tr id='property-file.size.large'>
         <td>
-          <a name='property-file.size.large'></a>
            file.size.large
         </td>
         <td>
@@ -1615,7 +1620,6 @@ representations=π=Pi,\u20AA=shekel(\u20AA),!0,#FF000090,\x0D\x0A=crlf</div>
       </tr>
       <tr id='property-file.size.no.styles'>
         <td>
-          <a name='property-file.size.no.styles'></a>
            file.size.no.styles
         </td>
         <td>
@@ -2325,7 +2329,7 @@ representations=π=Pi,\u20AA=shekel(\u20AA),!0,#FF000090,\x0D\x0A=crlf</div>
       </tr>
       <tr id='property-calltip.*.parameters.start'>
         <td>
-          <a name='property-calltip.*.parameters.end'></a><a name='property-calltip.*.parameters.separators'></a>
+          <a id='property-calltip.*.parameters.end'></a><a id='property-calltip.*.parameters.separators'></a>
           calltip.<i>lexer</i>.parameters.start<br />
           calltip.<i>lexer</i>.parameters.end<br />
           calltip.<i>lexer</i>.parameters.separators<br />
@@ -3806,11 +3810,10 @@ imports.include=fortran lisp
          </div>
         A simple Python script that recognises a particular tag that indicates the file is in the Korean code page 949:<br />
         <div class="example">
-<span><span class="S5">import</span><span class="S0"> </span>sys<br />
-<span class="S5">if</span><span class="S0"> </span><span class="S3">"Language:Korean"</span><span class="S0"> </span><span class="S5">in</span><span class="S0"> </span>open<span class="S10">(</span>sys<span class="S10">.</span>argv<span class="S10">[</span><span class="S2">1</span><span class="S10">]).</span>read<span class="S10">():</span><br />
+<span class="S5">import</span><span class="S0">&nbsp;</span>sys<br />
+<span class="S5">if</span><span class="S0">&nbsp;</span><span class="S3">"Language:Korean"</span><span class="S0">&nbsp;</span><span class="S5">in</span><span class="S0">&nbsp;</span>open<span class="S10">(</span>sys<span class="S10">.</span>argv<span class="S10">[</span><span class="S2">1</span><span class="S10">]).</span>read<span class="S10">():</span><br />
 <span class="S0">&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="S5">print</span><span class="S10">(</span><span class="S4">'code.page=949'</span><span class="S10">)</span><br />
 <span class="S0">&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="S5">print</span><span class="S10">(</span><span class="S4">'character.set=129'</span><span class="S10">)</span><br />
-<span class="S0"></span></span>
          </div>
         </td>
       </tr>
