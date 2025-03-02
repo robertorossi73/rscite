@@ -177,7 +177,7 @@ begin
     if NOT VCVersionInstalled(VC_2017_REDIST_x64) then
     begin
         //installazione runtime 64bit
-        Exec(ExpandConstant('{app}\tools\runtimes\vcredist_x64-2017.exe'), '/install /passive /norestart', '', SW_SHOW, ewWaitUntilTerminated, ResultCode)
+        Exec(ExpandConstant('{app}\tools\runtimes\vcredist_x64-2017.exe'), '/install /passive /norestart', '', SW_SHOW, ewWaitUntilTerminated, ResultCode);
     end;
 
     //registrazione menu contestuale a 64 bit
