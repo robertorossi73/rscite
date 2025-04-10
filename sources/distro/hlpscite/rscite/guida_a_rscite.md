@@ -4,7 +4,7 @@
 
 **Autore : Roberto Rossi**
 
-**Versione 119**
+**Versione 120**
 
 Un gestore di testi **potente**, **semplice**, **veloce**, **poliedrico**...
 
@@ -701,10 +701,6 @@ possibile rendere trasparente la finestra di SciTE, in modo che diventi, in
 alcune circostanze, meno evidente. Questa funzione risulta utile soprattutto
 quando SciTE viene posizionato sempre in primo piano, utilizzando l’apposita
 opzione.
-* **Analizza file corrente con CTAGS**. Attraverso l’utilizzo di CTAGS, il
-file corrente viene analizzato e vengono mostrate le funzioni, le classi e le
-variabile definite al suo interno. In questo modo è possibile identificare
-immediatamente ogni elemento del sorgente editato.
 * **Generatore GUID**. Questa funzione permette l’inserimento di una GUID
 all’interno del testo corrente, consentendone la formattazione per adattarsi
 a diverse situazioni di utilizzo.
