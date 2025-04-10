@@ -1,10 +1,10 @@
 --[[
-Version : 3.5.1
+Version : 3.6.1
 Web     : http://www.redchar.net
 
 Questa procedura permette il caricamente del file lisp corrente in un CAD supprotato
 
-Copyright (C) 2015-2024 Roberto Rossi 
+Copyright (C) 2015-2025 Roberto Rossi 
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -94,7 +94,7 @@ do
     end
 
     --ritorna la selezione corrente se esiste, oppure l'ultima selezione
-    -- G_SelOrLastWord  --variabile globale con ultima selezione
+    -- props["RSciTE.Tmp.G_SelOrLastWord"]  --variabile globale con ultima selezione
     local function GetSelOrLastWord()
         local tag
         local pos
@@ -102,18 +102,9 @@ do
         
         tag = editor:GetSelText()
         if (tag == "") then
-            -- currentPos = editor.CurrentPos
-            -- editor:WordLeft()
-            -- editor:WordRightEndExtend()
-            -- tag = editor:GetSelText()
-            -- editor.CurrentPos = currentPos
-            -- editor.SelectionStart = currentPos
-            if (G_SelOrLastWord == nil) then
-                G_SelOrLastWord = ""
-            end
-            tag = G_SelOrLastWord
+            tag = props["RSciTE.Tmp.G_SelOrLastWord"]
         else
-            G_SelOrLastWord = tag
+            props["RSciTE.Tmp.G_SelOrLastWord"] = tag
         end
 
         return tag
@@ -181,7 +172,7 @@ do
           io.close(idf)
         end
         
-        rwfx_ShowActiveWindow(SW_MINIMIZE)
+        --rwfx_ShowActiveWindow(SW_MINIMIZE)
         rfx_execPowerShell(props["SciteDefaultHome"].."\\luascr\\loadCAD.ps1", false, false, false, cad.." \"".. inverterSlash(newNomef) .."\"")
         
 --         par = "\""..props["SciteDefaultHome"].."/luascr/loadCADLsp.vbs\" " ..
