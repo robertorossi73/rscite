@@ -52,7 +52,7 @@ AlwaysShowDirOnReadyPage=yes
 DisableDirPage=no
 ArchitecturesAllowed=x64compatible
 ArchitecturesInstallIn64BitMode=x64compatible
-DefaultDialogFontName=Consolas
+;DefaultDialogFontName=Consolas
 
 [Languages]
 Name: english; MessagesFile: compiler:Default.isl
