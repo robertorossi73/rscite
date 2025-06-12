@@ -4,7 +4,7 @@
 
 **Autore : Roberto Rossi**
 
-**Versione 120**
+**Versione 121**
 
 Un gestore di testi **potente**, **semplice**, **veloce**, **poliedrico**...
 
