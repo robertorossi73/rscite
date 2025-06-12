@@ -631,6 +631,98 @@
     </p>
     <h2 id="Releases">Releases</h2>
     <h3>
+       <a href="https://www.scintilla.org/scite557.zip">Release 5.5.7</a>
+    </h3>
+    <ul>
+	<li>SciTE</li>
+	<ul>
+		<li>
+		Released 8 June 2025.
+		</li>
+		<li>
+		On Windows, fix opening files multiple times when paths differ in case.
+		<a href="https://sourceforge.net/p/scintilla/bugs/2476/">Bug #2476</a>.
+		</li>
+		<li>
+		Improve view position restoration when switching documents.
+		<a href="https://sourceforge.net/p/scintilla/bugs/1395/">Bug #1395</a>.
+		</li>
+		<li>
+		Allow two '|' in abbreviations to place caret and currently selected text at different locations.
+		<a href="https://sourceforge.net/p/scintilla/feature-requests/1552/">Feature #1552</a>.
+		</li>
+		<li>
+		Skip context when going to diff message in output pane.
+		<a href="https://sourceforge.net/p/scintilla/feature-requests/1554/">Feature #1554</a>.
+		</li>
+		<li>
+		Split bash settings out from perl.properties to new bash.properties.
+		<a href="https://sourceforge.net/p/scintilla/feature-requests/1555/">Feature #1555</a>.
+		</li>
+	</ul>
+	<li>Lexilla 5.4.5</li>
+	<ul>
+		<li>
+		Dart: Add error state SCE_DART_STRINGEOL for unterminated string.
+		<a href="https://github.com/ScintillaOrg/lexilla/pull/315">Pull request #315</a>.
+		</li>
+		<li>
+		Makefile: Add a keyword list to makefile lexer to highlight GNU Make directives like 'ifdef' and 'vpath' as
+		SCE_MAKE_PREPROCESSOR since these are similar to NMAKE directives like '!IFDEF'.
+		</li>
+		<li>
+		Nix: Add error state SCE_NIX_STRINGEOL for unterminated string.
+		<a href="https://github.com/ScintillaOrg/lexilla/pull/315">Pull request #315</a>.
+		</li>
+		<li>
+		TOML: Add error state SCE_TOML_STRINGEOL for unterminated string.
+		<a href="https://github.com/ScintillaOrg/lexilla/pull/315">Pull request #315</a>.
+		</li>
+		<li>
+		Zig: Add error state SCE_ZIG_STRINGEOL for unterminated string.
+		<a href="https://github.com/ScintillaOrg/lexilla/pull/315">Pull request #315</a>.
+		</li>
+	</ul>
+	<li>Scintilla 5.5.7</li>
+	<ul>
+		<li>
+		Add SCI_SCROLLVERTICAL method to restore view position and maintain it while performing line wrapping.
+		</li>
+		<li>
+		Add SC_UNDO_SELECTION_HISTORY_SCROLL flag to SCI_SETUNDOSELECTIONHISTORY which controls
+		whether undo and redo restore vertical scroll position.
+		</li>
+		<li>
+		Tweak SC_MARK_BAR to be slightly wider by using next higher whole pixel instead of next lower for margin width / 3.
+		</li>
+		<li>
+		Scale images in autocompletion lists with SCI_AUTOCSETIMAGESCALE to match high DPI screens.
+		Initially only on GTK and Qt.
+		</li>
+		<li>
+		Fix wrapping bug for UTF-8 where \r\n could wrap between the characters.
+		<a href="https://github.com/notepad-plus-plus/notepad-plus-plus/pull/16373">Notepad++ Pull Request #16373</a>.
+		</li>
+		<li>
+		Fix crash during painting when scroll bars changed.
+		<a href="https://sourceforge.net/p/scintilla/bugs/2481/">Bug #2481</a>.
+		</li>
+		<li>
+		On GTK, reset vertical scroll bar synchronously in SCI_SETDOCPOINTER to fix bug where
+		scroll position not restored in non-wrap mode.
+		<a href="https://sourceforge.net/p/scintilla/bugs/2416/">Bug #2416</a>.
+		</li>
+		<li>
+		On GTK, fix IME problem when tentative composition interfered with delete surrounding.
+		<a href="https://sourceforge.net/p/scintilla/feature-requests/1476/">Feature #1476</a>.
+		</li>
+		<li>
+		On GTK, update IME cursor position inside retrieve surrounding to better position candidate window.
+		<a href="https://sourceforge.net/p/scintilla/feature-requests/1488/">Feature #1488</a>.
+		</li>
+	</ul>
+    </ul>
+    <h3>
        <a href="https://www.scintilla.org/scite556.zip">Release 5.5.6</a>
     </h3>
     <ul>

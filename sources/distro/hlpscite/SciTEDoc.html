@@ -710,6 +710,13 @@ NameError: name 'mistake' is not defined
        Ie. if you define 'é' as '&amp;eacute;', you can expand it inside a word.<br />
        When multiple abbreviation names match, the longest matching name will be expanded.
     </p>
+    <p>
+       There could be more than one '|' in the abbreviation. If the Insert Abbreviation
+       menu command is used then the selection is placed at the last '|' and the caret is
+       placed at the first '|'.<br />
+       A simple example is <code>if (|) {\n\t|\n}</code> - the selection will become
+       the body and the caret will be placed to the condition.
+    </p>
     <h3 id="Folding">
        Folding
     </h3>
@@ -1856,7 +1863,7 @@ representations=π=Pi,\u20AA=shekel(\u20AA),!0,#FF000090,\x0D\x0A=crlf</div>
           caret.style
         </td>
         <td>
-          Sets the style of the caret. see <a href="ScintillaDoc.html#SCI_SETCARETSTYLE">SCI_SETCARETSTYLE</a> for possible values.
+          Sets the style of the caret. see <a href="https://www.scintilla.org/ScintillaDoc.html#SCI_SETCARETSTYLE">SCI_SETCARETSTYLE</a> for possible values.
         </td>
       </tr>
       <tr id='property-caret.width'>
