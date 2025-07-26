@@ -81,7 +81,7 @@ do
 
         wcl_strip:close()
 
-        rwfx_ShowActiveWindow(SW_MINIMIZE)
+        --rwfx_ShowActiveWindow(SW_MINIMIZE)
         rfx_execPowerShell(props["SciteDefaultHome"].."\\luascr\\loadCAD.ps1", false, false, false, cad.." \"".. inverterSlash(props["FilePath"]) .."\"")
         
 --         par = "\""..props["SciteDefaultHome"].."/luascr/loadCADLsp.vbs\" " ..
