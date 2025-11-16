@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 ;Autore :   Roberto Rossi
-;Versione : 4.3.0
+;Versione : 4.3.1
 ;Web      : http://www.redchar.net
 
 ;Compatible with Inno Setup 6.2.0 or later
@@ -46,7 +46,7 @@ WizardStyle=modern
 SetupIconFile=rsetup.ico
 UninstallRestartComputer=true
 DisableProgramGroupPage=yes
-UninstallDisplayIcon=rsetup.ico
+UninstallDisplayIcon={app}\rsetup.ico
 DisableWelcomePage=false
 AlwaysShowDirOnReadyPage=yes
 DisableDirPage=no
