@@ -1,5 +1,5 @@
 --[[
-Version : 3.6.1
+Version : 3.6.4
 Web     : http://www.redchar.net
 
 Questa procedura permette il caricamente del file lisp corrente in un CAD supprotato
@@ -22,11 +22,14 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
 *******************************************************************************
 ]]
 
-do
-    require("luascr/rluawfx")
-    require("luascr/rluaps")
 
-    function inverterSlash(testo)
+do
+    require("luascr/rluaps")
+--    require("luascr/rluawfx")
+
+    local rfx_execPowerShell = _G.rfx_execPowerShell
+    
+    local function inverterSlash(testo)
         local result = ""
         local i=1
         local len
@@ -45,9 +48,32 @@ do
         end
         return result
     end 
-
     
-    function buttonOk_click(control, change)
+    -- -------------------------- Procedure di utilità ------------------------
+    --legge/scrive l'ultimo cad seleziolnato
+    -- se value = nil la funzione ritorna il valore precedentemente salvato
+    -- se value != nil e > 0, la funzione scrive il valore nel registro
+    local function loadCADLsp_presel(value)
+        local sel = nil
+        local key = ""
+        
+        key = rfx_Get_Registry_Key("TMP")
+        if (value) then
+            rwfx_RegSetInteger(key, "loadCADLsp.CADName", value)
+        else
+            sel = rwfx_RegGetInteger(key, "loadCADLsp.CADName", "HKCU")        
+            if not(sel) then
+                sel = 1
+            else
+              sel = sel - 1
+            end
+        end
+        
+        return sel
+    end
+    -- ------------------------------------------------------------------------
+    
+    local function buttonOk_click(control, change)
         local exe = "wscript"
         local cad = ""
         local cadselected = ""
@@ -183,31 +209,8 @@ do
         --print(par)
     end
     
----------------------------- Procedure di utilità ---------------------------- 
-    --legge/scrive l'ultimo cad seleziolnato
-    -- se value = nil la funzione ritorna il valore precedentemente salvato
-    -- se value != nil e > 0, la funzione scrive il valore nel registro
-    function loadCADLsp_presel(value)
-        local sel = nil
-        local key = ""
-        
-        key = rfx_Get_Registry_Key("TMP")
-        if (value) then
-            rwfx_RegSetInteger(key, "loadCADLsp.CADName", value)
-        else
-            sel = rwfx_RegGetInteger(key, "loadCADLsp.CADName", "HKCU")        
-            if not(sel) then
-                sel = 1
-            else
-              sel = sel - 1
-            end
-        end
-        
-        return sel
-    end
-    
----------------------------- Procedure principale ---------------------------- 
-    function MainLoadLsp ()
+-- -------------------------- Procedure principale ---------------------------- 
+    local function MainLoadLsp ()
         local tbl =  {}
         local isDCL = false --lisp == true, dcl == false
         
@@ -258,7 +261,7 @@ do
         
         --ripristinare ultima selezione
         wcl_strip:setList("CAD", tbl)
-        wcl_strip:setValue("CAD", tbl[loadCADLsp_presel(nil)])
+        wcl_strip:setValue("CAD", tbl[loadCADLsp_presel(false)])
     end
 
     MainLoadLsp()
