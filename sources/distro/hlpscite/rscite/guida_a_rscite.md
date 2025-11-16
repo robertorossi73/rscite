@@ -4,7 +4,7 @@
 
 **Autore : Roberto Rossi**
 
-**Versione 121**
+**Versione 122**
 
 Un gestore di testi **potente**, **semplice**, **veloce**, **poliedrico**...
 
@@ -494,10 +494,8 @@ comoda tabella con i 255 caratteri standard.
 * Supporto abbreviazioni per i seguenti linguaggi:
 * Supporto sistema di **suggerimenti per linguaggio LUA**
 * Integrato **manuale per linguaggio LUA**
-* **Editor Esadecimale FRhed** (versione per Windows). Accessibile da **F12**,
-permette l’editazione del file corrente in formato Esadecimale.
-* Software per il confronto e per l’unione di file, **WinMerge**.
-Accessibile da **F12**, permette il confronto di file e cartelle.
+* **Editor Esadecimale**. Accessibile da **F12**, permette di avviare una applicazione esterna per l’editazione del file corrente in formato Esadecimale.
+* Avvio di software esterno per il confronto e per l’unione di file.
 * Integrazione con il **menu contestuale di Windows**.
 * **Procedura di installazione**, in lingua italiana, per i sistemi Windows
 (XP / Vista / 7 / 8 / 10 o successivi), con possibilità di personalizzazione
@@ -733,8 +731,7 @@ stringa usando l’algoritmo BASE64.
 * **Traduci testo selezionato in...** Utile per tradurre piccole frasi in
 qualsiasi altra lingua supportata da Google Translator. Richiede una
 connessione a internet attiva.
-* **Confronta / Fondi / Unisci File**. Consente l’utilizzo di WinMerge per il 
-confronto e la fusione di file e cartelle.
+* **Confronta / Fondi / Unisci File**. Consente l’utilizzo di una applicazione esterna per il confronto e la fusione di file e cartelle.
 * **Apri Tester Espressioni Regolari (Online)**. Apre un apposito sito web,
 interamente dedicato al test delle espressioni regolari.
 * **Apri editor esadecimale**. Apre l’editor esadecimale con il file
@@ -889,121 +886,24 @@ Microsoft (Developer):
 
 <p style="page-break-before: always;">&nbsp;</p>
 
-### Tools Aggiuntivi presenti in RSciTE
+### Tools Aggiuntivi con RSciTE
 
-Nella distribuzione **RSciTE** sono stati introdotti una serie di software
+**RSciTE** è in grado di lanciare una serie di software
 aggiuntivi, al fine di potenziare gli strumenti di modifica del testo.
 
-Tali software, sono disponibili, sia in forma indipendente, sia richiamabili
-direttamente dall’interno dell'editor di testo, cosa che ne 
+Tali software, che devono essere scaricati e installati separamentemente, 
+saranno richiamabili direttamente dall’interno dell'editor di testo, cosa che ne 
 consente un più rapido utilizzo.
 
-In tutti i casi, tali strumenti seguono le filosofie dell’"Open Source",
-rimanendo gratuiti e liberi, esattamente come l’editor, SciTE.
+I programmi esterni utilizzabili da RSciTE sono:
 
-I programmi inclusi in RSciTE, oltre SciTE, sono:
-
-* **FRhed**, per l’editazione e la visualizzazione di file binari. Per maggiori
-dettagli si consulti la sezione **Frhed**.
-* <div style="margin-left:0cm;margin-right:0cm;">**HTML Tidy**, per la
-formattazione automatica di file HTML e XML. Per maggiori dettagli si consulti
-la sezione **HTML Tidy**.
-* **Cloc**, consente di ottenere statistiche sui file sorgenti che si stanno
-editando.
+* **Confronto/Unione file**. E' possibile lanciare una applicazione che confronta due file di testo.
+* **Editor esadecimale**. RSciTE permette l'esecuzione di una applicazioneper l’editazione e la visualizzazione di file binari. 
+* **HTML Tidy**, per la formattazione automatica di file HTML e XML. Per maggiori dettagli si consulti la sezione **HTML Tidy**.
+* **Cloc**, consente di ottenere statistiche sui file sorgenti che si stanno editando.
 * **GpPG**, in **RSciTE** permette di criptare e decriptare file di testo.
 * **Iconv**, consente di cambiare la codifica di un file.
 * **SQLite**, consente di interpretare ed eseguire un file SQL attraverso l'uso di questo diffuso motore di database.
-
-<p style="page-break-before: always;">&nbsp;</p>
-
-### WinMerge, Confrontare e Unire File
-
-WinMerge è un software Open Source dedicato al mondo Windows, in grado di
-confrontare e unire file di testo e cartelle. 
-
-WinMerge è particolarmente famoso e utilizzato. RSciTE include una versione
-particolare di WinMerge.
-
-Il software incluso con RSciTE non è il WinMerge originale ma è un derivato, il
-suo nome completo è **WinMerge 2011**. Questa scelta è stata fatta per poter includere,
-in RSciTE, un programma di confronto **attivamente e costantentemente sviluppato**
-([WinMerge 2011](https://bitbucket.org/jtuc/winmerge2011)).
-
-WinMerge è estremamente utile nel caso
-si vogliano visualizzare le differenze tra diverse versioni dello stesso
-progetto, inoltre consente l’inserimento delle modifiche di una versione
-nell’altra.
-
-Dal punto di vista delle caratteristiche ecco quelle di WinMerge:
-
-* Supporto e integrazione con **Microsoft Windows**.
-* Supporto per file in **formato Windows, Unix, Linux e Mac**.
-* Supporto per codifica **Unicode, UTF-8 e altre...**
-* Interfaccia a **sezioni** (Tab).
-* **Modalità visuale** per confronto e unione.
-* **Editor integrato** con evidenziazione della sintassi, numeri di linea e 
-ritorno a capo.
-* Visualizzazione delle differenze in **due pannelli** verticali con modalità 
-di unione subito attiva.
-* Riconoscimento **linee spostate**.
-* **Confronto cartelle** con supporto per **espressioni regolari**.
-* **Confronto cartelle** con dimensioni e date.
-* Supporto per il confronto di **sottocartelle**.
-* Supporto per il **controllo delle versioni** con modalità di risoluzione 
-conflitti e applicazione patch.
-* Supporto per gli archivi in formato **7-Zip**.
-* Supporto **per Plugin aggiuntivi**.
-* **Manuale** online ed offline in formato HTML.
-
-<p style="text-align:center;">
-<img src="winmerge.png" align="middle" alt="WinMerge" border="0" width="80%">
-</p>
-
-<p style="page-break-before: always;">&nbsp;</p>
-
-### FRhed
-
-**FRhed** è un potente editor esadecimale, adatto alla visualizzazione e alla
-modifica di file binari e di testo. L’autore di questo software è Marcin Dudek,
-e nonostante FRhed sia stato scritto nel tempo libero e per hobby, risulta
-essere uno dei migliori editor esadecimali in circolazione. FRhed è gratuito,
-ed è licenziato secondo la famosa **GNU GPL**, ciò ne garantisce l’assoluta
-libertà di utilizzo e modifica.
-
-**FRhed** viene installato con **RSciTE** ed è presente sia nel menu dei
-programma di Windows, sia nel menu **Strumenti** interno a SciTE.
-
-<p style="text-align:center;">
-<img src="frhed.png" align="middle" alt="FRhed" border="0" width="80%">
-</p>
-
-Per comprendere meglio la potenza di **FRhed**, ecco in sintesi, le sue funzionalità
-salienti:
-
-* **Applicazione nativa Windows** con supporto ai file con nomi lunghi e
-dimensione file editabili limitata solo dalla quantità di memoria presente nel
-sistema.
-* **Dimensione programma ridotta** con caricamento istantaneo.
-* **Taglia, copia e incolla** di valori binari.
-* **Sintassi** per descrivere valori di tipo byte, word, longword, float and
-double binary.
-* Inserimento diretto di **valori esadecimali o di testo**.
-* Possibilità di **confrontare** due file.
-* **Trova/Sostituisci** di qualsiasi combinazione di valori testuali o esadecimali.
-* Manipolazione diretta dei **bit**.
-* Esportazione **hexdump**.
-* **Impostazione** automatica/manuale dei byte visualizzati.
-* Possibilità di **personalizzare** la dimensione dei font, il set dei caratteri,
-i colori e lo sfondo.
-* Supporto per **formati binari Intel e Motorola**.
-* Comando per **Inviare a...**.
-* Supporto per **segnalibri** personalizzabili.
-* Supporto per il **caricamento parziale** dei file.
-* **Drag & Drop**.
-* Possibilità di **applicare modelli** a informazioni strutturate.
-* **Accesso diretto** ai settori dei dischi.
-* Supporto alla **Crittografia**.
-* **Software Libero** con sorgenti disponibili e liberamente modificabili secondo la licenza GPL.
 
 <p style="page-break-before: always;">&nbsp;</p>
 
@@ -1243,7 +1143,7 @@ scritti in **PHP/HTML/XML/Javascript/Lua/InnoSetup** con fondo nero e testo chia
 
 ### Siti Utili
 
-**Siti relativi ai software inclusi in RSciTE**
+**Siti relativi ai software inclusi o utilizzabili in RSciTE**
 
 Per poter approfondire la conoscenza delle applicazioni incluse in ’RSciTE’ 
 ecco l’elenco dei collegamenti ai siti più utili.
