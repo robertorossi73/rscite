@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 ;Autore :   Roberto Rossi
-;Versione : 4.3.1
+;Versione : 4.3.2
 ;Web      : http://www.redchar.net
 
 ;Compatible with Inno Setup 6.2.0 or later
@@ -135,6 +135,7 @@ end;
 procedure CurStepChanged(CurStep: TSetupStep);
 var 
     ResultCode: Integer;
+    ErrorCode: Integer;    
 begin
   if (CurStep=ssInstall) then //controllo installazione precedente
   begin 
@@ -145,7 +146,9 @@ begin
       if MsgBox(ExpandConstant('{cm:PrevInstall}'), mbConfirmation, MB_YESNO or MB_DEFBUTTON2) = IDYES then
       begin      
         //rundll32.exe shell32.dll,Control_RunDLL Appwiz.cpl
-        Exec(ExpandConstant('{sys}\rundll32.exe'), 'shell32.dll,Control_RunDLL Appwiz.cpl', '', SW_SHOW, ewNoWait, ResultCode);
+        //Exec(ExpandConstant('{sys}\rundll32.exe'), 'shell32.dll,Control_RunDLL Appwiz.cpl', '', SW_SHOW, ewNoWait, ResultCode);
+        //Exec(ExpandConstant('{cmd}'), '/c start ms-settings:appsfeatures', '', SW_SHOW, ewNoWait, ResultCode);
+        ShellExec('', 'ms-settings:appsfeatures','', '', SW_SHOWNORMAL, ewNoWait, ErrorCode);
         // user clicked No
         Abort();
       end else
