@@ -589,18 +589,21 @@ LUALIB_API int c_shellExecuteEx(lua_State *L)
   std::wstring par2;
   int parVerb;
   int showFlag;
+  bool waitProcess;
   SHELLEXECUTEINFOW ShExecInfo;
 
   if ((lua_type(L,1)==LUA_TSTRING) &&
       (lua_type(L,2)==LUA_TSTRING) &&
       (lua_type(L,3)==LUA_TNUMBER) &&
       (lua_type(L,4)==LUA_TNUMBER) &&
-      (n == 4))
+      (lua_type(L,5)==LUA_TBOOLEAN) &&
+      (n == 5))
   {
     path = lua_tostring(L,1);
     parameters = lua_tostring(L,2);
     parVerb = lua_tointeger(L,3);
     showFlag = lua_tointeger(L,4);
+    waitProcess = lua_toboolean(L, 5); //wait process
 
     par1 = UTF8CharToWChar(path);
     par2 = UTF8CharToWChar(parameters);
@@ -654,14 +657,26 @@ LUALIB_API int c_shellExecuteEx(lua_State *L)
         break;
     }
 
+    if (waitProcess)
+    {
+        ShExecInfo.fMask = ShExecInfo.fMask + SEE_MASK_NOCLOSEPROCESS;
+    }
+
     if (ShellExecuteExW(&ShExecInfo))
+    {
+        if (waitProcess)
+        {
+            WaitForSingleObject(ShExecInfo.hProcess, INFINITE);
+            CloseHandle(ShExecInfo.hProcess);
+        }
         lua_pushboolean(L, 1);
+    }
     else
         lua_pushboolean(L, 0);
 
     return 1;
   } else {
-    showErrorMsg("Wrong arguments! - ShellExecuteEx(ExePath, Parameters, Verb, ShowFlag)");
+    showErrorMsg("Wrong arguments! - ShellExecuteEx(ExePath, Parameters, Verb, ShowFlag, waitProcess)");
     lua_pushnil(L);
     return 1;
   }

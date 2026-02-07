@@ -2,6 +2,9 @@
   nuova funzione c_callFXex in grado di richiamare funzioni presenti in 
   librerie esterne
 
+V.5.8.0.0
+* conclusa implementazione ShellExecuteEx con attesa processo
+
 V.5.7.2.0
 * implementata funzione ShellExecuteEx con possibilità di specificare operazione da svolgere(c_ShellExecuteEx)
 
