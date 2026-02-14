@@ -1,7 +1,7 @@
 -- -*- coding: utf-8 -*- file readonly.lua
 --[[
 Author  : Roberto Rossi
-Version : 1.0.0
+Version : 1.0.1
 Web     : http://www.redchar.net
 
 Questa procedura consente di rendere tutti i file in sola lettura o di annullare
@@ -67,9 +67,9 @@ do
         wcl_strip:addLabel(nil, _t(525))
         wcl_strip:addNewLine()    
         
-        wcl_strip:addButton("ANNULLA",_t(239), buttonCancel_click, true)
+        wcl_strip:addButton("READONLY",_t(523), buttonReadOnly_click, true)
         wcl_strip:addButton("NOTREADONLY",_t(524), buttonNotReadOnly_click)
-        wcl_strip:addButton("READONLY",_t(523), buttonReadOnly_click)
+        wcl_strip:addButton("ANNULLA",_t(239), buttonCancel_click)
 
         wcl_strip:show()
     end
