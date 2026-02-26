@@ -1863,7 +1863,7 @@ representations=π=Pi,\u20AA=shekel(\u20AA),!0,#FF000090,\x0D\x0A=crlf</div>
           caret.style
         </td>
         <td>
-          Sets the style of the caret. see <a href="ScintillaDoc.html#SCI_SETCARETSTYLE">SCI_SETCARETSTYLE</a> for possible values.
+          Sets the style of the caret. see <a href="https://www.scintilla.org/ScintillaDoc.html#SCI_SETCARETSTYLE">SCI_SETCARETSTYLE</a> for possible values.
         </td>
       </tr>
       <tr id='property-caret.width'>
@@ -2749,7 +2749,11 @@ representations=π=Pi,\u20AA=shekel(\u20AA),!0,#FF000090,\x0D\x0A=crlf</div>
         </tr>
         <tr id='property-lexer.errorlist.value.separate'>
         <td>lexer.errorlist.value.separate</td>
-        <td>For lines in the output pane that are matches from Find in Files or GCC-style diagnostics, style the path and line number separately from the rest of the line with style 21 used for the rest of the line. This allows matched text to be more easily distinguished from its location.</td>
+        <td>For lines in the output pane that are matches from Find in Files or GCC-stylediagnostics, style the path and line number separately from the rest of theline with style 21 used for the rest of the line.This allows matched text to be more easily distinguished from its location.</td>
+        </tr>
+        <tr id='property-lexer.escseq.colour.text'>
+        <td>lexer.escseq.colour.text</td>
+        <td>Set to 1 to colour text following the escape sequences.</td>
         </tr>
         <tr id='property-lexer.flagship.styling.within.preprocessor'>
         <td>lexer.flagship.styling.within.preprocessor</td>
@@ -3352,6 +3356,16 @@ Prev File|IDM_PREVFILE|<br/>
         If you set session.folds then the folding state will be saved in session
         files. When loading a session file bookmarks and/or folds are restored.
         Folding states are not restored if fold.on.open is set.
+        </td>
+      </tr>
+      <tr id='property-session.readonly'>
+        <td>
+          <a name='property-session.readonly'></a>
+          session.readonly
+        </td>
+        <td>
+          Setting session.readonly causes the read-only state of each buffer to be saved in session files
+	  and restored when a session file is loaded.
         </td>
       </tr>
       <tr class="windowsonly" id='property-open.dialog.in.file.directory'>

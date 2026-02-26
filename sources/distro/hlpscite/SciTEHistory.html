@@ -626,6 +626,9 @@
       </tr><tr>
 	<td>Franck Reinquin</td>
 	<td>Peter C. Jones</td>
+	<td>Stefan Löffler</td>
+	<td>Nathaniel Braun</td>
+      </tr><tr>
       </tr>
     </table>
     <p>
@@ -634,6 +637,100 @@
         Icons</a> Copyright(C) 1998 by Dean S. Jones<br />
     </p>
     <h2 id="Releases">Releases</h2>
+    <h3>
+       <a href="https://www.scintilla.org/scite560.zip">Release 5.6.0</a>
+    </h3>
+    <ul>
+	<li>SciTE</li>
+	<ul>
+		<li>
+		Released 25 February 2026.
+		</li>
+	</ul>
+	<li>Scintilla 5.6.0</li>
+	<ul>
+		<li>
+		Fix crash when window is too narrow to show any text.
+		</li>
+	</ul>
+    </ul>
+    <ul>
+	<li>SciTE</li>
+	<ul>
+		<li>
+		Released 25 February 2026.
+		</li>
+		<li>
+		Windows executable releases are now signed with
+		"Open Source Developer, Neil Hodgson".
+		This should help with avoiding system warnings.
+		<a href="https://sourceforge.net/p/scintilla/feature-requests/1509/">Feature #1509</a>.
+		</li>
+		<li>
+		On Windows, fix window border after restore from full screen.
+		<a href="https://sourceforge.net/p/scintilla/bugs/2499/">Bug #2499</a>.
+		</li>
+	</ul>
+	<li>Lexilla 5.4.7</li>
+	<ul>
+		<li>
+		Test a single lexer or multiple directories by specifying as command line arguments to TestLexers.
+		<a href="https://github.com/ScintillaOrg/lexilla/pull/344">Pull request #344</a>.
+		</li>
+		<li>
+		Lexer added for escape sequences "escseq".
+		<a href="https://github.com/ScintillaOrg/lexilla/pull/336">Pull request #336</a>.
+		</li>
+		<li>
+		Errorlist: Fix reset escape sequence to set style SCE_ERR_DEFAULT (0) instead of SCE_ERR_ES_BLACK.
+		<a href="https://github.com/ScintillaOrg/lexilla/issues/333">Issue #333</a>.
+		</li>
+		<li>
+		Makefile: Recognize comments in more situations.
+		<a href="https://github.com/ScintillaOrg/lexilla/issues/40">Issue #40</a>.
+		</li>
+		<li>
+		Perl: Handle 'method' the same as 'sub' for special cases.
+		<a href="https://github.com/ScintillaOrg/lexilla/issues/342">Issue #342</a>,
+		<a href="https://github.com/ScintillaOrg/lexilla/pull/343">Pull request #343</a>.
+		</li>
+		<li>
+		Progress: Add SCE_ABL_ANNOTATION and SCE_ABL_TYPEDANNOTATION styles.
+		<a href="https://github.com/ScintillaOrg/lexilla/pull/346">Pull request #346</a>.
+		</li>
+	</ul>
+	<li>Scintilla 5.5.9</li>
+	<ul>
+		<li>
+		Add option to disable drag/drop editing.
+		<a href="https://sourceforge.net/p/scintilla/feature-requests/184/">Feature #184</a>.
+		</li>
+		<li>
+		Allow Euro '&euro;' in code page 936 for 0x80.
+		<a href="https://sourceforge.net/p/scintilla/feature-requests/1575/">Feature #1575</a>.
+		</li>
+		<li>
+		Fix SCI_SETSELECTIONNSTART and SCI_SETSELECTIONNEND to behave more sensibly.
+		<a href="https://sourceforge.net/p/scintilla/bugs/2488/">Bug #2488</a>.
+		</li>
+		<li>
+		Fix lexing after undo at end of document.
+		<a href="https://sourceforge.net/p/scintilla/bugs/2491/">Bug #2491</a>.
+		</li>
+		<li>
+		When a line end is not selected, change the colour of the rectangle that indicates the line end is selected
+		to white space background instead of previous character's background except for EOL filled style.
+		</li>
+		<li>
+		On Qt, add const to ScintillaDocument and ScintillaEdit methods.
+		<a href="https://sourceforge.net/p/scintilla/bugs/2494/">Bug #2494</a>.
+		</li>
+		<li>
+		On Qt, prevent crash when using ScintillaDocument object.
+		<a href="https://sourceforge.net/p/scintilla/bugs/2495/">Bug #2495</a>.
+		</li>
+	</ul>
+    </ul>
     <h3>
        <a href="https://www.scintilla.org/scite558.zip">Release 5.5.8</a>
     </h3>
