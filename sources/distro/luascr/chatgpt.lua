@@ -5,7 +5,7 @@ Web     : http://www.redchar.net
 
 Invia una domanda(il testo selezionato) a chatgpt
 
-Copyright (C) 2024-2025 Roberto Rossi 
+Copyright (C) 2024-2026 Roberto Rossi 
 *******************************************************************************
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -21,6 +21,9 @@ You should have received a copy of the GNU Lesser General Public
 License along with this library; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
 *******************************************************************************
+
+TODO: V.2.0.0
+- Aggiungere richiesta su claude.ai (https://claude.ai/new?q={PLACE_HOLDER})
 
 V.1.0.0
 - release iniziale
