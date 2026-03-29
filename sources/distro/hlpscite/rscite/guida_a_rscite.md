@@ -813,6 +813,9 @@ corrente direttamente in una istanza di Visual Studio Code.
 * **Statistiche di download per repository Github**. Funzione che utilizza un
 servizio online per mostrare le statistiche relative alle release rilasciate 
 su un repository Github.
+* **Fai una richiesta a ChatGPT**. Questa funzione invia un prompt, una richiesta, a ChatGPT.
+* **Controlla Microsoft .NET**. Questa funzionalità virifica la presenza di Microsoft.NET
+e mostra le informazioni a riguardo.
 
 In aggiunta a queste funzionalità, **F12** consente all’utente la
 realizzazione degli script personalizzati e la loro integrazione direttamente
@@ -1178,7 +1181,7 @@ ecco l’elenco dei collegamenti ai siti più utili.
 Questo documento, **RSciTE. Guida alle Caratteristiche**, è distribuito 
 secondo la seguente licenza.
 
-Copyright (c) 2005-2025 Roberto Rossi.
+Copyright (c) 2005-2026 Roberto Rossi.
 
 Permission is granted to copy, distribute and/or modify this document under
 the terms of the GNU Free Documentation License, Version 1.2 or any later
