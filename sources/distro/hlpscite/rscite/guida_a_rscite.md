@@ -4,8 +4,6 @@
 
 **Autore : Roberto Rossi**
 
-**Versione 124**
-
 Un gestore di testi **potente**, **semplice**, **veloce**, **poliedrico**...
 
 Un insieme di strumenti per creare un facile ed efficace sistema di editazione
