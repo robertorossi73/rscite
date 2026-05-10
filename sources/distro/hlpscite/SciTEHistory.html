@@ -639,6 +639,76 @@
     </p>
     <h2 id="Releases">Releases</h2>
     <h3>
+       <a href="https://www.scintilla.org/scite562.zip">Release 5.6.2</a>
+    </h3>
+    <ul>
+	<li>SciTE</li>
+	<ul>
+		<li>
+		Released 29 April 2026.
+		</li>
+		<li>
+		Fix spurious error message when an untitled buffer has a filter command executed on it.
+		<a href="https://sourceforge.net/p/scintilla/bugs/2504/">Bug #2504</a>.
+		</li>
+	</ul>
+	<li>Lexilla 5.4.9</li>
+	<ul>
+		<li>
+		Assembler: Add SCE_ASM_STRINGBACKQUOTE for NASM `back-quoted strings`.
+		<a href="https://github.com/ScintillaOrg/lexilla/issues/220">Issue #220</a>.
+		</li>
+		<li>
+		C++: Fold for '#pragma region' and '#pragma endregion'.
+		<a href="https://github.com/ScintillaOrg/lexilla/issues/324">Issue #324</a>.
+		</li>
+		<li>
+		F#: Allow '!' for async keywords.
+		<a href="https://github.com/ScintillaOrg/lexilla/issues/352">Issue #352</a>.
+		</li>
+		<li>
+		F#: Stabilize styling of long strings.
+		<a href="https://github.com/ScintillaOrg/lexilla/issues/353">Issue #353</a>.
+		</li>
+		<li>
+		F#: Fold long strings with fold.fsharp.quotes.
+		<a href="https://github.com/ScintillaOrg/lexilla/issues/354">Issue #354</a>.
+		</li>
+		<li>
+		LaTeX: Fix bug when "\" at end of file.
+		<a href="https://github.com/ScintillaOrg/lexilla/issues/355">Issue #355</a>,
+		<a href="https://github.com/ScintillaOrg/lexilla/pull/356">Pull request #356</a>.
+		</li>
+		<li>
+		Pascal: New SCE_PAS_MULTILINESTRING for multi-line triple-quoted strings.
+		<a href="https://github.com/ScintillaOrg/lexilla/issues/321">Issue #321</a>.
+		</li>
+		<li>
+		Ruby: Fix bug when "?\" at end of file.
+		<a href="https://github.com/ScintillaOrg/lexilla/issues/355">Issue #355</a>,
+		<a href="https://github.com/ScintillaOrg/lexilla/pull/357">Pull request #357</a>.
+		</li>
+	</ul>
+	<li>Scintilla 5.6.2</li>
+	<ul>
+		<li>
+		Add error status SC_STATUS_OUTSIDE_DOCUMENT that is set when operations are attempted on a position
+		outside the document.
+		Positions are checked earlier to prevent actions partly succeeding.
+		Incomplete actions could lead to features that are out of synchronization
+		like change history referring to text that has been deleted.
+		</li>
+		<li>
+		On Win32 with DirectWrite in a GDI scaled application, draw sharper text in autocompletion lists.
+		<a href="https://sourceforge.net/p/scintilla/bugs/2505/">Bug #2505</a>.
+		</li>
+		<li>
+		On Win32 update scaling when the application moves to another monitor.
+		<a href="https://sourceforge.net/p/scintilla/bugs/2503/">Bug #2503</a>.
+		</li>
+	</ul>
+    </ul>
+    <h3>
        <a href="https://www.scintilla.org/scite561.zip">Release 5.6.1</a>
     </h3>
     <ul>
