@@ -207,6 +207,8 @@ class clsAcad : clsCAD
     $this.initialize("AutoCAD.Application", $cadName)
     
     if ($this.cadObj -eq $null) { 
+      $this.initialize("AutoCAD.Application.26", $cadName) } #2027
+    if ($this.cadObj -eq $null) { 
       $this.initialize("AutoCAD.Application.25.1", $cadName) } #2026
     if ($this.cadObj -eq $null) { 
       $this.initialize("AutoCAD.Application.25", $cadName) } #2025
