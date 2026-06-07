@@ -630,6 +630,7 @@
 	<td>Nathaniel Braun</td>
       </tr><tr>
 	<td>Stephan T. Lavavej</td>
+	<td>RealMalWare</td>
       </tr>
     </table>
     <p>
@@ -638,6 +639,54 @@
         Icons</a> Copyright(C) 1998 by Dean S. Jones<br />
     </p>
     <h2 id="Releases">Releases</h2>
+    <h3>
+       <a href="https://www.scintilla.org/scite563.zip">Release 5.6.3</a>
+    </h3>
+    <ul>
+	<li>SciTE</li>
+	<ul>
+		<li>
+		Released 6 June 2026.
+		</li>
+	</ul>
+	<li>Lexilla 5.5.0</li>
+	<ul>
+		<li>
+		Fortran: Fold enumeration type and select rank. Treat GFortran !GCC$ as preprocessor.
+		<a href="https://github.com/ScintillaOrg/lexilla/issues/363">Issue #363</a>,
+		<a href="https://sourceforge.net/p/scintilla/bugs/2509/">Bug #2509</a>.
+		</li>
+		<li>
+		LaTeX: Fix issues at end of file.
+		<a href="https://github.com/ScintillaOrg/lexilla/issues/355">Issue #355</a>,
+		<a href="https://github.com/ScintillaOrg/lexilla/pull/358">Pull request #358</a>.
+		</li>
+		<li>
+		LaTeX: Fix non-terminating optional argument by lexing as SCE_L_MATH.
+		<a href="https://github.com/ScintillaOrg/lexilla/issues/360">Issue #360</a>.
+		</li>
+	</ul>
+	<li>Scintilla 5.6.3</li>
+	<ul>
+		<li>
+		Restore selection and scroll position for undo and redo on additional views instead of just the view
+		performing the undo or redo.
+		<a href="https://github.com/notepad-plus-plus/notepad-plus-plus/pull/18014">Notepad++ Pull Request #18014</a>.
+		</li>
+		<li>
+		Improve performance of rectangular paste when many spaces must be inserted.
+		<a href="https://sourceforge.net/p/scintilla/bugs/2302/">Bug #2302</a>.
+		</li>
+		<li>
+		On Win32, close the clipboard before inserting pasted or dropped text so that the clipboard is not blocked while
+		the insertion is performed.
+		<a href="https://sourceforge.net/p/scintilla/bugs/2507/">Bug #2507</a>.
+		</li>
+		<li>
+		On Qt with Wayland, fix failures with displaying calltips and autocompletion lists.
+		</li>
+	</ul>
+    </ul>
     <h3>
        <a href="https://www.scintilla.org/scite562.zip">Release 5.6.2</a>
     </h3>
