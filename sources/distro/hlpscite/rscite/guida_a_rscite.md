@@ -812,6 +812,8 @@ corrente direttamente in una istanza di Visual Studio Code.
 servizio online per mostrare le statistiche relative alle release rilasciate 
 su un repository Github.
 * **Fai una richiesta a ChatGPT**. Questa funzione invia un prompt, una richiesta, a ChatGPT.
+* **Fai una richiesta a Claude AI**. Questa funzione invia un prompt, una richiesta, a Claude AI.
+* **Fai una richiesta a Mistral AI**. Questa funzione invia un prompt, una richiesta, a Mistral AI.
 * **Controlla Microsoft .NET**. Questa funzionalità virifica la presenza di Microsoft.NET
 e mostra le informazioni a riguardo.
 
