@@ -780,6 +780,8 @@ NameError: name 'mistake' is not defined
       which overrides those in the user properties file which override those
       in the global properties files. Environment variables are also available as properties and these
       are overridden by an explicit setting in one of the properties files.
+      The evaluation of the local properties file is enabled by default but may be disabled by
+      setting the variable properties.local.enable to 0 in the user or global properties file.
     </p>
     <p>
       The directory properties file can be used as project options file where user commands and
@@ -906,6 +908,9 @@ NameError: name 'mistake' is not defined
                <tr id='property-Appearance'><td>Appearance</td><td>whether the system is using a light (0) or dark (1) theme</td></tr>
                <tr id='property-Contrast'><td>Contrast</td><td>1 when the system is in high-contrast mode else 0</td></tr>
         </table>
+    <p>
+        The SciteDefaultHome and SciteUserHome variables are protected and can not be set in local or directory options.
+    </p>
     <p>
        Some features use file name patterns to see which variable to use. For example, the lexer
       variable can be specialised for a particular file, or a group of files based upon wildcard
@@ -1396,7 +1401,7 @@ representations=π=Pi,\u20AA=shekel(\u20AA),!0,#FF000090,\x0D\x0A=crlf</div>
         </td>
         <td>
           Setting this to 0 stops collection of the selection at each action to be restored on undo and redo.
-	  This decreases the amount of memory used.
+          This decreases the amount of memory used.
         </td>
       </tr>
       <tr id='property-change.history'>
@@ -1863,7 +1868,7 @@ representations=π=Pi,\u20AA=shekel(\u20AA),!0,#FF000090,\x0D\x0A=crlf</div>
           caret.style
         </td>
         <td>
-          Sets the style of the caret. see <a href="https://www.scintilla.org/ScintillaDoc.html#SCI_SETCARETSTYLE">SCI_SETCARETSTYLE</a> for possible values.
+          Sets the style of the caret. see <a href="ScintillaDoc.html#SCI_SETCARETSTYLE">SCI_SETCARETSTYLE</a> for possible values.
         </td>
       </tr>
       <tr id='property-caret.width'>
@@ -3381,7 +3386,7 @@ Prev File|IDM_PREVFILE|<br/>
         </td>
         <td>
           Setting session.readonly causes the read-only state of each buffer to be saved in session files
-	  and restored when a session file is loaded.
+          and restored when a session file is loaded.
         </td>
       </tr>
       <tr class="windowsonly" id='property-open.dialog.in.file.directory'>
@@ -3913,7 +3918,8 @@ imports.include=fortran lisp
       </tr>
       <tr id='property-lexer'>
         <td>
-          lexer.<i>filepattern</i>
+          lexer.<i>filepattern</i><br />
+          allow.script.lexer
         </td>
         <td>
           A lexer splits a file up into syntactic pieces. SciTE can then display these pieces in
@@ -3923,7 +3929,8 @@ imports.include=fortran lisp
           settings associate a file name with a lexer.<br />
           The lexers included in SciTE are written in C++ and compiled into the SciTE executable.
           Lexers can also be written as a <a href="ScriptLexer.html">Lua script</a>
-          or as a Lua LPeg lexer using <a href="https://orbitalquark.github.io/scintillua">scintillua</a>.
+          or as a Lua LPeg lexer using <a href="https://orbitalquark.github.io/scintillua">scintillua</a>.<br />
+          Lua script lexers require setting allow.script.lexer=1.
         </td>
       </tr>
       <tr id='property-shbang'>
@@ -4958,6 +4965,7 @@ groupundo - yes or no<br />
           ext.lua.startup.script<br />
           ext.lua.auto.reload<br />
           ext.lua.reset<br />
+          allow.local.script<br />
           extension.<i>filepattern</i>
         </td>
         <td>
@@ -4993,6 +5001,11 @@ groupundo - yes or no<br />
           sense for both auto.reload and reset to be enabled, but usually
           ext.lua.auto.reload alone will suffice.
           <br />
+          To prevent executing arbitrary code, the ext.lua.startup.script may only be specified in
+          user or global properties by default.
+          To allow specifying the script from local or directory properties, allow.local.script
+          must be set to 1 in user or global properties.
+          <br />
           Aside from ext.lua.startup.script, the extension.<i>filepattern</i> property
           provides a way to load additional functions and event handlers that may be
           specific to a given file type.  If the extension property value ends in .lua
@@ -5006,6 +5019,9 @@ groupundo - yes or no<br />
           property, SciTE looks for the file in the standard property file locations,
           starting with the local directory.  This can be very useful in combination
           with a local SciTE.properties file.
+          Similar to ext.lua.startup.script, extension may only be set in user or global properties unless
+          allow.local.script=1. The local directory is only searched when allow.local.script=1.
+          <br />
         </td>
       </tr>
       <tr class="windowsonly" id='property-create.hidden.console'>
@@ -5037,6 +5053,16 @@ groupundo - yes or no<br />
           Enables or disables the evaluation of the directory properties file.
           The default is 0 which disables the evaluation. Any other value enables
                    this properties file.
+        </td>
+      </tr>
+      <tr id='property-properties.local.enable'>
+        <td>
+          properties.local.enable
+        </td>
+        <td>
+          Enables or disables the evaluation of the local properties file.
+          The default is 1 which enables the evaluation. The value 0 disables this properties file.
+          This property may be set to 0 for safety when working in untrusted directories.
         </td>
       </tr>
           <tr id='property-editor.config.enable'>

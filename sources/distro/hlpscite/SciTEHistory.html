@@ -10,7 +10,7 @@
     <title>
       SciTE
     </title>
-    <link rel="canonical" href="https://scintilla.org/SciTEHistory.html" />
+    <link rel="canonical" href="SciTEHistory.html" />
     <style type="text/css">
         table {
             border-collapse: collapse;
@@ -631,6 +631,9 @@
       </tr><tr>
 	<td>Stephan T. Lavavej</td>
 	<td>RealMalWare</td>
+	<td>p4p3r of CYBERONE</td>
+	<td>Schreiner</td>
+      </tr><tr>
       </tr>
     </table>
     <p>
@@ -639,6 +642,63 @@
         Icons</a> Copyright(C) 1998 by Dean S. Jones<br />
     </p>
     <h2 id="Releases">Releases</h2>
+    <h3>
+       <a href="https://www.scintilla.org/scite564.zip">Release 5.6.4</a>
+    </h3>
+    <ul>
+	<li>SciTE</li>
+	<ul>
+		<li>
+		Released 6 July 2026.
+		</li>
+		<li>
+		Add allow.local.script, allow.script.lexer, and properties.local.enable
+		properties to avoid some potential problems with running untrusted code.
+		Protect SciteDefaultHome and SciteUserHome so they can not be modified in
+		local or directory options.
+		<a href="https://sourceforge.net/p/scintilla/bugs/2389/">Bug #2389</a>.
+		</li>
+	</ul>
+	<li>Lexilla 5.5.1</li>
+	<ul>
+		<li>
+		Baan: Fix stack out-of-bounds write for with long preprocessor token and long identifier.
+		<a href="https://github.com/ScintillaOrg/lexilla/issues/364">Issue #364</a>.
+		</li>
+		<li>
+		XML and HTML: Change CDATA styling so that only the contents are in SCE_H_CDATA.
+		The "CDATA" is styled as SCE_H_SGML_COMMAND and the punctuation as SCE_H_SGML_DEFAULT.
+		<a href="https://github.com/ScintillaOrg/lexilla/issues/365">Issue #365</a>.
+		</li>
+	</ul>
+	<li>Scintilla 5.6.4</li>
+	<ul>
+		<li>
+		On Qt improve display for fractional scaling by providing SCI_SETSCALETECHNIQUE API.
+		The SCALE_TECHNIQUE_PIXEL_ALIGNED value will eliminate potential 'seams' between lines
+		and between runs on a line.
+		<a href="https://sourceforge.net/p/scintilla/bugs/2450/">Bug #2450</a>.
+		</li>
+		<li>
+		Scintilla.iface is augmented with comments indicating which APIs take pixel values so may
+		be automatically scaled by wrappers.
+		For compatibility this is currently indicated in comments after each affected API but this will
+		change to using the 'pixels' type in a future version,
+		Downstream projects should examine this and make any needed changes, such as using floating
+		point types for wrapper methods.
+		To help migration, the scripts/FilterPixels.py script can convert this Scintilla.iface into the previous form
+		with no mention of 'pixels' or into the final form with 'pixels' as the only type for these features.
+		</li>
+		<li>
+		On Qt always place ScintillaEditBase library in scintilla/bin instead of depending on Qt version.
+		</li>
+		<li>
+		Optimize SCI_CHANGEINSERTION that sets empty insertion by not producing empty undo action
+		and potential save point change.
+		<a href="https://sourceforge.net/p/scintilla/feature-requests/1588/">Feature #1588</a>.
+		</li>
+	</ul>
+    </ul>
     <h3>
        <a href="https://www.scintilla.org/scite563.zip">Release 5.6.3</a>
     </h3>
