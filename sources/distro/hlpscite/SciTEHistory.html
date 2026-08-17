@@ -10,7 +10,7 @@
     <title>
       SciTE
     </title>
-    <link rel="canonical" href="SciTEHistory.html" />
+    <link rel="canonical" href="https://scintilla.org/SciTEHistory.html" />
     <style type="text/css">
         table {
             border-collapse: collapse;
@@ -643,6 +643,50 @@
         Icons</a> Copyright(C) 1998 by Dean S. Jones<br />
     </p>
     <h2 id="Releases">Releases</h2>
+    <h3>
+       <a href="https://www.scintilla.org/scite566.zip">Release 5.6.6</a>
+    </h3>
+    <ul>
+	<li>SciTE</li>
+	<ul>
+		<li>
+		Released 12 August 2026.
+		</li>
+		<li>
+		Add margin.cursor property to set the mouse pointer over the margins.
+		</li>
+		<li>
+		On GTK, the keyboard command for Make Selection Uppercase was changed to Ctrl+Alt+U so
+		it doesn't clash with Unicode entry.
+		</li>
+		<li>
+		On GTK, Find in Files now uses threads instead of running an extra SciTE process.
+		This should avoid problems with characters that are significant to the Unix shell.
+		</li>
+		<li>
+		On Windows, fix bug where opening properties files multiple times from the options menu would open
+		multiple tabs.
+		<a href="https://sourceforge.net/p/scintilla/bugs/2514/">Bug #2514</a>.
+		</li>
+	</ul>
+	<li>Lexilla 5.5.3</li>
+	<ul>
+		<li>
+		Progress: Add typed [annotations] as SCE_ABL_TYPEDANNOTATION.
+		<a href="https://github.com/ScintillaOrg/lexilla/pull/369">Pull request #369</a>.
+		</li>
+	</ul>
+	<li>Scintilla 5.6.6</li>
+	<ul>
+		<li>
+		Add position to fields of UpdateUI event in Scintilla.iface.
+		</li>
+		<li>
+		Fix data race bug in multi-threaded word wrap introduced in 5.6.4.
+		<a href="https://sourceforge.net/p/scintilla/bugs/2515/">Bug #2515</a>.
+		</li>
+	</ul>
+    </ul>
     <h3>
        <a href="https://www.scintilla.org/scite565.zip">Release 5.6.5</a>
     </h3>

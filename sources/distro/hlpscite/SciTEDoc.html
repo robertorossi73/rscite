@@ -1283,6 +1283,17 @@ representations=π=Pi,\u20AA=shekel(\u20AA),!0,#FF000090,\x0D\x0A=crlf</div>
           displayed in the selection margin area.
         </td>
       </tr>
+      <tr id='property-margin.cursor'>
+        <td>
+          margin.cursor
+        </td>
+        <td>
+          This property sets the mouse pointer used over the margins.
+          The supported values are 7 for a reverse arrow which is the default and 2 for a standard arrow.
+          Other values may be provided by the Scintilla CursorType enumeration but are platform dependent.
+          On GTK, setting to 2 may eliminate warning messages in console that look similar to "Unable to load right_ptr".
+        </td>
+      </tr>
       <tr class="windowsonly" id='property-full.screen.hides.menu'>
         <td>
           full.screen.hides.menu
@@ -2056,7 +2067,7 @@ representations=π=Pi,\u20AA=shekel(\u20AA),!0,#FF000090,\x0D\x0A=crlf</div>
         </td>
         <td>
           The visual style used to display bookmarks in the margin. Set to a numeric value according to the symbols
-          defined in <a href="ScintillaDoc.html#SCI_MARKERDEFINE">SCI_MARKERDEFINE</a>.
+          defined in <a href="http://www.scintilla.org/ScintillaDoc.html#SCI_MARKERDEFINE">SCI_MARKERDEFINE</a>.
         </td>
        </tr>
       <tr id='property-find.mark.indicator'>
