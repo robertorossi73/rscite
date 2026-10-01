@@ -2,10 +2,10 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 ;Autore :   Roberto Rossi
-;Versione : 4.3.2
+;Versione : 4.4.0
 ;Web      : http://www.redchar.net
 
-;Compatible with Inno Setup 6.2.0 or later
+;Compatible with Inno Setup 7.1.0 or later
 
 ;how check redist vc
 ;https://pingfu.net/how-to-detect-which-version-of-visual-c-runtime-is-installed
@@ -52,7 +52,7 @@ AlwaysShowDirOnReadyPage=yes
 DisableDirPage=no
 ArchitecturesAllowed=x64compatible
 ArchitecturesInstallIn64BitMode=x64compatible
-;DefaultDialogFontName=Consolas
+;DefaultDialogFontName=Verdana
 
 [Languages]
 Name: english; MessagesFile: compiler:Default.isl
