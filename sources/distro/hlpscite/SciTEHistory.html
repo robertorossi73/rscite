@@ -10,7 +10,7 @@
     <title>
       SciTE
     </title>
-    <link rel="canonical" href="https://scintilla.org/SciTEHistory.html" />
+    <link rel="canonical" href="SciTEHistory.html" />
     <style type="text/css">
         table {
             border-collapse: collapse;
@@ -635,6 +635,7 @@
 	<td>Schreiner</td>
       </tr><tr>
 	<td>Chris Clark</td>
+	<td>Masayuki HINO</td>
       </tr>
     </table>
     <p>
@@ -643,6 +644,54 @@
         Icons</a> Copyright(C) 1998 by Dean S. Jones<br />
     </p>
     <h2 id="Releases">Releases</h2>
+    <h3>
+       <a href="https://www.scintilla.org/scite567.zip">Release 5.6.7</a>
+    </h3>
+    <ul>
+	<li>SciTE</li>
+	<ul>
+		<li>
+		Released 28 September 2026.
+		</li>
+		<li>
+		Fix Find in Files bug where matching final line in file without final new line showed a NUL in the output pane.
+		Ensure text found after a NUL on a line in binary mode.
+		</li>
+	</ul>
+	<li>Lexilla 5.5.4</li>
+	<ul>
+		<li>
+		JavaScript: Option lexer.cpp.continuation.only.in.strings to choose JavaScript behaviour where
+		line continuation only occurs inside string literals.
+		<a href="https://github.com/ScintillaOrg/lexilla/issues/55">Issue #55</a>.
+		</li>
+		<li>
+		YAML: Fix empty lines terminating text blocks.
+		<a href="https://github.com/ScintillaOrg/lexilla/issues/326">Issue #326</a>.
+		</li>
+	</ul>
+	<li>Scintilla 5.6.7</li>
+	<ul>
+		<li>
+		Reduce memory used by line layouts by storing positions as 32-bit floats instead of 64-bit.
+		</li>
+		<li>
+		Reduce temporary memory use during layout of wide lines with many control characters.
+		</li>
+		<li>
+		Fix style ending inside character after deleting last character of document.
+		<a href="https://sourceforge.net/p/scintilla/bugs/2471/">Bug #2471</a>.
+		</li>
+		<li>
+		Fix SCI_VERTICALCENTRECARET to not scroll past end.
+		<a href="https://sourceforge.net/p/scintilla/bugs/2518/">Bug #2518</a>.
+		</li>
+		<li>
+		For SCI_GETCOLUMN and SCI_FINDCOLUMN treat Unicode line ends similar to ASCII line ends.
+		<a href="https://sourceforge.net/p/scintilla/bugs/2516/">Bug #2516</a>.
+		</li>
+	</ul>
+    </ul>
     <h3>
        <a href="https://www.scintilla.org/scite566.zip">Release 5.6.6</a>
     </h3>

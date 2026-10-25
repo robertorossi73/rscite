@@ -2067,7 +2067,7 @@ representations=π=Pi,\u20AA=shekel(\u20AA),!0,#FF000090,\x0D\x0A=crlf</div>
         </td>
         <td>
           The visual style used to display bookmarks in the margin. Set to a numeric value according to the symbols
-          defined in <a href="http://www.scintilla.org/ScintillaDoc.html#SCI_MARKERDEFINE">SCI_MARKERDEFINE</a>.
+          defined in <a href="ScintillaDoc.html#SCI_MARKERDEFINE">SCI_MARKERDEFINE</a>.
         </td>
        </tr>
       <tr id='property-find.mark.indicator'>
@@ -2736,6 +2736,10 @@ representations=π=Pi,\u20AA=shekel(\u20AA),!0,#FF000090,\x0D\x0A=crlf</div>
         <tr id='property-lexer.cpp.backquoted.strings'>
         <td>lexer.cpp.backquoted.strings</td>
         <td>Set how to highlighting back-quoted strings. 0 (the default) no highlighting. 1 highlighted as Go raw string. 2 highlighted as JavaScript template literal.</td>
+        </tr>
+        <tr id='property-lexer.cpp.continuation.only.in.strings'>
+        <td>lexer.cpp.continuation.only.in.strings</td>
+        <td>Set to 1 to only handle line continuation inside string literals</td>
         </tr>
         <tr id='property-lexer.cpp.enable.preprocessor'>
         <td>lexer.cpp.enable.preprocessor</td>
