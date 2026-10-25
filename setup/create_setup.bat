@@ -6,7 +6,7 @@ rem Lettura numero versione da file .INI
 for /F "tokens=*" %%I in (..\sources\distro\version.txt) do set %%I
 
 rem Impostazione variabili
-set innoExe="d:\Program Files (x86)\Inno Setup 6\ISCC.exe"
+set innoExe="D:\Program Files\Inno Setup 7\ISCC.exe"
 set zipper="d:\Program Files\7-Zip\7z.exe"
 set OutFolder="d:\temp\output\"
 set FileName="%OutFolder%portable-rscite-%Major%.zip"
