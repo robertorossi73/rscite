@@ -13,6 +13,22 @@ set FileName="%OutFolder%portable-rscite-%Major%.zip"
 set FileNameSetup="%OutFolder%setup-rscite-%Major%.exe"
 set FileNameSetupZip="%OutFolder%setup-rscite-%Major%.zip"
 
+if not exist %innoExe% (
+    echo.
+    echo Errore Inno Setup: il file "%innoExe%" non esiste.
+    echo.
+    pause
+    exit /b 1
+)
+
+if not exist %zipper% (
+    echo.
+    echo Errore 7-Zip: il file "%zipper%" non esiste.
+    echo.
+    pause
+    exit /b 1
+)
+
 rem Eliminazione versioni precedenti
 del %FileName%
 del %FileNameSetup%
