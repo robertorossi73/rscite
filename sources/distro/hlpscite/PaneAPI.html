@@ -94,6 +94,8 @@
 	Properties are both readable and writeable by default and are otherwise marked "read-only" or "write-only".</p>
 	<p>The 'position' and 'line' types are integer types that represent positions and line numbers in the document.
 	On 32-bit systems the maximum value is 2,147,483,647 but on 64-bit systems larger values are possible.</p>
+	<p>The 'pixels' type is an integer type that represent graphical pixel positions.
+	Depending on platform, these may refer to physical display pixels or may be scaled.</p>
 	<p>The 'pointer' type is a memory address. It is difficult to use this type from Lua but its possible it could be
 	passed back to Scintilla or to an extension written in C.</p>
 
@@ -137,14 +139,14 @@
 	<p>position editor:<a href='ScintillaDoc.html#SCI_FINDCOLUMN'>FindColumn</a>(line line, position column)<span class="comment"> -- Find the position of a column on a line taking into account tabs and multi-byte characters. If beyond end of line, return line end position.</span></p>
 	<p>position editor:<a href='ScintillaDoc.html#SCI_POSITIONBEFORE'>PositionBefore</a>(position pos)<span class="comment"> -- Given a valid document position, return the previous position taking code page into account. Returns 0 if passed 0.</span></p>
 	<p>position editor:<a href='ScintillaDoc.html#SCI_POSITIONAFTER'>PositionAfter</a>(position pos)<span class="comment"> -- Given a valid document position, return the next position taking code page into account. Maximum value returned is the last position in the document.</span></p>
-	<p>int editor:<a href='ScintillaDoc.html#SCI_TEXTWIDTH'>TextWidth</a>(int style, string text)<span class="comment"> -- Measure the pixel width of some text in a particular style. NUL terminated text argument. Does not handle tab or control characters.</span></p>
-	<p>int editor:<a href='ScintillaDoc.html#SCI_TEXTHEIGHT'>TextHeight</a>(line line)<span class="comment"> -- Retrieve the height of a particular line of text in pixels.</span></p>
-	<p>position editor:<a href='ScintillaDoc.html#SCI_POSITIONFROMPOINT'>PositionFromPoint</a>(int x, int y)<span class="comment"> -- Find the position from a point within the window.</span></p>
-	<p>position editor:<a href='ScintillaDoc.html#SCI_POSITIONFROMPOINTCLOSE'>PositionFromPointClose</a>(int x, int y)<span class="comment"> -- Find the position from a point within the window but return INVALID_POSITION if not close to text.</span></p>
-	<p>position editor:<a href='ScintillaDoc.html#SCI_CHARPOSITIONFROMPOINT'>CharPositionFromPoint</a>(int x, int y)<span class="comment"> -- Find the position of a character from a point within the window.</span></p>
-	<p>position editor:<a href='ScintillaDoc.html#SCI_CHARPOSITIONFROMPOINTCLOSE'>CharPositionFromPointClose</a>(int x, int y)<span class="comment"> -- Find the position of a character from a point within the window. Return INVALID_POSITION if not close to text.</span></p>
-	<p>int editor:<a href='ScintillaDoc.html#SCI_POINTXFROMPOSITION'>PointXFromPosition</a>(position pos)<span class="comment"> -- Retrieve the x value of the point in the window where a position is displayed.</span></p>
-	<p>int editor:<a href='ScintillaDoc.html#SCI_POINTYFROMPOSITION'>PointYFromPosition</a>(position pos)<span class="comment"> -- Retrieve the y value of the point in the window where a position is displayed.</span></p>
+	<p>pixels editor:<a href='ScintillaDoc.html#SCI_TEXTWIDTH'>TextWidth</a>(int style, string text)<span class="comment"> -- Measure the pixel width of some text in a particular style. NUL terminated text argument. Does not handle tab or control characters.</span></p>
+	<p>pixels editor:<a href='ScintillaDoc.html#SCI_TEXTHEIGHT'>TextHeight</a>(line line)<span class="comment"> -- Retrieve the height of a particular line of text in pixels.</span></p>
+	<p>position editor:<a href='ScintillaDoc.html#SCI_POSITIONFROMPOINT'>PositionFromPoint</a>(pixels x, pixels y)<span class="comment"> -- Find the position from a point within the window.</span></p>
+	<p>position editor:<a href='ScintillaDoc.html#SCI_POSITIONFROMPOINTCLOSE'>PositionFromPointClose</a>(pixels x, pixels y)<span class="comment"> -- Find the position from a point within the window but return INVALID_POSITION if not close to text.</span></p>
+	<p>position editor:<a href='ScintillaDoc.html#SCI_CHARPOSITIONFROMPOINT'>CharPositionFromPoint</a>(pixels x, pixels y)<span class="comment"> -- Find the position of a character from a point within the window.</span></p>
+	<p>position editor:<a href='ScintillaDoc.html#SCI_CHARPOSITIONFROMPOINTCLOSE'>CharPositionFromPointClose</a>(pixels x, pixels y)<span class="comment"> -- Find the position of a character from a point within the window. Return INVALID_POSITION if not close to text.</span></p>
+	<p>pixels editor:<a href='ScintillaDoc.html#SCI_POINTXFROMPOSITION'>PointXFromPosition</a>(position pos)<span class="comment"> -- Retrieve the x value of the point in the window where a position is displayed.</span></p>
+	<p>pixels editor:<a href='ScintillaDoc.html#SCI_POINTYFROMPOSITION'>PointYFromPosition</a>(position pos)<span class="comment"> -- Retrieve the y value of the point in the window where a position is displayed.</span></p>
 	<h2>By character or UTF-16 code unit</h2>
 	<p>position editor:<a href='ScintillaDoc.html#SCI_POSITIONRELATIVE'>PositionRelative</a>(position pos, position relative)<span class="comment"> -- Given a valid document position, return a position that differs in a number of characters. Returned value is always between 0 and last position in document.</span></p>
 	<p>position editor:<a href='ScintillaDoc.html#SCI_COUNTCHARACTERS'>CountCharacters</a>(position start, position end)<span class="comment"> -- Count characters between two positions.</span></p>
@@ -193,7 +195,7 @@
 	<p>editor:<a href='ScintillaDoc.html#SCI_CLEARSELECTIONS'>ClearSelections</a>()<span class="comment"> -- Clear selections to a single empty stream selection</span></p>
 	<p>editor:<a href='ScintillaDoc.html#SCI_SETSELECTION'>SetSelection</a>(position caret, position anchor)<span class="comment"> -- Set a simple selection</span></p>
 	<p>editor:<a href='ScintillaDoc.html#SCI_ADDSELECTION'>AddSelection</a>(position caret, position anchor)<span class="comment"> -- Add a selection</span></p>
-	<p>int editor:<a href='ScintillaDoc.html#SCI_SELECTIONFROMPOINT'>SelectionFromPoint</a>(int x, int y)<span class="comment"> -- Find the selection index for a point. -1 when not at a selection.</span></p>
+	<p>int editor:<a href='ScintillaDoc.html#SCI_SELECTIONFROMPOINT'>SelectionFromPoint</a>(pixels x, pixels y)<span class="comment"> -- Find the selection index for a point. -1 when not at a selection.</span></p>
 	<p>editor:<a href='ScintillaDoc.html#SCI_DROPSELECTIONN'>DropSelectionN</a>(int selection)<span class="comment"> -- Drop one selection</span></p>
 	<p>int editor.<a href='ScintillaDoc.html#SCI_SETMAINSELECTION'>MainSelection</a><span class="comment"> -- Set the main selection</span></p>
 	<p>position editor.<a href='ScintillaDoc.html#SCI_SETSELECTIONNCARET'>SelectionNCaret</a>[int selection]<span class="comment"> -- Set the caret position of the nth selection.</span></p>
@@ -268,27 +270,27 @@
 	<p>int editor.<a href='ScintillaDoc.html#SCI_SETCHANGEHISTORY'>ChangeHistory</a><span class="comment"> -- Enable or disable change history.</span></p>
 	<h2>Scrolling and automatic scrolling</h2>
 	<p>line editor.<a href='ScintillaDoc.html#SCI_SETFIRSTVISIBLELINE'>FirstVisibleLine</a><span class="comment"> -- Scroll so that a display line is at the top of the display.</span></p>
-	<p>int editor.<a href='ScintillaDoc.html#SCI_SETXOFFSET'>XOffset</a><span class="comment"> -- Set the xOffset (ie, horizontal scroll position).</span></p>
+	<p>pixels editor.<a href='ScintillaDoc.html#SCI_SETXOFFSET'>XOffset</a><span class="comment"> -- Set the xOffset (ie, horizontal scroll position).</span></p>
 	<p>editor:<a href='ScintillaDoc.html#SCI_SCROLLVERTICAL'>ScrollVertical</a>(line docLine, line subLine)<span class="comment"> -- Scroll vertically with allowance for wrapping.</span></p>
 	<p>editor:<a href='ScintillaDoc.html#SCI_LINESCROLL'>LineScroll</a>(position columns, line lines)<span class="comment"> -- Scroll horizontally and vertically.</span></p>
 	<p>editor:<a href='ScintillaDoc.html#SCI_SCROLLCARET'>ScrollCaret</a>()<span class="comment"> -- Ensure the caret is visible.</span></p>
 	<p>editor:<a href='ScintillaDoc.html#SCI_SCROLLRANGE'>ScrollRange</a>(position secondary, position primary)<span class="comment"> -- Scroll the argument positions and the range between them into view giving priority to the primary position then the secondary position. This may be used to make a search match visible.</span></p>
-	<p>editor:<a href='ScintillaDoc.html#SCI_SETXCARETPOLICY'>SetXCaretPolicy</a>(int caretPolicy, int caretSlop)<span class="comment"> -- Set the way the caret is kept visible when going sideways. The exclusion zone is given in pixels.</span></p>
+	<p>editor:<a href='ScintillaDoc.html#SCI_SETXCARETPOLICY'>SetXCaretPolicy</a>(int caretPolicy, pixels caretSlop)<span class="comment"> -- Set the way the caret is kept visible when going sideways. The exclusion zone is given in pixels.</span></p>
 	<p>editor:<a href='ScintillaDoc.html#SCI_SETYCARETPOLICY'>SetYCaretPolicy</a>(int caretPolicy, int caretSlop)<span class="comment"> -- Set the way the line the caret is on is kept visible. The exclusion zone is given in lines.</span></p>
 	<p>editor:<a href='ScintillaDoc.html#SCI_SETVISIBLEPOLICY'>SetVisiblePolicy</a>(int visiblePolicy, int visibleSlop)<span class="comment"> -- Set the way the display area is determined when a particular line is to be moved to by Find, FindNext, GotoLine, etc.</span></p>
 	<p>bool editor.<a href='ScintillaDoc.html#SCI_SETHSCROLLBAR'>HScrollBar</a><span class="comment"> -- Show or hide the horizontal scroll bar.</span></p>
 	<p>bool editor.<a href='ScintillaDoc.html#SCI_SETVSCROLLBAR'>VScrollBar</a><span class="comment"> -- Show or hide the vertical scroll bar.</span></p>
-	<p>int editor.<a href='ScintillaDoc.html#SCI_SETSCROLLWIDTH'>ScrollWidth</a><span class="comment"> -- Sets the document width assumed for scrolling.</span></p>
+	<p>pixels editor.<a href='ScintillaDoc.html#SCI_SETSCROLLWIDTH'>ScrollWidth</a><span class="comment"> -- Sets the document width assumed for scrolling.</span></p>
 	<p>bool editor.<a href='ScintillaDoc.html#SCI_SETSCROLLWIDTHTRACKING'>ScrollWidthTracking</a><span class="comment"> -- Sets whether the maximum width line displayed is used to set scroll width.</span></p>
 	<p>bool editor.<a href='ScintillaDoc.html#SCI_SETENDATLASTLINE'>EndAtLastLine</a><span class="comment"> -- Sets the scroll range so that maximum scroll position has the last line at the bottom of the view (default). Setting this to false allows scrolling one page below the last line.</span></p>
 	<h2>White space</h2>
 	<p>int editor.<a href='ScintillaDoc.html#SCI_SETVIEWWS'>ViewWS</a><span class="comment"> -- Make white space characters invisible, always visible or visible outside indentation.</span></p>
 	<p>editor:<a href='ScintillaDoc.html#SCI_SETWHITESPACEFORE'>SetWhitespaceFore</a>(bool useSetting, colour fore)<span class="comment"> -- Set the foreground colour of all whitespace and whether to use this setting.</span></p>
 	<p>editor:<a href='ScintillaDoc.html#SCI_SETWHITESPACEBACK'>SetWhitespaceBack</a>(bool useSetting, colour back)<span class="comment"> -- Set the background colour of all whitespace and whether to use this setting.</span></p>
-	<p>int editor.<a href='ScintillaDoc.html#SCI_SETWHITESPACESIZE'>WhitespaceSize</a><span class="comment"> -- Set the size of the dots used to mark space characters.</span></p>
+	<p>pixels editor.<a href='ScintillaDoc.html#SCI_SETWHITESPACESIZE'>WhitespaceSize</a><span class="comment"> -- Set the size of the dots used to mark space characters.</span></p>
 	<p>int editor.<a href='ScintillaDoc.html#SCI_SETTABDRAWMODE'>TabDrawMode</a><span class="comment"> -- Set how tabs are drawn when visible.</span></p>
-	<p>int editor.<a href='ScintillaDoc.html#SCI_SETEXTRAASCENT'>ExtraAscent</a><span class="comment"> -- Set extra ascent for each line</span></p>
-	<p>int editor.<a href='ScintillaDoc.html#SCI_SETEXTRADESCENT'>ExtraDescent</a><span class="comment"> -- Set extra descent for each line</span></p>
+	<p>pixels editor.<a href='ScintillaDoc.html#SCI_SETEXTRAASCENT'>ExtraAscent</a><span class="comment"> -- Set extra ascent for each line</span></p>
+	<p>pixels editor.<a href='ScintillaDoc.html#SCI_SETEXTRADESCENT'>ExtraDescent</a><span class="comment"> -- Set extra descent for each line</span></p>
 	<h2>Cursor</h2>
 	<p>int editor.<a href='ScintillaDoc.html#SCI_SETCURSOR'>Cursor</a><span class="comment"> -- Sets the cursor to one of the SC_CURSOR* values.</span></p>
 	<h2>Mouse capture</h2>
@@ -358,12 +360,12 @@
 	<p>bool editor.<a href='ScintillaDoc.html#SCI_SETCARETLINEVISIBLE'>CaretLineVisible</a><span class="comment"> -- Display the background of the line containing the caret in a different colour.</span></p>
 	<p>colour editor.<a href='ScintillaDoc.html#SCI_SETCARETLINEBACK'>CaretLineBack</a><span class="comment"> -- Set the colour of the background of the line containing the caret.</span></p>
 	<p>int editor.<a href='ScintillaDoc.html#SCI_SETCARETLINEBACKALPHA'>CaretLineBackAlpha</a><span class="comment"> -- Set background alpha of the caret line.</span></p>
-	<p>int editor.<a href='ScintillaDoc.html#SCI_SETCARETLINEFRAME'>CaretLineFrame</a><span class="comment"> -- Display the caret line framed. Set width != 0 to enable this option and width = 0 to disable it.</span></p>
+	<p>pixels editor.<a href='ScintillaDoc.html#SCI_SETCARETLINEFRAME'>CaretLineFrame</a><span class="comment"> -- Display the caret line framed. Set width != 0 to enable this option and width = 0 to disable it.</span></p>
 	<p>bool editor.<a href='ScintillaDoc.html#SCI_SETCARETLINEVISIBLEALWAYS'>CaretLineVisibleAlways</a><span class="comment"> -- Sets the caret line to always visible.</span></p>
 	<p>bool editor.<a href='ScintillaDoc.html#SCI_SETCARETLINEHIGHLIGHTSUBLINE'>CaretLineHighlightSubLine</a><span class="comment"> -- Set only highlighting subline instead of whole line.</span></p>
 	<p>int editor.<a href='ScintillaDoc.html#SCI_SETCARETPERIOD'>CaretPeriod</a><span class="comment"> -- Get the time in milliseconds that the caret is on and off. 0 = steady on.</span></p>
 	<p>int editor.<a href='ScintillaDoc.html#SCI_SETCARETSTYLE'>CaretStyle</a><span class="comment"> -- Set the style of the caret to be drawn.</span></p>
-	<p>int editor.<a href='ScintillaDoc.html#SCI_SETCARETWIDTH'>CaretWidth</a><span class="comment"> -- Set the width of the insert mode caret.</span></p>
+	<p>pixels editor.<a href='ScintillaDoc.html#SCI_SETCARETWIDTH'>CaretWidth</a><span class="comment"> -- Set the width of the insert mode caret.</span></p>
 	<p>int editor.<a href='ScintillaDoc.html#SCI_SETCARETSTICKY'>CaretSticky</a><span class="comment"> -- Stop the caret preferred x position changing when the user types.</span></p>
 	<p>editor:<a href='ScintillaDoc.html#SCI_TOGGLECARETSTICKY'>ToggleCaretSticky</a>()<span class="comment"> -- Switch between sticky and non-sticky: meant to be bound to a key.</span></p>
 	<p>editor:<a href='ScintillaDoc.html#SCI_SETHOTSPOTACTIVEFORE'>SetHotspotActiveFore</a>(bool useSetting, colour fore)<span class="comment"> -- Set a fore colour for active hotspots.</span></p>
@@ -382,13 +384,13 @@
 	<h2>Margins</h2>
 	<p>int editor.<a href='ScintillaDoc.html#SCI_SETMARGINS'>Margins</a><span class="comment"> -- Allocate a non-standard number of margins.</span></p>
 	<p>int editor.<a href='ScintillaDoc.html#SCI_SETMARGINTYPEN'>MarginTypeN</a>[int margin]<span class="comment"> -- Set a margin to be either numeric or symbolic.</span></p>
-	<p>int editor.<a href='ScintillaDoc.html#SCI_SETMARGINWIDTHN'>MarginWidthN</a>[int margin]<span class="comment"> -- Set the width of a margin to a width expressed in pixels.</span></p>
+	<p>pixels editor.<a href='ScintillaDoc.html#SCI_SETMARGINWIDTHN'>MarginWidthN</a>[int margin]<span class="comment"> -- Set the width of a margin to a width expressed in pixels.</span></p>
 	<p>int editor.<a href='ScintillaDoc.html#SCI_SETMARGINMASKN'>MarginMaskN</a>[int margin]<span class="comment"> -- Set a mask that determines which markers are displayed in a margin.</span></p>
 	<p>bool editor.<a href='ScintillaDoc.html#SCI_SETMARGINSENSITIVEN'>MarginSensitiveN</a>[int margin]<span class="comment"> -- Make a margin sensitive or insensitive to mouse clicks.</span></p>
 	<p>int editor.<a href='ScintillaDoc.html#SCI_SETMARGINCURSORN'>MarginCursorN</a>[int margin]<span class="comment"> -- Set the cursor shown when the mouse is inside a margin.</span></p>
 	<p>colour editor.<a href='ScintillaDoc.html#SCI_SETMARGINBACKN'>MarginBackN</a>[int margin]<span class="comment"> -- Set the background colour of a margin. Only visible for SC_MARGIN_COLOUR.</span></p>
-	<p>int editor.<a href='ScintillaDoc.html#SCI_SETMARGINLEFT'>MarginLeft</a><span class="comment"> -- Sets the size in pixels of the left margin.</span></p>
-	<p>int editor.<a href='ScintillaDoc.html#SCI_SETMARGINRIGHT'>MarginRight</a><span class="comment"> -- Sets the size in pixels of the right margin.</span></p>
+	<p>pixels editor.<a href='ScintillaDoc.html#SCI_SETMARGINLEFT'>MarginLeft</a><span class="comment"> -- Sets the size in pixels of the left margin.</span></p>
+	<p>pixels editor.<a href='ScintillaDoc.html#SCI_SETMARGINRIGHT'>MarginRight</a><span class="comment"> -- Sets the size in pixels of the right margin.</span></p>
 	<p>editor:<a href='ScintillaDoc.html#SCI_SETFOLDMARGINCOLOUR'>SetFoldMarginColour</a>(bool useSetting, colour back)<span class="comment"> -- Set one of the colours used as a chequerboard pattern in the fold margin</span></p>
 	<p>editor:<a href='ScintillaDoc.html#SCI_SETFOLDMARGINHICOLOUR'>SetFoldMarginHiColour</a>(bool useSetting, colour fore)<span class="comment"> -- Set the other colour used as a chequerboard pattern in the fold margin</span></p>
 	<p>string editor.<a href='ScintillaDoc.html#SCI_MARGINSETTEXT'>MarginText</a>[line line]<span class="comment"> -- Set the text in the text margin for a line</span></p>
@@ -431,7 +433,7 @@
 	<p>position editor:<a href='ScintillaDoc.html#SCI_BRACEMATCH'>BraceMatch</a>(position pos, int maxReStyle)<span class="comment"> -- Find the position of a matching brace or INVALID_POSITION if no match. The maxReStyle must be 0 for now. It may be defined in a future release.</span></p>
 	<p>position editor:<a href='ScintillaDoc.html#SCI_BRACEMATCHNEXT'>BraceMatchNext</a>(position pos, position startPos)<span class="comment"> -- Similar to BraceMatch, but matching starts at the explicit start position.</span></p>
 	<h2>Tabs and Indentation Guides</h2>
-	<p>int editor.<a href='ScintillaDoc.html#SCI_SETTABMINIMUMWIDTH'>TabMinimumWidth</a><span class="comment"> -- Set the minimum visual width of a tab.</span></p>
+	<p>pixels editor.<a href='ScintillaDoc.html#SCI_SETTABMINIMUMWIDTH'>TabMinimumWidth</a><span class="comment"> -- Set the minimum visual width of a tab.</span></p>
 	<p>int editor.<a href='ScintillaDoc.html#SCI_SETTABWIDTH'>TabWidth</a><span class="comment"> -- Change the visible size of a tab to be a multiple of the width of a space character.</span></p>
 	<p>editor:<a href='ScintillaDoc.html#SCI_CLEARTABSTOPS'>ClearTabStops</a>(line line)<span class="comment"> -- Clear explicit tabstops on a line.</span></p>
 	<p>editor:<a href='ScintillaDoc.html#SCI_ADDTABSTOP'>AddTabStop</a>(line line, int x)<span class="comment"> -- Add an explicit tab stop for a line.</span></p>
@@ -458,7 +460,7 @@
 	<p>colouralpha editor.<a href='ScintillaDoc.html#SCI_MARKERSETBACKTRANSLUCENT'>MarkerBackTranslucent</a>[int markerNumber] write-only<span class="comment"> -- Set the background colour used for a particular marker number.</span></p>
 	<p>colour editor.<a href='ScintillaDoc.html#SCI_MARKERSETBACKSELECTED'>MarkerBackSelected</a>[int markerNumber] write-only<span class="comment"> -- Set the background colour used for a particular marker number when its folding block is selected.</span></p>
 	<p>colouralpha editor.<a href='ScintillaDoc.html#SCI_MARKERSETBACKSELECTEDTRANSLUCENT'>MarkerBackSelectedTranslucent</a>[int markerNumber] write-only<span class="comment"> -- Set the background colour used for a particular marker number when its folding block is selected.</span></p>
-	<p>int editor.<a href='ScintillaDoc.html#SCI_MARKERSETSTROKEWIDTH'>MarkerStrokeWidth</a>[int markerNumber] write-only<span class="comment"> -- Set the width of strokes used in .01 pixels so 50  = 1/2 pixel width.</span></p>
+	<p>pixels editor.<a href='ScintillaDoc.html#SCI_MARKERSETSTROKEWIDTH'>MarkerStrokeWidth</a>[int markerNumber] write-only<span class="comment"> -- Set the width of strokes used in .01 pixels so 50  = 1/2 pixel width.</span></p>
 	<p>editor:<a href='ScintillaDoc.html#SCI_MARKERENABLEHIGHLIGHT'>MarkerEnableHighlight</a>(bool enabled)<span class="comment"> -- Enable/disable highlight for current folding block (smallest one that contains the caret)</span></p>
 	<p>int editor.<a href='ScintillaDoc.html#SCI_MARKERSETLAYER'>MarkerLayer</a>[int markerNumber]<span class="comment"> -- Set the layer used for a marker that is drawn in the text area, not the margin.</span></p>
 	<p>int editor.<a href='ScintillaDoc.html#SCI_MARKERSETALPHA'>MarkerAlpha</a>[int markerNumber] write-only<span class="comment"> -- Set the alpha used for a marker that is drawn in the text area, not the margin.</span></p>
@@ -476,7 +478,7 @@
 	<h2>Indicators</h2>
 	<p>int editor.<a href='ScintillaDoc.html#SCI_INDICSETSTYLE'>IndicStyle</a>[int indicator]<span class="comment"> -- Set an indicator to plain, squiggle or TT.</span></p>
 	<p>colour editor.<a href='ScintillaDoc.html#SCI_INDICSETFORE'>IndicFore</a>[int indicator]<span class="comment"> -- Set the foreground colour of an indicator.</span></p>
-	<p>int editor.<a href='ScintillaDoc.html#SCI_INDICSETSTROKEWIDTH'>IndicStrokeWidth</a>[int indicator]<span class="comment"> -- Set the stroke width of an indicator in hundredths of a pixel.</span></p>
+	<p>pixels editor.<a href='ScintillaDoc.html#SCI_INDICSETSTROKEWIDTH'>IndicStrokeWidth</a>[int indicator]<span class="comment"> -- Set the stroke width of an indicator in hundredths of a pixel.</span></p>
 	<p>int editor.<a href='ScintillaDoc.html#SCI_INDICSETALPHA'>IndicAlpha</a>[int indicator]<span class="comment"> -- Set the alpha fill colour of the given indicator.</span></p>
 	<p>int editor.<a href='ScintillaDoc.html#SCI_INDICSETOUTLINEALPHA'>IndicOutlineAlpha</a>[int indicator]<span class="comment"> -- Set the alpha outline colour of the given indicator.</span></p>
 	<p>bool editor.<a href='ScintillaDoc.html#SCI_INDICSETUNDER'>IndicUnder</a>[int indicator]<span class="comment"> -- Set an indicator to draw under text or over(default).</span></p>
@@ -534,7 +536,7 @@
 	<p>colour editor.<a href='ScintillaDoc.html#SCI_CALLTIPSETBACK'>CallTipBack</a> write-only<span class="comment"> -- Set the background colour for the call tip.</span></p>
 	<p>colour editor.<a href='ScintillaDoc.html#SCI_CALLTIPSETFORE'>CallTipFore</a> write-only<span class="comment"> -- Set the foreground colour for the call tip.</span></p>
 	<p>colour editor.<a href='ScintillaDoc.html#SCI_CALLTIPSETFOREHLT'>CallTipForeHlt</a> write-only<span class="comment"> -- Set the foreground colour for the highlighted part of the call tip.</span></p>
-	<p>int editor.<a href='ScintillaDoc.html#SCI_CALLTIPUSESTYLE'>CallTipUseStyle</a> write-only<span class="comment"> -- Enable use of STYLE_CALLTIP and set call tip tab size in pixels.</span></p>
+	<p>pixels editor.<a href='ScintillaDoc.html#SCI_CALLTIPUSESTYLE'>CallTipUseStyle</a> write-only<span class="comment"> -- Enable use of STYLE_CALLTIP and set call tip tab size in pixels.</span></p>
 	<p>bool editor.<a href='ScintillaDoc.html#SCI_CALLTIPSETPOSITION'>CallTipPosition</a> write-only<span class="comment"> -- Set position of calltip, above or below text.</span></p>
 	<h2>Key bindings</h2>
 	<p>editor:<a href='ScintillaDoc.html#SCI_ASSIGNCMDKEY'>AssignCmdKey</a>(keymod keyDefinition, int sciCommand)<span class="comment"> -- When key+modifier combination keyDefinition is pressed perform sciCommand.</span></p>
@@ -595,11 +597,11 @@
 	<p>int editor.<a href='ScintillaDoc.html#SCI_SETWRAPVISUALFLAGS'>WrapVisualFlags</a><span class="comment"> -- Set the display mode of visual flags for wrapped lines.</span></p>
 	<p>int editor.<a href='ScintillaDoc.html#SCI_SETWRAPVISUALFLAGSLOCATION'>WrapVisualFlagsLocation</a><span class="comment"> -- Set the location of visual flags for wrapped lines.</span></p>
 	<p>int editor.<a href='ScintillaDoc.html#SCI_SETWRAPINDENTMODE'>WrapIndentMode</a><span class="comment"> -- Sets how wrapped sublines are placed. Default is fixed.</span></p>
-	<p>int editor.<a href='ScintillaDoc.html#SCI_SETWRAPSTARTINDENT'>WrapStartIndent</a><span class="comment"> -- Set the start indent for wrapped lines.</span></p>
+	<p>pixels editor.<a href='ScintillaDoc.html#SCI_SETWRAPSTARTINDENT'>WrapStartIndent</a><span class="comment"> -- Set the start indent for wrapped lines.</span></p>
 	<p>int editor.<a href='ScintillaDoc.html#SCI_SETLAYOUTCACHE'>LayoutCache</a><span class="comment"> -- Sets the degree of caching of layout information.</span></p>
 	<p>int editor.<a href='ScintillaDoc.html#SCI_SETPOSITIONCACHE'>PositionCache</a><span class="comment"> -- Set number of entries in position cache</span></p>
 	<p>int editor.<a href='ScintillaDoc.html#SCI_SETLAYOUTTHREADS'>LayoutThreads</a><span class="comment"> -- Set maximum number of threads used for layout</span></p>
-	<p>editor:<a href='ScintillaDoc.html#SCI_LINESSPLIT'>LinesSplit</a>(int pixelWidth)<span class="comment"> -- Split the lines in the target into lines that are less wide than pixelWidth where possible.</span></p>
+	<p>editor:<a href='ScintillaDoc.html#SCI_LINESSPLIT'>LinesSplit</a>(pixels pixelWidth)<span class="comment"> -- Split the lines in the target into lines that are less wide than pixelWidth where possible.</span></p>
 	<p>editor:<a href='ScintillaDoc.html#SCI_LINESJOIN'>LinesJoin</a>()<span class="comment"> -- Join the lines in the target.</span></p>
 	<p>line editor:<a href='ScintillaDoc.html#SCI_WRAPCOUNT'>WrapCount</a>(line docLine)<span class="comment"> -- The number of display lines needed to wrap a document line</span></p>
 	<h2>Zooming</h2>
