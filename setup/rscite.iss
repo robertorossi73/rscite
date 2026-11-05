@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 ;Autore :   Roberto Rossi
-;Versione : 4.4.0
+;Versione : 4.5.1
 ;Web      : http://www.redchar.net
 
 ;Compatible with Inno Setup 7.1.0 or later
@@ -66,8 +66,8 @@ Source: ..\sources\distro\*; DestDir: {app}; Flags: ignoreversion recursesubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 ;Source: ..\sources\distro_dll\wscitecm_it.dll; DestDir: {app}; Flags: onlyifdoesntexist uninsrestartdelete; Check: not IsWin64; Tasks: ; Languages: italian
 ;Source: ..\sources\distro_dll\wscitecm_en.dll; DestDir: {app}; Flags: onlyifdoesntexist uninsrestartdelete; Check: not IsWin64; Tasks: ; Languages: english
-Source: ..\sources\distro_dll\wscitecm64_it.dll; DestDir: {app}; Flags: onlyifdoesntexist uninsrestartdelete; Check: IsWin64; Languages: italian
-Source: ..\sources\distro_dll\wscitecm64_en.dll; DestDir: {app}; Flags: onlyifdoesntexist uninsrestartdelete; Check: IsWin64; Tasks: ; Languages: english
+;Source: ..\sources\distro_dll\wscitecm64_it.dll; DestDir: {app}; Flags: onlyifdoesntexist uninsrestartdelete; Check: IsWin64; Languages: italian
+;Source: ..\sources\distro_dll\wscitecm64_en.dll; DestDir: {app}; Flags: onlyifdoesntexist uninsrestartdelete; Check: IsWin64; Tasks: ; Languages: english
 ;Elimina superflui per attivare versione inglese
 Source: ..\sources\distro\loctools.properties; DestDir: {app}; Flags: deleteafterinstall; Tasks: ; Languages: english
 Source: ..\sources\distro\locale.properties; DestDir: {app}; Flags: deleteafterinstall; Tasks: ; Languages: english
@@ -117,24 +117,24 @@ const
     INSTALLSTATE_DEFAULT = 5;      // The product is installed for the current user.
 
     //DOWNLOADS FOR VISUAL C++ 2017
-    VC_REDIST2017_URL = 'https://aka.ms/vs/15/release/VC_redist.x86.exe';
-    VC_REDIST2017_URL_x64 = 'https://aka.ms/vs/15/release/VC_redist.x64.exe';
+    //VC_REDIST2017_URL = 'https://aka.ms/vs/15/release/VC_redist.x86.exe';
+    //VC_REDIST2017_URL_x64 = 'https://aka.ms/vs/15/release/VC_redist.x64.exe';
 
     //OPTIONS
-    VC_2017_REDIST =     '{7753EC39-3039-3629-98BE-447C5D869C09}'; //Microsoft.VS.VC_RuntimeMinimumVSU_x86
-    VC_2017_REDIST_x64 = '{03EBF679-E886-38AD-8E70-28658449F7F9}'; //Microsoft.VS.VC_RuntimeMinimumVSU_amd64
+    //VC_2017_REDIST =     '{7753EC39-3039-3629-98BE-447C5D869C09}'; //Microsoft.VS.VC_RuntimeMinimumVSU_x86
+    //VC_2017_REDIST_x64 = '{03EBF679-E886-38AD-8E70-28658449F7F9}'; //Microsoft.VS.VC_RuntimeMinimumVSU_amd64
 
-    function MsiQueryProductState(szProduct: String): INSTALLSTATE;
-    external 'MsiQueryProductState{#AW}@msi.dll stdcall';
+    //function MsiQueryProductState(szProduct: String): INSTALLSTATE;
+    //external 'MsiQueryProductState{#AW}@msi.dll stdcall';
 
-function VCVersionInstalled(const ProductID: String): Boolean;
-begin
-    Result := MsiQueryProductState(ProductID) = INSTALLSTATE_DEFAULT;
-end;
+//function VCVersionInstalled(const ProductID: String): Boolean;
+//begin
+//    Result := MsiQueryProductState(ProductID) = INSTALLSTATE_DEFAULT;
+//end;
 
 procedure CurStepChanged(CurStep: TSetupStep);
 var 
-    ResultCode: Integer;
+    //ResultCode: Integer;
     ErrorCode: Integer;    
 begin
   if (CurStep=ssInstall) then //controllo installazione precedente
@@ -174,25 +174,25 @@ begin
     end;
   end; //endpreinstallazione
 
-  if (CurStep=ssPostInstall) then //installazione conclusive
-  begin
+  //if (CurStep=ssPostInstall) then //installazione conclusive
+  //begin
     //gestione runtimes
-    if NOT VCVersionInstalled(VC_2017_REDIST_x64) then
-    begin
+    //if NOT VCVersionInstalled(VC_2017_REDIST_x64) then
+    //begin
         //installazione runtime 64bit
-        Exec(ExpandConstant('{app}\tools\runtimes\vcredist_x64-2017.exe'), '/install /passive /norestart', '', SW_SHOW, ewWaitUntilTerminated, ResultCode);
-    end;
+      //  Exec(ExpandConstant('{app}\tools\runtimes\vcredist_x64-2017.exe'), '/install /passive /norestart', '', SW_SHOW, ewWaitUntilTerminated, ResultCode);
+    //end;
 
     //registrazione menu contestuale a 64 bit
-    if FileExists(ExpandConstant('{app}\wscitecm64_en.dll')) then
-    begin
-        RegisterServer(Is64BitInstallMode, ExpandConstant('{app}\wscitecm64_en.dll'), True);
-    end;
-    if FileExists(ExpandConstant('{app}\wscitecm64_it.dll')) then
-    begin
-        RegisterServer(Is64BitInstallMode, ExpandConstant('{app}\wscitecm64_it.dll'), True);
-    end;
-  end; //end conclusione
+    //if FileExists(ExpandConstant('{app}\wscitecm64_en.dll')) then
+    //begin
+        //RegisterServer(Is64BitInstallMode, ExpandConstant('{app}\wscitecm64_en.dll'), True);
+    //end;
+    //if FileExists(ExpandConstant('{app}\wscitecm64_it.dll')) then
+    //begin
+        //RegisterServer(Is64BitInstallMode, ExpandConstant('{app}\wscitecm64_it.dll'), True);
+    //end;
+  //end; //end conclusione
 
 
 end; //endCurStepChanged
